@@ -2,5 +2,4 @@
 BelsisMIS: Intelligent Customer Support Assistant (BICSA)
 
 Project Website
-
     https://emrecanselvili.wixsite.com/bicsa1
