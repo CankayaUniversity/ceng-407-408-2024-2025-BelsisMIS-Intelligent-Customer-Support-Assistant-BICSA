@@ -23,7 +23,7 @@ The chatbot prioritizes usability, security, and flexibility. This initiative no
 
 
 ## Advisor
-- Hayri Sever
+- Prof. Dr. Hayri Sever
 
 
 
