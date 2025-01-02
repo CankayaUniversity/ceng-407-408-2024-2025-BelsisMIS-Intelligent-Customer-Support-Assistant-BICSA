@@ -2,7 +2,7 @@
 
 ## Project Description
 The chatbot acts as a bridge between municipal employees and the complex functionalities of the BELSİS.NET system. The Level 0 AI-powered chatbot is designed to modernize user support for municipalities by integrating seamlessly with BELSİS.NET, an ERP system widely used by municipalities in Turkey. This chatbot focuses on handling repetitive and basic user inquiries efficiently, such as information retrieval, account details, and general troubleshooting. By automating these tasks, it significantly reduces the burden on support teams, ensuring faster response times and consistent answers.
-Integrated across key BELSİS.NET modules, it ensures 24/7 availability via web and mobile platforms, empowering users to resolve their queries independently.
+Integrated across key BELSİS.NET modules, it ensures 24/7 availability via web platforms, empowering users to resolve their queries independently.
 The chatbot prioritizes usability, security, and flexibility. This initiative not only streamlines support operations but also aligns with the evolving needs of municipal services, delivering an efficient, user-friendly, and future-proof solution.
 
 ## Documents
