@@ -1,0 +1,26 @@
+﻿@page
+@model ChatModel
+@{
+    ViewData["Title"] = "Chat Assistant";
+}
+
+<h2>Chat with Assistant</h2>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label for="UserMessage">Your Message</label>
+            <textarea id="UserMessage" name="UserMessage" class="form-control" rows="4" placeholder="Enter your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.AssistantResponse))
+{
+    <div class="mt-3">
+        <h4>Assistant Response:</h4>
+        <p>@Model.AssistantResponse</p>
+    </div>
+}
+
