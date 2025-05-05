@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azaltan Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Azaltan Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#satir-sayisi">Satır Sayısı ve Sıralama Seçenekleri</a></li>
+                <li><a href="#sicil-no">GTT ve Modül Sicil No Filtreleme</a></li>
+                <li><a href="#sira-yil">Sıra No ve Yıl Filtreleme</a></li>
+                <li><a href="#tarih-araliklari">Tarih Aralıkları ile Filtreleme</a></li>
+                <li><a href="#kisi-bilgileri">Kişi Bilgileri ile Filtreleme</a></li>
+                <li><a href="#tahakkuk-bilgileri">Tahakkuk Tarihi ve Taksit Bilgileri</a></li>
+                <li><a href="#donem-belge">Dönem ve Belge No Filtreleme</a></li>
+                <li><a href="#tahakkuk-turu">Tahakkuk Türü ve Azaltan Tipi Seçimi</a></li>
+                <li><a href="#butonlar">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Azaltan Listesi programı, tahakkuk azaltma işlemlerini listelemek ve filtrelemek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Sicil numarası, modül numarası veya sıra numarası bazında filtreleme yapabilirsiniz</li>
+                <li>Tarih aralıklarına göre (azaltan tarihi, beyan tarihi vb.) listeleme yapabilirsiniz</li>
+                <li>Kişi bilgilerine göre (ad, soyad) sorgulama yapabilirsiniz</li>
+                <li>Tahakkuk türü ve azaltan tipine göre filtreleme yapabilirsiniz</li>
+                <li>Çeşitli sıralama seçenekleriyle sonuçları düzenleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi filtreleme kriterleriyle arama yapmak istediğiniz</li>
+                    <li>Hangi tarih aralığında işlem yapmak istediğiniz</li>
+                    <li>Sonuçları nasıl sıralamak istediğiniz</li>
+                    <li>Hangi tahakkuk türü ve azaltan tipleriyle işlem yapmak istediğiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir çubukta "Azaltan Listesi" başlığı yer alır</li>
+                            <li>Bu başlık programın ne için kullanıldığını gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu bölümde filtreleme kriterleri için çeşitli veri giriş alanları bulunur</li>
+                            <li>Her filtre etiketi sol tarafta yer alır, sağında ise veri giriş kutuları bulunur</li>
+                            <li>Filtreler yukarıdan aşağıya doğru Satır Sayısı, Sıralama, GTT Sicil No, Modül Sicil No... şeklinde sıralanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Filtre bölümünün alt kısmında iki liste kutusu bulunur</li>
+                            <li>Sol tarafta Tahakkuk Türü listesi, sağ tarafta Azaltan Tipi listesi yer alır</li>
+                            <li>Bu listeler çoklu seçime olanak tanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında işlem butonları yer alır</li>
+                            <li>Listele ve Çıkış butonları ile programı kontrol edebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Satır Sayısı alanına konumlanır</li>
+                    <li>Bazı alanlar varsayılan değerlerle doldurulmuştur</li>
+                    <li>Tarih alanları için sistem tarihi varsayılan olarak kullanılır</li>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatlice ayarlayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="satir-sayisi" class="section">
+        <h2>Satır Sayısı ve Sıralama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Satır Sayısı ve Sıralama Nasıl Belirlenir</h3>
+            
+            <div class="step">
+                <h4>Satır Sayısı Belirleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, ekranın üst kısmında yer alır</li>
+                            <li>"Satır Sayısı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında küçük bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Metin kutusuna listelemek istediğiniz azami satır sayısını yazın</li>
+                            <li>Varsayılan değer genellikle 40'tır</li>
+                            <li>Daha büyük bir değer girerseniz daha fazla kayıt gösterilir</li>
+                            <li>Daha küçük bir değer girerseniz sayfa daha hızlı yüklenir</li>
+                            <li>Sadece sayısal değerler kabul edilir</li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Sıralama) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sıralama Seçeneği Belirleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Satır Sayısı alanının hemen altında yer alır</li>
+                            <li>"Sıralama" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown menu) yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayarak sıralama seçeneklerini görüntüleyin</li>
+                            <li>Listede üç farklı sıralama seçeneği bulunur:
+                                <ul>
+                                    <li>"Azaltan Tarihi+Mod.Sicil No+Tah.Türü" (varsayılan seçenek)</li>
+                                    <li>"Mod.Sicil No+Azaltan Tarihi+Tah.Türü"</li>
+                                    <li>"Sıra No+Azaltan Tarihi+Tah.Türü"</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğine tıklayarak seçin</li>
+                            <li>Seçiminizi yaptıktan sonra açılır liste otomatik olarak kapanır</li>
+                            <li>TAB tuşuna basarak bir sonraki alana (GTT Sicil No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Satır Sayısı için çok büyük değerler girmek sistem performansını etkileyebilir</li>
+                    <li>Sıralama seçeneği, sonuçların hangi kritere göre düzenleneceğini belirler</li>
+                    <li>Aradığınız kayıtları bulmanıza yardımcı olacak en uygun sıralama seçeneğini seçin</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir tarihe göre arama yapıyorsanız, ilk sıralama seçeneğini kullanın</li>
+                    <li>Belirli bir sicil numarasına göre arama yapıyorsanız, ikinci sıralama seçeneğini kullanın</li>
+                    <li>Belirli bir sıra numarasına göre arama yapıyorsanız, üçüncü sıralama seçeneğini kullanın</li>
+                    <li>Çok sayıda kayıt arasında arama yapıyorsanız, filtreleri daha spesifik hale getirin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-no" class="section">
+        <h2>GTT ve Modül Sicil No Filtreleme</h2>
+        <div class="info-box">
+            <h3>Sicil Numaralarına Göre Filtreleme</h3>
+            
+            <div class="step">
+                <h4>GTT Sicil No ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sıralama alanının hemen altında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İlk metin kutusuna filtrelemenin başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 1'dir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                            <li>İkinci metin kutusuna filtrelemenin bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 999999999'dur</li>
+                                    <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Modül Sicil No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Modül Sicil No ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No alanının hemen altında yer alır</li>
+                            <li>"Modül Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç modül sicil numarası, sağ kutu bitiş modül sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İlk metin kutusuna filtrelemenin başlangıç modül sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 1'dir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                            <li>İkinci metin kutusuna filtrelemenin bitiş modül sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 999999999'dur</li>
+                                    <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Sıra No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>GTT Sicil No ve Modül Sicil No farklı numaralandırma sistemleridir, karıştırmayın</li>
+                    <li>Başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                    <li>Spesifik bir sicil numarası araması için, her iki kutuda da aynı değeri kullanabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir sicil numarası için arama yapmak istiyorsanız, başlangıç ve bitiş kutularına aynı değeri girin</li>
+                    <li>Geniş bir aralık belirlerseniz, sonuçlar çok fazla olabilir ve sistem yavaşlayabilir</li>
+                    <li>Sicil numaraları hakkında kesin bilginiz yoksa, varsayılan değerleri kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sira-yil" class="section">
+        <h2>Sıra No ve Yıl Filtreleme</h2>
+        <div class="info-box">
+            <h3>Sıra No ve Yıl Kriterlerine Göre Filtreleme</h3>
+            
+            <div class="step">
+                <h4>Sıra No ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Modül Sicil No alanının hemen altında yer alır</li>
+                            <li>"Sıra No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç sıra numarası, sağ kutu bitiş sıra numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İlk metin kutusuna filtrelemenin başlangıç sıra numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 0'dır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                            <li>İkinci metin kutusuna filtrelemenin bitiş sıra numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 999999999'dur</li>
+                                    <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Yıl) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yıl ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sıra No alanının hemen altında yer alır</li>
+                            <li>"Yıl" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç yılı, sağ kutu bitiş yılı içindir</li>
+                            <li>Bu metin kutuları daha küçüktür (diğer metin kutularına göre yaklaşık yarı boyutta)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İlk metin kutusuna filtrelemenin başlangıç yılını girin
+                                <ul>
+                                    <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 0'dır</li>
+                                    <li>Genellikle 4 haneli yıl formatı kullanılır (örn. 2023)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                            <li>İkinci metin kutusuna filtrelemenin bitiş yılını girin
+                                <ul>
+                                    <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                    <li>Varsayılan değer 9999'dur</li>
+                                    <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Azaltan Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sıra No ve Yıl alanları boş bırakılabilir, bu durumda varsayılan değerler kullanılır</li>
+                    <li>Başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                    <li>Yıl alanına tam yıl değeri girilmelidir (örn. 2023, 2024)</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir yıla ait kayıtları görmek için, her iki yıl kutusuna da aynı değeri girin</li>
+                    <li>Son birkaç yıla ait kayıtları görmek için, başlangıç yılını uygun şekilde ayarlayın</li>
+                    <li>Sıra numarası genellikle sistem tarafından otomatik atanır, spesifik bir sıra numarası biliyorsanız direkt arama yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tarih-araliklari" class="section">
+        <h2>Tarih Aralıkları ile Filtreleme</h2>
+        <div class="info-box">
+            <h3>Azaltan Tarihi ve Beyan Tarihi ile Filtreleme</h3>
+            
+            <div class="step">
+                <h4>Azaltan Tarihi ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl alanının hemen altında yer alır</li>
+                            <li>"Azaltan Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç tarihi, sağ kutu bitiş tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İlk metin kutusuna filtrelemenin başlangıç tarihini girin
+                                <ul>
+                                    <li>Bu alan tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                    <li>Örneğin, 01.05.2023 şeklinde girilmelidir</li>
+                                    <li>Tarih seçimi için metin kutusunun içine tıklayıp direkt yazabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                            <li>İkinci metin kutusuna filtrelemenin bitiş tarihini girin
+                                <ul>
+                                    <li>Bu alan da tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                    <li>Varsayılan değer sistem tarihidir (bugünün tarihi)</li>
+                                    <li>Başlangıç tarihinden sonraki bir tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Beyan Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Beyan Tarihi ile Filtreleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Azaltan Tarihi alanının hemen altında yer alır</li>
+                            <li>"Beyan Tarihi" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç beyan tarihi, sağ kutu bitiş beyan tarihi içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç beyan tarihini girin
+                            <ul>
+                                <li>Bu alan tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                <li>Örneğin, 01.05.2023 şeklinde girilmelidir</li>
+                                <li>Tarih seçimi için metin kutusunun içine tıklayıp direkt yazabilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş beyan tarihini girin
+                            <ul>
+                                <li>Bu alan da tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                <li>Varsayılan değer sistem tarihidir (bugünün tarihi)</li>
+                                <li>Başlangıç tarihinden sonraki bir tarih olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Adı) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Tarih alanları GG.AA.YYYY formatında girilmelidir (örn. 15.06.2023)</li>
+                <li>Başlangıç tarihi bitiş tarihinden sonra olmamalıdır</li>
+                <li>Bitiş tarihi alanları boş bırakılırsa, sistem otomatik olarak bugünün tarihini kullanır</li>
+                <li>Tarih aralığını çok geniş tutmak, çok fazla sonuç getirerek performansı etkileyebilir</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Sadece belirli bir güne ait işlemleri görmek için, başlangıç ve bitiş tarihlerini aynı gün olarak ayarlayın</li>
+                <li>Son bir haftalık işlemleri görmek için, başlangıç tarihini bir hafta öncesine ayarlayın</li>
+                <li>Son bir aylık işlemleri görmek için, başlangıç tarihini bir ay öncesine ayarlayın</li>
+                <li>Tarih girişinde nokta (.) tuşunu kullanabilirsiniz, diğer ayıraçlar kabul edilmez</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="kisi-bilgileri" class="section">
+    <h2>Kişi Bilgileri ile Filtreleme</h2>
+    <div class="info-box">
+        <h3>Adı ve Soyadı Alanları ile Filtreleme</h3>
+        
+        <div class="step">
+            <h4>Adı Alanı ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Beyan Tarihi alanının hemen altında yer alır</li>
+                        <li>"Adı" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç adı, sağ kutu bitiş adı içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç adını girin
+                            <ul>
+                                <li>Bu alan metin değeri kabul eder</li>
+                                <li>Alfabetik sıralamada bu harfle başlayan veya sonraki harflerle başlayan adlar listelenir</li>
+                                <li>Küçük-büyük harf duyarlılığı yoktur</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş adını girin
+                            <ul>
+                                <li>Bu alan da metin değeri kabul eder</li>
+                                <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" şeklindedir (tüm adları kapsar)</li>
+                                <li>Alfabetik sıralamada bu harfle biten veya önceki harflerle biten adlar listelenir</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Soyadı) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Soyadı Alanı ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Adı alanının hemen altında yer alır</li>
+                        <li>"Soyadı" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç soyadı, sağ kutu bitiş soyadı içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç soyadını girin
+                            <ul>
+                                <li>Bu alan metin değeri kabul eder</li>
+                                <li>Alfabetik sıralamada bu harfle başlayan veya sonraki harflerle başlayan soyadlar listelenir</li>
+                                <li>Küçük-büyük harf duyarlılığı yoktur</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş soyadını girin
+                            <ul>
+                                <li>Bu alan da metin değeri kabul eder</li>
+                                <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" şeklindedir (tüm soyadları kapsar)</li>
+                                <li>Alfabetik sıralamada bu harfle biten veya önceki harflerle biten soyadlar listelenir</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Tahakkuk Tar.) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Ad ve Soyad alanları alfabetik karşılaştırma yapar</li>
+                <li>Başlangıç değeri alfabetik olarak bitiş değerinden sonra gelmemelidir</li>
+                <li>Türkçe karakterler kullanabilirsiniz</li>
+                <li>Ad ve Soyad araması yaparken, kısmi eşleşmeler de sonuçlarda gösterilir (örn. "AH" girdiğinizde "AHMET", "AHMED" gibi kayıtlar da gelir)</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Belirli bir ad veya soyad için arama yapmak istiyorsanız, başlangıç ve bitiş kutularına aynı değeri girin</li>
+                <li>A ile başlayan tüm adları listelemek için, başlangıç kutusuna "A", bitiş kutusuna "AZZZZZ" girebilirsiniz</li>
+                <li>Adı tam olarak bilmiyorsanız, hatırladığınız ilk birkaç harfi başlangıç kutusuna girebilirsiniz</li>
+                <li>İsim araması yaparken, özellikle yaygın isimler için diğer filtreleri de kullanarak sonuçları daraltın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="tahakkuk-bilgileri" class="section">
+    <h2>Tahakkuk Tarihi ve Taksit Bilgileri</h2>
+    <div class="info-box">
+        <h3>Tahakkuk Tarihi ve Taksit ile Filtreleme</h3>
+        
+        <div class="step">
+            <h4>Tahakkuk Tarihi ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Soyadı alanının hemen altında yer alır</li>
+                        <li>"Tahakkuk Tar." etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç tahakkuk tarihi, sağ kutu bitiş tahakkuk tarihi içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç tahakkuk tarihini girin
+                            <ul>
+                                <li>Bu alan tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                <li>Örneğin, 01.05.2023 şeklinde girilmelidir</li>
+                                <li>Tarih seçimi için metin kutusunun içine tıklayıp direkt yazabilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş tahakkuk tarihini girin
+                            <ul>
+                                <li>Bu alan da tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                <li>Varsayılan değer sistem tarihidir (bugünün tarihi)</li>
+                                <li>Başlangıç tarihinden sonraki bir tarih olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Taksit) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Taksit ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Tahakkuk Tar. alanının hemen altında yer alır</li>
+                        <li>"Taksit" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç taksit numarası, sağ kutu bitiş taksit numarası içindir</li>
+                        <li>Bu metin kutuları daha küçüktür (diğer metin kutularına göre yaklaşık yarı boyutta)</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç taksit numarasını girin
+                            <ul>
+                                <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                <li>Varsayılan değer 0'dır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş taksit numarasını girin
+                            <ul>
+                                <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                <li>Varsayılan değer 99'dur</li>
+                                <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Dönem) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Tahakkuk Tarihi alanları GG.AA.YYYY formatında girilmelidir (örn. 15.06.2023)</li>
+                <li>Başlangıç tarihi bitiş tarihinden sonra olmamalıdır</li>
+                <li>Taksit alanları sadece sayısal değer kabul eder</li>
+                <li>Başlangıç taksit numarası, bitiş taksit numarasından büyük olmamalıdır</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Belirli bir tahakkuk günü için arama yapmak istiyorsanız, başlangıç ve bitiş tarihlerini aynı gün olarak ayarlayın</li>
+                <li>Tek bir taksit numarası için arama yapmak istiyorsanız, başlangıç ve bitiş kutularına aynı değeri girin</li>
+                <li>Taksit bilgisini bilmiyorsanız, varsayılan değerleri kullanarak tüm taksitlerde arama yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="donem-belge" class="section">
+    <h2>Dönem ve Belge No Filtreleme</h2>
+    <div class="info-box">
+        <h3>Dönem ve Belge No ile Filtreleme</h3>
+        
+        <div class="step">
+            <h4>Dönem ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Taksit alanının hemen altında yer alır</li>
+                        <li>"Dönem" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç dönem numarası, sağ kutu bitiş dönem numarası içindir</li>
+                        <li>Bu metin kutuları çok küçüktür (diğer metin kutularına göre daha küçük boyutta)</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç dönem numarasını girin
+                            <ul>
+                                <li>Bu alan sadece sayısal değerleri kabul eder</li>
+                                <li>Varsayılan değer 0'dır</li>
+                                <li>Genellikle 1-12 arası değerler kullanılır (ayları temsil eder)</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş dönem numarasını girin
+                            <ul>
+                                <li>Bu alan da sadece sayısal değerleri kabul eder</li>
+                                <li>Varsayılan değer 99'dur</li>
+                                <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Belge No) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Belge No ile Filtreleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Dönem alanının hemen altında yer alır</li>
+                        <li>"Belge No" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                        <li>Sol kutu başlangıç belge numarası, sağ kutu bitiş belge numarası içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İlk metin kutusuna filtrelemenin başlangıç belge numarasını girin
+                            <ul>
+                                <li>Bu alan alfanümerik değer kabul eder (hem harf hem rakam içerebilir)</li>
+                                <li>Belge numarasının başlangıç değerini yazın</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki metin kutusuna geçin</li>
+                        <li>İkinci metin kutusuna filtrelemenin bitiş belge numarasını girin
+                            <ul>
+                                <li>Bu alan da alfanümerik değer kabul eder</li>
+                                <li>Varsayılan değer "zzzzzzzzzz" şeklindedir (tüm belge numaralarını kapsar)</li>
+                                <li>Alfabetik sıralamada başlangıç değerinden sonra gelen bir değer olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Tahakkuk Türü) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Dönem alanı sadece sayısal değer kabul eder</li>
+                <li>Belge No alanı alfanümerik değer kabul eder (harf ve rakam karışık olabilir)</li>
+                <li>Başlangıç değerleri bitiş değerlerinden büyük olmamalıdır</li>
+                <li>Belge No için alfabetik sıralama uygulanır</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Belirli bir dönem için arama yapmak istiyorsanız, başlangıç ve bitiş kutularına aynı değeri girin</li>
+                <li>Belirli bir belge numarası için arama yapmak istiyorsanız, her iki kutuya da aynı belge numarasını girin</li>
+                <li>Belge numarasının sadece bir kısmını biliyorsanız, başlangıç kutusuna bildiğiniz kısmı yazabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="tahakkuk-turu" class="section">
+    <h2>Tahakkuk Türü ve Azaltan Tipi Seçimi</h2>
+    <div class="info-box">
+        <h3>Tahakkuk Türü ve Azaltan Tipi ile Filtreleme</h3>
+        
+        <div class="step">
+            <h4>Tahakkuk Türü Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Belge No alanının hemen altında yer alır</li>
+                        <li>"Tahakkuk Türü" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında çoklu seçim yapılabilen bir liste kutusu (multiple select) bulunur</li>
+                        <li>Liste kutusu yüksekliği yaklaşık 3 satır gösterecek şekilde, genişliği ise etiketin sağındaki alanın büyük kısmını kaplar</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Liste kutusuna tıklayarak içindeki tahakkuk türlerini görüntüleyin</li>
+                        <li>Listedeki bir öğeye tıklayarak onu seçin
+                            <ul>
+                                <li>Seçilen öğe vurgulanır (genellikle mavi veya koyu renk ile)</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla tahakkuk türü seçmek için:
+                            <ul>
+                                <li>Ctrl tuşunu basılı tutarak istediğiniz her bir türe tıklayın</li>
+                                <li>Ardışık tahakkuk türleri seçmek için ilk öğeyi tıklayın, Shift tuşunu basılı tutun ve son öğeyi tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan olarak tüm tahakkuk türleri seçilidir</li>
+                        <li>TAB tuşuna basarak bir sonraki alana (Azaltan Tipi) geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Azaltan Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Tahakkuk Türü alanının hemen altında yer alır</li>
+                        <li>"Azaltan Tipi" etiketi sol tarafta bulunur</li>
+                        <li>Etiketin sağında çoklu seçim yapılabilen bir liste kutusu (multiple select) bulunur</li>
+                        <li>Liste kutusu yüksekliği yaklaşık 3 satır gösterecek şekilde, genişliği ise etiketin sağındaki alanın büyük kısmını kaplar</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Liste kutusuna tıklayarak içindeki azaltan tiplerini görüntüleyin</li>
+                        <li>Listedeki bir öğeye tıklayarak onu seçin
+                            <ul>
+                                <li>Seçilen öğe vurgulanır (genellikle mavi veya koyu renk ile)</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla azaltan tipi seçmek için:
+                            <ul>
+                                <li>Ctrl tuşunu basılı tutarak istediğiniz her bir tipe tıklayın</li>
+                                <li>Ardışık azaltan tipleri seçmek için ilk öğeyi tıklayın, Shift tuşunu basılı tutun ve son öğeyi tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan olarak tüm azaltan tipleri seçilidir</li>
+                        <li>TAB tuşuna basarak alt kısımdaki işlem butonlarına geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>En az bir Tahakkuk Türü ve bir Azaltan Tipi seçilmesi gerekir</li>
+                <li>Hiçbir öğe seçilmezse, program varsayılan olarak tüm öğeleri dahil eder</li>
+                <li>Çok özel bir arama yapmak için, uygun tahakkuk türü ve azaltan tipini seçerek sonuçları daraltabilirsiniz</li>
+                <li>Listelerde seçili bir öğeyi kaldırmak için Ctrl tuşunu basılı tutarak o öğeye tekrar tıklayın</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Tüm tahakkuk türlerini veya azaltan tiplerini hızlıca seçmek için Ctrl+A tuş kombinasyonunu kullanabilirsiniz</li>
+                <li>Sadece belirli tahakkuk türleri veya azaltan tiplerini filtrelemek istiyorsanız, önce Ctrl+A ile tümünü seçin, sonra Ctrl tuşunu basılı tutarak istemediğiniz öğelere tıklayarak onları kaldırın</li>
+                <li>Listede çok sayıda öğe varsa, klavyenizde öğenin ilk harfini yazarak o harfle başlayan ilk öğeye hızlıca gidebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="butonlar" class="section">
+    <h2>İşlem Butonları Kullanımı</h2>
+    <div class="info-box">
+        <h3>Listele ve Çıkış Butonları</h3>
+        
+        <div class="step">
+            <h4>Listele Butonu Kullanımı:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Sayfanın alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                        <li>Üzerinde "Listele" yazar</li>
+                        <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tüm filtreleme kriterlerinizi girin ve seçimlerinizi yapın</li>
+                        <li>Listele butonuna tıklayın</li>
+                        <li>Sistem girilen filtreleme kriterlerine göre azaltan listesini getirir</li>
+                        <li>Sonuçlar, sıralama seçeneğinde belirttiğiniz düzene göre görüntülenir</li>
+                        <li>Sonuçlar, satır sayısı alanında belirttiğiniz sayı kadar satırda gösterilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Çıkış Butonu Kullanımı:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Sayfanın alt kısmında, orta bölümde, Listele butonunun sağında yer alır</li>
+                        <li>Üzerinde "Çıkış" yazar</li>
+                        <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İşleminizi tamamladıktan sonra Çıkış butonuna tıklayın</li>
+                        <li>Program kapanır ve ana menüye dönersiniz</li>
+                        <li>ESC tuşuna basarak da aynı işlevi gerçekleştirebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Listele butonuna tıklamadan önce tüm filtreleme kriterlerinizi kontrol edin</li>
+                <li>Çok geniş aralıklar veya çok genel kriterler belirlerseniz, çok fazla sonuç gösterilebilir ve sistem yavaşlayabilir</li>
+                <li>Çıkış butonuna tıklamadan program penceresini kapatmak veri kaybına neden olabilir</li>
+                <li>Listeleme işlemi başladıktan sonra tamamlanana kadar bekleyin, işlemi yarıda kesmeyin</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Enter tuşu yerine Listele butonuna tıklayın, Enter tuşu farklı davranabilir</li>
+                <li>İşlem yapmadan önce filtreleri dar tutarak sonuçları sınırlayın, daha sonra ihtiyaç duyarsanız genişletin</li>
+                <li>Alt+L tuş kombinasyonu ile Listele butonunu, Alt+E ile Çıkış butonunu aktif edebilirsiniz</li>
+                <li>Sonuçları yazdırmak için, listeleyin ve ardından ekrandaki yazdırma seçeneklerini kullanın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+                <li><strong>CTRL + A:</strong> Çoklu seçim listelerinde tüm öğeleri seçmek için</li>
+                <li><strong>ESC:</strong> Programdan çıkmak için</li>
+                <li><strong>Alt + L:</strong> Listele butonunu aktif etmek için</li>
+                <li><strong>Alt + E:</strong> Çıkış butonunu aktif etmek için</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Sonuç Bulunamadı Hatası:</strong>
+                    <ul>
+                        <li>Sorun: Listele butonuna tıkladığınızda "Sonuç Bulunamadı" mesajı alıyorsunuz.</li>
+                        <li>Çözüm: Filtreleme kriterlerinizi kontrol edin. Çok dar bir aralık belirlemiş olabilirsiniz. Aralıkları genişletin veya bazı filtreleri boş bırakın.</li>
+                    </ul>
+                </li>
+                <li><strong>Çok Fazla Kayıt Hatası:</strong>
+                    <ul>
+                        <li>Sorun: "İşlem çok fazla kayıt getirecek, lütfen filtrelerinizi daraltın" mesajı alıyorsunuz.</li>
+                        <li>Çözüm: Daha spesifik filtreleme kriterleri belirleyin. Tarih aralıklarını daraltın, belirli tahakkuk türleri veya azaltan tipleri seçin.</li>
+                    </ul>
+                </li>
+                <li><strong>Tarih Formatı Hatası:</strong>
+                    <ul>
+                        <li>Sorun: Tarih girişi yaparken hata mesajı alıyorsunuz.</li>
+                        <li>Çözüm: Tarihleri GG.AA.YYYY formatında girdiğinizden emin olun. Örneğin, 15.06.2023 şeklinde girilmelidir.</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim Listesi Boş:</strong>
+                    <ul>
+                        <li>Sorun: Tahakkuk Türü veya Azaltan Tipi listesi boş görünüyor.</li>
+                        <li>Çözüm: Bu durumda sistem yöneticinize başvurun. Listelerin doldurulması için gerekli verilerin yüklenmesi gerekebilir.</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Süresi Uzun:</strong>
+                    <ul>
+                        <li>Sorun: Listeleme işlemi çok uzun sürüyor.</li>
+                        <li>Çözüm: Filtreleme kriterlerinizi daraltın, özellikle tarih aralıklarını daha spesifik hale getirin. Satır sayısını azaltın.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Filtreleme Stratejileri:</h4>
+            <ul>
+                <li><strong>Tarih Bazlı Filtreleme:</strong> En etkili filtreleme yöntemlerinden biri tarih aralıklarını kullanmaktır. Azaltan Tarihi, Beyan Tarihi ve Tahakkuk Tarihi alanlarını kullanarak sonuçları daraltın.</li>
+                <li><strong>Kişi Bilgisi Filtreleme:</strong> Belirli bir kişi için arama yapıyorsanız, Ad ve Soyad alanlarını kullanın. Kısmi ad girişleri de sonuç verecektir.</li>
+                <li><strong>Sicil No Filtreleme:</strong> En spesifik arama için GTT Sicil No veya Modül Sicil No kullanın. Bu numaralar her kayıt için benzersizdir.</li>
+                <li><strong>Belge No Filtreleme:</strong> Belirli bir belge numarası biliyorsanız, doğrudan o belgeyi bulabilirsiniz.</li>
+                <li><strong>Tahakkuk Türü ve Azaltan Tipi:</strong> Belirli işlem türleri için bu listeleri kullanarak filtreleme yapın.</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Listeleme işlemi öncesinde tüm kriterleri dikkatlice kontrol edin</li>
+                <li>Çok geniş tarih aralıkları belirlemekten kaçının</li>
+                <li>Sistemin yoğun olduğu saatlerde büyük miktarda veri listelemeye çalışmaktan kaçının</li>
+                <li>Verilerin gizliliğine dikkat edin, gereksiz yazdırma veya dışa aktarma işlemlerinden kaçının</li>
+                <li>Programı kullanırken sorun yaşarsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Azaltan Listesi programı, tahakkuk azaltma işlemlerini filtrelemek ve listelemek için kullanılan kapsamlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Satır sayısı belirleme ve sıralama seçenekleri</li>
+            <li>GTT Sicil No ve Modül Sicil No ile filtreleme</li>
+            <li>Sıra No ve Yıl bilgileri ile filtreleme</li>
+            <li>Azaltan Tarihi ve Beyan Tarihi ile filtreleme</li>
+            <li>Kişi bilgileri (Ad, Soyad) ile filtreleme</li>
+            <li>Tahakkuk Tarihi ve Taksit bilgileri ile filtreleme</li>
+            <li>Dönem ve Belge No ile filtreleme</li>
+            <li>Tahakkuk Türü ve Azaltan Tipi seçimi</li>
+            <li>İşlem butonlarının kullanımı</li>
+            <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        
+        <p>Azaltan Listesi programını etkin bir şekilde kullanarak, tahakkuk azaltma işlemlerini hızlı ve doğru bir şekilde listeleyebilir, gerekli raporları alabilirsiniz.</p>
+    </div>
+</div>
+</body>
+</html>
