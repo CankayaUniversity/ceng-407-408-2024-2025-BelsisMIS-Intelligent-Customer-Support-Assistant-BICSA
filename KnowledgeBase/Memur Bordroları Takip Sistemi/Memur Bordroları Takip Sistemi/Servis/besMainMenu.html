@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BES Dosya Formatı Hazırlama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BES Dosya Formatı Hazırlama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#banka-tanimlama">Banka Tanımlama İşlemleri</a></li>
+                <li><a href="#banka-secimi">Banka Seçimi ve İşlemler</a></li>
+                <li><a href="#dosya-formati">Dosya Formatı Belirleme</a></li>
+                <li><a href="#ayrac-tanimlama">Ayraç Tanımlama</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>BES Dosya Formatı Hazırlama programı, Bireysel Emeklilik Sistemi (BES) için gerekli dosya formatlarını belirlemenizi ve hazırlamanızı sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Farklı bankalar için BES dosya formatları tanımlayabilirsiniz</li>
+                <li>Excel, CSV veya TEXT formatında dosya çıktıları oluşturabilirsiniz</li>
+                <li>Dosya ayraçlarını belirleyebilirsiniz</li>
+                <li>Banka bazlı düzenlemeler yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Tanımlamak istediğiniz banka bilgisi</li>
+                    <li>Dosya formatı tercihleriniz (Excel, CSV veya TEXT)</li>
+                    <li>CSV veya TEXT formatı için kullanmak istediğiniz ayraç karakteri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde koyu gri yazı rengiyle "BES Dosya Formatı Hazırlama" başlığı yer alır</li>
+                            <li>Başlık, ekranın sağ üst köşesinde, italik ve kalın yazı stiliyle görüntülenir</li>
+                            <li>Başlık zemini, üst kısımda yer alan açık yeşil-gri (D1DDBB) renktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sol Gezinti Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın sol tarafında, başlık bölümünün hemen altında, dikey bir bölme vardır</li>
+                            <li>Bu bölme, tanımlanmış bankaların listesini içeren ağaç yapısını gösterir</li>
+                            <li>Ağaç yapısının üst kısmında "Banka Adı" başlığı ve sağda küçük bir ekleme ikonu bulunur</li>
+                            <li>Bölme, açık mavi kenarlıkla çevrilidir ve aşağı doğru kaydırılabilir yapıdadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana İçerik Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın sağ tarafında, sol gezinti bölümünün yanında yer alır</li>
+                            <li>Bu alan, seçilen banka bilgilerinin gösterildiği ve düzenlendiği yerdir</li>
+                            <li>Bölme, bej renkli (EEE6D2) bir zemine sahiptir</li>
+                            <li>Program ilk açıldığında bu alanda "Sol menüden uygun banka kaydını seçiniz" mesajı görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Sol bölmedeki banka listesi otomatik olarak yüklenir</li>
+                    <li>Ana içerik bölümünde herhangi bir banka bilgisi görüntülenmez</li>
+                    <li>İşlem yapmak için öncelikle sol menüden bir banka seçmeniz veya yeni bir banka tanımlamanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="banka-tanimlama" class="section">
+        <h2>Banka Tanımlama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Yeni Banka Tanımlama</h3>
+            <div class="step">
+                <h4>Banka Tanımlama Adımları:</h4>
+                <ol>
+                    <li><strong>Banka Ekleme Butonuna Ulaşma:</strong>
+                        <ul>
+                            <li>Sol bölmede, "Banka Adı" başlığının sağında yer alan küçük artı işareti (ekleme) ikonuna tıklayın</li>
+                            <li>İkon görüntüsü yeşil zemin üzerinde + şeklindedir</li>
+                            <li>Fareyi üzerine getirdiğinizde el işareti görünür ve tıklanabilir olduğu anlaşılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Tanımlama Penceresinin Açılması:</strong>
+                        <ul>
+                            <li>İkona tıkladığınızda ekranın ortasında "BANKA TANIMLAMA" başlıklı bir pencere açılır</li>
+                            <li>Bu pencere, ana ekranın üzerinde açılan küçük bir diyalog kutusu şeklindedir</li>
+                            <li>Pencere yaklaşık 450x200 piksel boyutundadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Seçme Aşaması:</strong>
+                        <ul>
+                            <li>Açılan pencerenin ilk satırında "Banka" etiketi ve yanında açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusuna tıklayarak mevcut bankalar listesini görüntüleyin</li>
+                            <li>Listeden tanımlamak istediğiniz bankayı seçin
+                                <ul>
+                                    <li>Liste, "--Banka Seçiniz--" seçeneği ile başlar</li>
+                                    <li>Ardından sistemde kayıtlı tüm bankalar alfabetik sırada listelenir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Formatı Belirleme:</strong>
+                        <ul>
+                            <li>Banka seçiminin hemen altında "Dosya Formatı" etiketi ve yanında başka bir açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusuna tıklayarak format seçeneklerini görüntüleyin</li>
+                            <li>Üç format seçeneğinden birini seçin:
+                                <ul>
+                                    <li>EXCEL</li>
+                                    <li>CSV</li>
+                                    <li>TEXT</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Ayraç Belirleme (Sadece CSV ve TEXT formatları için):</strong>
+                        <ul>
+                            <li>Eğer "CSV" veya "TEXT" formatını seçtiyseniz, dosya formatı seçiminin altında "Ayraç" alanı görüntülenir</li>
+                            <li>EXCEL formatı seçiliyse bu alan görünmez</li>
+                            <li>Ayraç alanına, dosyadaki verileri birbirinden ayırmak için kullanılacak karakteri girin (örneğin: virgül, noktalı virgül, tab, boşluk)</li>
+                            <li>Bu alan sadece tek karakter kabul eder</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi:</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra pencerenin alt kısmında yer alan "KAYDET" butonuna tıklayın</li>
+                            <li>Buton, pencere alt kısmının sol tarafında, "KAPAT" butonunun solunda yer alır</li>
+                            <li>Başarılı bir kayıt işleminden sonra pencere otomatik olarak kapanır ve banka listesi güncellenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Banka seçimini boş bırakamazsınız, mutlaka bir banka seçmelisiniz</li>
+                    <li>Dosya formatını boş bırakamazsınız, üç seçenekten birini seçmelisiniz</li>
+                    <li>CSV veya TEXT formatı seçtiyseniz, ayraç alanını boş bırakamazsınız</li>
+                    <li>Aynı banka için birden fazla tanımlama yaparsanız, yeni kayıt eskisinin üzerine yazılır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>En yaygın kullanılan ayraçlar virgül (,), noktalı virgül (;), tab ve boru karakteridir (|)</li>
+                    <li>Excel formatını seçerseniz ayraç belirlemenize gerek kalmaz, veriler otomatik olarak sütunlara ayrılır</li>
+                    <li>CSV formatı en yaygın kullanılan ve çoğu programla uyumlu olan formattır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="banka-secimi" class="section">
+        <h2>Banka Seçimi ve İşlemler</h2>
+        <div class="info-box">
+            <h3>Tanımlı Bankaları Görüntüleme ve Seçme</h3>
+            <div class="step">
+                <h4>Banka Listesini Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Banka Listesinin Konumu:</strong>
+                        <ul>
+                            <li>Banka listesi, ana ekranın sol tarafında, başlık bölümünün hemen altında yer alır</li>
+                            <li>Liste, açık mavi kenarlıklı bir bölme içinde görüntülenir</li>
+                            <li>Bu bölme yaklaşık olarak ekranın sol %20'sini kaplar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İçeriği:</strong>
+                        <ul>
+                            <li>Listenin en üstünde "Banka Adı" başlığı bulunur</li>
+                            <li>Başlığın sağında küçük bir ekleme ikonu yer alır</li>
+                            <li>Başlığın altında, daha önce tanımlanmış tüm bankalar alfabetik sırayla listelenir</li>
+                            <li>Her banka satırının sağında, dosya formatı bilgisi (EXCEL, CSV veya TEXT) görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Banka Seçme ve Detayları Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Banka Seçimi Yapma:</strong>
+                        <ul>
+                            <li>Listeden işlem yapmak istediğiniz bankanın adına tıklayın</li>
+                            <li>Seçtiğiniz banka satırı vurgulanır (mavi renkte belirir)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Bir banka seçtikten sonra, ekranın sağ tarafındaki ana içerik bölümünde bankanın detayları görüntülenir</li>
+                            <li>Bu bölümde, seçilen bankanın BES dosya formatı tanımlamaları ve ayarları yer alır</li>
+                            <li>Banka ile ilgili yapılandırılabilir tüm alanlar bu bölümde gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program ilk açıldığında hiçbir banka seçili olmaz</li>
+                    <li>Banka seçmeden detay görüntüleme veya düzenleme yapamazsınız</li>
+                    <li>Ana içerik bölümünde "Sol menüden uygun banka kaydını seçiniz" mesajı görüntüleniyorsa, henüz bir banka seçmemişsiniz demektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Liste uzunsa, listenin sağ tarafındaki kaydırma çubuğunu kullanarak daha fazla banka görebilirsiniz</li>
+                    <li>Bir bankanın üzerine çift tıklayarak da aynı detay görüntüleme sonucunu elde edebilirsiniz</li>
+                    <li>Aradığınız banka adının ilk harfini klavyeden yazarak listede hızlıca o harfe atlayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="dosya-formati" class="section">
+        <h2>Dosya Formatı Belirleme</h2>
+        <div class="info-box">
+            <h3>Dosya Formatı Türleri ve Seçimi</h3>
+            <div class="step">
+                <h4>Dosya Formatı Seçim İşlemi:</h4>
+                <ol>
+                    <li><strong>Dosya Formatı Alanının Konumu:</strong>
+                        <ul>
+                            <li>Banka ekleme penceresinde, "Banka" alanının hemen altında yer alır</li>
+                            <li>"Dosya Formatı" etiketi alanın sol tarafında, açılır liste kutusu ise sağ tarafında bulunur</li>
+                            <li>Açılır liste kutusu yaklaşık 325 piksel genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Formatı Seçenekleri:</strong>
+                        <ul>
+                            <li>Açılır listeye tıkladığınızda üç farklı dosya formatı seçeneği görüntülenir:
+                                <ul>
+                                    <li>EXCEL: Microsoft Excel formatında dosya oluşturur</li>
+                                    <li>CSV: Virgülle veya belirleyeceğiniz başka bir karakterle ayrılmış değerler formatında dosya oluşturur</li>
+                                    <li>TEXT: Düz metin formatında, belirleyeceğiniz ayraçla ayrılmış dosya oluşturur</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Format Seçme Adımları:</strong>
+                        <ul>
+                            <li>Açılır liste kutusuna tıklayın</li>
+                            <li>Görüntülenen üç format seçeneğinden (EXCEL, CSV, TEXT) birini seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanır ve seçtiğiniz format görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Format Seçiminin Etkileri:</strong>
+                        <ul>
+                            <li>EXCEL seçildiğinde: Ayraç alanı görünmez olur çünkü Excel dosyalarında ayraç kullanılmaz</li>
+                            <li>CSV seçildiğinde: Ayraç alanı görünür hale gelir ve doldurmanız gerekir</li>
+                            <li>TEXT seçildiğinde: Ayraç alanı görünür hale gelir ve doldurmanız gerekir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dosya formatı seçimi zorunludur, boş bırakılamaz</li>
+                    <li>Seçtiğiniz format, BES dosyalarının tüm yapısını belirleyeceği için dikkatli seçim yapmalısınız</li>
+                    <li>Banka sistemleri genellikle belirli bir format bekler, bankadan istenen formatı öğrenmeniz önemlidir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Dosya Formatı Karşılaştırması:</h4>
+                <ul>
+                    <li><strong>EXCEL Formatı:</strong>
+                        <ul>
+                            <li>Avantajları: Görsel olarak incelemesi kolay, filtreleme ve sıralama gibi Excel özellikleri kullanılabilir</li>
+                            <li>Dezavantajları: Dosya boyutu daha büyük olabilir, bazı sistemler otomatik işlemede zorluk yaşayabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>CSV Formatı:</strong>
+                        <ul>
+                            <li>Avantajları: Evrensel olarak desteklenir, Excel dahil birçok programla açılabilir, dosya boyutu küçüktür</li>
+                            <li>Dezavantajları: Veriler içinde ayraç karakteri varsa sorun çıkabilir, biçimlendirme özellikleri sınırlıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>TEXT Formatı:</strong>
+                        <ul>
+                            <li>Avantajları: En basit ve evrensel format, her sistemde açılabilir, dosya boyutu en küçüktür</li>
+                            <li>Dezavantajları: Biçimlendirme özellikleri yoktur, veriler arasında mantıksal bölümlendirme zor olabilir</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ayrac-tanimlama" class="section">
+        <h2>Ayraç Tanımlama</h2>
+        <div class="info-box">
+            <h3>CSV ve TEXT Formatları için Ayraç Belirleme</h3>
+            <div class="step">
+                <h4>Ayraç Tanımlama İşlemi:</h4>
+                <ol>
+                    <li><strong>Ayraç Alanının Konumu:</strong>
+                        <ul>
+                            <li>Banka ekleme penceresinde, "Dosya Formatı" alanının hemen altında yer alır</li>
+                            <li>Bu alan sadece CSV veya TEXT formatı seçildiğinde görünür hale gelir</li>
+                            <li>EXCEL formatı seçildiğinde bu alan görünmez</li>
+                            <li>"Ayraç" etiketi alanın sol tarafında, metin kutusu ise sağ tarafında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ayraç Belirleme Adımları:</strong>
+                        <ul>
+                            <li>Metin kutusuna tıklayın, imleç buraya konumlanacaktır</li>
+                            <li>Dosyada verileri birbirinden ayırmak için kullanmak istediğiniz karakteri girin
+                                <ul>
+                                    <li>En yaygın ayraçlar: virgül (,), noktalı virgül (;), tab, boru karakteri (|)</li>
+                                    <li>Sadece bir karakter girebilirsiniz, birden fazla karakter giremezsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Karakteri girdikten sonra TAB tuşuna basarak veya başka bir alana tıklayarak bir sonraki aşamaya geçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ayraç Seçim İpuçları:</strong>
+                        <ul>
+                            <li>Ayraç seçimi, dosyanızın yapısını önemli ölçüde etkiler</li>
+                            <li>Seçtiğiniz ayraç, verilerinizin içinde yaygın olarak kullanılmıyorsa iyi bir seçimdir</li>
+                            <li>Örneğin, verilerinizde çok sayıda virgül varsa, virgülü ayraç olarak seçmek sorunlara yol açabilir</li>
+                            <li>Bu durumda noktalı virgül (;) veya tab karakteri gibi alternatifler daha uygun olabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>CSV veya TEXT formatı seçildiğinde ayraç tanımlamak zorunludur</li>
+                    <li>Ayraç karakteri sadece tek bir karakter olabilir (örneğin: virgül, noktalı virgül, tab)</li>
+                    <li>Ayraç alanında boşluk karakteri de bir ayraç olarak kabul edilir</li>
+                    <li>Seçilen ayraç, verilerin içinde bulunmamalı veya çok az bulunmalıdır</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <h4>Yaygın Ayraç Karakterleri ve Kullanım Önerileri (devam):</h4>
+                <ul>
+                    <li><strong>Boru Karakteri (|):</strong>
+                        <ul>
+                            <li>Metinlerde çok nadir kullanıldığı için ideal bir ayraçtır</li>
+                            <li>Göze çarpan bir karakter olduğu için dosyayı incelemek daha kolaydır</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h4>Ayraç Seçiminde Dikkat Edilmesi Gerekenler:</h4>
+                <p>Ayracınızı belirlerken şu hususlara dikkat edin:</p>
+                <ul>
+                    <li>Hazırladığınız dosyanın hangi programda kullanılacağını düşünün</li>
+                    <li>Hedef program belirli bir ayraç bekliyorsa (örneğin virgül), onu kullanın</li>
+                    <li>Verilerinizde sık kullanılan karakterleri ayraç olarak seçmekten kaçının</li>
+                    <li>Aktarılacak verilerin içeriğine göre en uygun ayracı seçin</li>
+                </ul>
+            </div>
+            </div>
+            </div>
+            <div id="islem-butonlari" class="section">
+                <h2>İşlem Butonları Kullanımı</h2>
+                <div class="info-box">
+                    <h3>KAYDET ve KAPAT Butonları</h3>
+                    <div class="step">
+                        <h4>KAYDET Butonu Kullanımı:</h4>
+                        <ol>
+                            <li><strong>Buton Konumu:</strong>
+                                <ul>
+                                    <li>Banka tanımlama penceresinin alt kısmında, sol tarafta yer alır</li>
+                                    <li>Parlak gri (glossy) görünüme sahiptir</li>
+                                    <li>Üzerinde "KAYDET" yazısı bulunur</li>
+                                    <li>Butona fare ile yaklaştığınızda rengi hafifçe değişir (parlak hale gelir)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Kaydetme İşlemi Adımları:</strong>
+                                <ol>
+                                    <li>Gerekli tüm alanları doldurun:
+                                        <ul>
+                                            <li>Banka seçimini yapın</li>
+                                            <li>Dosya formatını seçin</li>
+                                            <li>Gerekiyorsa (CSV veya TEXT seçildiyse) ayraç belirleyin</li>
+                                        </ul>
+                                    </li>
+                                    <li>Tüm bilgileri kontrol edin</li>
+                                    <li>KAYDET butonuna tıklayın</li>
+                                    <li>İşlem başarılı olursa, pencere otomatik olarak kapanır ve banka listesi güncellenir</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="step">
+                        <h4>KAPAT Butonu Kullanımı:</h4>
+                        <ol>
+                            <li><strong>Buton Konumu:</strong>
+                                <ul>
+                                    <li>Banka tanımlama penceresinin alt kısmında, KAYDET butonunun sağında yer alır</li>
+                                    <li>KAYDET butonu ile aynı görünüme sahiptir (parlak gri)</li>
+                                    <li>Üzerinde "KAPAT" yazısı bulunur</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pencereyi Kapatma:</strong>
+                                <ul>
+                                    <li>İşlemi iptal etmek veya pencereden çıkmak istediğinizde KAPAT butonuna tıklayın</li>
+                                    <li>Butona tıkladığınızda pencere kapanır ve yapılan değişiklikler kaydedilmez</li>
+                                    <li>Ana ekrana geri dönersiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                
+                    <div class="warning-box">
+                        <h4>Önemli Uyarılar:</h4>
+                        <ul>
+                            <li>KAYDET butonuna tıklamadan önce tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                            <li>Eksik veya hatalı bilgi girildiğinde sistem uyarı verecektir</li>
+                            <li>KAPAT butonuna tıklarsanız, girdiğiniz tüm bilgiler kaybolacaktır</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="ipuclari" class="section">
+                <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+                <div class="info-box">
+                    <h3>Verimli Çalışma İçin İpuçları</h3>
+                    <div class="step">
+                        <h4>Hızlı Tuş Kombinasyonları:</h4>
+                        <ul>
+                            <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                            <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                            <li><strong>ENTER:</strong> Bazen butonları aktifleştirmek için kullanılabilir</li>
+                            <li><strong>ESC:</strong> Açık olan pencereyi kapatmak için</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                        <ol>
+                            <li><strong>"Banka Seçimi Yapılmadı" Uyarısı:</strong>
+                                <ul>
+                                    <li>Sorun: KAYDET butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                                    <li>Çözüm: Açılır listeden bir banka seçtiğinizden emin olun. "--Banka Seçiniz--" seçili kalmamalıdır.</li>
+                                </ul>
+                            </li>
+                            <li><strong>"Dosya Formatı Seçilmedi" Uyarısı:</strong>
+                                <ul>
+                                    <li>Sorun: KAYDET butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                                    <li>Çözüm: EXCEL, CSV veya TEXT seçeneklerinden birini seçtiğinizden emin olun.</li>
+                                </ul>
+                            </li>
+                            <li><strong>"Ayraç Belirlenmedi" Uyarısı:</strong>
+                                <ul>
+                                    <li>Sorun: CSV veya TEXT formatı seçtiniz ancak ayraç girmediniz.</li>
+                                    <li>Çözüm: Ayraç metin kutusuna bir karakter girdiğinizden emin olun.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Bir Banka İçin Birden Fazla Tanımlama:</strong>
+                                <ul>
+                                    <li>Sorun: Aynı banka için daha önce tanımlama yapılmış.</li>
+                                    <li>Çözüm: Yeni tanımlama yaparsanız, eskisinin üzerine yazılacaktır. Emin değilseniz önce mevcut tanımlamayı kontrol edin.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Sol Menüden Banka Seçilemiyor:</strong>
+                                <ul>
+                                    <li>Sorun: Sol bölmede banka listesi görünmüyor veya tıklandığında tepki vermiyor.</li>
+                                    <li>Çözüm: Sayfayı yenileyin veya programı kapatıp tekrar açın. Sorun devam ederse sistem yöneticinize başvurun.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                
+                    <div class="step">
+                        <h4>Verimli Çalışma Önerileri:</h4>
+                        <ul>
+                            <li>Aynı banka için farklı dosya formatları deneyecekseniz, her birini ayrı ayrı test edin</li>
+                            <li>Bankaların beklediği dosya formatlarını önceden öğrenin</li>
+                            <li>CSV ve TEXT formatları için, veri içeriğine uygun ayraç seçin</li>
+                            <li>İşlem yapmadan önce tüm alanları dikkatle kontrol edin</li>
+                            <li>Yeni bir tanımlama yaptıktan sonra, sol menüde görünüp görünmediğini kontrol edin</li>
+                        </ul>
+                    </div>
+                
+                    <div class="warning-box">
+                        <h4>Son Uyarılar:</h4>
+                        <ul>
+                            <li>BES dosya formatları, emeklilik sistemindeki kritik veri aktarımlarını etkiler, doğru tanımlanması önemlidir</li>
+                            <li>Banka değişikliklerinde veya sistem güncellemelerinde formatları gözden geçirin</li>
+                            <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Özet ve Sonuç</h2>
+                <div class="info-box">
+                    <p>BES Dosya Formatı Hazırlama programı, Bireysel Emeklilik Sistemi için gerekli dosya formatlarını tanımlamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+                    <ul>
+                        <li>Programın genel yapısı ve arayüz düzeni</li>
+                        <li>Banka tanımlama işlemleri</li>
+                        <li>Dosya formatı seçimi (EXCEL, CSV, TEXT)</li>
+                        <li>Ayraç tanımlama (CSV ve TEXT formatları için)</li>
+                        <li>İşlem butonlarının kullanımı</li>
+                        <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+                    </ul>
+                    <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+</div>
+            </div>
+</body>
+</html>

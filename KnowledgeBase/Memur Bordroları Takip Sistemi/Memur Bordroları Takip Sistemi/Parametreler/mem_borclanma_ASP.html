@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borçlanma Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Borçlanma Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#borclanma-bilgileri">Borçlanma Bilgileri</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Form İşlemleri</a>
+                    <ul>
+                        <li><a href="#yeni-kayit">Yeni Kayıt Ekleme</a></li>
+                        <li><a href="#kayit-arama">Kayıt Arama ve Bulma</a></li>
+                        <li><a href="#kayit-guncelleme">Kayıt Güncelleme</a></li>
+                        <li><a href="#kayit-silme">Kayıt Silme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Borçlanma Tanımları" ekranı, kurumunuzun borçlanma türlerine ait temel bilgilerin girilmesi, güncellenmesi ve görüntülenmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Borçlanma bilgilerini (borçlanma no, borçlanma kodu, açıklama) tanımlama ve güncelleme</li>
+                <li>Yasal kodları belirleme</li>
+                <li>Borçlanma kayıtlarını silme</li>
+                <li>Mevcut borçlanma kayıtlarını görüntüleme ve aralarında gezinme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Eklemek veya güncellemek istediğiniz borçlanma numarası</li>
+                    <li>Borçlanma kodu</li>
+                    <li>Borçlanma açıklaması</li>
+                    <li>Yasal kod (Askerlik, Ücretsiz İzin vb.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Borç Tanımları (Giriş)" veya "Borç Tanımları (Değişiklik)" başlığı yer alır.</li>
+                            <li>Bu başlık, yapacağınız işleme göre (yeni kayıt veya düzenleme) değişir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, alanlara ait etiketler ve veri giriş kutuları içerir.</li>
+                            <li>Veri giriş alanları, ekranın solundan sağına doğru sıralı şekilde düzenlenmiştir.</li>
+                            <li>Her alan etiketiyle birlikte, sola hizalı şekilde yerleştirilmiştir.</li>
+                            <li>Ana form merkezi bir konumda, küçük bir tablo olarak ekranda yer alır ve toplam genişliğin yaklaşık %50'sini kaplar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında iki satır halinde butonlar yer alır.</li>
+                            <li>Üst sırada İlk, Önceki, Sonraki, Sonuncu ve Pencere gibi navigasyon butonları bulunur.</li>
+                            <li>Alt sırada Temizle, Kaydet, Sil ve Çıkış gibi işlem butonları yer alır.</li>
+                            <li>Butonlar 3D görünümlü ve gri tonlardadır.</li>
+                            <li>Tüm butonlar formun alt kısmında, ortalanmış olarak görünür ve gri bir üst çizgi ile diğer alanlardan ayrılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Yeni kayıt girişi modunda başlar, başlık "Borç Tanımları (Giriş)" olarak görünür.</li>
+                    <li>İmleç "Borçlanma No" alanında konumlanır.</li>
+                    <li>Tüm alanlar boş olarak gösterilir.</li>
+                    <li>Sistem, bir sonraki kullanılabilir borçlanma numarasını otomatik olarak "Borçlanma No" alanına getirir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="borclanma-bilgileri" class="info-box">
+            <h3>Borçlanma Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Temel Borçlanma Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Borçlanma No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın en üst kısmında, formun ilk satırında, sol tarafta yer alan etiketten sonra gelen metin kutusudur.</li>
+                            <li><strong>Özellik:</strong> Zorunlu bir alandır. Yeni kayıt eklerken düzenlenebilir, kayıt güncellerken devre dışıdır (gri görünür).</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 4 karakter.</li>
+                            <li><strong>Kullanım:</strong> Borçlanmayı tanımlayan benzersiz numaradır, boş bırakılamaz.</li>
+                            <li><strong>Boyut:</strong> Küçük bir metin kutusu, yaklaşık 5 karakter genişliğindedir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Kodu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Borçlanma No" alanının hemen altında, formun ikinci satırında, sol tarafta bulunan etiketten sonra gelen metin kutusudur.</li>
+                            <li><strong>Özellik:</strong> Standart metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir, maksimum 20 karakter.</li>
+                            <li><strong>Kullanım:</strong> Borçlanma türüne ait kodu girin (örn. "ASK", "UIB" vb.).</li>
+                            <li><strong>Boyut:</strong> Orta büyüklükte bir metin kutusu, yaklaşık 20 karakter genişliğindedir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açıklama:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Borçlanma Kodu" alanının hemen altında, formun üçüncü satırında, sol tarafta bulunan etiketten sonra gelen metin kutusudur.</li>
+                            <li><strong>Özellik:</strong> Standart metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir, maksimum 50 karakter.</li>
+                            <li><strong>Kullanım:</strong> Borçlanma türünün açıklamasını girin (örn. "Askerlik Borçlanması", "Ücretsiz İzin Borçlanması" vb.).</li>
+                            <li><strong>Boyut:</strong> Geniş bir metin kutusu, yaklaşık 30 karakter genişliğindedir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yasal Kodu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Açıklama" alanının hemen altında, formun dördüncü satırında, sol tarafta bulunan etiketten sonra gelen açılır menü (dropdown) kutusudur.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Veri Türü:</strong> Listeden seçim yapmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden uygun yasal kodu seçin (örn. "1-Askerlik Borçlanması", "2-Ücretsiz İzin Borçlanması" vb.).</li>
+                            <li><strong>Boyut:</strong> Açılır liste kapalıyken tek satır halinde, açılınca alt alta tüm yasal kod seçeneklerini listeler.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Borçlanma Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Borçlanma No alanı zorunlu olup, boş bırakılamaz.</li>
+                    <li>Borçlanma Kodu alanı da zorunludur ve benzersiz bir değer olmalıdır.</li>
+                    <li>Açıklama alanına borçlanma türünün kolayca anlaşılabilir bir tanımını yazın.</li>
+                    <li>Yasal Kodu seçimi için açılır listeyi kullanın, manuel giriş yapılamaz.</li>
+                    <li>Bilgileri girerken TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Yasal Kod Seçenekleri:</h4>
+                <p>Yasal Kod açılır listesinde aşağıdaki seçenekler bulunur:</p>
+                <ul>
+                    <li>0 - Yasal Kodu Seçiniz</li>
+                    <li>1 - Askerlik Borçlanması</li>
+                    <li>2 - Ücretsiz İzin Borçlanması</li>
+                    <li>3 - 5434-Geçici 209 Borçlanması</li>
+                    <li>4 - Avukatlık Stajyerlik Borçlanması</li>
+                    <li>5 - Yevmiyeli Hizmet Borçlanması</li>
+                    <li>6 - Serbest Avukatlık ve Noterlikte Geçen Süreler</li>
+                    <li>7 - Yurtdışı</li>
+                    <li>8 - Fahri İmamlık Hatiplik Borçlanması</li>
+                    <li>9 - Astsubay Sınıf Okulu</li>
+                    <li>10 - 11/07/1078 Öncesi Sivil Öğrencilik Süreleri</li>
+                    <li>11 - Doktorların Fahri Asistanlık Süreleri</li>
+                    <li>12 - Seçimler Nedeniyle Açıkta Geçen Süre</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Navigasyon Butonları:</h4>
+                <ol>
+                    <li><strong>İlk (First) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, formun ilk buton satırının en sol kısmında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, başa gidiş ok simgeli.</li>
+                            <li><strong>İşlev:</strong> Sistemdeki ilk borçlanma kaydını görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Kayıtların en başına gitmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Önceki (Prev) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "İlk" butonunun hemen sağında, ilk buton satırında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, sol ok simgeli.</li>
+                            <li><strong>İşlev:</strong> Mevcut borçlanma numarasından bir önceki borçlanma kaydını görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Kaydedilmiş borçlanmaları geriye doğru gezinmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki (Next) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Önceki" butonunun hemen sağında, ilk buton satırında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, sağ ok simgeli.</li>
+                            <li><strong>İşlev:</strong> Mevcut borçlanma numarasından bir sonraki borçlanma kaydını görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Kaydedilmiş borçlanmaları ileriye doğru gezinmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son (Last) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sonraki" butonunun hemen sağında, ilk buton satırında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, sona gidiş ok simgeli.</li>
+                            <li><strong>İşlev:</strong> Sistemdeki son borçlanma kaydını görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Kayıtların en sonuna gitmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pencere (Win) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Son" butonunun hemen sağında, ilk buton satırının en sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, pencere simgeli.</li>
+                            <li><strong>İşlev:</strong> Mevcut tüm borçlanmaların listesini açar, seçim yapmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> Kayıtlı borçlanmalar arasında hızlı arama ve seçim için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Form Temizle (FormClear) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, ikinci buton satırının en sol kısmında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, silgi simgeli.</li>
+                            <li><strong>İşlev:</strong> Formdaki tüm alanları temizler ve yeni kayıt ekleme moduna geçer.</li>
+                            <li><strong>Kullanım:</strong> Formu sıfırlamak ve yeni kayıt girmeye başlamak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Form Temizle" butonunun hemen sağında, ikinci buton satırında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, diskete kaydetme simgeli.</li>
+                            <li><strong>İşlev:</strong> Formdaki bilgileri veritabanına kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Yeni kayıt eklemek veya mevcut kaydı güncellemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil (Delete) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kaydet" butonunun hemen sağında, ikinci buton satırında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, çöp kutusu simgeli.</li>
+                            <li><strong>İşlev:</strong> Görüntülenen mevcut borçlanma kaydını veritabanından siler.</li>
+                            <li><strong>Kullanım:</strong> Gösterilen kaydı silmek için tıklayın. Onay mesajı gelecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sil" butonunun hemen sağında, ikinci buton satırının en sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, çıkış kapısı simgeli.</li>
+                            <li><strong>İşlev:</strong> Borçlanma Tanımları ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> Programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonunu kullanırken dikkatli olun, silinen kayıtlar geri alınamaz!</li>
+                    <li>Bilgileri kaydetmeden Çıkış butonuna basarsanız, yaptığınız değişiklikler kaybedilir.</li>
+                    <li>Kaydet butonuna basmadan formdaki bilgiler sisteme kaydedilmez.</li>
+                    <li>Ekranın alt kısmındaki butonlar, tıklanabilir hale gelmeden önce özel bir hak kontrolünden geçer. Bazı butonlar, kullanıcı yetkilerinize bağlı olarak devre dışı görünebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Form İşlemleri</h2>
+        
+        <div id="yeni-kayit" class="info-box">
+            <h3>Yeni Kayıt Ekleme</h3>
+            
+            <div class="step">
+                <h4>Yeni Borçlanma Kaydı Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Formu Hazırlama:</strong>
+                        <ul>
+                            <li>Program açıldığında veya "Form Temizle" butonuna tıkladığınızda form temizlenir.</li>
+                            <li>Başlıkta "Borç Tanımları (Giriş)" yazısını görmelisiniz.</li>
+                            <li>Borçlanma No alanında sistem tarafından önerilen bir sonraki numara görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Girme:</strong>
+                        <ul>
+                            <li>Borçlanma No alanından başlayarak tüm gerekli bilgileri girin.</li>
+                            <li>TAB tuşu ile "Borçlanma Kodu" alanına geçin ve kodu girin.</li>
+                            <li>TAB tuşu ile "Açıklama" alanına geçin ve açıklamayı girin.</li>
+                            <li>TAB tuşu ile "Yasal Kodu" alanına geçin ve açılır listeden uygun yasal kodu seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem bilgileri kontrol edecek, sorun yoksa kayıt işlemi tamamlanacaktır.</li>
+                            <li>Kayıt işleminden sonra form temizlenir ve yeni kayıt için hazır hale gelir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Borçlanma No alanı zorunludur ve boş bırakılamaz.</li>
+                    <li>Borçlanma Kodu alanı zorunludur ve boş bırakılamaz.</li>
+                    <li>Borçlanma No benzersiz olmalıdır, var olan bir numara girildiğinde sistem uyarı verecektir.</li>
+                    <li>Otomatik kontroller ve uyarılar: Sistem, girdiğiniz Borçlanma No'yu kaydederken bir kontrol yapar ve hata durumunda "Borçlanma Tanımı Girilmemiş" şeklinde bir hata mesajı gösterir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sistem tarafından önerilen borçlanma numarasını kullanmanız tavsiye edilir.</li>
+                    <li>Borçlanma kodlarını kısa ve anlaşılır tutun.</li>
+                    <li>Açıklama alanına detaylı bilgi girmek ileride kayıt araması yaparken kolaylık sağlar.</li>
+                    <li>Yasal kod seçimini mutlaka yapın, bu tür seçimi daha sonra raporlarda kullanılacaktır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-arama" class="info-box">
+            <h3>Kayıt Arama ve Bulma</h3>
+            
+            <div class="step">
+                <h4>Borçlanma Kaydı Nasıl Aranır:</h4>
+                <ol>
+                    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borçlanma Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+                <div>
+                    <li><strong>Doğrudan Arama:</strong>
+                        <ul>
+                            <li>Borçlanma No alanına aradığınız borçlanmanın numarasını yazın.</li>
+                            <li>TAB tuşuna basın veya alanın dışına tıklayın.</li>
+                            <li>Sistem otomatik olarak bu numaraya sahip borçlanmayı arayacak ve bulursa tüm bilgileri görüntüleyecektir.</li>
+                            <li>Sistem, numara değiştiğinde otomatik olarak veritabanında bu numarayı arayacaktır. Numara mevcut değilse boş bir form gösterilir, mevcutsa kayıt detayları yüklenir.</li>
+                            <li>Numara girilince "Borçlanma Tanımı Girilmemiş" uyarısı alıyorsanız, bu numara kayıtlı değildir ve yeni bir kayıt olarak ekleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Kullanarak Arama:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Pencere (Win)" butonuna tıklayın.</li>
+                            <li>Açılan pencerede tüm borçlanmaların listesi görüntülenecektir.</li>
+                            <li>Kayıt No ve Açıklama sütunlarına göre sıralanmış liste içinden istediğiniz borçlanmayı bulabilirsiniz.</li>
+                            <li>İstediğiniz borçlanmaya tıklayın, seçilen borçlanmanın tüm bilgileri ana ekranda görüntülenecektir.</li>
+                            <li>Bu liste, tam ekran boyutunda açılır ve kapatıldığında seçilen kaydın detayları ana ekranda görünür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Navigasyon Butonları ile Gezinme:</strong>
+                        <ul>
+                            <li>Mevcut bir borçlanma açıkken "İlk" butonu ile kayıtların en başına gidebilirsiniz.</li>
+                            <li>Mevcut bir borçlanma açıkken "Önceki" butonu ile bir önceki borçlanmaya gidebilirsiniz.</li>
+                            <li>Mevcut bir borçlanma açıkken "Sonraki" butonu ile bir sonraki borçlanmaya gidebilirsiniz.</li>
+                            <li>Mevcut bir borçlanma açıkken "Son" butonu ile kayıtların en sonuna gidebilirsiniz.</li>
+                            <li>Ekranda hiçbir borçlanma açık değilse, "Önceki" butonu 99999 numaralı kayıttan, "Sonraki" butonu ise 0 numaralı kayıttan başlayarak arama yapar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Win Butonu ile Kayıt Arama:</h4>
+                <ol>
+                    <li>Ekranın alt kısmındaki "Win" (Pencere) butonuna tıklayın.</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>Üst kısımda borçlanma listesi görüntülenecektir.</li>
+                            <li>Liste kayıt numarası ve açıklama bilgilerini sütunlar halinde gösterir.</li>
+                            <li>Pencere büyük bir boyutta açılır ve ekranın tamamını kaplar (yaklaşık 700x450 piksel).</li>
+                            <li>İstediğiniz borçlanmayı seçmek için üzerine tıklayın.</li>
+                            <li>Pencere otomatik olarak kapanır ve seçtiğiniz borçlanma bilgileri ana forma yüklenir.</li>
+                            <li>Bu ekranda bir kerede 25 kayıt görüntülenir, daha fazla kayıt varsa sayfalama düğmeleri ile diğer sayfalara geçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li>Listedeki kolonlar arasında gezinmek ve sıralamak için:
+                        <ul>
+                            <li>Kolon başlıklarına tıklayarak sıralama yapabilirsiniz.</li>
+                            <li>Aşağı-yukarı ok tuşları ile liste içinde hareket edebilirsiniz.</li>
+                            <li>Bir borçlanmanın adını veya numarasını biliyorsanız, ilk harflerini yazarak hızlı erişim sağlayabilirsiniz.</li>
+                            <li>Aradığınız veriyi bulduğunuzda üzerine tıklayın ve seçiminiz ana ekrana yansıtılacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Arama İpuçları:</h4>
+                <ul>
+                    <li>Borçlanma numarasını biliyorsanız, doğrudan Borçlanma No alanına yazarak en hızlı şekilde ulaşabilirsiniz.</li>
+                    <li>Açıklaması ile aramak istiyorsanız, Win butonu ile açılan listede bulabilirsiniz.</li>
+                    <li>Navigasyon butonları, tüm borçlanmaları sırayla görmek istediğinizde kullanışlıdır.</li>
+                    <li>Win butonuyla açılan liste ekranında 25 kayıt görüntülenir. Bu, büyük veri tabanlarında aramayı kolaylaştırır.</li>
+                    <li>Ekran her yenilendiğinde (başka bir kaydı görüntülediğinizde), formun başlığı "Borç Tanımları (Değişiklik)" olarak değişir ve bu, kayıt güncelleme modunda olduğunuzu gösterir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-guncelleme" class="info-box">
+            <h3>Kayıt Güncelleme</h3>
+            
+            <div class="step">
+                <h4>Borçlanma Kaydı Nasıl Güncellenir:</h4>
+                <ol>
+                    <li><strong>Güncellenecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Önceki bölümde anlatıldığı gibi güncellemek istediğiniz borçlanma kaydını bulun.</li>
+                            <li>Kayıt açıldığında başlıkta "Borç Tanımları (Değişiklik)" yazısını görmelisiniz.</li>
+                            <li>Borçlanma No alanının devre dışı (gri) olduğunu ve değiştirilemediğini göreceksiniz. Güncelleme modunda bu alan otomatik olarak devre dışı bırakılır.</li>
+                            <li>Kayıt bulunduktan sonra, kayıt güncelleme moduna otomatik olarak geçilir ve form güncellenebilir hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ul>
+                            <li>Değiştirmek istediğiniz alanlara tıklayın ve yeni bilgileri girin.</li>
+                            <li>Borçlanma Kodunu, Açıklamayı veya Yasal Kodu değiştirebilirsiniz.</li>
+                            <li>Borçlanma No'yu değiştiremezsiniz, bu alan kayıtlar arası ilişkiyi korumak için sabittir.</li>
+                            <li>Alanlar arasında geçiş için TAB tuşunu kullanabilirsiniz.</li>
+                            <li>Seçilen yasal kodu değiştirmek için açılır listeyi kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm güncellemeleri yaptıktan sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem bilgileri kontrol edecek, sorun yoksa güncelleme işlemi tamamlanacaktır.</li>
+                            <li>Güncelleme işleminden sonra form yeni kayıt için hazır hale gelir ve yeni boş bir forma dönüşür.</li>
+                            <li>Form başlığı "Borç Tanımları (Giriş)" olarak değişir ve yeni bir kayıt ekleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Güncelleme modunda Borçlanma No değiştirilemez, bu alan devre dışıdır.</li>
+                    <li>Kaydetmeden başka bir kayda geçerseniz veya çıkış yaparsanız, yaptığınız değişiklikler kaybedilir.</li>
+                    <li>Zorunlu alanları (Borçlanma Kodu) boş bırakırsanız, sistem kaydetme işlemine izin vermeyecektir.</li>
+                    <li>Bir kaydı güncelledikten sonra sistem, güncellenen kaydı değil yeni bir kayıt formunu gösterir. Güncellenmiş kaydı tekrar görmek için arama yapmanız gerekir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Güncelleme İpuçları:</h4>
+                <ul>
+                    <li>Sadece değiştirmek istediğiniz alanları güncelleyin, diğer alanları olduğu gibi bırakabilirsiniz.</li>
+                    <li>Bir alanın içeriğini tamamen silmek için içindeki metni seçip Delete tuşuna basın.</li>
+                    <li>Yasal kodu değiştirirken açılır listeden yeni bir değer seçin.</li>
+                    <li>Bir veriyi güncelledikten sonra tekrar kontrol etmek istiyorsanız, Borçlanma No'sunu not alın ve işlemden sonra tekrar arayın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-silme" class="info-box">
+            <h3>Kayıt Silme</h3>
+            
+            <div class="step">
+                <h4>Borçlanma Kaydı Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Önceki bölümlerde anlatıldığı gibi silmek istediğiniz borçlanma kaydını bulun.</li>
+                            <li>Kayıt açıldığında başlıkta "Borç Tanımları (Değişiklik)" yazısını görmelisiniz.</li>
+                            <li>Kayıt ekranda görüntülenmeden silme işlemi yapılamaz, önce kaydı bulmalısınız.</li>
+                            <li>Kaydın tüm bilgilerinin ekranda görüntülendiğinden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Sil" butonuna tıklayın.</li>
+                            <li>Sistem size "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir.</li>
+                            <li>Bu mesaj kutusu, bilgisayarınızın ekranında ortada görünür.</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Sonrası:</strong>
+                        <ul>
+                            <li>Silme işlemi onaylandıktan sonra kayıt sistemden tamamen silinecektir.</li>
+                            <li>Form temizlenir ve yeni kayıt için hazır hale gelir.</li>
+                            <li>Başlık "Borç Tanımları (Giriş)" olarak değişir.</li>
+                            <li>Sistem otomatik olarak bir sonraki kullanılabilir kayıt numarasını önerir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz! Silinen kayıtlar sistemden tamamen kaldırılır.</li>
+                    <li>Diğer modüller veya işlemler tarafından kullanılan borçlanma türlerini silmek, sistem hatalarına neden olabilir.</li>
+                    <li>Silmeye çalıştığınız borçlanmanın ilişkili kayıtları varsa "Bu Kaydın Borçlanma Kaydı Vardır" uyarısı alırsınız ve silme işlemi gerçekleşmez.</li>
+                    <li>Bu hata mesajı, ekranın üst kısmında beliren bir iletişim kutusunda görünür.</li>
+                    <li>Sik kullanılan ve önemli borçlanma kayıtlarını silmekten kaçının, bu işlem veri bütünlüğünü bozabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Silme İşlemi İpuçları:</h4>
+                <ul>
+                    <li>Emin olmadığınız durumlarda silme işlemi yapmamaya özen gösterin.</li>
+                    <li>Önemli borçlanma kayıtlarını silmeden önce bilgilerini not etmeniz faydalı olabilir.</li>
+                    <li>Test amaçlı oluşturulmuş borçlanma kayıtlarını düzenli olarak temizleyin.</li>
+                    <li>Silme işlemi sırasında bir hata alırsanız, kaydın ilişkilerini kontrol edin ve önce ilişkili kayıtları temizleyin.</li>
+                    <li>Borçlanma kayıtlarını silmeden önce, sistem yöneticinize danışmanız önerilir, çünkü bu kayıtlar diğer işlemlerle ilişkili olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + S</td>
+                        <td>Kaydet butonuna basar</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + D</td>
+                        <td>Sil butonuna basar</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + X</td>
+                        <td>Çıkış butonuna basar</td>
+                    </tr>
+                    <tr>
+                        <td>CTRL + A</td>
+                        <td>Metin kutusundaki tüm metni seçer</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Kısayol Tuşlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için TAB veya ENTER tuşunu kullanın.</li>
+                            <li>Bir önceki alana dönmek için SHIFT + TAB tuş kombinasyonunu kullanın.</li>
+                            <li>Programdan çıkmak için herhangi bir anda ESC tuşuna basabilirsiniz. Bu tuş, ekranın sağ alt köşesindeki Çıkış butonuyla aynı işlevi görür.</li>
+                            <li>ESC tuşuna bastığınızda, eğer veri girişi yaptıysanız bir onay kutusu görüntülenir ve değişiklikleri kaydetmeden çıkmak istediğinizi onaylamanız istenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metin Kutularında:</strong>
+                        <ul>
+                            <li>Metin içinde hızlı hareket etmek için ok tuşlarını kullanın.</li>
+                            <li>Metni tamamen seçmek için CTRL + A tuş kombinasyonunu kullanın.</li>
+                            <li>Metin kutusundaki içeriği silmek için DELETE veya BACKSPACE tuşlarını kullanın.</li>
+                            <li>Metin kutusunda bir karakteri değiştirmek için, imleç o karakterin üzerine getirilir ve yeni karakter yazılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açılır Listelerde:</strong>
+                        <ul>
+                            <li>Listeyi açmak için ALT + Aşağı Ok tuşlarını kullanın veya listenin sağındaki aşağı ok simgesine tıklayın.</li>
+                            <li>Listede gezinmek için Yukarı ve Aşağı ok tuşlarını kullanın.</li>
+                            <li>Seçim yapmak için ENTER tuşunu kullanın veya seçmek istediğiniz öğeye fare ile tıklayın.</li>
+                            <li>Liste açıkken, öğelerin ilk harflerini yazarak hızlı bir şekilde o harfle başlayan öğelere gidebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan tüm işlemleri klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>En sık kullandığınız kısayol tuşlarını ezberleyin, bu işlem sürenizi kısaltacaktır.</li>
+                    <li>Yeni başlayanlar önce bir süre fare ile kullanıp, zamanla kısayol tuşlarına geçebilirler.</li>
+                    <li>TAB tuşu, form üzerinde tanımlanmış sekme sırasına göre ilerler, bu da verileri mantıksal bir sırayla girmenizi kolaylaştırır.</li>
+                    <li>Win butonuyla açılan pencerede de klavye kısayolları kullanılabilir; bu pencerede ESC tuşu pencereyi kapatır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Borçlanma Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Borçlanma No alanının boş olmadığından emin olun.</li>
+                            <li>Borçlanma Kodu alanının boş olmadığından emin olun.</li>
+                            <li>Borçlanma No'nun benzersiz olduğunu kontrol edin, aynı numara ile başka kayıt olabilir.</li>
+                            <li>Borçlanma No alanı için sayısal bir değer girdiğinizden emin olun, maksimum 4 haneli bir sayı olmalıdır.</li>
+                            <li>Hata mesajını dikkatlice okuyun, sorunu belirten bilgi içerebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Bulunamıyor:</strong>
+                        <ul>
+                            <li>Borçlanma numarasını doğru girdiğinizden emin olun.</li>
+                            <li>Win butonunu kullanarak tüm borçlanmaları listeleyin ve aradığınız borçlanmanın var olduğunu doğrulayın.</li>
+                            <li>Aradığınız borçlanmanın daha önce silinmemiş olduğundan emin olun.</li>
+                            <li>Eğer sistem numarayı bulamıyorsa ve boş bir form gösteriyorsa, bu numara henüz kaydedilmemiş demektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Silinemedi:</strong>
+                        <ul>
+                            <li>Borçlanmaya bağlı kayıtlar olabilir, "Bu Kaydın Borçlanma Kaydı Vardır" uyarısını kontrol edin.</li>
+                            <li>Borçlanmanın diğer işlemler tarafından kullanılmadığından emin olun.</li>
+                            <li>Yönetici haklarınız olduğundan emin olun, bazı kayıtları sadece yöneticiler silebilir.</li>
+                            <li>İlişkili kayıtları önce temizleyip sonra tekrar silmeyi deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sistem Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li>Kaydetme veya arama işlemi sırasında sistem yoğunluğuna bağlı olarak kısa bir gecikme olabilir, biraz bekleyin.</li>
+                            <li>İşlem çok uzun sürüyorsa, ESC tuşuna basarak programı kapatıp tekrar açmayı deneyin.</li>
+                            <li>Form Temizle butonunu kullanarak formu sıfırlayın ve yeniden başlayın.</li>
+                            <li>Sorun devam ederse, sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Hakları Sorunu:</strong>
+                        <ul>
+                            <li>Eğer belirli butonlar veya işlevler devre dışı görünüyorsa, bu kullanıcı haklarınızın bu işlemleri yapmaya izin vermediği anlamına gelir.</li>
+                            <li>Sistem ilk açıldığında, kullanıcı haklarınız otomatik olarak kontrol edilir.</li>
+                            <li>Gerekli yetkilerin tanımlanması için sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Veri Girişi İçin:</strong>
+                        <ul>
+                            <li>Tüm verileri önceden hazırlayın, bu şekilde giriş yaparken zaman kaybetmezsiniz.</li>
+                            <li>Benzer borçlanma türleri için tutarlı kodlar kullanın (örn. ASK: Askerlik, UIZ: Ücretsiz İzin).</li>
+                            <li>TAB tuşunu kullanarak alanlar arasında hızlıca gezinin, bu fare kullanımından daha hızlıdır.</li>
+                            <li>Açıklama alanlarını anlaşılır ve belirleyici bir şekilde doldurun, bu arama yaparken size yardımcı olacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Arama İçin:</strong>
+                        <ul>
+                            <li>Sık kullandığınız borçlanma numaralarını bir yere not edin, hızlı erişim sağlar.</li>
+                            <li>Win butonu ile kayıt listelemesi yaparak genel bir bakış elde edebilirsiniz.</li>
+                            <li>Kolon başlıklarına tıklayarak sıralama yapabilirsiniz.</li>
+                            <li>Daha önceden girmiş olduğunuz bir kayıt için, önce Borçlanma No alanına numarayı girin ve TAB tuşuna basın. Sistem otomatik olarak kaydı arayacaktır.</li>
+                        </ul>
+                        <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borçlanma Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>Benzer borçlanmaları eklerken, önce bir tanesini oluşturun, sonra kopyalayıp değişiklikleri yapın.</li>
+                            <li>Karmaşık açıklama metinlerini önce bir metin editöründe hazırlayıp sonra kopyalayabilirsiniz.</li>
+                            <li>Düzenli olarak yaptığınız işlemleri not alın, bu şekilde prosedürleri unutmazsınız.</li>
+                            <li>Her bir form işleminden sonra verilerin doğruluğunu kontrol edin. Kaydettikten sonra kaydı tekrar açarak girdiğiniz bilgileri doğrulayın.</li>
+                            <li>Yasal kodların doğru seçildiğinden emin olun, bu kodlar diğer sistemlerde raporlama için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Önemli borçlanma bilgilerini değiştirmeden önce mevcut bilgileri not alın.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, veriler kritik öneme sahip olabilir.</li>
+                    <li>Bilgisayarınızı kısa süreliğine bile olsa bırakacaksanız programdan çıkış yapın, bu veri güvenliğini sağlar.</li>
+                    <li>Yasal kodlar gibi önemli tanımlamalar, yasal raporlarda ve bildirimlerde kullanılır, doğru seçilmeleri çok önemlidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Borçlanma bilgilerini düzenli olarak kontrol edin ve güncel tutun.</li>
+                    <li>Yasal kodların doğru seçildiğinden emin olun, bu kodlar raporlama ve analiz işlemlerinde kullanılacaktır.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Formlar arasında pencereler ve açılır kutular vasıtasıyla veri aktarımı yapıldığını unutmayın. Win butonundan seçilen bir kayıt, ana forma otomatik olarak aktarılır.</li>
+                    <li>Borçlanma No girerken yanlışlıkla TAB tuşuna basarsanız ve Borçlanma Tanımı Girilmemiş uyarısı alırsanız, lütfen bu uyarıyı kapatıp işleminize devam edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Gizli Alanlar ve Sistem Bilgileri</h2>
+        <div class="info-box">
+            <p>Borçlanma Tanımları ekranında, kullanıcıya normalde görünmeyen bazı gizli alanlar bulunmaktadır. Bu alanlar sistem tarafından kullanılır ve normal kullanıcı işlemlerinde görünmez veya müdahale gerektirmez.</p>
+            
+            <div class="warning-box">
+                <h4>Gizli Alanlar Hakkında Bilgi:</h4>
+                <ul>
+                    <li>Ekranda "Hidden_Elements" adlı gizli bir bölüm vardır. Bu bölüm normalde görünmez, ancak çeşitli sistem parametrelerini içerir.</li>
+                    <li>Bu alanlar arasında bugünün tarihi, form işlem türleri, hata mesajları ve pencere değişkenleri bulunur.</li>
+                    <li>Bu alanlara müdahale etmeyin, sistem tarafından otomatik olarak yönetilirler.</li>
+                    <li>Hata mesajları alırsanız, bu gizli alanların değerleri sistem yöneticiniz için hata teşhisi yapmada önemli olabilir.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Sistem Bilgileri İpuçları:</h4>
+                <p>Eğer bir sorunla karşılaşırsanız ve sistem yöneticinize bildirmeniz gerekirse, aşağıdaki bilgileri sağlamanız faydalı olacaktır:</p>
+                <ul>
+                    <li>Yaptığınız işlem (ekleme, güncelleme, silme)</li>
+                    <li>İşlem sırasında kullandığınız Borçlanma No</li>
+                    <li>Gördüğünüz hata mesajının tam metni</li>
+                    <li>Ekranın başlığında görünen tam metin ("Borç Tanımları (Giriş)" veya "Borç Tanımları (Değişiklik)")</li>
+                    <li>Hatanın oluştuğu tarih ve saat</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Borçlanma Tanımları ekranı, kurumunuzun borçlanma türlerini etkili bir şekilde yönetmenizi sağlayan kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu ekranda yapılan tanımlamalar, personel borçlanma işlemlerinin temelini oluşturur ve doğru yapılandırılması, tüm borçlanma işlemlerinin sağlıklı yürütülmesi için kritik öneme sahiptir. Borçlanma türlerini tanımlarken, özellikle yasal kodlar konusunda dikkatli olmanız, kurumsal ve yasal raporlamaların doğru yapılabilmesi için çok önemlidir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Bilgilerinizi düzenli olarak kaydedin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Önemli bilgileri doğrulayın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                    <li>Yasal kodlar için kurumunuzun belirlediği standartları takip edin.</li>
+                    <li>Şüpheli durumda işlemi gerçekleştirmeden önce bir uzmana danışın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Ödeme Maaş Tipi Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yan Ödeme Maaş Tipi Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#islemler">Ekran İşlemleri</a>
+                    <ul>
+                        <li><a href="#maastip-secimi">Maaş Tipi Seçimi</a></li>
+                        <li><a href="#yanodeme-ekleme">Yan Ödeme Ekleme</a></li>
+                        <li><a href="#yanodeme-silme">Yan Ödeme Silme</a></li>
+                        <li><a href="#kayit-temizleme">Kayıtları Temizleme</a></li>
+                        <li><a href="#kayit-kaydetme">Kayıtları Kaydetme</a></li>
+                        <li><a href="#kayit-silme">Tüm Kayıtları Silme</a></li>
+                        <li><a href="#kayit-kopyalama">Kayıt Kopyalama</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#hizli-arama">Hızlı Arama ve Liste Görünümü</a></li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Yan Ödeme Maaş Tipi Tanımları" ekranı, personele yapılacak yan ödemelerin maaş tiplerine göre tanımlanması için kullanılan bir araçtır. Bu ekran sayesinde:</p>
+            <ul>
+                <li>Farklı maaş tiplerine hangi yan ödemelerin yapılacağını belirleyebilirsiniz</li>
+                <li>Her maaş tipi için ayrı yan ödeme kombinasyonları oluşturabilirsiniz</li>
+                <li>Mevcut yan ödeme-maaş tipi ilişkilerini düzenleyebilirsiniz</li>
+                <li>Yan ödeme-maaş tipi ilişkilerini silebilirsiniz</li>
+                <li>Bir maaş tipinden diğerine yan ödeme tanımlarını kopyalayabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu ekranı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlama yapacağınız maaş tipinin adı veya kodu</li>
+                    <li>Maaş tipine bağlamak istediğiniz yan ödemelerin listesi</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Butonlara tıkladığınızda işlemler hemen gerçekleşir, bazıları geri alınamaz (özellikle silme işlemleri).</li>
+                    <li>Kaydetmeden Çıkış butonuna basarsanız, yaptığınız değişiklikler kaydedilmez.</li>
+                    <li>Kaydet butonuna basmadan formdaki değişiklikler sisteme kaydedilmez.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hizli-arama" class="section">
+        <h2>Hızlı Arama ve Liste Görünümü</h2>
+        <div class="info-box">
+            <h3>Liste Penceresini Kullanma</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipi Listesini Kullanma:</h4>
+                <ol>
+                    <li><strong>Liste Penceresini Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Liste" (Win) butonuna tıklayın.</li>
+                            <li>Açılan pencerede, sistemde tanımlı olan ve yan ödeme kaydı bulunan maaş tiplerinin listesini göreceksiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Listede yukarı-aşağı ok tuşlarını kullanarak gezinebilirsiniz.</li>
+                            <li>Liste içinde bir maaş tipini bulmak için, klavyeden o maaş tipinin ilk harflerini yazabilirsiniz.</li>
+                            <li>Kolon başlıklarına tıklayarak listeyi sıralayabilirsiniz (örneğin, Kayıt No'ya veya Maaş Tipi'ne göre).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçme:</strong>
+                        <ul>
+                            <li>İstediğiniz maaş tipine tıkladığınızda, bu maaş tipi seçilmiş olur.</li>
+                            <li>Seçtiğiniz maaş tipi ana ekrana aktarılır ve o maaş tipine ait yan ödeme tanımları görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Liste Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Liste penceresi, özellikle çok sayıda maaş tipi tanımı olan sistemlerde aradığınız maaş tipini hızlıca bulmanızı sağlar.</li>
+                    <li>Maaş tiplerini isme göre aramak için, liste açıldıktan sonra klavyeden aradığınız maaş tipinin ilk harflerini yazabilirsiniz.</li>
+                    <li>Liste penceresinde sadece daha önce yan ödeme tanımı yapılmış maaş tipleri görüntülenir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar (onay sorar)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan TAB tuşuyla alanlar arasında hızlıca geçiş yapabilirsiniz.</li>
+                    <li>Listelerde ok tuşlarını kullanarak yukarı-aşağı hareket edebilirsiniz.</li>
+                    <li>Açılır listelerde, aradığınız öğenin ilk harfini yazarak hızlı seçim yapabilirsiniz.</li>
+                    <li>ESC tuşu ile programdan çıkmadan önce kaydetmediğiniz değişiklikler kaybolacaktır, dikkatli olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçilemiyor:</strong>
+                        <ul>
+                            <li>Maaş tipi açılır listesi boş görünüyorsa, sistemde tanımlı maaş tipi olmayabilir.</li>
+                            <li>Bu durumda önce maaş tipi tanımlarının yapılması gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Eklenemiyor:</strong>
+                        <ul>
+                            <li>Maaş tipi seçilmeden yan ödeme eklenemez, önce maaş tipini seçin.</li>
+                            <li>Aynı yan ödemeyi bir maaş tipine iki kez ekleyemezsiniz, sistem uyarı verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Değişiklikleri yaptıktan sonra "Kaydet" butonuna bastığınızdan emin olun.</li>
+                            <li>Maaş tipi seçilmeden kaydetme yapılamaz, sistem uyarı verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama İşlemi Yapılamıyor:</strong>
+                        <ul>
+                            <li>Kopyalama işlemi için hem kaynak hem de hedef maaş tiplerinin tanımlı olması gerekir.</li>
+                            <li>Kopyalama yaparken doğru maaş tiplerini seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Yan Ödeme Ekleme İçin:</strong>
+                        <ul>
+                            <li>Birden fazla yan ödeme eklerken, her ekleme için "Yeni Kayıt" butonunu kullanın.</li>
+                            <li>Benzer maaş tiplerine benzer yan ödemeler tanımlanacaksa, kopyalama özelliğini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçimi İçin:</strong>
+                        <ul>
+                            <li>Çok sayıda maaş tipi varsa, "Liste" butonunu kullanarak hızlıca arama yapabilirsiniz.</li>
+                            <li>Sık kullandığınız maaş tiplerinin kodlarını not edin, doğrudan listeyi açmadan seçim yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>İşlemlerinizi tamamladıktan sonra her zaman "Kaydet" butonuna basın.</li>
+                            <li>Yeni bir işleme başlamadan önce "Temizle" butonunu kullanın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Önemli tanımları değiştirmeden veya silmeden önce mevcut durumu kontrol edin.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, veriler kritik öneme sahip olabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Maaş tipi ve yan ödeme tanımlarını düzenli olarak kontrol edin ve güncel tutun.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Yeni bir işlem yapmadan önce ilgili tanımları tekrar kontrol edin, bu potansiyel hataları önler.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Yan Ödeme Maaş Tipi Tanımları ekranı, kurumunuzun personel maaş tiplerinde kullanacağı yan ödemeleri tanımlamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Değişikliklerinizi düzenli olarak kaydedin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Maaş tipi seçimini doğru yaptığınızdan emin olun.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="hizli-arama" class="section">
+        <h2>Hızlı Arama ve Liste Görünümü</h2>
+        <div class="info-box">
+            <h3>Liste Penceresini Kullanma</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipi Listesini Kullanma:</h4>
+                <ol>
+                    <li><strong>Liste Penceresini Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Liste" (Win) butonuna tıklayın.</li>
+                            <li>Açılan pencerede, sistemde tanımlı olan ve yan ödeme kaydı bulunan maaş tiplerinin listesini göreceksiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Listede yukarı-aşağı ok tuşlarını kullanarak gezinebilirsiniz.</li>
+                            <li>Liste içinde bir maaş tipini bulmak için, klavyeden o maaş tipinin ilk harflerini yazabilirsiniz.</li>
+                            <li>Kolon başlıklarına tıklayarak listeyi sıralayabilirsiniz (örneğin, Kayıt No'ya veya Maaş Tipi'ne göre).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçme:</strong>
+                        <ul>
+                            <li>İstediğiniz maaş tipine tıkladığınızda, bu maaş tipi seçilmiş olur.</li>
+                            <li>Seçtiğiniz maaş tipi ana ekrana aktarılır ve o maaş tipine ait yan ödeme tanımları görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Liste Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Liste penceresi, özellikle çok sayıda maaş tipi tanımı olan sistemlerde aradığınız maaş tipini hızlıca bulmanızı sağlar.</li>
+                    <li>Maaş tiplerini isme göre aramak için, liste açıldıktan sonra klavyeden aradığınız maaş tipinin ilk harflerini yazabilirsiniz.</li>
+                    <li>Liste penceresinde sadece daha önce yan ödeme tanımı yapılmış maaş tipleri görüntülenir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar (onay sorar)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan TAB tuşuyla alanlar arasında hızlıca geçiş yapabilirsiniz.</li>
+                    <li>Listelerde ok tuşlarını kullanarak yukarı-aşağı hareket edebilirsiniz.</li>
+                    <li>Açılır listelerde, aradığınız öğenin ilk harfini yazarak hızlı seçim yapabilirsiniz.</li>
+                    <li>ESC tuşu ile programdan çıkmadan önce kaydetmediğiniz değişiklikler kaybolacaktır, dikkatli olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçilemiyor:</strong>
+                        <ul>
+                            <li>Maaş tipi açılır listesi boş görünüyorsa, sistemde tanımlı maaş tipi olmayabilir.</li>
+                            <li>Bu durumda önce maaş tipi tanımlarının yapılması gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Eklenemiyor:</strong>
+                        <ul>
+                            <li>Maaş tipi seçilmeden yan ödeme eklenemez, önce maaş tipini seçin.</li>
+                            <li>Aynı yan ödemeyi bir maaş tipine iki kez ekleyemezsiniz, sistem uyarı verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Değişiklikleri yaptıktan sonra "Kaydet" butonuna bastığınızdan emin olun.</li>
+                            <li>Maaş tipi seçilmeden kaydetme yapılamaz, sistem uyarı verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama İşlemi Yapılamıyor:</strong>
+                        <ul>
+                            <li>Kopyalama işlemi için hem kaynak hem de hedef maaş tiplerinin tanımlı olması gerekir.</li>
+                            <li>Kopyalama yaparken doğru maaş tiplerini seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Yan Ödeme Ekleme İçin:</strong>
+                        <ul>
+                            <li>Birden fazla yan ödeme eklerken, her ekleme için "Yeni Kayıt" butonunu kullanın.</li>
+                            <li>Benzer maaş tiplerine benzer yan ödemeler tanımlanacaksa, kopyalama özelliğini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçimi İçin:</strong>
+                        <ul>
+                            <li>Çok sayıda maaş tipi varsa, "Liste" butonunu kullanarak hızlıca arama yapabilirsiniz.</li>
+                            <li>Sık kullandığınız maaş tiplerinin kodlarını not edin, doğrudan listeyi açmadan seçim yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>İşlemlerinizi tamamladıktan sonra her zaman "Kaydet" butonuna basın.</li>
+                            <li>Yeni bir işleme başlamadan önce "Temizle" butonunu kullanın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Önemli tanımları değiştirmeden veya silmeden önce mevcut durumu kontrol edin.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, veriler kritik öneme sahip olabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Maaş tipi ve yan ödeme tanımlarını düzenli olarak kontrol edin ve güncel tutun.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Yeni bir işlem yapmadan önce ilgili tanımları tekrar kontrol edin, bu potansiyel hataları önler.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Yan Ödeme Maaş Tipi Tanımları ekranı, kurumunuzun personel maaş tiplerinde kullanacağı yan ödemeleri tanımlamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Değişikliklerinizi düzenli olarak kaydedin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Maaş tipi seçimini doğru yaptığınızdan emin olun.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında turkuaz renkli bir şeritte "Yan Ödeme Maaş Tipi Tanımları" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçim Alanı:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında solda "Maaş Tipi" etiketi ve sağında açılır liste (dropdown) menüsü bulunur.</li>
+                            <li>Bu açılır listeden işlem yapacağınız maaş tipini seçersiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Listesi Alanı:</strong>
+                        <ul>
+                            <li>Maaş tipi seçim alanının altında "Yan Ödeme" başlıklı bir liste alanı bulunur.</li>
+                            <li>Bu alanda seçili maaş tipine bağlı yan ödemeler görüntülenir ve düzenlenir.</li>
+                            <li>Her satırda bir yan ödeme seçilebilir.</li>
+                            <li>Satırların en solunda silme (çöp kutusu) butonu yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında işlem butonları yer alır.</li>
+                            <li>Yeni Kayıt, Temizle, Kaydet, Sil, Liste, Kopyala ve Çıkış butonları bulunur.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yan Ödeme Liste Alanındaki Butonlar:</h4>
+                <ol>
+                    <li><strong>Satır Silme Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Her yan ödeme satırının en solunda yer alır.</li>
+                            <li><strong>Görünüm:</strong> Küçük bir çöp kutusu simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Tıklandığı satırdaki yan ödemeyi listeden kaldırır.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir yan ödemeyi maaş tipinden çıkarmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Maaş tipi seçim alanı boş olarak görünür.</li>
+                    <li>Henüz bir maaş tipi seçilmediği için yan ödeme listesi boş olarak görüntülenir.</li>
+                    <li>İlk olarak bir maaş tipi seçmeniz gerekir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Ekran İşlemleri</h2>
+        
+        <div id="maastip-secimi" class="info-box">
+            <h3>Maaş Tipi Seçimi</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Açılır Listesini Açma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında sol tarafta yer alan "Maaş Tipi" etiketinin yanındaki açılır listeye tıklayın.</li>
+                            <li>Liste açıldığında sistemde tanımlı olan tüm maaş tiplerini göreceksiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçimi:</strong>
+                        <ul>
+                            <li>Açılır listeden işlem yapmak istediğiniz maaş tipine tıklayarak seçin.</li>
+                            <li>Seçiminizi yaptığınız anda, ekran otomatik olarak yenilenir.</li>
+                            <li>Eğer seçtiğiniz maaş tipi için daha önce yan ödeme tanımları yapılmışsa, bu tanımlar yan ödeme listesinde görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Maaş Tipi Seçim İpuçları:</h4>
+                <ul>
+                    <li>Eğer aradığınız maaş tipi listede görünmüyorsa, önce ilgili maaş tipinin tanımlı olduğundan emin olun.</li>
+                    <li>Maaş tipi seçildiğinde, o maaş tipine ait tüm yan ödeme tanımları otomatik olarak yüklenir.</li>
+                    <li>Maaş tipi seçildikten sonra, yan ödeme listesinin altındaki "Yeni Kayıt" butonuna tıklayarak yeni yan ödeme ekleyebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="yanodeme-ekleme" class="info-box">
+            <h3>Yan Ödeme Ekleme</h3>
+            
+            <div class="step">
+                <h4>Yan Ödeme Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçme:</strong>
+                        <ul>
+                            <li>Öncelikle yan ödeme eklemek istediğiniz maaş tipini seçin.</li>
+                            <li>Maaş tipi seçildikten sonra, yan ödeme listesi görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Yeni Kayıt" butonuna tıklayın.</li>
+                            <li>Bu işlem, yan ödeme listesine yeni bir boş satır ekler.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Seçimi:</strong>
+                        <ul>
+                            <li>Yeni eklenen satırdaki açılır listeye tıklayın.</li>
+                            <li>Açılan listeden eklemek istediğiniz yan ödemeyi seçin.</li>
+                            <li>Seçtiğiniz yan ödeme listeye eklenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eklenen Yan Ödemeyi Kaydetme:</strong>
+                        <ul>
+                            <li>Yan ödeme seçimini yaptıktan sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayarak değişikliklerinizi kaydedin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Aynı yan ödemeyi bir maaş tipine birden fazla kez ekleyemezsiniz. Sistem bunu kontrol eder ve uyarı verir.</li>
+                    <li>Yaptığınız eklemeleri kaydetmek için mutlaka "Kaydet" butonuna basmanız gerekir, aksi halde değişiklikleriniz kaydedilmez.</li>
+                    <li>Birden fazla yan ödeme eklemek için "Yeni Kayıt" butonuna her yeni yan ödeme için tekrar tıklayın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="yanodeme-silme" class="info-box">
+            <h3>Yan Ödeme Silme</h3>
+            
+            <div class="step">
+                <h4>Yan Ödeme Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçme:</strong>
+                        <ul>
+                            <li>Öncelikle yan ödeme silmek istediğiniz maaş tipini seçin.</li>
+                            <li>Maaş tipi seçildikten sonra, o maaş tipine tanımlı tüm yan ödemeler listede görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silinecek Yan Ödemeyi Bulma:</strong>
+                        <ul>
+                            <li>Listede silmek istediğiniz yan ödemeyi bulun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Silme Butonu:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz yan ödeme satırının en solundaki çöp kutusu simgeli butona tıklayın.</li>
+                            <li>Sistem size "Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir.</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Silme işlemini yaptıktan sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayarak değişikliklerinizi kaydedin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi yapıldıktan sonra, bu işlem geri alınamaz, yeniden eklemeniz gerekir.</li>
+                    <li>Yaptığınız silme işlemlerini kaydetmek için mutlaka "Kaydet" butonuna basmanız gerekir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-temizleme" class="info-box">
+            <h3>Kayıtları Temizleme</h3>
+            
+            <div class="step">
+                <h4>Ekran Nasıl Temizlenir:</h4>
+                <ol>
+                    <li><strong>Temizle Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Temizle" butonuna tıklayın.</li>
+                            <li>Bu işlem, ekrandaki tüm seçimleri ve girişleri temizler.</li>
+                            <li>Maaş tipi seçimi boşaltılır ve yan ödeme listesi temizlenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Temizleme İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir maaş tipi için işlem yapmaya başlamadan önce "Temizle" butonunu kullanmak, karışıklığı önler.</li>
+                    <li>Kaydetmediğiniz değişiklikler varsa, "Temizle" butonuna basmadan önce kaydettiğinizden emin olun.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-kaydetme" class="info-box">
+            <h3>Kayıtları Kaydetme</h3>
+            
+            <div class="step">
+                <h4>Değişiklikler Nasıl Kaydedilir:</h4>
+                <ol>
+                    <li><strong>Değişiklikleri Yapma:</strong>
+                        <ul>
+                            <li>Önce gerekli maaş tipini seçin.</li>
+                            <li>Yan ödeme ekleyin, çıkarın veya değiştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Değişiklikleri tamamladıktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem değişiklikleri veritabanına kaydeder.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Onayı:</strong>
+                        <ul>
+                            <li>Kaydetme işlemi başarılı olduğunda, ekran yenilenir ve güncel bilgiler görüntülenir.</li>
+                            <li>Herhangi bir hata durumunda, sistem hata mesajı gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Maaş tipi seçilmeden "Kaydet" butonuna basarsanız, sistem "Maaş Tipini Girmelisiniz!" uyarısı verecektir.</li>
+                    <li>Değişikliklerinizi kaydetmeden ekrandan çıkarsanız veya başka bir maaş tipine geçerseniz, değişiklikleriniz kaybedilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-silme" class="info-box">
+            <h3>Tüm Kayıtları Silme</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipine Ait Tüm Yan Ödemeler Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçme:</strong>
+                        <ul>
+                            <li>Öncelikle tüm yan ödeme kayıtlarını silmek istediğiniz maaş tipini seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Sil" butonuna tıklayın.</li>
+                            <li>Sistem size "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir.</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Sonrası:</strong>
+                        <ul>
+                            <li>Onay verdiğinizde, seçili maaş tipine ait tüm yan ödeme kayıtları silinir.</li>
+                            <li>Ekran yenilenir ve yan ödeme listesi boşaltılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu işlem, seçili maaş tipine ait TÜM yan ödeme tanımlarını siler. Bu işlem geri alınamaz!</li>
+                    <li>Sadece belirli yan ödemeleri silmek istiyorsanız, satır silme işlemini kullanmalısınız.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-kopyalama" class="info-box">
+            <h3>Kayıt Kopyalama</h3>
+            
+            <div class="step">
+                <h4>Yan Ödeme Tanımları Nasıl Kopyalanır:</h4>
+                <ol>
+                    <li><strong>Kopyala Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Kopyala" butonuna tıklayın.</li>
+                            <li>Bu işlem, yeni bir pencere açar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama Ekranı:</strong>
+                        <ul>
+                            <li>Açılan pencerede kaynak ve hedef maaş tiplerini seçmeniz gerekir.</li>
+                            <li>Önce hangi maaş tipinden kopyalama yapacağınızı (kaynak) seçin.</li>
+                            <li>Sonra hangi maaş tipine kopyalama yapacağınızı (hedef) seçin.</li>
+                            <li>Kopyala butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama Sonrası:</strong>
+                        <ul>
+                            <li>Kopyalama işlemi tamamlandığında, hedef maaş tipine ait yan ödeme tanımları kaynak maaş tipindeki tanımlarla aynı olacaktır.</li>
+                            <li>Ana ekrana dönmek için kopyalama ekranını kapatın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kopyalama İpuçları:</h4>
+                <ul>
+                    <li>Kopyalama özelliği, benzer yan ödeme tanımları olan maaş tipleri için zaman kazandırır.</li>
+                    <li>Kopyalama yaptıktan sonra, hedef maaş tipine ait eski yan ödeme tanımları silinir ve yerlerine kaynak maaş tipindeki tanımlar gelir.</li>
+                    <li>Kopyalama sonrası ek düzenlemeler yapmak isterseniz, hedef maaş tipini seçip normal şekilde yan ödeme ekleme/silme işlemlerine devam edebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <h3>Ana Ekrandaki Butonlar</h3>
+            
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Yeni Kayıt Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, en sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde "+" simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Yan ödeme listesine yeni bir satır ekler.</li>
+                            <li><strong>Kullanım:</strong> Maaş tipine yeni bir yan ödeme eklemek istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temizle Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yeni Kayıt" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde silgi simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Ekrandaki tüm seçimleri ve girişleri temizler.</li>
+                            <li><strong>Kullanım:</strong> Yeni bir işleme başlamak için ekranı temizlemek istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Temizle" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde disket simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Yapılan değişiklikleri veritabanına kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Yan ödeme ekleme, silme gibi değişiklikleri kaydetmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kaydet" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde çöp kutusu simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Seçili maaş tipine ait tüm yan ödeme tanımlarını siler.</li>
+                            <li><strong>Kullanım:</strong> Bir maaş tipinin tüm yan ödeme tanımlarını silmek istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste (Win) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sil" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde pencere simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Maaş tiplerinin listelendiği bir pencere açar.</li>
+                            <li><strong>Kullanım:</strong> Tanımlı maaş tiplerini listelemek ve birini seçmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyala Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Liste (Win)" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde kağıt kopyalama simgesi bulunan ve "Kopyala" yazılı butondur.</li>
+                            <li><strong>İşlev:</strong> Bir maaş tipinden diğerine yan ödeme tanımlarını kopyalamak için bir pencere açar.</li>
+                            <li><strong>Kullanım:</strong> Yan ödeme tanımlarını bir maaş tipinden diğerine kopyalamak istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kopyala" butonunun hemen sağında, en sağda yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde çıkış kapısı simgesi bulunan butondur.</li>
+                            <li><strong>İşlev:</strong> Yan Ödeme Maaş Tipi Tanımları ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> İşlemlerinizi tamamlayıp ekrandan çıkmak istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>

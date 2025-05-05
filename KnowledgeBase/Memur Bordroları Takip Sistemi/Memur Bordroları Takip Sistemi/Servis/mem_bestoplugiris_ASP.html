@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memur BES Toplu Giriş Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Memur BES Toplu Giriş Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#filtreleme">Filtreleme Seçenekleri</a>
+                    <ul>
+                        <li><a href="#filtre-secenekleri">Filtre Seçenekleri ve Nasıl Kullanılır</a></li>
+                        <li><a href="#filtre-uygulama">Filtrelerin Uygulanması</a></li>
+                    </ul>
+                </li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#bes-oran">BES Oran Girişi</a></li>
+                        <li><a href="#bes-tutar">BES Tutar Girişi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Form İşlemleri</a>
+                    <ul>
+                        <li><a href="#kaydetme">Değişiklikleri Kaydetme</a></li>
+                        <li><a href="#cikis">Programdan Çıkış</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Memur Sicil BES Toplu Giriş" ekranı, kurumunuzda çalışan memurların Bireysel Emeklilik Sistemi (BES) bilgilerinin toplu olarak girilmesi, güncellenmesi ve görüntülenmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Çalışanlarınızın BES oranlarını toplu bir şekilde girme ve güncelleme</li>
+                <li>BES tutarlarını toplu bir şekilde girme ve güncelleme</li>
+                <li>Çeşitli filtreleme seçenekleriyle çalışan listesini daraltma</li>
+                <li>Tüm değişiklikleri tek seferde kaydetme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Giriş yapılacak çalışanların bilgileri (sicil no, ad, soyad)</li>
+                    <li>Uygulanacak BES oranları (yüzde cinsinden)</li>
+                    <li>Uygulanacak BES tutarları (TL cinsinden)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde mavi renkli bir şeritte "Memur Sicil BES Toplu Giriş" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, "Filtreleme Seçenekleri" alt başlığı ile belirtilen filtre alanları bulunur.</li>
+                            <li>Bu bölümde işten çıkış, BES kodu, yaş kontrolü gibi filtreleme seçenekleri ve ad-soyad arama kutuları yer alır.</li>
+                            <li>Bölümün en sağında "Filtrele" butonu bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Tablosu Bölümü:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün altında, personel listesini ve BES verilerini içeren tablo yer alır.</li>
+                            <li>Tablo, tüm personel bilgilerini ve düzenlenebilir BES alanlarını gösterir.</li>
+                            <li>Tablonun sütunları: "Sicil No / Adı Soyadı", "Bölüm Adı", "Görev", "BES Oran" ve "BES Tutar" şeklindedir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında "Kaydet" ve "Çıkış" butonları bulunur.</li>
+                            <li>Butonlar yan yana yerleştirilmiştir ve gri tonlardadır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm personel listesi yüklenir (uygulanan filtreler dahilinde).</li>
+                    <li>"İşten Çıkışı Olanları Getirme" seçeneği varsayılan olarak işaretlidir.</li>
+                    <li>Tablo içinde sadece "BES Oran" ve "BES Tutar" sütunları düzenlenebilirdir, diğer alanlar sadece bilgi amaçlı gösterilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme" class="section">
+        <h2>Filtreleme Seçenekleri</h2>
+        
+        <div id="filtre-secenekleri" class="info-box">
+            <h3>Filtre Seçenekleri ve Nasıl Kullanılır</h3>
+            
+            <div class="step">
+                <h4>Kullanılabilir Filtre Seçenekleri:</h4>
+                <ol>
+                    <li><strong>İşten Çıkışı Olanları Getirme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Filtreleme bölümünün sol tarafında yer alan ilk onay kutusudur.</li>
+                            <li><strong>İşlev:</strong> İşaretlendiğinde, işten çıkış tarihi olan (işten ayrılmış) personeli listeden çıkarır.</li>
+                            <li><strong>Kullanım:</strong> Varsayılan olarak işaretlidir. Aktif olarak çalışanları görmek isterseniz işaretli bırakın, işten ayrılmış personeli de görmek isterseniz işareti kaldırın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>BES Olanları Getirme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "İşten Çıkışı Olanları Getirme" onay kutusunun sağında yer alır.</li>
+                            <li><strong>İşlev:</strong> İşaretlendiğinde, halihazırda BES kaydı olanları listeden çıkarır.</li>
+                            <li><strong>Kullanım:</strong> Varsayılan olarak işaretli değildir. Sadece BES kaydı olmayan personeli görmek isterseniz işaretleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>45 yaş altı Olanları Getir:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "BES Olanları Getirme" onay kutusunun sağında yer alır.</li>
+                            <li><strong>İşlev:</strong> İşaretlendiğinde, sadece 45 yaşın altındaki personeli listeler.</li>
+                            <li><strong>Kullanım:</strong> Varsayılan olarak işaretli değildir. 45 yaş altı personeli filtrelemek istiyorsanız işaretleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Yaş filtresinin sağında yer alan metin kutusudur.</li>
+                            <li><strong>İşlev:</strong> Girilen metne göre personel adında arama yapar.</li>
+                            <li><strong>Kullanım:</strong> Aramak istediğiniz adın tamamını veya bir kısmını yazın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soyadı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Adı" metin kutusunun sağında yer alır.</li>
+                            <li><strong>İşlev:</strong> Girilen metne göre personel soyadında arama yapar.</li>
+                            <li><strong>Kullanım:</strong> Aramak istediğiniz soyadının tamamını veya bir kısmını yazın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla filtreyi aynı anda kullanabilirsiniz. Örneğin, hem "BES Olanları Getirme" hem de "45 yaş altı Olanları Getir" seçeneklerini işaretleyebilirsiniz.</li>
+                    <li>Ad ve soyad araması yaparken tam adı/soyadı yazmanız gerekmez, ilk birkaç harfini yazmanız yeterlidir. Örneğin, "Ah" yazarsanız "Ahmet", "Ahsen" gibi adları olan tüm personel listelenir.</li>
+                    <li>Hiçbir filtre seçmezseniz, işten çıkışı olmayan tüm personel listelenir (çünkü "İşten Çıkışı Olanları Getirme" varsayılan olarak işaretlidir).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="filtre-uygulama" class="info-box">
+            <h3>Filtrelerin Uygulanması</h3>
+            
+            <div class="step">
+                <h4>Filtreleme İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Filtre Seçeneklerini Belirleyin:</strong>
+                        <ul>
+                            <li>İstediğiniz filtreleme seçeneklerini işaretleyin veya kaldırın.</li>
+                            <li>Ad ve/veya soyad arama kutularına gerekli bilgileri girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleri Uygulayın:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün en sağında bulunan "Filtrele" butonuna tıklayın.</li>
+                            <li>Buton, bordoya yakın kırmızı bir şekilde belirlenmiş alanların en sağındadır.</li>
+                            <li>Tıklandığında, belirlediğiniz filtre seçeneklerine göre personel listesi yenilenecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Filtre seçeneklerini değiştirdikten sonra mutlaka "Filtrele" butonuna tıklamanız gerekir, aksi takdirde değişiklikler uygulanmaz.</li>
+                    <li>Çok sayıda personeli olan kurumlarda filtreleme işlemi birkaç saniye sürebilir, lütfen sabırlı olun.</li>
+                    <li>Hiçbir sonuç bulunamadıysa, filtreleme seçeneklerinizi gözden geçirin ve daha genel filtreler kullanmayı deneyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="bes-oran" class="info-box">
+            <h3>BES Oran Girişi</h3>
+            
+            <div class="step">
+                <h4>BES Oran Alanının Kullanımı:</h4>
+                <ol>
+                    <li><strong>Alan Yeri:</strong>
+                        <ul>
+                            <li>Personel tablosunda, her satırın "BES Oran" sütununda yer alır.</li>
+                            <li>Tablonun sağ tarafında, "Görev" sütununun hemen sağındadır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alan Özellikleri:</strong>
+                        <ul>
+                            <li>Sayısal değer girişi yapabileceğiniz bir alandır.</li>
+                            <li>Sadece tam sayı değerleri kabul eder (örn. 3, 5, 10 gibi).</li>
+                            <li>Düzenlenebilir bir alandır, tıklayarak değeri değiştirebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong>
+                        <ul>
+                            <li>İlgili personelin BES oranını girmek için alana tıklayın.</li>
+                            <li>Mevcut değeri silin ve yeni değeri yazın.</li>
+                            <li>Değişiklik yapmak istemiyorsanız, mevcut değeri olduğu gibi bırakın.</li>
+                            <li>BES'i iptal etmek için "0" değerini girin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>BES Oran alanına değer girdiğinizde ve başka bir alana geçtiğinizde, sistem otomatik olarak ilgili personel için BES Tutar alanını güncelleyebilir.</li>
+                    <li>BES Tutar alanına değer girilmiş ve sıfırdan büyükse, BES Oran alanı boş veya sıfır olduğunda otomatik olarak "3" değeri atanabilir.</li>
+                    <li>BES Oran alanı "0" olarak girildiğinde, BES Tutar alanı da otomatik olarak "0" olarak güncellenir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>BES Oran Girişi İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla personele aynı oranı girmek istiyorsanız, ilk personelde değeri girdikten sonra diğerlerine kopyala-yapıştır yapabilirsiniz.</li>
+                    <li>Klavyede Tab tuşunu kullanarak bir sonraki personele hızlıca geçebilirsiniz.</li>
+                    <li>Genel olarak BES oranları %3, %4, %5, %6 gibi değerler alır, ancak kurumunuzun politikasına göre farklı değerler de olabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bes-tutar" class="info-box">
+            <h3>BES Tutar Girişi</h3>
+            
+            <div class="step">
+                <h4>BES Tutar Alanının Kullanımı:</h4>
+                <ol>
+                    <li><strong>Alan Yeri:</strong>
+                        <ul>
+                            <li>Personel tablosunda, her satırın "BES Tutar" sütununda yer alır.</li>
+                            <li>Tablonun en sağında, "BES Oran" sütununun hemen sağındadır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alan Özellikleri:</strong>
+                        <ul>
+                            <li>Para değeri girişi yapabileceğiniz bir alandır.</li>
+                            <li>Ondalık değerler kabul eder (örn. 125.50 gibi).</li>
+                            <li>Düzenlenebilir bir alandır, tıklayarak değeri değiştirebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong>
+                        <ul>
+                            <li>İlgili personelin BES tutarını girmek için alana tıklayın.</li>
+                            <li>Mevcut değeri silin ve yeni değeri yazın.</li>
+                            <li>Değişiklik yapmak istemiyorsanız, mevcut değeri olduğu gibi bırakın.</li>
+                            <li>BES'i iptal etmek için "0" değerini girin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>BES Tutar alanına değer girdiğinizde ve başka bir alana geçtiğinizde, sistem otomatik olarak ilgili personel için BES Oran alanını güncelleyebilir.</li>
+                    <li>BES Tutar alanına sıfırdan büyük bir değer girildiğinde ve BES Oran alanı "0" veya boş ise, otomatik olarak BES Oran alanına "3" değeri atanabilir.</li>
+                    <li>BES Oran alanı "0" olarak girildiğinde, BES Tutar alanı da otomatik olarak "0" olarak güncellenir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>BES Tutar Girişi İpuçları:</h4>
+                <ul>
+                    <li>Tutarı girerken TL sembolü veya noktalama işaretleri kullanmanıza gerek yoktur, sistem otomatik olarak formatlar.</li>
+                    <li>Ondalık ayırıcı olarak virgül (,) kullanılır, örneğin "125,50" şeklinde girebilirsiniz.</li>
+                    <li>Genellikle oran üzerinden hesaplama yapıldığı için tutar alanını doğrudan değiştirmeniz gerekmeyebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Program Butonları:</h4>
+                <ol>
+                    <li><strong>Filtrele Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Filtreleme bölümünün en sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak yüzeyli bir butondur.</li>
+                            <li><strong>İşlev:</strong> Seçtiğiniz filtreleme seçeneklerine göre personel listesini yeniler.</li>
+                            <li><strong>Kullanım:</strong> Filtreleri belirledikten sonra tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın en altında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak yüzeyli bir butondur.</li>
+                            <li><strong>İşlev:</strong> Yaptığınız tüm BES değişikliklerini veritabanına kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Tüm değişikliklerinizi tamamladıktan sonra tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın en altında, "Kaydet" butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak yüzeyli bir butondur.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> İşlerinizi tamamladıktan sonra tıklayın, onay mesajı görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Değişikliklerinizi kaydetmeden Çıkış butonuna tıklarsanız, yaptığınız değişiklikler kaybedilir!</li>
+                    <li>Kaydet butonuna basmadan önce, değişikliklerinizi gözden geçirmeniz önerilir.</li>
+                    <li>Çıkış butonuna tıkladığınızda, programdan çıkmak istediğinize dair bir onay mesajı görüntülenir. Eğer kaydetmediğiniz değişiklikler varsa, "Hayır" diyerek geri dönebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Form İşlemleri</h2>
+        
+        <div id="kaydetme" class="info-box">
+            <h3>Değişiklikleri Kaydetme</h3>
+            
+            <div class="step">
+                <h4>Değişiklikleri Kaydetme Adımları:</h4>
+                <ol>
+                    <li><strong>Değişiklikleri Yapın:</strong>
+                        <ul>
+                            <li>Personel listesinde istediğiniz kişilerin BES Oran ve/veya BES Tutar alanlarını düzenleyin.</li>
+                            <li>İstediğiniz kadar personelin bilgilerini değiştirebilirsiniz, hepsini tek seferde kaydedebileceksiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kontrol Edin:</strong>
+                        <ul>
+                            <li>Kaydetmeden önce yaptığınız değişiklikleri gözden geçirin.</li>
+                            <li>Yanlış bir değer girip girmediğinizi kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemini Gerçekleştirin:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem, yaptığınız tüm değişiklikleri veritabanına kaydedecektir.</li>
+                            <li>Kaydetme işlemi başarılıysa, herhangi bir hata mesajı görmezsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetme işlemi, tüm değişiklikleri bir defada kaydeder. Kısmi kaydetme yapamazsınız.</li>
+                    <li>Kaydetme işlemini gerçekleştirdikten sonra değişiklikler geri alınamaz, ancak tekrar düzenleme yapabilirsiniz.</li>
+                    <li>Çok sayıda personel için değişiklik yaptıysanız, kaydetme işlemi birkaç saniye sürebilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kaydetme İpuçları:</h4>
+                <ul>
+                    <li>Uzun süreli çalışmalarda, değişikliklerinizi belirli aralıklarla kaydetmeniz önerilir.</li>
+                    <li>Önemli değişiklikler yaptıktan sonra hemen kaydetme alışkanlığı edinmeniz faydalı olacaktır.</li>
+                <li>Çok sayıda çalışan için değişiklik yapacaksanız, önce küçük bir grup üzerinde işlem yapıp kaydedin, sonra devam edin.</li>
+            </ul>
+            </div>
+        </div>
+
+        <div id="cikis" class="info-box">
+            <h3>Programdan Çıkış</h3>
+            
+            <div class="step">
+                <h4>Programdan Çıkış Adımları:</h4>
+                <ol>
+                    <li><strong>Değişiklikleri Kaydedin:</strong>
+                        <ul>
+                            <li>Programdan çıkmadan önce, yaptığınız değişiklikleri kaydettiğinizden emin olun.</li>
+                            <li>Kaydetmeden çıkarsanız, tüm değişiklikleriniz kaybolacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış İşlemini Gerçekleştirin:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Çıkış" butonuna tıklayın.</li>
+                            <li>Bu buton, "Kaydet" butonunun hemen sağında yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onay Verin:</strong>
+                        <ul>
+                            <li>Karşınıza "Çıkmak İstiyor musunuz?" şeklinde bir onay mesajı gelecektir.</li>
+                            <li>Çıkmak istiyorsanız "Evet" butonuna tıklayın.</li>
+                            <li>Programa devam etmek istiyorsanız "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetmediğiniz değişiklikleriniz varsa, çıkış yapmadan önce mutlaka "Kaydet" butonuna tıklayın.</li>
+                    <li>Program kapatıldıktan sonra geri alınamaz, tekrar açmanız gerekir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Çıkış İpuçları:</h4>
+                <ul>
+                    <li>İşinizi tamamladığınızda programdan çıkış yapmayı unutmayın, bu sistem kaynaklarının verimli kullanılmasını sağlar.</li>
+                    <li>Kısa süreli ara vermeniz gerekiyorsa, programdan çıkış yapmak yerine, programı açık bırakabilirsiniz.</li>
+                    <li>Programı uzun süre açık bırakmak sistem performansını etkileyebilir, uzun süreli ara verecekseniz çıkış yapmanız önerilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Program Açılırken Hata:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Program açılmıyor veya açılırken hata veriyor.</li>
+                            <li><strong>Çözüm:</strong> Programı kapatıp tekrar açmayı deneyin. Sorun devam ederse sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Listesi Görüntülenmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Filtreleme yapıldıktan sonra hiçbir personel listelenmiyorsa.</li>
+                            <li><strong>Çözüm:</strong> Filtre seçeneklerini kontrol edin, çok sınırlayıcı filtreler kullanmış olabilirsiniz. Tüm filtreleri kaldırıp tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Kaydet" butonuna tıklamanıza rağmen değişiklikler kaydedilmiyor.</li>
+                            <li><strong>Çözüm:</strong> İnternet bağlantınızı kontrol edin. Sorun devam ederse programı kapatıp tekrar açmayı deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>BES Oran veya Tutar Güncellenmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> BES Oran veya Tutar alanlarında değişiklik yapmanıza rağmen, diğer alan otomatik güncellenmiyorsa.</li>
+                            <li><strong>Çözüm:</strong> Alanı değiştirdikten sonra, başka bir alana geçtiğinizden (Tab tuşu ile) emin olun. Bu, otomatik güncelleme işlemini tetikleyecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Filtreleme İçin:</strong>
+                        <ul>
+                            <li>Büyük kurumlar için, önce bölümlere veya yaş gruplarına göre filtreleme yaparak daha küçük gruplarla çalışın.</li>
+                            <li>Tamamladığınız personeli filtreleyerek çıkarmak için, ad veya soyad filtrelerini kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu İşlemler İçin:</strong>
+                        <ul>
+                            <li>Aynı oranda BES girmek istediğiniz personel grubunu filtreledikten sonra, tek tek girmek yerine, bir sonraki ipucunu kullanabilirsiniz.</li>
+                            <li>Bazı tarayıcılarda, birden fazla hücreyi seçerek aynı değeri toplu girebilirsiniz (bu özellik programa göre değişebilir).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>Tab tuşunu kullanarak bir sonraki alana hızlıca geçebilirsiniz.</li>
+                            <li>Shift+Tab kombinasyonu ile bir önceki alana dönebilirsiniz.</li>
+                            <li>Enter tuşu genellikle aktif alandan çıkıp bir sonraki alana geçmenizi sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlerinizi tamamladıktan sonra mutlaka programdan güvenli çıkış yapın.</li>
+                    <li>Önemli değişiklikler yapmadan önce filtreleme koşullarınızın doğru olduğundan emin olun.</li>
+                    <li>Büyük miktarda veri değişikliği yapıyorsanız, işlem öncesinde sistem yöneticinize danışmanız önerilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Programı düzenli olarak kullanacaksanız, filtreleme ve veri giriş işlemlerinde hız kazanmak için düzenli pratik yapın.</li>
+                    <li>BES oranlarını ve tutarlarını girişlerde kurumunuzun BES politikasına uygun olduğundan emin olun.</li>
+                    <li>Toplu işlemleri yaparken her zaman dikkatli olun ve mümkünse ikinci bir kontrol yapın.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Memur Sicil BES Toplu Giriş ekranı, kurumunuzdaki personelin BES bilgilerini toplu olarak yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, adım adım bu kılavuzu takip ederek programı kolayca kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Değişikliklerinizi düzenli olarak kaydedin.</li>
+                    <li>Doğru filtreleme seçeneklerini kullanın.</li>
+                    <li>BES oran ve tutarlarını doğru girdiğinizden emin olun.</li>
+                    <li>İşiniz bittiğinde programdan düzgün şekilde çıkış yapın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

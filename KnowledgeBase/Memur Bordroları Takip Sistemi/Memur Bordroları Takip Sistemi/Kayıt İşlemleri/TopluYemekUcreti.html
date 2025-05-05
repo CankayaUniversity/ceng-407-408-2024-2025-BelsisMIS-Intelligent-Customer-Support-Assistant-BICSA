@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memur Yemek Günü Giriş Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Memur Yemek Günü Giriş Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-no">Sicil Numarası Aralığı Seçimi</a></li>
+                <li><a href="#bolum-secimi">Bölüm Seçimi</a></li>
+                <li><a href="#yil-ay">Yıl ve Ay Seçimi</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçimi</a></li>
+                <li><a href="#degisen">Sadece Değişenler Seçeneği</a></li>
+                <li><a href="#sorgulama">Sorgulama İşlemi</a></li>
+                <li><a href="#veri-tablosu">Sicil Verileri Tablosu</a></li>
+                <li><a href="#kaydetme">Kaydetme İşlemi</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+                <li><a href="#ozet">Özet</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Memur Yemek Günü Giriş programı, memurların yemek günlerini toplu olarak görüntülemek ve düzenlemek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli sicil numarası aralığındaki memurları görüntüleyebilirsiniz</li>
+                <li>Belirli bir bölümdeki memurları filtreleyebilirsiniz</li>
+                <li>Yıl ve ay bazında sorgulama yapabilirsiniz</li>
+                <li>Maaş tipine göre filtreleme yapabilirsiniz</li>
+                <li>Memurların çalışma günlerini, hafta sonu, izin, rapor ve tatil günlerini görebilirsiniz</li>
+                <li>Yemek günü sayılarını düzenleyebilirsiniz</li>
+                <li>Değişiklikleri kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz sicil numarası aralığı</li>
+                    <li>Hangi bölüm için işlem yapacağınız</li>
+                    <li>İşlem yapılacak yıl ve ay bilgisi</li>
+                    <li>Kullanılacak maaş tipi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde mavi renkli bir şeritte "Memur Yemek Günü Giriş" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sicil No girişiyle başlar</li>
+                            <li>Bölüm, Yıl/Ay, Maaş Tipi seçimleri ve Değişen kayıtlar için filtreleme seçeneği içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Tablosu Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında geniş bir alana yayılmış tablo bulunur</li>
+                            <li>Tablo, sorgu sonucu gösterilen sicil ve yemek günü bilgilerini içerir</li>
+                            <li>Dikey kaydırma çubuğu ile tüm kayıtlara erişilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Kaydet ve Çıkış butonlarını içerir</li>
+                            <li>3 boyutlu görünüme sahip gri butonlardır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak "Sicilno" alanına konumlanır</li>
+                    <li>Yıl ve Ay alanları güncel tarih bilgisiyle doldurulmuş olarak gelir</li>
+                    <li>Diğer alanlar varsayılan değerlerle doldurulur</li>
+                    <li>Sorgulama yapmadan önce gerekli filtreleme alanlarını kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-no" class="section">
+        <h2>Sicil Numarası Aralığı Seçimi</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Sicil Numarası Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık şeridinin hemen altında yer alır</li>
+                            <li>"Sicilno" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 10 haneli bir sayı olabilir</li>
+                                    <li>Varsayılan değeri 0'dır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 10 haneli bir sayı olabilir</li>
+                                    <li>Varsayılan değeri 99999999'dur (tüm siciller)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Başlangıç sicil numarası bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Bu alanları boş bırakırsanız program varsayılan değerleri kullanacaktır (0-99999999)</li>
+                    <li>Çok geniş bir sicil aralığı seçerseniz, sorgulama sonucunda çok fazla kayıt listelenebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir sicil için sorgulama yapmak istiyorsanız, her iki kutuya da aynı sicil numarasını girin</li>
+                    <li>Belirli bir aralıktaki tüm siciller için sorgulama yapmak istiyorsanız, başlangıç ve bitiş değerlerini uygun şekilde belirleyin</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bolum-secimi" class="section">
+        <h2>Bölüm Seçimi</h2>
+        <div class="info-box">
+            <h3>Bölüm Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Bölüm Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil numarası alanının hemen altında yer alır</li>
+                            <li>"Bölüm" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Liste kutusu, etiketin iki katı genişliğinde görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut bölümlerin listesi açılacaktır</li>
+                            <li>Liste en üstte "Tümü" seçeneği ile başlar (varsayılan seçenek)</li>
+                            <li>Listeden işlem yapmak istediğiniz bölümü seçin
+                                <ul>
+                                    <li>"Tümü" seçeneği tüm bölümlerdeki personeli kapsar</li>
+                                    <li>Diğer seçenekler spesifik bölümlerdeki personeli filtrelemek için kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz bölüm görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program açıldığında "Tümü" seçeneği varsayılan olarak seçilidir</li>
+                    <li>Bu seçenek tüm bölümlerdeki personeli kapsar</li>
+                    <li>Belirli bir bölüm seçmezseniz, sorgulama sonucunda tüm bölümlerdeki personel listelenecektir</li>
+                    <li>Çok sayıda personele sahip bir bölüm seçtiğinizde, sorgulama sonucunda çok fazla kayıt listelenebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listeden hızlıca bölüm bulmak için, listeyi açtıktan sonra klavyeden bölüm adının ilk harfini yazabilirsiniz</li>
+                    <li>Belirli bir bölümde çalışıyorsanız, her zaman kendi bölümünüzü seçmek, sorgu sonuçlarını daha yönetilebilir hale getirecektir</li>
+                    <li>Tüm bölümleri görüntülemek için "Tümü" seçeneğini kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="yil-ay" class="section">
+        <h2>Yıl ve Ay Seçimi</h2>
+        <div class="info-box">
+            <h3>Yıl ve Ay Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Yıl ve Ay Alanları Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm seçim alanının hemen altında yer alır</li>
+                            <li>"Yıl / Ay" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu Yıl, sağdaki kutu Ay içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya işlem yapmak istediğiniz yılı girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>4 haneli olarak yıl bilgisini yazın (örn. 2023)</li>
+                                    <li>Program açıldığında güncel yıl bilgisi otomatik olarak doldurulur</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağdaki Ay kutusuna geçin</li>
+                            <li>Sağ kutuya işlem yapmak istediğiniz ay numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>1 ile 12 arasında bir sayı olmalıdır</li>
+                                    <li>Program açıldığında güncel ay bilgisi otomatik olarak doldurulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Ay alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Ay alanına 1 ile 12 arasında bir değer girilmelidir</li>
+                    <li>Geçmiş veya gelecek dönemlere ait sorgulama yapmak için ilgili Yıl ve Ay bilgilerini değiştirebilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Program açıldığında otomatik olarak güncel yıl ve ay bilgisi doldurulduğundan, genellikle bu alanları değiştirmeniz gerekmeyecektir</li>
+                    <li>Geçmiş dönemlere ait sorgulama yapmak için Yıl ve Ay bilgilerini uygun şekilde değiştirin</li>
+                    <li>TAB tuşunu kullanarak Yıl alanından Ay alanına, oradan da bir sonraki alana geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Maaş Tipi Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Maaş Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Ay alanının hemen altında yer alır</li>
+                            <li>"Maaş Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Açılır kutunun sağında kırmızı renkle dönem tarih bilgisi gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut maaş tiplerinin listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz maaş tipini seçin
+                                <ul>
+                                    <li>Maaş tipleri kurumun yapısına göre değişebilir (örn. Memur, Sözleşmeli, İşçi vb.)</li>
+                                    <li>Her maaş tipi için farklı hesaplama kuralları olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz maaş tipi görüntülenecektir</li>
+                            <li>Maaş tipini seçtikten sonra, eğer Yıl ve Ay bilgileri de girilmişse, kutunun sağında dönem tarih aralığı otomatik olarak görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Maaş tipi seçilmeden sorgulama yapılamaz</li>
+                    <li>Yanlış maaş tipi seçilmesi durumunda, yemek günü hesaplama sonuçları hatalı olabilir</li>
+                    <li>Dönem tarih aralığı bilgisi, seçilen yıl, ay ve maaş tipine göre otomatik olarak gösterilir</li>
+                    <li>Bu bilgi, maaş dönemi başlangıç ve bitiş tarihlerini gösterir ve kırmızı renkte görüntülenir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Dönem tarih aralığını kontrol ederek doğru dönemi seçtiğinizden emin olun</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili maaş tipinin ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Hangi maaş tipini seçeceğinizden emin değilseniz, insan kaynakları birimine danışabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="degisen" class="section">
+        <h2>Sadece Değişenler Seçeneği</h2>
+        <div class="info-box">
+            <h3>Sadece Değişenler Seçeneği Nasıl Kullanılır</h3>
+            <div class="step">
+                <h4>Sadece Değişenleri Görüntüleme Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Maaş Tipi alanının hemen altında yer alır</li>
+                            <li>"Sadece Değişenler" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir onay kutusu (checkbox) yer alır</li>
+                            <li>Onay kutusu varsayılan olarak işaretlenmemiş durumdadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Sadece değişen kayıtları görmek istiyorsanız, onay kutusunu fare ile tıklayarak işaretleyin
+                                <ul>
+                                    <li>Kutunun işaretlenmesiyle sadece değişen yemek günleri olan personel sorgulanacaktır</li>
+                                    <li>Bu seçenek, hesaplanan yemek günü ile kaydedilmiş yemek günü arasında fark olan kayıtları gösterir</li>
+                                </ul>
+                            </li>
+                            <li>Tüm kayıtları görmek istiyorsanız, onay kutusunu boş bırakın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu seçenek işaretlendiğinde, sadece hesaplanan yemek günü ile kayıtlı yemek günü arasında fark olan siciller listelenecektir</li>
+                    <li>Değişiklik olmayan siciller listede görüntülenmeyecektir</li>
+                    <li>Bu seçenek, değişen kayıtları hızlıca tespit etmek ve güncellemek için kullanışlıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Önce tüm kayıtları görüntüleyip genel durumu inceledikten sonra, sadece değişenleri görüntüleyerek işlem yapabilirsiniz</li>
+                    <li>Çok sayıda personel varsa, sadece değişenleri görmek veri listesini daha yönetilebilir hale getirecektir</li>
+                    <li>Değişiklikleri inceledikten sonra, bu seçeneği kapatıp tekrar tüm kayıtları görüntüleyebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sorgulama" class="section">
+        <h2>Sorgulama İşlemi</h2>
+        <div class="info-box">
+            <h3>Sorgulama Nasıl Yapılır</h3>
+            <div class="step">
+                <h4>Sorgulama İşlemi Adımları:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>"Sadece Değişenler" seçeneğinin hemen altında yer alır</li>
+                            <li>Solda boş bir alan bırakılmış, sağında "Sorgula" butonu bulunur</li>
+                            <li>Butonun sağında kırmızı renkle sicil sayısı bilgisi gösterilir (sorgu yapıldıktan sonra)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorgulama Adımları:</strong>
+                        <ol>
+                            <li>Tüm filtreleme seçeneklerini ayarlayın:
+                                <ul>
+                                    <li>Sicil numarası aralığını belirleyin</li>
+                                    <li>Bölüm seçin</li>
+                                    <li>Yıl ve Ay bilgilerini kontrol edin</li>
+                                    <li>Maaş Tipini seçin</li>
+                                    <li>Sadece değişenler seçeneğini isteğe bağlı olarak işaretleyin</li>
+                                </ul>
+                            </li>
+                            <li>"Sorgula" butonuna tıklayın</li>
+                            <li>Sistem, belirlediğiniz kriterlere göre verileri sorgulayacak ve ekranın orta kısmındaki tabloda gösterecektir</li>
+                            <li>Sorgu tamamlandığında, butonun sağındaki kırmızı yazıda kaç adet sicil göründüğü bilgisi güncellenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sorgulama yapmadan önce tüm filtreleme kriterlerini doğru şekilde ayarladığınızdan emin olun</li>
+                    <li>Yıl, Ay ve Maaş Tipi alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Sorgu sonucunda çok fazla kayıt görüntüleniyorsa, daha spesifik filtreleme kriterleri kullanabilirsiniz</li>
+                    <li>Sorgu sonucunda "X Adet Sicil Görüntülenmektedir" bilgisi, kaç sicil listelendiğini gösterir</li>
+                    <li>Maaş hesaplanmış siciller listede görüntülenmez, ekranın altında bu konuda bir uyarı bulunmaktadır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Filtrelerinizi değiştirdikten sonra, yeni sonuçları görmek için tekrar "Sorgula" butonuna tıklamanız gerekir</li>
+                    <li>Sorgu sonucunda hiç kayıt görüntülenmiyorsa, filtreleme kriterlerinizi genişletin</li>
+                    <li>Çok fazla kayıt görüntüleniyorsa, sicil aralığını daraltın veya tek bir bölüm seçin</li>
+                    <li>Dönem tarih aralığını kontrol ederek doğru dönemi seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="veri-tablosu" class="section">
+        <h2>Sicil Verileri Tablosu</h2>
+        <div class="info-box">
+            <h3>Tablo İçeriği ve Görüntüleme</h3>
+            <div class="step">
+                <h4>Tablo Bölümleri ve Kullanımı:</h4>
+                <ol>
+                    <li><strong>Tablo Konumu:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında, "Sorgula" butonunun altında yer alır</li>
+                            <li>Tablo, sorgulama sonucunda görüntülenen tüm sicilleri ve bunlara ait bilgileri içerir</li>
+                            <li>Dikey kaydırma çubuğu ile tabloda aşağı yukarı hareket edebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ol>
+                            <li>Tablo başlık satırı mavi renkte olup, sütun başlıklarını içerir</li>
+                            <li>Sicil No: Personelin sicil numarasını gösterir</li>
+                            <li>Adı: Personelin adını gösterir</li>
+                            <li>Soyadı: Personelin soyadını gösterir</li>
+                            <li>Bölüm: Personelin çalıştığı bölümü gösterir</li>
+                            <li>Çalışma Günü: Personelin ilgili dönemde çalıştığı toplam gün sayısını gösterir (gri renkte)</li>
+                            <li>Hafta Sonu: Personelin ilgili dönemde hafta sonuna denk gelen gün sayısını gösterir (gri renkte)</li>
+                            <li>İzin Günü: Personelin ilgili dönemde izinli olduğu gün sayısını gösterir (gri renkte)</li>
+                            <li>Rapor Günü: Personelin ilgili dönemde raporlu olduğu gün sayısını gösterir (gri renkte)</li>
+                            <li>Tatil Günü: Personelin ilgili dönemde resmi tatil olan gün sayısını gösterir (gri renkte)</li>
+                            <li>Yemek Günü: Personelin ilgili dönemde yemek ücreti alacağı gün sayısını gösterir (değiştirilebilir alan)</li>
+                        </ol>
+                    </li>
+                    <li><strong>Yemek Günü Değiştirme:</strong>
+                        <ol>
+                            <li>Tablonun en sağdaki "Yemek Günü" sütununda, her personel için bir değer görüntülenir</li>
+                            <li>Bu değerler, sistem tarafından hesaplanmış veya daha önce kaydedilmiş gün sayılarıdır</li>
+                            <li>Bu alana tıklayarak değeri değiştirebilirsiniz
+                                <ul>
+                                    <li>Alana tıklayın</li>
+                                    <li>Mevcut değeri silin</li>
+                                    <li>Yeni değeri girin (sadece rakam kabul edilir)</li>
+                                    <li>TAB tuşuna basarak veya başka bir alana tıklayarak değişikliği onaylayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çalışma Günü, Hafta Sonu, İzin Günü, Rapor Günü ve Tatil Günü sütunları bilgi amaçlıdır ve değiştirilemez</li>
+                    <li>Sadece "Yemek Günü" sütunundaki değerler değiştirilebilir</li>
+                    <li>Değişiklikler sadece "Kaydet" butonuna tıkladığınızda sistem tarafından kaydedilir</li>
+                    <li>Maaş hesaplanmış siciller tabloda görüntülenmez</li>
+                    <li>Yemek Günü, bir önceki ay dikkate alınarak hesaplanır (ekranın altında bu konuda bir bilgi notu bulunur)</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çalışma Günü, Hafta Sonu, İzin, Rapor ve Tatil sütunlarındaki değerleri inceleyerek Yemek Günü değerini kontrol edebilirsiniz</li>
+                    <li>Gri renkle gösterilen sütunlar sadece bilgi amaçlıdır, değiştirilemez</li>
+                    <li>Bir sicilden diğerine geçmek için TAB tuşunu veya fare ile tıklamayı kullanabilirsiniz</li>
+                    <li>Birden fazla sicilin Yemek Günü değerini değiştirdiyseniz, değişiklikleri kaybetmemek için düzenli olarak kaydetmeyi unutmayın</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="kaydetme" class="section">
+        <h2>Kaydetme İşlemi</h2>
+        <div class="info-box">
+            <h3>Değişiklikleri Kaydetme</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi Adımları:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, orta bölümde yer alır</li>
+                            <li>"Kaydet" butonu sol tarafta, "Çıkış" butonu sağ tarafta bulunur</li>
+                            <li>Butonlar gri renkli, 3 boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Adımları:</strong>
+                        <ol>
+                            <li>Tabloda gerekli değişiklikleri yapın:
+                                <ul>
+                                    <li>"Yemek Günü" sütunundaki değerleri gerektiği şekilde değiştirin</li>
+                                    <li>Değişiklik yapmak istediğiniz tüm siciller için işlemi tamamlayın</li>
+                                </ul>
+                            </li>
+                            <li>Değişiklikleri kontrol edin</li>
+                            <li>Değişikliklerden eminseniz, "Kaydet" butonuna tıklayın</li>
+                            <li>Sistem işlemi gerçekleştirecek ve sonuç hakkında bir bilgi mesajı gösterecektir</li>
+                            <li>İşlem başarılı olduğunda, değişiklikler veritabanına kaydedilmiş olacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Çıkış İşlemi:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan sonra programdan çıkmak için "Çıkış" butonuna tıklayın</li>
+                            <li>Kaydedilmemiş değişiklikler varsa, sistem bir uyarı mesajı gösterecektir</li>
+                            <li>Çıkmak istediğinizi onayladığınızda program kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna tıklamadan önce tüm değişiklikleri kontrol ettiğinizden emin olun</li>
+                    <li>Kaydetme işlemi sadece görüntülenen siciller için yapılır</li>
+                    <li>Kaydedilmemiş değişiklikler varken programdan çıkarsanız, bu değişiklikler kaybedilecektir</li>
+                    <li>Kaydetme işlemi sırasında herhangi bir hata oluşursa sistem bir uyarı mesajı gösterecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Büyük değişiklikler yapmadan önce, mevcut durumu anlamak için önce verileri sorgulayıp incelemeniz önerilir</li>
+                    <li>Önemli değişiklikler yaptıktan sonra, değişiklikleri kaybetmemek için sık sık kaydetmeyi alışkanlık haline getirin</li>
+                    <li>Programdan çıkmadan önce kaydedilmemiş değişiklikleriniz olmadığından emin olun</li>
+                    <li>Yanlış bir değişiklik yaptıysanız ve henüz kaydetmediyseniz, programı kapatıp tekrar açarak değişiklikleri iptal edebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Bazı durumlarda TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Açık olan bir diyalog kutusunu kapatmak için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Sorgulama Sonucunda Hiç Kayıt Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Sorgula butonuna tıkladığınızda hiçbir kayıt görüntülenmiyor.</li>
+                            <li>Çözüm: Filtreleme kriterlerinizi kontrol edin. Sicil numarası aralığını genişletin, "Tümü" bölümünü seçin veya "Sadece Değişenler" seçeneğini kaldırın. Yıl, Ay ve Maaş Tipi seçimlerinizin doğru olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaşı Hesaplanmış Siciller Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Bazı siciller listede görünmüyor.</li>
+                            <li>Çözüm: Maaşı hesaplanmış siciller bu ekranda gösterilmez. Bu normal bir durumdur ve ekranın altında bu konuda bir bilgi notu bulunmaktadır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yemek Günü Değeri Değişmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Yemek Günü alanına yeni bir değer girdiğinizde değişiklik gerçekleşmiyor.</li>
+                            <li>Çözüm: Değeri değiştirdikten sonra TAB tuşuna basın veya başka bir alana tıklayın. Alanın içinde kaldığınız sürece değişiklik onaylanmaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Sonrasında Hata Mesajı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda hata mesajı alıyorsunuz.</li>
+                            <li>Çözüm: Hata mesajını dikkatlice okuyun. Genel olarak, Yemek Günü değerlerinin geçerli olduğundan emin olun (sadece sayısal değerler kabul edilir). Sorun devam ederse, sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                    <li>Çok sayıda sicil ile çalışıyorsanız, bölüm veya sicil aralığı filtrelemesi kullanarak daha yönetilebilir gruplar halinde çalışın</li>
+                    <li>Değişiklik yapacağınız sicilleri önce "Sadece Değişenler" seçeneği ile filtreleyerek bulun</li>
+                    <li>Önemli değişiklikler yaptıktan sonra sık sık kaydedin</li>
+                    <li>Yemek Günü değerlerini değiştirmeden önce Çalışma Günü, İzin, Rapor ve Tatil günlerini inceleyerek doğru değeri belirleyin</li>
+                    <li>Program kullanımı hakkında herhangi bir sorunuz varsa, insan kaynakları birimi veya sistem yöneticinize danışın</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="ozet" class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Memur Yemek Günü Giriş programı, personelin yemek ücreti günlerini görüntüleme ve düzenleme imkanı sunan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Sicil numarası aralığı belirleme</li>
+                <li>Bölüm seçimi</li>
+                <li>Yıl ve ay bilgisi girişi</li>
+                <li>Maaş tipi seçimi</li>
+                <li>Sadece değişenleri görüntüleme seçeneği</li>
+                <li>Sorgulama işlemi</li>
+                <li>Sicil verileri tablosunu görüntüleme</li>
+                <li>Yemek günü değerlerini düzenleme</li>
+                <li>Değişiklikleri kaydetme</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya insan kaynakları birimine başvurun.</p>
+            
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Maaş hesaplanmış siciller bu ekranda gösterilmemektedir. Yemek Günü, bir önceki ay dikkate alınarak hesaplanmaktadır. Bu bilgiler ekranın alt kısmında da bir not olarak belirtilmiştir.</p>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

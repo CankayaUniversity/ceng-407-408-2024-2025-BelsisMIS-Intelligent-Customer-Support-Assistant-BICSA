@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memur Özel Kesinti Sicil Giriş Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Memur Özel Kesinti Sicil Giriş Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#kesinti-bilgileri">Kesinti Bilgileri Ekranı</a></li>
+                <li><a href="#sicil-ekleme">Sicil Ekleme ve Düzenleme</a></li>
+                <li><a href="#kesinti-tutari">Kesinti Tutarı Girişi</a></li>
+                <li><a href="#toplam-hesaplama">Toplam Hesaplama</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#sicil-bulma">Sicil Bulma ve Arama</a></li>
+                <li><a href="#kayit-silme">Kayıt Silme İşlemi</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Memur Özel Kesinti Sicil Giriş ekranı, personele uygulanacak özel kesinti bilgilerini yönetmenizi sağlayan bir programdır. Bu program ile:</p>
+            <ul>
+                <li>Farklı kesinti türleri için sicil bazında kesinti tutarları tanımlayabilirsiniz</li>
+                <li>Personele uygulanacak kesintileri sicil numarası bazında girebilirsiniz</li>
+                <li>Kesinti tutarlarını sicil bazında düzenleyebilirsiniz</li>
+                <li>Bir kesinti türüne birden çok sicil ekleyebilirsiniz</li>
+                <li>Toplam kesinti tutarlarını görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Ekleyeceğiniz personele ait sicil numarası</li>
+                    <li>Uygulanacak kesinti türü</li>
+                    <li>Kesinti tutarları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde deniz mavisi (teal) renkli bir şeritte "Kesinti Bilgileri" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Seçimi Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>"Kesinti türü" etiketi ve yanında açılır liste (dropdown) bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Tablosu Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında "Uygulanan Siciller" başlıklı bir tablo yer alır</li>
+                            <li>Tablo, deniz mavisi (teal) renkli bir başlık çizgisine sahiptir</li>
+                            <li>Tablo içinde sicil no, adı soyadı ve kesinti tutarı sütunları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Yeni, Kaydet ve Çıkış butonlarını içerir</li>
+                            <li>Ayrıca sağ alt köşede toplam tutar bilgisi gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İlk olarak kesinti türü seçimi yapılmalıdır</li>
+                    <li>Tüm kesinti işlemleri seçilen kesinti türüne bağlı olarak yapılır</li>
+                    <li>İşlem yapmadan önce kesinti türünü doğru seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kesinti-bilgileri" class="section">
+        <h2>Kesinti Bilgileri Ekranı</h2>
+        <div class="info-box">
+            <h3>Kesinti Türü Seçimi</h3>
+            
+            <div class="step">
+                <h4>Kesinti Türü Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Kesinti türü seçme alanı, ekranın üst kısmında yer alır</li>
+                            <li>"Kesinti türü" etiketi alanın sol tarafında bulunur</li>
+                            <li>Sağ tarafında ise açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Liste kutusu yaklaşık 8 cm genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Türü Seçme Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın ve mevcut kesinti türlerini görüntüleyin</li>
+                            <li>Listeden çalışmak istediğiniz kesinti türünü seçin
+                                <ul>
+                                    <li>Kesinti türleri kod ve açıklama şeklinde listelenir</li>
+                                    <li>Örneğin: "1 - Sendika Kesintisi" şeklinde</li>
+                                </ul>
+                            </li>
+                            <li>Seçim yaptıktan sonra, ekran otomatik olarak seçilen kesinti türüne ait sicilleri gösterecektir</li>
+                            <li>Eğer daha önce bu kesinti türü için sicil kaydı yapılmışsa, bu kayıtlar tablo içinde listelenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kesinti Türü Değiştirildiğinde:</strong>
+                        <ul>
+                            <li>Sistem otomatik olarak seçilen kesinti türüne ait kayıtları getirir</li>
+                            <li>Sicil tablosu yenilenir ve ilgili siciller görüntülenir</li>
+                            <li>Toplam tutar bilgisi güncellenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kesinti türü seçilmeden sicil ekleme veya düzenleme yapılamaz</li>
+                    <li>Kesinti türünü değiştirdiğinizde, yapılan tüm değişiklikler kaydedilmez ise kaybolacaktır</li>
+                    <li>Kesinti türü değiştirilmeden önce mevcut değişiklikleri kaydettiğinizden emin olun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullandığınız kesinti türlerinin kodlarını not alarak daha hızlı erişim sağlayabilirsiniz</li>
+                    <li>Açılır listede ilk harfe basarak ilgili kesinti türüne hızlıca ulaşabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-ekleme" class="section">
+        <h2>Sicil Ekleme ve Düzenleme</h2>
+        <div class="info-box">
+            <h3>Sicil Bilgisi Ekleme</h3>
+            
+            <div class="step">
+                <h4>Yeni Sicil Ekleme Adımları:</h4>
+                <ol>
+                    <li><strong>Yeni Kayıt Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Yeni" butonuna tıklayın</li>
+                            <li>Veya tablonun son satırına geldiğinizde Enter tuşuna basın</li>
+                            <li>Sistem otomatik olarak boş bir satır ekleyecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No Girişi:</strong>
+                        <ol>
+                            <li>Eklenen boş satırda, "Sicil No" alanına sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan en fazla 6 haneli rakam kabul eder</li>
+                                    <li>Sicil numarası girerken sadece rakam kullanılabilir</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarasını girdikten sonra:
+                                <ul>
+                                    <li>Tab tuşuna basarak sonraki alana geçebilirsiniz</li>
+                                    <li>Enter tuşuna basarak sistem otomatik olarak sicil bilgilerini arayacaktır</li>
+                                    <li>Sicil numarası geçerli ise, kişinin adı soyadı otomatik olarak görüntülenecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Adı Soyadı Alanı:</strong>
+                        <ul>
+                            <li>Sicil numarası girişi yapıldıktan sonra otomatik olarak doldurulur</li>
+                            <li>Bu alana manuel olarak bilgi giremezsiniz</li>
+                            <li>Sicil bulunamazsa boş kalır ve uyarı mesajı gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Geçersiz veya sistemde olmayan bir sicil numarası girildiğinde "Sicil bulunamadı" uyarısı alacaksınız</li>
+                    <li>Aynı sicil numarası aynı kesinti türü için birden fazla kez eklenemez</li>
+                    <li>Sicil numarası alanı boş bırakılamaz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kesinti-tutari" class="section">
+        <h2>Kesinti Tutarı Girişi</h2>
+        <div class="info-box">
+            <h3>Kesinti Tutarı Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Kesinti Tutarı Giriş Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Kesinti tutarı alanı, sicil tablosunun en sağ sütununda yer alır</li>
+                            <li>"Kesinti Tutarı" sütun başlığının altındadır</li>
+                            <li>Adı Soyadı sütununun hemen sağında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Giriş İşlemi:</strong>
+                        <ol>
+                            <li>Sicil numarası girip Tab tuşuna bastıktan ve sistem kişinin adını getirdikten sonra, imleç otomatik olarak kesinti tutarı alanına geçer</li>
+                            <li>Uygulamak istediğiniz kesinti tutarını girin
+                                <ul>
+                                    <li>Bu alan parasal değer kabul eder (örn: 120,50)</li>
+                                    <li>Ondalık ayıracı olarak virgül (,) kullanılır</li>
+                                    <li>En fazla 10 karakter girilebilir</li>
+                                </ul>
+                            </li>
+                            <li>Tutar girişini tamamladıktan sonra Enter tuşuna basın
+                                <ul>
+                                    <li>Enter tuşuna bastığınızda, sistem otomatik olarak toplam tutarı günceller</li>
+                                    <li>Eğer son satırdaysanız, yeni bir boş satır eklenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Tutar Değiştirme:</strong>
+                        <ul>
+                            <li>Daha önce girilmiş bir kesinti tutarını değiştirmek için, ilgili hücreye tıklayın</li>
+                            <li>Mevcut değeri silin veya düzenleyin</li>
+                            <li>Yeni tutarı girin ve Enter tuşuna basın</li>
+                            <li>Sistem otomatik olarak toplam tutarı güncelleyecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tab tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Kesinti tutarlarını girerken kuruş kısmını virgül ile ayırmayı unutmayın</li>
+                    <li>Büyük miktarlarda tutarlar girerken binlik ayırıcı kullanmayın, sistem otomatik olarak formatlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toplam-hesaplama" class="section">
+        <h2>Toplam Hesaplama</h2>
+        <div class="info-box">
+            <h3>Toplam Kesinti Tutarı Görüntüleme</h3>
+            
+            <div class="step">
+                <h4>Toplam Tutar Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Toplam tutar alanı, ekranın alt kısmında, en sağda yer alır</li>
+                            <li>"Toplam" etiketi ve yanında metin kutusu şeklinde görüntülenir</li>
+                            <li>Açık gri (e0e0d9) renkli bir zeminde bulunur</li>
+                            <li>İşlem butonlarının bulunduğu satır içinde, sağ tarafta konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Otomatik Hesaplama:</strong>
+                        <ul>
+                            <li>Toplam tutar otomatik olarak hesaplanır, manuel giriş yapılamaz</li>
+                            <li>Her kesinti tutarı girildiğinde veya değiştirildiğinde toplam güncellenir</li>
+                            <li>Bir satır silindiğinde toplam tutar otomatik olarak yeniden hesaplanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Nasıl Hesaplanır:</strong>
+                        <ul>
+                            <li>Sistemdeki tüm sicillere ait kesinti tutarları toplanır</li>
+                            <li>Toplam, parasal format ile gösterilir (örn: 1.250,75)</li>
+                            <li>Binlik ayırıcı nokta, ondalık ayırıcı virgül ile gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgi:</h4>
+                <p>Toplam tutar, kaydedilmemiş değişiklikleri de içerir. Ekranda görüntülenen toplam, henüz kaydedilmemiş yeni girişleri veya değişiklikleri de kapsar. Kesin toplam için Kaydet butonuna basarak işlemi tamamlamanız önerilir.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Yeni Kayıt, Kaydet ve Çıkış Butonları</h3>
+            
+            <div class="step">
+                <h4>Yeni Kayıt Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, sol tarafta yer alır</li>
+                            <li>Gri renkte bir zemin üzerinde görüntülenir</li>
+                            <li>Üzerinde "Yeni" yazısı ve artı (+) simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda yeni bir boş satır eklenir</li>
+                            <li>İmleç otomatik olarak yeni satırdaki sicil numarası alanına konumlanır</li>
+                            <li>Bu noktada sicil ekleme işlemine başlayabilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Alternatif Yöntem:</strong>
+                        <ul>
+                            <li>Tablodaki son satırın kesinti tutarı alanında Enter tuşuna basarak da yeni satır ekleyebilirsiniz</li>
+                            <li>Bu yöntem, ardışık birçok sicil eklerken daha pratiktir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Yeni butonunun sağında yer alır</li>
+                            <li>Gri renkte bir zemin üzerinde görüntülenir</li>
+                            <li>Üzerinde "Kaydet" yazısı ve disket simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Tüm sicilleri ve kesinti tutarlarını girdikten sonra Kaydet butonuna tıklayın</li>
+                            <li>Sistem, girilen tüm verileri veritabanına kaydeder</li>
+                            <li>Kaydetme işlemi tamamlandığında, ekran yenilenir ve güncel veriler görüntülenir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme Zamanı:</strong>
+                        <ul>
+                            <li>Tüm girişleri tamamladıktan sonra kaydetmeniz önerilir</li>
+                            <li>Kesinti türünü değiştirmeden önce mutlaka kaydetme işlemi yapılmalıdır</li>
+                            <li>Programdan çıkmadan önce değişikliklerinizi kaydetmeyi unutmayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Gri renkte bir zemin üzerinde görüntülenir</li>
+                            <li>Üzerinde "Çıkış" yazısı ve kapı/çıkış simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan ve kaydetme işlemini yaptıktan sonra Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve bir önceki ekrana döneceksiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Önemli Not:</strong>
+                        <ul>
+                            <li>Çıkış butonuna tıklamadan önce değişiklikleri kaydettiğinizden emin olun</li>
+                            <li>Kaydedilmemiş değişiklikler varken çıkış yapılırsa bu değişiklikler kaybolacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna basmadan programdan çıkarsanız, yaptığınız değişiklikler kaydedilmez</li>
+                    <li>İşlemler sırasında ESC tuşuna basarsanız, program kapatılır ve kaydedilmemiş değişiklikler kaybolur</li>
+                    <li>Kaydet butonunu kullanmadan kesinti türünü değiştirirseniz, mevcut değişiklikler kaybolabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni sicil eklemek için Enter tuşunu kullanarak daha hızlı işlem yapabilirsiniz</li>
+                    <li>Birden çok sicil ve kesinti tutarı girişi yapacaksanız, tüm girişleri tamamladıktan sonra tek seferde kaydedin</li>
+                    <li>Kaydet butonuna basmanın alternatifi olarak ALT+K kısayolu da kullanılabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-bulma" class="section">
+        <h2>Sicil Bulma ve Arama</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Bulma ve Arama İşlemleri</h3>
+            
+            <div class="step">
+                <h4>Sicil Bulma Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Sicil numarası alanının hemen sağında yer alır</li>
+                            <li>Tablodaki her satır için ayrı bir buton bulunur</li>
+                            <li>Küçük bir büyüteç simgesi içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bulma İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Sicil numarası alanının yanındaki büyüteç simgeli butona tıklayın</li>
+                            <li>Sistem, "Sicil Ara" penceresini açacaktır</li>
+                            <li>Bu pencerede sicilleri arayabilir ve filtreleyebilirsiniz</li>
+                            <li>İstediğiniz sicili seçin ve onaylayın</li>
+                            <li>Seçilen sicilin bilgileri otomatik olarak sicil numarası ve adı soyadı alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Manuel Sicil Numarası Girişi:</h4>
+                <ol>
+                    <li><strong>Sicil Numarası Alan Konumu:</strong>
+                        <ul>
+                            <li>Tablonun ikinci sütununda, "Sicil No" başlığı altında yer alır</li>
+                            <li>Her satırda bir sicil numarası giriş alanı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manuel Giriş Adımları:</strong>
+                        <ol>
+                            <li>Sicil numarası alanına doğrudan personel sicil numarasını girin</li>
+                            <li>Sicil numarasını girdikten sonra Tab tuşuna basın veya Enter tuşuna basın</li>
+                            <li>Sistem otomatik olarak sicil numarasına ait personel adını bulur ve adı soyadı alanına getirir</li>
+                            <li>Eğer girilen sicil numarası sistemde yoksa "Sicil bulunamadı" uyarısı alırsınız</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarasını biliyorsanız doğrudan girebilirsiniz</li>
+                    <li>Sicil numarasını bilmiyorsanız veya emin değilseniz, büyüteç simgeli butonu kullanarak arama yapabilirsiniz</li>
+                    <li>Tabloda birden fazla satır varken herhangi bir sicil numarası alanına tıklayarak o satırı düzenleyebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="kayit-silme" class="section">
+        <h2>Kayıt Silme İşlemi</h2>
+        <div class="info-box">
+            <h3>Sicil Kaydı Nasıl Silinir</h3>
+            
+            <div class="step">
+                <h4>Sicil Silme Adımları:</h4>
+                <ol>
+                    <li><strong>Silme Butonu Konumu:</strong>
+                        <ul>
+                            <li>Her satırın en sol sütununda bir silme butonu bulunur</li>
+                            <li>Buton üzerinde küçük bir çöp kutusu/silme simgesi yer alır</li>
+                            <li>Tablodaki her kayıt için ayrı bir silme butonu mevcuttur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Silme İşlemi:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz sicil kaydının bulunduğu satırdaki silme butonuna tıklayın</li>
+                            <li>Sistem, "Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir</li>
+                            <li>Onay mesajında:
+                                <ul>
+                                    <li>"Evet" seçeneğini tıklarsanız, kayıt silinecektir</li>
+                                    <li>"Hayır" seçeneğini tıklarsanız, silme işlemi iptal edilecektir</li>
+                                </ul>
+                            </li>
+                            <li>Silme işlemi onaylandığında, ilgili satır tablodan kaldırılır</li>
+                            <li>Sistem otomatik olarak toplam tutarı günceller</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, sadece Kaydet butonuna basmadıysanız programı kapatıp tekrar açarak değişiklikleri iptal edebilirsiniz</li>
+                    <li>Kaydet butonuna basıldıktan sonra silinen kayıtlar kalıcı olarak silinir</li>
+                    <li>Yanlışlıkla kayıt silme durumunda, aynı sicil numarasını tekrar ekleyebilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla kayıt silecekseniz, tüm silme işlemlerini tamamladıktan sonra Kaydet butonuna basın</li>
+                    <li>Onay mesajını dikkatlice okuyun ve emin olmadan "Evet" seçeneğini tıklamayın</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Tutarı girip bir sonraki satıra geçmek için</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sicil bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girilen sicil numarası sistemde bulunamıyor.</li>
+                            <li>Çözüm: Sicil numarasını kontrol edin veya büyüteç simgeli butonu kullanarak doğru sicili arayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Tutar Güncellenmemesi:</strong>
+                        <ul>
+                            <li>Sorun: Kesinti tutarı girildiği halde toplam hesaplanmıyor.</li>
+                            <li>Çözüm: Enter tuşuna basarak girişi tamamlayın veya başka bir alana geçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna basıldığında işlem tamamlanmıyor.</li>
+                            <li>Çözüm: Tüm sicil numaralarının ve kesinti tutarlarının doğru girildiğinden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Toplu sicil girişi yapıyorsanız, önce tüm sicilleri ekleyin sonra Kaydet butonuna basın</li>
+                    <li>Kesinti türlerini karıştırmamak için her kesinti türü için ayrı ayrı işlem yapın</li>
+                    <li>Silme işlemi yapmadan önce doğru satırı seçtiğinizden emin olun</li>
+                    <li>İşlem sonunda toplam tutarı kontrol ederek beklediğiniz değerde olduğundan emin olun</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>Memur Özel Kesinti Sicil Giriş programı, personele uygulanacak özel kesinti bilgilerini yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Kesinti türü seçimi ve bilgileri</li>
+                <li>Sicil ekleme ve düzenleme işlemleri</li>
+                <li>Kesinti tutarlarının girilmesi</li>
+                <li>Toplam tutarın görüntülenmesi</li>
+                <li>İşlem butonlarının kullanımı (Yeni, Kaydet, Çıkış)</li>
+                <li>Sicil bulma ve arama işlemleri</li>
+                <li>Kayıt silme işlemleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+     </div>
+</body>
+</html>

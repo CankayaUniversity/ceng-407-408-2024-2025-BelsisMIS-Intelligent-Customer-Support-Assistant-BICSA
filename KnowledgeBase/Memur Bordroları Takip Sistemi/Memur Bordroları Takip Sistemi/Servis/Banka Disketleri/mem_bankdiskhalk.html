@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halkbank Dosyası Oluşturma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Halkbank Dosyası Oluşturma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#tarih">Tarih Bilgisi Girişi</a></li>
+                <li><a href="#yil-ay">Yıl ve Ay Aralığı Belirleme</a></li>
+                <li><a href="#sicil">Sicil Numarası Aralığı Belirleme</a></li>
+                <li><a href="#bolum">Bölüm Seçimi</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçimi</a></li>
+                <li><a href="#gruplama">Maaşların Gruplanması Seçeneği</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Halkbank Dosyası Oluşturma programı, belirlediğiniz dönem ve personel kriterlerine göre banka ödeme dosyası oluşturmanıza yardımcı olan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli tarih aralıklarındaki maaş ödemelerini içeren banka dosyası oluşturabilirsiniz</li>
+                <li>Sicil numarası aralığı belirleyerek özel personel grupları oluşturabilirsiniz</li>
+                <li>Bölüm ve maaş tipi bazında filtreler uygulayabilirsiniz</li>
+                <li>Maaş verilerinizi gruplayabilir veya tek tek listeleyebilirsiniz</li>
+                <li>Dosya formatınızı kurumunuzun Halkbank'taki formatına uygun şekilde oluşturabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz dönemin tarih, yıl ve ay bilgisi</li>
+                    <li>İşlem yapacağınız personelin sicil numarası aralığı</li>
+                    <li>Hangi bölüm(ler) için işlem yapacağınız</li>
+                    <li>Hangi maaş tipi/tipleri için işlem yapacağınız</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi) renkli bir şeritte "Halk Bankası" başlığı yer alır</li>
+                            <li>Bu bölüm beyaz metin rengi ile arka plandan belirgin şekilde ayrılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Tarih girişi ile başlar, sonra yıl/ay aralıkları, sicil numarası aralığı gibi alanlar bulunur</li>
+                            <li>Her alan için soldaki etiket ve sağındaki giriş alanları şeklinde düzenlenmiştir</li>
+                            <li>Alanlar yukarıdan aşağıya doğru mantıksal bir sırada yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm ve Maaş Tipi Seçim Alanları:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında yer alır</li>
+                            <li>İki adet çoklu seçim listesi (multiple select list) bulunur</li>
+                            <li>Sol tarafta "Bölüm" etiketi ve seçim listesi, sağında "Maaş Tipi" etiketi ve seçim listesi vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Gruplama Seçeneği:</strong>
+                        <ul>
+                            <li>Bölüm ve Maaş Tipi seçim listelerinin altında yer alır</li>
+                            <li>Bir etiket ve açılır kutu (dropdown) içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>"Oluştur" ve "Çıkış" butonlarını içerir</li>
+                            <li>Butonlar merkezi olarak konumlandırılmıştır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Tarih alanına konumlanır</li>
+                    <li>Kurumunuza bağlı olarak bazı varsayılan değerler otomatik olarak doldurulabilir</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                    <li>Gizli alanlar da bulunmaktadır, ancak bunlar programın arka planında çalışır ve kullanıcı müdahalesi gerektirmez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tarih" class="section">
+        <h2>Tarih Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Tarih Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Tarih Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tarih alanı, ekranın üst kısmında, "Halk Bankası" başlığının hemen altında yer alır</li>
+                            <li>"Tarih" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir tarih metin kutusu yer alır</li>
+                            <li>Metin kutusu gri tonlarında, beyaz iç arka plana sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tarih alanına tıklayın veya program açıldığında imleç burada olacaktır</li>
+                            <li>Tarihi gün/ay/yıl (GG/AA/YYYY) formatında girin
+                                <ul>
+                                    <li>Örneğin: 15/03/2024 (15 Mart 2024 için)</li>
+                                    <li>Gün ve ay iki haneli, yıl dört haneli olmalıdır</li>
+                                    <li>Tarih kısımları arasında "/" işareti kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>Tarih alanından çıktığınızda (TAB tuşuna basarak veya başka bir alana tıklayarak), program girdiğiniz tarihin geçerliliğini kontrol eder</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Geçerli bir tarih formatında (GG/AA/YYYY) giriş yapılmalıdır</li>
+                    <li>Tarih bilgisi, oluşturulacak dosyanın başlık bilgisinde kullanılacaktır</li>
+                    <li>Tarih değiştikçe, eğer "İlk Yıl / İlk Ay" alanları boşsa, bu alanlar da otomatik olarak güncellenebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tarih alanı programın en önemli alanlarından biridir, çünkü oluşturulacak dosyada tarih bilgisi olarak kullanılır</li>
+                    <li>Tarih alanını doldurduğunuzda, program otomatik olarak yıl ve ay değerlerini tarihten alabilir</li>
+                    <li>TAB tuşunu kullanarak Tarih alanından sonraki alana geçebilirsiniz</li>
+                    <li>Bazı kurumlarda tarih alanı varsayılan olarak sistem tarihiyle dolabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-ay" class="section">
+        <h2>Yıl ve Ay Aralığı Belirleme</h2>
+        <div class="info-box">
+            <h3>Yıl ve Ay Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>İlk Yıl / İlk Ay Bilgilerinin Girilmesi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İlk Yıl / İlk Ay alanları, Tarih alanının hemen altında yer alır</li>
+                            <li>"İlk Yıl / İlk Ay" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu yıl, sağ kutu ay içindir</li>
+                            <li>İki kutu arasında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk Yıl kutusuna tıklayın</li>
+                            <li>Başlangıç yılını 4 haneli olarak girin (örn. 2024)
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>4 haneli bir sayı olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya "/" işaretinin sağındaki kutuya tıklayarak İlk Ay alanına geçin</li>
+                            <li>Başlangıç ayını 1-2 haneli olarak girin (örn. 3 veya 03)
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>1 ile 12 arasında bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Son Yıl / Son Ay Bilgilerinin Girilmesi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Son Yıl / Son Ay alanları, İlk Yıl / İlk Ay alanlarının hemen altında yer alır</li>
+                            <li>"Son Yıl / Son Ay" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu yıl, sağ kutu ay içindir</li>
+                            <li>İki kutu arasında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Son Yıl kutusuna tıklayın</li>
+                            <li>Bitiş yılını 4 haneli olarak girin (örn. 2024)
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>4 haneli bir sayı olmalıdır</li>
+                                    <li>İlk Yıl değerinden küçük olmamalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya "/" işaretinin sağındaki kutuya tıklayarak Son Ay alanına geçin</li>
+                            <li>Bitiş ayını 1-2 haneli olarak girin (örn. 12)
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>1 ile 12 arasında bir değer olmalıdır</li>
+                                    <li>Eğer Son Yıl ve İlk Yıl aynıysa, Son Ay değeri İlk Ay değerinden küçük olmamalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Ay alanları boş bırakıldığında, program otomatik olarak tarih alanından alınan değerleri kullanabilir</li>
+                    <li>Yıl 4 haneli, ay ise en fazla 2 haneli olmalıdır</li>
+                    <li>Bitiş tarihi (Son Yıl/Son Ay) başlangıç tarihinden (İlk Yıl/İlk Ay) daha ileri bir tarih olmalıdır</li>
+                    <li>Yıl ve ay değiştirildiğinde, Tarih alanında otomatik bir güncelleme olmaz - yani Tarih alanı ile Yıl/Ay alanları ayrı ayrı yönetilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir ayın verilerini almak için İlk Yıl/Ay ve Son Yıl/Ay değerlerini aynı yapabilirsiniz</li>
+                    <li>Tarih alanını doldurduğunuzda, program otomatik olarak İlk Yıl/Ay alanlarını doldurabilir</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yıl ve Ay aralıkları belirlenirken, bu aralıktaki tüm ayların verilerinin işleneceğini unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil" class="section">
+        <h2>Sicil Numarası Aralığı Belirleme</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Sicil Numarası Aralığı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanları, Son Yıl / Son Ay alanlarının hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                            <li>İki kutu arasında küçük bir boşluk vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol sicil numarası kutusuna tıklayın</li>
+                            <li>Başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>En fazla 8 haneli bir sayı olabilir</li>
+                                    <li>Varsayılan değer genellikle "0" dır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya sağdaki kutuya tıklayarak bitiş sicil numarası alanına geçin</li>
+                            <li>Bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>En fazla 8 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç sicil numarasından büyük veya eşit olmalıdır</li>
+                                    <li>Varsayılan değer genellikle "999999" dır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası alanları boş bırakıldığında, program otomatik olarak varsayılan değerleri kullanabilir</li>
+                    <li>Başlangıç sicil numarası, bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Aralık belirlediğinizde, bu aralıktaki tüm personelin verileri işlenecektir</li>
+                    <li>Çok geniş aralıklar belirlemek, çok sayıda personel verisi işleneceği için programın çalışma süresini uzatabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir personelin verisini almak için başlangıç ve bitiş sicil numarası aynı olmalıdır</li>
+                    <li>Belli bir bölüm veya departmanın tüm personelini almak için, o bölüme ait sicil numarası aralığını belirleyebilirsiniz</li>
+                    <li>Varsayılan geniş aralık (0-999999) tüm personeli kapsayacaktır, ancak bu çok fazla veri işlenmesine neden olabilir</li>
+                    <li>Sicil numarası aralığı ile birlikte Bölüm seçimi de yaparak daha spesifik filtreleme yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bolum" class="section">
+        <h2>Bölüm Seçimi</h2>
+        <div class="info-box">
+            <h3>Bölüm Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Bölüm Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm seçim alanı, Sicil No alanının hemen altında yer alır</li>
+                            <li>"Bölüm" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi (multiple selection list) kutusu yer alır</li>
+                            <li>Liste kutusu yaklaşık 200 piksel genişliğinde ve değerleri kaydırarak görebileceğiniz bir yüksekliktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Bölüm listesine tıkladığınızda mevcut bölümlerin tamamı listelenir</li>
+                            <li>Tek bir bölüm seçmek için:
+                                <ul>
+                                    <li>Listeden ilgili bölüme tıklayın</li>
+                                    <li>Seçilen bölüm vurgulanacaktır (genellikle mavi renkte)</li>
+                                </ul>
+                            </li>
+                            <li>Birden fazla bölüm seçmek için:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak seçmek istediğiniz her bir bölüme tıklayın</li>
+                                    <li>Her seçilen bölüm vurgulanacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık bölümleri seçmek için:
+                                <ul>
+                                    <li>İlk bölüme tıklayın</li>
+                                    <li>SHIFT tuşunu basılı tutarak son bölüme tıklayın</li>
+                                    <li>Arada kalan tüm bölümler otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Seçimi Temizleme veya Değiştirme:</strong>
+                        <ul>
+                            <li>Seçimleri tamamen kaldırmak için liste dışında bir yere tıklayıp tekrar listeye tıklayın</li>
+                            <li>Belirli bir seçimi kaldırmak için CTRL tuşunu basılı tutarak seçili bölüme tekrar tıklayın</li>
+                            <li>Yeni bölümler seçmek için CTRL tuşunu basılı tutarak istediğiniz bölümlere tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program açıldığında, varsayılan olarak tüm bölümler seçili olabilir</li>
+                    <li>En az bir bölüm seçilmelidir, aksi halde program uyarı verebilir</li>
+                    <li>Seçilen bölümler, dosya oluşturma işleminde bir filtreleme kriteri olarak kullanılır</li>
+                    <li>Seçilen bölümlerin bilgileri ekrandaki gizli bir alana otomatik olarak kaydedilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm bölümleri hızlıca seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                    <li>Bölüm isimleri alfabetik sırada olabilir, bu da aradığınız bölümü bulmanızı kolaylaştırır</li>
+                    <li>Klavyede bir bölüm adının ilk harfini yazarak, liste o harfle başlayan ilk bölüme atlayacaktır</li>
+                    <li>Çok sayıda bölüm olduğunda, ilgili bölümleri bulmak için listeyi kaydırmanız gerekebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Maaş Tipi Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Maaş Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Maaş Tipi seçim alanı, Bölüm seçim alanının hemen altında yer alır</li>
+                            <li>"Maaş Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi (multiple selection list) kutusu yer alır</li>
+                            <li>Liste kutusu yaklaşık 200 piksel genişliğinde ve değerleri kaydırarak görebileceğiniz bir yüksekliktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Maaş Tipi listesine tıkladığınızda mevcut maaş tiplerinin tamamı listelenir</li>
+                            <li>Her maaş tipi, kod ve açıklama içerir</li>
+                            <li>Tek bir maaş tipi seçmek için:
+                                <ul>
+                                    <li>Listeden ilgili maaş tipine tıklayın</li>
+                                    <li>Seçilen maaş tipi vurgulanacaktır (genellikle mavi renkte)</li>
+                                </ul>
+                            </li>
+                            <li>Birden fazla maaş tipi seçmek için:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak seçmek istediğiniz her bir maaş tipine tıklayın</li>
+                                    <li>Her seçilen maaş tipi vurgulanacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık maaş tiplerini seçmek için:
+                                <ul>
+                                    <li>İlk maaş tipine tıklayın</li>
+                                    <li>SHIFT tuşunu basılı tutarak son maaş tipine tıklayın</li>
+                                    <li>Arada kalan tüm maaş tipleri otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Seçimi Temizleme veya Değiştirme:</strong>
+                        <ul>
+                            <li>Seçimleri tamamen kaldırmak için liste dışında bir yere tıklayıp tekrar listeye tıklayın</li>
+                            <li>Belirli bir seçimi kaldırmak için CTRL tuşunu basılı tutarak seçili maaş tipine tekrar tıklayın</li>
+                            <li>Yeni maaş tipleri seçmek için CTRL tuşunu basılı tutarak istediğiniz maaş tiplerine tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program açıldığında, varsayılan olarak tüm maaş tipleri seçili olabilir</li>
+                    <li>En az bir maaş tipi seçilmelidir, aksi halde program uyarı verebilir</li>
+                    <li>Seçilen maaş tipleri, dosya oluşturma işleminde bir filtreleme kriteri olarak kullanılır</li>
+                    <li>Seçilen maaş tiplerinin bilgileri ekrandaki gizli bir alana otomatik olarak kaydedilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm maaş tiplerini hızlıca seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                    <li>Maaş tipi kodunu biliyorsanız, klavyeden o kodu yazarak hızlıca ilgili tipe gidebilirsiniz</li>
+                    <li>Sık kullandığınız maaş tiplerini not etmeniz, onları tekrar bulmayı kolaylaştırır</li>
+                    <li>Genellikle bir çalışma dönemi için sadece bir veya birkaç maaş tipi seçilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="gruplama" class="section">
+        <h2>Maaşların Gruplanması Seçeneği</h2>
+        <div class="info-box">
+            <h3>Maaşlar Nasıl Gruplanır</h3>
+            <div class="step">
+                <h4>Maaş Gruplama Seçeneği Kullanımı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Maaş gruplama seçeneği, Maaş Tipi seçim alanının hemen altında yer alır</li>
+                            <li>"Maaşlar Gruplansın" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Liste kutusu genellikle 100-150 piksel genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, iki seçenek görüntülenecektir:
+                                <ul>
+                                    <li>"Hayır" - Maaşlar tek tek listelenecek (varsayılan seçenek)</li>
+                                    <li>"Evet" - Maaşlar gruplanacak</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz seçeneğe tıklayarak seçiminizi yapın</li>
+                            <li>Seçim yapıldığında liste otomatik olarak kapanacak ve seçilen değer görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program açıldığında, varsayılan olarak "Hayır" seçeneği seçili olabilir</li>
+                    <li>Gruplama seçeneği, oluşturulacak dosyanın formatını ve içeriğini etkiler:
+                        <ul>
+                            <li>"Hayır" seçildiğinde: Her personelin maaş bilgisi ayrı ayrı listelenir</li>
+                            <li>"Evet" seçildiğinde: Personel maaşları gruplandırılarak toplam değerler oluşturulur</li>
+                        </ul>
+                    </li>
+                    <li>Bazı belediyeler için bazı özel durumlar geçerli olabilir, bu durumda program otomatik olarak uygun formatı kullanır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda personel için işlem yapıyorsanız ve genel toplam bilgileri yeterliyse "Evet" seçeneğini kullanın</li>
+                    <li>Personel bazında detaylı bilgi gerekiyorsa "Hayır" seçeneğini kullanın</li>
+                    <li>Banka tarafından istenen format konusunda emin değilseniz, kurum yöneticinize danışın</li>
+                    <li>Programın otomatik olarak ayarladığı varsayılan değer genellikle kurumunuz için en uygun olanıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Oluştur ve Çıkış Butonları Nasıl Kullanılır</h3>
+            <div class="step">
+                <h4>Oluştur Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Oluştur butonu, ekranın alt kısmında merkez bölümde sol tarafta yer alır</li>
+                            <li>Üzerinde "Oluştur" yazısı ve küçük bir onay ikonu bulunur</li>
+                            <li>Gri arka planı ve 3D görünümü ile kolayca fark edilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Oluşturma İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Tüm gerekli alanları doldurun:
+                                <ul>
+                                    <li>Tarih bilgisini girin</li>
+                                    <li>Yıl ve ay aralıklarını belirleyin</li>
+                                    <li>Sicil numarası aralığını belirleyin</li>
+                                    <li>Bölüm(ler)i seçin</li>
+                                    <li>Maaş tip(ler)i seçin</li>
+                                    <li>Gruplama seçeneğini belirleyin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>Oluştur butonuna tıklayın</li>
+                            <li>Program işlemi başlatacak ve dosya oluşturulacaktır</li>
+                            <li>İşlem tamamlandığında bir bilgi mesajı görüntülenecektir:
+                                <ul>
+                                    <li>"X Kişiye Ait #Y# TL. Tutarında Banka Disketi Hazırlanmıştır."</li>
+                                    <li>Burada X: işlenen personel sayısı, Y: toplam maaş tutarını gösterir</li>
+                                </ul>
+                            </li>
+                            <li>Oluşturulan dosya otomatik olarak bilgisayarınıza indirilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Çıkış butonu, ekranın alt kısmında Oluştur butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Çıkış" yazısı ve küçük bir kapı/çıkış ikonu bulunur</li>
+                            <li>Gri arka planı ve 3D görünümü ile kolayca fark edilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın veya iptal etmek istiyorsanız</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapatılacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Oluştur butonuna tıklamadan önce tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                    <li>Oluştur butonuna tıkladığınızda, işlem tamamlanana kadar bekleyin, program çalışırken başka işlem yapmayın</li>
+                    <li>Oluşturulan dosya, kurumunuzun Halkbank'taki formatına uygun olacaktır</li>
+                    <li>Farklı belediyeler için farklı formatlar kullanılabilir, program otomatik olarak kurumunuza uygun formatı seçecektir</li>
+                    <li>Çıkış butonuna tıklamadan önce, kaydedilmemiş değişiklikleriniz varsa, Oluştur butonuna tıklayarak işlemi tamamladığınızdan emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Oluştur butonuna ALT+O tuş kombinasyonu ile de erişebilirsiniz</li>
+                    <li>Çıkış butonuna ESC tuşu ile de erişebilirsiniz</li>
+                    <li>Dosya oluşturma işlemi, veri miktarına bağlı olarak biraz zaman alabilir, sabırlı olun</li>
+                    <li>İşlem sonucunda gösterilen bilgi mesajını not alın, böylece işlenen personel sayısını ve toplam tutarı takip edebilirsiniz</li>
+                    <li>Oluşturulan dosyayı Halkbank'a göndermeden önce içeriğini kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçin</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT+O:</strong> Oluştur butonunu aktif etmek için</li>
+                    <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                    <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+                    <li><strong>CTRL+A:</strong> Listelerdeki tüm öğeleri seçmek için</li>
+                </ul>
+            </div>
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Tarih belirtmelisiniz." Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oluştur butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Tarih alanını GG/AA/YYYY formatında doldurun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yıl belirtmelisiniz." veya "Ay belirtmelisiniz." Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Yıl veya ay alanları boş bırakılmış.</li>
+                            <li>Çözüm: İlk Yıl ve İlk Ay alanlarını doldurun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sicil aralığı belirtmelisiniz." Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Sicil numarası alanları boş bırakılmış.</li>
+                            <li>Çözüm: Sicil numarası alanlarını doldurun, tüm personel için 0-999999 gibi geniş bir aralık kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oluşturulan Dosyada Veri Yok:</strong>
+                        <ul>
+                            <li>Sorun: Dosya oluşturuldu ancak içinde beklediğiniz veriler yok.</li>
+                            <li>Çözüm: Filtreleme kriterlerinizi kontrol edin. Yıl/ay aralığı, sicil numarası aralığı, bölüm ve maaş tipi seçimlerinizin doğru olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Türkçe Karakter Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Oluşturulan dosyada Türkçe karakterler (ç, ğ, ı, ö, ş, ü) hatalı görünüyor.</li>
+                            <li>Çözüm: Program otomatik olarak Türkçe karakterleri dönüştürmektedir, ancak sorun devam ediyorsa sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Düzenli maaş ödemeleri için bir standart set belirleyin (yıl/ay, bölüm, maaş tipi, vb.) ve her seferinde aynı kriterleri kullanın</li>
+                    <li>Büyük miktarda veri işlemeden önce, küçük bir grupla test yapın</li>
+                    <li>Her dosya oluşturma işleminden sonra, bilgi mesajındaki personel sayısı ve toplam tutarı not edin, böylece aylık karşılaştırmalar yapabilirsiniz</li>
+                    <li>Özel durumlar (ikramiye, ek ödeme, vb.) için ayrı maaş tipleri kullanın</li>
+                    <li>Banka dosyasını göndermeden önce oluşturulan dosyanın içeriğini kontrol edin</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Dosya oluşturma işlemi geri alınamaz, bu nedenle işlem başlatmadan önce tüm seçimlerinizi kontrol edin</li>
+                    <li>Oluşturulan dosyayı bankaya göndermeden önce içeriğini ve toplamları kontrol edin</li>
+                    <li>Yoğun kullanım saatlerinde çok büyük veri setleri için işlem yapmaktan kaçının, sistem yavaşlayabilir</li>
+                    <li>Sorun yaşadığınızda sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Halkbank Dosyası Oluşturma programı, personel maaş ödemelerinin banka formatında hazırlanmasını sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Tarih bilgisi girişi</li>
+                <li>Yıl ve ay aralığı belirleme</li>
+                <li>Sicil numarası aralığı belirleme</li>
+                <li>Bölüm seçimi</li>
+                <li>Maaş tipi seçimi</li>
+                <li>Maaşların gruplanması seçeneği</li>
+                <li>İşlem butonlarının kullanımı</li>
+                <li>Hızlı tuş kombinasyonları</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+            </ul>
+
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+    
+    <p>Halkbank Dosyası Oluşturma programını kullanarak, personel maaş ödemelerinizi güvenli ve düzenli bir şekilde banka formatında hazırlayabilirsiniz.</p>
+</div>
+    </div>
+</body>
+</html>

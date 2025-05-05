@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicil Kesinti İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sicil Kesinti İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#bolum-filtreleme">Bölüm Filtreleme ve Görüntüleme</a></li>
+                <li><a href="#sicil-kesinti">Sicil Kesinti İşlemleri</a></li>
+                <li><a href="#toplu-guncelleme">Toplu Güncelleme Özelliği</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları ve Kaydetme</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Sicil Kesinti İşlemleri ekranı, personel kesintilerini bölüm ve kişi bazında yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel sicil kayıtlarını bölümlere göre görüntüleyebilirsiniz</li>
+                <li>Her personel için farklı kesinti tiplerinde değerler girebilirsiniz</li>
+                <li>Toplu güncelleme yaparak birçok personelin kesinti bilgilerini aynı anda değiştirebilirsiniz</li>
+                <li>Sendika üyeliğine göre filtreleme yapabilirsiniz</li>
+                <li>Tüm değişiklikleri kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Kesinti tanımlarının doğru yapıldığından</li>
+                    <li>Hangi bölüm personeli için işlem yapacağınızdan</li>
+                    <li>Kesinti değerlerinin doğru formatta girilmesi gerektiğinden (sadece sayısal değer kabul edilir)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "KESİNTİ TANIMLARI" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup tablo formatında düzenlenmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında "Toplu Güncelleme" butonu bulunur</li>
+                            <li>Onun altında "Kaydet" butonu bulunur</li>
+                            <li>Bu butonlar tablonun başlık kısmında, üst bölümde yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Başlığı:</strong>
+                        <ul>
+                            <li>İşlem butonlarının hemen altında kesinti tanımlarının sütun başlıkları yer alır</li>
+                            <li>İlk sütunda boş bir hücre, sonraki sütunlarda ise kesinti tipleri listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Grupları:</strong>
+                        <ul>
+                            <li>Tablo içerisinde her bölüm için ayrı bir grup oluşturulmuştur</li>
+                            <li>Her bölüm başlığı koyu gri arkaplan rengiyle vurgulanmış bir satırdır</li>
+                            <li>Bölüm adının sol tarafında "+" veya "-" işaretli bir buton bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Listesi:</strong>
+                        <ul>
+                            <li>Her bölüm başlığının altında, ilgili bölümdeki personel listesi yer alır</li>
+                            <li>Her personel bir satırda gösterilir</li>
+                            <li>Satırlar alternatif olarak açık gri ve beyaz renklerle ayrılmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Değerleri:</strong>
+                        <ul>
+                            <li>Her personel satırında, kesinti tiplerinin altında metin kutuları bulunur</li>
+                            <li>Bu kutulara kesinti değerleri girilir</li>
+                            <li>Değer girilen kutular açık sarı (buğday) rengine dönüşür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm bölümler kapalı olarak görüntülenir (bölüm adının yanında "+" işareti bulunur)</li>
+                    <li>Pencere ekranın tamamını kaplayacak şekilde açılır</li>
+                    <li>Değerleri girmeden önce ilgili bölümü açmanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="bolum-filtreleme" class="section">
+        <h2>Bölüm Filtreleme ve Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Bölümleri Açma ve Kapama</h3>
+            <div class="step">
+                <h4>Bölüm Görüntüleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Bölüm Satırını Bulma:</strong>
+                        <ul>
+                            <li>Tablo içerisinde koyu gri arkaplan rengine sahip satırlar bölüm başlıklarıdır</li>
+                            <li>Her bölüm başlığının sol tarafında bir buton bulunur</li>
+                            <li>Bu buton üzerinde ilk durumda "+" işareti görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm İçeriğini Açma Adımları:</strong>
+                        <ol>
+                            <li>Bölüm satırının en solundaki "+" işaretli butona tıklayın
+                                <ul>
+                                    <li>Buton, bölüm adının hemen solunda yer alır</li>
+                                    <li>Koyu gri bölüm satırında bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Tıklandığında, ilgili bölümdeki tüm personel satırları görünür hale gelir
+                                <ul>
+                                    <li>Personel satırları bölüm satırının altında listelenir</li>
+                                    <li>Satırlar sırasıyla açık gri ve beyaz renklerle gösterilir</li>
+                                </ul>
+                            </li>
+                            <li>"+" işareti "-" işaretine dönüşür
+                                <ul>
+                                    <li>Bu işaret bölümün açık olduğunu gösterir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Bölüm İçeriğini Kapama Adımları:</strong>
+                        <ol>
+                            <li>Açık durumdaki bölümün sol tarafındaki "-" işaretli butona tıklayın
+                                <ul>
+                                    <li>Buton, bölüm adının hemen solunda yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Tıklandığında, ilgili bölümdeki tüm personel satırları gizlenir</li>
+                            <li>"-" işareti tekrar "+" işaretine dönüşür
+                                <ul>
+                                    <li>Bu işaret bölümün kapalı olduğunu gösterir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Aynı anda birden fazla bölümü açık tutabilirsiniz</li>
+                    <li>Büyük listelerde performans için sadece üzerinde çalıştığınız bölümleri açık tutun</li>
+                    <li>Bölüm adları alfabetik sırayla listelenir, aradığınız bölümü hızlıca bulabilirsiniz</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kapalı bölümlerdeki personel için değer giremezsiniz, önce bölümü açmanız gerekir</li>
+                    <li>Çok sayıda bölümü aynı anda açmak, özellikle büyük kurumlarda, ekranın çok uzamasına ve sistemin yavaşlamasına neden olabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-kesinti" class="section">
+        <h2>Sicil Kesinti İşlemleri</h2>
+        <div class="info-box">
+            <h3>Kesinti Değerlerini Girme ve Değiştirme</h3>
+            <div class="step">
+                <h4>Kesinti Değerlerini Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>İlgili Bölümü Açma:</strong>
+                        <ul>
+                            <li>İşlem yapmak istediğiniz personelin bulunduğu bölümü açın</li>
+                            <li>Bölümün en solundaki "+" butonuna tıklayarak bölüm içeriğini görüntüleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personeli Bulma:</strong>
+                        <ul>
+                            <li>Açılan personel listesinde ilgili kişiyi bulun</li>
+                            <li>Her personel satırında ad, soyad ve sendika bilgisi (varsa) görüntülenir</li>
+                            <li>Sendika bilgisi kırmızı renkle parantez içinde gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Değeri Girme Adımları:</strong>
+                        <ol>
+                            <li>İlgili personel satırında, eklemek istediğiniz kesinti tipinin altındaki metin kutusuna tıklayın
+                                <ul>
+                                    <li>Her kesinti tipi tablo başlığında sütun olarak listelenir</li>
+                                    <li>Her personel satırında bu sütunların altında metin kutuları bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Metin kutusuna kesinti değerini girin
+                                <ul>
+                                    <li>Sadece sayısal değerler ve virgül karakteri girebilirsiniz</li>
+                                    <li>Değer girildiğinde kutunun arka plan rengi açık sarıya (buğday rengi) dönüşür</li>
+                                </ul>
+                            </li>
+                            <li>Başka bir alana geçtiğinizde veya tıkladığınızda değer otomatik olarak kaydedilir</li>
+                            <li>TAB tuşu veya fare ile başka bir kesinti alanına geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kesinti Değeri Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz mevcut değerin bulunduğu metin kutusuna tıklayın</li>
+                            <li>Metin kutusu seçili duruma geldiğinde ince gri bir kenarlıkla vurgulanır</li>
+                            <li>Yeni değeri girin (eski değer otomatik olarak seçili gelir)</li>
+                            <li>Başka bir alana geçtiğinizde değişiklik uygulanır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kesinti alanlarına sadece sayısal değerler ve virgül karakteri girilebilir, harf veya özel karakterler girilmeye çalışıldığında sistem kabul etmez</li>
+                    <li>Değerler sistemde noktayla kaydedilir, ancak girişler virgülle yapılabilir</li>
+                    <li>Değişiklikler ancak "Kaydet" butonuna basıldığında veritabanına kaydedilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir metin kutusuna tıklayıp değer girdikten sonra TAB tuşuna basarak bir sonraki alana hızlıca geçebilirsiniz</li>
+                    <li>Aynı kesinti değerini birden fazla personele uygulamak için Toplu Güncelleme özelliğini kullanabilirsiniz</li>
+                    <li>Sendika üyesi personel, ad-soyad bilgisinin yanında kırmızı renkli parantez içinde sendika bilgisiyle ayırt edilebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="toplu-guncelleme" class="section">
+        <h2>Toplu Güncelleme Özelliği</h2>
+        <div class="info-box">
+            <h3>Birden Fazla Personel İçin Kesinti Değeri Güncelleme</h3>
+            <div class="step">
+                <h4>Toplu Güncelleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Toplu Güncelleme Penceresini Açma:</strong>
+                        <ol>
+                            <li>Ekranın üst kısmında yer alan "Toplu Güncelleme" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton, "KESİNTİ TANIMLARI" başlığının hemen altında yer alır</li>
+                                    <li>Kaydet butonunun bir üstünde bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Tıkladığınızda, ekranın ortasında bir pencere açılır
+                                <ul>
+                                    <li>Arka plan hafif karartılarak bu pencerenin öne çıkması sağlanır</li>
+                                    <li>Pencere açık sarı (buğday) arkaplanı olan bir diyalog kutusu şeklindedir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Filtreleme Kriterlerini Belirleme:</strong>
+                        <ol>
+                            <li>Açılan pencerede üç adet filtreleme seçeneği bulunur:
+                                <ul>
+                                    <li><strong>Sendika:</strong> Üst kısımda, belirli bir sendikaya üye personeli filtrelemek için</li>
+                                    <li><strong>Kesinti Tipi:</strong> Ortada, hangi kesinti tipini güncelleyeceğinizi seçmek için</li>
+                                    <li><strong>Bölüm:</strong> Alt kısımda, belirli bir bölümdeki personeli filtrelemek için</li>
+                                </ul>
+                            </li>
+                            <li>Her seçenek için açılır liste (dropdown) kutularından uygun değeri seçin
+                                <ul>
+                                    <li>Her açılır liste yanında etiketiyle birlikte gösterilir</li>
+                                    <li>Açılır listelerin her birinde ilk seçenek "Tümü" şeklindedir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Güncellenecek Tutarı Girme:</strong>
+                        <ol>
+                            <li>Filtreleme seçeneklerinin altında "Güncellenecek Tutar" başlığı altında bir metin kutusu bulunur
+                                <ul>
+                                    <li>Bu alan, kırmızı renkli bir başlık ile vurgulanmıştır</li>
+                                    <li>Metin kutusu ortada, diğer alanların altında yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Metin kutusuna tüm seçili personel için uygulanacak kesinti değerini girin
+                                <ul>
+                                    <li>Sadece sayısal değerler ve virgül karakteri girebilirsiniz</li>
+                                    <li>MTType="Currency" formatında para birimi olarak kabul edilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Güncelleme İşlemini Gerçekleştirme:</strong>
+                        <ol>
+                            <li>Tüm filtreleme seçeneklerini ve güncellenecek tutarı belirledikten sonra pencerenin alt kısmındaki butonlar görünür
+                                <ul>
+                                    <li>Pencerenin en altında yan yana iki buton yer alır</li>
+                                    <li>Sol tarafta "Tamam" butonu, sağ tarafta "Vazgeç" butonu bulunur</li>
+                                </ul>
+                            </li>
+                            <li>"Tamam" butonuna tıklayın
+                                <ul>
+                                    <li>Sistem belirlediğiniz kriterlere göre filtrelenen tüm personel için belirlenen kesinti tipinde değeri günceller</li>
+                                    <li>Toplu güncelleme penceresi otomatik olarak kapanır</li>
+                                    <li>Ana tabloda güncellenen tüm değerler görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>İşlemi İptal Etme:</strong>
+                        <ul>
+                            <li>İşlemi iptal etmek için "Vazgeç" butonuna tıklayın
+                                <ul>
+                                    <li>Pencere kapanır ve ana ekrana geri dönersiniz</li>
+                                    <li>Herhangi bir değişiklik yapılmaz</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Toplu güncelleme işlemi, filtreleme kriterlerine uyan tüm personelin seçilen kesinti tipindeki değerlerini değiştirir, bu işlem geri alınamaz</li>
+                    <li>Yapılan değişiklikler ancak ana ekranda "Kaydet" butonuna basıldığında kalıcı olarak veritabanına kaydedilir</li>
+                    <li>Tutar alanına değer girmeyi unutmayın, aksi takdirde tüm değerler "0" olarak güncellenebilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Filtreleme Seçenekleri Detayları:</h4>
+                <ul>
+                    <li><strong>Sendika Filtresi:</strong>
+                        <ul>
+                            <li>"Tümü" seçeneği: Tüm personel için işlem yapar</li>
+                            <li>Belirli bir sendika seçildiğinde: Sadece o sendikaya üye personelin değerleri güncellenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Tipi Filtresi:</strong>
+                        <ul>
+                            <li>"Tümü" seçeneği: Tüm kesinti tiplerindeki değerleri aynı anda günceller</li>
+                            <li>Belirli bir kesinti tipi seçildiğinde: Sadece o kesinti tipindeki değerler güncellenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Filtresi:</strong>
+                        <ul>
+                            <li>"Tümü" seçeneği: Tüm bölümlerdeki personel için işlem yapar</li>
+                            <li>Belirli bir bölüm seçildiğinde: Sadece o bölümdeki personelin değerleri güncellenir</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Kaydetme</h2>
+        <div class="info-box">
+            <h3>Değişiklikleri Kaydetme ve İşlem Butonları Kullanımı</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Değişiklikleri Yapma:</strong>
+                        <ul>
+                            <li>Önceki bölümlerde anlatıldığı gibi personellerin kesinti değerlerini girin veya değiştirin</li>
+                            <li>Değişiklik yapılan alanlar açık sarı (buğday) renkle belirginleşir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, tablonun başlık alanında "Kaydet" butonu bulunur</li>
+                            <li>Bu buton, "KESİNTİ TANIMLARI" başlığının hemen altında, Toplu Güncelleme butonunun altında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemini Gerçekleştirme:</strong>
+                        <ol>
+                            <li>"Kaydet" butonuna tıklayın
+                                <ul>
+                                    <li>Sistem tüm değişiklikleri kontrol eder</li>
+                                    <li>Geçerli değişiklikler veritabanına kaydedilir</li>
+                                </ul>
+                            </li>
+                            <li>İşlem başarılı olduğunda, değişiklikler kalıcı olarak kaydedilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Değişiklikler yaptıktan sonra sayfadan çıkmadan önce mutlaka "Kaydet" butonuna basın, aksi takdirde tüm değişiklikler kaybolacaktır</li>
+                    <li>Kaydetme işlemi tüm değişiklikleri bir kerede veritabanına aktarır, bu nedenle büyük miktarda değişiklik yapıldığında işlem biraz zaman alabilir</li>
+                    <li>Kesinti değerleri için sadece sayısal değerler ve virgül karakteri kullanılabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli aralıklarla "Kaydet" butonuna tıklayarak değişikliklerinizi kaydedin</li>
+                    <li>Büyük miktarda değişiklik yapmadan önce, bölümleri açarak ve kapatarak çalışacağınız personel grubuna odaklanın</li>
+                <li>Toplu güncelleme yaptıktan sonra, sonuçları kontrol ederek değerlerin doğru şekilde güncellendiğinden emin olun ve ardından "Kaydet" butonu ile değişiklikleri kaydedin</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Enter ve Tab Tuşları Kullanımı:</h4>
+            <ol>
+                <li><strong>Enter Tuşu:</strong>
+                    <ul>
+                        <li>Program içerisinde Enter tuşuna bastığınızda, sistem bunu Tab tuşu gibi davranacak şekilde ayarlanmıştır</li>
+                        <li>Enter tuşuna basıldığında imleç bir sonraki metin kutusuna geçer</li>
+                        <li>Bu özellik, sayısal tuş takımı kullanan kullanıcılar için hızlı veri girişi sağlar</li>
+                    </ul>
+                </li>
+                <li><strong>Tab Tuşu:</strong>
+                    <ul>
+                        <li>Tab tuşu bir alandan diğerine geçmek için kullanılır</li>
+                        <li>Bir metin kutusundan diğerine Tab tuşu ile geçiş yapabilirsiniz</li>
+                        <li>Bu, özellikle çok sayıda değer girerken hızlı çalışmanızı sağlar</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları ve Çalışma Yöntemleri:</h4>
+            <ul>
+                <li><strong>Tab ve Enter:</strong> Her iki tuş da bir sonraki alana geçmenizi sağlar, hızlı veri girişi için kullanın</li>
+                <li><strong>Fare Kullanımı:</strong> Bölümleri açıp kapatmak ve belirli hücrelere hızlıca erişmek için en pratik yöntemdir</li>
+                <li><strong>Metin Kutusunu Seçme:</strong> Bir metin kutusuna tıkladığınızda, mevcut değer otomatik olarak seçilir, doğrudan yeni değeri yazabilirsiniz</li>
+                <li><strong>Bölüm Yönetimi:</strong> Ekranda yalnızca çalıştığınız bölümleri açık tutun, bu şekilde daha hızlı gezinebilirsiniz</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Harf veya Özel Karakter Girilememesi:</strong>
+                    <ul>
+                        <li>Sorun: Kesinti değeri alanlarına harf veya özel karakter girmeye çalıştığınızda karakter görünmüyor.</li>
+                        <li>Çözüm: Bu normal bir durumdur. Kesinti alanlarına yalnızca sayısal değerler ve virgül karakteri girilebilir.</li>
+                    </ul>
+                </li>
+                <li><strong>Bölüm İçeriğinin Görünmemesi:</strong>
+                    <ul>
+                        <li>Sorun: Bölüm başlığı görünüyor ancak personel listesi açılmıyor.</li>
+                        <li>Çözüm: Bölüm başlığının solundaki "+" butonuna tıklayarak bölüm içeriğini açın.</li>
+                    </ul>
+                </li>
+                <li><strong>Değişikliklerin Kaydedilmemesi:</strong>
+                    <ul>
+                        <li>Sorun: Değişiklikler yaptıktan sonra sayfayı kapatıp tekrar açtığınızda değişiklikler kaybolmuş.</li>
+                        <li>Çözüm: Değişiklikler yapıldıktan sonra ekranın üst kısmındaki "Kaydet" butonuna tıklamalısınız.</li>
+                    </ul>
+                </li>
+                <li><strong>Toplu Güncelleme Penceresinin Kapanmaması:</strong>
+                    <ul>
+                        <li>Sorun: Toplu güncelleme penceresi açıldıktan sonra kapanmıyor.</li>
+                        <li>Çözüm: Pencerenin alt kısmındaki "Vazgeç" butonuna tıklayarak pencereyi kapatabilirsiniz.</li>
+                    </ul>
+                </li>
+                <li><strong>Yanlış Değer Girişi:</strong>
+                    <ul>
+                        <li>Sorun: Birden fazla personele yanlış değer girildi.</li>
+                        <li>Çözüm: Toplu güncelleme özelliğini kullanarak doğru değeri hızlıca tüm ilgili personele uygulayabilirsiniz.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Büyük miktarda veri girişi yapacaksanız, önce tüm bölümleri gözden geçirin ve bir çalışma planı yapın</li>
+                <li>Benzer değerlere sahip olacak personel grupları için toplu güncelleme özelliğini kullanın</li>
+                <li>Verilerinizi düzenli aralıklarla kaydedin, böylece olası bir sorun durumunda tüm çalışmanızı kaybetmezsiniz</li>
+                <li>Sendika üyeliği bulunan personeller ad-soyad yanında kırmızı renkte gösterildiğinden, onları kolayca ayırt edebilirsiniz</li>
+                <li>Her bölümdeki personel sayısı fazla ise, işlem bittikten sonra bölümü kapatarak ekranın daha düzenli görünmesini sağlayabilirsiniz</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Kesinti değerleri doğrudan personel maaşlarını etkileyeceğinden, girilen tüm değerleri dikkatle kontrol edin</li>
+                <li>Toplu güncelleme yaparken filtreleme kriterlerinin doğru seçildiğinden emin olun</li>
+                <li>Sayfadan çıkmadan önce tüm değişiklikleri kaydettiğinizden emin olun</li>
+                <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Sicil Kesinti İşlemleri ekranı, personele ait kesintileri kolayca yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Ekranın genel düzeni ve bölümler</li>
+            <li>Bölümleri açma ve kapama işlemleri</li>
+            <li>Kesinti değerlerini girme ve değiştirme yöntemleri</li>
+            <li>Toplu güncelleme özelliğinin kullanımı</li>
+            <li>Değişiklikleri kaydetme işlemi</li>
+            <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+    </div>
+</div>
+                    
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tedavi Katılım Payı Girişi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tedavi Katılım Payı Girişi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-ay">Yıl ve Ay Bilgisi Girişi</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçimi</a></li>
+                <li><a href="#saglik-kurulusu">Sağlık Kuruluşu Bilgi Girişi</a></li>
+                <li><a href="#sicil-bilgisi">Sicil Bilgisi Girişi</a></li>
+                <li><a href="#bakmakla-yukumlu">Bakmakla Yükümlü Kişiler Seçimi</a></li>
+                <li><a href="#tutar-tarih-belgeno">Tutar, Tedavi Tarihi ve Belge No Girişi</a></li>
+                <li><a href="#ekle-sil">Satır Ekleme ve Silme</a></li>
+                <li><a href="#kaydet-cikis">Veri Kaydetme ve Çıkış İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Tedavi Katılım Payı Girişi programı, personele ve bakmakla yükümlü olduğu kişilere ait sağlık harcamalarının katılım payı girişlerini yapmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir ay ve yıla ait tedavi katılım payı girişleri yapabilirsiniz</li>
+                <li>Personel sicil numarasına göre işlem yapabilirsiniz</li>
+                <li>Personelin bakmakla yükümlü olduğu kişiler için katılım payı girişi yapabilirsiniz</li>
+                <li>Tedavi tutarları, belge numaraları ve tedavi tarihleri girebilirsiniz</li>
+                <li>Girişi yapılan tüm katılım paylarını toplu olarak kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve ay bilgisi</li>
+                    <li>Maaş tipi bilgisi</li>
+                    <li>Sağlık kuruluşu bilgisi</li>
+                    <li>İşlem yapılacak personelin sicil numarası</li>
+                    <li>Tedavi katılım paylarına ait belge numarası, tutar ve tarih bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Üst Bölüm - Sağlık Kuruluşu Bilgisi:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde, açık mavi renkli bir başlık şeridi içinde "SAĞLIK KURULUŞU BİLGİSİ" yazısı yer alır</li>
+                            <li>Bu başlık altında Yıl/Ay, Maaş Tipi, Sağlık Kuruluş No ve Sağlık Kuruluş Adı alanları bulunur</li>
+                            <li>Bu bölüm, işlem yapılacak dönemi ve sağlık kuruluşunu belirlemek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Bölüm - Tedavi Katılım Payı Girişi:</strong>
+                        <ul>
+                            <li>Üst bölümün hemen altında, ikinci bir açık mavi başlık şeridi içinde "TEDAVİ KATILIM PAYI GİRİŞİ" yazısı yer alır</li>
+                            <li>Bu bölümde, tedavi katılım payı bilgilerinin girildiği bir tablo bulunur</li>
+                            <li>Tablo; Sicil No, Adı Soyadı, Bakmakla Yükümlü Kişiler, Tutar, Tedavi Tarihi ve Belge No sütunlarından oluşur</li>
+                            <li>Her satırda sağ tarafta bir silme butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Bilgi Bölümü:</strong>
+                        <ul>
+                            <li>Tablonun alt kısmında toplam tutar bilgisi gösterilir</li>
+                            <li>En altta Ekle, Kaydet ve Çıkış butonları yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Yıl alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İşlem yapmadan önce üst bölümdeki tüm alanları doldurduğunuzdan emin olun</li>
+                    <li>Sağlık kuruluşu bilgisini girmeden tedavi katılım payı girişi yapamazsınız</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-ay" class="section">
+        <h2>Yıl ve Ay Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Yıl ve Ay Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Yıl/Ay Alanı Kullanımı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>"SAĞLIK KURULUŞU BİLGİSİ" başlığının hemen altında, ekranın sol üst köşesinde yer alır</li>
+                            <li>"Yıl / Ay" etiketi yanında yan yana iki adet metin kutusu bulunur</li>
+                            <li>Sol taraftaki kutu Yıl, sağdaki kutu Ay içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına işlem yapmak istediğiniz yılı girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Ay alanına geçin</li>
+                            <li>Ay alanına ilgili ay numarasını girin (1-12 arası)
+                                <ul>
+                                    <li>Bu alan 2 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>Yıl ve Ay bilgilerini girdikten sonra, TAB tuşuna basarak Maaş Tipi alanına geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Aylık Parametre Seçim Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Ay kutusunun hemen sağında bir buton bulunur (üzerinde küçük bir büyüteç ikonu vardır)</li>
+                            <li>Bu butona tıkladığınızda "Aylık Parametre" penceresi açılır</li>
+                            <li>Açılan pencerede kayıtlı parametrelerin listesi görüntülenir</li>
+                            <li>Listeden istediğiniz dönemi seçin ve onaylayın</li>
+                            <li>Seçtiğiniz dönem bilgileri otomatik olarak Yıl, Ay ve Maaş Tipi alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Ay alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Ay alanına 1-12 arasında bir değer girilmelidir</li>
+                    <li>Yıl, Ay ve Maaş Tipi birlikte bir dönem parametresi oluşturur ve birlikte çalışır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Dönem bilgilerini manuel girmek yerine buton ile açılan pencereden seçim yapmak daha hatasız ve hızlıdır</li>
+                    <li>Yıl ve Ay değiştikçe, aynı Maaş Tipi için farklı dönemlere ait katılım payı girişleri yapabilirsiniz</li>
+                    <li>Yıl ve Ay değişikliği yapıldığında, Maaş Tipi seçiminin de güncellenmesi gerekebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Maaş Tipi Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Maaş Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Ay alanının hemen karşısında, ekranın sağ üst kısmında yer alır</li>
+                            <li>"Maaş Tipi" etiketi yanında bir açılır liste (dropdown) kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Açılan listeden işlem yapmak istediğiniz maaş tipini seçin
+                                <ul>
+                                    <li>Listede maaş tiplerinin kodları ve açıklamaları görünür</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz maaş tipi görüntülenecektir</li>
+                            <li>Maaş tipini seçtikten sonra, Yıl ve Ay bilgileri ile birlikte aylık parametre kontrolü yapılır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Aylık Parametre Kontrolü:</strong>
+                        <ol>
+                            <li>Yıl, Ay ve Maaş Tipi seçildiğinde, sistem bu bilgilerin geçerli bir aylık parametre oluşturup oluşturmadığını kontrol eder</li>
+                            <li>Eğer geçerli bir parametre bulunamazsa "Girişi yapılan ay ve yıl bulunamadı!" uyarısı alırsınız</li>
+                            <li>Bu durumda Yıl, Ay veya Maaş Tipi bilgilerini kontrol edip düzeltmeniz gerekir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Maaş tipi seçilmeden işlem yapılamaz</li>
+                    <li>Yıl, Ay ve Maaş Tipi birlikte bir aylık parametre oluşturur</li>
+                    <li>Geçersiz bir aylık parametre ile işlem yapamazsınız</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Maaş tiplerinin anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz</li>
+                    <li>Aylık parametre seçim butonunu kullanarak, Yıl, Ay ve Maaş Tipi bilgilerini otomatik olarak doldurabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="saglik-kurulusu" class="section">
+        <h2>Sağlık Kuruluşu Bilgi Girişi</h2>
+        <div class="info-box">
+            <h3>Sağlık Kuruluşu Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Sağlık Kuruluş No ve Adı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Ay ve Maaş Tipi alanlarının hemen altında yer alır</li>
+                            <li>"Sağlık Kuruluş No" etiketi yanında bir metin kutusu ve arama butonu bulunur</li>
+                            <li>"Sağlık Kuruluş Adı" etiketi yanında salt okunur (readonly) bir metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manuel Giriş Adımları:</strong>
+                        <ol>
+                            <li>Sağlık Kuruluş No alanına ilgili kuruluşun numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basın veya alanın dışına tıklayın</li>
+                            <li>Sistem otomatik olarak numaraya karşılık gelen sağlık kuruluşunu arar ve bulursa adını Sağlık Kuruluş Adı alanına getirir</li>
+                            <li>Eğer kuruluş bulunamazsa "Sağlık Kuruluşu Bulunamadı!" uyarısı alırsınız</li>
+                        </ol>
+                    </li>
+                    <li><strong>Arama Butonu ile Giriş:</strong>
+                        <ol>
+                            <li>Sağlık Kuruluş No alanının yanındaki büyüteç ikonlu butona tıklayın</li>
+                            <li>Açılan sağlık kuruluşları listesi penceresinde arama yapabilirsiniz</li>
+                            <li>Listeden istediğiniz sağlık kuruluşunu seçin</li>
+                            <li>Seçtiğiniz kuruluşun numarası ve adı otomatik olarak ilgili alanlara aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sağlık kuruluşu bilgisi girilmeden tedavi katılım payı girişi yapılamaz</li>
+                    <li>Sağlık Kuruluş No alanı boş bırakılamaz</li>
+                    <li>Geçersiz bir sağlık kuruluş numarası girdiğinizde işleme devam edemezsiniz</li>
+                    <li>Sağlık Kuruluş Adı alanı sistem tarafından otomatik doldurulur, manuel olarak değiştiremezsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sağlık kuruluş numarasını bilmiyorsanız, arama butonunu kullanarak listeden seçim yapabilirsiniz</li>
+                    <li>Sık kullandığınız sağlık kuruluşlarının numaralarını not ederek daha hızlı giriş yapabilirsiniz</li>
+                    <li>Sağlık kuruluşu değiştirildiğinde, önceki girişler silinir ve yeni kuruluş için giriş ekranı hazırlanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-bilgisi" class="section">
+        <h2>Sicil Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası ve Personel Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Sicil No Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, sol tarafta "Sicil No" sütunu bulunur</li>
+                            <li>Her satırda bir metin kutusu ve yanında küçük bir arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manuel Giriş Adımları:</strong>
+                        <ol>
+                            <li>Sicil No alanına personelin sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 10 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basın veya alanın dışına tıklayın</li>
+                            <li>Sistem otomatik olarak numaraya karşılık gelen personeli arar ve bulursa:
+                                <ul>
+                                    <li>Adı Soyadı alanını personel bilgisiyle doldurur</li>
+                                    <li>Eğer Tutar alanı boşsa veya sıfırsa, varsayılan tedavi tutarını getirir</li>
+                                </ul>
+                            </li>
+                            <li>Eğer personel bulunamazsa "(Sicil No) Nolu Sicil Bulunamadı" uyarısı alırsınız</li>
+                        </ol>
+                    </li>
+                    <li><strong>Arama Butonu ile Giriş:</strong>
+                        <ol>
+                            <li>Sicil No alanının yanındaki büyüteç ikonlu butona tıklayın</li>
+                            <li>Açılan personel arama penceresinde çeşitli kriterlere göre arama yapabilirsiniz</li>
+                            <li>Listeden istediğiniz personeli seçin</li>
+                            <li>Seçtiğiniz personelin bilgileri otomatik olarak ilgili alanlara aktarılacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Personel Çıkış Kontrolü:</strong>
+                        <ol>
+                            <li>Sicil numarası girdiğinizde, sistem otomatik olarak personelin çıkış durumunu kontrol eder</li>
+                            <li>Eğer personelin çıkışı varsa "Bu Sicilin Çıkışı Vardır" uyarısı alırsınız</li>
+                            <li>Bu uyarı sadece bilgi amaçlıdır, işleme devam edebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası girilmeden tedavi katılım payı kaydedilemez</li>
+                    <li>Geçersiz bir sicil numarası girdiğinizde işleme devam edemezsiniz</li>
+                    <li>Adı Soyadı alanı sistem tarafından otomatik doldurulur, manuel olarak değiştiremezsiniz</li>
+                    <li>Çıkışı olan personel için de tedavi katılım payı girişi yapabilirsiniz, ancak çıkış tarihine dikkat etmelisiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarasını bilmiyorsanız, arama butonunu kullanarak listeden personel seçimi yapabilirsiniz</li>
+                    <li>Sık kullandığınız personellerin sicil numaralarını not ederek daha hızlı giriş yapabilirsiniz</li>
+                    <li>Bir satırdaki işlemi tamamladıktan sonra, TAB tuşuna basarak bir sonraki alana veya satıra geçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="bakmakla-yukumlu" class="section">
+        <h2>Bakmakla Yükümlü Kişiler Seçimi</h2>
+        <div class="info-box">
+            <h3>Bakmakla Yükümlü Kişilerin Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Bakmakla Yükümlü Kişi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, Adı Soyadı sütunundan sonra "Bakmakla Yükümlü Kişiler" sütunu bulunur</li>
+                            <li>Her satırda bir metin kutusu ve yanında küçük bir arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Öncelikle aynı satırda geçerli bir sicil numarası girmiş olmanız gerekir
+                                <ul>
+                                    <li>Sicil numarası girilmeden, bakmakla yükümlü kişi seçilemez</li>
+                                    <li>Arama butonuna tıkladığınızda "Lütfen önce sicil giriniz!" uyarısı alırsınız</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarası girildikten sonra, Bakmakla Yükümlü Kişiler sütunundaki arama butonuna tıklayın</li>
+                            <li>Açılan pencerede, seçilen sicil numarasına ait bakmakla yükümlü kişilerin listesi görüntülenir</li>
+                            <li>Listeden tedavi katılım payı girişi yapılacak kişiyi seçin</li>
+                            <li>Seçtiğiniz kişinin adı soyadı otomatik olarak "Bakmakla Yükümlü Kişiler" alanına, kayıt numarası ise gizli bir alana aktarılır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Direkt Personel İçin İşlem:</strong>
+                        <ol>
+                            <li>Eğer işlem personelin kendisi için yapılacaksa, Bakmakla Yükümlü Kişiler alanını boş bırakın</li>
+                            <li>Bu durumda katılım payı girişi doğrudan personel için yapılmış olacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bakmakla yükümlü kişi seçimi zorunlu değildir, personelin kendisi için işlem yapılacaksa boş bırakılabilir</li>
+                    <li>Bakmakla yükümlü kişi seçimi için önce geçerli bir sicil numarası girilmiş olmalıdır</li>
+                    <li>Bakmakla Yükümlü Kişiler alanı sistem tarafından otomatik doldurulur, manuel olarak yazı giremezsiniz</li>
+                    <li>Seçilen bakmakla yükümlü kişinin kayıt numarası da sistem tarafından saklanır, ancak ekranda görünmez</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir personelin birden fazla bakmakla yükümlü kişisi için işlem yapacaksanız, her biri için ayrı satır oluşturun</li>
+                    <li>Bakmakla yükümlü kişi listesinden seçim yapmak daha hatasız ve hızlıdır</li>
+                    <li>Bakmakla yükümlü kişi seçildikten sonra da Tutar, Tedavi Tarihi ve Belge No bilgilerini doldurmayı unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tutar-tarih-belgeno" class="section">
+        <h2>Tutar, Tedavi Tarihi ve Belge No Girişi</h2>
+        <div class="info-box">
+            <h3>Tedavi Detayları Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Tutar Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, Bakmakla Yükümlü Kişiler sütunundan sonra "Tutar" sütunu bulunur</li>
+                            <li>Her satırda bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tutar alanına tedavi katılım payı tutarını girin
+                                <ul>
+                                    <li>Bu alan para birimi formatında değer kabul eder</li>
+                                    <li>Ondalık ayırıcı olarak virgül kullanın (örn. 125,50)</li>
+                                    <li>Sicil numarası girildiğinde, eğer tutar boşsa veya sıfırsa, sistem otomatik olarak sağlık kuruluşunun varsayılan tedavi tutarını getirir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçin</li>
+                            <li>Tutar girildiğinde veya değiştirildiğinde, ekranın alt kısmındaki toplam tutar otomatik olarak güncellenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tedavi Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, Tutar sütunundan sonra "Tedavi Tarihi" sütunu bulunur</li>
+                            <li>Her satırda bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tedavi Tarihi alanına tedavinin yapıldığı tarihi girin
+                                <ul>
+                                    <li>Bu alan tarih formatında değer kabul eder</li>
+                                    <li>Tarihi GG.AA.YYYY formatında girin (örn. 15.04.2023)</li>
+                                    <li>Gün, ay ve yıl arasına nokta koyun</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Belge No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, en sağda "Belge No" sütunu bulunur</li>
+                            <li>Her satırda bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Belge No alanına tedavi belgesinin numarasını girin
+                                <ul>
+                                    <li>Bu alan maksimum 20 karakter kabul eder</li>
+                                    <li>Harf, rakam ve özel karakterler girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>ENTER tuşuna basarak veya TAB tuşuna basarak bir sonraki satıra geçebilirsiniz</li>
+                            <li>Eğer son satırdaysanız ve Belge No alanını doldurduysanız, ENTER veya TAB tuşuna bastığınızda yeni bir satır otomatik olarak eklenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tutar alanı boş bırakılamaz, mutlaka bir değer girilmelidir</li>
+                    <li>Tedavi Tarihi ve Belge No alanları isteğe bağlıdır, ancak doğru kayıt için doldurulması önerilir</li>
+                    <li>Tarih formatına dikkat edin, GG.AA.YYYY şeklinde girilmelidir</li>
+                    <li>Tutar girildiğinde veya değiştirildiğinde, sayfanın alt kısmındaki toplam tutar otomatik olarak güncellenir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tutar alanında varsayılan değer genellikle sağlık kuruluşunun standart tedavi tutarıdır, değiştirmeden kullanabilirsiniz</li>
+                    <li>Tarih alanında güncel tarihi kullanmak için, tarihi manuel girmenize gerek yoktur, sistem otomatik olarak getirir</li>
+                    <li>Belge No alanını doldurduktan sonra ENTER tuşuna basarak hızlıca yeni bir satır ekleyebilirsiniz</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ekle-sil" class="section">
+        <h2>Satır Ekleme ve Silme</h2>
+        <div class="info-box">
+            <h3>Kayıt Satırlarının Yönetimi</h3>
+            <div class="step">
+                <h4>Yeni Satır Ekleme:</h4>
+                <ol>
+                    <li><strong>Ekle Butonu ile Ekleme:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmında, sol tarafta "Ekle" butonu bulunur</li>
+                            <li>Bu butona tıkladığınızda tabloya yeni bir boş satır eklenir</li>
+                            <li>Yeni satır, mevcut satırların altına eklenir ve imleç otomatik olarak yeni satırın Sicil No alanına konumlanır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Otomatik Satır Ekleme:</strong>
+                        <ol>
+                            <li>Tablodaki son satırda Belge No alanını doldurduktan sonra ENTER veya TAB tuşuna basarsanız, otomatik olarak yeni bir satır eklenir</li>
+                            <li>Bu özellik, birden fazla kayıt girişini hızlandırmak için kullanışlıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Satır Silme:</h4>
+                <ol>
+                    <li><strong>Silme Butonu Konumu:</strong>
+                        <ul>
+                            <li>Tedavi Katılım Payı Girişi tablosunun her satırında, en solda bir silme butonu bulunur</li>
+                            <li>Bu buton üzerinde küçük bir çöp kutusu veya silme ikonu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırın silme butonuna tıklayın</li>
+                            <li>Sistem "Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı gösterir</li>
+                            <li>Onaylamak için "Evet" butonuna, iptal etmek için "Hayır" butonuna tıklayın</li>
+                            <li>Onayladığınızda, seçilen satır tablodan silinir</li>
+                            <li>Eğer tabloda sadece bir satır varsa ve bu satırı silerseniz, sistem otomatik olarak yeni bir boş satır ekler</li>
+                        </ol>
+                    </li>
+                    <li><strong>Silme İşlemi Sonrası:</strong>
+                        <ol>
+                            <li>Satır silindiğinde, ekranın alt kısmındaki toplam tutar otomatik olarak güncellenir</li>
+                            <li>Silinen satırdaki veriler geri alınamaz, bu yüzden silme işlemini dikkatli yapmalısınız</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, silme işlemini onaylamadan önce dikkatli düşünün</li>
+                    <li>Tabloda en az bir satır her zaman bulunur, tüm satırları silmeye çalışsanız bile sistem otomatik olarak yeni bir boş satır ekler</li>
+                    <li>Henüz kaydedilmemiş satırları sildiğinizde veri kaybı olmaz, ancak kayıtlı satırları sildiğinizde ve kaydettiğinizde veriler kalıcı olarak silinir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla kayıt ekleyecekseniz, her seferinde Ekle butonuna tıklamak yerine, son satırın Belge No alanını doldurup ENTER tuşuna basarak hızlıca yeni satır ekleyebilirsiniz</li>
+                    <li>Yanlış girdiğiniz bir satırı düzeltmek yerine silip yeniden girmek bazen daha hızlı olabilir</li>
+                    <li>Tabloda çok sayıda satır olduğunda, silme işleminden sonra toplam tutarın doğru güncellendiğinden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kaydet-cikis" class="section">
+        <h2>Veri Kaydetme ve Çıkış İşlemleri</h2>
+        <div class="info-box">
+            <h3>Verilerin Kaydedilmesi ve Programdan Çıkış</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ortada "Kaydet" butonu bulunur</li>
+                            <li>Bu buton üzerinde "Kaydet" yazısı ve kaydetme ikonu bulunabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Adımları:</strong>
+                        <ol>
+                            <li>Tüm tedavi katılım payı girişlerini tamamlayın:
+                                <ul>
+                                    <li>Üst bölümde Yıl, Ay, Maaş Tipi ve Sağlık Kuruluşu bilgilerini girdiğinizden emin olun</li>
+                                    <li>Tabloda her satır için gerekli bilgileri (Sicil No, Tutar, vb.) girdiğinizden emin olun</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Sistem verileri kontrol eder ve herhangi bir hata yoksa kaydeder</li>
+                            <li>Kayıt işlemi tamamlandığında, tablodaki veriler kayıtlı duruma geçer ve yeni girişler için hazır olur</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme Öncesi Kontroller:</strong>
+                        <ol>
+                            <li>Kaydet butonuna tıklamadan önce, sistem otomatik olarak şu kontrolleri yapar:
+                                <ul>
+                                    <li>Sağlık Kuruluş No boş geçilemez</li>
+                                    <li>Yıl, Ay ve Maaş Tipi bilgilerinin doğru olması gerekir</li>
+                                </ul>
+                            </li>
+                            <li>Eğer bu kontrollerden herhangi biri başarısız olursa, sistem ilgili uyarı mesajını gösterir ve kaydetme işlemini gerçekleştirmez</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış İşlemi:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, sağ tarafta "Çıkış" butonu bulunur</li>
+                            <li>Bu buton üzerinde "Çıkış" yazısı ve çıkış ikonu bulunabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın ve kaydedin</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Sistem "Çıkış İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterir</li>
+                            <li>Onaylamak için "Evet" butonuna, iptal etmek için "Hayır" butonuna tıklayın</li>
+                            <li>Onayladığınızda, program penceresi kapanır ve ana menüye dönersiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetmeden çıkış yaparsanız, girdiğiniz veriler kaydedilmez</li>
+                    <li>Kaydetme işlemi sırasında hata mesajı alırsanız, hatanın nedenini anlamak için mesajı dikkatlice okuyun</li>
+                    <li>Çıkış işlemini onaylamadan önce, tüm değişiklikleri kaydettiğinizden emin olun</li>
+                    <li>Çıkış işlemi onaylandıktan sonra geri alınamaz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Uzun süreli çalışmalarda düzenli olarak kaydetme işlemi yapın</li>
+                    <li>ESC tuşuna basarak da çıkış işlemini başlatabilirsiniz</li>
+                    <li>Programdan çıkmadan önce, ekranın alt kısmındaki toplam tutarı kontrol ederek girdiğiniz verilerin toplamının doğru olduğundan emin olun</li>
+                    <li>Kaydetme işlemi sırasında hata alırsanız, üst bölümdeki Yıl, Ay, Maaş Tipi ve Sağlık Kuruluşu bilgilerini kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sağlık Kuruluşu Bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Sağlık Kuruluş No alanına geçersiz bir numara girdiniz.</li>
+                            <li>Çözüm: Doğru sağlık kuruluş numarasını girin veya arama butonunu kullanarak listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Nolu Sicil Bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Sicil No alanına geçersiz bir numara girdiniz.</li>
+                            <li>Çözüm: Doğru sicil numarasını girin veya arama butonunu kullanarak listeden personel seçimi yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu Sicilin Çıkışı Vardır" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girdiğiniz sicil numarasına sahip personelin çıkışı bulunmaktadır.</li>
+                            <li>Çözüm: Bu sadece bilgi amaçlı bir uyarıdır, eğer tedavi tarihi personelin çalıştığı döneme aitse işleme devam edebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Lütfen önce sicil giriniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Bakmakla yükümlü kişi aramaya çalışırken, önce sicil numarası girmediniz.</li>
+                            <li>Çözüm: İlk önce geçerli bir sicil numarası girin, ardından bakmakla yükümlü kişi arama butonunu kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Girişi yapılan ay ve yıl bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Yıl, Ay ve Maaş Tipi kombinasyonu geçerli bir aylık parametre oluşturmuyor.</li>
+                            <li>Çözüm: Doğru Yıl, Ay ve Maaş Tipi bilgilerini girin veya aylık parametre arama butonunu kullanarak listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sağlık Kuruluş No Boş Geçilemez" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Sağlık Kuruluş No alanını doldurun ve geçerli bir sağlık kuruluşu seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yıl, Ay ve Maaş Tipi Doğru Değil" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Yıl, Ay ve Maaş Tipi bilgilerinin doğru olduğundan ve geçerli bir aylık parametreye karşılık geldiğinden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Sık kullandığınız sağlık kuruluşlarının ve personellerin kodlarını/numaralarını not edin</li>
+                    <li>Arama butonlarını kullanarak listelerin içinden seçim yapmak manuel girişten daha az hata yapmanızı sağlar</li>
+                    <li>Birden fazla kayıt girecekseniz, son satırın Belge No alanını doldurup ENTER tuşuna basarak hızlıca yeni satır ekleyebilirsiniz</li>
+                    <li>Toplam tutarı düzenli olarak kontrol ederek, girdiğiniz değerlerin doğruluğunu teyit edin</li>
+                    <li>Uzun süreli çalışmalarda düzenli olarak Kaydet butonuna tıklayın</li>
+                    <li>Personelin bakmakla yükümlü olduğu birden fazla kişi için işlem yapacaksanız, her biri için ayrı satır kullanın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Programdan çıkmadan önce, değişiklikleri kaydettiğinizden emin olun</li>
+                    <li>Silme işlemi geri alınamaz, silme işlemini onaylamadan önce dikkatli düşünün</li>
+                    <li>Yıl, Ay, Maaş Tipi ve Sağlık Kuruluşu değiştirildiğinde, tablodaki veriler silinebilir, bu nedenle önce mevcut verileri kaydedin</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>Tedavi Katılım Payı Girişi programı, personel ve bakmakla yükümlü olduğu kişilerin sağlık harcamalarına ait katılım paylarını kaydetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Yıl ve ay bilgisi girişi</li>
+                <li>Maaş tipi seçimi</li>
+                <li>Sağlık kuruluşu bilgisi girişi</li>
+                <li>Sicil bilgisi girişi</li>
+                <li>Bakmakla yükümlü kişilerin seçimi</li>
+                <li>Tutar, tedavi tarihi ve belge no girişi</li>
+                <li>Satır ekleme ve silme işlemleri</li>
+                <li>Veri kaydetme ve programdan çıkış işlemleri</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+     </div>
+</body>
+</html>

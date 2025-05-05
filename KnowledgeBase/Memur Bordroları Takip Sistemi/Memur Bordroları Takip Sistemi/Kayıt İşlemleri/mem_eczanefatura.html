@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eczane Fatura Giriş Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Eczane Fatura Giriş Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-ay-maas">Yıl/Ay ve Maaş Tipi Seçimi</a></li>
+                <li><a href="#eczane-bilgisi">Eczane Bilgisi Girişi</a></li>
+                <li><a href="#ilac-fatura">İlaç Fatura Girişi</a></li>
+                <li><a href="#tutar-hesaplama">Tutar Hesaplama</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Eczane Fatura Giriş programı, kurum personelinin eczanelerden almış olduğu ilaçlara ait fatura bilgilerinin sisteme girilmesini sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel bazında ilaç faturalarını kaydedebilirsiniz</li>
+                <li>Belirli bir eczaneye ait fatura girişlerini yapabilirsiniz</li>
+                <li>Fatura tarihi ve numarası ile kayıt tutabilirsiniz</li>
+                <li>Girilen faturaların otomatik toplam tutarını görebilirsiniz</li>
+                <li>Çoklu fatura girişi yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve ay bilgisi</li>
+                    <li>Maaş tipi bilgisi</li>
+                    <li>Eczane numarası</li>
+                    <li>Fatura bilgileri (sicil no, tutar, fatura no, fatura tarihi)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Eczane Bilgisi" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eczane Bilgisi Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında Yıl/Ay, Maaş Tipi, Eczane No ve Eczane Ad alanlarını içeren bir tablo bulunur</li>
+                            <li>Bu tablo beyaz zemin üzerine açık gri başlıklar içerir</li>
+                            <li>Her alan etiketiyle birlikte sağında giriş alanı yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlaç Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Eczane Bilgisi tablosunun hemen altında, "İLAÇ GİRİŞİ" başlıklı ikinci bir tablo yer alır</li>
+                            <li>Bu tablo satır bazında personel ilaç fatura bilgilerinin girilebileceği alanları içerir</li>
+                            <li>Sütunlar: Sicil No, Adı Soyadı, Tutar, Fatura No, Fatura Tarihi şeklinde düzenlenmiştir</li>
+                            <li>En solda satır silmek için bir buton bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Bölümü ve İşlem Butonları:</strong>
+                        <ul>
+                            <li>İlaç Giriş tablosunun altında toplam tutarı gösteren bir satır bulunur</li>
+                            <li>En altta Yeni Kayıt, Kaydet ve Çıkış butonlarını içeren bir alan yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Yıl alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                    <li>İlaç giriş tablosunda en az bir satır bilgi girilmelidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-ay-maas" class="section">
+        <h2>Yıl/Ay ve Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Yıl, Ay ve Maaş Tipi Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Yıl/Ay Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Eczane Bilgisi tablosunda, ilk satırın sol tarafında "Yıl / Ay" etiketi yer alır</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Sol taraftaki daha geniş kutu Yıl, sağdaki dar kutu Ay içindir</li>
+                            <li>Bu iki kutunun sağında küçük bir arama (büyüteç) butonu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına işlem yapmak istediğiniz yılı girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Ay alanına geçin</li>
+                            <li>Ay alanına ilgili ay numarasını girin (örn. 1, 2, 3)
+                                <ul>
+                                    <li>Bu alan en fazla 2 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>Yıl ve Ay girişinden sonra sistem otomatik olarak bu bilgileri kontrol eder</li>
+                        </ol>
+                    </li>
+                    <li><strong>Aylik Parametre Seçim Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Yıl/Ay alanının hemen sağında, büyüteç ikonu bulunan bir buton yer alır</li>
+                            <li>Bu butona tıkladığınızda "Aylik Parametre" penceresi açılır</li>
+                            <li>Açılan pencerede kayıtlı dönemlerin listesi görüntülenir</li>
+                            <li>Listeden istediğiniz yıl/ay ve maaş tipi kombinasyonunu seçin</li>
+                            <li>Seçtiğiniz bilgiler otomatik olarak ilgili alanlara aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Maaş Tipi Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Eczane Bilgisi tablosunda, ilk satırın sağ tarafında "Maaş Tipi" etiketi yer alır</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut maaş tiplerinin listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz maaş tipini seçin
+                                <ul>
+                                    <li>Listede maaş tipi kodu ve açıklaması birlikte görünür</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz maaş tipi görüntülenecektir</li>
+                            <li>Maaş tipi seçildikten sonra Yıl ve Ay bilgileriyle birlikte sistem otomatik olarak aylik parametre kontrolü yapar</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl, Ay ve Maaş Tipi alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Ay alanına en fazla 2 rakamdan oluşan geçerli bir ay numarası (1-12 arası) girilmelidir</li>
+                    <li>Girilen Yıl, Ay ve Maaş Tipi kombinasyonu sistemde tanımlı olmalıdır</li>
+                    <li>Geçersiz kombinasyon girildiğinde sistem "Girişi yapılan ay ve yıl bulunamadı" uyarısı verecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yıl, Ay ve Maaş Tipi bilgilerini manuel girmek yerine Aylik Parametre Seçim butonunu kullanmak daha hatasız ve hızlıdır</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Hızlı kullanım için önce Yıl ve Ay bilgilerini girin, sonra Maaş Tipini seçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="eczane-bilgisi" class="section">
+        <h2>Eczane Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Eczane Numarası ve Adı Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Eczane No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Eczane Bilgisi tablosunun ikinci satırında, sol tarafta "Eczane No" etiketi yer alır</li>
+                            <li>Etiketin sağında bir metin kutusu ve küçük bir arama (büyüteç) butonu bulunur</li>
+                            <li>Metin kutusu açık gri arka plan üzerinde beyaz renktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna eczane numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Sistemde kayıtlı bir eczane numarası olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya kutunun dışına tıklayarak alanı onaylayın</li>
+                            <li>Sistem girilen eczane numarasını kontrol edecektir
+                                <ul>
+                                    <li>Eğer eczane numarası geçerliyse, eczane adı otomatik olarak "Eczane Ad" alanına gelecektir</li>
+                                    <li>Eğer eczane numarası geçersizse, "Girişi yapılan eczane numarası bulunamadı" uyarısı alacaksınız</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Eczane Arama Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Eczane No alanının sağındaki büyüteç ikonlu butona tıklayın</li>
+                            <li>Açılan eczane arama penceresinde eczanelerin listesi görüntülenecektir</li>
+                            <li>Listeden istediğiniz eczaneyi seçin</li>
+                            <li>Seçiminiz otomatik olarak Eczane No ve Eczane Ad alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Eczane Ad Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Eczane Bilgisi tablosunun ikinci satırında, sağ tarafta "Eczane Ad" etiketi yer alır</li>
+                            <li>Etiketin sağında gri renkli devre dışı bir metin kutusu bulunur</li>
+                            <li>Bu alan kullanıcı tarafından değiştirilemez, sadece bilgi amaçlıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görüntüleme:</strong>
+                        <ul>
+                            <li>Eczane numarası girilip onaylandığında, bu alana otomatik olarak eczanenin adı gelir</li>
+                            <li>Eczane adı sistemden otomatik olarak alınır ve değiştirilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Eczane numarası girilmeden fatura girişi yapılamaz</li>
+                    <li>Girilen eczane numarası sistemde kayıtlı olmalıdır</li>
+                    <li>Eczane adı manuel olarak girilemez, sistem tarafından otomatik doldurulur</li>
+                    <li>Doğru eczane seçildiğinden emin olun, çünkü tüm fatura girişleri bu eczane için yapılacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Eczane numarasını bilmiyorsanız, arama butonunu kullanarak listeden seçim yapın</li>
+                    <li>Eczane bilgisi girildikten sonra, daha önce kaydedilmiş faturalar varsa otomatik olarak ekranda görüntülenecektir</li>
+                    <li>Sık kullandığınız eczanelerin numaralarını not ederseniz daha hızlı giriş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ilac-fatura" class="section">
+        <h2>İlaç Fatura Girişi</h2>
+        <div class="info-box">
+            <h3>Personel İlaç Fatura Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Sicil No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun ilk sütununda "Sicil No" başlığı altında yer alır</li>
+                            <li>Sağ tarafa yaslı bir metin kutusu ve yanında küçük bir arama (büyüteç) butonu bulunur</li>
+                            <li>Bu alan her satırda tekrarlanır ve her satır bir personele aittir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna personel sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Sistemde kayıtlı bir sicil numarası olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya kutunun dışına tıklayarak alanı onaylayın</li>
+                            <li>Sistem girilen sicil numarasını kontrol edecektir
+                                <ul>
+                                    <li>Geçerli bir sicil numarası girildiğinde, personelin adı ve soyadı otomatik olarak "Adı Soyadı" alanına gelecektir</li>
+                                    <li>Geçersiz bir sicil numarası girildiğinde, "Girişi yapılan sicil numarası bulunamadı" uyarısı alacaksınız</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Sicil Arama Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Sicil No alanının yanındaki büyüteç ikonlu butona tıklayın</li>
+                            <li>Açılan personel arama penceresinde personellerin listesi görüntülenecektir</li>
+                            <li>Listeden istediğiniz personeli seçin</li>
+                            <li>Seçiminiz otomatik olarak Sicil No ve Adı Soyadı alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adı Soyadı Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunda, Sicil No alanının hemen sağında yer alır</li>
+                            <li>Gri renkli devre dışı bir metin kutusu şeklindedir</li>
+                            <li>Bu alan kullanıcı tarafından değiştirilemez, sadece bilgi amaçlıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görüntüleme:</strong>
+                        <ul>
+                            <li>Sicil numarası girilip onaylandığında, bu alana otomatik olarak personelin adı ve soyadı gelir</li>
+                            <li>Personel bilgisi sistemden otomatik olarak alınır ve manuel olarak değiştirilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tutar Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunda, Adı Soyadı alanının hemen sağında yer alır</li>
+                            <li>Sola yaslı bir metin kutusu şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna fatura tutarını girin
+                                <ul>
+                                    <li>Bu alan para birimi formatında değer kabul eder (örn. 120,50)</li>
+                                    <li>Ondalık ayırıcı olarak virgül kullanılabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya kutunun dışına tıklayarak alanı onaylayın</li>
+                            <li>Girilen tutar, altlarda bulunan toplam alanında anında toplanır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Fatura No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunda, Tutar alanının hemen sağında yer alır</li>
+                            <li>Sağa yaslı bir metin kutusu şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna fatura numarasını girin
+                                <ul>
+                                    <li>Bu alan hem rakam hem de harf kabul eder</li>
+                                    <li>Maksimum 20 karakter girilebilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya kutunun dışına tıklayarak alanı onaylayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Fatura Tarih Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunda, Fatura No alanının hemen sağında yer alır</li>
+                            <li>Sağa yaslı bir metin kutusu şeklindedir</li>
+                            <li>Tablonun en sağındaki sütundadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna fatura tarihini girin
+                                <ul>
+                                    <li>Bu alan tarih formatında değer kabul eder (GG.AA.YYYY)</li>
+                                    <li>Tarih ayırıcı olarak nokta (.) kullanılır</li>
+                                    <li>Örneğin: 15.03.2023</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya kutunun dışına tıklayarak alanı onaylayın</li>
+                            <li>Fatura Tarih alanından çıkıldığında ve tablonun son satırındaysanız, sistem otomatik olarak yeni bir satır ekler</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Satır Silme Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun her satırının en solunda yer alır</li>
+                            <li>Küçük bir çöp kutusu/silme ikonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırdaki butona tıklayın</li>
+                            <li>Sistem "Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir</li>
+                            <li>Onay mesajında "Evet" seçeneğini seçtiğinizde satır silinecektir</li>
+                            <li>"Hayır" seçeneğini seçtiğinizde silme işlemi iptal edilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Aynı satırda hem sicil no hem de tutar bilgisi mutlaka girilmelidir</li>
+                    <li>Sicil numarası geçerli bir personele ait olmalıdır</li>
+                    <li>Personel çıkışı yapılmış ise sistem uyarı verecektir, dikkat edin</li>
+                    <li>Tutar alanına geçerli bir para değeri girilmelidir</li>
+                    <li>Fatura tarih bilgisi geçerli bir tarih formatında olmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Sicil numarasını bilmiyorsanız, arama butonunu kullanarak personel listesinden seçim yapın</li>
+                    <li>Fatura Tarih alanından çıktığınızda otomatik olarak yeni satır eklenir, böylece çoklu giriş yapmak kolaylaşır</li>
+                    <li>Aynı personel için birden fazla fatura girebilirsiniz, her satır ayrı bir fatura kaydıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tutar-hesaplama" class="section">
+        <h2>Tutar Hesaplama</h2>
+        <div class="info-box">
+            <h3>Toplam Tutar Görüntüleme</h3>
+            <div class="step">
+                <h4>Toplam Tutar Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun altında, tablo ayak kısmında (footer) yer alır</li>
+                            <li>Açık gri zemin üzerinde koyu renkli yazı ile gösterilir</li>
+                            <li>Sağa yaslı bir şekilde "txtToplam" etiketiyle görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Özellikleri:</strong>
+                        <ul>
+                            <li>Bu alan, tabloya girilen tüm tutarların toplamını otomatik olarak gösterir</li>
+                            <li>Her bir tutar girişi veya değişikliği yapıldığında anında güncellenir</li>
+                            <li>Satır silindiğinde toplam tutar da güncellenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Toplam tutarı kontrol ederek girdiğiniz değerlerin doğruluğunu teyit edebilirsiniz</li>
+                    <li>Belirli bir toplam hedefliyorsanız, girdiğiniz tutarların toplamını anlık olarak görebilirsiniz</li>
+                    <li>Fatura girişleri tamamlandığında, toplam tutarın beklediğiniz değerde olup olmadığını kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Yeni Kayıt, Kaydet ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Yeni Kayıt Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun alt kısmında, en solda yer alır</li>
+                            <li>Üzerinde bir artı (+) ikonu ve "Yeni Kayıt" yazısı bulunur</li>
+                            <li>Buton açık gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Kayıt Ekleme Adımları:</strong>
+                        <ol>
+                            <li>Yeni Kayıt butonuna tıklayın</li>
+                            <li>Tabloya boş bir yeni satır eklenecektir</li>
+                            <li>Yeni satıra veri girişi yapabilirsiniz</li>
+                            <li>Bu buton, Fatura Tarih alanından çıkıldığında otomatik eklenen satıra ek olarak manuel yeni satır eklemek için kullanılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Kaydet Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun alt kısmında, Yeni Kayıt butonunun sağında yer alır</li>
+                            <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                            <li>Buton açık gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>Yıl ve Ay bilgilerini girin</li>
+                                    <li>Maaş Tipini seçin</li>
+                                    <li>Eczane numarasını girin</li>
+                                    <li>En az bir fatura bilgisi girin (sicil no, tutar, fatura no, fatura tarihi)</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Sistem bilgileri veritabanına kaydedecek ve ekranı güncelleyecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>İLAÇ GİRİŞİ tablosunun alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Üzerinde bir çıkış/kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                            <li>Buton açık gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna tıklamadan önce tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                    <li>Yıl, Ay ve Maaş Tipi bilgileri doğru girilmezse kaydetme işlemi yapılamaz</li>
+                    <li>Faturalar kaydedildikten sonra, değişiklik yapmak için aynı ekranı tekrar açabilirsiniz</li>
+                    <li>Çıkış yapmadan önce kaydetme işlemini tamamladığınızdan emin olun, aksi halde verileriniz kaybolabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + K tuş kombinasyonu ile Kaydet butonunu aktif edebilirsiniz</li>
+                    <li>ESC tuşuna basarak programdan çıkabilirsiniz (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li>İşlem başlatmadan önce seçimlerinizi kontrol edin</li>
+                    <li>Çok sayıda fatura girişi yapacaksanız, belirli aralıklarla kaydetme işlemi yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Girişi yapılan sicil numarası bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Sicil No alanına geçersiz bir numara girdiniz.</li>
+                            <li>Çözüm: Doğru sicil numarasını girin veya sicil arama butonunu kullanarak personel listesinden seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Girişi yapılan eczane numarası bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Eczane No alanına geçersiz bir numara girdiniz.</li>
+                            <li>Çözüm: Doğru eczane numarasını girin veya eczane arama butonunu kullanarak listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Girişi yapılan ay ve yıl bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girdiğiniz Yıl, Ay ve Maaş Tipi kombinasyonu sistemde tanımlı değil.</li>
+                            <li>Çözüm: Doğru Yıl, Ay ve Maaş Tipi bilgilerini girin veya Aylik Parametre Seçim butonunu kullanarak listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu Sicilin Çıkışı Vardır" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girdiğiniz sicil numarasına sahip personelin kurumdan çıkışı yapılmış.</li>
+                            <li>Çözüm: Personelin durumunu kontrol edin. Gerekirse başka bir sicil numarası kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Formatı Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Fatura Tarih alanına geçersiz bir tarih formatı girdiniz.</li>
+                            <li>Çözüm: Tarihi GG.AA.YYYY formatında girin (örn. 15.03.2023).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Aynı eczaneye ait tüm fatura girişlerini tek seferde yapmaya çalışın</li>
+                    <li>Fatura girişi yapmadan önce tüm belgeleri düzenli bir şekilde hazırlayın</li>
+                    <li>Sık kullanılan eczane ve personel numaralarını not edin</li>
+                    <li>Büyük miktarda fatura girişi yapacaksanız, belirli aralıklarla kaydetme işlemi yapın</li>
+                    <li>Fatura Tarih alanından çıkarak otomatik yeni satır ekleme özelliğini kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Eczane Fatura Giriş programı, personel ilaç faturalarının eczane bazında sisteme girilmesini sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Yıl, Ay ve Maaş Tipi bilgisi girişi</li>
+                <li>Eczane numarası ve adı bilgisi girişi</li>
+                <li>Personel ilaç fatura bilgilerinin girişi (sicil no, tutar, fatura no, fatura tarihi)</li>
+                <li>Toplam tutar görüntüleme</li>
+                <li>İşlem butonlarının kullanımı (Yeni Kayıt, Kaydet, Çıkış)</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

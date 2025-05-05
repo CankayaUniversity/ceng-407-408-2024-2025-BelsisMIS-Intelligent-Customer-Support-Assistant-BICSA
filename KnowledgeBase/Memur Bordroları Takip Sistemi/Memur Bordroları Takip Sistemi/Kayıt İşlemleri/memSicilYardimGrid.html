@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicil Yardım Sistemi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sicil Yardım Sistemi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-yardim">Sicil Yardım Sistemini Kullanma</a></li>
+                <li><a href="#bolum-sicil">Bölüm ve Sicil Kayıtlarını Görüntüleme</a></li>
+                <li><a href="#yardim-tutar">Yardım Tutarı Giriş İşlemleri</a></li>
+                <li><a href="#toplu-guncelleme">Toplu Güncelleme Nasıl Yapılır</a></li>
+                <li><a href="#kaydetme-cikis">Kaydetme ve Çıkış İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Sicil Yardım Sistemi, kurum çalışanlarına (sicil sahiplerine) yapılacak yardım tanımlamaları ve ödemelerin yönetimi için kullanılan bir uygulamadır. Bu program ile:</p>
+            <ul>
+                <li>Çalışanlara yapılacak çeşitli yardım ödemelerini tanımlayabilirsiniz</li>
+                <li>Bölüm bazında çalışanları listeleyebilirsiniz</li>
+                <li>Her bir çalışan için farklı yardım türlerinde ödeme miktarlarını belirleyebilirsiniz</li>
+                <li>Toplu güncelleme yaparak birden fazla çalışanın yardım tutarlarını aynı anda değiştirebilirsiniz</li>
+                <li>Sendika üyeliğine göre çalışanları filtreleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Kurum içindeki bölüm yapısı ve kodları</li>
+                    <li>Mevcut yardım tipleri ve açıklamaları</li>
+                    <li>Hangi sendikalara üye çalışanların olduğu</li>
+                    <li>Yardım tutarlarına ilişkin kurum politikaları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "YARDIM TANIMLARI" başlığı yer alır</li>
+                            <li>Başlığın hemen altında "Toplu Güncelleme" butonu ve "Kaydet" butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Tipleri Üst Başlıkları:</strong>
+                        <ul>
+                            <li>Butonların hemen altında, yardım tiplerinin listelendiği bir başlık satırı bulunur</li>
+                            <li>Bu satırda yardım tiplerinin isimleri yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm ve Personel Bilgileri:</strong>
+                        <ul>
+                            <li>Sayfanın ana gövdesinde, bölümlere göre gruplandırılmış personel listesi yer alır</li>
+                            <li>Her bölüm ayrı bir grupta gösterilir ve bölüm adı gri arka plan üzerinde görüntülenir</li>
+                            <li>Bölüm adının yanında "+" ve "-" butonları vardır</li>
+                            <li>Her çalışanın adı, soyadı ve sendika bilgisi bu gruplar içinde listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Tutarı Giriş Alanları:</strong>
+                        <ul>
+                            <li>Her çalışan için, her yardım tipine karşılık gelen hücrelerde tutar giriş alanları bulunur</li>
+                            <li>Tutar giriş alanları, çalışan satırları ile yardım tipi sütunlarının kesişiminde yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm bölümler kapalı durumda başlar (liste daraltılmış haldedir)</li>
+                    <li>Bölüm adlarının yanındaki "+" butonları ile listeleri genişletebilirsiniz</li>
+                    <li>Yardım tutarlarını görmek ve değiştirmek için öncelikle ilgili bölümü açmanız gereklidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-yardim" class="section">
+        <h2>Sicil Yardım Sistemini Kullanma</h2>
+        <div class="info-box">
+            <h3>Sistem Nasıl Çalışır</h3>
+            <p>Sicil Yardım Sistemi, kurum çalışanlarına yapılacak yardım ödemelerini tanımlamanıza olanak tanır. Sistem, bölüm bazında organize edilmiş çalışan listeleri ve her çalışan için farklı yardım tiplerinde tutar giriş alanları içerir.</p>
+            
+            <div class="step">
+                <h4>Temel Kullanım Adımları:</h4>
+                <ol>
+                    <li><strong>Bölüm Seçimi:</strong>
+                        <ul>
+                            <li>Ekranda görüntülenen bölüm adlarının yanındaki "+" butonuna tıklayarak o bölüme ait çalışan listesini açın</li>
+                            <li>Çalışan listesi açıldığında, her çalışanın adı, soyadı ve bağlı olduğu sendika (varsa) görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Tutarı Girişi:</strong>
+                        <ul>
+                            <li>Çalışan satırında, ilgili yardım tipine karşılık gelen hücredeki tutar alanına tıklayın</li>
+                            <li>Ödenmesi gereken tutarı rakamlarla girin</li>
+                            <li>Hücrelerde 0 değeri gözüküyor ise, o yardım tipi için ödeme tanımlanmamış demektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu Güncelleme:</strong>
+                        <ul>
+                            <li>Birden fazla çalışana aynı anda aynı tutarı tanımlamak için "Toplu Güncelleme" butonuna tıklayın</li>
+                            <li>Açılan pencerede filtreleme yaparak hangi çalışanlara, hangi yardım tipinde, ne tutarda ödeme yapılacağını belirleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikleri tamamladıktan sonra ekranın üst kısmındaki "Kaydet" butonuna tıklayarak girişlerinizi kaydedin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="bolum-sicil" class="section">
+        <h2>Bölüm ve Sicil Kayıtlarını Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Bölüm Listeleri ve Sicil Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Bölüm Listelerini Açma ve Kapama:</h4>
+                <ol>
+                    <li><strong>Bölüm Listesini Açma:</strong>
+                        <ul>
+                            <li>Her bölüm adının yanında, en solda bir "+" butonu bulunur</li>
+                            <li>Bu buton, gri arka plan üzerinde siyah bir "+" işareti şeklindedir</li>
+                            <li>Butona tıkladığınızda, ilgili bölüme ait çalışan listesi görüntülenir</li>
+                            <li>Bölüm açıldığında, "+" işareti "-" işaretine dönüşür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Listesini Kapatma:</strong>
+                        <ul>
+                            <li>Açık olan bir bölümün adının yanındaki "-" butonuna tıklayarak listeyi kapatabilirsiniz</li>
+                            <li>Bölüm kapandığında, "-" işareti tekrar "+" işaretine dönüşür</li>
+                            <li>Kapatılan bölüme ait çalışan listesi ekrandan gizlenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sicil Kayıt Bilgilerini Anlama:</h4>
+                <ol>
+                    <li><strong>Sicil Bilgisi Gösterimi:</strong>
+                        <ul>
+                            <li>Bölüm listesi açıldığında, o bölüme ait her çalışanın bilgileri ayrı bir satırda listelenir</li>
+                            <li>Her satırda çalışanın adı ve soyadı kalın yazı tipiyle gösterilir</li>
+                            <li>Çalışanın sendika bilgisi (eğer varsa) adının yanında kırmızı renkle parantez içinde gösterilir</li>
+                            <li>Örnek: <b>Ahmet Yılmaz <font color="red">(Eğitim-SEN)</font></b></li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Renklendirme:</strong>
+                        <ul>
+                            <li>Çalışan listeleri, kolay okunabilmesi için alternatif renklerde gösterilir</li>
+                            <li>Tek numaralı satırlar açık gri (#eeeeee), çift numaralı satırlar beyaz (#ffffff) arka plana sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Tutarı Gösterimi:</strong>
+                        <ul>
+                            <li>Her çalışan satırında, farklı yardım tipleri için ayrı tutar alanları bulunur</li>
+                            <li>Tutar tanımlanmış hücreler sarı-kahverengi (wheat) arka plana sahiptir</li>
+                            <li>Tutar tanımlanmamış hücreler satırın normal arka plan rengini korur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Programda çok sayıda bölüm varsa, tüm bölümleri aynı anda açmak ekranı karmaşık hale getirebilir</li>
+                    <li>Üzerinde çalıştığınız bölümleri açık, diğerlerini kapalı tutarak daha verimli çalışabilirsiniz</li>
+                    <li>Sendika bilgisi kırmızı renkte gösterildiği için, farklı sendikalara üye çalışanları kolayca ayırt edebilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birçok bölümle çalışırken, sırayla her bölümü açıp işlem yapın ve işiniz bittiğinde kapatın</li>
+                    <li>Bölüm adlarını ezberlemek yerine, tüm listeyi tarayarak aradığınız bölümü bulabilirsiniz</li>
+                    <li>Ekranda çok fazla bilgi varsa, tarayıcınızın arama özelliğini (genellikle Ctrl+F) kullanarak aranan bölüm veya çalışan adını hızlıca bulabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yardim-tutar" class="section">
+        <h2>Yardım Tutarı Giriş İşlemleri</h2>
+        <div class="info-box">
+            <h3>Yardım Tutarı Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Yardım Tutarı Girme Adımları:</h4>
+                <ol>
+                    <li><strong>Bölüm ve Sicil Seçimi:</strong>
+                        <ul>
+                            <li>İşlem yapmak istediğiniz çalışanın bulunduğu bölümü, bölüm adının yanındaki "+" butonuna tıklayarak açın</li>
+                            <li>Çalışan listesi görüntülendiğinde, tutar girmek istediğiniz çalışanın satırını bulun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Giriş Alanına Erişim:</strong>
+                        <ul>
+                            <li>Çalışan satırında, değiştirmek istediğiniz yardım tipine karşılık gelen hücreye tıklayın</li>
+                            <li>Hücre, tutar giriş moduna geçecektir</li>
+                            <li>Tutar giriş alanı, sağa yaslanmış ve satırın genişliğine uygun bir metin kutusudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Girişi Yapma:</strong>
+                        <ul>
+                            <li>Metin kutusuna sadece rakam ve virgül karakterleri girebilirsiniz</li>
+                            <li>Tutarı girin (Örnek: 250 veya 250,50)</li>
+                            <li>Ondalık ayırıcı olarak virgül (,) kullanılır</li>
+                            <li>Tutar girildiğinde hücrenin arka plan rengi sarı-kahverengi (wheat) olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Girişi Tamamlama:</strong>
+                        <ul>
+                            <li>Tutar girişini tamamladıktan sonra klavyeden Tab tuşuna basarak veya fare ile başka bir alana tıklayarak o alandan çıkabilirsiniz</li>
+                            <li>Giriş tamamlandığında, hücre normal görünümüne döner ve girilen tutar görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutarı Silme veya Sıfırlama:</strong>
+                        <ul>
+                            <li>Bir yardım tutarını kaldırmak isterseniz, ilgili hücreye tıklayıp içeriğini tamamen silin veya 0 girin</li>
+                            <li>0 değeri olan hücreler, tutar tanımlanmamış kabul edilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tutar alanına sadece rakam ve virgül (,) karakteri girebilirsiniz. Harf veya diğer özel karakterler kabul edilmez</li>
+                    <li>Büyük tutarları girerken binlik ayırıcı (nokta veya virgül) kullanmayın</li>
+                    <li>Ondalık ayırıcı olarak sadece virgül (,) kullanın, nokta (.) kullanmayın</li>
+                    <li>Girilen tutarların kaydedilmesi için mutlaka "Kaydet" butonuna tıklamanız gerekir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tutar alanından çıkmak için Tab tuşunu kullanarak bir sonraki hücreye geçebilirsiniz</li>
+                    <li>Birçok çalışan için aynı tutarı girmek istiyorsanız, "Toplu Güncelleme" özelliğini kullanmak daha verimli olacaktır</li>
+                    <li>Tutar alanına tıkladığınızda mevcut değer otomatik olarak seçilir, böylece yeni değeri yazarken önceki değeri silmenize gerek kalmaz</li>
+                    <li>Tutar alanında değer varken üzerine tıkladığınızda, değer otomatik olarak seçilir ve klavyeden yeni bir değer girerseniz önceki değer silinir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toplu-guncelleme" class="section">
+        <h2>Toplu Güncelleme Nasıl Yapılır</h2>
+        <div class="info-box">
+            <h3>Toplu Güncelleme İşlemi Adımları</h3>
+            
+            <div class="step">
+                <h4>Toplu Güncelleme Penceresini Açma:</h4>
+                <ol>
+                    <li><strong>Butona Erişim:</strong>
+                        <ul>
+                            <li>"Toplu Güncelleme" butonu ekranın üst kısmında, "YARDIM TANIMLARI" başlığının hemen altında yer alır</li>
+                            <li>Butona tıkladığınızda, ekranın ortasında "Toplu Güncelleme" penceresi açılır</li>
+                            <li>Pencere açıldığında, arka plan hafif şeffaf hale gelir ve ana ekran üzerinde işlem yapamazsınız</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Toplu Güncelleme Filtre Seçenekleri:</h4>
+                <ol>
+                    <li><strong>Sendika Seçimi:</strong>
+                        <ul>
+                            <li>Pencerenin en üst satırında "Sendika" etiketi ve yanında bir açılır liste (dropdown) bulunur</li>
+                            <li>Listeden işlem yapmak istediğiniz sendikayı seçebilirsiniz</li>
+                            <li>Varsayılan olarak "--Tümü--" seçeneği işaretlidir</li>
+                            <li>Belirli bir sendikaya üye çalışanlar için güncelleme yapmak istiyorsanız, o sendikayı seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Tipi Seçimi:</strong>
+                        <ul>
+                            <li>"Sendika" seçiminin hemen altında "Yardım Tipi" etiketi ve yanında bir açılır liste bulunur</li>
+                            <li>Listeden güncellemek istediğiniz yardım tipini seçebilirsiniz</li>
+                            <li>Varsayılan olarak "--Tümü--" seçeneği işaretlidir</li>
+                            <li>Tüm yardım tiplerini aynı anda güncellemek için "--Tümü--" seçeneğini bırakın</li>
+                            <li>Belirli bir yardım tipini güncellemek için, o yardım tipini seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Seçimi:</strong>
+                        <ul>
+                            <li>"Yardım Tipi" seçiminin altında "Bölüm" etiketi ve yanında bir açılır liste bulunur</li>
+                            <li>Listeden güncelleme yapmak istediğiniz bölümü seçebilirsiniz</li>
+                            <li>Varsayılan olarak "--Tümü--" seçeneği işaretlidir</li>
+                            <li>Tüm bölümlerdeki çalışanlar için güncelleme yapmak isterseniz, bu seçeneği değiştirmeyin</li>
+                            <li>Belirli bir bölümdeki çalışanlar için güncelleme yapmak isterseniz, o bölümü seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Güncellenecek Tutar Girişi:</h4>
+                <ol>
+                    <li><strong>Tutar Alanı:</strong>
+                        <ul>
+                            <li>Filtre seçimlerinin altında kırmızı renkli bir uyarı yazısı ve onun altında tutar giriş alanı bulunur</li>
+                            <li>Uyarı yazısı "---Güncellenecek Tutar---" şeklindedir ve kalın yazı tipiyle ortalanmış olarak görüntülenir</li>
+                            <li>Tutar giriş alanı, ortalanmış bir metin kutusudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Girişi:</strong>
+                        <ul>
+                            <li>Metin kutusuna güncellemek istediğiniz tutarı girin</li>
+                            <li>Tutar alanına sadece rakam ve virgül (,) karakterleri girebilirsiniz</li>
+                            <li>Ondalık ayırıcı olarak virgül (,) kullanılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Güncelleme İşlemini Tamamlama:</h4>
+                <ol>
+                    <li><strong>İşlem Butonları:</strong>
+                        <ul>
+                            <li>Pencerenin en altında "Tamam" ve "Vazgeç" butonları yer alır</li>
+                            <li>Butonlar yan yana ve ortalanmış şekilde yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Güncelleme İşlemini Uygulama:</strong>
+                        <ul>
+                            <li>Filtre seçimlerini ve güncellenecek tutarı girdikten sonra "Tamam" butonuna tıklayın</li>
+                            <li>Sistem, belirlediğiniz filtrelere uyan tüm çalışanların ilgili yardım tutarlarını güncelleyecektir</li>
+                            <li>Güncelleme işlemi tamamlandığında, toplu güncelleme penceresi kapanır ve ana ekrana dönersiniz</li>
+                            <li>Güncellenen tutarları, ilgili hücrelerde görebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemi İptal Etme:</strong>
+                        <ul>
+                            <li>Güncelleme işleminden vazgeçmek isterseniz "Vazgeç" butonuna tıklayın</li>
+                        <li>Pencere kapanacak ve hiçbir değişiklik yapılmadan ana ekrana döneceksiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Toplu güncelleme işlemi, belirlediğiniz filtrelere uyan tüm çalışanların yardım tutarlarını aynı değere ayarlayacaktır</li>
+                <li>İşlem geri alınamaz, bu nedenle filtre seçimlerinizi dikkatle kontrol edin</li>
+                <li>Özellikle "--Tümü--" seçeneklerini kullandığınızda, geniş bir çalışan grubunu etkileyeceğinizi unutmayın</li>
+                <li>Tutar girmeden "Tamam" butonuna tıklarsanız, sistem otomatik olarak "0" değerini kullanır</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Önce dar bir filtre ile (örneğin belirli bir bölüm ve sendika seçerek) test amaçlı bir güncelleme yapabilirsiniz</li>
+                <li>Eğer belirli bir sendikaya üye çalışanlar için özel bir yardım tutarı belirlemek istiyorsanız, önce sendika filtresini kullanın</li>
+                <li>Toplu güncelleme yapmadan önce güncel tutarları kontrol etmek iyi bir uygulamadır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="kaydetme-cikis" class="section">
+    <h2>Kaydetme ve Çıkış İşlemleri</h2>
+    <div class="info-box">
+        <h3>Değişiklikleri Kaydetme ve Programdan Çıkış</h3>
+        
+        <div class="step">
+            <h4>Değişiklikleri Kaydetme:</h4>
+            <ol>
+                <li><strong>Kaydet Butonuna Erişim:</strong>
+                    <ul>
+                        <li>"Kaydet" butonu ekranın üst kısmında, "YARDIM TANIMLARI" başlığının hemen altında, "Toplu Güncelleme" butonunun yanında yer alır</li>
+                        <li>Ayrıca, ekranın alt kısmında da bir "Kaydet" butonu bulunmaktadır</li>
+                        <li>Her iki buton da aynı işlevi görür ve birini tıklamanız yeterlidir</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme İşlemi:</strong>
+                    <ul>
+                        <li>Tüm tutar girişlerinizi ve değişikliklerinizi tamamladıktan sonra "Kaydet" butonuna tıklayın</li>
+                        <li>Sistem, tüm değişiklikleri veritabanına kaydeder</li>
+                        <li>Kaydetme işlemi başarılı olduğunda, herhangi bir hata mesajı görüntülenmez</li>
+                        <li>Eğer kaydetme işlemi sırasında bir hata oluşursa, ekranın alt kısmında bir hata mesajı görüntülenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Programdan Çıkış:</h4>
+            <ol>
+                <li><strong>Tarayıcı Penceresi Kontrolü:</strong>
+                    <ul>
+                        <li>Program açıldığında, tarayıcı penceresi otomatik olarak ekranın tamamını kapsayacak şekilde ayarlanır</li>
+                        <li>Programdan çıkmak için tarayıcı penceresinin sağ üst köşesindeki Kapat (X) butonunu kullanabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış Uyarıları:</strong>
+                    <ul>
+                        <li>Eğer değişiklik yaptıysanız ancak kaydetmediyseniz, programdan çıkmadan önce "Kaydet" butonuna tıklayarak değişikliklerinizi kaydetmeyi unutmayın</li>
+                        <li>Program, kaydedilmemiş değişiklikler olduğunda çıkış yaparken bir uyarı vermez</li>
+                        <li>Kaydedilmemiş değişiklikler, programdan çıktığınızda kaybolur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Değişiklik yapmış ancak kaydetmemişseniz, programdan çıkmadan önce mutlaka "Kaydet" butonuna tıklayın</li>
+                <li>Kaydedilmemiş değişiklikler geri getirilemez</li>
+                <li>Büyük miktarda değişiklik yaptıysanız, işlem tamamlandığında kaydetmeyi beklemeden arada bir kaydetmeniz önerilir</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Uzun süren çalışmalarda, değişikliklerinizi düzenli aralıklarla kaydedin</li>
+                <li>Büyük değişiklikler yapmadan önce, programdan çıkıp tekrar girerek taze bir başlangıç yapabilirsiniz</li>
+                <li>ESC tuşu ile programdan çıkmaya çalışmayın, değişiklikleriniz kaydedilmeyebilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Tutar Girişinde Harf veya Özel Karakter Kabul Edilmiyor:</strong>
+                    <ul>
+                        <li>Sorun: Tutar alanına harf veya özel karakter girmeye çalıştığınızda sistem kabul etmiyor.</li>
+                        <li>Çözüm: Tutar alanına sadece rakam ve virgül (,) karakterlerini girebilirsiniz. Diğer karakterler kabul edilmez.</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme İşlemi Yapıldı Ancak Değişiklikler Görünmüyor:</strong>
+                    <ul>
+                        <li>Sorun: "Kaydet" butonuna tıkladınız ancak değişiklikleriniz kaydedilmemiş görünüyor.</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Yeniden kaydetmeyi deneyin</li>
+                                <li>Programdan çıkıp tekrar girin</li>
+                                <li>Eğer sorun devam ederse, sistem yöneticinize başvurun</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Toplu Güncelleme Penceresi Açılmıyor:</strong>
+                    <ul>
+                        <li>Sorun: "Toplu Güncelleme" butonuna tıkladığınızda hiçbir şey olmuyor.</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Sayfayı yeniden yükleyin ve tekrar deneyin</li>
+                                <li>Tarayıcınızın popup engelleme ayarlarını kontrol edin</li>
+                                <li>Farklı bir tarayıcı kullanmayı deneyin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Büyük gruplar için işlem yapmadan önce, "Toplu Güncelleme" özelliğini kullanmayı değerlendirin</li>
+                <li>Çalışanları sendika bazında güncellemek için önce sendika filtresini kullanın</li>
+                <li>Büyük miktarda değişiklik yapıyorsanız, düzenli aralıklarla kaydetme işlemi yapın</li>
+                <li>Bölümler arasında geçiş yaparken, işiniz biten bölümleri kapatarak ekranı daha düzenli tutun</li>
+                <li>Sendika bilgisi kırmızı renkle gösterildiğinden, sendika bazlı işlemlerde bu renk kodundan yararlanın</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Sicil yardım tutarları doğrudan çalışanların ücret ödemelerini etkileyeceğinden, tutar girişlerini dikkatle yapın</li>
+                <li>Büyük gruplara toplu güncelleme yapmadan önce, filtre seçimlerinizi kontrol edin</li>
+                <li>Programdan çıkmadan önce değişikliklerinizi kaydettiğinizden emin olun</li>
+                <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Sicil Yardım Sistemi, kurum çalışanlarına yapılacak yardım ödemelerini yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Sicil Yardım Sisteminin genel yapısı ve amacı</li>
+            <li>Ekran düzeni ve ana bölümler</li>
+            <li>Bölüm listeleri ve çalışan kayıtlarını görüntüleme</li>
+            <li>Yardım tutarı giriş işlemleri</li>
+            <li>Toplu güncelleme yaparak çoklu kayıtları yönetme</li>
+            <li>Değişiklikleri kaydetme ve programdan çıkış</li>
+            <li>Verimli çalışma için ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+    </div>
+</div>
+</body>
+</html>

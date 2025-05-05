@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Ödeme Sicil Yönetimi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yan Ödeme Sicil Yönetimi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-bilgileri">Sicil Bilgileri Girişi</a></li>
+                <li><a href="#yan-odeme">Yan Ödeme Tanımları ve Oranları</a></li>
+                <li><a href="#satir-islemleri">Satır İşlemleri (Ekleme, Silme)</a></li>
+                <li><a href="#kaydetme-cikis">Kaydetme ve Çıkış İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Yan Ödeme Sicil Yönetimi programı, personel sicil bilgilerine bağlı yan ödemeleri yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personele ait sicil bilgilerini görüntüleyebilirsiniz</li>
+                <li>Personel için farklı yan ödeme tanımları yapabilirsiniz</li>
+                <li>Her yan ödeme için oran belirleyebilirsiniz</li>
+                <li>Yan ödemeleri ekleyebilir, düzenleyebilir veya silebilirsiniz</li>
+                <li>Yapılan değişiklikleri kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz personelin sicil numarası</li>
+                    <li>Personele tanımlanacak yan ödeme tipleri</li>
+                    <li>Her yan ödeme tipi için belirlenecek oran bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Üst Bölüm - Sicil Bilgileri:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında açık turkuaz renkli başlık çubuğunda "Sicil Bilgileri" başlığı yer alır</li>
+                            <li>Başlığın altında personel sicil bilgilerinin girilebileceği alanlar bulunur</li>
+                            <li>Sicil No, Adı, Soyadı ve Bölüm Adı bilgileri bu bölümde yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Bölüm - Yan Ödemeler:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında turkuaz renkli başlık çubuğunda "YAN ÖDEMELER" başlığı yer alır</li>
+                            <li>Başlığın altında yan ödeme bilgilerinin girilebileceği bir tablo bulunur</li>
+                            <li>Tabloda her yan ödeme için bir satır yer alır</li>
+                            <li>Her satırda Yan Ödeme Tanımı ve Yan Ödeme Oranı bilgileri girilebilir</li>
+                            <li>Satır silme butonu da her satırın başında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>En Alt Bölüm - İşlem Butonları:</strong>
+                        <ul>
+                            <li>Ekranın en altında açık gri renkli bir şerit içinde işlem butonları bulunur</li>
+                            <li>Bu butonlar: Yeni, Kaydet ve Çıkış butonlarıdır</li>
+                            <li>Her butonun yanında ilgili işlemi temsil eden küçük bir ikon bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Sicil No alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>Yan ödeme tablosunda başlangıçta bir boş satır bulunur</li>
+                    <li>İşlem yapmadan önce öncelikle sicil bilgilerini girmeniz gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-bilgileri" class="section">
+        <h2>Sicil Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Personel Sicil Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Sicil Numarası Girme ve Personel Bilgilerini Getirme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Sicil Bilgileri" başlığının hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında metin kutusu ve onun sağında bir buton yer alır</li>
+                            <li>Butonun üzerinde küçük bir büyüteç simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sicil No metin kutusuna personelin sicil numarasını yazın
+                                <ul>
+                                    <li>Sicil numarası sadece rakamlardan oluşabilir</li>
+                                    <li>Maksimum 30 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarasını girdikten sonra aşağıdakilerden birini yapabilirsiniz:
+                                <ul>
+                                    <li>Enter tuşuna basın</li>
+                                    <li>Tab tuşuna basarak diğer alana geçin (bu durumda otomatik arama yapılır)</li>
+                                    <li>Fareyi başka bir alana tıklayın (bu durumda otomatik arama yapılır)</li>
+                                </ul>
+                            </li>
+                            <li>Sistem girilen sicil numarasına ait personel bilgilerini otomatik olarak arar ve bulursa diğer alanlara (Adı, Soyadı, Bölüm Adı) doldurur</li>
+                            <li>Ayrıca, personele ait daha önce tanımlanmış yan ödemeleri de tabloya getirir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Personel Arama Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Sicil numarasını bilmiyorsanız, Sicil No alanının yanındaki büyüteç simgeli butona tıklayabilirsiniz</li>
+                            <li>Bu butona tıkladığınızda personel arama penceresi açılır</li>
+                            <li>Açılan pencerede personel listesi görüntülenir</li>
+                            <li>Listeden istediğiniz personeli seçebilir ve onaylayabilirsiniz</li>
+                            <li>Seçtiğiniz personelin bilgileri otomatik olarak ana ekrana aktarılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Personel Bilgilerinin Görüntülenmesi:</h4>
+                <ol>
+                    <li><strong>Adı Alanı:</strong>
+                        <ul>
+                            <li>"Adı" etiketi Sicil No alanının bulunduğu satırın sağ tarafında yer alır</li>
+                            <li>Etiketin sağında metin kutusu bulunur</li>
+                            <li>Bu alan, seçilen personelin adını gösterir ve otomatik olarak doldurulur</li>
+                            <li>Kullanıcı tarafından değiştirilemez (salt okunur alandır)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soyadı Alanı:</strong>
+                        <ul>
+                            <li>"Soyadı" etiketi Sicil No alanının bir alt satırında, sol tarafta yer alır</li>
+                            <li>Etiketin sağında metin kutusu bulunur</li>
+                            <li>Bu alan, seçilen personelin soyadını gösterir ve otomatik olarak doldurulur</li>
+                            <li>Kullanıcı tarafından değiştirilemez (salt okunur alandır)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Adı Alanı:</strong>
+                        <ul>
+                            <li>"Bölüm Adı" etiketi Soyadı alanının bulunduğu satırın sağ tarafında yer alır</li>
+                            <li>Etiketin sağında metin kutusu bulunur</li>
+                            <li>Bu alan, seçilen personelin çalıştığı bölümün adını gösterir ve otomatik olarak doldurulur</li>
+                            <li>Kullanıcı tarafından değiştirilemez (salt okunur alandır)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası girilmeden diğer işlemlere devam edilemez</li>
+                    <li>Geçersiz bir sicil numarası girildiğinde sistem "Sicil No Bulunamadı" uyarısı verecektir</li>
+                    <li>Adı, Soyadı ve Bölüm Adı alanları kullanıcı tarafından değiştirilemez, sadece görüntüleme amaçlıdır</li>
+                    <li>Personel bilgileri değiştirilmek istenirse, insan kaynakları veya personel modülünden yapılmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarasını tam olarak bilmiyorsanız, büyüteç simgeli butonu kullanarak arama yapabilirsiniz</li>
+                    <li>Sicil numarasını girdikten sonra Enter tuşuna basarak hızlıca personel bilgilerini getirebilirsiniz</li>
+                    <li>Programı kullanırken sık kullandığınız sicil numaralarını not etmek size zaman kazandırabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yan-odeme" class="section">
+        <h2>Yan Ödeme Tanımları ve Oranları</h2>
+        <div class="info-box">
+            <h3>Yan Ödeme İşlemleri</h3>
+            <div class="step">
+                <h4>Yan Ödeme Tablosu Yapısı:</h4>
+                <ol>
+                    <li><strong>Tablo Konumu:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında, "YAN ÖDEMELER" başlığının hemen altında yer alır</li>
+                            <li>Tablo, beyaz zemin üzerinde siyah çerçevelidir</li>
+                            <li>Tablo başlıkları açık gri arka plan üzerinde kalın yazı tipiyle vurgulanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ol>
+                            <li>İlk sütun: Satır işlem butonları için ayrılmıştır (dar bir sütun)</li>
+                            <li>İkinci sütun: "Yan Ödeme Tanımı" başlıklı sütun (geniş bir sütun)</li>
+                            <li>Üçüncü sütun: "Yan Ödeme Oranı" başlıklı sütun (orta genişlikte bir sütun)</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tablo Görünümü:</strong>
+                        <ul>
+                            <li>Başlangıçta tabloda bir boş satır bulunur</li>
+                            <li>Personel seçildiğinde, o personele ait yan ödemeler (varsa) tabloda listelenir</li>
+                            <li>Her satır aynı yükseklikte ve beyaz arka plan üzerindedir</li>
+                            <li>Satırlar arasında ince siyah çizgiler bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yan Ödeme Tanımı Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yan Ödeme tablosunun ikinci sütununda yer alır</li>
+                            <li>Her satırda bir açılır liste (dropdown) kutusu bulunur</li>
+                            
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Listede tüm mevcut yan ödeme tanımları görüntülenir</li>
+                            <li>Listeden istediğiniz yan ödeme tipini seçin
+                                <ul>
+                                    <li>Liste içinde her yan ödeme tipinin kodu ve açıklaması görünür</li>
+                                    <li>Yan ödeme tanımları alfabetik olarak sıralanmış olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Seçim yaptıktan sonra liste otomatik olarak kapanır ve seçilen yan ödeme tanımı görüntülenir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Doğrulama:</strong>
+                        <ul>
+                            <li>Yan ödeme tanımı seçildikten sonra başka bir alana geçildiğinde otomatik doğrulama yapılır</li>
+                            <li>Eğer yan ödeme tanımı seçilmemişse, sistem "Yan Ödeme Tanımını Seçmelisiniz" uyarısı verecektir</li>
+                            <li>Bu durumda geri dönüp bir yan ödeme tanımı seçmelisiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yan Ödeme Oranı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yan Ödeme tablosunun üçüncü sütununda yer alır</li>
+                            <li>Her satırda bir metin kutusu bulunur</li>
+                            
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna istediğiniz yan ödeme oranını girin
+                                <ul>
+                                    <li>Oran bir sayısal değer olmalıdır</li>
+                                    <li>Ondalık ayırıcı olarak virgül kullanılır (örn: 12,5)</li>
+                                    <li>Maksimum 8 karakter uzunluğunda bir değer girilebilir</li>
+                                </ul>
+                            </li>
+                            <li>Değeri girdikten sonra Tab tuşuna basarak veya fare ile başka bir alana tıklayarak diğer alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Doğrulama:</strong>
+                        <ul>
+                            <li>Yan ödeme oranı girildikten sonra başka bir alana geçildiğinde otomatik doğrulama yapılır</li>
+                            <li>Eğer yan ödeme oranı girilmemişse, sistem "Yan Ödeme Oranını Girmelisiniz" uyarısı verecektir</li>
+                            <li>Bu durumda geri dönüp bir oran girmelisiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Her yan ödeme satırı için hem yan ödeme tanımı seçilmeli hem de oran girilmelidir</li>
+                    <li>Aynı yan ödeme tanımı birden fazla kez seçilmemelidir</li>
+                    <li>Yan ödeme oranı girişinde sayısal değer kontrolü yapılır, harf veya özel karakter girilemez</li>
+                    <li>Yan ödeme tanımı ve oranı girilmeden kaydetme işlemi yapılamaz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yan ödeme tanımları listesinde klavyeden ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Tab tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Bilinen yan ödeme oranlarını not almak, benzer personel için işlem yaparken kolaylık sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="satir-islemleri" class="section">
+        <h2>Satır İşlemleri (Ekleme, Silme)</h2>
+        <div class="info-box">
+            <h3>Yan Ödeme Satırlarının Eklenmesi ve Silinmesi</h3>
+            <div class="step">
+                <h4>Yeni Satır Ekleme:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Tablo altında, en sol tarafta yer alan "Yeni" butonudur</li>
+                            <li>Buton üzerinde artı işareti simgesi bulunur</li>
+                            <li>Açık gri bir zemin üzerinde üç boyutlu görüntüye sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Satır Ekleme Adımları:</strong>
+                        <ol>
+                            <li>Tablonun altındaki "Yeni" butonuna tıklayın</li>
+                            <li>Tıkladığınızda, tabloya yeni bir boş satır eklenecektir</li>
+                            <li>Yeni eklenen satır, tablonun en altında yer alır</li>
+                            <li>Yeni satırda yan ödeme tanımı ve oranı için boş alanlar bulunur</li>
+                            <li>Bu alanlara istediğiniz değerleri girebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Satır Silme:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Her satırın başında, ilk sütunda küçük bir silme butonu bulunur</li>
+                            <li>Buton üzerinde çarpı işareti simgesi bulunur</li>
+                            <li>Simge kırmızı renklidir ve küçük boyutludur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Silme Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırın başındaki silme butonuna tıklayın</li>
+                            <li>Tıkladığınızda, sistem silme işlemini onaylamanız için bir uyarı mesajı gösterir:
+                                <ul>
+                                    <li>"Satır İptal Edilecek, Onaylıyor musunuz?"</li>
+                                    <li>Bu mesajda "Evet" veya "Hayır" seçenekleri bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Silme işlemini onaylamak için "Evet" seçeneğine tıklayın</li>
+                            <li>İşlemi iptal etmek için "Hayır" seçeneğine tıklayın</li>
+                            <li>Evet seçeneğini seçerseniz, ilgili satır tablodan silinecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, bir satırı sildikten sonra tekrar aynı bilgilerle oluşturmanız gerekir</li>
+                    <li>Kaydetme işlemi yapılmadan önce silinen satırlar veri tabanından silinmez, sadece ekrandan kaldırılır</li>
+                    <li>Kaydetme işlemi yapıldıktan sonra silinen satırlar kalıcı olarak kaldırılır</li>
+                    <li>Tüm satırları silmek istiyorsanız, her biri için ayrı ayrı silme işlemi yapmanız gerekir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla yan ödeme eklemek için önce mevcut satırı doldurun, sonra "Yeni" butonuna tıklayın</li>
+                    <li>Yanlış bir yan ödeme eklediğinizde, satırı silip yeniden eklemek daha hızlı olabilir</li>
+                    <li>Satır eklemeden önce tüm yan ödeme tanımlarını ve oranlarını belirlemek işlemi hızlandırır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kaydetme-cikis" class="section">
+        <h2>Kaydetme ve Çıkış İşlemleri</h2>
+        <div class="info-box">
+            <h3>Veri Kaydetme ve Programdan Çıkış</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Tablonun altında, "Yeni" butonunun sağında yer alan "Kaydet" butonudur</li>
+                            <li>Buton üzerinde disk simgesi bulunur</li>
+                            <li>Açık gri bir zemin üzerinde üç boyutlu görüntüye sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Adımları:</strong>
+                        <ol>
+                            <li>Tüm gerekli bilgileri doldurduğunuzdan emin olun:
+                                <ul>
+                                    <li>Sicil numarası girilmiş olmalı</li>
+                                    <li>Her yan ödeme satırında hem tanım seçilmiş hem de oran girilmiş olmalı</li>
+                                </ul>
+                            </li>
+                            <li>Tablonun altındaki "Kaydet" butonuna tıklayın</li>
+                            <li>Sistem verileri kontrol eder ve kaydetme işlemini gerçekleştirir</li>
+                            <li>İşlem başarılı olursa, yan ödeme bilgileri veritabanına kaydedilir</li>
+                            <li>İşlem sırasında herhangi bir hata oluşursa, ekranda hata mesajı görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış İşlemi:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Tablonun altında, "Kaydet" butonunun sağında yer alan "Çıkış" butonudur</li>
+                            <li>Buton üzerinde kapı/çıkış simgesi bulunur</li>
+                            <li>Açık gri bir zemin üzerinde üç boyutlu görüntüye sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan ve kaydetme işlemini gerçekleştirdikten sonra, "Çıkış" butonuna tıklayın</li>
+                            <li>Tıkladığınızda, program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                            <li>Kaydedilmemiş değişiklikler varsa, çıkış yapmadan önce kaydetmeniz önerilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetme işlemi yapılmadan programdan çıkılırsa, yapılan değişiklikler kaydedilmez</li>
+                    <li>Kaydetme işlemi sırasında sistemsel bir hata oluşursa, hata mesajı ekranda görüntülenir</li>
+                    <li>Sistem hatası durumunda, işlemi tekrar deneyin veya sistem yöneticinize başvurun</li>
+                    <li>Programı çalıştırdığınız sırada başka kullanıcılar aynı personel üzerinde işlem yapıyorsa, çakışmalar oluşabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + K tuş kombinasyonunu kullanarak hızlı kaydetme yapabilirsiniz</li>
+                    <li>Birden fazla personel için işlem yapacaksanız, her personel işlemini tamamladıktan sonra kaydetme yapın</li>
+                    <li>Çıkış yapmadan önce son bir kez kaydetme işlemi yapmanız önerilir</li>
+                    <li>Programdan çıkmadan yan ödeme oranlarının doğruluğunu kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                    <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sicil No Bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girdiğiniz sicil numarası sistemde bulunamıyor.</li>
+                            <li>Çözüm: Sicil numarasını doğru girdiğinizden emin olun. Emin değilseniz, Sicil No alanının yanındaki büyüteç simgeli butonu kullanarak personel arama penceresinden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yan Ödeme Tanımını Seçmelisiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Yan ödeme oranı girerken, yan ödeme tanımı seçilmemiş.</li>
+                            <li>Çözüm: Önce yan ödeme tanımını açılır listeden seçin, sonra oran bilgisini girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yan Ödeme Oranını Girmelisiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Yan ödeme tanımı seçilmiş ancak oran bilgisi girilmemiş.</li>
+                            <li>Çözüm: Seçilen yan ödeme tanımı için uygun bir oran değeri girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Sırasında Hata:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda hata mesajı alıyorsunuz.</li>
+                            <li>Çözüm: Tüm alanların doğru doldurulduğunu kontrol edin. Sistemsel bir hata olabilir, işlemi tekrar deneyin veya sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Sık kullandığınız personellerin sicil numaralarını not edin</li>
+                    <li>Yan ödeme tanımları ve standart oranları hakkında bilgi sahibi olun</li>
+                    <li>Birden fazla personele aynı yan ödeme tanımlarını yapacaksanız, oranları not alın</li>
+                    <li>İşlemlerinizi tamamladıktan sonra mutlaka kaydetme işlemi yapın</li>
+                    <li>Büyük değişiklikler yapmadan önce, mevcut bilgileri kontrol edin</li>
+                    <li>Personel bilgilerinin doğruluğunu kontrol edin</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Yan ödeme tanımlarının ve oranlarının doğruluğu önemlidir, personel ödemelerini doğrudan etkileyebilir</li>
+                    <li>Şüpheli durumlarda ilgili birimle iletişime geçin</li>
+                    <li>Yetkisiz personel bilgilerinde değişiklik yapmak kurumsal politikalara aykırı olabilir</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Yan Ödeme Sicil Yönetimi programı, personele ait yan ödeme bilgilerini yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Personel sicil bilgilerinin görüntülenmesi</li>
+                <li>Yan ödeme tanımlarının seçilmesi</li>
+                <li>Yan ödeme oranlarının girilmesi</li>
+                <li>Yan ödeme satırlarının eklenmesi ve silinmesi</li>
+                <li>Yapılan değişikliklerin kaydedilmesi</li>
+                <li>Programdan çıkış yapılması</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

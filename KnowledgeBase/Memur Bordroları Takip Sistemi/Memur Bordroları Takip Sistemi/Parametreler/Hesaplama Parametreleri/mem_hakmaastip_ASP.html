@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakediş Maaş Tipi Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hakediş Maaş Tipi Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#temel-islemler">Temel İşlemler</a>
+                    <ul>
+                        <li><a href="#maas-tipi-secimi">Maaş Tipi Seçimi</a></li>
+                        <li><a href="#hakedis-ekleme">Hakediş Ekleme</a></li>
+                        <li><a href="#hakedis-silme">Hakediş Silme</a></li>
+                        <li><a href="#hesaplama-secenegi">Hesaplama Seçeneği Belirleme</a></li>
+                        <li><a href="#coklu-hakedis">Aynı Hakediş Birden Fazla Seçildiğinde</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Form İşlemleri</a>
+                    <ul>
+                        <li><a href="#kaydet">Kaydetme</a></li>
+                        <li><a href="#kayit-arama">Kayıt Arama ve Bulma</a></li>
+                        <li><a href="#kayit-silme">Kayıt Silme</a></li>
+                        <li><a href="#kopyalama">Kayıt Kopyalama</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Hakediş Maaş Tipi Tanımları" ekranı, farklı maaş tipleri için hangi hakedişlerin geçerli olacağını belirlemenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Maaş tiplerini seçme</li>
+                <li>Her maaş tipi için geçerli olan hakedişleri tanımlama</li>
+                <li>Hakedişlerin hesaplanıp hesaplanmayacağını belirleme</li>
+                <li>Maaş tipine bağlı hakediş tanımlarını düzenleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlamak istediğiniz maaş tipi</li>
+                    <li>Bu maaş tipine bağlamak istediğiniz hakediş türleri</li>
+                    <li>Hangi hakedişlerin hesaplanacağı bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Hakediş Maaş Tipi Tanımları" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçim Alanı:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, ekranın sol kısmında "Maaş Tipi" etiketi bulunur.</li>
+                            <li>Etiketin yanında, sağda açılır liste (dropdown) şeklinde maaş tipi seçim alanı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Tablosu Bölümü:</strong>
+                        <ul>
+                            <li>Maaş tipi seçim alanının altında, gri renkli bir başlık satırı vardır.</li>
+                            <li>Başlık satırında "Hakedişler" ve "Seçim" başlıkları yer alır.</li>
+                            <li>Bunun altında büyük bir kaydırılabilir alan içinde hakediş listesi ve seçim tablosu bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, gri renkli bir şerit içinde butonlar yer alır.</li>
+                            <li>Bu butonlar: Yeni, Kaydet, Çıkış, Temizle, Win (Pencere), Sil ve Kopyala butonlarıdır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Maaş tipi seçim alanı boş olarak gösterilir.</li>
+                    <li>Hakediş tablosu boş olarak gösterilir.</li>
+                    <li>Bir maaş tipi seçilene kadar hakediş ekleme işlemi yapılamaz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        
+        <div id="maas-tipi-secimi" class="info-box">
+            <h3>Maaş Tipi Seçimi</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Açılır Listesi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, "Maaş Tipi" etiketinin sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>İşlev:</strong> Sistemde tanımlı tüm maaş tiplerini listeler.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçme Adımları:</strong>
+                        <ul>
+                            <li>Açılır listeye tıklayın.</li>
+                            <li>Açılan listeden bir maaş tipi seçin.</li>
+                            <li>Seçim yapıldığında, varsa o maaş tipine daha önce tanımlanmış hakedişler otomatik olarak ekranda görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Maaş Tipi Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Win (Pencere) butonunu kullanarak mevcut tanımları görebilir ve buradan da seçim yapabilirsiniz.</li>
+                    <li>Seçim yaptıktan sonra sistem otomatik olarak o maaş tipine ait tanımları yükleyecektir.</li>
+                    <li>Henüz tanımlanmamış bir maaş tipi seçerseniz, boş bir tablo görüntülenecektir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="hakedis-ekleme" class="info-box">
+            <h3>Hakediş Ekleme</h3>
+            
+            <div class="step">
+                <h4>Hakediş Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Yeni Satır Ekleme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Yeni" butonuna tıklayın.</li>
+                            <li>Hakediş listesinin en altına yeni bir satır eklenecektir.</li>
+                            <li>Eğer liste uzunsa, eklenen yeni satırı görmek için hakediş tablosu otomatik olarak en alta kaydırılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Seçme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hakediş tablosunun orta sütununda, satırın ikinci hücresinde yer alır.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>İşlev:</strong> Sistemde tanımlı tüm hakedişleri listeler.</li>
+                            <li>Açılır listeye tıklayın ve listeden bir hakediş seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Seçeneği Belirleme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hakediş tablosunun sağ sütununda, satırın üçüncü hücresinde yer alır.</li>
+                            <li><strong>Görünüm:</strong> "Evet" ve "Hayır" seçeneklerini içeren açılır liste şeklindedir.</li>
+                            <li><strong>İşlev:</strong> Hakedişin hesaplanıp hesaplanmayacağını belirler.</li>
+                            <li>Varsayılan değer "Evet"tir. Hakedişin hesaplanmasını istemiyorsanız "Hayır" seçeneğini seçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bir maaş tipi için aynı hakediş birden fazla kez seçilemez. Bunu yapmaya çalışırsanız sistem uyarı verecektir.</li>
+                    <li>Yeni bir hakediş eklemeden önce mutlaka bir maaş tipi seçmiş olmanız gerekir.</li>
+                    <li>Değişikliklerinizi "Kaydet" butonuna tıklayarak kaydetmeyi unutmayın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="hakedis-silme" class="info-box">
+            <h3>Hakediş Silme</h3>
+            
+            <div class="step">
+                <h4>Hakediş Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Silinecek Satırı Seçme:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz hakediş satırını bulun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hakediş tablosunun en solundaki sütunda, her satırın başında küçük bir sil butonu bulunur.</li>
+                            <li><strong>Görünüm:</strong> Çöp kutusu simgeli küçük bir butondur.</li>
+                            <li><strong>İşlev:</strong> Tıklandığında ilgili hakediş satırını siler.</li>
+                            <li>Silme butonuna tıklayın.</li>
+                            <li>Sistem "Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir.</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Hakediş Silme İpuçları:</h4>
+                <ul>
+                    <li>Silinen hakediş sadece listeden kaldırılır, ana hakediş tanımları etkilenmez.</li>
+                    <li>Silme işlemi sonrası değişikliklerinizi "Kaydet" butonuna tıklayarak kaydetmeyi unutmayın.</li>
+                    <li>Yanlışlıkla bir hakediş sildiyseniz, kaydetmeden önce sayfayı yenileyerek (FormTemizle butonu) son kaydedilen haline dönebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="hesaplama-secenegi" class="info-box">
+            <h3>Hesaplama Seçeneği Belirleme</h3>
+            
+            <div class="step">
+                <h4>Hesaplama Seçeneği Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Hesaplama Seçeneği Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hakediş tablosunun sağ sütununda, "Seçim" başlığı altında yer alır.</li>
+                            <li><strong>Görünüm:</strong> "Evet" ve "Hayır" seçeneklerini içeren açılır liste şeklindedir.</li>
+                            <li><strong>İşlev:</strong> Hakedişin hesaplanıp hesaplanmayacağını belirler.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Seçeneği Belirleme Adımları:</strong>
+                        <ul>
+                            <li>İlgili hakedişin satırında, "Seçim" sütunundaki açılır listeye tıklayın.</li>
+                            <li>Hakedişin hesaplanmasını istiyorsanız "Evet" seçeneğini seçin.</li>
+                            <li>Hakedişin hesaplanmasını istemiyorsanız "Hayır" seçeneğini seçin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Hesaplama Seçeneği İpuçları:</h4>
+                <ul>
+                    <li>Varsayılan değer "Evet"tir. Yani bir hakediş eklendiğinde otomatik olarak hesaplanacak şekilde ayarlanır.</li>
+                    <li>Bir hakedişi geçici olarak hesaplama dışı bırakmak için "Hayır" seçeneğini kullanabilirsiniz.</li>
+                    <li>Bu seçenek, maaş hesaplamaları yapılırken ilgili hakedişin dikkate alınıp alınmayacağını belirler.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="coklu-hakedis" class="info-box">
+            <h3>Aynı Hakediş Birden Fazla Seçildiğinde</h3>
+            
+            <div class="step">
+                <h4>Sistem Uyarısı ve Davranışı:</h4>
+                <ol>
+                    <li><strong>Tekrarlanan Hakediş Kontrolü:</strong>
+                        <ul>
+                            <li>Bir hakediş seçtiğinizde, sistem otomatik olarak bu hakedişin daha önce seçilip seçilmediğini kontrol eder.</li>
+                            <li>Bu kontrol, hakediş açılır listesinden seçim yaptığınız anda gerçekleşir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Uyarı Mesajı:</strong>
+                        <ul>
+                            <li>Eğer seçtiğiniz hakediş zaten mevcut maaş tipi için tanımlanmışsa, sistem "Bu Hakediş Önceden Seçilmiştir!" şeklinde bir uyarı mesajı gösterecektir.</li>
+                            <li>Bu uyarı mesajı, bir bilgilendirme penceresi olarak ekranın ortasında görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sistem Davranışı:</strong>
+                        <ul>
+                            <li>Uyarı mesajı gösterildikten sonra, sistem otomatik olarak seçiminizi önceki değerine geri döndürür.</li>
+                            <li>Yani, uyarı sonrası hakediş seçim kutusunda daha önceki seçiminiz veya boş değer görüntülenir.</li>
+                            <li>Bu şekilde, aynı hakediş bir maaş tipi için birden fazla kez tanımlanamaz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Sistem, bir hakediş seçildiği an kontrol yapar, yani Kaydet butonuna basmadan önce.</li>
+                    <li>Bu kontrol, hatalı veri girişini önler ve veri tutarlılığını sağlar.</li>
+                    <li>Aynı hakediş farklı maaş tipleri için seçilebilir, kısıtlama sadece aynı maaş tipi içinde geçerlidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda hakediş eklemeden önce, hangi hakedişleri ekleyeceğinizi planlayın.</li>
+                    <li>Uyarı mesajı aldığınızda, hakediş listesini gözden geçirerek zaten eklenmiş hakedişleri kontrol edin.</li>
+                    <li>Kopyalama özelliğini kullanırken, hedef maaş tipinde zaten var olan hakedişler yerine yenileri eklenmeyecektir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Yeni (AddNew) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, butonlar şeridinin solunda yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde "+" simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Hakediş tablosuna yeni bir satır ekler.</li>
+                            <li><strong>Kullanım:</strong> Maaş tipine yeni bir hakediş eklemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yeni" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde diskete kaydetme simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Yapılan değişiklikleri veritabanına kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Hakediş ekledikten veya sildikten sonra değişiklikleri kaydetmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kaydet" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde çıkış kapısı simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkış yapar.</li>
+                            <li><strong>Kullanım:</strong> İşlemlerinizi tamamladıktan sonra programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Form Temizle (FormClear) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Çıkış" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde silgi simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Formu sıfırlar ve son kaydedilen haline getirir.</li>
+                            <li><strong>Kullanım:</strong> Yapılan değişiklikleri iptal etmek ve formu sıfırlamak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Win (Pencere) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Form Temizle" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde pencere simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Mevcut tüm maaş tipi - hakediş tanımlarının listesini açar.</li>
+                            <li><strong>Kullanım:</strong> Kayıtlı tanımlar arasında hızlı arama ve seçim yapmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil (Delete) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Win" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde çöp kutusu simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Seçili maaş tipine ait tüm hakediş tanımlarını siler.</li>
+                            <li><strong>Kullanım:</strong> Bir maaş tipine ait tüm hakediş tanımlarını silmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyala (Copy) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sil" butonunun hemen sağında, butonlar şeridinin en sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde kopyalama simgesi bulunan gri butondur.</li>
+                            <li><strong>İşlev:</strong> Bir maaş tipine ait hakediş tanımlarını başka bir maaş tipine kopyalar.</li>
+                            <li><strong>Kullanım:</strong> Tanımları başka bir maaş tipine kopyalamak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonunu kullanırken dikkatli olun, silinen kayıtlar geri alınamaz!</li>
+                    <li>Kaydetmeden programdan çıkarsanız, yaptığınız değişiklikler kaybedilir.</li>
+                    <li>Kaydet butonuna basmadan değişiklikleriniz sisteme kaydedilmez.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Form İşlemleri</h2>
+        
+        <div id="kaydet" class="info-box">
+            <h3>Kaydetme İşlemi</h3>
+            
+            <div class="step">
+                <h4>Değişiklikler Nasıl Kaydedilir:</h4>
+                <ol>
+                    <li><strong>Kaydetme Öncesi:</strong>
+                        <ul>
+                            <li>Bir maaş tipi seçtiğinizden emin olun.</li>
+                            <li>Gerekli hakediş eklemeleri veya silmeleri yapın.</li>
+                            <li>Hesaplama seçeneklerini (Evet/Hayır) ihtiyacınıza göre ayarlayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem, bilgileri kontrol edecek ve sorun yoksa kayıt işlemini tamamlayacaktır.</li>
+                            <li>Maaş tipi seçilmemişse "Maaş Tipini Girmelisiniz!" şeklinde bir uyarı mesajı gösterilecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Sonrası:</strong>
+                        <ul>
+                            <li>Kayıt işlemi tamamlandıktan sonra sistem, aynı maaş tipini göstermeye devam eder.</li>
+                            <li>Yeni hakediş eklemeleri için form hazır haldedir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kaydetme İpuçları:</h4>
+                <ul>
+                    <li>Değişiklik yaptıktan sonra mutlaka "Kaydet" butonuna tıklayın.</li>
+                    <li>Farklı bir maaş tipine geçmeden önce mevcut değişiklikleri kaydetmeniz önerilir.</li>
+                    <li>Kayıt işlemi sırasında herhangi bir hata mesajı alırsanız, mesajı dikkatle okuyun ve sorunu giderin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-arama" class="info-box">
+            <h3>Kayıt Arama ve Bulma</h3>
+            
+            <div class="step">
+                <h4>Kayıt Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Doğrudan Seçim:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmındaki "Maaş Tipi" açılır listesine tıklayın.</li>
+                            <li>Açılan listeden aradığınız maaş tipini seçin.</li>
+                            <li>Seçim yapıldığında, o maaş tipine ait hakediş tanımları otomatik olarak ekranda görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Win Butonu ile Arama:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Win" (Pencere) butonuna tıklayın.</li>
+                            <li>Açılan pencerede tüm maaş tipi - hakediş tanımlarının listesi görüntülenecektir.</li>
+                            <li>İstediğiniz maaş tipine tıklayarak seçin.</li>
+                            <li>Seçilen maaş tipinin hakediş tanımları ana ekranda görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Win Butonu ile Kayıt Arama:</h4>
+                <ol>
+                    <li>Ekranın alt kısmındaki "Win" (Pencere) butonuna tıklayın.</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>Üst kısımda maaş tipi listesi görüntülenecektir.</li>
+                            <li>Liste, Kayıt No ve Maaş Tipi olarak iki sütun halinde gösterilir.</li>
+                            <li>İstediğiniz maaş tipini bulmak için aşağı-yukarı kaydırabilirsiniz.</li>
+                            <li>İstediğiniz maaş tipini seçmek için üzerine tıklayın.</li>
+                            <li>Seçtiğiniz maaş tipine ait bilgiler ana forma yüklenecektir.</li>
+                        </ul>
+                    </li>
+                    <li>Listedeki kolonlarda gezinmek ve sıralamak için:
+                        <ul>
+                            <li>Kolon başlıklarına tıklayarak sıralama yapabilirsiniz.</li>
+                            <li>Aşağı-yukarı ok tuşları ile liste içinde hareket edebilirsiniz.</li>
+                            <li>Bir maaş tipinin adını veya numarasını biliyorsanız, ilk harflerini yazarak hızlı erişim sağlayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Arama İpuçları:</h4>
+                <ul>
+                    <li>Maaş tipini doğrudan açılır listeden seçmek genelde en hızlı yoldur.</li>
+                    <li>Çok sayıda maaş tipi varsa Win butonu ile açılan pencerede daha kolay arama yapabilirsiniz.</li>
+                    <li>Sık kullandığınız maaş tiplerinin numaralarını not almanız işinizi hızlandırabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-silme" class="info-box">
+            <h3>Kayıt Silme</h3>
+            
+            <div class="step">
+                <h4>Bir Maaş Tipine Ait Tüm Hakediş Kayıtları Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Önceki bölümde anlatıldığı gibi, silmek istediğiniz hakediş kayıtlarına sahip maaş tipini seçin.</li>
+                            <li>Seçilen maaş tipine ait hakediş tanımları ekranda görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Sil" butonuna tıklayın.</li>
+                            <li>Sistem size "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir.</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Sonrası:</strong>
+                        <ul>
+                            <li>Silme işlemi onaylandıktan sonra, seçili maaş tipine ait tüm hakediş tanımları sistemden silinecektir.</li>
+                            <li>Maaş tipi tanımının kendisi silinmez, sadece hakediş bağlantıları silinir.</li>
+                            <li>Ekran temizlenir ve yeni kayıt için hazır hale gelir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz! Silinen hakediş tanımları sistemden tamamen kaldırılır.</li>
+                    <li>Silme işlemi yalnızca hakediş bağlantılarını siler, maaş tipi ve hakediş ana tanımları silinmez.</li>
+                    <li>Aktif olarak kullanılan maaş tiplerinin hakediş tanımlarını silmek, maaş hesaplamalarında sorunlara neden olabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Silme İşlemi İpuçları:</h4>
+                <ul>
+                    <li>Silmeden önce, ilgili maaş tipinin hakediş tanımlarının başka yerlerde kullanılmadığından emin olun.</li>
+                    <li>Önemli tanımları silmeden önce bilgilerini not etmeniz veya ekran görüntüsü almanız faydalı olabilir.</li>
+                    <li>Test amaçlı oluşturulmuş tanımları düzenli olarak temizleyin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kopyalama" class="info-box">
+            <h3>Kayıt Kopyalama</h3>
+            
+            <div class="step">
+                <h4>Bir Maaş Tipinden Diğerine Hakediş Tanımları Nasıl Kopyalanır:</h4>
+                <ol>
+                    <li><strong>Kopyalama İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kopyala" butonuna tıklayın.</li>
+                            <li>Yeni bir pencere açılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama Penceresi:</strong>
+                        <ul>
+                            <li>Açılan pencerede kaynak ve hedef maaş tipi seçimi için alanlar bulunacaktır.</li>
+                            <li>Pencere iki bölüme ayrılmıştır:
+                                <ul>
+                                    <li><strong>Kaynak Bölümü:</strong> Sol tarafta "Mevcut Maaş Tipi" etiketi ve yanında bir açılır liste bulunur. Buradan kopyalanacak hakediş tanımlarına sahip maaş tipini seçersiniz.</li>
+                                    <li><strong>Hedef Bölümü:</strong> Sağ tarafta "Yeni Maaş Tipi" etiketi ve yanında bir açılır liste bulunur. Buradan hakediş tanımlarının kopyalanacağı maaş tipini seçersiniz.</li>
+                                </ul>
+                            </li>
+                            <li>Pencerenin alt kısmında "Kopyala" butonu bulunur.</li>
+                            <li>İlk olarak, hakediş tanımlarını kopyalamak istediğiniz kaynak maaş tipini seçin.</li>
+                            <li>Ardından, hakediş tanımlarının kopyalanacağı hedef maaş tipini seçin.</li>
+                            <li>Kopyalama işlemini başlatmak için "Kopyala" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama Sonrası:</strong>
+                        <ul>
+                            <li>Kopyalama işlemi tamamlandıktan sonra sistem bir onay mesajı gösterecektir.</li>
+                            <li>Bu mesaj, kopyalama işleminin başarılı olduğunu ve kaç hakediş tanımının kopyalandığını belirtir.</li>
+                            <li>"Tamam" butonuna tıklayarak onay mesajını kapatın.</li>
+                            <li>Kopyalama penceresinden çıkmak için pencere kapatma butonuna (X) tıklayın.</li>
+                            <li>Ana ekranda hedef maaş tipini seçerek kopyalanan hakediş tanımlarını görebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kopyalama İpuçları:</h4>
+                <ul>
+                    <li>Kopyalama özelliği, benzer hakediş yapısına sahip maaş tipleri oluştururken zaman kazandırır.</li>
+                    <li>Kopyalama sonrası hedef maaş tipinin hakediş tanımlarını kontrol edin ve gerekirse düzenleyin.</li>
+                    <li>Hedef maaş tipinde zaten hakediş tanımları varsa, kopyalama işlemi bu tanımların üzerine yazmaz, sadece eksik olanları ekler.</li>
+                    <li>Aynı hakediş bir maaş tipinde birden fazla kez olamayacağı için, kopyalama sırasında mükerrer kayıtlar oluşturulmaz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar (onay sorar)</td>
+                    </tr>
+                    <tr>
+                        <td>Home</td>
+                        <td>Metin kutusu içinde satır başına gider</td>
+                    </tr>
+                    <tr>
+                        <td>End</td>
+                        <td>Metin kutusu içinde satır sonuna gider</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Kısayol Tuşlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için TAB veya ENTER tuşunu kullanın.</li>
+                            <li>Programdan çıkmak için herhangi bir anda ESC tuşuna basabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açılır Listelerde:</strong>
+                        <ul>
+                            <li>Liste içinde hızlı hareket etmek için ok tuşlarını kullanın.</li>
+                            <li>Bir öğeyi seçmek için ENTER tuşuna basın.</li>
+                            <li>Listeyi kapatmak için ESC tuşuna basın.</li>
+                            <li>Açılır listelerde ilk harfi yazarak o harfle başlayan ilk öğeye hızlıca geçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan tüm işlemleri klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>Açılır listelerde ilk harfleri yazarak hızlı seçim yapabilirsiniz.</li>
+                    <li>TAB tuşu ile form içinde gezinmek, fare kullanımından daha hızlıdır.</li>
+                    <li>ENTER tuşu, metin alanlarında bir sonraki alana geçiş yapar, düğme üzerindeyken ise düğmeye basma işlemi gerçekleştirir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kayıt Yapılamıyor:</strong>
+                        <ul>
+                            <li>Maaş tipi seçildiğinden emin olun.</li>
+                            <li>Aynı hakediş bir maaş tipi için birden fazla kez eklenemez.</li>
+                            <li>Hata mesajını dikkatlice okuyun, sorunu belirten bilgi içerebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Listesi Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Maaş tipini doğru seçtiğinizden emin olun.</li>
+                            <li>Seçilen maaş tipine daha önce hakediş tanımlanmamış olabilir.</li>
+                            <li>Form Temizle butonuna tıklayıp tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Listesi Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Sistem yöneticinize başvurun, maaş tipleri tanımlanmamış olabilir.</li>
+                            <li>Bağlantı sorunu olabilir, sayfayı yenileyin veya programı kapatıp tekrar açın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Seçildiğinde Hata Mesajı Alıyorsunuz:</strong>
+                        <ul>
+                            <li>"Bu Hakediş Önceden Seçilmiştir!" uyarısı görüyorsanız, seçtiğiniz hakediş zaten tanımlanmış demektir.</li>
+                            <li>Mevcut hakediş listesini kontrol edin ve farklı bir hakediş seçin.</li>
+                            <li>Tablo çok uzunsa, kaydırma çubuğunu kullanarak tüm listeyi görebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sistem Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li>Kaydetme veya arama işlemi sırasında sistem yoğunluğuna bağlı olarak kısa bir gecikme olabilir, biraz bekleyin.</li>
+                            <li>İşlem çok uzun sürüyorsa, ESC tuşuna basarak programı kapatıp tekrar açmayı deneyin.</li>
+                            <li>Sorun devam ederse, sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Hakediş Ekleme İçin:</strong>
+                        <ul>
+                            <li>Benzer maaş tipleri için Kopyala butonunu kullanarak zaman kazanın.</li>
+                            <li>Çok sayıda hakediş ekleyecekseniz, önce bir plan yapın.</li>
+                            <li>TAB tuşunu kullanarak alanlar arasında hızlıca gezinin.</li>
+                            <li>Tablo uzadığında son eklenen kayda ulaşmak için "Yeni" butonunu kullanın, tablo otomatik olarak en alta kayacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçimi İçin:</strong>
+                        <ul>
+                            <li>Sık kullandığınız maaş tiplerinin numaralarını not edin.</li>
+                            <li>Win butonu ile açılan pencerede ilk harflerini yazarak hızlıca seçim yapabilirsiniz.</li>
+                            <li>Açılır listeyi klavye ok tuşlarıyla kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>Değişiklik yaptıktan sonra hemen kaydedin.</li>
+                            <li>Karmaşık yapılandırmalar için önce bir kağıda plan yapın, sonra sisteme girin.</li>
+                            <li>Düzenli olarak yaptığınız işlemleri not alın, bu şekilde prosedürleri unutmazsınız.</li>
+                            <li>Birden çok maaş tipi için benzer hakediş tanımları yapacaksanız, Kopyala özelliği size büyük zaman kazandıracaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Önemli tanımları değiştirmeden önce mevcut bilgileri not alın.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, maaş hesaplamaları kritik öneme sahip olabilir.</li>
+                    <li>Kayıtları silmeden önce bunların aktif olarak kullanılan kayıtlar olmadığından emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Maaş tipi - hakediş tanımlarını düzenli olarak kontrol edin ve güncel tutun.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Yeni bir işlem yapmadan önce ilgili tanımları tekrar kontrol edin, bu potansiyel hataları önler.</li>
+                    <li>Hakediş tanımları maaş hesabını doğrudan etkileyeceği için, tanımlarınızı iki kez kontrol etmeniz önerilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Hakediş Maaş Tipi Tanımları ekranı, farklı maaş tipleri için hangi hakedişlerin geçerli olacağını belirlemenizi sağlayan kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Değişikliklerinizi düzenli olarak kaydedin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Tanımlarınızı düzenli olarak kontrol edin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

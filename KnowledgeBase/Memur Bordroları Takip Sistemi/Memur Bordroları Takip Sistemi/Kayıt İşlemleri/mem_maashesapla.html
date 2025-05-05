@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memur Bordro Maaş Hesaplama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Memur Bordro Maaş Hesaplama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-donem">Yıl/Dönem Bilgisi Girişi</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçimi</a></li>
+                <li><a href="#bolum-secimi">Bölüm Seçimi</a></li>
+                <li><a href="#sicil-no">Sicil No Aralığı Girişi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Memur Bordro Maaş Hesaplama programı, memurların bordro ve maaş hesaplamalarını toplu olarak yapmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli dönemlere ait maaş hesaplamalarını toplu olarak yapabilirsiniz</li>
+                <li>Farklı maaş tiplerine göre hesaplama yapabilirsiniz</li>
+                <li>Bölüm bazında hesaplama yapabilirsiniz</li>
+                <li>Sicil numarası aralığına göre personel filtrelemesi yapabilirsiniz</li>
+                <li>Hızlı ve pratik bir şekilde maaş hesaplaması gerçekleştirebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve dönem bilgisi</li>
+                    <li>Hangi maaş tipinde işlem yapacağınız</li>
+                    <li>İşlem yapacağınız bölüm/bölümler</li>
+                    <li>İşlem yapacağınız sicil numarası aralığı (opsiyonel)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (teal) renkli bir çubukta "Memur Bordro Maaş Hesaplaması" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Yıl/Dönem seçimiyle başlar</li>
+                            <li>Maaş tipi, bölüm ve sicil no alanlarını içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Kaydet ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Yıl/Dönem alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-donem" class="section">
+        <h2>Yıl/Dönem Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Yıl ve Dönem Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Yıl/Dönem Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Program ekranının üst kısmında, turkuaz renkli başlık çizgisinin hemen altında yer alır</li>
+                            <li>"Yıl/Dönem" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu yer alır</li>
+                            <li>Sol taraftaki kutu Yıl, sağdaki kutu Dönem bilgisi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına işlem yapmak istediğiniz yılı girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Dönem alanına geçin</li>
+                            <li>Dönem alanına ilgili dönem numarasını girin (örn. 1, 2, 3)
+                                <ul>
+                                    <li>Bu alan 2 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Dönem alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Dönem alanına en fazla 2 rakamdan oluşan geçerli bir dönem numarası girilmelidir</li>
+                    <li>Girilen yıl ve dönem için aylık parametre kaydı olup olmadığı kontrol edilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Enter tuşu TAB tuşu gibi davranır, alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yıl ve Dönem alanları doğru doldurulmazsa, sistem "Aylık parametresi Bulunamadı" şeklinde bir uyarı verecektir</li>
+                    <li>Daha önce kilitlenmiş dönemler için maaş hesaplaması yapılamaz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Maaş Tipi Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Maaş Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Dönem alanının hemen altında yer alır</li>
+                            <li>"Maaş Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut maaş tipleri listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz maaş tipini seçin
+                                <ul>
+                                    <li>Liste içinde maaş tipi kodu ve açıklaması birlikte görünür</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz maaş tipi görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Maaş tipi seçilmeden hesaplama yapılamaz</li>
+                    <li>Program açıldığında maaş tipi listesi boş gelir, mutlaka bir seçim yapılmalıdır</li>
+                    <li>Yıl, Dönem ve seçilen Maaş Tipi için parametre kaydı bulunmalıdır</li>
+                    <li>Seçilen maaş tipi, dönemi kilitlenmiş olmamalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Maaş tiplerinin kodlarını ve anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili maaş tipinin ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Yıl ve Dönem girdikten hemen sonra Maaş Tipini seçerseniz, işlem daha hızlı ilerleyecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bolum-secimi" class="section">
+        <h2>Bölüm Seçimi</h2>
+        <div class="info-box">
+            <h3>Bölüm Seçimi Nasıl Yapılır</h3>
+            <div class="step">
+                <h4>Bölüm Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Maaş Tipi alanının hemen altında yer alır</li>
+                            <li>"Bölüm" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında çoklu seçim yapılabilen bir liste kutusu yer alır</li>
+                            
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Liste kutusunda tüm bölümler görüntülenir</li>
+                            <li>Birden fazla bölüm seçmek için:
+                                <ul>
+                                    <li>Ctrl tuşunu basılı tutarak seçmek istediğiniz her bir bölüme tıklayın</li>
+                                    <li>Veya, listede tıkladığınız her bölüm seçili duruma gelecektir</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık bölümler seçmek için:
+                                <ul>
+                                    <li>İlk bölüme tıklayın</li>
+                                    <li>Shift tuşunu basılı tutarak son bölüme tıklayın</li>
+                                    <li>Arada kalan tüm bölümler otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                            <li>Program açıldığında varsayılan olarak tüm bölümler seçilidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir bölüm seçilmelidir, aksi halde program "Bölüm Seçiniz" uyarısı verecektir</li>
+                    <li>Çok fazla personel içeren bir bölüm seçildiğinde, hesaplama işlemi uzun sürebilir</li>
+                    <li>Seçiminiz hesaplamanın kapsamını belirler, sadece seçilen bölüm/bölümlerdeki personelin maaşı hesaplanacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Ctrl+A tuş kombinasyonu ile tüm bölümleri hızlıca seçebilirsiniz</li>
+                    <li>Seçili bir bölümü listeden çıkarmak için, Ctrl tuşunu basılı tutarak o bölüme tekrar tıklayın</li>
+                    <li>Program açıldığında tüm bölümler seçili geldiği için, istemediğiniz bölümleri tek tek listeden çıkarmanız yeterlidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sicil-no" class="section">
+        <h2>Sicil No Aralığı Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil No Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Sicil No Aralığı Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm alanının hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu yer alır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "99999999" değerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası aralığı opsiyonel bir filtreleme kriteridir, boş bırakılabilir</li>
+                    <li>Başlangıç sicil numarası girildiğinde, bitiş sicil numarası boş bırakılırsa maksimum değer (99999999) otomatik olarak kullanılır</li>
+                    <li>Sicil numarası filtresi, diğer seçimlerinizle birlikte hesaplanacak personel sayısını daraltır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir personel için hesaplama yapmak istiyorsanız, aynı sicil numarasını hem başlangıç hem de bitiş kutularına girin</li>
+                    <li>Tüm personel için işlem yapmak istiyorsanız bu alanları boş bırakabilirsiniz</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kaydet ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Kaydet Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                            <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Hesaplama İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>Yıl/Dönem bilgilerini girin</li>
+                                    <li>Maaş Tipini seçin</li>
+                                    <li>Bölüm(leri) seçin</li>
+                                    <li>İsterseniz Sicil No aralığını belirleyin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>İşlem başladığında ekranda "Lütfen Bekleyiniz..." mesajı görüntülenecektir</li>
+                            <li>İşlem tamamlandığında "Maaş Hesaplama İşlemi Tamamlandı!" şeklinde bir bilgi mesajı alacaksınız</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Üzerinde bir çıkış/kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna tıklamadan önce tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                    <li>Yıl ve Dönem alanları boş bırakılamaz</li>
+                    <li>Maaş Tipi seçilmelidir</li>
+                    <li>En az bir Bölüm seçilmelidir</li>
+                    <li>İşlem başlatıldıktan sonra, sistem yanıt verene kadar bekleyin</li>
+                    <li>İşlem tamamlandığında bilgi mesajını okuyarak hesaplamanın başarıyla tamamlanıp tamamlanmadığını kontrol edin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + K tuş kombinasyonu ile Kaydet butonunu aktif edebilirsiniz</li>
+                    <li>ESC tuşu ile Çıkış butonunu aktif edebilirsiniz</li>
+                    <li>İşlem başlatmadan önce seçimlerinizi kontrol edin</li>
+                    <li>Toplu maaş hesaplama işlemleri yoğun veri işleme gerektirebilir, büyük personel grupları için işlemin tamamlanması biraz zaman alabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                    <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                    <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Aylık parametresi Bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Girdiğiniz Yıl ve Dönem bilgilerinin doğru olduğundan emin olun. Sistem, bu değerler için tanımlanmış bir aylık parametre kaydı bulamıyor olabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Maaş Tipi Seçiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Maaş Tipi seçmeden Kaydet butonuna tıkladınız.</li>
+                            <li>Çözüm: Açılır listeden bir Maaş Tipi seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bölüm Seçiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Bölüm seçmeden Kaydet butonuna tıkladınız.</li>
+                            <li>Çözüm: Bölüm listesinden en az bir bölüm seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Aylık parametresi Bulunamadı veya Maaş Kilitli" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Seçtiğiniz Yıl/Dönem ve Maaş Tipi için maaş hesaplaması yapılamıyor.</li>
+                            <li>Çözüm: Seçtiğiniz dönemin kilitli olup olmadığını kontrol edin. Kilitlenmiş dönemler için maaş hesaplaması yapılamaz. Farklı bir dönem seçin veya sistem yöneticinizle iletişime geçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Uzun Sürüyor:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladıktan sonra işlem çok uzun sürüyor.</li>
+                            <li>Çözüm: Çok geniş bir personel sayısı için hesaplama yapıyor olabilirsiniz. Sicil numarası aralığını daraltın veya daha az bölüm seçin. Ayrıca, sistem yoğunluğuna bağlı olarak işlem süresi değişebilir, sabırla bekleyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                    <li>Yıl, Dönem ve Maaş Tipi bilgilerini doğru girdiğinizden emin olun</li>
+                    <li>Büyük personel grupları için işlem yapmadan önce, küçük bir grup üzerinde test yapın</li>
+                    <li>Sicil numarası aralığı belirleyerek daha hızlı sonuç alabilirsiniz</li>
+                    <li>Sık kullandığınız kriterleri ve değerleri not edin</li>
+                    <li>İşlem sonucunda gösterilen mesajları kontrol ederek, işlemin başarıyla tamamlanıp tamamlanmadığından emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Toplu maaş hesaplama işlemi geri alınamaz, bu nedenle işlem başlatmadan önce tüm seçimlerinizi kontrol edin</li>
+                    <li>Yoğun kullanım saatlerinde büyük personel grupları için işlem yapmaktan kaçının</li>
+                    <li>İşlem sırasında program penceresini kapatmayın veya başka işlemlere geçmeyin</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     
+     <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Memur Bordro Maaş Hesaplama programı, memurların maaş hesaplamalarını toplu olarak gerçekleştirmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Yıl ve dönem bilgisi girişi</li>
+                <li>Maaş tipi seçimi</li>
+                <li>Bölüm seçimi</li>
+                <li>Sicil numarası aralığı belirleme</li>
+                <li>İşlem butonlarının kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+     </div>
+                            
+</body>
+</html>

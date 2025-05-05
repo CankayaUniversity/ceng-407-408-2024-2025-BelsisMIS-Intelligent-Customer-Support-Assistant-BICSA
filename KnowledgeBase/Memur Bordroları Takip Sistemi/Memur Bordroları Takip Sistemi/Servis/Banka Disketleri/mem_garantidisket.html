@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garanti Bankası Disketi Oluşturma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Garanti Bankası Disketi Oluşturma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-no">Sicil No Aralığı Girişi</a></li>
+                <li><a href="#yil-ay">Maaşın Ait Olduğu Yıl/Ay Girişi</a></li>
+                <li><a href="#odeme-tarihi">Maaşın Ödeneceği Tarih Girişi</a></li>
+                <li><a href="#sube-firma">Yatırılan Şube ve Firma Kodu Bilgileri</a></li>
+                <li><a href="#bolum-maas">Bölüm ve Maaş Tipi Seçimi</a></li>
+                <li><a href="#dosya-bilgileri">Dosya Türü ve Adı Belirleme</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Garanti Bankası Disketi Oluşturma programı, personel maaş bilgilerini içeren banka disketi (dosyası) oluşturmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel maaş ödemelerini Garanti Bankası formatında bir dosya olarak hazırlayabilirsiniz</li>
+                <li>Belirli bir dönem için maaş bilgilerini filtreleyebilirsiniz</li>
+                <li>Sicil numarası aralığına göre personel seçimi yapabilirsiniz</li>
+                <li>Belirli bir bölüm veya maaş tipine göre filtreleme yapabilirsiniz</li>
+                <li>Oluşturulan banka dosyasını text veya Excel formatında kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve ay bilgisi</li>
+                    <li>Maaş ödemesinin yapılacağı tarih</li>
+                    <li>İşlem yapacağınız sicil numarası aralığı</li>
+                    <li>Hangi maaş tiplerinin dahil edileceği</li>
+                    <li>Oluşturulacak dosyanın kaydedileceği konum</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Banka Disketi Oluşturma (Garanti Bankası)" başlığı yer alır</li>
+                            <li>Bu başlık alanı sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında bulunan ana çalışma alanıdır</li>
+                            <li>Sicil No aralığı girişi ile başlar</li>
+                            <li>Maaş dönemi, ödeme tarihi, şube kodu, firma kodu, bölüm ve maaş tipi seçimleri burada yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır, giriş kutuları sağ tarafta bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm ve Maaş Tipi Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün orta kısmında yer alır</li>
+                            <li>Yan yana iki çoklu seçim listesi şeklindedir: Sol sütunda Bölüm, sağ sütunda Maaş Tipi</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanının alt kısmında yer alır</li>
+                            <li>Dosya türü seçimi ve dosya adı/konumu belirleme alanlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Tamam (OK), Kaydet (Save) ve Çıkış (Exit) butonlarını içerir</li>
+                            <li>Bu butonlar yan yana sıralanmıştır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Sicil No alanına konumlanır</li>
+                    <li>Maaş tipi ve bölüm listeleri tüm öğeleri seçili olarak gelir</li>
+                    <li>Şube kodu ve firma kodu alanları otomatik olarak doldurulur</li>
+                    <li>Tarih alanı, sistemde tanımlı olan mevcut tarihi gösterir</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları kontrol ettiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-no" class="section">
+        <h2>Sicil No Aralığı Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Sicil No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Program ekranının üst kısmında, başlık çizgisinin hemen altında ilk veri giriş satırında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alana sadece rakam girilebilir</li>
+                                    <li>Maksimum 9 haneli sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alana da sadece rakam girilebilir</li>
+                                    <li>Maksimum 9 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Filtreleme Etkisi:</strong>
+                        <ul>
+                            <li>Girilen sicil numarası aralığındaki personeller için banka disketi oluşturulur</li>
+                            <li>Başlangıç sicil numarası girilmezse, sistem otomatik olarak "0" değerini kullanır</li>
+                            <li>Bitiş sicil numarası girilmezse, sistem otomatik olarak "999999999" değerini kullanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası alanlarına sadece rakam girilebilir, harf veya özel karakter kabul edilmez</li>
+                    <li>Başlangıç sicil numarası, bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Çok geniş bir sicil numarası aralığı seçerseniz, işlem uzun sürebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir personel için işlem yapmak istiyorsanız, aynı sicil numarasını hem başlangıç hem de bitiş kutularına girin</li>
+                    <li>Tüm personeller için işlem yapmak istiyorsanız, başlangıç kutusunu boş bırakın veya 0 yazın, bitiş kutusunu da boş bırakın</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-ay" class="section">
+        <h2>Maaşın Ait Olduğu Yıl/Ay Girişi</h2>
+        <div class="info-box">
+            <h3>Yıl ve Ay Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Yıl/Ay Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanının hemen altında, ikinci veri giriş satırında yer alır</li>
+                            <li>"Maaşın Ait Olduğu Yıl&nbsp/&nbspAy" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu Yıl bilgisi, sağ kutu Ay bilgisi içindir</li>
+                            <li>İki kutunun arasında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya maaşın ait olduğu yılı girin
+                                <ul>
+                                    <li>Bu alana sadece rakam girilebilir</li>
+                                    <li>4 haneli yıl formatında olmalıdır (örn. 2023)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya maaşın ait olduğu ayı girin
+                                <ul>
+                                    <li>Bu alana sadece rakam girilebilir</li>
+                                    <li>1 veya 2 haneli ay numarası olabilir (1-12 arası)</li>
+                                    <li>Tek haneli aylar için başına 0 koymanız gerekmez, sistem otomatik olarak ekleyecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kayıt Filtreleme Etkisi:</strong>
+                        <ul>
+                            <li>Girilen yıl ve ay bilgisine ait maaş kayıtları için banka disketi oluşturulur</li>
+                            <li>Yıl bilgisi girilmezse, sistem otomatik olarak içinde bulunulan yılı kullanır</li>
+                            <li>Ay bilgisi girilmezse, sistem otomatik olarak içinde bulunulan ayı kullanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanına mutlaka 4 haneli bir değer girilmelidir</li>
+                    <li>Ay alanına 1-12 arasında bir değer girilmelidir</li>
+                    <li>Girilen ay ve yıla ait maaş kayıtları olmalıdır, aksi halde boş bir dosya oluşturulacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Eğer mevcut ay için işlem yapıyorsanız, bu alanları boş bırakabilirsiniz, sistem otomatik olarak içinde bulunulan ay ve yılı kullanacaktır</li>
+                    <li>Ay için tek haneli değer girebilirsiniz (örn. Ocak ayı için "1"), sistem otomatik olarak bunu "01" formatına dönüştürecektir</li>
+                    <li>TAB tuşunu kullanarak yıl alanından ay alanına, ay alanından da bir sonraki alana geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="odeme-tarihi" class="section">
+        <h2>Maaşın Ödeneceği Tarih Girişi</h2>
+        <div class="info-box">
+            <h3>Ödeme Tarihi Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Maaşın Ödeneceği Tarih Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Ay alanının hemen sağında, ikinci veri giriş satırında yer alır</li>
+                            <li>"Maaşın Ödeneceği Tarih" etiketi alan kutusunun solunda bulunur</li>
+                            <li>Etiketin sağında bir adet tarih giriş kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tarih giriş kutusuna maaşın ödeneceği tarihi girin
+                                <ul>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 15.05.2023)</li>
+                                    <li>Gün, ay ve yıl arasına nokta (.) koyarak tarih bilgisini girin</li>
+                                </ul>
+                            </li>
+                            <li>Alternatif olarak, kutunun sağında bulunan takvim ikonuna tıklayarak açılan takvimden tarih seçimi yapabilirsiniz</li>
+                            <li>TAB tuşuna basarak bir sonraki alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tarih Bilgisinin Etkisi:</strong>
+                        <ul>
+                            <li>Girilen tarih, oluşturulacak banka dosyasında ödeme tarihi olarak kullanılır</li>
+                            <li>Banka, maaş ödemelerini bu tarihte gerçekleştirecektir</li>
+                            <li>Tarih girilmezse, sistem otomatik olarak tanımlı olan varsayılan tarihi kullanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih formatı mutlaka GG.AA.YYYY şeklinde olmalıdır (örn. 15.05.2023)</li>
+                    <li>Tarihi manuel girerken gün, ay ve yıl arasına nokta (.) koyduğunuzdan emin olun</li>
+                    <li>Geçmiş bir tarih seçmemeye dikkat edin, banka geçmiş tarihli ödeme taleplerini reddedebilir</li>
+                    <li>Ödeme tarihi alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tarihi manuel girmek yerine, kutunun yanındaki takvim ikonuna tıklayarak açılan takvimden seçim yapmak daha hatasız ve kolaydır</li>
+                    <li>Tarih girmeden önce, bankanın ödeme tarihiyle ilgili politikalarını kontrol edin (örneğin hafta sonu ve resmi tatillerde ödeme yapılıp yapılmayacağını)</li>
+                    <li>Maaş ödemelerinin genellikle ayın belirli günlerinde yapılması planlanır, kurumunuzun belirlenmiş ödeme gününü kullanmanız önerilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sube-firma" class="section">
+        <h2>Yatırılan Şube ve Firma Kodu Bilgileri</h2>
+        <div class="info-box">
+            <h3>Şube ve Firma Kodları Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Şube Kodu Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Ay ve Tarih alanlarının hemen altında, üçüncü veri giriş satırında yer alır</li>
+                            <li>"Yatırılan Şube Kodu" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Özellikleri:</strong>
+                        <ul>
+                            <li>Şube kodu alanı salt okunur (readonly) özelliktedir, manuel olarak değiştirilemez</li>
+                            <li>Bu alan, sistemde tanımlı olan varsayılan şube kodunu otomatik olarak gösterir</li>
+                            <li>Şube kodu maksimum 3 haneli bir sayıdır ve Garanti Bankası şube kodunu temsil eder</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Firma Kodu Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Şube Kodu alanının sağında, üçüncü veri giriş satırında yer alır</li>
+                            <li>"Yatıran Firma Kodu" etiketi, şube kodu alanının sağındaki metin kutusunun solunda bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Özellikleri:</strong>
+                        <ul>
+                            <li>Firma kodu alanı salt okunur (readonly) özelliktedir, manuel olarak değiştirilemez</li>
+                            <li>Bu alan, sistemde tanımlı olan varsayılan firma kodunu otomatik olarak gösterir</li>
+                            <li>Firma kodu maksimum 14 karakterlik bir değerdir ve kurumunuzun Garanti Bankası'ndaki müşteri kodunu temsil eder</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Şube ve firma kodları otomatik olarak doldurulur, bu alanlara müdahale edilemez</li>
+                    <li>Bu kodlar bankada tanımlı olan gerçek kodlar olmalıdır, aksi halde oluşturulan dosya banka tarafından kabul edilmeyecektir</li>
+                    <li>Eğer kodlarda bir hata olduğunu düşünüyorsanız, sistem yöneticinizle iletişime geçmelisiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Bilgi Notu:</h4>
+                <p>Şube kodu ve firma kodu, kurumunuzun Garanti Bankası ile yaptığı anlaşma kapsamında belirlenen kodlardır. Bu kodlar, oluşturulan banka dosyasında maaş ödemelerinin doğru hesaplara aktarılabilmesi için kullanılır. Firma kodu, kurumunuzu bankada tanımlayan koddur. Şube kodu ise, maaş ödemelerinin yapılacağı Garanti Bankası şubesinin kodudur.</p>
+            </div>
+        </div>
+    </div>
+    <div id="bolum-maas" class="section">
+        <h2>Bölüm ve Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Bölüm ve Maaş Tipi Listeleri Nasıl Kullanılır</h3>
+            <div class="step">
+                <h4>Bölüm Listesi Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Şube ve Firma Kodu alanlarının hemen altında, dördüncü veri giriş satırında yer alır</li>
+                            <li>"Bölüm" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi (multiple select list) kutusu vardır</li>
+                            <li>Liste kutusu yüksekliği yaklaşık 100 piksel, genişliği 150 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Listeden seçim yapmak için fare ile tıklayın</li>
+                            <li>Birden fazla bölüm seçmek için:
+                                <ul>
+                                    <li>Ctrl tuşunu basılı tutarak seçmek istediğiniz her bir bölüme tıklayın</li>
+                                    <li>Seçilen bölümler mavi renkte vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık bölümler seçmek için:
+                                <ul>
+                                    <li>İlk bölüme tıklayın</li>
+                                    <li>Shift tuşunu basılı tutarak son bölüme tıklayın</li>
+                                    <li>Arada kalan tüm bölümler otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Bölüm Filtreleme Etkisi:</strong>
+                        <ul>
+                            <li>Seçilen bölüm(ler)e ait personeller için banka disketi oluşturulur</li>
+                            <li>Birden fazla bölüm seçildiğinde, tüm bu bölümlerdeki personeller dahil edilir</li>
+                            <li>Program açıldığında varsayılan olarak tüm bölümler seçili gelir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Maaş Tipi Listesi Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm seçim listesinin sağında, dördüncü veri giriş satırında yer alır</li>
+                            <li>"Maaş Tipi" etiketi, bölüm listesinin sağında bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi (multiple select list) kutusu vardır</li>
+                            <li>Liste kutusu yüksekliği yaklaşık 100 piksel, genişliği 150 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Listeden seçim yapmak için fare ile tıklayın</li>
+                            <li>Birden fazla maaş tipi seçmek için:
+                                <ul>
+                                    <li>Ctrl tuşunu basılı tutarak seçmek istediğiniz her bir maaş tipine tıklayın</li>
+                                    <li>Seçilen maaş tipleri mavi renkte vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık maaş tipleri seçmek için:
+                                <ul>
+                                    <li>İlk maaş tipine tıklayın</li>
+                                    <li>Shift tuşunu basılı tutarak son maaş tipine tıklayın</li>
+                                    <li>Arada kalan tüm maaş tipleri otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Maaş Tipi Filtreleme Etkisi:</strong>
+                        <ul>
+                            <li>Seçilen maaş tipi(leri)ne ait personel ödemeleri için banka disketi oluşturulur</li>
+                            <li>Birden fazla maaş tipi seçildiğinde, tüm bu tiplerdeki ödemeler dahil edilir</li>
+                            <li>Program açıldığında varsayılan olarak tüm maaş tipleri seçili gelir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir bölüm ve bir maaş tipi seçilmelidir</li>
+                    <li>Çok fazla bölüm ve maaş tipi seçildiğinde, işlem daha uzun sürebilir ve dosya boyutu büyük olabilir</li>
+                    <li>Yanlış seçimler yapıldığında, oluşturulan dosya eksik veya fazla personel içerebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Ctrl+A tuş kombinasyonunu kullanarak tüm bölümleri veya tüm maaş tiplerini tek seferde seçebilirsiniz</li>
+                    <li>Seçilmiş bir öğeyi listeden çıkarmak için, Ctrl tuşunu basılı tutarak o öğeye tekrar tıklayın</li>
+                    <li>Listelerin altında ve üstündeki kaydırma çubuklarını kullanarak gizli kalan öğeleri görebilirsiniz</li>
+                    <li>Ctrl tuşunu kullanarak, istediğiniz kombinasyonda bölüm ve maaş tipi seçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="dosya-bilgileri" class="section">
+        <h2>Dosya Türü ve Adı Belirleme</h2>
+        <div class="info-box">
+            <h3>Oluşturulacak Dosyanın Türü ve Adı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Dosya Türü Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm ve Maaş Tipi listelerinin altında, beşinci veri giriş satırında yer alır</li>
+                            <li>"Dosya Türü" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın
+                                <ul>
+                                    <li>Liste açıldığında iki seçenek görünür: "Txt" ve "Excel"</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz dosya formatını seçin:
+                                <ul>
+                                    <li>"Txt" seçeneği: Düz metin formatında dosya oluşturur</li>
+                                    <li>"Excel" seçeneği: Microsoft Excel formatında dosya oluşturur</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz dosya türü görüntülenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Dosya Türü Seçiminin Etkileri:</strong>
+                        <ul>
+                            <li>"Txt" seçildiğinde, program metin formatında (.txt) bir dosya oluşturacaktır</li>
+                            <li>"Excel" seçildiğinde, program Excel formatında (.xls) bir dosya oluşturacaktır</li>
+                            <li>Dosya türü seçimine bağlı olarak Dosya Adı alanının aktifliği değişir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Dosya Adı ve Yolu Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dosya Türü alanının hemen altında, altıncı veri giriş satırında yer alır</li>
+                            <li>"Dosya Adresi ve Adı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna oluşturulacak dosyanın tam yolunu ve adını girin
+                                <ul>
+                                    <li>Dosya yolu, dosyanın kaydedileceği disk sürücüsünü ve klasör yolunu içermelidir</li>
+                                    <li>Dosya adı, bankanın kabul edeceği formatta olmalıdır</li>
+                                    <li>Örnek: "C:\Membordro.txt" veya "C:\GARAN052023.txt"</li>
+                                </ul>
+                            </li>
+                            <li>Varsayılan olarak sistem bir dosya adı önerir, isterseniz bunu değiştirebilirsiniz</li>
+                            <li>Dosya türü "Excel" seçildiğinde bu alan devre dışı kalır, çünkü Excel dosyası doğrudan indirilecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Dosya Adı Alanının Durumu:</strong>
+                        <ul>
+                            <li>Dosya türü "Txt" seçildiğinde, bu alan aktif olur ve manuel giriş yapılabilir</li>
+                            <li>Dosya türü "Excel" seçildiğinde, bu alan devre dışı (disabled) kalır</li>
+                            <li>Sistem, seçilen ay ve yıla göre bir varsayılan dosya adı önerir (örn. "C:\GARAN052023.txt")</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dosya adı belirtilirken, dosyanın kaydedileceği klasörün var olduğundan emin olun</li>
+                    <li>Dosya adında Türkçe karakter veya boşluk kullanmamaya özen gösterin</li>
+                    <li>Dosya türü "Excel" seçildiğinde, oluşturulan Excel dosyası doğrudan tarayıcı üzerinden indirilecektir</li>
+                    <li>Aynı adla bir dosya zaten varsa, üzerine yazılacaktır, bu nedenle önemli dosyaları yedeklediğinizden emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>"Txt" formatı banka sistemlerine doğrudan yükleme için uygun bir formattır</li>
+                    <li>"Excel" formatı dosyayı incelemek ve kontrol etmek istediğinizde kullanışlıdır</li>
+                    <li>Dosya adında ay ve yıl bilgisini kullanmak, ileride hangi döneme ait olduğunu anlamanızı kolaylaştırır</li>
+                    <li>Dosya türünü değiştirdiğinizde, Dosya Adı alanının aktiflik durumunun değiştiğine dikkat edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Tamam (OK), Kaydet (Save) ve Çıkış (Exit) Butonları</h3>
+            <div class="step">
+                <h4>Tamam (OK) Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                            <li>Üzerinde "OK" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tamam (OK) İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>Sicil No aralığını girin (isteğe bağlı)</li>
+                                    <li>Yıl ve Ay bilgilerini girin</li>
+                                    <li>Maaşın ödeneceği tarihi belirtin</li>
+                                    <li>Bölüm ve Maaş Tipi seçimlerini yapın</li>
+                                    <li>Dosya türünü seçin</li>
+                                    <li>Eğer "Txt" seçtiyseniz, dosya adını ve yolunu belirtin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Tamam (OK) butonuna tıklayın</li>
+                            <li>Sistem, belirtilen kriterlere göre personel listesini oluşturacak ve sonuçları ekranda gösterecektir</li>
+                            <li>İşlem başarılı olduğunda, toplam personel sayısı ve toplam ödeme tutarını içeren bir bilgi mesajı görüntülenecektir</li>
+                            <li>Bu aşamada Kaydet (Save) butonu aktif hale gelecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Kaydet (Save) Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Tamam (OK) butonunun sağında yer alır</li>
+                            <li>Üzerinde "Save" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                            <li>Başlangıçta devre dışı (disabled) durumdadır, Tamam (OK) butonuna basıldıktan sonra aktif hale gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Önce Tamam (OK) butonuna tıklayarak personel listesini oluşturun</li>
+                            <li>Oluşturulan liste doğru ve eksiksiz ise, Kaydet (Save) butonuna tıklayın</li>
+                            <li>Sistem, belirlenen formatta ve belirtilen adla dosyayı oluşturacaktır</li>
+                            <li>Dosya türü "Txt" ise, belirtilen konuma dosya kaydedilecektir</li>
+                            <li>Dosya türü "Excel" ise, Excel dosyası doğrudan tarayıcı üzerinden indirilecektir</li>
+                            <li>İşlem tamamlandığında "X Adet Kayıttan Oluşan Dosya Hazırlandı" mesajı görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış (Exit) Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet (Save) butonunun sağında yer alır</li>
+                            <li>Üzerinde "Exit" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış (Exit) butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tamam (OK) butonuna tıklamadan Kaydet (Save) butonuna tıklayamazsınız, çünkü Kaydet butonu başlangıçta devre dışıdır</li>
+                    <li>Tamam (OK) butonuna tıkladığınızda, eğer belirtilen kriterlere uygun personel bulunmazsa "Girmiş Olduğunuz Filtre Aralıklarına Ait Kayıt Bulunamadı!" mesajı alırsınız</li>
+                    <li>Excel dosyası oluşturulduğunda, tarayıcınızın indirme ayarlarına göre dosya doğrudan indirilecek veya indirme için onay istenecektir</li>
+                    <li>Kaydetme işlemi tamamlandıktan sonra program otomatik olarak kapanacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İşlem sırası: Önce Tamam (OK) butonuna tıklayın, sonuçları kontrol edin, ardından Kaydet (Save) butonuna tıklayın</li>
+                    <li>Tamam (OK) butonuna tıkladıktan sonra gösterilen toplam personel sayısı ve toplam tutarı not edin, bu bilgiyi banka ile kontrol için kullanabilirsiniz</li>
+                    <li>ESC tuşu, Çıkış (Exit) butonuna tıklamakla aynı işlevi görür</li>
+                    <li>Enter tuşu, birçok alanda TAB tuşu gibi davranarak sonraki alana geçmenizi sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                    <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+                    <li><strong>CTRL + A:</strong> Bir listede tüm öğeleri seçmek için</li>
+                </ul>
+            </div>
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Girmiş Olduğunuz Filtre Aralıklarına Ait Kayıt Bulunamadı!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Tamam (OK) butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Yıl, ay, sicil aralığı ve seçtiğiniz bölüm/maaş tipi kombinasyonunu kontrol edin. Belirlediğiniz kriterlere uygun kayıt olmayabilir. Daha geniş bir sicil aralığı veya farklı bölüm/maaş tipi seçimleri yapmayı deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Oluşturulamıyor:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda dosya oluşturulmuyor veya hata alıyorsunuz.</li>
+                            <li>Çözüm: Dosya yolunun doğru olduğundan ve belirtilen klasörün var olduğundan emin olun. Ayrıca, dosya adında Türkçe karakter veya özel karakterler kullanmadığınızı kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excel Dosyası İndirilemiyor:</strong>
+                        <ul>
+                            <li>Sorun: Excel formatı seçildiğinde dosya indirilmiyor.</li>
+                            <li>Çözüm: Tarayıcınızın indirme ayarlarını kontrol edin. Pop-up engelleme özelliğinin kapalı olduğundan emin olun. Alternatif olarak, dosya türünü "Txt" olarak değiştirip tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Şube veya Firma Kodu Yanlış:</strong>
+                        <ul>
+                            <li>Sorun: Şube veya firma kodu bilgilerinin yanlış olduğunu düşünüyorsunuz.</li>
+                            <li>Çözüm: Bu alanlar sistem tarafından otomatik olarak doldurulduğu için doğrudan değiştiremezsiniz. Sistem yöneticinizle iletişime geçerek kodların güncellenmesini talep edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm veya Maaş Tipi Listesi Boş:</strong>
+                        <ul>
+                            <li>Sorun: Bölüm veya Maaş Tipi listeleri boş görünüyor.</li>
+                            <li>Çözüm: Sistem yöneticinizle iletişime geçin. Bu listelerin veritabanından doğru şekilde yüklenememesi söz konusu olabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Banka disketi oluşturmadan önce, işlem yapacağınız döneme ait tüm maaş hesaplamalarının tamamlandığından emin olun</li>
+                    <li>Oluşturulan dosyayı bankaya göndermeden önce, personel sayısı ve toplam tutarı kontrol edin</li>
+                    <li>Dosya adında ay ve yıl bilgisini kullanarak, hangi döneme ait olduğunu kolayca anlayabilirsiniz</li>
+                    <li>Her ay düzenli olarak yedek dosyalar oluşturarak, geçmiş dönem verilerine kolayca erişebilirsiniz</li>
+                    <li>Excel formatını kullanarak, maaş detaylarını kontrol edebilir ve raporlama amaçlı kullanabilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Banka disketi oluşturulduktan sonra, içeriğini değiştiremezsiniz, bu nedenle işlem öncesi tüm kriterleri doğru belirlediğinizden emin olun</li>
+                    <li>Hatalı veya eksik bilgilerle oluşturulan dosyalar, banka tarafından reddedilebilir</li>
+                    <li>Maaş ödemelerinin doğru hesaplara aktarılabilmesi için, personel banka hesap bilgilerinin güncel olduğundan emin olun</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+</div>
+</div>
+</body>
+</html>

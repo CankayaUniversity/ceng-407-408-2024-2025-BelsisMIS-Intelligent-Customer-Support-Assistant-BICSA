@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borçlanma İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Borçlanma İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-no">Sicil No Arama ve Seçme</a></li>
+                <li><a href="#borclanma-kayitlari">Borçlanma Kayıtlarını Görüntüleme</a></li>
+                <li><a href="#borclanma-islemleri">Borçlanma İşlemleri (Yeni, Düzenleme, Silme)</a></li>
+                <li><a href="#kesinti-oncelik">Kesinti Öncelik Sıralaması</a></li>
+                <li><a href="#kurum-tanimlari">Kurum (İcra Müdürlük) Tanımları</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonlarının Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Borçlanma İşlemleri" ekranı, personel borçlanma bilgilerini görüntülemek, yeni borçlanma kaydı eklemek, mevcut kayıtları düzenlemek ve borçlanma kayıtlarını silmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personelin borçlanma kayıtlarını görüntüleyebilirsiniz</li>
+                <li>Yeni borçlanma kaydı ekleyebilirsiniz</li>
+                <li>Mevcut borçlanma kayıtlarını düzenleyebilirsiniz</li>
+                <li>Borçlanma kayıtlarını silebilirsiniz</li>
+                <li>Kesinti öncelik sıralaması yapabilirsiniz</li>
+                <li>Kurum (İcra Müdürlük) tanımları yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz personelin sicil numarası</li>
+                    <li>Hangi tür borçlanma işlemi yapacağınız</li>
+                    <li>Borçlanma tutarı ve kesinti bilgileri</li>
+                    <li>Kesinti oran ve tutarları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi (pastel) renkte "Borçlanma İşlemleri" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kimlik Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında Sicil No, Adı Soyadı ve Bölüm bilgilerinin görüntülendiği alan bulunur</li>
+                            <li>Sicil No alanı kullanıcı tarafından doldurulabilir, diğer alanlar otomatik olarak dolar</li>
+                            <li>Her alan etiketiyle birlikte ekranın sol tarafında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Kayıtları Bölümü (Ağaç Yapısı):</strong>
+                        <ul>
+                            <li>Kimlik bilgilerinin altında, ekranın orta kısmında geniş bir alan kaplar</li>
+                            <li>Borçlanma kayıtları ağaç yapısında listelenir</li>
+                            <li>Borçlanma kayıtları ana satır olarak, kesinti detayları ise alt satır olarak görüntülenir</li>
+                            <li>En üst kısımda sütun başlıkları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Düzenle, Kesinti Öncelik Sıralaması, Kurum Tanımları ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar yan yana sıralanmıştır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Sicil No alanına konumlanır</li>
+                    <li>Borçlanma kayıtları alanı boş olarak başlar</li>
+                    <li>İlk olarak bir sicil numarası girmeniz veya seçmeniz gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sicil-no" class="section">
+        <h2>Sicil No Arama ve Seçme</h2>
+        <div class="info-box">
+            <h3>Sicil No Bilgisi Girişi ve Arama</h3>
+            <div class="step">
+                <h4>Sicil No'yu Girerek Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, ekranın sol üst kısmında yer alır</li>
+                            <li>"Sicil No" etiketi yanında bir metin kutusu bulunur</li>
+                            <li>Metin kutusunun sağında, küçük bir büyüteç ikonu içeren buton vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No Girilmesi:</strong>
+                        <ol>
+                            <li>Sicil No metin kutusuna aramak istediğiniz personelin sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan en fazla 10 karakter uzunluğunda olabilir</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarasını girdikten sonra TAB tuşuna basın veya metin kutusunun dışına tıklayın</li>
+                            <li>Sistem otomatik olarak girilen sicil numarasına ait personeli arayacak ve bilgilerini getirecektir</li>
+                            <li>Eğer personel bulunursa, Adı Soyadı ve Bölüm alanları otomatik olarak doldurulacaktır</li>
+                            <li>Ayrıca varsa personele ait borçlanma kayıtları, alta bulunan borçlanma kayıtları bölümünde listelenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sicil No Arama Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Sicil No metin kutusunun hemen sağında yer alır</li>
+                            <li>Üzerinde küçük bir büyüteç ikonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Penceresi Açma:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda "Sicil Arama" penceresi açılır</li>
+                            <li>Bu pencerede personel listesini görüntüleyebilir ve arama yapabilirsiniz</li>
+                            <li>Listeden bir personel seçtiğinizde, bu personelin sicil numarası otomatik olarak ana ekrandaki Sicil No alanına aktarılır</li>
+                            <li>Pencere kapandıktan sonra, sistem otomatik olarak seçilen personelin bilgilerini ve borçlanma kayıtlarını getirecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Hata Mesajları ve Çözümleri:</h4>
+                <ul>
+                    <li><strong>"Sicil Bulunamadı!" uyarısı:</strong> Girdiğiniz sicil numarası sistemde bulunamadı. Sicil numarasını kontrol edin veya sicil arama butonunu kullanarak listeden seçim yapın.</li>
+                    <li><strong>Boş alan uyarısı:</strong> Sicil No alanı boş bırakıldığında ve TAB tuşuna basıldığında, sistem otomatik olarak tüm alanları temizler.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarasını tam olarak bilmiyorsanız, büyüteç ikonlu butona tıklayarak Sicil Arama penceresini kullanmanız daha kolaydır</li>
+                    <li>Sicil No alanında sadece rakam girebilirsiniz, harf veya özel karakter girilmesine izin verilmez</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Bir sicil numarası aradıktan sonra başka bir sicil numarası aramak isterseniz, önceki aramanın bilgileri otomatik olarak temizlenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="borclanma-kayitlari" class="section">
+        <h2>Borçlanma Kayıtlarını Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Borçlanma Kayıtlarının Listelenmesi ve İncelenmesi</h3>
+            <div class="step">
+                <h4>Borçlanma Kayıtları Tablosu:</h4>
+                <ol>
+                    <li><strong>Tablo Konumu:</strong>
+                        <ul>
+                            <li>Personel bilgilerinin (Sicil No, Adı Soyadı, Bölüm) hemen altında yer alır</li>
+                            <li>Ekranın orta kısmında geniş bir alan kaplar</li>
+                            <li>Tablo, açık mavi (açık renkli) kenarlıklara sahiptir</li>
+                            <li>Görüntülenen kayıtlar kaydırma çubuğu ile görüntülenebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ul>
+                            <li><strong>Borçlanma Adı/Maaş Bilgisi:</strong> Borçlanma türü ve varsa dosya numarası gösterilir</li>
+                            <li><strong>Tarih:</strong> Borçlanma kaydının oluşturulma tarihi</li>
+                            <li><strong>Borç Toplamı:</strong> Toplam borç tutarı</li>
+                            <li><strong>Kesinti Oranı:</strong> Borç için uygulanan kesinti oranı</li>
+                            <li><strong>Kesinti Tut./Maaş Kes.Tut.:</strong> Belirlenen kesinti tutarı</li>
+                            <li><strong>Toplam Kesinti:</strong> Yapılan toplam kesinti miktarı</li>
+                            <li><strong>Kalan Borç:</strong> Borç toplamından kesintiler çıkarıldıktan sonra kalan tutar</li>
+                            <li><strong>Kesinti Yapılacak mı?:</strong> "EVET" veya "HAYIR" şeklinde gösterilir</li>
+                            <li><strong>İşlem:</strong> Kayıt silme ikonu (yeni kayıtlar için)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıtların Okunması:</strong>
+                        <ol>
+                            <li>Ana borçlanma kayıtları tabloda birer satır olarak listelenir</li>
+                            <li>Bir borçlanma kaydı üzerine tıkladığınızda, o kayıtla ilgili detay bilgiler (kesinti bilgileri) alt satırlarda açılır şekilde görüntülenir
+                                <ul>
+                                    <li>Borçlanmayla ilgili maaş kesintilerinin dönemi, maaş tipi ve net ödenen tutarlar gösterilir</li>
+                                </ul>
+                            </li>
+                            <li>Kalan borcu olan kayıtlar özellikle kontrol edilmelidir</li>
+                            <li>Kesinti yapılacak mı sütununda "EVET" yazanlar için aktif kesinti işlemi devam edecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Toplamların Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Tablonun en alt kısmında, Borç Toplamı, Toplam Kesinti ve Kalan Borç sütunları için genel toplamlar gösterilir</li>
+                            <li>Bu sayede personelin toplam borç durumu hemen görülebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Silme İşlemi (Yeni Borçlanma Kayıtları İçin):</h4>
+                <ol>
+                    <li><strong>Silme İkonu Konumu:</strong>
+                        <ul>
+                            <li>Tablonun en sağ sütununda, her borçlanma kaydının yanında (kesinti işlemi henüz yapılmamış kayıtlar için) küçük bir çöp kutusu ikonu görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz borçlanma kaydının yanındaki çöp kutusu ikonuna tıklayın</li>
+                            <li>Sistem "Borçlanma Kaydını Silmek İstiyor musunuz?" şeklinde bir onay sorusu gösterecektir</li>
+                            <li>Silmek istiyorsanız "Evet" butonuna tıklayın</li>
+                            <li>İşlemden vazgeçmek istiyorsanız "Hayır" butonuna tıklayın</li>
+                            <li>"Evet" butonuna tıkladıysanız, kayıt sistemden silinecek ve borçlanma listesinden kaldırılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kesinti işlemi başlamış (maaştan kesinti yapılmış) borçlanma kayıtları silinemez</li>
+                    <li>Silme işlemi geri alınamaz, bu nedenle silme işlemi öncesinde emin olun</li>
+                    <li>Kalan borç miktarı sıfır (0) olan kayıtlar tamamlanmış olarak değerlendirilir</li>
+                    <li>Kayıtları detaylı incelemek için üzerlerine tıklayarak alt detayları açabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Borçlanma kayıtları tarih sırasına göre listelenir, en yeni kayıtlar üstte görünür</li>
+                    <li>Mavi renkli yazılar ve dosya numaraları özel bilgileri gösterir, bunlara dikkat edin</li>
+                    <li>Kesinti yapılacak mı sütununda "EVET" (mavi renkte) olanlar aktif kesinti yapılacak kayıtlardır</li>
+                    <li>Kesinti yapılacak mı sütununda "HAYIR" (kırmızı renkte) olanlar kesinti yapılmayacak kayıtlardır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="borclanma-islemleri" class="section">
+        <h2>Borçlanma İşlemleri (Yeni, Düzenleme, Silme)</h2>
+        <div class="info-box">
+            <h3>Yeni Borçlanma Kaydı Ekleme</h3>
+            <div class="step">
+                <h4>Yeni Borçlanma Kaydı Ekleme Adımları:</h4>
+                <ol>
+                    <li><strong>Borçlanma Giriş Penceresini Açma:</strong>
+                        <ul>
+                            <li>Kayıtlar tablosunun sağ üst köşesinde yer alan "+" ikonu (Borçlanma Giriş) butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton, sütun başlıklarının en sağında bulunur</li>
+                                    <li>Üzerine geldiğinizde "Borçlanma Giriş" açıklaması görünür</li>
+                                </ul>
+                            </li>
+                            <li>Alternatif olarak, ekranın alt kısmındaki buton çubuğunda yer alan "Düzenle" butonuna da tıklayabilirsiniz
+                                <ul>
+                                    <li>Bu buton ekranın en altında, sol tarafta yer alır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Giriş Penceresi:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda yeni bir pencere açılacaktır</li>
+                            <li>Bu pencerede borçlanma bilgilerini girebileceğiniz alanlar bulunur</li>
+                            <li>Aşağıdaki bilgileri girmeniz gerekecektir:
+                                <ul>
+                                    <li>Borçlanma türü</li>
+                                    <li>Borç toplamı</li>
+                                    <li>Kesinti oranı veya tutarı</li>
+                                    <li>Tarih bilgileri</li>
+                                    <li>Kesinti yapılıp yapılmayacağı</li>
+                                    <li>Diğer ilgili bilgiler</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri girdikten sonra, penceredeki "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydetme işlemi başarılı olursa, borçlanma kaydı listeye eklenecek ve pencere otomatik olarak kapanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <h3>Mevcut Borçlanma Kaydını Düzenleme</h3>
+            <div class="step">
+                <h4>Borçlanma Kaydı Düzenleme Adımları:</h4>
+                <ol>
+                    <li><strong>Düzenlenecek Kaydı Seçme:</strong>
+                        <ul>
+                            <li>Düzenlemek istediğiniz borçlanma kaydının üzerine tıklayarak seçin
+                                <ul>
+                                    <li>Seçilen kayıt vurgulanacaktır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzenleme Penceresini Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda yer alan "Düzenle" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın en altında, sol tarafta yer alır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma Düzenleme Penceresi:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda, seçili kayıt bilgilerinin dolu olduğu bir düzenleme penceresi açılacaktır</li>
+                            <li>Bu pencerede borçlanma bilgilerini güncelleyebilirsiniz</li>
+                            <li>Değiştirmek istediğiniz alanları düzenleyin</li>
+                            <li>Tüm değişiklikleri yaptıktan sonra, penceredeki "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydetme işlemi başarılı olursa, borçlanma kaydı güncellenecek ve pencere otomatik olarak kapanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <h3>Borçlanma Kaydını Silme</h3>
+            <div class="step">
+                <h4>Borçlanma Kaydını Silme Adımları:</h4>
+                <ol>
+                    <li><strong>Silme İkonunu Bulma:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz borçlanma kaydının yanında, en sağdaki sütunda çöp kutusu ikonu olup olmadığını kontrol edin
+                                <ul>
+                                    <li>Bu ikon sadece henüz kesinti işlemi başlamamış (maaştan kesinti yapılmamış) kayıtlar için görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li>Çöp kutusu ikonuna tıklayın</li>
+                            <li>"Borçlanma Kaydını Silmek İstiyor musunuz?" onay mesajına "Evet" diyerek silme işlemini onaylayın</li>
+                            <li>Kayıt sistemden silinecek ve listeden kaldırılacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yeni borçlanma kaydı eklemeden önce personelin mevcut borçlanma durumunu kontrol edin</li>
+                    <li>Kesinti işlemi başlamış kayıtlar düzenlenebilir ancak silinemez</li>
+                    <li>Düzenleme yaparken kesinti oranı ve tutarlarında dikkatli olun, yanlış değerler maaş hesaplamalarını etkileyebilir</li>
+                    <li>Silme işlemi geri alınamaz, bu nedenle silme öncesinde emin olun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Aynı personel için birden fazla borçlanma kaydı eklenebilir</li>
+                    <li>Kesinti oranını doğru belirlemek için personelin maaş durumunu göz önünde bulundurun</li>
+                    <li>Düzenleme yaparken borçlanma türü değiştirilecekse, ilgili tüm bilgileri tekrar kontrol edin</li>
+                    <li>Tarih alanlarını doğru formatta (GG/AA/YYYY) girdiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kesinti-oncelik" class="section">
+        <h2>Kesinti Öncelik Sıralaması</h2>
+        <div class="info-box">
+            <h3>Borçlanma Kayıtlarının Öncelik Sıralamasını Belirleme</h3>
+            <div class="step">
+                <h4>Kesinti Öncelik Sıralaması Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Öncelik Sıralama Penceresini Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda yer alan "Kesinti Öncelik Sıralaması" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın en altında, "Düzenle" butonunun sağında yer alır</li>
+                                    <li>Üzerinde "Kesinti Öncelik Sıralaması" yazar</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Kontrolü:</strong>
+                        <ul>
+                            <li>Bu butona tıklamadan önce bir personel seçilmiş olmalıdır
+                                <ul>
+                                    <li>Eğer sicil numarası girilmemiş veya personel seçilmemişse, sistem "Geçersiz Sicil No!" uyarısı verecektir</li>
+                                </ul>
+                            </li>
+                            <li>Ayrıca personele ait borçlanma kaydı olup olmadığı kontrol edilir
+                                <ul>
+                                    <li>Eğer borçlanma kaydı yoksa, sistem "Sıralama Yapılacak Borçlanma Kaydı Yok<br>Önce Borçlanma Girişi Yapmalısınız!" uyarısı verecektir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Öncelik Sıralama Penceresi:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda, geniş bir sıralama penceresi açılacaktır</li>
+                            <li>Bu pencerede, personele ait borçlanma kayıtları listelenir</li>
+                            <li>Her borçlanma kaydı için öncelik sırası ayarlanabilir</li>
+                            <li>Öncelik sırası, maaştan yapılacak kesintilerin hangi sırada uygulanacağını belirler</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama İşlemi:</strong>
+                        <ul>
+                            <li>Borçlanma kayıtlarını istediğiniz öncelik sırasına göre düzenleyin
+                                <ul>
+                                    <li>Daha yüksek önceliğe sahip kayıtlar maaştan öncelikli olarak kesilecektir</li>
+                                    <li>Düşük önceliğe sahip kayıtlar, ancak yüksek öncelikli kayıtlar kesildikten sonra işleme alınacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Düzenlemeyi tamamladıktan sonra, penceredeki "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydetme işlemi başarılı olursa, öncelik sıralaması güncellenecek ve pencere otomatik olarak kapanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Öncelik sıralaması, personelin maaşından yapılacak kesintilerin sırasını doğrudan etkiler</li>
+                    <li>Yanlış sıralama, bazı kesintilerin yapılamamasına neden olabilir (özellikle maaşın yeterli olmadığı durumlarda)</li>
+                    <li>Yasal zorunluluk olan kesintilere (örn. icra kesintileri) yüksek öncelik verilmelidir</li>
+                    <li>Sıralama yapmadan önce, borçlanma kayıtlarının tam olduğundan emin olun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yasal zorunluluk olan kesintileri her zaman üst sıralara yerleştirin</li>
+                    <li>Toplam tutarı yüksek olan kesintileri, ödeme süresi dikkate alınarak önceliklendirin</li>
+                    <li>Personelin maaş durumunu göz önünde bulundurarak, kesinti toplam tutarlarının maaşın belirli bir yüzdesini aşmamasına dikkat edin</li>
+                    <li>Öncelik sıralamasını belirli aralıklarla gözden geçirin ve gerekirse güncelleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kurum-tanimlari" class="section">
+        <h2>Kurum (İcra Müdürlük) Tanımları</h2>
+        <div class="info-box">
+            <h3>Kurum (İcra Müdürlük) Tanımlarını Yönetme</h3>
+            <div class="step">
+                <h4>Kurum Tanımları Penceresini Açma:</h4>
+                <ol>
+                    <li><strong>Kurum Tanımları Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda yer alan "Kurum (İcra Müdürlük) Tanımları" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın en altında, "Kesinti Öncelik Sıralaması" butonunun sağında yer alır</li>
+                                    <li>Üzerinde "Kurum (İcra Müdürlük) Tanımları" yazar</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Kurum Tanımları Penceresi:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda, yeni bir pencere açılacaktır</li>
+                            <li>Bu pencerede, sisteme tanımlı icra müdürlükleri ve diğer kurumlar listelenir</li>
+                            <li>Mevcut kurum tanımlarını görüntüleyebilir, düzenleyebilir, silebilir ve yeni kurum tanımları ekleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yeni Kurum Tanımı Ekleme:</h4>
+                <ol>
+                    <li><strong>Ekleme İşlemi:</strong>
+                        <ul>
+                            <li>Kurum Tanımları penceresinde "Yeni" veya "Ekle" butonuna tıklayın</li>
+                            <li>Açılan form alanlarına aşağıdaki bilgileri girin:
+                                <ul>
+                                    <li>Kurum Kodu: Sisteme tanımlanacak benzersiz kod</li>
+                                    <li>Kurum Adı: İcra müdürlüğü veya kurumun tam adı</li>
+                                    <li>Adres bilgileri: Kurumun açık adresi</li>
+                                    <li>İletişim bilgileri: Telefon, faks, e-posta vb.</li>
+                                    <li>Diğer gerekli bilgiler</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri girdikten sonra "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydetme işlemi başarılı olursa, yeni kurum tanımı listeye eklenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Mevcut Kurum Tanımını Düzenleme:</h4>
+                <ol>
+                    <li><strong>Düzenleme İşlemi:</strong>
+                        <ul>
+                            <li>Listeden düzenlemek istediğiniz kurum tanımını seçin</li>
+                            <li>"Düzenle" butonuna tıklayın veya kurum tanımına çift tıklayın</li>
+                            <li>Açılan formda gerekli değişiklikleri yapın</li>
+                            <li>Değişiklikleri tamamladıktan sonra "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydetme işlemi başarılı olursa, kurum tanımı güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kurum Tanımını Silme:</h4>
+                <ol>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li>Listeden silmek istediğiniz kurum tanımını seçin</li>
+                            <li>"Sil" butonuna tıklayın</li>
+                            <li>Onay mesajına "Evet" diyerek silme işlemini onaylayın</li>
+                            <li>Silme işlemi başarılı olursa, kurum tanımı listeden kaldırılacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sistemde aktif olarak kullanılan kurum tanımlarını silmeyin, bu işlem borçlanma kayıtlarını etkileyebilir</li>
+                    <li>Kurum kodlarının benzersiz olması gerekir, aynı kodu birden fazla kuruma vermeyin</li>
+                    <li>Kurum adı ve iletişim bilgilerinin doğru ve güncel olmasına dikkat edin, bu bilgiler resmi yazışmalarda kullanılabilir</li>
+                    <li>Değişiklik yapmadan önce, ilgili kurumun bilgilerini kontrol edin</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kurum tanımlarında standart bir adlandırma kullanın (örn. "İstanbul 5. İcra Müdürlüğü" gibi)</li>
+                    <li>Sık kullanılan kurumları listenin üst sıralarında tutmak için kurum kodlarını buna göre belirleyin</li>
+                    <li>Kurum bilgilerini periyodik olarak kontrol edin ve güncelleyin</li>
+                    <li>Aynı şehirdeki kurumları gruplandırmak için benzer kodlar kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonlarının Kullanımı</h2>
+        <div class="info-box">
+            <h3>Ana Ekrandaki İşlem Butonları</h3>
+            <div class="step">
+                <h4>Düzenle Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda, en sol tarafta yer alır</li>
+                            <li>Üzerinde "Düzenle" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonun İşlevi:</strong>
+                        <ul>
+                            <li>Yeni borçlanma kaydı eklemek veya mevcut bir kaydı düzenlemek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Düzenlemek istediğiniz borçlanma kaydını seçin (varsa)
+                                <ul>
+                                    <li>Hiçbir kayıt seçilmezse, buton yeni kayıt ekleme penceresi açar</li>
+                                    <li>Bir kayıt seçilirse, o kayıt için düzenleme penceresi açılır</li>
+                                </ul>
+                            </li>
+                            <li>"Düzenle" butonuna tıklayın</li>
+                            <li>Açılan pencerede gerekli bilgileri doldurun veya düzenleyin</li>
+                            <li>İşleminizi tamamladıktan sonra penceredeki "Kaydet" butonuna tıklayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kesinti Öncelik Sıralaması Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda, "Düzenle" butonunun sağında yer alır</li>
+                            <li>Üzerinde "Kesinti Öncelik Sıralaması" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonun İşlevi:</strong>
+                        <ul>
+                            <li>Personele ait borçlanma kayıtlarının kesinti öncelik sıralamasını belirlemek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Öncelikle bir sicil numarası girin ve personeli seçin</li>
+                            <li>Personele ait borçlanma kayıtlarının listelendiğinden emin olun</li>
+                            <li>"Kesinti Öncelik Sıralaması" butonuna tıklayın</li>
+                            <li>Açılan pencerede borçlanma kayıtlarının sıralamasını ayarlayın</li>
+                            <li>İşleminizi tamamladıktan sonra penceredeki "Kaydet" butonuna tıklayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kurum (İcra Müdürlük) Tanımları Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda, "Kesinti Öncelik Sıralaması" butonunun sağında yer alır</li>
+                            <li>Üzerinde "Kurum (İcra Müdürlük) Tanımları" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonun İşlevi:</strong>
+                        <ul>
+                            <li>Sistemde tanımlı icra müdürlükleri ve diğer kurumları görüntülemek, eklemek, düzenlemek ve silmek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>"Kurum (İcra Müdürlük) Tanımları" butonuna tıklayın</li>
+                            <li>Açılan pencerede kurum tanımlarını görüntüleyin</li>
+                            <li>Yeni kurum eklemek, mevcut kurumu düzenlemek veya silmek için ilgili işlem butonlarını kullanın</li>
+                            <li>İşleminizi tamamladıktan sonra penceredeki "Kapat" butonuna tıklayarak pencereyi kapatın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki buton çubuğunda, en sağ tarafta yer alır</li>
+                            <li>Üzerinde "Çıkış" yazısı bulunur ve kırmızı renkte ve kalın yazı tipiyle vurgulanmıştır</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonun İşlevi:</strong>
+                        <ul>
+                            <li>Borçlanma İşlemleri ekranından çıkmak ve programı kapatmak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan sonra "Çıkış" butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Düzenle" butonunu kullanmadan önce personel seçtiğinizden emin olun</li>
+                    <li>"Kesinti Öncelik Sıralaması" butonu, sadece personel seçiliyken ve borçlanma kayıtları varken çalışır</li>
+                    <li>Değişiklik yaptıktan sonra mutlaka "Kaydet" butonuna tıklayarak değişiklikleri kaydedin</li>
+                    <li>"Çıkış" butonuna tıklamadan önce, tüm değişiklikleri kaydettiğinizden emin olun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İşlem yapmak istediğiniz butonu açık bir şekilde tanımlamak için butonların üzerine fare imlecini getirerek açıklamalarını görebilirsiniz</li>
+                    <li>Borçlanma kaydı düzenlemek için önce kaydı seçip sonra "Düzenle" butonuna tıklamayı unutmayın</li>
+                    <li>Ekrandaki butonların sırası işlem akışını yansıtır: önce düzenleme, sonra sıralama, sonra kurum tanımları</li>
+                    <li>Klavye kısayollarını kullanarak daha hızlı işlem yapabilirsiniz (örn. ESC tuşu programdan çıkışı sağlar)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Genellikle TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Açık olan pencereyi kapatmak veya programdan çıkmak için</li>
+                    <li><strong>ALT + D:</strong> Düzenle butonunu aktif etmek için</li>
+                    <li><strong>ALT + K:</strong> Kesinti Öncelik Sıralaması butonunu aktif etmek için</li>
+                    <li><strong>ALT + M:</strong> Kurum (İcra Müdürlük) Tanımları butonunu aktif etmek için</li>
+                    <li><strong>ALT + C:</strong> Çıkış butonunu aktif etmek için</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sicil Bulunamadı!" uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Girdiğiniz sicil numarası sistemde bulunamadı.</li>
+                            <li>Çözüm: Sicil numarasını kontrol edin veya sicil arama butonunu kullanarak listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Geçersiz Sicil No!" uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kesinti Öncelik Sıralaması butonuna sicil seçmeden tıkladınız.</li>
+                            <li>Çözüm: Önce geçerli bir sicil numarası girin ve personel bilgilerinin yüklenmesini bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sıralama Yapılacak Borçlanma Kaydı Yok" uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Personelin henüz borçlanma kaydı bulunmuyor.</li>
+                            <li>Çözüm: Önce personel için borçlanma girişi yapın, ardından sıralama işlemine geçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Düzenlemek İstediğiniz Borçlanma Kaydını Seçmelisiniz" uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Düzenle butonuna tıklandı ancak düzenlenecek kayıt seçilmedi.</li>
+                            <li>Çözüm: Listeden düzenlemek istediğiniz borçlanma kaydını seçin, ardından Düzenle butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme butonu görünmüyor:</strong>
+                        <ul>
+                            <li>Sorun: Borçlanma kaydının yanında silme ikonu (çöp kutusu) bulunmuyor.</li>
+                            <li>Çözüm: Bu kayıt için kesinti işlemi başlamış olabilir. Kesinti başlayan kayıtlar silinemez, sadece düzenlenebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borçlanma kaydı listede görünmüyor:</strong>
+                        <ul>
+                            <li>Sorun: Eklediğiniz borçlanma kaydı listede görünmüyor.</li>
+                            <li>Çözüm: Sayfayı yenilemek için sicil numarasını tekrar girin veya başka bir sicile geçip tekrar dönün.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Borçlanma işlemlerini yapmadan önce personelin maaş ve kesinti durumunu kontrol edin</li>
+                    <li>Çok sayıda personel için işlem yapacaksanız, önce bir liste hazırlayın ve sırayla ilerleyin</li>
+                    <li>Karmaşık borçlanma işlemlerinde önce tüm bilgileri (tutar, oran, tarih vb.) bir kenara not edin</li>
+                    <li>Kritik öneme sahip borçlanma kayıtlarını (örn. icra kesintileri) girdikten sonra kesinti önceliğini hemen ayarlayın</li>
+                    <li>Kurum tanımlarını düzenli olarak güncel tutun, bu bilgiler resmi yazışmalarda kullanılabilir</li>
+                    <li>Gün sonunda yapılan işlemleri kontrol edin, hatalı kayıtları düzeltin</li>
+                    <li>Maaş dönemi başlamadan önce tüm borçlanma kayıtlarını ve kesinti önceliklerini gözden geçirin</li>
+                </ul>
+            </div>
+            
+            <h3>Örnek Senaryolar ve Çözümleri</h3>
+            <div class="step">
+                <h4>Senaryo 1: Yeni İcra Kesintisi Ekleme</h4>
+                <ol>
+                    <li>Sicil No alanına personelin sicil numarasını girin ve TAB tuşuna basın</li>
+                    <li>Personel bilgileri yüklendikten sonra, sağ üst köşedeki "+" (Borçlanma Giriş) ikonuna tıklayın</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>Borçlanma türü olarak "İcra Kesintisi" seçin</li>
+                            <li>İlgili icra müdürlüğünü seçin (yoksa önce Kurum Tanımları'ndan ekleyin)</li>
+                            <li>Borç toplamını girin</li>
+                            <li>Kesinti oranını belirleyin (genellikle maaşın 1/4'ü veya 1/3'ü)</li>
+                            <li>"Kesinti Yapılacak mı?" alanını "EVET" olarak işaretleyin</li>
+                            <li>Diğer zorunlu alanları doldurun</li>
+                        </ul>
+                    </li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>Ardından Kesinti Öncelik Sıralaması butonuna tıklayarak, bu kesintinin önceliğini belirleyin (genellikle icra kesintileri yüksek önceliklidir)</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Senaryo 2: Borçlanma Kaydının Durdurulması</h4>
+                <ol>
+                    <li>Sicil No alanına personelin sicil numarasını girin ve TAB tuşuna basın</li>
+                    <li>Personelin borçlanma kayıtları yüklendikten sonra, durdurmak istediğiniz kaydı seçin</li>
+                    <li>Düzenle butonuna tıklayın</li>
+                    <li>Açılan pencerede, "Kesinti Yapılacak mı?" alanını "HAYIR" olarak değiştirin</li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>Kayıt güncellendikten sonra, ilgili borçlanma kaydının "Kesinti Yapılacak mı?" sütununda "HAYIR" ifadesi kırmızı renkte görünecektir</li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Borçlanma işlemleri personelin maaşını doğrudan etkilediğinden, girilen bilgilerin doğruluğuna dikkat edin</li>
+                    <li>Yasal borçlanma işlemlerinde (icra, nafaka vb.) yasal oranları ve tutarları dikkate alın</li>
+                    <li>İşlem yaparken sistemden çıkış yapmayın veya programı kapatmayın</li>
+                    <li>Yapılan değişiklikleri her zaman Kaydet butonu ile kaydedin</li>
+                    <li>Sorun yaşadığınızda veya emin olmadığınız durumlarda sistem yöneticinize başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>"Borçlanma İşlemleri" ekranı, personel borçlanmalarını yönetmek için kullanılan kapsamlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Personel sicil numarasını girme ve sorgulama</li>
+                <li>Borçlanma kayıtlarını görüntüleme ve yorumlama</li>
+                <li>Yeni borçlanma kaydı ekleme</li>
+                <li>Mevcut borçlanma kayıtlarını düzenleme</li>
+                <li>Borçlanma kayıtlarını silme (kesinti başlamamış kayıtlar için)</li>
+                <li>Kesinti öncelik sıralamasını belirleme</li>
+                <li>Kurum (İcra Müdürlük) tanımlarını yönetme</li>
+                <li>İşlem butonlarının etkin kullanımı</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>
