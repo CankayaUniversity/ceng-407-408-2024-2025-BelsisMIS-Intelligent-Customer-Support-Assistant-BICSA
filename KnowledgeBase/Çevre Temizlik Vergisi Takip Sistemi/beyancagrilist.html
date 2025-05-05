@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyana Çağrı Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Beyana Çağrı Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#siralama">Sıralama Seçimi</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri</a></li>
+                <li><a href="#cagri-sebebi">Çağrı Sebebi ve Yetkili Bilgisi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#adim-adim">Adım Adım Nasıl Yapılır: Bir Beyana Çağrı Listesi Oluşturma</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Beyana Çağrı Listesi programı, belirli kriterlere göre beyana çağrılacak kişilerin listesini oluşturmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Sicil numarası, isim, soyisim, baba adı ve doğum yeri filtreleriyle kişileri belirleyebilirsiniz</li>
+                <li>Sicil no, soyad+ad+baba adı veya ad+soyad+baba adı sıralamasına göre listeler oluşturabilirsiniz</li>
+                <li>Çağrı sebebini açıklayarak beyana çağırma gerekçesini belirtebilirsiniz</li>
+                <li>Yetkili bilgileri girerek belgenin resmi geçerliliğini sağlayabilirsiniz</li>
+                <li>Sonuçları hızlıca yazdırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Beyana çağırmak istediğiniz kişilerin aralık bilgileri (sicil no, isim/soyisim aralığı vb.)</li>
+                    <li>Hangi sıralama düzeninde liste oluşturmak istediğiniz</li>
+                    <li>Çağrı sebebini ve yetkili bilgisini</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında bulunan turkuaz renkli bir şeritte "BEYANA ÇAĞRI LİSTESİ" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sıralama seçeneğiyle başlar</li>
+                            <li>Başlangıç ve bitiş değerleri için sicil no, soyadı, adı, baba adı ve doğum yeri filtre alanlarını içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çağrı Sebebi ve Yetkili Bölümü:</strong>
+                        <ul>
+                            <li>Arama kriterleri alanlarının altında yer alır</li>
+                            <li>Çağrı sebebi için bir metin alanı ve yetkili bilgisi için bir giriş kutusu içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Listele ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Sicil No alanına konumlanır</li>
+                    <li>Filtre alanları hazır başlangıç ve bitiş değerleriyle doldurulmuş olarak gelir</li>
+                    <li>Çağrı sebebi alanı boş başlar, doldurulması gerekir</li>
+                    <li>Yetkili alanı varsayılan bir değerle doldurulmuş olarak gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="siralama" class="section">
+        <h2>Sıralama Seçimi</h2>
+        <div class="info-box">
+            <h3>Sıralama Seçeneği Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Sıralama Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlık çizgisinin hemen altında yer alır</li>
+                            <li>"Sıralama" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut sıralama seçenekleri listesi açılacaktır</li>
+                            <li>Listede üç seçenek bulunur:
+                                <ul>
+                                    <li>"Sicil No Sıralı" - Listeyi sicil numarasına göre sıralar</li>
+                                    <li>"Soyadı+Adı+Baba Adı Sıralı" - Önce soyadı, sonra adı, son olarak baba adına göre sıralar</li>
+                                    <li>"Adı+Soyadı+Baba Adı Sıralı" - Önce adı, sonra soyadı, son olarak baba adına göre sıralar</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğini tıklayarak seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz sıralama seçeneği görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Varsayılan olarak ilk seçenek olan "Sicil No Sıralı" seçilidir</li>
+                    <li>İsim veya soyisime göre arama yapıyorsanız, ilgili sıralama seçeneğini seçmek sonuçların daha kolay incelenmesini sağlar</li>
+                    <li>Listede klavye ile başlangıç harfini yazarak da hızlı seçim yapabilirsiniz (örn: "S" tuşuna basarak "Soyadı+Adı+Baba Adı Sıralı" seçeneğine hızlıca geçebilirsiniz)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="arama-kriterleri" class="section">
+        <h2>Arama Kriterleri</h2>
+        <div class="info-box">
+            <h3>Sicil No, Soyadı, Adı, Baba Adı ve Doğum Yeri Filtreleme</h3>
+            
+            <div class="step">
+                <h4>Başlangıç ve Bitiş Değerleri</h4>
+                <p>Arama kriterleri bölümü, ekranın orta kısmında yer alır ve beş farklı filtre türü içerir. Her filtre için bir başlangıç ve bir bitiş değeri girebilirsiniz. Bu değerler aralığındaki kayıtlar listelenecektir.</p>
+                <p>Filtre alanlarının üzerinde <strong>"Başlangıç"</strong> ve <strong>"Bitiş"</strong> etiketleri bulunur. Başlangıç sütunu solda, bitiş sütunu sağda yer alır.</p>
+            </div>
+            
+            <div class="step">
+                <h4>Sicil No Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sıralama alanının hemen altında, Başlangıç-Bitiş etiketlerinin altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 10 haneli bir sayı olabilir</li>
+                                    <li>Varsayılan değer "0" olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 10 haneli bir sayı olabilir</li>
+                                    <li>Varsayılan değer "9999999999" olarak gelir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Soyadı Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanının hemen altında yer alır</li>
+                            <li>"Soyadı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç soyadı, sağ kutu bitiş soyadı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç soyadını girin
+                                <ul>
+                                    <li>Bu alan harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer boş olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş soyadını girin
+                                <ul>
+                                    <li>Bu alan da harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" olarak gelir (Z harfleriyle dolu)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adı Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Soyadı alanının hemen altında yer alır</li>
+                            <li>"Adı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç adı, sağ kutu bitiş adı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç adını girin
+                                <ul>
+                                    <li>Bu alan harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer boş olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş adını girin
+                                <ul>
+                                    <li>Bu alan da harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" olarak gelir (Z harfleriyle dolu)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Baba Adı Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Adı alanının hemen altında yer alır</li>
+                            <li>"Baba Adı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç baba adı, sağ kutu bitiş baba adı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç baba adını girin
+                                <ul>
+                                    <li>Bu alan harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer boş olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş baba adını girin
+                                <ul>
+                                    <li>Bu alan da harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" olarak gelir (Z harfleriyle dolu)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Doğum Yeri Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Baba Adı alanının hemen altında yer alır</li>
+                            <li>"Doğum Yeri" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç doğum yeri, sağ kutu bitiş doğum yeri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç doğum yerini girin
+                                <ul>
+                                    <li>Bu alan harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer boş olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş doğum yerini girin
+                                <ul>
+                                    <li>Bu alan da harf ve karakter kabul eder</li>
+                                    <li>Maksimum 20 karakter uzunluğunda olabilir</li>
+                                    <li>Varsayılan değer "zzzzzzzzzzzzzzzzzzzz" olarak gelir (Z harfleriyle dolu)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu alanlar varsayılan değerlerle doludur. Boş bırakıldığında bu varsayılan değerler kullanılır</li>
+                    <li>Başlangıç değeri girilip bitiş değeri boş bırakılırsa, varsayılan bitiş değeri kullanılır</li>
+                    <li>Başlangıç değeri, bitiş değerinden alfabetik veya sayısal olarak büyük olmamalıdır</li>
+                    <li>Türkçe karakterleri kullanabilirsiniz, sistem bunları doğru şekilde işleyecektir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir sicil numarası, isim veya değer için filtreleme yapmak istiyorsanız, aynı değeri hem başlangıç hem de bitiş kutularına girin</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Tüm kişiler için işlem yapmak istiyorsanız varsayılan değerleri kullanabilirsiniz</li>
+                    <li>Belirli bir harfle başlayan isimleri listelemek için, başlangıç kutusuna o harfi, bitiş kutusuna aynı harf + "zzzzzz..." yazabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cagri-sebebi" class="section">
+        <h2>Çağrı Sebebi ve Yetkili Bilgisi</h2>
+        <div class="info-box">
+            <h3>Çağrı Sebebi ve Yetkili Bilgisi Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Çağrı Sebebi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Doğum Yeri alanının hemen altında yer alır</li>
+                            <li>"Çağrı Sebebi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu (text area) vardır</li>
+                            <li>Metin kutusu diğer alanlardan daha yüksektir ve daha fazla metin girilmesine olanak tanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna beyana çağrı sebebini ayrıntılı olarak yazın
+                                <ul>
+                                    <li>Bu alana en fazla 150 karakter girebilirsiniz</li>
+                                    <li>Türkçe karakterler kullanabilirsiniz</li>
+                                    <li>Çağrı sebebini açık ve anlaşılır şekilde belirtin</li>
+                                </ul>
+                            </li>
+                            <li>Yazdıktan sonra TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yetkili Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Çağrı Sebebi alanının hemen altında yer alır</li>
+                            <li>"Yetkili" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna yetkili kişinin adını ve/veya unvanını yazın
+                                <ul>
+                                    <li>Bu alana en fazla 30 karakter girebilirsiniz</li>
+                                    <li>Türkçe karakterler kullanabilirsiniz</li>
+                                    <li>Varsayılan olarak alan "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" değeri ile doldurulmuştur, bu değeri silin ve yetkili bilgisini girin</li>
+                                </ul>
+                            </li>
+                            <li>Yazdıktan sonra TAB tuşuna basarak veya fare ile tıklayarak işlem butonları bölümüne geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çağrı sebebi alanının doldurulması zorunludur ve çağrı listesinde görüntülenecektir</li>
+                    <li>Yetkili bilgisi çağrı listesinin altında imza kısmında görüntülenecektir</li>
+                    <li>Varsayılan yetkili bilgisini silip geçerli bir yetkili adı/unvanı girmeyi unutmayın</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çağrı sebebini net ve anlaşılır bir şekilde belirtin</li>
+                    <li>Yetkili alanına unvan ve ismi birlikte yazabilirsiniz (örn: "Çevre Müdürü Ahmet Yılmaz")</li>
+                    <li>Sık kullanılan çağrı sebeplerini bir yere not edebilir ve kolayca kopyalayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Listele ve Çıkış Butonları</h3>
+            
+            <div class="step">
+                <h4>Listele Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                            <li>Üzerinde bir yazıcı/liste ikonu ve "Listele" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeleme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>Sıralama seçeneğini belirleyin</li>
+                                    <li>İstediğiniz filtreleme kriterlerini girin (Sicil No, Soyadı, Adı, Baba Adı, Doğum Yeri)</li>
+                                    <li>Çağrı sebebini ve yetkili bilgisini girin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm girişlerinizi kontrol edin</li>
+                            <li>Listele butonuna tıklayın</li>
+                            <li>Sistem yeni bir pencere açarak beyana çağrı listesini görüntüleyecektir</li>
+                            <li>Bu yeni pencerede listelenen kişileri görebilir ve çıktı alabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Listele butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde bir çıkış/kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Listele butonuna tıklamadan önce çağrı sebebini girdiğinizden emin olun</li>
+                    <li>Yetkili bilgisinin varsayılan değerini değiştirmeyi unutmayın</li>
+                    <li>Açılan liste penceresinden çıktı almak için, penceredeki yazdırma seçeneklerini kullanın</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + L tuş kombinasyonu ile Listele butonunu aktif edebilirsiniz</li>
+                    <li>ESC tuşu ile Çıkış butonunu aktif edebilirsiniz</li>
+                    <li>Liste açıldıktan sonra tarayıcının yazdırma seçeneklerini kullanarak farklı kağıt boyutları seçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="adim-adim" class="section">
+        <h2>Adım Adım Nasıl Yapılır: Bir Beyana Çağrı Listesi Oluşturma</h2>
+        <div class="info-box">
+            <h3>Baştan Sona Bir Beyana Çağrı Listesi Oluşturma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Adım 1: Programı Açma</h4>
+                <ol>
+                    <li>Ana menüden Beyana Çağrı Listesi programını seçin</li>
+                    <li>Program açıldığında, ekranın ortasında turkuaz başlıklı bir form göreceksiniz</li>
+                    <li>İmleç otomatik olarak ilk filtreleme alanına (Sicil No) konumlanacaktır</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 2: Sıralama Seçeneğini Belirleme</h4>
+                <ol>
+                    <li>Formun en üst kısmında, "Sıralama" etiketinin sağındaki açılır listeye tıklayın</li>
+                    <li>Açılan listeden, nasıl bir sıralama istediğinize göre seçim yapın:
+                        <ul>
+                            <li>Sicil numarasına göre sıralama için "Sicil No Sıralı" seçeneğini seçin</li>
+                            <li>Önce soyadı, sonra adı ve baba adına göre sıralama için "Soyadı+Adı+Baba Adı Sıralı" seçeneğini seçin</li>
+                            <li>Önce adı, sonra soyadı ve baba adına göre sıralama için "Adı+Soyadı+Baba Adı Sıralı" seçeneğini seçin</li>
+                        </ul>
+                    </li>
+                    <li>Seçiminizi yaptıktan sonra, TAB tuşuna basarak bir sonraki alana geçin</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 3: Sicil No Aralığını Belirleme</h4>
+                <ol>
+                    <li>"Sicil No" etiketinin sağındaki ilk metin kutusuna başlangıç sicil numarasını girin
+                        <ul>
+                            <li>Bu alan, Sıralama seçeneğinin hemen altında bulunur</li>
+                            <li>Hiçbir sicil numarası kısıtlaması yapmak istemiyorsanız, varsayılan değer olan "0" değerini bırakabilirsiniz</li>
+                            <li>Belirli bir sicil numarasından başlamak istiyorsanız, o numarayı girin</li>
+                        </ul>
+                    </li>
+                    <li>TAB tuşuna basarak sağdaki metin kutusuna geçin</li>
+                    <li>Bitiş sicil numarasını girin
+                        <ul>
+                            <li>Hiçbir üst sınır belirlemek istemiyorsanız, varsayılan değer olan "9999999999" değerini bırakabilirsiniz</li>
+                            <li>Belirli bir sicil numarasına kadar listelemek istiyorsanız, o numarayı girin</li>
+                            <li>Sadece tek bir sicil numarasını listelemek istiyorsanız, hem başlangıç hem de bitiş kutularına aynı numarayı girin</li>
+                        </ul>
+                    </li>
+                    <li>TAB tuşuna basarak bir sonraki filtreleme alanına geçin</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 4: İsim ve Kimlik Bilgileri Filtrelerini Ayarlama</h4>
+                <ol>
+                    <li>Soyadı, Adı, Baba Adı ve Doğum Yeri filtrelerini sırasıyla doldurun
+                        <ul>
+                            <li>Her filtre, Sicil No alanının altında sırayla bulunur</li>
+                            <li>Her filtre için sol taraftaki metin kutusuna başlangıç değerini, sağ taraftaki metin kutusuna bitiş değerini girin</li>
+                            <li>Hiçbir filtreleme yapmak istemiyorsanız, alanları varsayılan değerleriyle bırakabilirsiniz</li>
+                            <li>Belirli bir harf ile başlayan isimleri listelemek istiyorsanız, başlangıç kutusuna o harfi yazın</li>
+                            <li>Tam olarak eşleşen bir isim için filtreleme yapmak istiyorsanız, hem başlangıç hem de bitiş kutularına aynı değeri girin</li>
+                        </ul>
+                    </li>
+                    <li>Her bir alanı doldurduktan sonra TAB tuşuna basarak bir sonraki alana geçin</li>
+                    <li>İsim ve kimlik bilgileri filtrelerinden sonra TAB tuşuna basarak Çağrı Sebebi alanına geçin</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 5: Çağrı Sebebi ve Yetkili Bilgilerini Girme</h4>
+                <ol>
+                    <li>Çağrı Sebebi alanına, beyana çağrı yapılma gerekçesini ayrıntılı olarak yazın
+                        <ul>
+                            <li>Bu alan, Doğum Yeri filtresinin hemen altında bulunur</li>
+                            <li>Örnek: "2023 yılı çevre beyan kontrolü için beyana davet"</li>
+                            <li>En fazla 150 karakter girebilirsiniz</li>
+                            <li>Açık ve anlaşılır bir açıklama yazın</li>
+                        </ul>
+                    </li>
+                    <li>TAB tuşuna basarak Yetkili alanına geçin</li>
+                    <li>Yetkili alanındaki varsayılan değeri silin ve yetkili kişinin adını ve/veya unvanını yazın
+                        <ul>
+                            <li>Bu alan, Çağrı Sebebi alanının hemen altında bulunur</li>
+                            <li>Örnek: "Çevre Müdürü Ali Yılmaz"</li>
+                            <li>En fazla 30 karakter girebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Tüm bilgileri kontrol edin ve gerekirse düzeltmeler yapın</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 6: Listeleme İşlemini Gerçekleştirme</h4>
+                <ol>
+                    <li>Tüm alanları doldurduktan ve kontrol ettikten sonra, ekranın alt kısmındaki "Listele" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton, formun alt kısmında, ortada bulunur</li>
+                            <li>Üzerinde yazıcı/liste ikonu ve "Listele" yazısı vardır</li>
+                            <li>Alternatif olarak ALT+L tuş kombinasyonunu da kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Listele butonuna tıkladığınızda, sistem belirttiğiniz kriterlere göre bir liste oluşturacak ve yeni bir pencerede gösterecektir</li>
+                    <li>Açılan pencerede oluşturulan beyana çağrı listesini inceleyebilirsiniz
+                        <ul>
+                            <li>Liste, seçtiğiniz sıralama düzenine göre sıralanmış olacaktır</li>
+                            <li>Listenin üst kısmında çağrı sebebi, alt kısmında yetkili bilgisi görüntülenecektir</li>
+                        </ul>
+                    </li>
+                    <li>Liste penceresinin üst kısmındaki yazdırma seçeneklerini kullanarak çıktı alabilirsiniz</li>
+                    <li>İşlem tamamlandıktan sonra liste penceresini kapatabilirsiniz</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Adım 7: Programdan Çıkış</h4>
+                <ol>
+                    <li>Tüm işlemlerinizi tamamladıktan sonra, ana formdaki "Çıkış" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton, formun alt kısmında, Listele butonunun hemen sağında bulunur</li>
+                            <li>Üzerinde çıkış/kapı ikonu ve "Çıkış" yazısı vardır</li>
+                            <li>Alternatif olarak ESC tuşunu da kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Çıkış butonuna tıkladığınızda program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Çağrı sebebini mutlaka doldurun, bu alan listenin üst kısmında görüntülenecektir</li>
+                    <li>Yetkili bilgisinin varsayılan değerini değiştirmeyi unutmayın</li>
+                    <li>Sıralama seçeneği, sonuçların hangi düzende gösterileceğini belirler</li>
+                    <li>Filtreleme alanlarını boş bırakırsanız, varsayılan değerler kullanılacak ve tüm kayıtlar listelenecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT + L:</strong> Listele butonunu aktif etmek için</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Listede Hiç Kayıt Görünmüyor:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda açılan pencere boş görünüyor.</li>
+                            <li>Çözüm: Filtreleme kriterlerinizi kontrol edin. Çok kısıtlayıcı filtreler kullanmış olabilirsiniz. Ayrıca başlangıç değerlerinin bitiş değerlerinden küçük olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çok Fazla Kayıt Listeleniyor:</strong>
+                        <ul>
+                            <li>Sorun: Listede çok fazla kayıt var ve istediğiniz kişileri bulmak zor.</li>
+                            <li>Çözüm: Daha spesifik filtreleme kriterleri kullanın. Örneğin, sicil numarası aralığını daraltın veya isim/soyisim filtreleri ekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Türkçe Karakterler Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Türkçe karakterler (ç, ş, ı, ğ, ö, ü) içeren isimler doğru görünmüyor.</li>
+                            <li>Çözüm: Sistem Türkçe karakterleri desteklemektedir. Sorun yaşıyorsanız, tarayıcınızın karakter kodlamasını kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Penceresi Açılmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda yeni pencere açılmıyor.</li>
+                            <li>Çözüm: Tarayıcınızın açılır pencere engelleyicisini kontrol edin. Açılır pencere engelleme özelliğini bu site için kapatmanız gerekebilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Sık kullandığınız filtre kombinasyonlarını not edin</li>
+                    <li>İstenilen kayıtları bulmak için önce geniş bir aralık kullanın, sonra gerekirse daraltın</li>
+                    <li>Arama yaparken joker karakter olarak "%", "_" gibi karakterler kullanılamaz, tam değer girmelisiniz</li>
+                    <li>Liste çıktısını yazdırmadan önce önizleme yaparak sayfa yerleşimini kontrol edin</li>
+                    <li>Çağrı sebebi ve yetkili bilgisini standart hale getirerek her seferinde yeniden yazma ihtiyacını azaltın</li>
+                </ul>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Çağrı listesi oluşturduktan sonra listeye dahil olan kişilere bildirim otomatik olarak gönderilmez, ek işlem yapmanız gerekir</li>
+                    <li>Yazdırılan listenin resmi bir doküman olarak kullanılacağını unutmayın ve yetkili bilgisini doğru girdiğinizden emin olun</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Beyana Çağrı Listesi programı, beyana çağrılacak kişilerin listesini oluşturmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Sıralama seçeneği belirleme</li>
+                <li>Sicil No, Soyadı, Adı, Baba Adı ve Doğum Yeri kriterleriyle filtreleme yapma</li>
+                <li>Çağrı sebebi ve yetkili bilgisi girme</li>
+                <li>Liste oluşturma ve yazdırma</li>
+                <li>Adım adım beyana çağrı listesi oluşturma süreci</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

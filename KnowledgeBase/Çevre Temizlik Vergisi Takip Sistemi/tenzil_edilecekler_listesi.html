@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenzil Edilecekler Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tenzil Edilecekler Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#filtreleme">Filtreleme Kriterleri ve Veri Giriş Alanları</a></li>
+                <li><a href="#siralama">Sıralama Seçenekleri</a></li>
+                <li><a href="#kullanici-tur">Kullanıcı ve Tahakkuk Türü Seçimi</a></li>
+                <li><a href="#rapor-calistirma">Rapor Çalıştırma</a></li>
+                <li><a href="#cikti-goruntulenme">Çıktı ve Rapor Görüntüleme</a></li>
+                <li><a href="#sorunlar">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Tenzil Edilecekler Listesi programı, belediye tahakkuk sistemindeki tenzil edilecek kayıtların listelenip raporlanması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli kriterlere göre tenzil edilecek kayıtları filtreleyebilirsiniz</li>
+                <li>Farklı sıralama seçenekleriyle raporlar oluşturabilirsiniz</li>
+                <li>Kullanıcı bazında veya tahakkuk türü bazında filtreleme yapabilirsiniz</li>
+                <li>Sonuçları ekranda görüntüleyebilir ve yazdırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İhtiyacınız olan filtreleme kriterleri</li>
+                    <li>Hangi kullanıcılar ve tahakkuk türleri için rapor oluşturacağınız</li>
+                    <li>Rapor sonuçlarını nasıl sıralamak istediğiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz/yeşil-mavi renkte "TENZİL EDİLECEKLER LİSTESİ" başlığı bulunur</li>
+                            <li>Başlık ortalanmış ve dikkat çekici şekilde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Tarihi Alanı:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>Sol tarafta "İşlem Tarihi" etiketi, sağında tarih giriş alanı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçenekleri:</strong>
+                        <ul>
+                            <li>İşlem Tarihi alanının altında yer alır</li>
+                            <li>Açılır liste (dropdown) şeklinde sıralama seçenekleri sunar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Kriterleri Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmını kaplar</li>
+                            <li>Sol sütunda kriter etiketleri, sağ sütunlarda veri giriş alanları bulunur</li>
+                            <li>Çift sütunlu yapıda "Başlangıç" ve "Bitiş" değerleri girişi yapılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı ve Tahakkuk Türü Seçim Listeleri:</strong>
+                        <ul>
+                            <li>Filtreleme kriterleri bölümünün alt kısmında yer alır</li>
+                            <li>Çoklu seçim yapılabilen listeler şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında, ince bir çizgi ile ayrılmış bölümde yer alır</li>
+                            <li>Listele ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıktı Bölümü:</strong>
+                        <ul>
+                            <li>Rapor çalıştırıldığında, veri giriş bölümü kaybolur ve bu alanda rapor sonuçları görüntülenir</li>
+                            <li>Üstte bir yazdırma araç çubuğu ile birlikte rapor içeriği gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İlk olarak filtreleme ekranı görüntülenir</li>
+                    <li>İmleç otomatik olarak İşlem Tarihi alanına konumlanır</li>
+                    <li>Birçok filtreleme alanı, kolaylık için önceden tanımlanmış varsayılan değerlerle doldurulmuştur</li>
+                    <li>Kullanıcı ve Tahakkuk Türü listeleri başlangıçta tüm seçenekler seçili şekilde gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme" class="section">
+        <h2>Filtreleme Kriterleri ve Veri Giriş Alanları</h2>
+        <div class="info-box">
+            <h3>Filtreleme Kriterleri Nasıl Kullanılır</h3>
+            
+            <div class="step">
+                <h4>İşlem Tarihi Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık alanının hemen altında, sayfanın üst kısmında yer alır</li>
+                            <li>Sol tarafta "İşlem Tarihi" etiketi, sağında tarih giriş kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tarih alanına tıklayın veya TAB tuşu ile bu alana gelin</li>
+                            <li>Tarihi GG.AA.YYYY formatında girin (örn. 01.05.2025)</li>
+                            <li>Tarih alanı sağa yaslı şekilde görüntülenir</li>
+                            <li>Geçerli bir tarih girilmezse sistem uyarı verecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sicil No Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sıralama açılır listesinin altında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta, yanında iki metin kutusu bulunur</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alana sadece sayısal değer girilebilir</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "1" değerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "999999999" değerini kullanır</li>
+                                    <li>Başlangıç değerinden büyük veya eşit olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adı ve Soyadı Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No alanının altında yer alır</li>
+                            <li>Önce "Adı" alanı, sonra "Soyadı" alanı bulunur</li>
+                            <li>Her biri için yan yana iki metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk Adı kutusuna başlangıç adını girin
+                                <ul>
+                                    <li>Alfabetik olarak bu harfle başlayan veya sonraki harflerle başlayan adlar listelenir</li>
+                                    <li>Boş bırakılabilir, bu durumda tüm adlar dahil edilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak Son Adı kutusuna geçin</li>
+                            <li>Son Adı kutusuna bitiş adını girin
+                                <ul>
+                                    <li>Bu harfle veya önceki harflerle başlayan adlar listelenir</li>
+                                    <li>Boş bırakılırsa "zzzzzzzzzzzzzzzzzzz" değeri kullanılır (tüm adlar dahil edilir)</li>
+                                </ul>
+                            </li>
+                            <li>Benzer şekilde Soyadı alanlarını da doldurun</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Modül Sicil No Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Soyadı alanının altında yer alır</li>
+                            <li>"Modül Sicil No" etiketi sol tarafta, yanında iki metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç modül sicil numarasını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "1" değerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş modül sicil numarasını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "999999999" değerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yıl Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Modül Sicil No alanının altında yer alır</li>
+                            <li>"Yıl" etiketi sol tarafta, yanında iki metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç yılını girin
+                                <ul>
+                                    <li>Bu alana 4 haneli yıl formatında değer girilebilir</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "0" değerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş yılını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "9999" değerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Beyan No Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl alanının altında yer alır</li>
+                            <li>"Beyan No" etiketi sol tarafta, yanında iki metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç beyan numarasını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "0" değerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş beyan numarasını girin
+                                <ul>
+                                    <li>Boş bırakılırsa sistem otomatik olarak "2000000000" değerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Beyan Tarihi Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Beyan No alanının altında yer alır</li>
+                            <li>"Beyan Tarihi" etiketi sol tarafta, yanında iki tarih giriş kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç beyan tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılabilir, ancak filtreleme işlemi için bir değer girilmelidir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş beyan tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak güncel sistem tarihini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tahakkuk Tarihi Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Beyan Tarihi alanının altında yer alır</li>
+                            <li>"Tahakkuk Tarihi" etiketi sol tarafta, yanında iki tarih giriş kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç tahakkuk tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılabilir, ancak filtreleme işlemi için bir değer girilmelidir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş tahakkuk tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak güncel sistem tarihini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Son Ödeme Tarihi Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tarihi alanının altında yer alır</li>
+                            <li>"Son Ödeme Tarihi" etiketi sol tarafta, yanında iki tarih giriş kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk kutuya başlangıç son ödeme tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılabilir, ancak filtreleme işlemi için bir değer girilmelidir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kutuya geçin</li>
+                            <li>İkinci kutuya bitiş son ödeme tarihini girin
+                                <ul>
+                                    <li>GG.AA.YYYY formatında tarih girin</li>
+                                    <li>Boş bırakılırsa sistem otomatik olarak güncel sistem tarihini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Dönem ve Taksit Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Son Ödeme Tarihi alanının altında yer alır</li>
+                            <li>Önce "Dönem" sonra "Taksit" alanları yan yana sıralanmıştır</li>
+                            <li>Her biri için iki metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Dönem alanlarına başlangıç ve bitiş dönem değerlerini girin
+                                <ul>
+                                    <li>Sadece sayısal değerler girilebilir</li>
+                                    <li>Boş bırakılırsa sistem Dönem için "0" ve "99" değerlerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>Benzer şekilde Taksit alanlarına başlangıç ve bitiş taksit değerlerini girin
+                                <ul>
+                                    <li>Sadece sayısal değerler girilebilir</li>
+                                    <li>Boş bırakılırsa sistem Taksit için "0" ve "99" değerlerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tahakkuk Tutarı ve Bakiye Tutarı Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dönem ve Taksit alanlarının altında yer alır</li>
+                            <li>Önce "Tahakkuk Tutarı" sonra "Bakiye Tutarı" alanları bulunur</li>
+                            <li>Her biri için iki para birimi giriş kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tahakkuk Tutarı alanlarına başlangıç ve bitiş tutarlarını girin
+                                <ul>
+                                    <li>Para birimi formatında değerler girilebilir</li>
+                                    <li>Boş bırakılırsa sistem "0" ve "999999999999999" değerlerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>Benzer şekilde Bakiye Tutarı alanlarına başlangıç ve bitiş değerlerini girin
+                                <ul>
+                                    <li>Para birimi formatında değerler girilebilir</li>
+                                    <li>Boş bırakılırsa sistem "0" ve "999999999999999" değerlerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih alanlarını doldururken GG.AA.YYYY formatını kullanın (örn. 01.05.2025)</li>
+                    <li>Sayısal değer girişlerinde sadece rakam kullanın</li>
+                    <li>Başlangıç değerleri bitiş değerlerinden büyük olmamalıdır</li>
+                    <li>Birçok alan boş bırakılabilir, bu durumda sistem otomatik olarak varsayılan değerleri kullanır</li>
+                    <li>Kritik filtreleme alanları (örn. Tahakkuk Tarihi, Beyan Tarihi) boş bırakılmamalıdır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Tek bir değer için filtreleme yapmak istiyorsanız, aynı değeri hem başlangıç hem de bitiş kutularına girin</li>
+                    <li>Çok geniş bir veri kümesi üzerinde çalışıyorsanız, daha spesifik filtreler kullanarak rapor çalıştırma süresini kısaltabilirsiniz</li>
+                    <li>Tarih alanlarında gün veya ay tek haneli ise başına sıfır ekleyin (örn. 01.05.2025)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="siralama" class="section">
+        <h2>Sıralama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Rapor Sonuçlarını Sıralama</h3>
+            
+            <div class="step">
+                <h4>Sıralama Seçenekleri Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Tarihi alanının hemen altında, ekranın üst kısmında yer alır</li>
+                            <li>"Sıralama" etiketi sol tarafta, sağında açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır liste, gri renkli bir kutu içinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayarak mevcut sıralama seçeneklerini görüntüleyin</li>
+                            <li>Listede 5 farklı sıralama seçeneği bulunur:
+                                <ul>
+                                    <li>"Tahakkuk Tarihi+Beyan No" - Önce tahakkuk tarihine göre, sonra beyan numarasına göre sıralar</li>
+                                    <li>"Sicil No+Tahakkuk Tarihi" - Önce sicil numarasına göre, sonra tahakkuk tarihine göre sıralar</li>
+                                    <li>"Beyan No+Tahakkuk Tarihi" - Önce beyan numarasına göre, sonra tahakkuk tarihine göre sıralar (varsayılan seçenek)</li>
+                                    <li>"Beyan No+Borç Tarihi" - Önce beyan numarasına göre, sonra borç tarihine göre sıralar</li>
+                                    <li>"GTT Sicil No+Borç Tarihi" - Önce GTT sicil numarasına göre, sonra borç tarihine göre sıralar</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğine tıklayarak seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanır ve seçtiğiniz sıralama seçeneği listede görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Notlar:</h4>
+                <ul>
+                    <li>Program ilk açıldığında varsayılan olarak "Beyan No+Tahakkuk Tarihi" sıralaması seçilidir</li>
+                    <li>Sıralama seçimi, rapor çalıştırıldıktan sonra rapor sonuçlarının hangi düzende gösterileceğini belirler</li>
+                    <li>Özellikle büyük miktarda veri içeren raporlarda, doğru sıralama seçimi sonuçların analizi için önemlidir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Sıralama Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Beyan odaklı çalışıyorsanız "Beyan No+Tahakkuk Tarihi" sıralamasını tercih edin</li>
+                    <li>Mükelleflere göre gruplandırılmış sonuçlar için "Sicil No+Tahakkuk Tarihi" sıralamasını seçin</li>
+                    <li>Tahsilat zamanına göre sıralama için "Tahakkuk Tarihi+Beyan No" seçeneğini kullanın</li>
+                    <li>Borç yılına göre analiz yapmak istiyorsanız "GTT Sicil No+Borç Tarihi" seçeneğini tercih edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kullanici-tur" class="section">
+        <h2>Kullanıcı ve Tahakkuk Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>Kullanıcı ve Tahakkuk Türlerine Göre Filtreleme</h3>
+            
+            <div class="step">
+                <h4>Kullanıcı Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme kriterlerinin altında, sayfanın alt kısmında yer alır</li>
+                            <li>"Kullanıcı" etiketi sol tarafta, sağında çoklu seçim listesi bulunur</li>
+                            <li>Liste, dikdörtgen bir kutu içinde, dikey kaydırma çubuğuyla görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Listeye tıklayarak aktif hale getirin</li>
+                            <li>İstediğiniz kullanıcıları seçmek için:
+                                <ul>
+                                    <li>Tek bir kullanıcı seçmek için doğrudan kullanıcı adına tıklayın</li>
+                                    <li>Birden fazla kullanıcı seçmek için CTRL tuşunu basılı tutarak her bir kullanıcıya tıklayın</li>
+                                    <li>Ardışık sıralanmış birden fazla kullanıcı seçmek için ilk kullanıcıya tıklayın, SHIFT tuşunu basılı tutun ve son kullanıcıya tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Seçilen kullanıcılar vurgulanmış (mavi arka planlı) olarak görüntülenir</li>
+                            <li>Program ilk açıldığında tüm kullanıcılar otomatik olarak seçili gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Tahakkuk Türü Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Kullanıcı seçim listesinin altında, sayfanın alt kısmında yer alır</li>
+                            <li>"Türü" etiketi sol tarafta, sağında çoklu seçim listesi bulunur</li>
+                            <li>Liste, dikdörtgen bir kutu içinde, dikey kaydırma çubuğuyla görüntülenir</li>
+                            <li>Kullanıcı listesine göre daha geniş bir listedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Türü Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Listeye tıklayarak aktif hale getirin</li>
+                            <li>İstediğiniz tahakkuk türlerini seçmek için:
+                                <ul>
+                                    <li>Tek bir tür seçmek için doğrudan türün adına tıklayın</li>
+                                    <li>Birden fazla tür seçmek için CTRL tuşunu basılı tutarak her bir türe tıklayın</li>
+                                    <li>Ardışık sıralanmış birden fazla tür seçmek için ilk türe tıklayın, SHIFT tuşunu basılı tutun ve son türe tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Seçilen türler vurgulanmış (mavi arka planlı) olarak görüntülenir</li>
+                            <li>Program ilk açıldığında tüm tahakkuk türleri otomatik olarak seçili gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir kullanıcı ve en az bir tahakkuk türü seçilmelidir, aksi halde rapor çalıştırılamaz</li>
+                    <li>Hiçbir seçim yapılmadığında, sistem "Kullanıcı seçmelisiniz" veya "Tahakkuk Türü Seçmelisiniz" şeklinde uyarı mesajları gösterir</li>
+                    <li>Kullanıcı ve tahakkuk türü seçimleri, rapor sonuçlarını önemli ölçüde etkiler</li>
+                    <li>Çok fazla seçim yapıldığında, rapor çalıştırma süresi uzayabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Kullanıcı ve Tahakkuk Türü Seçim İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir kullanıcının girdiği kayıtları görmek için sadece o kullanıcıyı seçin</li>
+                    <li>Tüm kullanıcıları seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                    <li>Listelerde hızlı seçim yapmak için, aramak istediğiniz kullanıcı veya tür adının ilk harfini klavyeden girin (liste otomatik olarak o harfle başlayan ilk öğeye gidecektir)</li>
+                    <li>Önceden seçilmiş bir öğeyi seçimden çıkarmak için, CTRL tuşunu basılı tutarak o öğeye tekrar tıklayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="rapor-calistirma" class="section">
+        <h2>Rapor Çalıştırma</h2>
+        <div class="info-box">
+            <h3>Rapor Nasıl Oluşturulur</h3>
+            
+            <div class="step">
+                <h4>Rapor Çalıştırma Adımları:</h4>
+                <ol>
+                    <li><strong>Ön Hazırlık:</strong>
+                        <ul>
+                            <li>Tüm filtreleme kriterlerini gerektiği şekilde ayarlayın</li>
+                            <li>Sıralama seçeneğini belirleyin</li>
+                            <li>En az bir kullanıcı seçin</li>
+                            <li>En az bir tahakkuk türü seçin</li>
+                            <li>İsterseniz satır sayısını giriş kısmının üstünde "Satır Sayısı" alanından belirleyin (varsayılan 40 satırdır)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listele Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Buton ekranın alt kısmında, ince bir çizgiyle ayrılmış alanda bulunur</li>
+                            <li>Buton üzerinde bir liste veya rapor ikonu ve "Listele" yazısı vardır</li>
+                            <li>Tüm ayarlamalarınızı tamamladıktan sonra Listele butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor İşlemi:</strong>
+                        <ul>
+                            <li>Listele butonuna tıkladığınızda sistem raporu hazırlamaya başlar</li>
+                            <li>İşlem sırasında kısa bir bekleme süresi olabilir (veri miktarına bağlı olarak)</li>
+                            <li>İşlem tamamlandığında, filtreleme ekranı kaybolur ve rapor sonuçları görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Hata Durumları ve Çözümleri:</h4>
+                <ul>
+                    <li><strong>"Kullanıcı seçmelisiniz" uyarısı:</strong> En az bir kullanıcı seçerek tekrar deneyin</li>
+                    <li><strong>"Tahakkuk Türü Seçmelisiniz" uyarısı:</strong> En az bir tahakkuk türü seçerek tekrar deneyin</li>
+                    <li><strong>Boş rapor sonucu:</strong> Filtreleme kriterlerinizi kontrol edin, çok kısıtlayıcı filtreler kullanmış olabilirsiniz</li>
+                    <li><strong>Çok uzun işlem süresi:</strong> Daha spesifik filtreler kullanarak veri miktarını azaltın</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Verimli Rapor Oluşturma İpuçları:</h4>
+                <ul>
+                    <li>Raporlarınızı oluşturmadan önce hangi kriterlere göre filtreleme yapacağınızı planlayın</li>
+                    <li>Çok genel filtreler yerine, daha spesifik filtreler kullanarak işlem süresini kısaltın</li>
+                    <li>Aynı raporu farklı sıralama seçenekleriyle çalıştırarak farklı bakış açıları elde edin</li>
+                    <li>İşlem süresi uzun süren raporlarda, önce daha kısıtlı bir veri setiyle test edin, sonra genişletin</li>
+                    <li>Satır sayısını, görüntülemek istediğiniz kayıt miktarına göre ayarlayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cikti-goruntulenme" class="section">
+        <h2>Çıktı ve Rapor Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Rapor Sonuçları Nasıl Görüntülenir ve Kullanılır</h3>
+            
+            <div class="step">
+                <h4>Rapor Sonuçlarını Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Sonuç Ekranı Düzeni:</strong>
+                        <ul>
+                            <li>Rapor çalıştırıldıktan sonra, filtreleme ekranı yerine sonuç ekranı görüntülenir</li>
+                            <li>Ekranın üst kısmında yazdırma işlemleri için bir araç çubuğu bulunur</li>
+                            <li>Araç çubuğunun altında rapor başlığı ve içeriği yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor İçeriği Bölümleri:</strong>
+                        <ul>
+                            <li>Üst bölümde rapor başlığı "TENZİL EDİLECEKLER LİSTESİ" olarak görüntülenir</li>
+                            <li>Başlığın altında rapor filtreleri ve tarih bilgileri yer alır</li>
+                            <li>Ana içerik bölümünde tablo formatında sonuçlar listelenir</li>
+                            <li>Tabloda sicil no, ad/soyad, tahakkuk bilgileri, tutarlar gibi bilgiler sütunlar halinde görüntülenir</li>
+                            <li>Tablo seçilen sıralama kriterine göre düzenlenmiştir</li>
+                            <li>Sayfanın altında toplam kayıt sayısı ve toplam tutar bilgileri yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yazdırma ve Çıktı Alma İşlemleri:</h4>
+                <ol>
+                    <li><strong>Yazdırma Araç Çubuğu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında yer alan yazdırma araç çubuğunda çeşitli butonlar bulunur</li>
+                            <li>"Yazıcı" ikonu ile raporu doğrudan yazıcıya gönderebilirsiniz</li>
+                            <li>"Önizleme" butonu ile yazdırmadan önce raporun nasıl görüneceğini kontrol edebilirsiniz</li>
+                            <li>"Sayfa Düzeni" butonu ile sayfa yapısını değiştirebilirsiniz (dikey/yatay)</li>
+                            <li>"Excel" butonu ile raporu Excel formatında kaydedebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Adımları:</strong>
+                        <ol>
+                            <li>Yazdırmak istediğiniz raporu ekranda görüntüleyin</li>
+                            <li>Araç çubuğundaki "Yazıcı" butonuna tıklayın</li>
+                            <li>Açılan yazıcı diyalog penceresinde istediğiniz yazıcıyı ve yazdırma seçeneklerini belirleyin</li>
+                            <li>"Yazdır" butonuna tıklayarak yazdırma işlemini başlatın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Excel'e Aktarma Adımları:</strong>
+                        <ol>
+                            <li>Araç çubuğundaki "Excel" butonuna tıklayın</li>
+                            <li>Açılan kaydetme diyalog penceresinde dosyanın kaydedileceği konumu ve adını belirleyin</li>
+                            <li>"Kaydet" butonuna tıklayarak dosyayı Excel formatında kaydedin</li>
+                            <li>Kaydedilen dosyayı Microsoft Excel veya uyumlu bir program ile açabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yeni Rapor Oluşturma ve Programdan Çıkış:</h4>
+                <ol>
+                    <li><strong>Yeni Rapor Oluşturma:</strong>
+                        <ul>
+                            <li>Yazdırma araç çubuğundaki "Filtre" veya "Yeni" butonuna tıklayın</li>
+                            <li>Bu işlem sonucunda tekrar filtreleme ekranına döneceksiniz</li>
+                            <li>Yeni filtreleme kriterleri belirleyerek başka bir rapor oluşturabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış:</strong>
+                        <ul>
+                            <li>Filtreleme ekranındaki "Çıkış" butonuna tıklayarak programdan çıkabilirsiniz</li>
+                            <li>Çıkış butonu üzerinde bir çıkış/kapı ikonu bulunur</li>
+                            <li>Programdan çıktığınızda ana menüye döneceksiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Notlar:</h4>
+                <ul>
+                    <li>Rapor çalıştırıldıktan sonra, filtreleme kriterlerini değiştirmek için yazdırma araç çubuğundaki "Filtre" butonunu kullanmalısınız</li>
+                    <li>Yazdırma işlemi öncesinde önizleme yaparak kağıt tasarrufu sağlayabilirsiniz</li>
+                    <li>Geniş tablolar için yatay sayfa düzeni seçeneğini tercih edin</li>
+                    <li>Excel'e aktarılan raporlar üzerinde ek analizler ve sıralamalar yapabilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Rapor Sonuçlarını Etkin Kullanma İpuçları:</h4>
+                <ul>
+                    <li>Excel'e aktarılmış raporlar üzerinde filtreleme, sıralama ve toplama işlemleri yaparak daha detaylı analizler gerçekleştirebilirsiniz</li>
+                    <li>Birden fazla raporu karşılaştırmak için aynı filtreleri farklı tarih aralıklarıyla çalıştırın</li>
+                    <li>Yazıcı çıktılarında yer tasarrufu sağlamak için yatay düzen seçeneğini kullanın</li>
+                    <li>Sık kullandığınız rapor kriterlerini not alarak zaman kazanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sorunlar" class="section">
+        <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        <div class="info-box">
+            <h3>Olası Sorunlar ve Pratik Çözümler</h3>
+            
+            <div class="step">
+                <h4>Rapor Çalıştırma Sorunları:</h4>
+                <ul>
+                    <li><strong>Sorun:</strong> "Kullanıcı seçmelisiniz" uyarısı
+                        <br><strong>Çözüm:</strong> Kullanıcı listesinden en az bir kullanıcı seçin. Listeden hiçbir kullanıcı seçilmediğinde bu uyarı görüntülenir.</li>
+                    <li><strong>Sorun:</strong> "Tahakkuk Türü Seçmelisiniz" uyarısı
+                        <br><strong>Çözüm:</strong> Tahakkuk Türü listesinden en az bir tür seçin. Listeden hiçbir tür seçilmediğinde bu uyarı görüntülenir.</li>
+                    <li><strong>Sorun:</strong> Rapor çalıştırma işlemi çok uzun sürüyor
+                        <br><strong>Çözüm:</strong> Filtreleme kriterlerinizi daraltın, daha spesifik tarih aralıkları veya sicil no aralıkları belirleyin.</li>
+                    <li><strong>Sorun:</strong> Boş rapor sonucu (hiç kayıt bulunamadı)
+                        <br><strong>Çözüm:</strong> Filtreleme kriterlerinizi genişletin veya çok kısıtlayıcı filtreler kullanmadığınızdan emin olun.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Veri Giriş Alanları Sorunları:</h4>
+                <ul>
+                    <li><strong>Sorun:</strong> Tarih alanlarına geçersiz tarih formatı girişi
+                        <br><strong>Çözüm:</strong> Tarihleri GG.AA.YYYY formatında girin (örn. 01.05.2025).</li>
+                    <li><strong>Sorun:</strong> Sayısal alanlara harf veya özel karakter girişi
+                        <br><strong>Çözüm:</strong> Sicil no, tutar gibi alanlara sadece sayısal değerler girin.</li>
+                    <li><strong>Sorun:</strong> Başlangıç değeri bitiş değerinden büyük
+                        <br><strong>Çözüm:</strong> Başlangıç değerlerinin her zaman bitiş değerlerinden küçük veya eşit olmasına dikkat edin.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Çıktı ve Görüntüleme Sorunları:</h4>
+                <ul>
+                    <li><strong>Sorun:</strong> Rapor yazdırılırken bazı sütunlar kesiliyor
+                        <br><strong>Çözüm:</strong> Yazdırma öncesi "Sayfa Düzeni" butonunu kullanarak yatay düzen seçeneğini belirleyin.</li>
+                    <li><strong>Sorun:</strong> Excel'e aktarma işlemi başarısız oluyor
+                        <br><strong>Çözüm:</strong> Bilgisayarınızda Excel veya uyumlu bir program olduğundan emin olun ve farklı bir dosya adı kullanarak tekrar deneyin.</li>
+                    <li><strong>Sorun:</strong> Rapor sonuçları çok fazla sayfa gerektiriyor
+                        <br><strong>Çözüm:</strong> Daha spesifik filtreleme kriterleri kullanarak sonuç sayısını azaltın veya Satır Sayısı değerini artırın.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Genel Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Program kullanımı sırasında fare yerine klavye kısayollarını kullanarak daha hızlı çalışabilirsiniz (TAB, SHIFT+TAB, CTRL+A, vb.)</li>
+                    <li>Sık kullandığınız filtreleme kriterlerini not alın, böylece aynı raporu tekrar çalıştırmak istediğinizde zaman kazanırsınız</li>
+                    <li>Tüm kullanıcılar veya tahakkuk türleri için rapor oluşturmak yerine, sadece ihtiyacınız olan seçenekleri belirleyerek işlem süresini kısaltın</li>
+                    <li>Tarih alanlarını doldururken güncel sistem tarihini referans alın, böylece tüm güncel verileri raporunuza dahil edebilirsiniz</li>
+                    <li>Filtreleme kriterleri belirlenmemiş alanlar için sistem otomatik olarak varsayılan değerleri kullanır, ancak önemli alanları boş bırakmamaya özen gösterin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Tenzil Edilecekler Listesi programı, belediye tahakkuk sistemindeki tenzil edilecek kayıtları listelemek ve raporlamak için kullanılan etkili bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Program arayüzünü tanıma ve genel görünümü anlama</li>
+                <li>Filtreleme kriterlerini belirleme ve veri girişi yapma</li>
+                <li>Sıralama seçeneklerini kullanma</li>
+                <li>Kullanıcı ve tahakkuk türü seçimlerini yapma</li>
+                <li>Rapor çalıştırma ve sonuçları görüntüleme</li>
+                <li>Yazdırma ve Excel'e aktarma işlemlerini gerçekleştirme</li>
+                <li>Sık karşılaşılan sorunları çözme</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Sık Karşılaşılan Sorunlar ve Çözümleri" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+            
+            
+        </div>
+    </div>
+</body>
+</html>
