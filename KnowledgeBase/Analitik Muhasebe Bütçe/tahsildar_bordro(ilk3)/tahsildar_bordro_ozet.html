@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahakkuk Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tahakkuk Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri ve Veri Giriş</a></li>
+                <li><a href="#tarih-bazli">Tarih Bazlı Kriterler</a></li>
+                <li><a href="#modul-tur">Modül ve Tür Seçimleri</a></li>
+                <li><a href="#siralama">Sıralama ve İndeks</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları</a></li>
+                <li><a href="#pratik-ipuclari">Pratik İpuçları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Tahakkuk Listesi programı, belediye tahsilat işlemlerinde kullanılan ve vatandaşların tahakkuk bilgilerini listelemek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Tahsildar bazlı tahakkuk sorgulama</li>
+                <li>Tarih aralığına göre tahakkuk listeleme</li>
+                <li>Modül ve türe göre filtreleme</li>
+                <li>Detaylı raporlar oluşturma</li>
+                <li>Tahsildar bordrosu hazırlama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tahsildar bilgileri</li>
+                    <li>Tahakkuk tarih aralığı</li>
+                    <li>Hangi modül ve türleri sorgulamak istediğiniz</li>
+                    <li>Varsa özel sorgulama kriterleri (sicil no, makbuz no vb.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <p>Program açıldığında karşınıza çıkan ekran üç ana bölümden oluşmaktadır:</p>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "TAHAKKUK LİSTESİ" başlığı bulunur</li>
+                            <li>Başlığın altında gri renkli bilgi bölümü yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sol tarafta etiketler, sağ tarafta veri giriş alanları yer alır</li>
+                            <li>Tahsildar seçimi en üstte yer alan çoklu seçim kutusunda bulunur</li>
+                            <li>Tarih, sicil no ve diğer kriterler alt alta sıralanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, gri renkli şerit üzerinde yer alır</li>
+                            <li>"Listele" butonu solda, "Çıkış" butonu sağda bulunur</li>
+                            <li>Butonlar üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak gelir</li>
+                    <li>İmleç ilk veri giriş alanında konumlanır</li>
+                    <li>Varsayılan olarak tüm modül ve türler seçilidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tarih-bazli-kriterler" class="section">
+        <h2>Tarih Bazlı Kriterler ve Sayısal Alanlar</h2>
+        <div class="info-box">
+            <h3>Tarih Kriterleri ile Arama</h3>
+            
+            <div class="step">
+                <h4>Tahakkuk Tarihi ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ad-Soyad alanlarının altında yer alır</li>
+                            <li>"Tahakkuk Tar:" etiketi yanında iki adet tarih giriş kutusu bulunur</li>
+                            <li>Sol kutucuk başlangıç, sağdaki kutucuk bitiş tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tarih Formatı:
+                                <ul>
+                                    <li>GG.AA.YYYY formatında giriş yapılmalıdır (örnek: 15.01.2024)</li>
+                                    <li>Nokta (.) karakterini kullanarak tarihi ayırın</li>
+                                </ul>
+                            </li>
+                            <li>Tek bir gün için:
+                                <ul>
+                                    <li>Sol kutuya tarihi yazın</li>
+                                    <li>TAB tuşuna basın, sistem otomatik olarak aynı tarihi sağ kutuya kopyalayacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Tarih aralığı için:
+                                <ul>
+                                    <li>Sol kutuya başlangıç tarihini yazın</li>
+                                    <li>Sağ kutuya bitiş tarihini yazın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Son Ödeme Tarihi ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tarihi alanının hemen altında bulunur</li>
+                            <li>"Son Ödeme Tar:" etiketi yanında iki tarih kutusu yer alır</li>
+                            <li>Tahakkuk Tarihi alanıyla aynı yapıdadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ul>
+                            <li>Tahakkuk Tarihi ile aynı şekilde kullanılır</li>
+                            <li>GG.AA.YYYY formatını kullanın</li>
+                            <li>TAB tuşu ile bir sonraki alana geçebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Taksit ve Dönem Bilgileri:</h4>
+                <ol>
+                    <li><strong>Taksit Alanı:</strong>
+                        <ul>
+                            <li>Son Ödeme Tarihi alanının altında yer alır</li>
+                            <li>"Taksit:" etiketi yanında iki sayısal kutu bulunur</li>
+                            <li>1-12 arası değer girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Alanı:</strong>
+                        <ul>
+                            <li>Taksit alanının hemen altında konumlanır</li>
+                            <li>"Dönem:" etiketi yanında iki sayısal kutu vardır</li>
+                            <li>Dönem numarası dört haneli olmalıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir taksit/dönem için:
+                                <ul>
+                                    <li>Sadece sol kutuyu doldurun</li>
+                                    <li>TAB tuşuna basın, sağ kutu otomatik doldurulur</li>
+                                </ul>
+                            </li>
+                            <li>Aralık için:
+                                <ul>
+                                    <li>Sol kutuya başlangıç değerini yazın</li>
+                                    <li>Sağ kutuya bitiş değerini yazın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih formatına dikkat edin: GG.AA.YYYY</li>
+                    <li>Bitiş tarihi başlangıç tarihinden önce olamaz</li>
+                    <li>Taksit numarası 1-12 arasında olmalıdır</li>
+                    <li>Dönem değerleri 4 haneli olmalıdır</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Kullanışlı İpuçları:</h4>
+                <ul>
+                    <li>Tarihleri elle yazmak yerine takvimden de seçebilirsiniz</li>
+                    <li>Tek bir gün/ay/dönem aramak için sadece başlangıç kutusunu kullanın</li>
+                    <li>Bir alandan diğerine TAB tuşu ile geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="modul-tur-secimi" class="section">
+        <h2>Modül ve Tür Seçimleri</h2>
+        <div class="info-box">
+            <h3>Modül ve Tür Seçim Listeleri</h3>
+            
+            <div class="step">
+                <h4>Tahakkuk Türü Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dönem ve Taksit bilgilerinin altında yer alır</li>
+                            <li>Mavi çerçeveli, dikdörtgen şeklinde bir liste kutusu</li>
+                            <li>"Tahakkuk Türü" etiketi altında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Seçim Yapılır:</strong>
+                        <ol>
+                            <li>Tek Tür Seçimi:
+                                <ul>
+                                    <li>Liste içinden istediğiniz türün üzerine tıklayın</li>
+                                    <li>Seçilen tür mavi renkte vurgulanacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Birden Fazla Tür Seçimi:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak:
+                                        <ul>
+                                            <li>İstediğiniz türleri tek tek tıklayın</li>
+                                            <li>Her seçilen tür mavi renkte vurgulanır</li>
+                                        </ul>
+                                    </li>
+                                    <li>SHIFT tuşunu kullanarak:
+                                        <ul>
+                                            <li>İlk türü tıklayın</li>
+                                            <li>SHIFT tuşunu basılı tutun</li>
+                                            <li>Son türü tıklayın</li>
+                                            <li>Aradaki tüm türler seçilir</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Tahakkuk Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Türü listesinin hemen altında bulunur</li>
+                            <li>Üzerinde "Tahakkuk Tipi" etiketi yer alır</li>
+                            <li>Tür seçim listesiyle aynı boyut ve görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Tüm Tipleri Seçme:
+                                <ul>
+                                    <li>Liste kutusuna tıklayın</li>
+                                    <li>CTRL + A tuş kombinasyonunu kullanın</li>
+                                    <li>Tüm tipler seçili hale gelir</li>
+                                </ul>
+                            </li>
+                            <li>Seçimleri Kaldırma:
+                                <ul>
+                                    <li>Seçili bir tipin üzerine CTRL ile tekrar tıklayın</li>
+                                    <li>Veya boş bir alana tıklayarak tüm seçimleri kaldırın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Banka Hesabı Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tipi listesinin altında yer alır</li>
+                            <li>"Banka Hesabı" etiketi altında liste kutusu bulunur</li>
+                            <li>Diğer liste kutularıyla aynı görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Seçilir:</strong>
+                        <ul>
+                            <li>Tek hesap için doğrudan tıklayın</li>
+                            <li>Birden fazla hesap için CTRL tuşunu kullanın</li>
+                            <li>Liste içinde hesap numarası ve hesap adı birlikte görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Varsayılan olarak tüm tür ve tipler seçilidir</li>
+                    <li>Hiçbir seçim yapılmazsa tüm kayıtlar listelenir</li>
+                    <li>Çok sayıda seçim yapmak sorgu süresini uzatabilir</li>
+                    <li>En az bir banka hesabı seçilmelidir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Kullanışlı İpuçları:</h4>
+                <ul>
+                    <li>Liste içinde yukarı-aşağı ok tuşlarını kullanabilirsiniz</li>
+                    <li>İlk harfi yazarak ilgili seçeneğe hızlıca gidebilirsiniz</li>
+                    <li>Fare tekerleği ile listelerde gezinebilirsiniz</li>
+                    <li>ESC tuşu ile açık bir listeden çıkabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tutar-kullanici" class="section">
+        <h2>Ödeme Şekilleri ve Tahsilat Detayları</h2>
+        <div class="info-box">
+            <h3>Ödeme Şekli Seçimi ve Tutar Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Ödeme Şekli Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Banka Hesabı seçim kutusunun altında yer alır</li>
+                            <li>"Ödeme Şekli" etiketi yanında çoklu seçim kutusu bulunur</li>
+                            <li>Mavi çerçeveli, dikdörtgen bir liste şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanılabilir Seçenekler:</strong>
+                        <ul>
+                            <li>Elden Ödeme</li>
+                            <li>Banka</li>
+                            <li>Posta Çeki</li>
+                            <li>Emanet</li>
+                            <li>Kredi Kartı</li>
+                            <li>İcra</li>
+                            <li>Diğer</li>
+                            <li>Taksitli Kredi Kartı</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim Yapma:</strong>
+                        <ul>
+                            <li>En az bir ödeme şekli seçilmelidir</li>
+                            <li>CTRL tuşu ile birden fazla seçim yapılabilir</li>
+                            <li>SHIFT tuşu ile aralık seçimi yapılabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tahsilat Tutarı Aralığı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ödeme şekli seçiminin altında bulunur</li>
+                            <li>"Tahsilat Tutarı" etiketi yanında iki kutu yer alır</li>
+                            <li>Sol kutu minimum, sağ kutu maksimum tutar içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Girişi:</strong>
+                        <ol>
+                            <li>Minimum tutar için:
+                                <ul>
+                                    <li>Sol kutucuğa tutarı yazın</li>
+                                    <li>Kuruş kısmını virgül ile ayırın</li>
+                                    <li>Binlik ayracı olarak nokta kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>Maksimum tutar için:
+                                <ul>
+                                    <li>Sağ kutucuğa tutarı yazın</li>
+                                    <li>Tek bir tutar için her iki kutuya aynı değeri girin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kullanıcı ve Tarih Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve İçerik:</strong>
+                        <ul>
+                            <li>Tahsilat tutarı alanının altında sıralanır</li>
+                            <li>Kullanıcı tarihi ve kullanıcı numarası bilgileri bulunur</li>
+                            <li>Her biri için başlangıç ve bitiş değerleri girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Numarası:</strong>
+                        <ul>
+                            <li>7 haneli numara olarak girilir</li>
+                            <li>Sol kutu başlangıç, sağ kutu bitiş değeri içindir</li>
+                            <li>Tek kullanıcı için her iki kutuya aynı numara yazılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Bordro ve Teslimat Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Sıralama:</strong>
+                        <ul>
+                            <li>Kullanıcı bilgilerinin altında sırayla yer alır</li>
+                            <li>Her alan için etiket ve yanında giriş kutusu bulunur</li>
+                            <li>Yukarıdan aşağıya doğru düzenli bir sırada dizilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Girişleri:</strong>
+                        <ul>
+                            <li>Teslimat No: Teslimat işleminin benzersiz numarası</li>
+                            <li>Teslimat Tarihi: Teslimatın yapıldığı tarih</li>
+                            <li>Banka No: İlgili banka işlem numarası</li>
+                            <li>Bordro No: Tahsilat bordrosunun numarası</li>
+                            <li>Tahsilat Şefi: Tahsilattan sorumlu şefin adı</li>
+                            <li>Müdür: Onaylayan müdürün adı</li>
+                            <li>Mutemet: İşlemi gerçekleştiren mutemedin adı</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Şekli:</strong>
+                        <ul>
+                            <li>TAB tuşu ile alanlar arasında ilerleyebilirsiniz</li>
+                            <li>Ad-soyad bilgileri Türkçe karakterlerle yazılabilir</li>
+                            <li>Tarih bilgisi GG.AA.YYYY formatında girilmelidir</li>
+                            <li>Numara alanlarına sadece rakam girilebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir ödeme şekli seçilmesi zorunludur</li>
+                    <li>Tutar girişlerinde virgül ve nokta kullanımına dikkat edin</li>
+                    <li>Bitiş değerleri başlangıç değerlerinden küçük olamaz</li>
+                    <li>Kullanıcı numarası sadece rakamlardan oluşmalıdır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tutar alanında kuruş girişi zorunlu değildir</li>
+                    <li>Tek bir değer aramak için sadece sol kutuları kullanın</li>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Alanları boş bırakarak o kriterin dikkate alınmamasını sağlayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="siralama-indeks" class="section">
+        <h2>Sıralama ve İndeks Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Sıralama Seçenekleri</h3>
+            
+            <div class="step">
+                <h4>Sıralama Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında, başlığın hemen altında bulunur</li>
+                            <li>"Sıralama:" etiketi yanında açılır liste kutusu yer alır</li>
+                            <li>Diğer giriş alanlarının üzerinde konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanılabilir Seçenekler:</strong>
+                        <ol>
+                            <li>Yıl+Sicil No:
+                                <ul>
+                                    <li>Önce yıla göre, sonra sicil numarasına göre sıralar</li>
+                                    <li>Yıllık raporlamalar için idealdir</li>
+                                </ul>
+                            </li>
+                            <li>Sicil+Tahakkuk Tarihi:
+                                <ul>
+                                    <li>Önce sicil numarasına, sonra tahakkuk tarihine göre sıralar</li>
+                                    <li>Kişi bazlı kronolojik listeler için uygundur</li>
+                                </ul>
+                            </li>
+                            <li>GTT Sicil No:
+                                <ul>
+                                    <li>Sadece sicil numarasına göre sıralar</li>
+                                    <li>Varsayılan sıralama seçeneğidir</li>
+                                </ul>
+                            </li>
+                            <li>Tahakkuk Tarihi:
+                                <ul>
+                                    <li>Sadece tahakkuk tarihine göre sıralar</li>
+                                    <li>Tarih bazlı analizler için uygundur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>İndeks Kullanımı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tür seçim listesinin altında bulunur</li>
+                            <li>"İndeks Kullanımı" etiketi yanında açılır liste kutusu yer alır</li>
+                            <li>Gruplama seçeneğinin üzerinde konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçenekler ve Kullanımları:</strong>
+                        <ol>
+                            <li>Varsayılan:
+                                <ul>
+                                    <li>Normal sorgularda kullanın</li>
+                                    <li>Sistem otomatik olarak en uygun indeksi seçer</li>
+                                </ul>
+                            </li>
+                            <li>GTT Sicil No:
+                                <ul>
+                                    <li>Sicil numarası aralığı sorgulamalarında kullanın</li>
+                                    <li>Büyük sicil aralıkları için daha hızlıdır</li>
+                                </ul>
+                            </li>
+                            <li>Tahakkuk Tarihi:
+                                <ul>
+                                    <li>Tarih aralığı sorgulamalarında kullanın</li>
+                                    <li>Geniş tarih aralıkları için uygundur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Doğru indeks seçimi sorgu hızını önemli ölçüde etkiler</li>
+                    <li>Sıralama seçeneği ile indeks uyumlu olmalıdır</li>
+                    <li>Çok büyük veri setlerinde uygun indeks seçimi önemlidir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil aralığı sorgularken GTT Sicil No indeksini kullanın</li>
+                    <li>Tarih aralığı sorgularken Tahakkuk Tarihi indeksini tercih edin</li>
+                    <li>Emin değilseniz varsayılan seçeneği kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Rapor Oluşturma</h2>
+        <div class="info-box">
+            <h3>Temel İşlem Butonları</h3>
+            
+            <div class="step">
+                <h4>Listele Butonu:</h4>
+                <ol>
+                    <li><strong>Butonun Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ortada yer alır</li>
+                            <li>Gri zemin üzerinde siyah yazı ile görünür</li>
+                            <li>Çıkış butonunun solunda bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Rapor Oluşturma:
+                                <ul>
+                                    <li>Tüm arama kriterlerini girdikten sonra butona tıklayın</li>
+                                    <li>Yeni bir pencerede rapor görüntülenir</li>
+                                    <li>ENTER tuşu da aynı işlevi görür</li>
+                                </ul>
+                            </li>
+                            <li>Sonuçların Görüntülenmesi:
+                                <ul>
+                                    <li>Rapor yeni pencerede açılır</li>
+                                    <li>Pencereyi tam ekran yapabilirsiniz</li>
+                                    <li>Sonuçları yazdırabilir veya kaydedebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Butonun Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, en sağda yer alır</li>
+                            <li>Listele butonuyla aynı görünüme sahiptir</li>
+                            <li>Gri zemin üzerinde siyah yazılıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanımı:</strong>
+                        <ul>
+                            <li>Programdan çıkmak için tıklayın</li>
+                            <li>ESC tuşu da aynı işlevi görür</li>
+                            <li>Açık olan tüm rapor pencereleri kapanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>İptal Edilen Tahsilatlar Seçeneği:</h4>
+                <ol>
+                    <li><strong>Konumu:</strong>
+                        <ul>
+                            <li>İşlem butonlarının üzerinde yer alır</li>
+                            <li>Onay kutusu (checkbox) şeklindedir</li>
+                            <li>"İptal Edilen Tahsilatlar Listelensin" etiketi ile birlikte görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanımı:</strong>
+                        <ul>
+                            <li>İptal edilen tahsilatları görmek için işaretleyin</li>
+                            <li>Normal tahsilatlarla birlikte listelenir</li>
+                            <li>İşaretlenmezse sadece aktif tahsilatlar görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Rapor oluşturma süresi seçilen kriterlere göre değişebilir</li>
+                    <li>Çıkış yapmadan önce açık raporları kapatın</li>
+                    <li>Çok geniş tarih aralıkları uzun sürebilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + L kısayolu ile Listele butonunu çalıştırabilirsiniz</li>
+                    <li>ESC tuşu ile programdan hızlıca çıkabilirsiniz</li>
+                    <li>Rapor oluşturmadan önce kriterleri kontrol edin</li>
+                    <li>Uzun süren raporlar için mesai saatleri dışını tercih edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Rapor Oluşturulmuyor:</h4>
+                <ol>
+                    <li><strong>Olası Nedenler:</strong>
+                        <ul>
+                            <li>Çok geniş tarih aralığı seçilmiş olabilir</li>
+                            <li>Çok fazla tahakkuk türü seçili olabilir</li>
+                            <li>Banka hesabı seçilmemiş olabilir</li>
+                            <li>Sunucu yoğun olabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çözüm Adımları:</strong>
+                        <ul>
+                            <li>Tarih aralığını daraltın</li>
+                            <li>Seçili tahakkuk türü sayısını azaltın</li>
+                            <li>En az bir banka hesabı seçtiğinizden emin olun</li>
+                            <li>Birkaç dakika bekleyip tekrar deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Hatalı veya Eksik Sonuçlar:</h4>
+                <ol>
+                    <li><strong>Kontrol Edilecekler:</strong>
+                        <ul>
+                            <li>Tarih formatını doğru girdiğinizden emin olun (GG.AA.YYYY)</li>
+                            <li>Tutar aralıklarında virgül ve nokta kullanımını kontrol edin</li>
+                            <li>En az bir ödeme şekli seçili olmalı</li>
+                            <li>Seçili tahakkuk türlerini gözden geçirin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzeltme İşlemleri:</strong>
+                        <ul>
+                            <li>Tüm kriterleri temizleyip yeniden girin</li>
+                            <li>Tek bir kriter ile test edin</li>
+                            <li>Adım adım kriter ekleyerek ilerleyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Program Yanıt Vermiyor:</h4>
+                <ol>
+                    <li><strong>Yapılacaklar:</strong>
+                        <ul>
+                            <li>Birkaç saniye bekleyin, büyük raporlar zaman alabilir</li>
+                            <li>ESC tuşuna basıp programı kapatın</li>
+                            <li>Programı yeniden başlatın</li>
+                            <li>Sorun devam ederse sistem yöneticinize başvurun</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Ne Zaman Yardım İsteyin:</h4>
+                <ul>
+                    <li>Program sürekli kapanıyorsa</li>
+                    <li>Raporlar hiç açılmıyorsa</li>
+                    <li>Yukarıdaki çözümler sorununuzu gidermezse</li>
+                    <li>Veri tutarsızlığından şüpheleniyorsanız</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Sorunları Önlemek İçin:</h4>
+                <ul>
+                    <li>Çok geniş tarih aralıklarından kaçının</li>
+                    <li>Gereksiz tahakkuk türlerini seçmeyin</li>
+                    <li>Kriterleri adım adım ekleyin</li>
+                    <li>Sorgu sonuçlarını kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

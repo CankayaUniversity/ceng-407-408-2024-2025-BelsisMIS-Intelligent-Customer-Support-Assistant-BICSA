@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Muhasebe Fiş İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Muhasebe Fiş İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div class="section">
+        <h2>1. Giriş ve Genel Bakış</h2>
+        
+        <div class="info-box">
+            Bu kılavuz, muhasebe fiş işlemleri sistemini kullanarak günlük işlemlerinizi kolayca gerçekleştirmenize yardımcı olmak için hazırlanmıştır. Sistemde yapabileceğiniz tüm işlemleri adım adım açıklamaktadır.
+        </div>
+
+        <h3>1.1 Sistemin Amacı</h3>
+        <p>
+            Muhasebe Fiş İşlemleri sistemi, kurumunuzun tüm muhasebe işlemlerini dijital ortamda yönetmenizi sağlar. Sistem sayesinde:
+        </p>
+        <ul>
+            <li>Muhasebe fişleri oluşturabilir</li>
+            <li>Ödeme emirleri düzenleyebilir</li>
+            <li>Gelir ve gider işlemlerini kaydedebilir</li>
+            <li>KDV işlemlerini otomatik olarak yapabilir</li>
+            <li>Raporlar alabilirsiniz</li>
+        </ul>
+
+        <h3>1.2 Ana Ekran Düzeni</h3>
+        <p>
+            Ana ekran üç temel bölümden oluşur:
+        </p>
+        <ul>
+            <li><strong>Üst Bölüm:</strong> Fiş bilgileri girişi yapacağınız alan. Fiş tarihi, numarası ve tipi gibi temel bilgileri buradan girebilirsiniz.</li>
+            <li><strong>Orta Bölüm:</strong> Fiş detaylarını gireceğiniz tablo alanı. Muhasebe kodları, tutarlar ve açıklamalar bu bölümde yer alır.</li>
+            <li><strong>Alt Bölüm:</strong> Toplam tutarları gösteren ve işlem butonlarının bulunduğu alan.</li>
+        </ul>
+
+        <div class="info-box">
+            <h4>UI Elemanlarının Detaylı Konumları:</h4>
+            <ul>
+                <li>Özel İşlemler butonu ekranın sağ alt köşesinde, toplam alanlarının yanında yer alır</li>
+                <li>KDV Hesaplama butonu, Özel İşlemler butonunun solunda bulunur</li>
+                <li>Tutar giriş alanları hesap kodu seçim alanının sağında sıralanır</li>
+                <li>Yeni Kayıt butonu detay tablosunun hemen üstünde, solda yer alır</li>
+                <li>Fiş tipi seçiminden sonra otomatik dolacak alanlar:
+                    <ul>
+                        <li>Yevmiye no: Tarih alanının sağında</li>
+                        <li>Fiş no: Yevmiye no alanının yanında</li>
+                        <li>Kayıt tarihi: Fiş tipi seçiminin sağında</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>Pratik İpucu:</strong> Ekranın üst kısmındaki fiş tipi seçimi, girilen bilgilerin formatını otomatik olarak belirler. İşleme başlamadan önce doğru fiş tipini seçtiğinizden emin olun.
+        </div>
+
+        <h3>1.3 Temel Kullanım Öğeleri</h3>
+        <p>
+            Sistemdeki temel kullanım öğeleri şunlardır:
+        </p>
+        <ul>
+            <li><strong>Fiş Tipi Seçimi:</strong> Ekranın üst kısmında yer alan açılır menüden yapılır</li>
+            <li><strong>Tarih Alanı:</strong> Fiş tipi seçiminin hemen yanında yer alır</li>
+            <li><strong>Yevmiye ve Fiş No:</strong> Tarih alanının sağında bulunur ve sistem tarafından otomatik atanır</li>
+            <li><strong>Kişi/Kurum Seçimi:</strong> Üst bölümün sağ tarafında yer alan arama alanından yapılır</li>
+            <li><strong>İşlem Butonları:</strong> Alt bölümde sıralanmış durumdadır</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Önemli:</strong> Fiş kaydı yaparken tüm zorunlu alanların doldurulduğundan emin olun. Zorunlu alanlar sistem tarafından kontrol edilir ve eksik bilgi durumunda uyarı mesajı görüntülenir.
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <h2>2. Fiş İşlemleri</h2>
+
+        <h3>2.1 Fiş Türleri</h3>
+        <p>
+            Sistemde kullanabileceğiniz fiş türleri şunlardır:
+        </p>
+        <ul>
+            <li><strong>Muhasebe İşlem Fişi:</strong> Genel muhasebe kayıtları için kullanılır</li>
+            <li><strong>Ödeme Emri:</strong> Ödemelerin kaydı ve takibi için kullanılır</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Fiş Numaralandırma:</strong> Her fiş türü için sistem otomatik olarak sıralı numara atar. Bu numaralar yıl içinde ardışık olarak devam eder.
+        </div>
+
+        <h3>2.2 Temel Fiş İşlemleri</h3>
+        <p>
+            Sistemde yapabileceğiniz temel fiş işlemleri:
+        </p>
+        <ul>
+            <li>Yeni fiş oluşturma</li>
+            <li>Mevcut fişleri görüntüleme</li>
+            <li>Fiş düzenleme</li>
+            <li>Fiş silme</li>
+            <li>Fiş onaylama</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>İyi Uygulama:</strong> Fiş işlemlerinde her zaman önce fiş tipini seçin, sonra diğer bilgileri doldurun. Bu sıralama, sistem tarafından sunulan otomatik özelliklerin doğru çalışmasını sağlar.
+        </div>
+    </div>
+
+        <div class="section">
+            <h2>3. Adım Adım İşlemler</h2>
+    
+            <h3>3.1 Yeni Fiş Oluşturma</h3>
+            <div class="step">
+                <h4>Yeni Fiş Nasıl Oluşturulur?</h4>
+                <ol>
+                    <li>Ekranın üst kısmındaki fiş tipi açılır menüsünden istediğiniz fiş tipini seçin. Bu alan "Müdürlük Seçiniz" alanının hemen üstünde yer alır. İki seçenek bulunur:
+                        <ul>
+                            <li>1. Muhasebe İşlem Fişi</li>
+                            <li>2. Ödeme Emri</li>
+                        </ul>
+                    </li>
+                    <li>Fiş tipini seçtiğinizde sistem otomatik olarak:
+                        <ul>
+                            <li>Günün tarihini tarih alanına getirir</li>
+                            <li>Fiş numarasını belirler</li>
+                            <li>Yevmiye numarasını atar</li>
+                        </ul>
+                    </li>
+                    <li>Müdürlük Seçiniz alanından ilgili müdürlüğü seçin. Bu alan, fiş tipi seçiminin altında yer alır.</li>
+                    <li>Ad Soyad/Kurum alanını doldurun. Bu alan, müdürlük seçiminin hemen altındadır. Alanda yazı yazmaya başladığınızda otomatik arama başlar.</li>
+                </ol>
+            </div>
+    
+            <h3>3.2 Kişi/Kurum Bilgisi Seçimi</h3>
+            <div class="step">
+                <h4>Kişi veya Kurum Nasıl Seçilir?</h4>
+                <ol>
+                    <li>Ad Soyad/Kurum alanına tıklayın. Bu alan, Müdürlük seçiminin altında yer alır.</li>
+                    <li>Aramak istediğiniz kişi veya kurumun adını yazmaya başlayın.</li>
+                    <li>Yazmaya başladığınızda alanın hemen altında bir seçim listesi açılır.</li>
+                    <li>Listeden ilgili kişiyi seçtiğinizde:
+                        <ul>
+                            <li>Vergi numarası otomatik olarak doldurulur</li>
+                            <li>Telefon bilgisi otomatik olarak gelir</li>
+                            <li>TC Kimlik numarası sistem tarafından atanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <strong>Önemli:</strong> Seçtiğiniz kişi/kurumun TC Kimlik No ve Vergi Numarası eksikse veya hatalıysa sistem sizi otomatik olarak kişi/kurum düzenleme ekranına yönlendirir.
+            </div>
+
+            <div class="step">
+                <h4>TC/Vergi No Kontrolü ve Ek İşlemler:</h4>
+                <ol>
+                    <li>Kişi/Kurum seçildiğinde sistem otomatik kontroller yapar:
+                        <ul>
+                            <li>TC Kimlik numarası kontrolü (11 hane)</li>
+                            <li>Vergi numarası kontrolü (10 hane)</li>
+                        </ul>
+                    </li>
+                    <li>Eğer bilgiler eksik veya hatalıysa:
+                        <ul>
+                            <li>Kişi/Kurum düzenleme penceresi otomatik açılır</li>
+                            <li>Pencere ekranın ortasında görüntülenir</li>
+                            <li>Düzenleme yapılmadan işleme devam edilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Taahhüt ve Banka İşlemleri Kontrolü:</h4>
+                <ol>
+                    <li>Taahhüt işlemleri için:
+                        <ul>
+                            <li>Sistem otomatik olarak kalan taahhüt tutarını kontrol eder</li>
+                            <li>Taahhüt tutarı aşıldığında uyarı mesajı görüntülenir</li>
+                            <li>Taahhüt kontrolü ekranın üst kısmında gösterilir</li>
+                        </ul>
+                    </li>
+                    <li>Banka bakiye kontrolleri:
+                        <ul>
+                            <li>İşlem sırasında banka hesabının bakiyesi kontrol edilir</li>
+                            <li>Yetersiz bakiye durumunda uyarı penceresi açılır</li>
+                            <li>Uyarı penceresi işlem butonlarının üzerinde görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Fiş Düzenleme Detaylı Adımları</h3>
+            <div class="step">
+                <h4>Mevcut Bir Fişi Düzenleme:</h4>
+                <ol>
+                    <li>Fiş bulma:
+                        <ul>
+                            <li>Yevmiye numarası ile arama yapın</li>
+                            <li>Veya takip numarası ile arama yapın</li>
+                            <li>Veya fiş numarası ile arama yapın</li>
+                        </ul>
+                    </li>
+                    <li>Fiş geldiğinde:
+                        <ul>
+                            <li>Tüm alanlar otomatik doldurulur</li>
+                            <li>Detay satırları tabloda görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li>Değişiklik yapma:
+                        <ul>
+                            <li>İlgili alana tıklayarak düzenleme yapın</li>
+                            <li>Yeni satır eklemek için "Yeni Satır" butonunu kullanın</li>
+                            <li>Satır silmek için ilgili satırı seçip "Sil" butonunu kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+    
+            <h3>3.3 Fiş Detay Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Fiş Detayları Nasıl Girilir?</h4>
+                <ol>
+                    <li>Ekranın orta bölümünde yer alan detay tablosunda yeni satır eklemek için "Yeni Satır" butonuna tıklayın. Bu buton tablonun üst kısmındadır.</li>
+                    <li>Hesap alanına tıklayarak muhasebe hesap kodunu seçin. Bu alan tablonun ilk kolonunda yer alır.</li>
+                    <li>Borç veya Alacak tutarını girin. Bu alanlar hesap kodu kolonunun sağında yer alır.</li>
+                    <li>Açıklama alanını doldurun. Bu alan tutar alanlarının sağında bulunur.</li>
+                </ol>
+                <div class="step">
+                    <h4>Toplu Hesap Kapama İşlemi:</h4>
+                    <ol>
+                        <li>Ekranın üst bölümünde yer alan "Toplu Hesap Kapama" butonuna tıklayın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Kişi/Kurum bilgisi otomatik gelir</li>
+                                <li>İlgili hesaplar listelenir</li>
+                                <li>Tutarlar otomatik hesaplanır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3>Muhasebe Kodları Girişi</h3>
+    <div class="step">
+        <h4>Hesap Kodu Seçimi:</h4>
+        <ol>
+            <li>Detay tablosunda hesap kodu alanına tıklayın</li>
+            <li>Hesap seçim penceresi açılır:
+                <ul>
+                    <li>Sol tarafta hesap grupları</li>
+                    <li>Sağ tarafta seçilen grubun alt hesapları</li>
+                </ul>
+            </li>
+            <li>Hesap tipine göre:
+                <ul>
+                    <li>Gider kodları için gider kodu seçim ekranı açılır</li>
+                    <li>Gelir kodları için gelir kodu seçim ekranı açılır</li>
+                    <li>KDV hesapları için KDV oranı seçimi yapılır</li>
+                </ul>
+            </li>
+            <li>Seçilen kodla ilgili:
+                <ul>
+                    <li>Ödenek kontrolü yapılır</li>
+                    <li>Yetki kontrolü yapılır</li>
+                    <li>KDV oranı kontrolü yapılır</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="step">
+            <h4>Hesap Yansıtma ve Kod Kontrolleri</h4>
+            <ol>
+                <li>Yansıtma hesabı kontrolü:
+                    <ul>
+                        <li>Sistem hesap kodunu parçalara ayırır</li>
+                        <li>Ayıraç karakterine göre kontrol yapılır (varsayılan "||")</li>
+                        <li>Eğer karakterIndex=0 ise (ayıraç bulunamazsa) sistem "Yansıtma Hesabı Bulunamadı" uyarısı verir</li>
+                    </ul>
+                </li>
+                <li>Hesap kodu parçalama işlemi:
+                    <ul>
+                        <li>Hesap numarası bölümlere ayrılır</li>
+                        <li>İstenen parça numarası kontrol edilir</li>
+                        <li>Array sınırları kontrol edilir</li>
+                        <li>Eğer istenen parça mevcutsa, ilgili değer döndürülür</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <strong>Önemli:</strong> Hesap kodu seçiminde yetkiniz dahilindeki kodları görebilirsiniz. Yetkiniz dışındaki kodlar listelenmez.
+    </div>
+</div>
+
+    
+            <div class="info-box">
+                <strong>Not:</strong> Fiş kaydederken tüm zorunlu alanların doldurulduğundan emin olun. Aksi halde sistem kaydetme işlemine izin vermez.
+            </div>
+    
+            <h3>3.4 Fiş Onaylama</h3>
+            <div class="step">
+                <h4>Fiş Nasıl Onaylanır?</h4>
+                <ol>
+                    <li>Tüm bilgileri girdikten sonra ekranın alt kısmında yer alan "Kaydet" butonuna tıklayın.</li>
+                    <li>Onay işlemi için:
+                        <ul>
+                            <li>"Fişi Onayla" seçeneği, alt bölümün sağ tarafında yer alır</li>
+                            <li>Onay kutusunu işaretlediğinizde sistem otomatik olarak yevmiye ve fiş numarası atar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="tip-box">
+                <strong>İpucu:</strong> Borç ve alacak toplamlarının eşit olduğundan emin olun. Bu toplamlar ekranın alt kısmında görüntülenir.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. Özel İşlemler ve KDV</h2>
+            <div class="step">
+                <h4>KDV İşlemleri Nasıl Yapılır?</h4>
+                <ol>
+                    <li>Ekranın alt kısmında yer alan "Özel İşlemler" butonuna tıklayın</li>
+                    <li>Açılan menüden "Gelir il Özel idare, B.şehir, KDV ayırma" seçeneğini seçin. Bu seçenek menünün üst kısmında bulunur.</li>
+                    <li>İşlem yapılacak hesabı seçin:
+                        <ul>
+                            <li>Borç tutarı alanının üstünde yer alan hesap kodunu seçerek</li>
+                            <li>KDV tutarını ilgili alana girerek</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Gelir Yansıtma İşlemi Nasıl Yapılır?</h4>
+                <ol>
+                    <li>"Özel İşlemler" butonundan "Gelir Yansıtma" seçeneğini seçin</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>805 hesabı otomatik gelecektir</li>
+                            <li>Yansıtılacak tutarı sistem otomatik hesaplar</li>
+                        </ul>
+                    </li>
+                    <li>Yansıt butonuna tıklayarak işlemi tamamlayın</li>
+                </ol>
+            </div>
+            
+            <h3>4.1 Mahsup İşlemleri</h3>
+            <div class="step">
+                <h4>Mahsup İşlemi Nasıl Yapılır?</h4>
+                <ol>
+                    <li>Özel İşlemler menüsünden "Mahsup İşlemleri"ni seçin</li>
+                    <li>Mahsup tipini belirleyin:
+                        <ul>
+                            <li>Ay sonu gider mahsubu</li>
+                            <li>Çek otomatik mahsup</li>
+                            <li>Aylık KDV mahsup</li>
+                        </ul>
+                    </li>
+                    <li>İşlemi onaylayın</li>
+                </ol>
+            </div>
+            
+            <h3>4.2 Entegrasyon İşlemleri</h3>
+            <div class="step">
+                <h4>Entegrasyon Nasıl Yapılır?</h4>
+                <ol>
+                    <li>Özel İşlemler butonuna tıklayın</li>
+                    <li>Menüden ilgili entegrasyon türünü seçin:
+                        <ul>
+                            <li>Memur bordro entegrasyonu</li>
+                            <li>İşçi bordro entegrasyonu</li>
+                            <li>Tahsilat entegrasyonu</li>
+                        </ul>
+                    </li>
+                    <li>Açılan pencerede tarihleri ve diğer kriterleri belirleyin</li>
+                    <li>Entegre Et butonuna tıklayın</li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <strong>Önemli:</strong> Entegrasyon işlemlerinden önce tüm verilerin eksiksiz olduğundan emin olun.
+            </div>
+            
+            <h3>4.3 Kesinti İşlemleri</h3>
+            <div class="step">
+                <h4>Kesinti İşlemleri Nasıl Yapılır?</h4>
+                <ol>
+                    <li>Fiş detaylarında kesinti yapılacak tutarı girin</li>
+                    <li>Kesinti hesap kodunu seçin</li>
+                    <li>Sistem otomatik olarak:
+                        <ul>
+                            <li>Damga vergisi hesaplar</li>
+                            <li>KDV kesintilerini yapar</li>
+                            <li>Diğer yasal kesintileri hesaplar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="section">
+            <h2>6. Raporlama ve Döküm İşlemleri</h2>
+            <div class="step">
+                <h4>Fiş Dökümü Nasıl Alınır?</h4>
+                <ol>
+                    <li>Alt kısımda yer alan "Fiş Dökümü" butonuna tıklayın</li>
+                    <li>Açılan ekranda:
+                        <ul>
+                            <li>Fiş tipi seçili olarak gelir</li>
+                            <li>Yevmiye numarası otomatik görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li>Yazdır butonuna tıklayarak dökümü alın</li>
+                </ol>
+            </div>
+            
+            <div class="info-box">
+                <strong>Not:</strong> Sistem her fiş tipi için ayrı bir döküm formatı kullanır:
+                <ul>
+                    <li>Muhasebe İşlem Fişi için standart format</li>
+                    <li>Ödeme Emri için resmi format</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Özel Durumlar ve İşlemler</h2>
+            <div class="step">
+                <h4>Devir Fişi İşlemleri</h4>
+                <ol>
+                    <li>Devir fişi oluşturmak için:
+                        <ul>
+                            <li>Özel İşlemler menüsünden "Devir fişi onayı" seçin</li>
+                            <li>Fişin devir fişi olduğunu belirten onay kutusu aktif hale gelir</li>
+                            <li>Ekranın üst bölümündeki onay kutusunu işaretleyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Gönderme Emri Oluşturma</h4>
+                <ol>
+                    <li>Özel İşlemler butonuna tıklayın</li>
+                    <li>Açılan menüden "Gönderme Emri" seçeneğini seçin</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>Hesap kodunu girin veya seçin</li>
+                            <li>Tutar bilgisi otomatik gelir</li>
+                            <li>Banka bilgileri üst kısımda gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Teslimat Müzekkeresi İşlemleri</h4>
+                <ol>
+                    <li>Özel İşlemler menüsünden "Teslimat Müzekkeresi"ni seçin</li>
+                    <li>Fiş bilgileri otomatik olarak gelir:
+                        <ul>
+                            <li>Hesap numarası</li>
+                            <li>Tutar</li>
+                            <li>Banka adı</li>
+                        </ul>
+                    </li>
+                    <li>Müzekkere numarası sistem tarafından otomatik atanır</li>
+                </ol>
+            </div>
+            
+            <h3>7.1 İcra Borcu Kontrolü</h3>
+            <div class="step">
+                <ol>
+                    <li>Kişi seçimi yapıldığında sistem otomatik kontrol yapar</li>
+                    <li>İcra borcu varsa:
+                        <ul>
+                            <li>Uyarı mesajı gösterilir</li>
+                            <li>İşleme devam edilip edilmeyeceği sorulur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <h3>7.2 Performans İşlemleri</h3>
+            <div class="step">
+                <h4>Performans Kontrolü</h4>
+                <ol>
+                    <li>830 nolu hesap için performans seçimi zorunludur</li>
+                    <li>Seçim yapılmamışsa:
+                        <ul>
+                            <li>Sistem uyarı verir</li>
+                            <li>Kaydetmeye izin vermez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <strong>Önemli:</strong> 2 nolu bütçe fişinde düzenleme yapılamaz. Sistem bunu otomatik olarak engeller.
+            </div>
+            <div class="info-box">
+                <h4>Sık Karşılaşılan Sistem Mesajları:</h4>
+                <ul>
+                    <li>"Borç ve Alacak toplamı eşit değil" - Toplamlar eşit olmadığında</li>
+                    <li>"Müdürlük Seçiniz" - Müdürlük seçimi yapılmadığında</li>
+                    <li>"TC Kimlik No ve Vergi Numarası girilmemiş" - Kişi bilgileri eksik olduğunda</li>
+                    <li>"Bu Fişe Ait Hareket Bilgileri Girilmemiş" - Boş fiş kaydedilmeye çalışıldığında</li>
+                    <li>"Ödenek Yetersiz" - Bütçe gider kaydında ödenek yetersiz olduğunda</li>
+                </ul>
+            </div>
+
+            <div class="header">
+                <h2>8. Özel İşlemler ve KDV</h2>
+            </div>
+        
+            <div class="section">
+                <h3>1. KDV İşlemleri</h3>
+                
+                <div class="step">
+                    <h4>KDV İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ekranın alt bölümünde bulunan "Özel İşlemler" butonuna tıklayın. Bu buton, fi işlemleri ekranının en altında, toplam alanlarının yanında yer alır.</li>
+                        <li>Açılan menüden "Gelir il Özel idare, B.şehir, KDV ayırma" seçeneğini seçin. Bu seçenek menünün üst kısmında yer alır.</li>
+                        <li>İşlem yapılacak hesabı seçin:
+                            <ul>
+                                <li>Borç tutarı alanının üstünde görünen hesap kodunu seçerek</li>
+                                <li>KDV tutarını ilgili alana girerek</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                    
+                <div class="step">
+                    <h4>Gelir Yansıtma İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>"Özel İşlemler" butonundan "Gelir Yansıtma" seçeneğini seçin</li>
+                        <li>Açılan pencerede göreceğiniz bilgiler:
+                            <ul>
+                                <li>805 hesabı otomatik olarak gelecektir</li>
+                                <li>Yansıtılacak tutar sistem tarafından otomatik hesaplanır</li>
+                            </ul>
+                        </li>
+                        <li>Pencerenin alt kısmında bulunan "Yansıt" butonuna tıklayarak işlemi tamamlayın</li>
+                    </ol>
+                </div>
+        
+                <h3>2. Mahsup İşlemleri</h3>
+                <div class="step">
+                    <h4>Mahsup İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Mahsup İşlemleri"ni seçin</li>
+                        <li>Karşınıza çıkan pencerede mahsup tipini seçin:
+                            <ul>
+                                <li>Ay sonu gider mahsubu</li>
+                                <li>Çek otomatik mahsup</li>
+                                <li>Aylık KDV mahsup</li>
+                            </ul>
+                        </li>
+                        <li>İşlemi onaylayın</li>
+                    </ol>
+                </div>
+                    
+                <h3>3. Entegrasyon İşlemleri</h3>
+                <div class="step">
+                    <h4>Entegrasyon Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler butonuna tıklayın</li>
+                        <li>Açılan menüden entegrasyon türünü seçin:
+                            <ul>
+                                <li>Memur bordro entegrasyonu</li>
+                                <li>İşçi bordro entegrasyonu</li>
+                                <li>Tahsilat entegrasyonu</li>
+                            </ul>
+                        </li>
+                        <li>Açılan pencerede tarihleri ve diğer kriterleri belirleyin. Bu pencere ekranın ortasında açılacaktır.</li>
+                        <li>Pencerenin alt kısmında bulunan "Entegre Et" butonuna tıklayın</li>
+                    </ol>
+                </div>
+                    
+                <div class="warning-box">
+                    <strong>Önemli:</strong> Entegrasyon işlemlerinden önce tüm verilerin eksiksiz olduğundan emin olun.
+                </div>
+                    
+                <h3>4. Kesinti İşlemleri</h3>
+                <div class="step">
+                    <h4>Kesinti İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Fiş detayları bölümünde kesinti yapılacak tutarı girin. Bu alan, ekranın orta kısmında yer alan detay tablosunda bulunur.</li>
+                        <li>Kesinti hesap kodunu seçin. Hesap kodu seçimi, tutar alanının yanında yer alır.</li>
+                        <li>Sistem otomatik olarak aşağıdaki hesaplamaları yapar:
+                            <ul>
+                                <li>Damga vergisi hesaplama</li>
+                                <li>KDV kesintileri</li>
+                                <li>Diğer yasal kesintiler</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>9. Kontroller ve Güvenlik</h2>
+            
+                <div class="step">
+                    <h4>Fiş Kontrolleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Borç/Alacak Kontrolü:
+                            <ul>
+                                <li>Ekranın alt kısmında yer alan toplam alanlarını kontrol edin. Bu alanlar, fiş işlemleri ekranının en altında bulunur.</li>
+                                <li>Borç ve alacak toplamları mutlaka eşit olmalıdır</li>
+                                <li>Eğer toplamlar arasında fark varsa, sistem kaydetme işlemine izin vermeyecektir</li>
+                            </ul>
+                        </li>
+                        <li>Hesap Kontrolü:
+                            <ul>
+                                <li>Seçilen hesapların yetkiniz dahilinde olduğunu kontrol edin. Bu kontrol, hesap seçimi yapıldığında otomatik olarak gerçekleşir.</li>
+                                <li>Sistem otomatik olarak hesap yetkilerini kontrol eder ve yetkisiz işlemlere izin vermez</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <h3>1. Otomatik Kontroller</h3>
+                <div class="step">
+                    <h4>Sistem Hangi Kontrolleri Otomatik Olarak Yapar?</h4>
+                    <ol>
+                        <li>Tarih Kontrolleri:
+                            <ul>
+                                <li>Kilitli dönemlere fiş girişini engeller. Bu kontrol tarih alanına veri girildiğinde otomatik olarak yapılır.</li>
+                                <li>Sistem yılı dışında fiş girişine izin vermez. Tarih alanı, ekranın üst kısmında fiş tipi seçiminin hemen yanında yer alır.</li>
+                            </ul>
+                        </li>
+                        <li>Hesap Uygunluğu:
+                            <ul>
+                                <li>Hesap planında olmayan kodların girilmesini engeller. Bu kontrol hesap kodu girildiğinde otomatik olarak yapılır.</li>
+                                <li>Kullanıcı yetkisi dışındaki hesapların kullanımını engeller. Yetki kontrolü hesap seçimi yapıldığında gerçekleşir.</li>
+                            </ul>
+                        </li>
+                        <li>Zorunlu Alan Kontrolleri:
+                            <ul>
+                                <li>Ad Soyad/Kurum bilgisinin girilmesi zorunludur. Bu alan ekranın üst kısmında yer alır.</li>
+                                <li>Müdürlük seçimi yapılmalıdır. Müdürlük seçim alanı, Ad Soyad/Kurum bilgisi alanının üstünde bulunur.</li>
+                                <li>Fiş açıklaması girilmelidir. Açıklama alanı detay satırlarında yer alır.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Personel Yetki Kontrolleri Nasıl Çalışır?</h4>
+                    <ol>
+                        <li>Sistem kullanıcı yetkilerine göre şu kontrolleri yapar:
+                            <ul>
+                                <li>Muhasebe İşlem Fişi veya Ödeme Emri seçeneklerini gösterir. Bu seçenekler ekranın üst kısmındaki fiş tipi açılır menüsünde yer alır.</li>
+                                <li>Sadece yetkili olunan müdürlük seçeneklerini listeler. Müdürlük seçenekleri, fiş tipi seçiminin altında bulunan açılır menüde görüntülenir.</li>
+                                <li>Fiş onaylama yetkisini kontrol eder. Onaylama seçeneği, ekranın alt kısmında yer alır.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli:</strong> Fiş silme işlemi yapmadan önce başka bir yevmiye kaydı ile ilişkili olup olmadığı kontrol edilir. İlişkili kayıt varsa sistem silmeye izin vermez.
+                </div>
+            
+                <h3>2. Fiş Onay Kontrolleri</h3>
+                <div class="step">
+                    <h4>Fiş Onaylanmadan Önce Yapılan Kontroller</h4>
+                    <ol>
+                        <li>Ödenek Kontrolleri:
+                            <ul>
+                                <li>Sistem kalan ödeneği otomatik olarak kontrol eder. Bu kontrol, fiş kaydedilirken yapılır.</li>
+                                <li>Ödenek yetersizse sistem ekranın ortasında bir uyarı mesajı gösterir</li>
+                            </ul>
+                        </li>
+                        <li>İrtibat Kontrolleri:
+                            <ul>
+                                <li>Gerekli hesaplar için irtibat bilgilerinin girilip girilmediği kontrol edilir</li>
+                                <li>Eksik irtibat bilgisi varsa sistem uyarı verir. Uyarı mesajı ekranın ortasında görüntülenir.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İpucu:</strong> Ekranın alt kısmında bulunan "Yansıt" butonu kullanılarak yansıtma işlemlerinin doğru yapılıp yapılmadığını kontrol edebilirsiniz. Bu buton, toplam alanlarının yanında yer alır.
+                </div>
+            
+                <div class="info-box">
+                    <h4>Sık Karşılaşılan Sistem Mesajları:</h4>
+                    <ul>
+                        <li>"Borç ve Alacak toplamı eşit değil" - Toplamlar eşit olmadığında görüntülenir</li>
+                        <li>"Müdürlük Seçiniz" - Müdürlük seçimi yapılmadığında görüntülenir</li>
+                        <li>"TC Kimlik No ve Vergi Numarası girilmemiş" - Kişi bilgileri eksik olduğunda görüntülenir</li>
+                        <li>"Bu Fişe Ait Hareket Bilgileri Girilmemiş" - Boş fiş kaydedilmeye çalışıldığında görüntülenir</li>
+                        <li>"Ödenek Yetersiz" - Bütçe gider kaydında ödenek yetersiz olduğunda görüntülenir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>10. Raporlama ve Döküm İşlemleri</h2>
+                
+                <div class="step">
+                    <h4>Fiş Dökümü Nasıl Alınır?</h4>
+                    <ol>
+                        <li>Ekranın alt kısmında yer alan "Fiş Dökümü" butonuna tıklayın. Bu buton, diğer işlem butonlarının yanında yer almaktadır.</li>
+                        <li>Açılan ekranda şu bilgiler otomatik olarak gelecektir:
+                            <ul>
+                                <li>Fiş tipi seçili olarak görüntülenir</li>
+                                <li>Yevmiye numarası otomatik olarak doldurulur</li>
+                            </ul>
+                        </li>
+                        <li>Ekranın alt kısmında bulunan "Yazdır" butonuna tıklayarak dökümü alın</li>
+                    </ol>
+                </div>
+                        
+                <div class="info-box">
+                    <strong>Not:</strong> Sistem her fiş tipi için farklı bir döküm formatı kullanır:
+                    <ul>
+                        <li>Muhasebe İşlem Fişi için standart format kullanılır</li>
+                        <li>Ödeme Emri için resmi format kullanılır</li>
+                    </ul>
+                </div>
+            
+                <h3>Özel Durumlar ve İşlemler</h3>
+                
+                <div class="step">
+                    <h4>Devir Fişi İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Devir fişi oluşturmak için:
+                            <ul>
+                                <li>Özel İşlemler menüsünden "Devir fişi onayı" seçeneğini seçin</li>
+                                <li>Bu seçim yapıldığında, fişin devir fişi olduğunu belirten onay kutusu aktif hale gelir</li>
+                                <li>Ekranın üst bölümündeki onay kutusunu işaretleyin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                        
+                <div class="step">
+                    <h4>Gönderme Emri Nasıl Oluşturulur?</h4>
+                    <ol>
+                        <li>Ekranın alt kısmında bulunan "Özel İşlemler" butonuna tıklayın</li>
+                        <li>Açılan menüden "Gönderme Emri" seçeneğini seçin</li>
+                        <li>Açılan pencerede şu işlemleri yapın:
+                            <ul>
+                                <li>Hesap kodunu girin veya seçin. Hesap kodu seçim alanı pencerenin üst kısmında yer alır.</li>
+                                <li>Tutar bilgisi otomatik olarak gelecektir</li>
+                                <li>Banka bilgileri pencerenin üst kısmında gösterilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                        
+                <div class="step">
+                    <h4>Teslimat Müzekkeresi İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Teslimat Müzekkeresi" seçeneğini seçin. Bu menü ekranın alt kısmında yer alır.</li>
+                        <li>Açılan pencerede fiş bilgileri otomatik olarak doldurulur:
+                            <ul>
+                                <li>Hesap numarası pencenin üst kısmında görüntülenir</li>
+                                <li>Tutar bilgisi otomatik olarak gelir</li>
+                                <li>Banka adı ilgili alana otomatik yazılır</li>
+                            </ul>
+                        </li>
+                        <li>Müzekkere numarası sistem tarafından otomatik olarak atanır ve ilgili alanda gösterilir</li>
+                    </ol>
+                </div>
+            
+                <h3>İcra Borcu Kontrolü</h3>
+                <div class="step">
+                    <ol>
+                        <li>Kişi seçimi yapıldığında sistem otomatik olarak icra borcu kontrolü yapar. Bu kontrol Ad Soyad alanına veri girildiğinde gerçekleşir.</li>
+                        <li>İcra borcu tespit edilirse:
+                            <ul>
+                                <li>Ekranın ortasında bir uyarı mesajı gösterilir</li>
+                                <li>İşleme devam edilip edilmeyeceği sorulur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <h3>Performans İşlemleri</h3>
+                <div class="step">
+                    <h4>Performans Kontrolü Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>830 nolu hesap için performans seçimi zorunludur. Bu hesap seçildiğinde sistem otomatik olarak kontrol yapar.</li>
+                        <li>Performans seçimi yapılmamışsa:
+                            <ul>
+                                <li>Sistem ekranın ortasında bir uyarı mesajı gösterir</li>
+                                <li>Kaydetme işlemine izin verilmez</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                        
+                <div class="warning-box">
+                    <strong>Önemli:</strong> 2 nolu bütçe fişinde düzenleme yapılamaz. Sistem bu tür fişlerde düzenleme yapılmasını otomatik olarak engeller.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Özel Durumlar ve İşlemler</h2>
+            
+                <div class="step">
+                    <h4>Avans Kapama İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ekranın alt kısmında bulunan "Avans/Kişi Borcu Kapama" butonuna tıklayın. Bu buton, diğer işlem butonlarının yanında yer alır.</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Ad Soyad alanı pencerenin üst kısmında yer alır. Buraya kişi bilgisini girin veya yanındaki arama butonunu kullanarak seçim yapın.</li>
+                                <li>Ad Soyad alanının yanında bulunan büyüteç ikonuna tıklayarak kişi arama penceresini açabilirsiniz.</li>
+                            </ul>
+                        </li>
+                        <li>Kişi seçimi yapıldıktan sonra:
+                            <ul>
+                                <li>İlgili avans bilgileri otomatik olarak yüklenir</li>
+                                <li>Kapama işlemi için gerekli hesap kodları sistem tarafından otomatik seçilir</li>
+                            </ul>
+                        </li>
+                        <li>Pencerenin alt kısmında yer alan "Tamam" butonuna tıklayarak işlemi onaylayın</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Toplu Hesap Kapama İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ekranın alt kısmında bulunan "Toplu Hesap Kapama" butonuna tıklayın</li>
+                        <li>Açılan pencerede şu alanları doldurun:
+                            <ul>
+                                <li>Hesap No: Kapama yapılacak hesabı seçin. Hesap seçimi için alanın yanındaki büyüteç ikonunu kullanabilirsiniz.</li>
+                                <li>Tarih (İlk/Son): Kapama işleminin tarih aralığını belirleyin. Bu alanlar pencerenin üst kısmında yan yana yer alır.</li>
+                                <li>Adı Soyadı: İlgili kişiyi seçin veya arama yapın</li>
+                                <li>Daire: Açılır menüden ilgili daireyi seçin</li>
+                                <li>Belge Tarih (İlk/Son): Belge tarih aralığını girin</li>
+                            </ul>
+                        </li>
+                        <li>Tüm bilgileri girdikten sonra "Tamam" butonuna tıklayın</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Otomatik Emanet Kapama İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>İlgili hesap satırında, ekranın alt kısmında bulunan emanet oto butonuna tıklayın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Tarih aralığını belirleyin. Tarih alanları pencerenin üst kısmında yan yana yer alır.</li>
+                                <li>"Önceki Ay" butonu ile bir önceki ayın tarih aralığını otomatik olarak doldurabilirsiniz</li>
+                                <li>Ad Soyad alanını doldurun veya arama yapın</li>
+                            </ul>
+                        </li>
+                        <li>Bilgileri girdikten sonra "Tamam" butonuna tıklayın</li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli:</strong> Emanetten ödeme işlemi yapmadan önce emanet hesaplarının kapanış kayıtlarının girilmiş olması gerekmektedir.
+                </div>
+            
+                <div class="step">
+                    <h4>Taahhüt/Hakediş İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ekranın sol üst kısmında bulunan "Tahsis/Taahhüt İşlemleri" butonuna tıklayın</li>
+                        <li>Açılan menüden:
+                            <ul>
+                                <li>Tahsis işlemleri için "Tahsis Bilgisi Göster" seçeneğini kullanın</li>
+                                <li>Taahhüt işlemleri için "Taahhüt Bilgisi Göster" seçeneğini seçin</li>
+                            </ul>
+                        </li>
+                        <li>Taahhüt hakediş ödemesi için:
+                            <ul>
+                                <li>Menüden "Taahhüt Hakediş Ödemesi" seçeneğini seçin</li>
+                                <li>Açılan pencerede taahhüt bilgilerini seçin</li>
+                                <li>Hakediş tutarını girin</li>
+                            </ul>
+                        </li>
+                        <li>Taahhüt avans verme işlemi için:
+                            <ul>
+                                <li>Menüden "Taahhüt Avans Verme" seçeneğini seçin</li>
+                                <li>Açılan pencerede avans tutarını ve diğer bilgileri girin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İpucu:</strong> Taahhüt işlemlerinde, sistem otomatik olarak kalan taahhüt tutarını kontrol eder ve aşım durumunda uyarı verir. Bu kontrol taahhüt koduna bağlı işlemler yapılırken otomatik olarak gerçekleşir.
+                </div>
+            
+                <div class="step">
+                    <h4>Gider Kodu Seçimi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Fiş detayları bölümünde, gider kodu alanına tıklayın veya yanındaki arama butonunu kullanın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Sol tarafta gider grupları listelenir</li>
+                                <li>Sağ tarafta seçilen grubun alt kodları görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>İlgili gider kodunu seçtiğinizde:
+                            <ul>
+                                <li>Sistem otomatik olarak ödenek kontrolü yapar</li>
+                                <li>Yetki kontrolü gerçekleştirilir</li>
+                                <li>KDV oranı kontrolü yapılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Dikkat:</strong> 
+                    <ul>
+                        <li>Ödenek tahsisi ile ilişkili kayıtlarda gider kodu değiştirilemez</li>
+                        <li>Taahhüt kartı ile ilişkili kayıtlarda gider kodu değiştirilemez</li>
+                        <li>Taşınır işlem fişi ile ilişkili kayıtlarda gider kodu değiştirilemez</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Entegrasyon ve Özel İşlemler</h2>
+            
+                <div class="step">
+                    <h4>Tahsilat Entegrasyonu Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Tahsilat Entegrasyonu" seçeneğini seçin. Bu seçenek ekranın alt kısmında yer alan "Özel İşlemler" menüsünde bulunur.</li>
+                        <li>Açılan pencerede şu bilgileri girin:
+                            <ul>
+                                <li>İlk Tarih ve Son Tarih: Entegrasyon yapılacak tarih aralığını belirtin</li>
+                                <li>Seri Numarası: İlk seri ve son seri numaralarını girin</li>
+                                <li>Makbuz Numarası: İlk makbuz ve son makbuz numaralarını belirtin</li>
+                                <li>Kullanıcı: İlgili kullanıcıyı seçin</li>
+                                <li>Banka Hesap No ve KK Hesap No: Gerekli banka bilgilerini girin</li>
+                                <li>Ödeme Şekli: Açılır menüden ödeme şeklini seçin</li>
+                            </ul>
+                        </li>
+                        <li>Bilgileri girdikten sonra "Entegrasyon Başlat" butonuna tıklayın</li>
+                        <li>İşlem tamamlandığında sistem otomatik olarak "ODEENT" özel kodunu fişe ekleyecektir</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Tahsilat İade/Mahsup İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Tahsilat İade/Mahsup" seçeneğini seçin</li>
+                        <li>Açılan filtreleme penceresinde:
+                            <ul>
+                                <li>Sicil numarası: İade yapılacak kişinin sicil numarasını girin</li>
+                                <li>İlk tarih ve son tarih: İade işleminin tarih aralığını belirleyin</li>
+                            </ul>
+                        </li>
+                        <li>Filtreleme penceresi ekranın üst orta kısmında açılacaktır</li>
+                        <li>İşlem tamamlandığında "IADEMAHSUP" özel kodu fişe otomatik olarak eklenecektir</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Memur Bordro Entegrasyonu Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Memur Bordro Entegrasyonu" seçeneğini seçin</li>
+                        <li>Açılan pencerede şu bilgileri belirtin:
+                            <ul>
+                                <li>Sicil tipi: İlgili personel tipini seçin</li>
+                                <li>Bölümler: Entegrasyon yapılacak bölümleri seçin</li>
+                                <li>Maaş tipi: Açılır menüden maaş tipini belirleyin</li>
+                                <li>Yıl ve ay: İlgili dönemi seçin</li>
+                                <li>Sicil aralığı: İlk sicil ve son sicil numaralarını girin</li>
+                                <li>Avans durumu: Avans ödemesi yapılıp yapılmayacağını belirtin</li>
+                            </ul>
+                        </li>
+                        <li>Bilgileri girdikten sonra "Entegrasyon Başlat" butonuna tıklayın</li>
+                        <li>İşlem başarıyla tamamlandığında sistem "MEMENT" özel kodunu fişe ekleyecektir</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>İşçi Bordro Entegrasyonu Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "İşçi Bordro Entegrasyonu" seçeneğini seçin</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Sicil tipi ve bölüm bilgilerini seçin</li>
+                                <li>Dönem bilgilerini (yıl ve ay) girin</li>
+                                <li>Sicil aralığını belirtin</li>
+                                <li>Avans durumunu işaretleyin</li>
+                            </ul>
+                        </li>
+                        <li>İşlem tamamlandığında "ISCENT" özel kodu fişe otomatik olarak eklenecektir</li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli:</strong> Entegrasyon işlemleri sırasında kayıtlı olan yevmiye üzerinde işlem yapılamaz. Bu durumda sistem uyarı verecek ve işleme izin vermeyecektir.
+                </div>
+            
+                <div class="step">
+                    <h4>Mahsup Alındısı Nasıl Oluşturulur?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden "Mahsup Alındısı" seçeneğini seçin</li>
+                        <li>Açılan pencerede şu bilgiler otomatik olarak görüntülenir:
+                            <ul>
+                                <li>Ad Soyad bilgisi</li>
+                                <li>Tarih</li>
+                                <li>Kimlik numarası</li>
+                                <li>Yevmiye numarası</li>
+                                <li>Vergi numarası</li>
+                                <li>Adres bilgileri</li>
+                            </ul>
+                        </li>
+                        <li>830 hesap kodlu işlemlerde:
+                            <ul>
+                                <li>Fatura tarihi ve numarası otomatik olarak alınır</li>
+                                <li>Belge türü "FATURA" olarak işaretlenir</li>
+                            </ul>
+                        </li>
+                        <li>İşlem başarılı olduğunda "MAHSUPALINDI" özel kodu fişe eklenir</li>
+                    </ol>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İpucu:</strong> Entegrasyon işlemlerinde bölüm açıklaması girildiyse, bu açıklama otomatik olarak fiş açıklamasına eklenir. Açıklama alanı mevcut açıklamanın alt satırına eklenir.
+                </div>
+            
+                <div class="info-box">
+                    <strong>Not:</strong> Her entegrasyon işleminin kendine özgü bir özel kodu vardır ve bu kod işlem sonunda fişe otomatik olarak eklenir. Bu kodlar:
+                    <ul>
+                        <li>MEMENT: Memur bordro entegrasyonu</li>
+                        <li>ISCENT: İşçi bordro entegrasyonu</li>
+                        <li>ODEENT: Tahsilat entegrasyonu</li>
+                        <li>IADEMAHSUP: Tahsilat iade/mahsup</li>
+                        <li>MAHSUPALINDI: Mahsup alındısı</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Dosya ve Döküman İşlemleri</h2>
+            
+                <div class="step">
+                    <h4>Dosya Ekleme İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Öncelikle fişi kaydetmiş olmanız gerekir. Kayıtlı olmayan fişlere dosya eklenemez.</li>
+                        <li>Ekranın alt kısmındaki kontrol butonları arasında yer alan "Dosya Ekle" butonuna tıklayın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Eklenecek dosyayı seçin</li>
+                                <li>Dosya türünü belirleyin</li>
+                                <li>Varsa açıklama ekleyin</li>
+                            </ul>
+                        </li>
+                        <li>Ekli dosya sayısı, ekranın sağ üst köşesinde "X Ekli Dosya Var" şeklinde görüntülenir</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Arşiv Döküman İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Fişin kayıtlı olduğundan emin olun</li>
+                        <li>Ekranın alt kısmında bulunan "Arşiv Döküman" butonuna tıklayın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Döküman tipi seçin</li>
+                                <li>Döküman açıklaması girin</li>
+                                <li>Dökümanı yükleyin</li>
+                            </ul>
+                        </li>
+                        <li>Pencere boyutları:
+                            <ul>
+                                <li>Genişlik: 700 piksel</li>
+                                <li>Yükseklik: 500 piksel</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Evrak Ekleme İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ana ekranın alt kısmında bulunan "Evrak Ekle" butonuna tıklayın</li>
+                        <li>Açılan yükleme formunda:
+                            <ul>
+                                <li>Evrak türünü seçin</li>
+                                <li>Evrak dosyasını belirleyin</li>
+                                <li>Açıklama ekleyin</li>
+                            </ul>
+                        </li>
+                        <li>Yükleme tamamlandığında "saveevr" mesajı görüntülenir</li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>EBYS (Elektronik Belge Yönetim Sistemi) İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ana ekranın alt kısmında bulunan "EBYS" butonuna tıklayın. Bu buton diğer işlem butonlarının yanında yer alır.</li>
+                        <li>EBYS sisteminde etiket yapısı şu şekildedir:
+                            <ul>
+                                <li>Yıl: 12 karakter</li>
+                                <li>Yevmiye No: 8 karakter</li>
+                            </ul>
+                        </li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Yevmiye numarasını girin</li>
+                                <li>İlgili yılı seçin</li>
+                                <li>Belge tipini belirleyin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>PDF Görüntüleme Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>İlgili fişin yevmiye numarasının girilmiş olduğundan emin olun</li>
+                        <li>Ekranın alt kısmında yer alan "PDF Göster" butonuna tıklayın</li>
+                        <li>Fiş tipine göre sistem:
+                            <ul>
+                                <li>Muhasebe İşlem Fişi için standart PDF formatını</li>
+                                <li>Ödeme Emri için resmi PDF formatını kullanır</li>
+                            </ul>
+                        </li>
+                        <li>PDF görüntüleyici penceresi:
+                            <ul>
+                                <li>Genişlik: 750 piksel</li>
+                                <li>Yükseklik: 500 piksel</li>
+                                <li>Ekranın ortasında açılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli:</strong>
+                    <ul>
+                        <li>Yevmiye numarası girilmemiş fişler için PDF görüntüleme yapılamaz</li>
+                        <li>Arşiv dökümanı eklemek için fişin önce kaydedilmiş olması gerekir</li>
+                        <li>Eklenen dökümanlar sadece yetkili kullanıcılar tarafından görüntülenebilir</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Dosya İşlemleri İle İlgili Önemli Notlar:</h4>
+                    <ul>
+                        <li>Dosya ekleme işlemi sadece kayıtlı fişler için yapılabilir</li>
+                        <li>Ekli dosya sayısı ekranın sağ üst köşesinde gösterilir</li>
+                        <li>EBYS ile entegrasyon için gerekli etiket yapısı sistem tarafından otomatik oluşturulur</li>
+                        <li>Arşiv dökümanları için maksimum dosya boyutu sınırlaması vardır</li>
+                        <li>PDF görüntüleme özelliği hem muhasebe fişleri hem de ödeme emirleri için kullanılabilir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Yevmiye ve Fiş Kayıt İşlemleri</h2>
+            
+                <div class="step">
+                    <h4>Yevmiye Numarası Kontrolleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Yevmiye numarası kontrolü için:
+                            <ul>
+                                <li>Ekranın üst kısmında bulunan yevmiye no alanına tıklayın</li>
+                                <li>Sistem otomatik olarak en son yevmiye numarasını kontrol eder</li>
+                                <li>Boş yevmiye numarası kontrolü yapılır. Boş yevmiye numarası sınırı sistem parametrelerinden belirlenir.</li>
+                            </ul>
+                        </li>
+                        <li>Kontrol sonuçları:
+                            <ul>
+                                <li>Girilen yevmiye numarası son yevmiye numarasından belirlenen sınırdan fazla büyükse sistem uyarı verir</li>
+                                <li>Bu durumda sistem otomatik olarak son yevmiye numarasının bir fazlasını önerir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Alt Yevmiye İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Alt yevmiye kaydı gereken durumlarda:
+                            <ul>
+                                <li>Sistem otomatik olarak ana yevmiye ve alt yevmiye numaralarını kontrol eder</li>
+                                <li>Birden fazla alt yevmiye varsa "Alt Yevmiye Göster" penceresi açılır</li>
+                            </ul>
+                        </li>
+                        <li>Alt Yevmiye Göster penceresinde:
+                            <ul>
+                                <li>Ana yevmiye numarasını seçin</li>
+                                <li>Alt yevmiye numarasını seçin</li>
+                                <li>İlgili kayıtları görüntüleyin</li>
+                            </ul>
+                        </li>
+                        <li>Döküm alma işlemi için:
+                            <ul>
+                                <li>Ana yevmiye numarası ve alt yevmiye numarası otomatik olarak forma aktarılır</li>
+                                <li>Seçilen kayda ait döküm alınır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Kaydeden Bilgisi Kontrolü Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Kaydeden bilgisi görüntüleme:
+                            <ul>
+                                <li>Kaydeden alanının yanındaki bilgi ikonuna tıklayın</li>
+                                <li>Açılan pencerede değişiklik yapan tüm kullanıcıları görebilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>Log bilgileri şunları içerir:
+                            <ul>
+                                <li>Kullanıcı adı</li>
+                                <li>İşlem tarihi ve saati</li>
+                                <li>Yapılan değişiklikler</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Açıklama İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Fiş açıklaması ekleme:
+                            <ul>
+                                <li>Ekranın üst kısmındaki açıklama simgesine tıklayın</li>
+                                <li>Açılan metin alanına açıklamayı girin</li>
+                                <li>Açıklama otomatik olarak ana fiş bilgilerine eklenir</li>
+                            </ul>
+                        </li>
+                        <li>Detaylı açıklama için:
+                            <ul>
+                                <li>Genel bilgiler simgesine tıklayın</li>
+                                <li>Açıklama tablosunu görüntüleyin</li>
+                                <li>İstediğiniz detayda açıklama ekleyin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontroller:</strong>
+                    <ul>
+                        <li>Fişi kaydetmeden evrak ekleme işlemi yapılamaz</li>
+                        <li>Kayıtlı fiş üzerinde hakediş ödemesi yapılamaz</li>
+                        <li>Alt yevmiye numarası olan fişlerde tüm kontroller ana yevmiye üzerinden yapılır</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Özel Durum Kontrolleri:</h4>
+                    <ul>
+                        <li>Taşınır işlem fişi ile ilişkili kayıtlarda özel kontroller yapılır</li>
+                        <li>İcra borcu olan kişiler için sistem otomatik uyarı verir</li>
+                        <li>Taahhüt/tahsis ilişkili fişlerde değişiklik kısıtlamaları vardır</li>
+                        <li>Her değişiklik işlemi kullanıcı bazında loglanır ve görüntülenebilir</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Pratik İpuçları:</strong>
+                    <ul>
+                        <li>Kaydeden bilgisi ikonuna tıklayarak tüm değişiklik geçmişini görebilirsiniz</li>
+                        <li>Alt yevmiye işlemlerinde ana yevmiye-alt yevmiye ilişkisini mutlaka kontrol edin</li>
+                        <li>Açıklama alanını kullanarak fişle ilgili önemli notları ekleyebilirsiniz</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun, önemli kontrol bilgileri içerebilir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Sistem Kontrolleri ve Kullanıcı Yetkileri</h2>
+            
+                <div class="step">
+                    <h4>Taahhüt ve Banka İşlemleri Kontrolleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Taahhüt işlemleri kontrolü:
+                            <ul>
+                                <li>Sistem otomatik olarak kalan taahhüt tutarını kontrol eder</li>
+                                <li>Kontrol ekranın üst kısmında gösterilir</li>
+                                <li>Taahhüt tutarı aşıldığında ekranın ortasında bir uyarı mesajı görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Banka bakiye kontrolleri:
+                            <ul>
+                                <li>İşlem sırasında ilgili banka hesabının bakiyesi otomatik kontrol edilir</li>
+                                <li>Yetersiz bakiye durumunda sistem bir uyarı penceresi açar</li>
+                                <li>Uyarı penceresi işlem butonlarının üzerinde görüntülenir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>TC/Vergi No Kontrolü ve İlgili İşlemler</h4>
+                    <ol>
+                        <li>Kişi/Kurum seçildiğinde sistem şu otomatik kontrolleri yapar:
+                            <ul>
+                                <li>TC Kimlik numarası kontrolü (11 hane)</li>
+                                <li>Vergi numarası kontrolü (10 hane)</li>
+                            </ul>
+                        </li>
+                        <li>Bilgiler eksik veya hatalıysa:
+                            <ul>
+                                <li>Kişi/Kurum düzenleme penceresi ekranın ortasında otomatik açılır</li>
+                                <li>Düzenleme yapılmadan işleme devam edilemez</li>
+                                <li>Düzenleme penceresi açıldığında diğer işlemler kilitlenir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Tertip Kodu İşlemleri ve Kontrolleri</h4>
+                    <ol>
+                        <li>Tertip kodu kontrolü:
+                            <ul>
+                                <li>830 nolu hesap için tertip kodu seçimi zorunludur</li>
+                                <li>Tertip kodu alanı hesap seçimi yapıldığında aktif hale gelir</li>
+                                <li>900 ve 905 hesaplarda tertip kodu otomatik kontrol edilir</li>
+                            </ul>
+                        </li>
+                        <li>Tertip kodu uyumsuzluğunda:
+                            <ul>
+                                <li>Sistem ekranın ortasında bir uyarı mesajı gösterir</li>
+                                <li>İlgili hesap ve tertip kodu gösterilir</li>
+                                <li>İşlem tamamlanmadan devam edilemez</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Yansıtma İşlemleri Kontrolleri</h4>
+                    <ol>
+                        <li>830 ve 835 hesapları için:
+                            <ul>
+                                <li>Borç ve alacak toplamları karşılaştırılır</li>
+                                <li>Toplamlar farklı ise sistem uyarı verir</li>
+                                <li>Uyarı mesajında toplam tutarlar gösterilir</li>
+                            </ul>
+                        </li>
+                        <li>900 ve 905 hesapları için:
+                            <ul>
+                                <li>Yansıtma tutarları otomatik kontrol edilir</li>
+                                <li>Tutar uyumsuzluğunda işlem engellenir</li>
+                                <li>Kontrol sonuçları ekranda detaylı olarak gösterilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Yetki Kontrolleri:</strong>
+                    <ul>
+                        <li>Hesap kodları sadece yetki dahilinde görüntülenir ve seçilebilir</li>
+                        <li>Müdürlük seçenekleri kullanıcı yetkisine göre filtrelenir</li>
+                        <li>Fiş onaylama yetkisi olmayan kullanıcılar onay işlemi yapamaz</li>
+                        <li>Kilitli dönemlerde sadece yetkili kullanıcılar işlem yapabilir</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Hata Önleyici Kontroller:</strong>
+                    <ul>
+                        <li>İrtibat kontrollerinin yapılması ve eksikliklerin tamamlanması gerekir</li>
+                        <li>Ödenek kontrolü yapılmadan işlem tamamlanamaz</li>
+                        <li>Terkin işlemlerinde zaman aşımı kontrolü otomatik yapılır</li>
+                        <li>KDV oranları ve hesapları sistem tarafından kontrol edilir</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Otomatik Sistem Bildirimleri:</h4>
+                    <ul>
+                        <li>Kişi borcu olan mükelleflerde otomatik uyarı gösterilir</li>
+                        <li>İcra takibi olan kişilerde işlem öncesi bildirim yapılır</li>
+                        <li>Taahhüt limiti aşımında detaylı bilgilendirme gösterilir</li>
+                        <li>Yetersiz bakiye durumunda işlem öncesi uyarı verilir</li>
+                        <li>Yansıtma tutarlarındaki uyumsuzluklar anında bildirilir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Özel Hesaplamalar ve KDV İşlemleri</h2>
+            
+                <div class="step">
+                    <h4>KDV Yansıtma İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ana ekranda bulunan "Özel İşlemler" butonuna tıklayın</li>
+                        <li>Gelen menüden "KDV Hesaplama ve Yansıtma" seçeneğini seçin</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>İlgili hesap kodunu seçin. Bu alan pencerenin üst kısmında yer alır.</li>
+                                <li>KDV oranını belirleyin. KDV oranı seçimi hesap kodunun altında bulunur.</li>
+                                <li>KDV matrahını girin. Matrah alanı KDV oranı seçiminin altındadır.</li>
+                            </ul>
+                        </li>
+                        <li>KDV hesaplaması sonrası:
+                            <ul>
+                                <li>191 Hesaba KDV tutarı otomatik kaydedilir</li>
+                                <li>Her 830 hesabı için seçilen yansıtma hesabına KDV hariç tutar yazılır</li>
+                                <li>Sistem otomatik olarak KDV tutarını hesaplar ve ilgili alana yazar</li>
+                            </ul>
+                        </li>
+                        <li>Özel durumlar için:
+                            <ul>
+                                <li>Tevkifat yapılacaksa ilgili alanı işaretleyin</li>
+                                <li>KDV alt kırım varsa bunu belirtin</li>
+                                <li>Emanet hesap tipini seçin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <li>KDV Alt Kırım İşlemleri:
+                    <ul>
+                        <li>KDV alt kırım varsa ilgili alanı işaretleyin</li>
+                        <li>Belediye kodu kontrolü otomatik yapılır (31400, 30300, 30501 için özel kontroller)</li>
+                        <li>KDV alt kırım değeri sistem tarafından kontrol edilir ve ilgili hesaplara yansıtılır</li>
+                    </ul>
+                </li>
+            
+                <div class="step">
+                    <h4>Emanet KDV İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>KDV emanet işlemi için:
+                            <ul>
+                                <li>Ekranın üst kısmında yer alan KDV türü seçimini yapın</li>
+                                <li>Emanet türünü belirleyin. Bu seçim KDV türü seçiminin altında yer alır.</li>
+                                <li>KDV emanet tutarını girin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>KDV matrahını hesaplar</li>
+                                <li>KDV oranına göre tutarı belirler</li>
+                                <li>Emanet hesap tipine göre ilgili hesaplara kayıt atar</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Kesinti İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Kesinti yapılacak tutarın girişi:
+                            <ul>
+                                <li>Fiş detaylarında kesinti tutarını girin</li>
+                                <li>Kesinti tipini seçin</li>
+                                <li>Kesinti hesabını belirleyin</li>
+                            </ul>
+                        </li>
+                        <li>Otomatik hesaplamalar:
+                            <ul>
+                                <li>Damga vergisi otomatik hesaplanır</li>
+                                <li>KDV kesintileri belirlenir</li>
+                                <li>Diğer yasal kesintiler sistem tarafından hesaplanır</li>
+                            </ul>
+                        </li>
+                        <li>Hakediş kesintileri için:
+                            <ul>
+                                <li>Taahhüt ID kontrol edilir</li>
+                                <li>Tahsis ID kontrol edilir</li>
+                                <li>İşlem tipleri belirlenir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Gider KDV Yansıtma İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Özel İşlemler menüsünden:
+                            <ul>
+                                <li>"Gider KDV Yansıtma" seçeneğini seçin</li>
+                                <li>KDV hesap tipini belirleyin</li>
+                                <li>KDV alt kırım varsa girin</li>
+                            </ul>
+                        </li>
+                        <li>Yansıtma hesabı seçimi için:
+                            <ul>
+                                <li>Sistem otomatik olarak hesap önerir</li>
+                                <li>Önerilen hesabı kontrol edin</li>
+                                <li>Gerekirse farklı bir hesap seçin</li>
+                            </ul>
+                        </li>
+                        <li>Yansıtma kontrolleri:
+                            <ul>
+                                <li>900 hesabı kontrol edilir</li>
+                                <li>905 hesabı kontrol edilir</li>
+                                <li>835 hesabına yansıtma yapılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Noktalar:</strong>
+                    <ul>
+                        <li>KDV oranları sistem parametrelerinden kontrol edilir</li>
+                        <li>Emanet hesap tipleri doğru seçilmelidir</li>
+                        <li>Taahhüt ilişkili işlemlerde özel kontroller yapılır</li>
+                        <li>Hakediş ödemelerinde kesinti kontrolü zorunludur</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>KDV yansıtma öncesi tutarları mutlaka kontrol edin</li>
+                        <li>Emanet hesap tiplerini işlem öncesi doğrulayın</li>
+                        <li>Kesinti işlemlerinde yasal oranları kontrol edin</li>
+                        <li>Taahhüt ilişkili işlemlerde ID kontrolü yapın</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Sistem Otomatik Hesaplamaları:</h4>
+                    <p>Aşağıdaki hesaplamalar sistem tarafından otomatik yapılır:</p>
+                    <ul>
+                        <li>KDV matrah hesaplaması</li>
+                        <li>KDV tevkifat tutarları</li>
+                        <li>Emanet hesap dağılımları</li>
+                        <li>Kesinti tutarları</li>
+                        <li>Yansıtma tutarları</li>
+                        <li>900-905 hesap kontrolleri</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Hakediş ve Taahhüt İşlemleri</h2>
+            
+                <div class="step">
+                    <h4>Hakediş İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ekranın sol üst kısmında bulunan "Tahsis/Taahhüt İşlemleri" butonuna tıklayın</li>
+                        <li>Hakediş ödemesi için:
+                            <ul>
+                                <li>Taahhüt seçim ekranını açın</li>
+                                <li>Açılan pencerede geçerli birim kodunu kontrol edin</li>
+                                <li>Kişi bilgisi varsa ilgili kişiyi seçin</li>
+                            </ul>
+                        </li>
+                        <li>Taahhüt seçimi sonrasında:
+                            <ul>
+                                <li>Sistem kurumsal kodu otomatik doldurur</li>
+                                <li>Kişi bilgileri otomatik olarak forma aktarılır</li>
+                                <li>Hakediş tutarı girilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <li>Taşınır İşlem Kontrolü:
+                        <ul>
+                            <li>Taşınır işlem detay ID sistem tarafından kontrol edilir</li>
+                            <li>İlgili muhasebe kodları otomatik eşleştirilir</li>
+                            <li>Hakediş ödemelerinde taşınır ilişkisi kontrol edilir</li>
+                        </ul>
+                    </li>
+                </div>
+            
+                <div class="step">
+                    <h4>Taahhüt Avans İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Ana ekranda, kayıtlı olmayan fişte:
+                            <ul>
+                                <li>Taahhüt seçimi yapın</li>
+                                <li>Avans verme seçeneğini işaretleyin</li>
+                                <li>Avans tutarını girin</li>
+                            </ul>
+                        </li>
+                        <li>Avans verme penceresinde:
+                            <ul>
+                                <li>Taahhüt ID'yi kontrol edin</li>
+                                <li>Kurumsal kodu doğrulayın</li>
+                                <li>Kişi bilgilerini kontrol edin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>Avans hesaplarını oluşturur</li>
+                                <li>İlgili muhasebe kayıtlarını yapar</li>
+                                <li>Taahhüt bakiyesini günceller</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Emanetten Hakediş Ödemesi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Emanet tutarı kontrolü:
+                            <ul>
+                                <li>3'lü hesaplarda borç tutarını kontrol edin</li>
+                                <li>Toplam emanet tutarını hesaplayın</li>
+                                <li>Emanet tutarı yeterli olmalıdır</li>
+                            </ul>
+                        </li>
+                        <li>Taahhüt seçimi:
+                            <ul>
+                                <li>Avans verme özelliği kapalı olmalıdır</li>
+                                <li>İlgili taahhüdü seçin</li>
+                                <li>Taahhüt ID ve kişi bilgilerini kontrol edin</li>
+                            </ul>
+                        </li>
+                        <li>Ödeme işlemi için:
+                            <ul>
+                                <li>Kurumsal kodu seçin</li>
+                                <li>Kişi bilgilerini aktarın</li>
+                                <li>Hakediş tutarını girin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Taahhüt Bilgisi Kontrolü Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Taahhüt bilgi penceresini açmak için:
+                            <ul>
+                                <li>Tahsis/Taahhüt İşlemleri butonuna tıklayın</li>
+                                <li>"Taahhüt Bilgisi Göster" seçeneğini seçin</li>
+                                <li>Taahhüt ID'yi girin veya seçin</li>
+                            </ul>
+                        </li>
+                        <li>Bilgi penceresinde görüntülenenler:
+                            <ul>
+                                <li>Taahhüt tutarı ve kalan bakiye</li>
+                                <li>Yapılan ödemeler</li>
+                                <li>Avans bilgileri</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontroller:</strong>
+                    <ul>
+                        <li>Kayıtlı fişlerde hakediş ödemesi yapılamaz</li>
+                        <li>Emanetten ödeme için yeterli emanet tutarı olmalıdır</li>
+                        <li>Taahhüt ilişkili gider kodları değiştirilemez</li>
+                        <li>Avans ödemelerinde taahhüt limitleri kontrol edilir</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İşlem İpuçları:</strong>
+                    <ul>
+                        <li>Hakediş ödemesi öncesi taahhüt bakiyesini kontrol edin</li>
+                        <li>Emanet ödemelerinde hesap kalanlarını doğrulayın</li>
+                        <li>Taahhüt seçiminde kurumsal kod eşleşmesini kontrol edin</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun ve gerekli kontrolleri yapın</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Otomatik Sistem İşlemleri:</h4>
+                    <p>Aşağıdaki işlemler sistem tarafından otomatik yapılır:</p>
+                    <ul>
+                        <li>Taahhüt bakiye kontrolü</li>
+                        <li>KDV hesaplamaları ve kontrolleri</li>
+                        <li>Emanet hesap dağılımları</li>
+                        <li>Muhasebe kayıtlarının oluşturulması</li>
+                        <li>Taahhüt-tahsis ilişki kontrolü</li>
+                        <li>Kişi ve kurum bilgilerinin aktarımı</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Özel İşlemler ve Fiş Kapama</h2>
+            
+                <div class="step">
+                    <h4>Gönderme Emri İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Gönderme emri oluşturma:
+                            <ul>
+                                <li>103,02 hesap kodlu veya benzeri bir işlem yapıldığında sistem otomatik olarak sorar</li>
+                                <li>"Gönderme Emri Oluşturulsun mu?" mesajı ekranın ortasında görüntülenir</li>
+                                <li>Onay verirseniz "Gönderme Emri" penceresi açılır</li>
+                            </ul>
+                        </li>
+                        <li>Gönderme emri seçim ekranında:
+                            <ul>
+                                <li>Geçerli birim kodunu kontrol edin</li>
+                                <li>İlgili hesap kodlarını seçin</li>
+                                <li>Tüm gerekli alanları doldurun</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>Gönderme emri numarası atar</li>
+                                <li>İlgili muhasebe kayıtlarını oluşturur</li>
+                                <li>Fiş döküm formatını otomatik belirler</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Teslimat Müzekkeresi İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Teslimat müzekkeresi oluşturma koşulları:
+                            <ul>
+                                <li>102, 100 veya 108 kodlu hesaplarda borç kaydı olmalı</li>
+                                <li>Fiş tipi Muhasebe İşlem Fişi (1) olmalı</li>
+                                <li>Kayıtlı olmayan fişlerde oluşturulabilir</li>
+                            </ul>
+                        </li>
+                        <li>Otomatik sorgu ekranında:
+                            <ul>
+                                <li>"Teslimat Müzekkeresi Oluşturulsun mu?" sorusu gelir</li>
+                                <li>Onay verirseniz işlem başlar</li>
+                                <li>İptal ederseniz normal fiş işlemine devam edilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Banka Talimatı İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Banka talimatı oluşturma şartları:
+                            <ul>
+                                <li>103,01 hesap kodlu işlemlerde</li>
+                                <li>Alacak kaydı olan işlemlerde</li>
+                                <li>Kayıtlı olmayan fişlerde</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>Banka talimatı oluşturma seçeneği sunar</li>
+                                <li>Onay verildikten sonra talimat bilgilerini hazırlar</li>
+                                <li>İlgili muhasebe kayıtlarını oluşturur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Fiş Kapama ve Onaylama İşlemleri</h4>
+                    <ol>
+                        <li>Fiş kaydetme öncesi kontroller:
+                            <ul>
+                                <li>Borç-alacak eşitliği kontrol edilir</li>
+                                <li>Zorunlu alanların doldurulduğu kontrol edilir</li>
+                                <li>Hesap yetkileri kontrol edilir</li>
+                            </ul>
+                        </li>
+                        <li>Onay işlemi için:
+                            <ul>
+                                <li>"Fişi Onayla" seçeneği alt bölümün sağ tarafında yer alır</li>
+                                <li>Onay kutusunu işaretlediğinizde sistem yevmiye ve fiş numarası atar</li>
+                                <li>Onaylanan fişler üzerinde değişiklik yapılamaz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Hatırlatmalar:</strong>
+                    <ul>
+                        <li>Onaylanmış fişler üzerinde değişiklik yapılamaz</li>
+                        <li>Gönderme emri oluşturulduktan sonra ilgili kayıtlar silinemez</li>
+                        <li>Teslimat müzekkeresi sadece belirli hesap kodlarında oluşturulabilir</li>
+                        <li>Banka talimatı için hesap kodu kontrolü önemlidir</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Sistem Parametreleri ve Kontroller:</h4>
+                    <ul>
+                        <li>Hesap koduna göre otomatik belge oluşturma:
+                            <ul>
+                                <li>103,02 için gönderme emri</li>
+                                <li>102, 100, 108 için teslimat müzekkeresi</li>
+                                <li>103,01 için banka talimatı</li>
+                            </ul>
+                        </li>
+                        <li>Otomatik numara atama:
+                            <ul>
+                                <li>Yevmiye numarası</li>
+                                <li>Fiş numarası</li>
+                                <li>Belge numaraları</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>İşlem öncesi hesap kodunu kontrol edin</li>
+                        <li>Otomatik belge oluşturma sorularına dikkat edin</li>
+                        <li>Fiş onaylama öncesi tüm kontrolleri yapın</li>
+                        <li>Özel durumlarda sistem mesajlarını dikkatlice okuyun</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Ödenek Kontrolleri ve Mahsup İşlemleri</h2>
+            
+                <div class="step">
+                    <h4>Ödenek Hareketleri Nasıl Kontrol Edilir?</h4>
+                    <ol>
+                        <li>Ödenek hareketleri kontrolü için:
+                            <ul>
+                                <li>İlk olarak ekranın üst kısmında daire seçimi yapılmalıdır</li>
+                                <li>"Özel İşlemler" menüsünden "Ödenek Hareketleri" seçeneğini seçin</li>
+                                <li>Açılan pencere ekranın büyük kısmını kaplayacak şekilde görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Ödenek kontrol ekranında:
+                            <ul>
+                                <li>Yıl bilgisi otomatik gelir</li>
+                                <li>Kurumsal kod seçili daireden otomatik alınır</li>
+                                <li>Ödenek hareketleri detaylı olarak listelenir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Aylık KDV Mahsup İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>İşleme başlamadan önce:
+                            <ul>
+                                <li>Fiş tarihindeki ayın bir önceki ayı otomatik seçilir</li>
+                                <li>Sistem ay-emanet bilgisini kontrol eder</li>
+                                <li>KDV hesapları sistem tarafından kontrol edilir</li>
+                            </ul>
+                        </li>
+                        <li>Mahsup işlemi için:
+                            <ul>
+                                <li>İlgili ayı seçin (otomatik gelen ayı değiştirebilirsiniz)</li>
+                                <li>Ödenecek KDV hesabını kontrol edin</li>
+                                <li>İşlemi başlatın</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>KDV tutarlarını hesaplar</li>
+                                <li>Mahsup kayıtlarını oluşturur</li>
+                                <li>Fiş toplamlarını günceller</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Tahsilat Ayonu Mahsup İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>İşlem başlatma:
+                            <ul>
+                                <li>Sistem fiş tarihinden ayı otomatik alır</li>
+                                <li>Özel İşlemler menüsünden "Tahsilat Ay Sonu Mahsup" seçeneğini seçin</li>
+                                <li>Ay ve yıl bilgileri otomatik doldurulur</li>
+                            </ul>
+                        </li>
+                        <li>Mahsup penceresi işlemleri:
+                            <ul>
+                                <li>İlgili hesapları kontrol edin</li>
+                                <li>Mahsup tutarlarını gözden geçirin</li>
+                                <li>Onay vererek işlemi başlatın</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Tahakkuksuz Tahsilat Tahakkuklandırma İşlemi</h4>
+                    <ol>
+                        <li>İşlem başlatma:
+                            <ul>
+                                <li>Fiş tarihinden ay bilgisi alınır</li>
+                                <li>İlgili menü seçeneğini seçin</li>
+                                <li>Açılan pencere ekranın ortasında görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Tahakkuklandırma işlemi için:
+                            <ul>
+                                <li>Dönem bilgilerini kontrol edin</li>
+                                <li>Tahakkuksuz tahsilatları listeleyin</li>
+                                <li>İşlemi onaylayın</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontroller:</strong>
+                    <ul>
+                        <li>Daire seçimi yapılmadan ödenek hareketleri görüntülenemez</li>
+                        <li>KDV mahsup işlemi öncesi hesap bakiyelerini kontrol edin</li>
+                        <li>Tahsilat mahsupları ay bazında yapılmalıdır</li>
+                        <li>İşlemler başlatılmadan önce tüm parametreleri kontrol edin</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Otomatik İşlemler:</h4>
+                    <p>Sistem aşağıdaki işlemleri otomatik olarak gerçekleştirir:</p>
+                    <ul>
+                        <li>Ay bilgisi tespiti</li>
+                        <li>KDV hesapları kontrolü</li>
+                        <li>Mahsup kayıtlarının oluşturulması</li>
+                        <li>Ödenek bakiyelerinin güncellenmesi</li>
+                        <li>Tahakkuk kayıtlarının oluşturulması</li>
+                        <li>Fiş toplamlarının hesaplanması</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İşlem İpuçları:</strong>
+                    <ul>
+                        <li>Ay sonu işlemlerini ilgili ayın son günlerinde yapın</li>
+                        <li>Mahsup işlemleri öncesi bakiyeleri kontrol edin</li>
+                        <li>Ödenek kontrollerini düzenli olarak yapın</li>
+                        <li>İşlem sonrası fiş toplamlarını mutlaka kontrol edin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Sistem Parametreleri ve Özel Raporlamalar</h2>
+            
+                <div class="step">
+                    <h4>Muhasebe Kodları Girişi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Hesap kodu seçim işlemi:
+                            <ul>
+                                <li>Detay tablosunda hesap kodu alanına tıklayın</li>
+                                <li>Hesap seçim penceresi açılır. Bu pencerede:
+                                    <ul>
+                                        <li>Sol tarafta hesap grupları listelenir</li>
+                                        <li>Sağ tarafta seçilen grubun alt hesapları görüntülenir</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Hesap tipine göre özel ekranlar:
+                            <ul>
+                                <li>Gider kodları için gider kodu seçim ekranı açılır</li>
+                                <li>Gelir kodları için gelir kodu seçim ekranı açılır</li>
+                                <li>KDV hesapları için KDV oranı seçimi yapılır</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik kontroller yapar:
+                            <ul>
+                                <li>Ödenek kontrolü</li>
+                                <li>Yetki kontrolü</li>
+                                <li>KDV oranı kontrolü</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>İcra Borcu Kontrolü Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Kişi seçimi yapıldığında:
+                            <ul>
+                                <li>Sistem otomatik olarak icra borcu kontrolü yapar</li>
+                                <li>Kontrol sonuçları anında görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>İcra borcu varsa:
+                            <ul>
+                                <li>Ekranın ortasında uyarı mesajı gösterilir</li>
+                                <li>İşleme devam edilip edilmeyeceği sorulur</li>
+                                <li>Kullanıcı onayı olmadan işlem devam etmez</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Performans İşlemleri Kontrolü</h4>
+                    <ol>
+                        <li>830 nolu hesap işlemlerinde:
+                            <ul>
+                                <li>Performans seçimi zorunludur</li>
+                                <li>Seçim yapılmamışsa sistem uyarı verir</li>
+                                <li>Kaydetmeye izin verilmez</li>
+                            </ul>
+                        </li>
+                        <li>Kontrol penceresi:
+                            <ul>
+                                <li>Performans kodları listelenir</li>
+                                <li>İlgili açıklamalar görüntülenir</li>
+                                <li>Seçim yapılmadan işlem tamamlanamaz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Kaydeden Bilgisi Kontrolü</h4>
+                    <ol>
+                        <li>Kullanıcı bilgisi görüntüleme:
+                            <ul>
+                                <li>"Kaydeden" alanının yanındaki bilgi ikonuna tıklayın</li>
+                                <li>Kullanıcı adı ve tarih bilgileri görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Detaylı bilgiler:
+                            <ul>
+                                <li>Log tablosundaki tüm değişiklikler listelenir</li>
+                                <li>Her değişiklik için kullanıcı ve tarih gösterilir</li>
+                                <li>Yapılan işlem türü belirtilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Sistem Mesajları:</strong>
+                    <ul>
+                        <li>"Borç ve Alacak toplamı eşit değil" - Toplamlar eşit olmadığında</li>
+                        <li>"Müdürlük Seçiniz" - Müdürlük seçimi yapılmadığında</li>
+                        <li>"TC Kimlik No ve Vergi Numarası girilmemiş" - Kişi bilgileri eksik olduğunda</li>
+                        <li>"Bu Fişe Ait Hareket Bilgileri Girilmemiş" - Boş fiş kaydedilmeye çalışıldığında</li>
+                        <li>"Ödenek Yetersiz" - Bütçe gider kaydında ödenek yetersiz olduğunda</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Pratik Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>Hesap kodu seçiminde arama özelliğini kullanın</li>
+                        <li>İcra borcu kontrolünü işlem öncesi yapın</li>
+                        <li>Performans seçimini hesap girişi sırasında yapın</li>
+                        <li>Kaydeden bilgisini düzenli kontrol edin</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Önemli Parametreler:</h4>
+                    <p>Aşağıdaki parametreler sistem tarafından otomatik kontrol edilir:</p>
+                    <ul>
+                        <li>Hesap kodu yetkileri</li>
+                        <li>KDV oranları ve hesapları</li>
+                        <li>Ödenek limitleri</li>
+                        <li>Performans kodları</li>
+                        <li>Kullanıcı yetkileri</li>
+                        <li>İcra borcu kontrolleri</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Toplu Hesap İşlemleri ve Yansıtmalar</h2>
+            
+                <div class="step">
+                    <h4>Toplu Hesap Kapama İşlemi Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>İşlemi başlatma:
+                            <ul>
+                                <li>Ekranın alt kısmında bulunan "Toplu Hesap Kapama" butonuna tıklayın</li>
+                                <li>Açılan pencerede ilk olarak hesap kodu alanına tıklayın</li>
+                                <li>Hesap kodu alanının yanındaki büyüteç ikonuyla hesap seçimi yapın</li>
+                            </ul>
+                        </li>
+                        <li>Tarih bilgilerinin girilmesi:
+                            <ul>
+                                <li>Tarih (İlk/Son) alanları hesap kodu seçiminin altında yer alır</li>
+                                <li>İlk tarih ve son tarih aralığını belirleyin</li>
+                                <li>Belge tarihi için de ayrı bir tarih aralığı seçebilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>Kişi/Kurum ve daire bilgileri:
+                            <ul>
+                                <li>Ad Soyad alanını doldurun veya yanındaki arama butonunu kullanın</li>
+                                <li>Daire seçimini açılır listeden yapın</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="step">
+                        <h4>Toplu Hesap Kapama Özel Durumları</h4>
+                        <ol>
+                            <li>Borçlu bilgileri kontrolü (Def1201):
+                                <ul>
+                                    <li>Borç tarihi ve çeşidi kontrol edilir</li>
+                                    <li>Asıl gelir kaydı ve diğer gelir kayıtları ayrı ayrı işlenir</li>
+                                    <li>Zaman aşımı tarihi kontrol edilir</li>
+                                </ul>
+                            </li>
+                            <li>Tahsil şekli kontrolleri (Def1202):
+                                <ul>
+                                    <li>Alındı tarih ve numara kontrolü yapılır</li>
+                                    <li>Terkinler otomatik hesaplanır</li>
+                                    <li>Gelir kaydedilen tutarlar ve diğer tahsilat otomatik ayrılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                </div>
+            
+                <div class="step">
+                    <h4>Borç-Alacak Yansıtma İşlemleri</h4>
+                    <ol>
+                        <li>830 Hesap yansıtmaları için:
+                            <ul>
+                                <li>İlgili hesabı seçin</li>
+                                <li>Yansıtma hesabını belirleyin (genellikle 630 hesap)</li>
+                                <li>Sistem otomatik olarak 835 hesabına alacak kaydı oluşturur</li>
+                            </ul>
+                        </li>
+                        <li>900-905 hesap kontrolleri:
+                            <ul>
+                                <li>Sistem otomatik olarak 900 hesabına alacak kaydı atar</li>
+                                <li>905 hesabına borç kaydı oluşturulur</li>
+                                <li>Tutarlar otomatik olarak hesaplanır</li>
+                            </ul>
+                        </li>
+                        <li>Performans kontrolleri:
+                            <ul>
+                                <li>920 hesabı için yansıtma kontrolleri yapılır</li>
+                                <li>921 hesabı için karşılıklı kayıtlar oluşturulur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Gelir Yansıtma İşlemleri</h4>
+                    <ol>
+                        <li>800 hesap işlemleri için:
+                            <ul>
+                                <li>"Gelir Yansıtma" seçeneğini seçin</li>
+                                <li>İlgili gelir kodunu belirleyin</li>
+                                <li>Sistem otomatik olarak yansıtma hesaplarını oluşturur</li>
+                            </ul>
+                        </li>
+                        <li>Otomatik hesaplamalar:
+                            <ul>
+                                <li>KDV tutarları hesaplanır</li>
+                                <li>Matrah tutarları belirlenir</li>
+                                <li>İlgili hesaplara kayıtlar atılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="step">
+                        <h4>Gelir Yansıtma Türleri ve Kontrolleri</h4>
+                        <ol>
+                            <li>Tahakkuklu Tahsilat İşlemleri:
+                                <ul>
+                                    <li>Gelir kodu ve gelir adı otomatik kontrol edilir</li>
+                                    <li>KDV tutarı hesaplanır ve ayrılır</li>
+                                    <li>Sistem araToplam ve genelToplam hesaplamalarını yapar</li>
+                                </ul>
+                            </li>
+                            <li>Tahakkuksuz Tahsilat İşlemleri:
+                                <ul>
+                                    <li>Gelir yansıtma kodu kontrolü yapılır</li>
+                                    <li>Yansıtma tutarı KDV hariç olarak hesaplanır</li>
+                                    <li>dicGelirYansitma üzerinden toplamlar kontrol edilir</li>
+                                </ul>
+                            </li>
+                            <li>Takipli Tahsilat İşlemleri:
+                                <ul>
+                                    <li>800 hesabına gelen tutarlar otomatik kontrol edilir</li>
+                                    <li>dicKDVToplam ve dicKDVMatToplam üzerinden KDV hesaplamaları yapılır</li>
+                                    <li>Her KDV oranı için ayrı kayıt oluşturulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontrol Noktaları:</strong>
+                    <ul>
+                        <li>830 hesap yansıtmalarında mutlaka tutarları kontrol edin</li>
+                        <li>Gelir yansıtmalarında KDV hesaplamalarını doğrulayın</li>
+                        <li>Toplu hesap kapamada tarih aralıklarına dikkat edin</li>
+                        <li>900-905 hesap eşleşmelerini kontrol edin</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Otomatik Kontroller:</h4>
+                    <p>Sistem aşağıdaki kontrolleri otomatik olarak yapar:</p>
+                    <ul>
+                        <li>Hesap bakiyeleri kontrolü</li>
+                        <li>Yansıtma tutarları eşitliği</li>
+                        <li>KDV hesaplamaları</li>
+                        <li>Hesap kodu uygunluğu</li>
+                        <li>Tarih aralığı geçerliliği</li>
+                        <li>Kullanıcı yetki kontrolü</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Verimli Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>Toplu işlemlerde önce küçük bir tarih aralığı ile test edin</li>
+                        <li>Yansıtma işlemlerinden önce bakiyeleri kontrol edin</li>
+                        <li>İşlem sonrası mutlaka toplam tutarları doğrulayın</li>
+                        <li>Karşılıklı hesapların bakiyelerini kontrol edin</li>
+                        <li>Büyük tutarlı işlemlerde iki kez kontrol yapın</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Detaylı Fiş Kontrolleri ve Özel Durum Raporları</h2>
+            
+                <div class="step">
+                    <h4>Fiş Detay Kontrolleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Temel kontroller:
+                            <ul>
+                                <li>Ekranın alt kısmında yer alan toplam alanlarını kontrol edin</li>
+                                <li>Borç ve alacak toplamlarının eşit olduğundan emin olun</li>
+                                <li>Satır numarası ve toplam satır sayısını kontrol edin. Bu bilgiler ekranın alt kısmında görüntülenir.</li>
+                            </ul>
+                        </li>
+                        <li>Hesap detay kontrolleri:
+                            <ul>
+                                <li>Her satırın hesap kodu doğruluğunu kontrol edin</li>
+                                <li>KDV oranları ve matrah tutarlarını doğrulayın</li>
+                                <li>Yansıtma hesaplarının doğru belirlendiğinden emin olun</li>
+                            </ul>
+                        </li>
+                        <li>Fiş açıklamaları:
+                            <ul>
+                                <li>Açıklama alanının yeterli detayda doldurulduğunu kontrol edin</li>
+                                <li>Gerekli belge numaralarının girildiğinden emin olun</li>
+                                <li>Varsa özel kodların doğru kullanıldığını kontrol edin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Kaydeden Bilgisi ve Log Kayıtları</h4>
+                    <ol>
+                        <li>Kaydeden bilgisi kontrolü:
+                            <ul>
+                                <li>Kaydeden alanının yanındaki bilgi ikonuna tıklayın</li>
+                                <li>Açılan pencerede tüm değişiklik geçmişini görüntüleyin</li>
+                                <li>Her değişiklik için kullanıcı adı ve tarih bilgisi listelenir</li>
+                            </ul>
+                        </li>
+                        <li>Log kayıtları detayları:
+                            <ul>
+                                <li>Kullanıcı bilgisi</li>
+                                <li>İşlem tarihi ve saati</li>
+                                <li>Yapılan değişiklikler</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Özel Durum Raporları</h4>
+                    <ol>
+                        <li>Teslimat Müzekkeresi kontrolü:
+                            <ul>
+                                <li>102, 100 veya 108 hesap kodlu işlemlerde sistem otomatik kontrol yapar</li>
+                                <li>Oluşturulan müzekkere numarası fiş detaylarında görüntülenir</li>
+                                <li>İlgili banka bilgileri otomatik olarak forma aktarılır</li>
+                            </ul>
+                        </li>
+                        <li>Gönderme Emri kontrolü:
+                            <ul>
+                                <li>103,02 kodlu hesap işlemlerinde kontroller yapılır</li>
+                                <li>Gönderme emri numarası sistem tarafından atanır</li>
+                                <li>İlgili muhasebe kayıtları otomatik oluşturulur</li>
+                            </ul>
+                        </li>
+                        <li>Banka Talimatı işlemleri:
+                            <ul>
+                                <li>103,01 kodlu işlemlerde otomatik kontrol başlar</li>
+                                <li>Talimat bilgileri sistem tarafından hazırlanır</li>
+                                <li>İlgili banka hesap detayları forma aktarılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="step">
+                        <h4>İade/Mahsup İşlem Kontrolleri</h4>
+                        <ol>
+                            <li>Sistem dönüş kontrolleri:
+                                <ul>
+                                    <li>İşlem sonucu (strReturn) sistem tarafından kontrol edilir</li>
+                                    <li>İşlem başarılı ise otomatik muhasebe kaydı oluşturulur</li>
+                                    <li>Hata durumunda detaylı hata mesajı gösterilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Kritik Kontrol Noktaları:</strong>
+                    <ul>
+                        <li>Her fiş kaydından önce borç-alacak eşitliğini kontrol edin</li>
+                        <li>KDV hesaplamalarının doğruluğunu mutlaka doğrulayın</li>
+                        <li>Özel durum belgelerinin (müzekkere, gönderme emri vb.) oluşturulduğundan emin olun</li>
+                        <li>Log kayıtlarını düzenli olarak kontrol edin</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Önemli Sistem Mesajları:</h4>
+                    <ul>
+                        <li>"Uyumsuz Bakiyeler" - Borç ve alacak toplamları eşit değilse</li>
+                        <li>"Eksik Bilgi" - Zorunlu alanlar doldurulmadığında</li>
+                        <li>"Yetkisiz İşlem" - Kullanıcı yetkisi dışında işlem yapılmaya çalışıldığında</li>
+                        <li>"Belge Oluşturuldu" - Özel durum belgesi başarıyla oluşturulduğunda</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Kullanışlı İpuçları:</strong>
+                    <ul>
+                        <li>Fiş kontrollerini belirli bir sırayla yapın</li>
+                        <li>Önemli işlemlerde çift kontrol uygulayın</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun</li>
+                        <li>Şüpheli durumlarda log kayıtlarını inceleyin</li>
+                        <li>Özel durum raporlarını düzenli kontrol edin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Özel Hesap İşlemleri ve Emanet Hesap Kontrolleri</h2>
+            
+                <div class="step">
+                    <h4>Fatura İşlemleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Fatura kaydı seçimi:
+                            <ul>
+                                <li>Ekranın orta kısmında bulunan "Fatura" butonuna tıklayın</li>
+                                <li>Açılan pencerede mevcut fatura kayıtlarını görüntüleyin</li>
+                                <li>Fatura seçildiğinde sistem otomatik olarak şu kontrolleri yapar:
+                                    <ul>
+                                        <li>Muhasebeleştirilmemiş fatura kontrolü</li>
+                                        <li>Gider kodu kontrolü</li>
+                                        <li>Kalan ödenek kontrolü</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak faturadan gelen bilgileri doldurur:
+                            <ul>
+                                <li>Ad Soyad/Kurum bilgisi</li>
+                                <li>Vergi ve TC kimlik bilgileri</li>
+                                <li>Fatura tarihi ve numarası</li>
+                                <li>Fatura açıklaması</li>
+                                <li>Müdürlük bilgileri</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="section">
+                        <div class="step">
+                            <h4>Fatura Entegrasyon Kontrolleri</h4>
+                            <ol>
+                                <li>Yetki kontrolleri:
+                                    <ul>
+                                        <li>Fatura kaydı için kullanıcı yetkisi kontrol edilir</li>
+                                        <li>Vi_Return değeri ile yetki kontrolü yapılır</li>
+                                        <li>Yetkisiz işlemler engellenir</li>
+                                    </ul>
+                                </li>
+                                <li>Taahhüt kontrolleri:
+                                    <ul>
+                                        <li>Fatura taahhüt ilişkisi kontrol edilir</li>
+                                        <li>Hakediş taahhüt ID kontrolü yapılır</li>
+                                        <li>Tahsis ID kontrolü yapılır</li>
+                                    </ul>
+                                </li>
+                                <li>Özel kod kontrolleri:
+                                    <ul>
+                                        <li>"FATENT" özel kodu otomatik atanır</li>
+                                        <li>İşlem tipi kodları kontrol edilir</li>
+                                        <li>Sistem mesajları gösterilir</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <h4>Fatura İşlemleri Özel Kontrolleri</h4>
+                        <ol>
+                            <li>Fatura kayıt kontrolü:
+                                <ul>
+                                    <li>Fatura recid kontrolü:
+                                        <ul>
+                                            <li>Boş değilse fatura entegrasyonu başlatılır</li>
+                                            <li>Fatura string değeri faturaStr içine aktarılır</li>
+                                            <li>Entegrasyon URL'i oluşturulur: "CallabmFaturaEntegrasyon.asp?fatrecid=" + fatura ID</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Fatura entegrasyon son işlemleri:
+                                <ul>
+                                    <li>İşlem sonucu vi_Return değerine aktarılır</li>
+                                    <li>txtstrReturn alanı güncellenir</li>
+                                    <li>Fatura-fiş ilişkisi kurulur</li>
+                                </ul>
+                            </li>
+                            <li>Fatura sonrası otomatik kapama:
+                                <ul>
+                                    <li>Borç-alacak toplamları güncellenir</li>
+                                    <li>Entegrasyon penceresi kapatılır</li>
+                                    <li>İşlem sonucu kullanıcıya gösterilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                     </div>
+                     
+                </div>
+            
+                <div class="step">
+                    <h4>Emanet Hesap İşlemleri</h4>
+                    <ol>
+                        <li>Emanet hesap seçimi:
+                            <ul>
+                                <li>İlgili emanet hesap kodunu girin</li>
+                                <li>Hesap tipini belirleyin</li>
+                                <li>KDV emanet işlemleri için emanet hesap tipini seçin</li>
+                            </ul>
+                        </li>
+                        <li>Emanet tutarı kontrolleri:
+                            <ul>
+                                <li>Tevkifat matrahını girin</li>
+                                <li>KDV oranını seçin</li>
+                                <li>Sistem otomatik olarak emanet tutarını hesaplar</li>
+                            </ul>
+                        </li>
+                        <li>Hakediş kesintileri için:
+                            <ul>
+                                <li>Taahhüt/Tahsis ilişkisini kontrol edin</li>
+                                <li>İşlem tipini belirtin</li>
+                                <li>Kesinti tutarlarını girin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Fon ve Pay İşlemleri</h4>
+                    <ol>
+                        <li>Gelir kodu kontrolü:
+                            <ul>
+                                <li>Fon ve pay işlemleri için gelir kodunu belirleyin</li>
+                                <li>Otomatik hesaplama için oranları kontrol edin</li>
+                                <li>İlgili hesaplara dağılımı izleyin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik hesaplamalar:
+                            <ul>
+                                <li>Pay tutarları hesaplanır</li>
+                                <li>İlgili hesaplara kayıtlar atılır</li>
+                                <li>Dağılım oranları kontrol edilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontrol Noktaları:</strong>
+                    <ul>
+                        <li>Fatura kaydı seçildiğinde gider kodu eşleşmesini kontrol edin</li>
+                        <li>Emanet hesaplarda KDV oranlarının doğruluğunu doğrulayın</li>
+                        <li>Fon ve pay işlemlerinde dağılım oranlarını kontrol edin</li>
+                        <li>Hakediş kesintilerinde taahhüt ilişkisini doğrulayın</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Otomatik Hesaplamalar:</h4>
+                    <p>Sistem aşağıdaki hesaplamaları otomatik yapar:</p>
+                    <ul>
+                        <li>KDV tevkifat tutarları</li>
+                        <li>Emanet hesap dağılımları</li>
+                        <li>Fon ve pay tutarları</li>
+                        <li>Hakediş kesinti tutarları</li>
+                        <li>Taahhüt bakiyeleri</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Verimli Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>Fatura seçiminde gider kodlarını mutlaka kontrol edin</li>
+                        <li>Emanet hesap işlemlerinde KDV matrahını doğru girin</li>
+                        <li>Fon ve pay hesaplamalarını çift kontrol edin</li>
+                        <li>Hakediş kesintilerinde taahhüt ilişkisini dikkatle kontrol edin</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun ve gerekli düzeltmeleri yapın</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Özel Durum Hesaplamaları ve Sistem Kontrolleri</h2>
+            
+                <div class="step">
+                    <h4>Özel Gider İndirimi İşlemleri</h4>
+                    <ol>
+                        <li>Özel gider indirimi seçimi:
+                            <ul>
+                                <li>Özel İşlemler menüsünden "Özel Gider İndirimi" seçeneğini seçin</li>
+                                <li>İndirim tutarını ilgili alana girin</li>
+                                <li>Matrah tutarlarını kontrol edin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem otomatik olarak:
+                            <ul>
+                                <li>İndirim oranlarını hesaplar</li>
+                                <li>İlgili hesaplara kayıtları atar</li>
+                                <li>Muhasebe fişini oluşturur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Nakit Hareket Dönemi İşlemleri</h4>
+                    <ol>
+                        <li>Nakit hareket kontrolü:
+                            <ul>
+                                <li>Dönem tarihini girin</li>
+                                <li>İlgili kasa hesabını seçin</li>
+                                <li>Hareket tipini belirleyin</li>
+                            </ul>
+                        </li>
+                        <li>Otomatik kontroller:
+                            <ul>
+                                <li>Kasa bakiyesi kontrol edilir</li>
+                                <li>Dönem kısıtları kontrol edilir</li>
+                                <li>Yetki kontrolleri yapılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Vergilendirme Dönemi İşlemleri</h4>
+                    <ol>
+                        <li>Vergilendirme dönemi belirleme:
+                            <ul>
+                                <li>Dönem bilgisini girin</li>
+                                <li>Vergi tipini seçin</li>
+                                <li>İlgili hesapları belirleyin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem kontrolleri:
+                            <ul>
+                                <li>Beyanname dönemleri kontrol edilir</li>
+                                <li>Vergi matrahları hesaplanır</li>
+                                <li>Tahakkuk kayıtları oluşturulur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Karşı Muhasebe Birimi İşlemleri</h4>
+                    <ol>
+                        <li>Karşı muhasebe kodu girişi:
+                            <ul>
+                                <li>Birim kodunu girin</li>
+                                <li>Yevmiye tarih ve numarasını belirtin</li>
+                                <li>İlişkili hesapları seçin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem kontrolleri:
+                            <ul>
+                                <li>Birim kodu doğrulanır</li>
+                                <li>Yevmiye bilgileri kontrol edilir</li>
+                                <li>Hesap eşleşmeleri yapılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontrol Noktaları:</strong>
+                    <ul>
+                        <li>Özel gider indirimi hesaplamalarını çift kontrol edin</li>
+                        <li>Nakit hareket döneminin doğruluğunu teyit edin</li>
+                        <li>Vergi beyanname dönemlerini dikkatlice kontrol edin</li>
+                        <li>Karşı muhasebe kayıtlarının eşleşmesini doğrulayın</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Sistem Parametre Kontrolleri:</h4>
+                    <p>Aşağıdaki parametreler sistem tarafından otomatik kontrol edilir:</p>
+                    <ul>
+                        <li>Dönem kısıtlamaları</li>
+                        <li>Vergilendirme dönemleri</li>
+                        <li>Hesap yetkileri</li>
+                        <li>Birim kodları</li>
+                        <li>Muhasebe kayıt kuralları</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Pratik Kullanım İpuçları:</strong>
+                    <ul>
+                        <li>Özel gider indirimi hesaplamalarını adım adım yapın</li>
+                        <li>Nakit hareket kontrollerini günlük kontrol edin</li>
+                        <li>Vergi dönemlerini takvime işaretleyin</li>
+                        <li>Karşı muhasebe kayıtlarını düzenli kontrol edin</li>
+                        <li>Sistem mesajlarına dikkat edin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Çek İşlemleri ve Özel Hesap Kapama</h2>
+            
+                <div class="step">
+                    <h4>Çek Numarası Kontrolü ve İşlemleri</h4>
+                    <ol>
+                        <li>Çek numarası girişi:
+                            <ul>
+                                <li>Üst bölümde yer alan çek no alanına numarayı girin</li>
+                                <li>Sistem otomatik olarak mükerrer kontrol yapar</li>
+                                <li>Aynı çek numarası varsa uyarı mesajı görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Çek işlem kontrolleri:
+                            <ul>
+                                <li>Hesap kodunun 2'li defteri olup olmadığı kontrol edilir</li>
+                                <li>İlgili yılda çek numarasının kullanılıp kullanılmadığı kontrol edilir</li>
+                                <li>Çek numarası onayı istenir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Çek/Gönderme Emri Ödeme İşlemleri</h4>
+                    <ol>
+                        <li>Ödeme işlemi başlatma:
+                            <ul>
+                                <li>Alt bölümde yer alan "Çek/Gönderme Emri Ödeme" butonuna tıklayın</li>
+                                <li>Açılan pencerede kişi bilgilerini kontrol edin</li>
+                                <li>Ödeme tutarını girin</li>
+                            </ul>
+                        </li>
+                        <li>Sistem kontrolleri:
+                            <ul>
+                                <li>Bakiye kontrolü yapılır</li>
+                                <li>Kişi borç kontrolü yapılır</li>
+                                <li>İcra kontrolü yapılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Otomatik Emanet Kapama</h4>
+                    <ol>
+                        <li>Tarihlerin belirlenmesi:
+                            <ul>
+                                <li>"Önceki Ay" butonu ile otomatik tarih doldurma yapılır</li>
+                                <li>İlk ve son tarihi manuel olarak da girebilirsiniz</li>
+                                <li>Tarih alanları pencerenin üst kısmında yer alır</li>
+                            </ul>
+                        </li>
+                        <li>Sistem tarafından yapılan işlemler:
+                            <ul>
+                                <li>Seçilen tarih aralığındaki emanet kayıtları listelenir</li>
+                                <li>Emanet tutarları otomatik hesaplanır</li>
+                                <li>İlgili muhasebe kayıtları oluşturulur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Önemli Kontroller:</strong>
+                    <ul>
+                        <li>Çek numarası kontrollerini dikkatle yapın</li>
+                        <li>Ödeme işlemlerinde bakiye kontrolü önemlidir</li>
+                        <li>Emanet kapama işlemlerinde tarih aralığını doğru belirleyin</li>
+                        <li>İcra ve borç kontrollerini mutlaka yapın</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Sistem Otomatik Kontrolleri:</h4>
+                    <p>Aşağıdaki kontroller sistem tarafından otomatik yapılır:</p>
+                    <ul>
+                        <li>Çek numarası mükerrer kontrolü</li>
+                        <li>Bakiye kontrolleri</li>
+                        <li>Kişi borç kontrolü</li>
+                        <li>İcra durumu kontrolü</li>
+                        <li>Emanet hesap kontrolleri</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>İşlem İpuçları:</strong>
+                    <ul>
+                        <li>Çek numarası girişinde dikkatli olun</li>
+                        <li>Ödeme işlemlerinden önce bakiyeleri kontrol edin</li>
+                        <li>"Önceki Ay" butonunu kullanarak hızlı tarih girişi yapın</li>
+                        <li>Emanet kapama işlemlerinde tutarları çift kontrol edin</li>
+                        <li>Sistem mesajlarını dikkatlice okuyun</li>
+                    </ul>
+                </div>
+
+
+   <div class="step">
+    <h4>Çek/Gönderme Emri Gelişmiş Kontroller</h4>
+    <ol>
+        <li>Fatura string kontrolü:
+            <ul>
+                <li>strFaturaStr değeri kontrol edilir</li>
+                <li>Fatura entegrasyon bilgileri doğrulanır</li>
+                <li>İlgili muhasebe kayıtları kontrol edilir</li>
+            </ul>
+        </li>
+        <li>Toplu gönderme emri işlemleri:
+            <ul>
+                <li>Toplu işlem yetkisi kontrol edilir</li>
+                <li>İlgili hesap kodları kontrol edilir</li>
+                <li>Toplu gönderme emri numaraları atanır</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+</div>
+
+            </div>
+
+            <div class="section">
+                <h2>Taşınır İşlemleri ve Özel Durum Kontrolleri</h2>
+            
+                <div class="step">
+                    <h4>Taşınır İşlem Fişleri Nasıl Yapılır?</h4>
+                    <ol>
+                        <li>Taşınır işlem seçimi:
+                            <ul>
+                                <li>Özel İşlemler menüsünden "Taşınır İşlemleri" seçeneğini seçin</li>
+                                <li>İlgili taşınır ID'yi girin veya seçin</li>
+                                <li>Taşınır işlem detay ID'si sistem tarafından otomatik atanır</li>
+                            </ul>
+                        </li>
+                        <li>İşlem detayları:
+                            <ul>
+                                <li>Taşınır kodu için gider kodunu kontrol edin</li>
+                                <li>İlgili hesaplara otomatik kayıtlar atılır</li>
+                                <li>150-250-630 hesap ilişkileri otomatik kurulur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Özel Durum Kayıt Kontrolleri</h4>
+                    <ol>
+                        <li>Ek döküman kontrolleri:
+                            <ul>
+                                <li>Kayıtlı fiş üzerinde evrak ekleme yapılamaz</li>
+                                <li>Hakediş ödemesi kayıtlı fişte yapılamaz</li>
+                                <li>Alt yevmiye olan fişlerde ana yevmiye üzerinden kontrol yapılır</li>
+                            </ul>
+                        </li>
+                        <li>Taahhüt ve tahsis kontrolleri:
+                            <ul>
+                                <li>İlişkili kayıtlarda değişiklik kısıtlamaları vardır</li>
+                                <li>Her değişiklik işlemi kullanıcı bazında loglanır</li>
+                                <li>Değişiklik geçmişi görüntülenebilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Son Kontroller ve İşlemler</h4>
+                    <ol>
+                        <li>Fiş kaydı öncesi kontroller:
+                            <ul>
+                                <li>Tüm zorunlu alanların doldurulduğunu kontrol edin</li>
+                                <li>Borç-alacak eşitliğini doğrulayın</li>
+                                <li>Hesap kodlarının doğruluğunu teyit edin</li>
+                            </ul>
+                        </li>
+                        <li>Onay işlemleri:
+                            <ul>
+                                <li>Alt kısımda bulunan "Fişi Onayla" seçeneğini işaretleyin</li>
+                                <li>Sistem yevmiye ve fiş numarası atar</li>
+                                <li>Onaylanan fişler üzerinde değişiklik yapılamaz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <strong>Son Kontrol Noktaları:</strong>
+                    <ul>
+                        <li>Taşınır işlemlerinde ilgili kodları mutlaka kontrol edin</li>
+                        <li>Kayıtlı fişlerde kısıtlamalara dikkat edin</li>
+                        <li>Taahhüt ilişkili işlemlerde değişiklik yapmadan önce kontrol edin</li>
+                        <li>Onay öncesi tüm kontrolleri tamamlayın</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <strong>Önemli Hatırlatmalar:</strong>
+                    <ul>
+                        <li>Her işlem öncesi yetki kontrolü yapın</li>
+                        <li>Fiş kayıtlarında sıralı kontrol yapın</li>
+                        <li>Sistem mesajlarını dikkate alın</li>
+                        <li>Log kayıtlarını düzenli kontrol edin</li>
+                        <li>Değişiklik yapılmış kayıtları tekrar kontrol edin</li>
+                    </ul>
+                </div>
+            
+                <div class="info-box">
+                    <h4>Genel Sistem Bilgileri:</h4>
+                    <p>Tüm işlemlerde aşağıdaki kurallara dikkat edilmelidir:</p>
+                    <ul>
+                        <li>Kullanıcı yetkileri ve kısıtlamaları</li>
+                        <li>Hesap kodu doğrulama kuralları</li>
+                        <li>Borç-alacak eşitlik kontrolleri</li>
+                        <li>Zorunlu alan kontrolleri</li>
+                        <li>Özel durum raporlamaları</li>
+                        <li>Log kayıt sistemleri</li>
+                    </ul>
+                </div>
+            </div>
+    
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banka Disketi Okuma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Banka Disketi Okuma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#temel-islemler">Temel İşlemler</a></li>
+                <li><a href="#banka-secimi">Banka Seçimi</a></li>
+                <li><a href="#modul-secimi">Modül Seçimi</a></li>
+                <li><a href="#dosya-islemleri">Dosya İşlemleri</a></li>
+                <li><a href="#klavye-kisayollari">Klavye Kısayolları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, bankalardan gelen tahsilat kayıtlarının sisteme nasıl aktarılacağını adım adım anlatmaktadır. Programı ilk kez kullanacak kişiler için hazırlanmış olup, teknik detaylara girmeden işlemlerin nasıl yapılacağını açıklamaktadır.</p>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <p>Program açıldığında karşınıza çıkacak ekran üç ana bölümden oluşur:</p>
+            <ul>
+                <li><strong>Üst Bölüm:</strong> Ekranın en üstünde "Banka Disketinden Sisteme Veri Aktarma" başlığını göreceksiniz.</li>
+                <li><strong>Orta Bölüm:</strong> Banka seçimi, modül seçimi ve dosya yükleme gibi işlemleri yapacağınız ana çalışma alanıdır.</li>
+                <li><strong>Alt Bölüm:</strong> İşlemlerinizi tamamlamak için kullanacağınız Kaydet, Çıkış gibi düğmeler burada yer alır.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        <div class="info-box">
+            <h3>Programı Kullanmaya Başlamadan Önce</h3>
+            <p>Programı kullanmaya başlamadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>İşlem yapacağınız bankanın adı</li>
+                <li>Hangi modül için işlem yapacağınız (Emlak, Su, Çevre Temizlik vb.)</li>
+                <li>Aktarılacak dosyanın bilgisayarınızdaki konumu</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="banka-secimi" class="section">
+        <h2>Banka Seçimi</h2>
+        <div class="info-box">
+            <h3>Banka Nasıl Seçilir?</h3>
+            <p>Ekranın üst kısmında yer alan "Banka" açılır listesi size mevcut bankaları gösterecektir. Bu liste ekranın en üstündeki başlığın hemen altında yer alır.</p>
+            
+            <h3>Kullanılabilir Bankalar:</h3>
+            <ul>
+                <li><strong>Ziraat Bankası</strong> - Kod: 0010</li>
+                <li><strong>Halk Bankası</strong> - Kod: 0012</li>
+                <li><strong>Vakıfbank</strong> - Kod: 0015</li>
+                <li><strong>ING Bank</strong> - Kod: 0099</li>
+                <li><strong>PTT</strong></li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Banka seçiminizi yapmadan diğer işlemlere geçemezsiniz. Eğer listede görmek istediğiniz banka yoksa, yeni bir banka ile çalışmak için Belsis'i aramanız gerekmektedir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modul-secimi" class="section">
+        <h2>Modül Seçimi</h2>
+        <div class="info-box">
+            <h3>Modül Nasıl Seçilir?</h3>
+            <p>Banka seçiminin hemen altında bulunan "Modül" açılır listesinden işlem yapacağınız modülü seçmelisiniz.</p>
+            
+            <h3>Mevcut Modüller:</h3>
+            <ul>
+                <li><strong>Emlak Modülü (3)</strong> - Emlak vergisi ödemeleri için</li>
+                <li><strong>Su Modülü (4)</strong> - Su faturası ödemeleri için</li>
+                <li><strong>Çevre Temizlik Modülü (5)</strong> - Çevre temizlik vergisi için</li>
+                <li><strong>İlan Reklam Modülü (6)</strong> - İlan ve reklam vergileri için</li>
+                <li><strong>Kira Modülü (7)</strong> - Kira ödemeleri için</li>
+                <li><strong>Pazar Yeri Modülü (8)</strong> - Pazar yeri ödemeleri için</li>
+                <li><strong>Diğer Modüller (10)</strong> - Diğer tüm ödemeler için</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Modül seçimi yapmadan işleme devam edemezsiniz</li>
+                    <li>Yanlış modül seçimi yaparsanız, veriler yanlış yere aktarılabilir</li>
+                    <li>Emin olmadığınız durumlarda yöneticinize danışın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="dosya-islemleri" class="section">
+        <h2>Dosya İşlemleri</h2>
+        <div class="info-box">
+            <h3>Dosya Seçimi ve Yükleme</h3>
+            <p>Modül seçiminin altında "Path" yazan bir alan ve yanında "Yükle" butonu göreceksiniz. Dosya yüklemek için:</p>
+            
+            <ol class="step">
+                <li>Yükle butonuna tıklayın - bu buton Path alanının hemen sağında yer alır</li>
+                <li>Açılan pencereden banka dosyanızı seçin</li>
+                <li>Dosya adı Path alanında görünecektir</li>
+            </ol>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sadece .TXT uzantılı dosyalar kabul edilir</li>
+                    <li>Dosya adını kendiniz yazmayın, mutlaka Upload butonu ile seçin</li>
+                    <li>Daha önce aktarılmış bir dosyayı tekrar aktarmaya çalışırsanız sistem sizi uyaracaktır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="emanet-hesap" class="section">
+        <h2>Emanet Hesap İşlemleri</h2>
+        <div class="info-box">
+            <h3>Emanet Hesap Kodu Seçimi</h3>
+            <p>Dosya yükleme alanının altında "Emanet Hesap Kodu" açılır listesi bulunur. Bu alan, tahsilatların hangi emanet hesabına aktarılacağını belirler.</p>
+
+            <div class="step">
+                <h4>Emanet Hesap Seçimi Nasıl Yapılır?</h4>
+                <ol>
+                    <li><strong>Emanet Hesap Kodu Alanının Bulunması:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında, dosya yükleme alanının (Path) hemen altında bulunur</li>
+                            <li>Beyaz renkli, dikdörtgen şeklinde bir açılır liste kutusudur</li>
+                            <li>Solunda "Emanet Hesap Kodu" yazısı yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açılır Listenin Kullanımı:</strong>
+                        <ul>
+                            <li>Kutunun sağ tarafındaki aşağı ok işaretine tıklayın</li>
+                            <li>Liste açıldığında hesap kodları ve açıklamaları görünecektir</li>
+                            <li>Örnek format: "16.01.02.04 - Emlak Vergisi Emanet Hesabı"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Doğru Hesabın Seçilmesi:</strong>
+                        <ul>
+                            <li>Liste içinde fare ile aşağı-yukarı hareket edebilirsiniz</li>
+                            <li>İstediğiniz hesaba geldiğinizde sol tık yaparak seçimi tamamlayın</li>
+                            <li>Seçilen hesap kutu içinde görünür hale gelecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="tip-box">
+                    <h4>Örnek Kullanım Senaryosu:</h4>
+                    <p>Emlak vergisi tahsilatı için emanet hesabı seçimi:</p>
+                    <ol>
+                        <li>Banka ve Modül seçimlerinizi yaptıktan sonra (örneğin Ziraat Bankası ve Emlak Modülü)</li>
+                        <li>Emanet Hesap Kodu açılır listesine tıklayın</li>
+                        <li>Listede "16.01.02.04 - Emlak Vergisi Emanet Hesabı" kodunu bulun</li>
+                        <li>Bu hesap koduna tıklayarak seçin</li>
+                        <li>Seçiminizi doğrulamak için kutuda görünen kodun doğru olduğunu kontrol edin</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="kaydetme-islemleri" class="section">
+        <h2>Kaydetme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Adım Adım Kaydetme</h3>
+            <ol class="step">
+                <li><strong>Dosya Kontrolü:</strong>
+                    <ul>
+                        <li>Banka seçiminin doğru olduğundan emin olun</li>
+                        <li>Modül seçiminin doğru olduğundan emin olun</li>
+                        <li>Dosyanın yüklendiğinden emin olun</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydet Butonuna Basma:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında yeşil renkli Kaydet butonu bulunur</li>
+                        <li>Butona tıkladığınızda sistem verileri kontrol edecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Sonuç Kontrolü:</strong>
+                    <ul>
+                        <li>İşlem başarılı olduğunda ekranda toplam kayıt sayısı ve tutarı görüntülenir</li>
+                        <li>Bu bilgileri not almanız önerilir</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="warning-box">
+                <h4>Önemli Kontrol Noktaları:</h4>
+                <ul>
+                    <li>Ödeme tutarlarının doğruluğunu kontrol edin</li>
+                    <li>Kayıt sayısının beklediğiniz sayıda olduğundan emin olun</li>
+                    <li>Hata mesajı alırsanız, banka ve modül seçimlerinizi tekrar kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="banka-ozellikleri" class="section">
+        <h2>Özel Banka İşlemleri</h2>
+        <div class="info-box">
+            <h3>Ziraat Bankası</h3>
+            <ul>
+                <li>Dosya adı "ATB" ile başlamalıdır</li>
+                <li>Sistem otomatik olarak tarih ve saat ekler</li>
+                <li>Abone numarası maksimum 10 haneli olabilir</li>
+            </ul>
+
+            <h3>Halk Bankası</h3>
+            <ul>
+                <li>İsim-soyisim toplam 30 karakteri geçmemelidir</li>
+                <li>Özel karakterler kullanılmamalıdır</li>
+            </ul>
+
+            <h3>ING Bank</h3>
+            <ul>
+                <li>Dosya adı "ING" ile başlar</li>
+                <li>Abone numarası 25 karakteri geçmemelidir</li>
+            </ul>
+
+            <div class="tip-box">
+                <p>Her bankanın kendi format kuralları vardır. Sisteme aktarma yaparken seçtiğiniz bankanın kurallarına uygun dosya kullandığınızdan emin olun.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <table>
+                <tr>
+                    <th>Tuş</th>
+                    <th>İşlev</th>
+                </tr>
+                <tr>
+                    <td>Tab</td>
+                    <td>Bir sonraki alana geçer</td>
+                </tr>
+                <tr>
+                    <td>Shift + Tab</td>
+                    <td>Bir önceki alana geçer</td>
+                </tr>
+                <tr>
+                    <td>Enter</td>
+                    <td>Seçili butonu çalıştırır</td>
+                </tr>
+                <tr>
+                    <td>ESC</td>
+                    <td>Programdan çıkar</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="hata-cozumleri" class="section">
+        <h2>Sık Karşılaşılan Hatalar ve Çözümleri</h2>
+        <div class="warning-box">
+            <table>
+                <tr>
+                    <th>Hata Mesajı</th>
+                    <th>Çözüm</th>
+                </tr>
+                <tr>
+                    <td>"Sicil Kaydı Bulunamadı"</td>
+                    <td>
+                        <ul>
+                            <li>Modül seçiminizi kontrol edin</li>
+                            <li>Doğru banka seçtiğinizden emin olun</li>
+                            <li>Dosyanın doğru olduğunu teyit edin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Dosya Oluşturulamadı"</td>
+                    <td>
+                        <ul>
+                            <li>C: sürücüsünde yeterli boş alan olduğunu kontrol edin</li>
+                            <li>Başka bir klasöre kaydetmeyi deneyin</li>
+                            <li>Bilgisayarınızı yeniden başlatın</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Ödeme Dosyası Daha Önce Taşınmış"</td>
+                    <td>
+                        <ul>
+                            <li>Bu dosya daha önce sisteme aktarılmış</li>
+                            <li>Farklı bir dosya seçin</li>
+                            <li>Gerekiyorsa yöneticinize danışın</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="en-iyi-uygulamalar" class="section">
+        <h2>Öneriler ve En İyi Uygulamalar</h2>
+        <div class="tip-box">
+            <h3>Günlük İşlemler İçin Öneriler</h3>
+            <ul>
+                <li>Her sabah ilk iş olarak sistem tarihini kontrol edin</li>
+                <li>Önceki günün dosyalarını yedekleyin</li>
+                <li>Her işlem sonrası toplam tutarları not alın</li>
+                <li>Şüpheli durumlarda işlemi onaylamadan önce yöneticinize danışın</li>
+            </ul>
+
+            <h3>Güvenlik Önerileri</h3>
+            <ul>
+                <li>İşlem yaptığınız bilgisayardan çıkarken oturumu kapatın</li>
+                <li>Oluşturulan dosyaları güvenli bir şekilde saklayın</li>
+                <li>Dosya adlarını değiştirmeyin</li>
+                <li>Şifrenizi kimseyle paylaşmayın</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Hatırlatmalar</h3>
+            <ul>
+                <li>Program açıkken başka işlem yapmayın</li>
+                <li>İşlem sırasında programı kapatmayın</li>
+                <li>Büyük dosyalar için mesai saatleri dışını tercih edin</li>
+                <li>Her gün en az bir kez yedekleme yapın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="yardim-menu" class="section">
+        <h2>Yardım Menüsü</h2>
+        <div class="info-box">
+            <h3>Yardıma Nasıl Ulaşılır?</h3>
+            <p>Ekranın alt kısmında, Kaydet ve Çıkış butonlarının yanında bir Yardım butonu bulunur. Bu butona tıkladığınızda programla ilgili temel bilgileri içeren bir pencere açılır.</p>
+
+            <h3>Yardım Menüsü İçeriği</h3>
+            <ul>
+                <li>Temel kullanım adımları</li>
+                <li>Sık sorulan sorular</li>
+                <li>İletişim bilgileri</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="teknik-destek" class="section">
+        <h2>Teknik Destek</h2>
+        <div class="info-box">
+            <h3>Ne Zaman Teknik Destek Almalısınız?</h3>
+            <ul>
+                <li>Program açılmıyorsa</li>
+                <li>Sürekli hata mesajları alıyorsanız</li>
+                <li>Yeni bir banka eklemek gerekiyorsa</li>
+                <li>Dosya formatı sorunları yaşıyorsanız</li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>Teknik Destek İçin Hazırlık</h4>
+                <p>Teknik desteği aramadan önce şu bilgileri hazırlayın:</p>
+                <ul>
+                    <li>Aldığınız hata mesajının tam metni</li>
+                    <li>Hangi banka ve modül ile çalışıyordunuz</li>
+                    <li>Sorun tam olarak ne zaman başladı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc" class="section">
+        <h2>Son Notlar</h2>
+        <div class="info-box">
+            <h3>Program Kullanımında Altın Kurallar</h3>
+            <ul>
+                <li>Her zaman doğru banka ve modül seçtiğinizden emin olun</li>
+                <li>İşlem sonuçlarını mutlaka kontrol edin</li>
+                <li>Şüpheye düştüğünüzde yardım alın</li>
+                <li>Düzenli yedekleme yapın</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

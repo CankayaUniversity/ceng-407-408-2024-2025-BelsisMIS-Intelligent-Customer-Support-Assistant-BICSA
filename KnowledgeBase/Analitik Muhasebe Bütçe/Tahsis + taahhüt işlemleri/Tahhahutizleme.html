@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taahhüt İşlemleri Sistemi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Taahhüt İşlemleri Sistemi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div class="section">
+        <h2>1. Giriş ve Sistem Genel Bakış</h2>
+        <div class="info-box">
+            <p>Taahhüt İşlemleri Sistemi, kurumunuzun taahhüt işlemlerini takip etmenizi ve yönetmenizi sağlayan kapsamlı bir yönetim aracıdır. Bu sistem ile:</p>
+            <ul>
+                <li>Taahhüt kartlarını görüntüleyebilir ve yönetebilirsiniz</li>
+                <li>Hakediş ödemelerini takip edebilirsiniz</li>
+                <li>Damga vergisi ve teminat işlemlerini yönetebilirsiniz</li>
+                <li>Detaylı raporlar oluşturabilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Sistemi Kullanmak İçin İhtiyacınız Olan Temel Bilgiler:</h4>
+            <ul>
+                <li>İşlem yapmak istediğiniz birim kodu</li>
+                <li>Görüntülemek istediğiniz tarih aralığı</li>
+                <li>Taahhüt işleminin türü (aktif/pasif)</li>
+                <li>İhtiyacınız olan kayıt sayısı</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Temel Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yapısı:</h4>
+                <ul>
+                    <li>Üst Bölüm:
+                        <ul>
+                            <li>Ekranın en üstünde "Taahhüt İşlemleri" başlığı yer alır</li>
+                            <li>Hemen altında geniş bir birim seçim alanı bulunur</li>
+                            <li>Bazı kurumlar için bütçe tertip kodu seçim alanı da mevcuttur</li>
+                        </ul>
+                    </li>
+                    <li>Orta Bölüm:
+                        <ul>
+                            <li>Yıl ve ay seçim alanları yan yana bulunur</li>
+                            <li>Aktif/Pasif kayıt filtreleme seçeneği bunların yanında yer alır</li>
+                            <li>Gider kodu arama alanı bir alt satırda bulunur</li>
+                            <li>Ana liste alanı tüm bu seçimlerin altında geniş bir bölümü kaplar</li>
+                        </ul>
+                    </li>
+                    <li>Alt Bölüm:
+                        <ul>
+                            <li>En altta butonlar çubuğu bulunur</li>
+                            <li>"Toplu Taahhüt Döküm", "Yeni Oluştur", "İşlemler" ve "Çıkış" düğmeleri sırayla yer alır</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Bilgiler:</h4>
+            <ul>
+                <li>Sistem ilk açıldığında tüm alanlar boş gelecektir</li>
+                <li>İşlem yapmadan önce mutlaka bir birim seçmelisiniz</li>
+                <li>Tarih aralığı seçimi zorunludur</li>
+                <li>Kayıt sayısı varsayılan olarak 250 ile sınırlıdır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Tarih Seçimi ve Dönem Kontrolleri</h2>
+        
+        <div class="info-box">
+            <h3>Ay ve Tarih Seçimi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Ay Seçimi:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Ay seçim kutusu, ekranın üst kısmında yıl seçiminin hemen yanında bulunur</li>
+                            <li>Açılır liste şeklindedir ve gri tonlarda bir arka plana sahiptir</li>
+                            <li>Yıl seçiminin sağında, Aktif/Pasif filtresinin solunda konumlanır</li>
+                        </ul>
+                    </li>
+                    <li>Ay Seçme Adımları:
+                        <ul>
+                            <li>Ay seçim kutusuna tıklayın</li>
+                            <li>Açılan listede "TÜM AYLAR" veya istediğiniz ayı (OCAK-ARALIK) seçin</li>
+                            <li>Seçiminizi yaptığınızda, tarih alanları otomatik olarak seçilen aya göre güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tarih Aralığı Seçimi:</h4>
+                <ol>
+                    <li>Tarih Alanlarının Yeri:
+                        <ul>
+                            <li>Tarih giriş kutuları ay seçiminin hemen altındaki satırda yer alır</li>
+                            <li>İki ayrı tarih kutusu yan yana bulunur: sol tarafta başlangıç, sağ tarafta bitiş tarihi</li>
+                            <li>Her iki kutunun da arka planı beyazdır ve hafif içe çökük görünürler</li>
+                        </ul>
+                    </li>
+                    <li>Başlangıç Tarihi Girişi:
+                        <ul>
+                            <li>Sol taraftaki tarih kutusuna tıklayın</li>
+                            <li>Tarihi gün.ay.yıl formatında yazın (Örnek: 01.02.2024)</li>
+                            <li>Tarihi girdikten sonra Tab tuşu ile bitiş tarihine geçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Bitiş Tarihi Girişi:
+                        <ul>
+                            <li>Sağ taraftaki tarih kutusuna geçin</li>
+                            <li>Aynı formatta bitiş tarihini girin</li>
+                            <li>Bitiş tarihi, başlangıç tarihinden sonraki bir gün olmalıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Dikkat Edilmesi Gerekenler:</h4>
+            <ul>
+                <li>Tarih alanları kesinlikle boş bırakılamaz</li>
+                <li>Tarihler arası çok uzun süre olması sistem performansını etkileyebilir</li>
+                <li>Bitiş tarihi başlangıç tarihinden önce bir tarih olamaz</li>
+                <li>Tarihleri girerken nokta (.) kullanmayı unutmayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Faydalı İpuçları:</h4>
+            <ul>
+                <li>Ay seçtiğinizde, o ayın başlangıç ve bitiş tarihleri otomatik olarak doldurulur</li>
+                <li>Tab tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>Sık kullandığınız tarih aralıklarını not almanız işinizi kolaylaştırabilir</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Hesap Seçimi ve Filtreleme</h2>
+
+        <div class="step">
+            <h4>Gider Kodu ile Filtreleme:</h4>
+            <ol>
+                <li>Gider Kodu Alanının Konumu:
+                    <ul>
+                        <li>Gider kodu arama kutusu, hesap seçim listesinin altında bulunur</li>
+                        <li>"Gider Kodu" etiketi yanında uzun bir metin kutusu şeklindedir</li>
+                        <li>Kutu beyaz arka planlı ve hafif içe çökük görünümdedir</li>
+                    </ul>
+                </li>
+                <li>Filtreleme Adımları:
+                    <ul>
+                        <li>Gider kodu kutusuna tıklayın</li>
+                        <li>Aramak istediğiniz gider kodunu tam veya kısmi olarak yazın</li>
+                        <li>Kutunun dışına tıkladığınızda veya Enter tuşuna bastığınızda liste otomatik olarak filtrelenir</li>
+                        <li>Filtreyi kaldırmak için kutuyu boşaltın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="info-box">
+            <h3>Hesap Seçimi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Hesap Seçim Alanının Kullanımı:</h4>
+                <ol>
+                    <li>Alan Konumu:
+                        <ul>
+                            <li>Hesap seçim listesi ekranın en üst kısmında, başlığın hemen altında yer alır</li>
+                            
+                            <li>Liste beyaz arka planlı ve dikdörtgen şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li>Tekli Hesap Seçimi:
+                        <ul>
+                            <li>Liste kutusuna tıklayın</li>
+                            <li>Açılan listede hesaplar "Hesap No - Hesap Adı" formatında görünür</li>
+                            <li>İstediğiniz hesaba tıkladığınızda mavi renkte vurgulanır</li>
+                        </ul>
+                    </li>
+                    <li>Çoklu Hesap Seçimi:
+                        <ul>
+                            <li>CTRL tuşunu basılı tutarak istediğiniz hesaplara tek tek tıklayın</li>
+                            <li>Veya SHIFT tuşu ile bir aralık seçmek için ilk hesaba tıklayın, SHIFT tuşunu basılı tutup son hesaba tıklayın</li>
+                            <li>Seçtiğiniz tüm hesaplar mavi renkte vurgulanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>En az bir hesap seçilmesi zorunludur</li>
+                <li>Çok fazla hesap seçimi raporlama süresini uzatabilir</li>
+                <li>Seçilen hesaplar raporun başlığında görünecektir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Kullanışlı İpuçları:</h4>
+            <ul>
+                <li>Hesap listesinde hesap numarasını yazmaya başlayarak hızlı arama yapabilirsiniz</li>
+                <li>Fare tekerleği ile listede kolayca gezinebilirsiniz</li>
+                <li>Sık kullandığınız hesap numaralarını not almanız faydalı olacaktır</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h2>5. Çek İşlemleri ve Tarih Tipi Seçimi</h2>
+        
+        <div class="info-box">
+            <h3>Çek Tarih Tipinin Seçimi ve Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Çek Tarih Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li>Seçim Alanının Yeri:
+                        <ul>
+                            <li>Çek tarih tipi seçimi, hesap seçim listesinin altında bulunur</li>
+                            <li>Tek satırlık, kompakt bir açılır liste şeklindedir</li>
+                            <li>"Çek Tarihi" etiketi yanındaki beyaz arka planlı kutudan seçim yapılır</li>
+                        </ul>
+                    </li>
+                    <li>Tarih Tipi Seçme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>İki seçenek göreceksiniz:
+                                <ul>
+                                    <li>"İşlem Tarihi" - Çekin sisteme işlendiği tarihi baz alır</li>
+                                    <li>"Vade Tarihi" - Çekin vadesi geldiği tarihi baz alır</li>
+                                </ul>
+                            </li>
+                            <li>İhtiyacınıza uygun seçeneği tıklayarak seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h4>Ne Zaman Hangi Tarih Tipini Seçmelisiniz?</h4>
+                <ul>
+                    <li>İşlem Tarihi seçin eğer:
+                        <ul>
+                            <li>Günlük işlemleri takip ediyorsanız</li>
+                            <li>Muhasebe kayıtları için rapor hazırlıyorsanız</li>
+                            <li>Geçmiş işlemleri inceliyorsanız</li>
+                        </ul>
+                    </li>
+                    <li>Vade Tarihi seçin eğer:
+                        <ul>
+                            <li>Gelecek ödemeleri planlamak istiyorsanız</li>
+                            <li>Vade bazlı raporlama yapıyorsanız</li>
+                            <li>Nakit akışı planlaması yapıyorsanız</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>6. Satır Sayısı ve Görüntüleme Seçenekleri</h2>
+        
+        <div class="info-box">
+            <h3>Satır Sayısı Ayarlama ve Görüntüleme</h3>
+            
+            <div class="step">
+                <h4>Satır Sayısı Nasıl Ayarlanır:</h4>
+                <ol>
+                    <li>Ayar Alanının Konumu:
+                        <ul>
+                            <li>Satır sayısı seçimi ekranın üst kısmında, ay seçiminin yanında sağ tarafta bulunur</li>
+                            <li>Açılır liste şeklindedir ve "250 Kayıt", "500 Kayıt", "1000 Kayıt" seçeneklerini içerir</li>
+                            <li>Varsayılan olarak "250 Kayıt" seçilidir</li>
+                        </ul>
+                    </li>
+                    <li>Satır Sayısını Değiştirme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>İstediğiniz kayıt sayısını seçin</li>
+                            <li>Seçiminizi yaptığınızda liste otomatik olarak yenilenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Çok yüksek satır sayısı seçimi sistemin yavaş çalışmasına neden olabilir</li>
+                <li>Çok düşük satır sayısı seçimi çok sayıda sayfa oluşturabilir</li>
+                <li>Genellikle 250 kayıt çoğu durum için yeterlidir</li>
+                <li>Büyük raporlar için mesai saatleri dışını tercih edin</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Kullanım İpuçları:</h4>
+            <ul>
+                <li>Önce 250 kayıt ile başlayıp, ihtiyaca göre artırın</li>
+                <li>Yoğun saatlerde daha az kayıt sayısı seçin</li>
+                <li>Detaylı inceleme için daha az kayıt seçerek başlayın</li>
+                <li>Raporlama yaparken sistem yükünü göz önünde bulundurun</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h2>7. Rapor Oluşturma ve Listeleme</h2>
+        
+        <div class="info-box">
+            <h3>Rapor Nasıl Oluşturulur ve Görüntülenir</h3>
+            
+            <div class="step">
+                <h4>Rapor Kaynağı Seçimi:</h4>
+                <ol>
+                    <li>Seçim Alanının Yeri:
+                        <ul>
+                            <li>"Rapor Kaynağı" seçimi, satır sayısı alanının hemen altında bulunur</li>
+                            <li>Tek satırlık, açılır liste şeklindedir</li>
+                            <li>İki seçenek içerir: "Rapor Sunucu" ve "Uygulama Sunucu"</li>
+                        </ul>
+                    </li>
+                    <li>Doğru Kaynağı Seçme:
+                        <ul>
+                            <li>Rapor Sunucu seçin eğer:
+                                <ul>
+                                    <li>Büyük miktarda veri işleyecekseniz</li>
+                                    <li>Karmaşık raporlar oluşturacaksanız</li>
+                                    <li>Detaylı analiz yapacaksanız</li>
+                                </ul>
+                            </li>
+                            <li>Uygulama Sunucu seçin eğer:
+                                <ul>
+                                    <li>Hızlı sonuç almak istiyorsanız</li>
+                                    <li>Az miktarda veri işleyecekseniz</li>
+                                    <li>Basit raporlar oluşturacaksanız</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor Oluşturma Adımları:</h4>
+                <ol>
+                    <li>Ön Hazırlık:
+                        <ul>
+                            <li>En az bir birim/hesap seçtiğinizden emin olun</li>
+                            <li>Tarih aralığını kontrol edin</li>
+                            <li>Gerekli filtreleri (aktif/pasif, ay seçimi vb.) ayarlayın</li>
+                        </ul>
+                    </li>
+                    <li>Raporu Başlatma:
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Listele" düğmesini bulun</li>
+                            <li>Düğme gri tonlarda ve üç boyutlu görünümdedir</li>
+                            <li>"Listele" düğmesine tıklayın ya da Enter tuşuna basın</li>
+                        </ul>
+                    </li>
+                    <li>Sonuçları Görüntüleme:
+                        <ul>
+                            <li>Rapor yeni bir pencerede açılacaktır</li>
+                            <li>Borç, alacak ve çek bilgileri üç ana bölümde görüntülenir</li>
+                            <li>Her bölüm kendi içinde tarih sırasına göre dizilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Rapor oluşturma süresi veri miktarına göre değişebilir</li>
+                <li>Çok büyük tarih aralıkları sistem performansını etkileyebilir</li>
+                <li>Rapor penceresi açıkken ana ekranda işlem yapmaya devam edebilirsiniz</li>
+                <li>Önemli raporları kaydetmeyi unutmayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Rapor Alma İpuçları:</h4>
+            <ul>
+                <li>Yoğun çalışma saatlerinde kısa tarih aralıkları seçin</li>
+                <li>Karmaşık raporları mesai saatleri dışında almayı deneyin</li>
+                <li>Sık kullandığınız rapor kriterlerini not edin</li>
+                <li>Büyük raporları parçalara bölerek almayı tercih edin</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Raporda İşlem Menüsünü Kullanma:</h4>
+            <ol>
+                <li>Menüyü Açma:
+                    <ul>
+                        <li>Rapor listesinde bir kayıt seçin</li>
+                        <li>Alt kısımdaki "İşlemler" düğmesine tıklayın</li>
+                        <li>Veya seçili kaydın üzerinde sağ tıklayın</li>
+                    </ul>
+                </li>
+                <li>Kullanılabilir İşlemler:
+                    <ul>
+                        <li>"Muhasebe Kaydı Oluştur" - Yeni taahhütler için</li>
+                        <li>"Muhasebe Kayıtlarını Göster" - Mevcut kayıtlar için</li>
+                        <li>"Taahhüt Kartını Kapat" - Aktif taahhütler için</li>
+                        <li>"Ek Taahhüt İşlemleri" - İlave işlemler için</li>
+                        <li>"Damga Vergisi Alındıları" - Vergi işlemleri için</li>
+                        <li>"Hakediş Ödemelerini Göster" - Ödeme kayıtları için</li>
+                    </ul>
+                </li>
+                <li>Detaylı İşlemler:
+                    <ul>
+                        <li>"Taahhüt Kartı Dökümü" - Seçili taahhüdün detaylı dökümünü almak için</li>
+                        <li>"Taahhüt İncele" - Taahhüt detaylarını geniş ekranda incelemek için</li>
+                        <li>"Muhasebe Kayıtlarını Göster" - Taahhüde ait tüm muhasebe hareketlerini görüntülemek için</li>
+                        <li>"Ek Taahhüt İşlemleri" - İlk muhasebe kaydı oluşturulduktan sonra kullanılabilir</li>
+                        <li>"İptal Bilgisi" - Taahhüdün iptal durumunu görüntülemek veya değiştirmek için</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="info-box">
+                <h4>Taahhüt Durumu Göstergeleri:</h4>
+                <ul>
+                    <li>Geçici Kabul:
+                        <ul>
+                            <li>Taahhüt işinin geçici olarak tamamlandığını gösterir</li>
+                            <li>Liste görünümünde "Geçici Kabul" sütununda görüntülenir</li>
+                            <li>Değer varsa geçici kabulün yapıldığını gösterir</li>
+                        </ul>
+                    </li>
+                    <li>Kesin Kabul:
+                        <ul>
+                            <li>Taahhüt işinin kesin olarak tamamlandığını gösterir</li>
+                            <li>Liste görünümünde "Kesin Kabul" sütununda görüntülenir</li>
+                            <li>Değer varsa kesin kabulün yapıldığını gösterir</li>
+                            <li>Kesin kabul yapılmış taahhütlerde bazı işlemler kısıtlanır</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>8. Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        
+        <div class="info-box">
+            <h3>Yaygın Sorunlar ve Çözüm Adımları</h3>
+            
+            <div class="step">
+                <h4>Rapor Oluşturulmama Sorunu:</h4>
+                <ol>
+                    <li>Sorun Belirtileri:
+                        <ul>
+                            <li>"Listele" düğmesine basıldığında hiçbir şey olmuyor</li>
+                            <li>Veya sistem uzun süre bekliyor ve yanıt vermiyor</li>
+                            <li>Ya da "İşlem gerçekleştirilemedi" mesajı alıyorsunuz</li>
+                        </ul>
+                    </li>
+                    <li>Çözüm Adımları:
+                        <ul>
+                            <li>Önce hesap seçiminizi kontrol edin - en az bir hesap seçili olmalı</li>
+                            <li>Tarih aralığını daraltmayı deneyin - çok geniş aralıklar sorun çıkarabilir</li>
+                            <li>Açık rapor pencerelerini kapatın - çok sayıda açık pencere sistemi yavaşlatabilir</li>
+                            <li>Tarayıcı pencerenizi yenileyip tekrar deneyin</li>
+                            <li>Hala sorun devam ediyorsa, sistem yöneticinize başvurun</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Tarih Hatalarını Düzeltme:</h4>
+                <ol>
+                    <li>Yaygın Tarih Hataları:
+                        <ul>
+                            <li>Bitiş tarihi başlangıç tarihinden önceki bir tarih olarak girilmiş</li>
+                            <li>Tarihler yanlış formatta yazılmış</li>
+                            <li>Geçersiz tarih değerleri girilmiş</li>
+                        </ul>
+                    </li>
+                    <li>Nasıl Düzeltilir:
+                        <ul>
+                            <li>Tarihleri gün.ay.yıl formatında girin (örnek: 01.02.2024)</li>
+                            <li>Başlangıç tarihinin bitiş tarihinden önce olduğundan emin olun</li>
+                            <li>Kolaylık için ay seçeneğini kullanarak otomatik tarih doldurmayı tercih edin</li>
+                            <li>Tarih seçiminde takvim simgesini kullanmayı deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Listeleme ve Görüntüleme Sorunları:</h4>
+                <ol>
+                    <li>Yaygın Görüntüleme Sorunları:
+                        <ul>
+                            <li>Liste boş görünüyor</li>
+                            <li>Veriler eksik veya yanlış görünüyor</li>
+                            <li>Sayfa düzeni bozuk görünüyor</li>
+                        </ul>
+                    </li>
+                    <li>Çözüm Yolları:
+                        <ul>
+                            <li>Filtrelerinizi kontrol edin - çok kısıtlayıcı filtreler sonuç getirmeyebilir</li>
+                            <li>Aktif/Pasif seçiminizi kontrol edin</li>
+                            <li>Sayfa yenileme (F5) tuşunu kullanın</li>
+                            <li>Tarayıcı penceresini kapatıp yeniden açmayı deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <h2>9. Raporların Yazdırılması ve Dışa Aktarılması</h2>
+        
+        <div class="info-box">
+            <h3>Rapor Yazdırma ve Aktarma İşlemleri</h3>
+            
+            <div class="step">
+                <h4>Rapor Yazdırma Adımları:</h4>
+                <ol>
+                    <li>Yazdırma Hazırlığı:
+                        <ul>
+                            <li>Yazdırmak istediğiniz rapor penceresinin tamamen yüklenmesini bekleyin</li>
+                            <li>Tüm verilerin ekranda görüntülendiğinden emin olun</li>
+                            <li>Yazıcınızın açık ve hazır olduğunu kontrol edin</li>
+                        </ul>
+                    </li>
+                    <li>Yazdırma İşlemi:
+                        <ul>
+                            <li>Rapor penceresinin alt kısmındaki "Yazdır" düğmesini bulun</li>
+                            <li>Düğme gri renkte ve üç boyutlu görünümdedir</li>
+                            <li>"Yazdır" düğmesine tıklayın</li>
+                            <li>Açılan yazdırma penceresinde yazıcı ayarlarınızı kontrol edin</li>
+                            <li>"Yazdır" seçeneğini onaylayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Excel'e Aktarma:</h4>
+                <ol>
+                    <li>Aktarma İşlemi Adımları:
+                        <ul>
+                            <li>Rapor listesinde herhangi bir yere sağ tıklayın</li>
+                            <li>Açılan menüden "Excele Aktar" seçeneğini seçin</li>
+                            <li>Dosyanın kaydedileceği konumu belirleyin</li>
+                            <li>Dosya adını girin ve kaydedin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Çok sayfalı raporlarda tüm sayfaların yüklenmesini bekleyin</li>
+                <li>Yazdırmadan önce rapor içeriğini kontrol edin</li>
+                <li>Excel'e aktarırken tüm verilerin aktarıldığından emin olun</li>
+                <li>Önemli raporların yedek kopyasını saklayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Kullanım İpuçları:</h4>
+            <ul>
+                <li>Büyük raporları parçalar halinde yazdırın</li>
+                <li>Excel'e aktarılan dosyaları anlamlı isimlerle kaydedin</li>
+                <li>Sık kullandığınız raporlar için özel klasörler oluşturun</li>
+                <li>Yazdırma öncesi sayfa düzenini önizleyin</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

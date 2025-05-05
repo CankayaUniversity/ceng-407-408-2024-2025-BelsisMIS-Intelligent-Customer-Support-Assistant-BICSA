@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gönderme Emri İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Gönderme Emri İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ana Ekran Düzeni ve Bileşenler</a></li>
+                <li><a href="#temel-islemler">Temel İşlemler</a></li>
+                <li><a href="#form-alanlari">Form Alanlarının Kullanımı</a></li>
+                <li><a href="#ozel-islemler">Özel İşlemler ve İpuçları</a></li>
+                <li><a href="#hata-uyari">Hata ve Uyarı Mesajları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Gönderme Emri İşlemleri programı, kurum içi ve dışı ödemelerin takibi ve yönetimi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni gönderme emri oluşturma</li>
+                <li>Mevcut emirleri düzenleme</li>
+                <li>Gönderme emirlerini iptal etme</li>
+                <li>Emirleri yazdırma</li>
+                <li>Geçmiş emirleri sorgulama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+        </div>
+
+        <div class="tip-box">
+            <h4>Program Kullanımı İçin Gerekli Bilgiler:</h4>
+            <ul>
+                <li>Muhasebe hesap numarası</li>
+                <li>Gönderme emri seri ve sıra numarası</li>
+                <li>Banka ve şube bilgileri</li>
+                <li>Gönderen ve alıcı bilgileri</li>
+                <li>Ödeme tutarı</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Program açıldığında sistem tarihi otomatik olarak gelir</li>
+                <li>Tutar bilgisi nokta (.) veya virgül (,) ile girilmelidir</li>
+                <li>Hesap numarası seçimi yapmadan işlem yapılamaz</li>
+                <li>Yapılan her işlem için bir yevmiye numarası oluşturulur</li>
+            </ul>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ana Ekran Düzeni ve Bileşenler</h2>
+        
+        <div class="info-box">
+            <h3>Genel Ekran Yerleşimi</h3>
+            <p>Program penceresi üç ana bölümden oluşur:</p>
+            <ul>
+                <li>Başlık çubuğu</li>
+                <li>Veri giriş alanları</li>
+                <li>İşlem butonları</li>
+            </ul>
+        </div>
+    
+        <div class="step">
+            <h4>Başlık Bölümü:</h4>
+            <ul>
+                <li>Ekranın en üst kısmında gri tonlarında bir başlık çubuğu bulunur</li>
+                <li>Başlıkta "Gönderme Emri Giriş/Değişiklik/İptal" yazısı yer alır</li>
+            </ul>
+        </div>
+    
+        <div class="step">
+            <h4>Veri Giriş Alanları:</h4>
+            <p>Form alanları yukarıdan aşağıya şu sırayla dizilmiştir:</p>
+            
+            <ol>
+                <li><strong>Temel Bilgiler Grubu</strong>
+                    <ul>
+                        <li>Muhasebe Hesap No alanı ve yanında açılır menü</li>
+                        <li>Hemen altında Seri/No girişi için iki ayrı alan</li>
+                        <li>Yıl bilgisi (bazı versiyonlarda otomatik gelir)</li>
+                    </ul>
+                </li>
+    
+                <li><strong>Tarih ve Özel Bilgiler Grubu</strong>
+                    <ul>
+                        <li>İnce gri bir çizgiyle üst gruptan ayrılmış</li>
+                        <li>Tarih seçim alanı</li>
+                        <li>Özel No giriş kutusu</li>
+                    </ul>
+                </li>
+    
+                <li><strong>Banka Bilgileri Grubu</strong>
+                    <ul>
+                        <li>Banka Adı giriş alanı</li>
+                        <li>Şube Adı giriş alanı</li>
+                        <li>IBAN No giriş alanı</li>
+                        <li>Hesap No giriş alanı</li>
+                    </ul>
+                </li>
+    
+                <li><strong>Gönderici/Alıcı Bilgileri Grubu</strong>
+                    <ul>
+                        <li>Gönderen Birim seçim alanı (açılır liste)</li>
+                        <li>Nereye Gönderildiği bilgi alanı (geniş metin kutusu)</li>
+                        <li>Muhasebe Yetkilisi ve Unvanı giriş alanları</li>
+                    </ul>
+                </li>
+    
+                <li><strong>Tutar ve Nüsha Bilgileri</strong>
+                    <ul>
+                        <li>Tutar giriş alanı</li>
+                        <li>Nüsha sayısı seçim kutusu</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İşlem Butonları:</h4>
+            <p>Ekranın alt kısmında soldan sağa doğru sıralanan butonlar:</p>
+            <ul>
+                <li><strong>Gezinme Grubu (sol taraf):</strong>
+                    <ul>
+                        <li>"Önceki" butonu - yeşil renkli</li>
+                        <li>"Kayıtlar" butonu - yeşil renkli</li>
+                        <li>"Sonraki" butonu - yeşil renkli</li>
+                    </ul>
+                </li>
+                
+                <li><strong>İşlem Grubu (orta kısım):</strong>
+                    <ul>
+                        <li>"Kayıt" butonu - koyu renkli ve kalın yazı</li>
+                        <li>"İptal" butonu - kırmızı renkli</li>
+                        <li>"Form Temizle" butonu - turkuaz renkli</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Çıkış Grubu (sağ taraf):</strong>
+                    <ul>
+                        <li>"Yazdır" butonu - standart görünüm</li>
+                        <li>"Çıkış" butonu - kırmızı renkli ve kalın yazı</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Notlar:</h4>
+            <ul>
+                <li>Zorunlu alanlar yıldız (*) işareti ile belirtilmemiştir, ancak boş bırakılamazlar</li>
+                <li>Form alanları arasında TAB tuşu ile geçiş yapılabilir</li>
+                <li>Bazı alanlar otomatik olarak büyük harfe çevrilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Kullanım İpuçları:</h4>
+            <ul>
+                <li>Hesap no seçiminde açılır menüyü kullanmak daha hızlıdır</li>
+                <li>Tarih formatı GG/AA/YYYY şeklinde olmalıdır</li>
+                <li>IBAN numarası girerken boşluk kullanmayın</li>
+                <li>Gönderen Birim seçiminde en çok kullanılan birimler listenin başında yer alır</li>
+            </ul>
+        </div>
+        <div class="warning-box">
+            <h4>Kurum Kodlarına Göre Özel Durumlar:</h4>
+            <ul>
+                <li>62000, 661300 ve 770202 kodlu kurumlar için bazı butonlar ve özellikler farklı görüntülenebilir</li>
+                <li>Otomatik gönderme emri özelliği olan kurumlarda, muhasebe fişinden otomatik gönderme emri oluşturulduğunda bazı alanlar ve butonlar gizlenebilir</li>
+            </ul>
+        </div>
+    </div>
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+    
+        <div class="step">
+            <h3>1. Yeni Gönderme Emri Oluşturma</h3>
+            
+            <div class="info-box">
+                <h4>Adım Adım Yeni Gönderme Emri Oluşturma:</h4>
+                <ol>
+                    <li><strong>Hesap Seçimi:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmındaki "Muhasebe Hesap No" alanına tıklayın</li>
+                            <li>Açılan listeden uygun hesabı seçin (103 ile başlayan kodlar banka hesaplarıdır)</li>
+                            <li>Seçim yapıldığında ilgili banka bilgileri otomatik olarak doldurulacaktır</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Seri ve Numara Bilgileri:</strong>
+                        <ul>
+                            <li>Hesap seçiminin hemen altındaki "Seri" alanına seri kodunu girin
+                                <div class="tip-box">Not: Seri kodu otomatik olarak büyük harfe dönüşecektir</div>
+                            </li>
+                            <li>"No" alanına sistem otomatik olarak bir sonraki numarayı getirecektir</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Tarih ve Özel Numara:</strong>
+                        <ul>
+                            <li>Tarih alanına gönderme emrinin tarihini girin (varsayılan olarak günün tarihi gelir)</li>
+                            <li>Özel No alanına varsa referans numarasını yazın</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Banka Bilgilerinin Kontrolü:</strong>
+                        <ul>
+                            <li>Otomatik gelen banka bilgilerini kontrol edin</li>
+                            <li>Gerekirse IBAN ve hesap numarası bilgilerini güncelleyin</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Gönderici/Alıcı Bilgileri:</strong>
+                        <ul>
+                            <li>Gönderen Birim açılır listesinden ilgili birimi seçin</li>
+                            <li>"Nereye Gönderildiği" alanı için:
+                                <ol>
+                                    <li>Manuel giriş için doğrudan metin kutularına yazın, veya</li>
+                                    <li>Arama için metin kutularının yanındaki mercek simgeli butona tıklayın</li>
+                                    <li>Açılan pencereden kişi/kurum seçimi yapın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Tutar ve Nüsha:</strong>
+                        <ul>
+                            <li>Tutar alanına ödeme miktarını girin (nokta veya virgül kullanabilirsiniz)</li>
+                            <li>Nüsha sayısını açılır listeden seçin (genellikle 2 veya 3)</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Alt kısımdaki "Kayıt" butonuna tıklayın</li>
+                            <li>Onay mesajına "Evet" yanıtını verin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Kontroller:</h4>
+                <ul>
+                    <li>Tutar alanı boş bırakılamaz</li>
+                    <li>IBAN numarası bazı kurumlar için zorunludur</li>
+                    <li>Nereye gönderildiği bilgisi 1000 karakteri geçemez</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="step">
+            <h3>2. Mevcut Emri Düzenleme</h3>
+            
+            <div class="info-box">
+                <h4>Adım Adım Gönderme Emri Düzenleme:</h4>
+                <ol>
+                    <li><strong>Emri Bulma:</strong>
+                        <ul>
+                            <li>Alt kısımdaki "Kayıtlar" butonuna tıklayın</li>
+                            <li>Açılan pencerede arama kriterlerini girin</li>
+                            <li>İlgili emri seçin</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ul>
+                            <li>Değiştirilecek alanlara yeni bilgileri girin</li>
+                            <li>Hesap no, seri ve numara bilgileri değiştirilemez</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>"Kayıt" butonuna tıklayın</li>
+                            <li>Güncelleme onayını verin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="step">
+            <h3>3. Emri İptal Etme</h3>
+            
+            <div class="info-box">
+                <h4>Adım Adım Gönderme Emri İptal İşlemi:</h4>
+                <ol>
+                    <li><strong>İptal Edilecek Emri Bulma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kayıtlar" butonuna tıklayın</li>
+                            <li>Açılan pencerede:
+                                <ol>
+                                    <li>Hesap no, tarih veya seri/no bilgisinden birini kullanarak arama yapın</li>
+                                    <li>Arama sonuçlarından ilgili emri seçin</li>
+                                    <li>Seçilen emir ana ekrana gelecektir</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>İptal İşlemini Gerçekleştirme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, "Kayıt" butonunun sağında yer alan kırmızı renkli "İptal" butonuna tıklayın</li>
+                            <li>Açılan onay penceresinde:
+                                <ol>
+                                    <li>"İptal İşlemini Onaylıyor musunuz?" mesajını görüntüleyin</li>
+                                    <li>Emin olduğunuzda "Evet" butonuna tıklayın</li>
+                                    <li>İşlemden vazgeçmek için "Hayır" butonunu kullanın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>İptal İşlemi İle İlgili Önemli Notlar:</h4>
+                <ul>
+                    <li>Yevmiye kaydı oluşturulmuş emirler iptal edilemez</li>
+                    <li>İptal edilen emirler geri alınamaz</li>
+                    <li>İptal işlemi sistem günlüğüne kaydedilir</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="step">
+            <h3>4. Gönderme Emrini Yazdırma</h3>
+            
+            <div class="info-box">
+                <h4>Adım Adım Yazdırma İşlemi:</h4>
+                <ol>
+                    <li><strong>Yazdırılacak Emri Hazırlama:</strong>
+                        <ul>
+                            <li>Yeni oluşturulan bir emirde kayıt işleminden sonra, veya</li>
+                            <li>Mevcut bir emri "Kayıtlar" butonundan bularak ekrana getirin</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Nüsha Sayısını Belirleme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Nüsha Sayısı" açılır listesinden:
+                                <ol>
+                                    <li>Genellikle 2 veya 3 nüsha seçilir</li>
+                                    <li>Kurumunuzun standart uygulamasına göre seçim yapın</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <div class="info-box">
+                            <h4>Kuruma Özel Nüsha Seçenekleri:</h4>
+                            <ul>
+                                <li>160800 ve 170200 kodlu kurumlar için:
+                                    <ul>
+                                        <li>Varsayılan olarak 1 nüsha</li>
+                                        <li>2 veya 3 nüsha seçilebilir</li>
+                                    </ul>
+                                </li>
+                                <li>160900 ve 101101 kodlu kurumlar için:
+                                    <ul>
+                                        <li>Varsayılan olarak 3 nüsha</li>
+                                        <li>2 nüsha seçeneği mevcuttur</li>
+                                    </ul>
+                                </li>
+                                <li>061900 kodlu kurumlar için:
+                                    <ul>
+                                        <li>1, 2 veya 3 nüsha seçilebilir</li>
+                                        <li>Varsayılan olarak 3 nüsha</li>
+                                    </ul>
+                                </li>
+                                <li>Diğer kurumlar için genellikle 2 veya 3 nüsha seçeneği sunulur</li>
+                            </ul>
+                        </div>
+                    </li>
+    
+                    <li><strong>Yazdırma İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, "Form Temizle" butonunun sağında yer alan "Yazdır" butonuna tıklayın</li>
+                            <li>Yazdırma önizleme penceresi açılacaktır</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Yazdırma Önizleme ve Kontrol:</strong>
+                        <ul>
+                            <li>Açılan pencerede:
+                                <ol>
+                                    <li>Tüm bilgilerin doğru görüntülendiğini kontrol edin</li>
+                                    <li>İmza alanlarının tam olduğundan emin olun</li>
+                                    <li>Tutar bilgisinin yazı ile yazılan kısmını kontrol edin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Yazıcıya Gönderme:</strong>
+                        <ul>
+                            <li>Önizleme penceresinin üst kısmındaki yazdırma simgesine tıklayın</li>
+                            <li>Yazıcı seçim penceresinde:
+                                <ol>
+                                    <li>Doğru yazıcıyı seçin</li>
+                                    <li>Kağıt yönünü kontrol edin (dikey)</li>
+                                    <li>Kopya sayısının doğru olduğunu kontrol edin</li>
+                                    <li>"Yazdır" butonuna tıklayın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Yazdırma İpuçları:</h4>
+                <ul>
+                    <li>Yazdırmadan önce yazıcıda yeterli kağıt olduğundan emin olun</li>
+                    <li>İlk nüshayı kontrol edip sonra diğerlerini yazdırabilirsiniz</li>
+                    <li>Önemli emirlerde bir kopya da elektronik ortamda saklayın</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-box">
+            <h4>Mobil İmza İşlemleri:</h4>
+            <p>Gönderme emri mobil imza ile imzalanmışsa, çıktı üzerinde "( Mobil İmza İle İmzalanmıştır )" ibaresi otomatik olarak görüntülenir.</p>
+        </div>
+    </div>
+    <div id="form-alanlari" class="section">
+        <h2>Form Alanlarının Kullanımı</h2>
+    
+        <div class="step">
+            <h3>1. Muhasebe Hesap No Seçimi ve Kullanımı</h3>
+            
+            <div class="info-box">
+                <h4>Hesap Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Açılır Liste Kullanımı:</strong>
+                        <ul>
+                            <li>Form ekranının en üst kısmında yer alan "Muhasebe Hesap No" açılır listesine tıklayın</li>
+                            <li>Liste içinde:
+                                <ul>
+                                    <li>103 ile başlayan kodlar banka hesaplarını gösterir</li>
+                                    <li>Her hesap "Hesap No - Hesap Adı" formatında görüntülenir</li>
+                                    <li>Klavye ile ilk rakamları yazarak hızlı arama yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Otomatik Bilgi Doldurma:</strong>
+                        <ul>
+                            <li>Hesap seçildiğinde:
+                                <ol>
+                                    <li>Banka adı otomatik doldurulur</li>
+                                    <li>Şube bilgisi gelir</li>
+                                    <li>Hesap/IBAN numarası alanları güncellenir</li>
+                                    <li>Sistem bir sonraki gönderme emri numarasını otomatik atar</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="step">
+            <h3>2. Seri/No Bilgisi Girişi</h3>
+            
+            <div class="info-box">
+                <h4>Seri ve Numara Girişi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Seri Kodu Girişi:</strong>
+                        <ul>
+                            <li>Hesap seçiminin hemen altındaki "Seri" metin kutusunda:</li>
+                            <li>En fazla 3 karakter uzunluğunda bir kod girin</li>
+                            <li>Girilen kod otomatik olarak büyük harfe dönüşür</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Sıra Numarası:</strong>
+                        <ul>
+                            <li>Seri kodunun yanındaki "No" alanı:</li>
+                            <li>Seçilen hesap için bir sonraki sıra numarası otomatik atanır</li>
+                            <li>Numarayı manuel değiştirmek mümkündür ancak önerilmez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Aynı seri ve numara kombinasyonu tekrar kullanılamaz</li>
+                    <li>Numara alanına sadece rakam girilebilir</li>
+                    <li>Kayıtlı bir emrin seri ve numarası değiştirilemez</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="step">
+            <h3>3. Tarih ve Tutar Bilgileri</h3>
+            
+            <div class="info-box">
+                <h4>Tarih ve Tutar Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Tarih Girişi:</strong>
+                        <ul>
+                            <li>Tarih alanı, seri/no bilgilerinin altında yer alır</li>
+                            <li>Tarih girişi için:
+                                <ol>
+                                    <li>Doğrudan GG/AA/YYYY formatında yazın, veya</li>
+                                    <li>Takvim simgesine tıklayarak seçim yapın</li>
+                                </ol>
+                            </li>
+                            <li>Varsayılan olarak günün tarihi gelir</li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Tutar Girişi:</strong>
+                        <ul>
+                            <li>Tutar alanı formun alt kısmına yakın konumdadır</li>
+                            <li>Giriş yaparken:
+                                <ol>
+                                    <li>Rakamları yazın (nokta veya virgül kullanabilirsiniz)</li>
+                                    <li>Kuruş kısmını belirtmek için iki hane kullanın</li>
+                                    <li>Binlik ayracı sistem otomatik ekler</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="step">
+            <h3>4. Banka Bilgileri</h3>
+            
+            <div class="info-box">
+                <h4>Banka Bilgilerinin Düzenlenmesi:</h4>
+                <ol>
+                    <li><strong>Otomatik Gelen Bilgiler:</strong>
+                        <ul>
+                            <li>Hesap seçildiğinde banka bilgileri otomatik doldurulur</li>
+                            <li>Bu alanlar form ortasında yer alır ve şunları içerir:
+                                <ul>
+                                    <li>Banka Adı</li>
+                                    <li>Şube Adı</li>
+                                    <li>IBAN No</li>
+                                    <li>Hesap No</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><strong>Bilgilerin Güncellenmesi:</strong>
+                        <ul>
+                            <li>Gerektiğinde bu bilgileri manuel olarak değiştirebilirsiniz</li>
+                            <li>IBAN girerken:
+                                <ol>
+                                    <li>Boşluk kullanmayın</li>
+                                    <li>TR ile başlayan 26 karakter girin</li>
+                                    <li>Sadece rakam ve harf kullanın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Form Alanları Kullanım İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>ENTER tuşu da çoğu alanda TAB gibi çalışır</li>
+                <li>ESC tuşu açık olan herhangi bir pencereyi kapatır</li>
+                <li>Ctrl+C ve Ctrl+V ile kopyala/yapıştır yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ozel-islemler" class="section">
+        <h2>Özel İşlemler ve İpuçları</h2>
+     
+        <div class="step">
+            <h3>1. Kayıtlar Arası Gezinme</h3>
+            
+            <div class="info-box">
+                <h4>Kayıtlar Arasında Nasıl Gezinilir:</h4>
+                <ol>
+                    <li><strong>Önceki/Sonraki Kayıt Butonları:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında solda konumlanmış yeşil renkli butonlar:</li>
+                            <li>"Önceki" butonu:
+                                <ol>
+                                    <li>Geçerli kayıttan daha eski tarihliye gider</li>
+                                    <li>En eski kayıta ulaşıldığında pasif olur</li>
+                                </ol>
+                            </li>
+                            <li>"Sonraki" butonu:
+                                <ol>
+                                    <li>Geçerli kayıttan daha yeni tarihliye gider</li>
+                                    <li>En yeni kayıta ulaşıldığında pasif olur</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+     
+                    <li><strong>"Kayıtlar" Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Önceki/Sonraki butonları arasında yer alır</li>
+                            <li>Tıkladığınızda açılan pencerede:
+                                <ol>
+                                    <li>Arama kriterleri girebilirsiniz (tarih, tutar, vb.)</li>
+                                    <li>Sonuçlar liste halinde görüntülenir</li>
+                                    <li>İstediğiniz kaydı seçerek ana ekrana getirebilirsiniz</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Gezinme Sırasında Dikkat Edilecekler:</h4>
+                <ul>
+                    <li>Kaydedilmemiş değişiklikler varsa sistem uyarı verecektir</li>
+                    <li>İptal edilmiş emirler listede görünmez</li>
+                    <li>Yalnızca aynı hesaba ait kayıtlar arasında gezinebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+     
+        <div class="step">
+            <h3>2. Form Temizleme İşlemi</h3>
+            
+            <div class="info-box">
+                <h4>Form Nasıl Temizlenir:</h4>
+                <ol>
+                    <li><strong>Form Temizle Butonu:</strong>
+                        <ul>
+                            <li>Alt kısımda, iptal butonunun yanında turkuaz renkli butondur</li>
+                            <li>Tıklandığında:
+                                <ol>
+                                    <li>Tüm form alanları temizlenir</li>
+                                    <li>Tarih alanı güncel tarihe döner</li>
+                                    <li>Hesap seçimi sıfırlanır</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+     
+                    <li><strong>Manuel Temizleme:</strong>
+                        <ul>
+                            <li>Yeni bir işlem için önce hesap seçin</li>
+                            <li>Sistem otomatik olarak:
+                                <ol>
+                                    <li>Form alanlarını temizler</li>
+                                    <li>Yeni seri/no atar</li>
+                                    <li>Hesaba ait banka bilgilerini getirir</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+     
+        <div class="step">
+            <h3>3. Kayıt Arama</h3>
+            
+            <div class="info-box">
+                <h4>Kayıt Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Arama Penceresini Açma:</strong>
+                        <ul>
+                            <li>Alt kısımdaki "Kayıtlar" butonuna tıklayın</li>
+                            <li>Açılan pencerede üst kısımda arama kriterleri bulunur:
+                                <ul>
+                                    <li>Hesap No</li>
+                                    <li>Seri/No</li>
+                                    <li>Tarih Aralığı</li>
+                                    <li>Tutar</li>
+                                    <li>Gönderilen Yer</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+     
+                    <li><strong>Arama Yapma:</strong>
+                        <ul>
+                            <li>Arama kriterlerinden en az birini doldurun</li>
+                            <li>Birden fazla kriter kullanarak aramayı daraltabilirsiniz</li>
+                            <li>Arama sonuçları alt kısımda liste halinde görüntülenir</li>
+                        </ul>
+                    </li>
+     
+                    <li><strong>Sonuçları Kullanma:</strong>
+                        <ul>
+                            <li>Listeden bir kayıt seçin</li>
+                            <li>Seçilen kayıt ana form ekranına yüklenir</li>
+                            <li>Kayıt üzerinde gerekli işlemleri yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Arama İpuçları:</h4>
+                <ul>
+                    <li>Tarih aralığını geniş tutarak başlayıp sonra daraltabilirsiniz</li>
+                    <li>Gönderilen yer bilgisinde kısmi kelime araması yapabilirsiniz</li>
+                    <li>Seri/No ile arama en hızlı sonucu verir</li>
+                    <li>ESC tuşu ile arama penceresini hızlıca kapatabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+     
+        <div class="tip-box">
+            <h4>Genel Kullanım İpuçları:</h4>
+            <ul>
+                <li>Sık kullanılan seri kodlarını not alın</li>
+                <li>Önemli gönderme emirlerinin numaralarını kaydedin</li>
+                <li>İşlem yaparken sistem saatinin doğru olduğundan emin olun</li>
+                <li>Yoğun günlerde sabah saatlerinde işlem yapmayı tercih edin</li>
+            </ul>
+        </div>
+     </div>
+
+     <div id="hata-uyari" class="section">
+        <h2>Hata ve Uyarı Mesajları</h2>
+     
+        <div class="step">
+            <h3>1. Sık Karşılaşılan Hata Mesajları</h3>
+            
+            <div class="info-box">
+                <h4>Genel Hata Mesajları ve Çözümleri:</h4>
+                
+                <table>
+                    <tr>
+                        <th>Hata Mesajı</th>
+                        <th>Nedeni</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>"Tutar Girmelisiniz"</td>
+                        <td>Tutar alanı boş bırakılmış veya geçersiz değer girilmiş</td>
+                        <td>
+                            <ul>
+                                <li>Tutar alanını kontrol edin</li>
+                                <li>Sadece rakam ve nokta/virgül kullanın</li>
+                                <li>Kuruş kısmını doğru formatta girin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"IBAN numarasını boş veya doğru giriş yapmadınız"</td>
+                        <td>IBAN numarası eksik veya hatalı formatta</td>
+                        <td>
+                            <ul>
+                                <li>26 karakter uzunluğunda olmalı</li>
+                                <li>TR ile başlamalı</li>
+                                <li>Boşluk kullanılmamalı</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"Nereye Gönderildiği Alanı En Fazla 1000 Karakter Olabilir"</td>
+                        <td>Gönderilen yer bilgisi karakter limitini aşmış</td>
+                        <td>
+                            <ul>
+                                <li>Metni kısaltın</li>
+                                <li>Gereksiz boşlukları silin</li>
+                                <li>Önemli bilgileri öncelikli yazın</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Sistem Hataları:</h4>
+                <table>
+                    <tr>
+                        <th>Hata Mesajı</th>
+                        <th>Nedeni</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>"Gönderme Emri ... No lu yevmiye ile oluşturulmuştur"</td>
+                        <td>Kayıtlı bir emir üzerinde değişiklik yapılmaya çalışılıyor</td>
+                        <td>
+                            <ul>
+                                <li>Yeni bir gönderme emri oluşturun</li>
+                                <li>Muhasebe birimiyle iletişime geçin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"Invalid use of null"</td>
+                        <td>Zorunlu alanlar boş bırakılmış</td>
+                        <td>
+                            <ul>
+                                <li>Tüm zorunlu alanları doldurun</li>
+                                <li>Form Temizle ile baştan başlayın</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+     
+        <div class="step">
+            <h3>2. Uyarı Mesajları</h3>
+            
+            <div class="info-box">
+                <h4>Bilgilendirme ve Onay Mesajları:</h4>
+                
+                <table>
+                    <tr>
+                        <th>Uyarı Mesajı</th>
+                        <th>Anlamı</th>
+                        <th>Yapılması Gereken</th>
+                    </tr>
+                    <tr>
+                        <td>"Döküm Almak İstiyor musunuz?"</td>
+                        <td>Kayıt işlemi başarılı, yazdırma seçeneği sunuluyor</td>
+                        <td>
+                            <ul>
+                                <li>"Evet" - Yazdırma işlemi başlar</li>
+                                <li>"Hayır" - Ana ekrana döner</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"İptal İşlemini Onaylıyor musunuz?"</td>
+                        <td>Gönderme emri iptal edilmek üzere</td>
+                        <td>
+                            <ul>
+                                <li>İptal etmek için "Evet"</li>
+                                <li>Vazgeçmek için "Hayır"</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+     
+        <div class="step">
+            <h3>3. Hata Önleme İpuçları</h3>
+            
+            <div class="tip-box">
+                <h4>Hataları Önlemek İçin:</h4>
+                <ul>
+                    <li>İşlem öncesi tüm bilgileri hazır bulundurun</li>
+                    <li>IBAN numaralarını kopyala/yapıştır ile aktarın</li>
+                    <li>Büyük tutarlı işlemlerde çift kontrol yapın</li>
+                    <li>Önemli işlemlerden önce form temizleme yapın</li>
+                    <li>Yoğun günlerde işlemleri sabah erken saatlerde yapın</li>
+                    <li>Karmaşık işlemleri not alarak ilerleyin</li>
+                </ul>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Kritik Hatırlatmalar:</h4>
+                <ul>
+                    <li>İptal işlemlerinde çok dikkatli olun, geri alınamaz</li>
+                    <li>Sistem hataları için ekran görüntüsü alın</li>
+                    <li>Büyük tutarlı işlemleri mutlaka yazdırın</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

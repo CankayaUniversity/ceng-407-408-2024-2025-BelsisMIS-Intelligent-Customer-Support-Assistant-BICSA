@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhasebe Hesap Planı Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Muhasebe Hesap Planı Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ana Ekran Düzeni</a></li>
+                <li><a href="#temel-islemler">Temel İşlemler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a></li>
+                <li><a href="#onemli-uyarilar">Önemli Uyarılar ve İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Muhasebe Hesap Planı programı, muhasebe hesaplarınızı yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni hesap oluşturma</li>
+                <li>Mevcut hesapları güncelleme</li>
+                <li>Hesapların aylık toplamlarını görüntüleme</li>
+                <li>Hesap detaylarını düzenleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+        </div>
+
+        <div class="tip-box">
+            <h4>Başlamadan Önce</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Ekran 835x550 piksel boyutunda açılır</li>
+                <li>İmleç otomatik olarak "Hesap No" alanına konumlanır</li>
+                <li>Pencere, ekranın ortasında yer alır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ana Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Başlık Bölümü:</h4>
+                <p>Ekranın en üst kısmında mavi renkli başlık şeridi bulunur. Bu şeritte "Muhasebe Hesap Planı" yazısı yer alır.</p>
+            </div>
+
+            <div class="step">
+                <h4>Temel Bilgi Alanları:</h4>
+                <ul>
+                    <li><strong>Hesap No Bölümü:</strong>
+                        <ul>
+                            <li>Başlık şeridinin hemen altında yer alır</li>
+                            <li>Solda "Hesap No" etiketi, sağında metin kutusu bulunur</li>
+                            <li>Metin kutusunun yanında küçük bir büyüteç simgeli arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesap Adı Bölümü:</strong>
+                        <ul>
+                            <li>Hesap No alanının hemen altında konumlanır</li>
+                            <li>Solda "Hesap Adı" etiketi, sağında geniş bir metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Seçenek Alanları:</h4>
+                <ul>
+                    <li><strong>Fiş Giriş Seçenekleri:</strong>
+                        <ul>
+                            <li>Hesap Adı alanının altında "Fiş Giriş Ad/Soyad Seçimi?" etiketi ve açılır liste kutusu yer alır</li>
+                            <li>Bunun altında "Fiş Dökümde Gruplansin mi?" etiketi ve açılır liste kutusu bulunur</li>
+                            <li>En altta "TÖS Aktarım?" etiketi ve açılır liste kutusu konumlanır</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Banka Bilgileri Bölümü:</h4>
+                <ul>
+                    <li>Seçenek alanlarının altında ince bir yatay çizgi ile ayrılmış şekilde yer alır</li>
+                    <li>Sırasıyla aşağıdaki alanlar bulunur:
+                        <ul>
+                            <li>"Banka Adı" etiketi ve metin kutusu</li>
+                            <li>"Banka Şube" etiketi ve metin kutusu</li>
+                            <li>"Banka Hesap No" etiketi ve metin kutusu</li>
+                            <li>"IBAN" etiketi ve uzun metin kutusu</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ul>
+                    <li><strong>Ana Buton Grubu:</strong>
+                        <ul>
+                            <li>Banka bilgileri bölümünün altında, gri arkaplan üzerinde sıralanır</li>
+                            <li>Soldan sağa: İlk Kayıt, Önceki Kayıt, Sonraki Kayıt, Son Kayıt butonları</li>
+                            <li>Ardından: Kaydet, Sil ve Çıkış butonları</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Buton Grubu:</strong>
+                        <ul>
+                            <li>Ana buton grubunun altında yer alır</li>
+                            <li>Solda "Formu Temizle" butonu</li>
+                            <li>Sağda "Aylık Toplamlar" butonu bulunur</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Not:</h4>
+                <ul>
+                    <li>Tüm alanlar arası geçişler TAB tuşu ile yapılabilir</li>
+                    <li>Her alan için etiket solda, giriş alanı sağda olacak şekilde hizalanmıştır</li>
+                    <li>Zorunlu alanlar varsayılan olarak aktif durumdadır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        <div class="info-box">
+            <h3>Hesap Arama İşlemleri</h3>
+            
+            <div class="step">
+                <h4>Hesap Numarası ile Arama:</h4>
+                <ol>
+                    <li><strong>Doğrudan Hesap No Girişi:</strong>
+                        <ul>
+                            <li>Ana ekrandaki "Hesap No" metin kutusuna tıklayın</li>
+                            <li>Hesap numarasını yazın</li>
+                            <li>ENTER tuşuna basın veya TAB tuşu ile diğer alana geçin</li>
+                            <li>Sistem otomatik olarak hesabı bulup bilgileri ekrana getirecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Penceresi ile Arama:</strong>
+                        <ul>
+                            <li>"Hesap No" alanının yanındaki büyüteç simgeli butona tıklayın</li>
+                            <li>Açılan pencerede hesap listesinden seçim yapın</li>
+                            <li>Seçilen hesap bilgileri otomatik olarak ana ekrana aktarılacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Kayıtlar Arası Gezinme:</h4>
+                <ol>
+                    <li><strong>Önceki/Sonraki Kayıt:</strong>
+                        <ul>
+                            <li>Banka bilgileri bölümünün altındaki gri butun grubunda yer alan ok işaretli butonları kullanın</li>
+                            <li>"Önceki Kayıt" butonu (sola ok) mevcut hesaptan önceki hesaba gider</li>
+                            <li>"Sonraki Kayıt" butonu (sağa ok) mevcut hesaptan sonraki hesaba gider</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Yeni Hesap Ekleme:</h4>
+                <ol>
+                    <li>Formu Temizle butonuna basarak yeni kayıt için boş form elde edin</li>
+                    <li>Hesap numarasını girin:
+                        <ul>
+                            <li>Hesap No alanına geçerli bir numara yazın</li>
+                            <li>Sistem otomatik olarak hesap kırılımlarını kontrol edecektir</li>
+                        </ul>
+                    </li>
+                    <li>Hesap adını girin</li>
+                    <li>Fiş işlem seçeneklerini belirleyin:
+                        <ul>
+                            <li>Fiş Giriş Ad/Soyad seçimini yapın (Evet/Hayır)</li>
+                            <li>Fiş Dökümde Gruplanma seçimini yapın (Evet/Hayır)</li>
+                            <li>TÖS Aktarım seçimini yapın (Evet/Hayır)</li>
+                        </ul>
+                    </li>
+                    <li>Gerekiyorsa banka bilgilerini doldurun</li>
+                    <li>Kaydet butonuna basın</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Hesap Silme:</h4>
+                <ol>
+                    <li>Silinecek hesabı ekrana getirin</li>
+                    <li>Banka bilgileri bölümünün altındaki gri buton grubunda bulunan "Sil" butonuna tıklayın</li>
+                    <li>Sistem aşağıdaki kontrolleri yapacaktır:
+                        <ul>
+                            <li>Hesabın alt hesapları var mı?</li>
+                            <li>Hesap fiş hareketlerinde kullanılmış mı?</li>
+                            <li>Hesap yönetmelikte tanımlı bir hesap mı?</li>
+                        </ul>
+                    </li>
+                    <li>Eğer silme işlemi uygunsa onay penceresi görüntülenir</li>
+                    <li>Onay penceresinde "Evet" seçeneğini tıklayarak hesabı silin</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Aylık Toplamları Görüntüleme:</h4>
+                <ol>
+                    <li>İlgili hesabı ekrana getirin</li>
+                    <li>Alt buton grubunda yer alan "Aylık Toplamlar" butonuna tıklayın</li>
+                    <li>Açılan pencerede şu bilgileri görebilirsiniz:
+                        <ul>
+                            <li>Devir Borç/Alacak tutarları</li>
+                            <li>Aylık Borç/Alacak tutarları</li>
+                            <li>Mahsup edilecek tutarlar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>TÖS (Toplu Ödeme Sistemi) aktarım seçeneği sadece "103,02" ile başlayan hesaplar için seçilebilir</li>
+                    <li>Alt hesabı olan hesaplar silinemez</li>
+                    <li>Fiş hareketlerinde kullanılmış hesaplar silinemez</li>
+                    <li>Yönetmelikte tanımlı hesapları silmeden önce ekstra onay gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        <div class="info-box">
+            <h3>Hesap ve Banka Bilgileri Giriş Alanları</h3>
+            
+            <div class="step">
+                <h4>Hesap Numarası Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Özellikleri:</strong>
+                        <ul>
+                            <li>Formun en üst kısmında yer alır</li>
+                            <li>Solda "Hesap No" etiketi, sağında metin kutusu bulunur</li>
+                            <li>Metin kutusunun yanında büyüteç simgeli arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Şekli:</strong>
+                        <ul>
+                            <li>Hesap numarasını direkt yazabilirsiniz</li>
+                            <li>TAB veya ENTER tuşu ile bir sonraki alana geçebilirsiniz</li>
+                            <li>Arama butonu ile hesap listesinden seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Otomatik Kontroller:</strong>
+                        <ul>
+                            <li>Sistem hesap kırılımlarını otomatik kontrol eder</li>
+                            <li>Ana hesabın varlığını sorgular</li>
+                            <li>Yanlış formatta girilmiş numaraları kabul etmez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Hesap Adı Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Özellikleri:</strong>
+                        <ul>
+                            <li>Hesap No alanının hemen altında bulunur</li>
+                            <li>Solda "Hesap Adı" etiketi, sağında geniş bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Şekli:</strong>
+                        <ul>
+                            <li>Hesabı tanımlayan açıklayıcı bir isim girin</li>
+                            <li>Bu alan boş bırakılamaz</li>
+                            <li>En fazla 200 karakter uzunluğunda olabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Fiş İşlem Seçenekleri:</h4>
+                <ol>
+                    <li><strong>Fiş Giriş Ad/Soyad Seçimi:</strong>
+                        <ul>
+                            <li>Hesap Adı alanının altında yer alır</li>
+                            <li>Açılır listeden "Evet" veya "Hayır" seçeneğini belirleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Dökümde Gruplanma:</strong>
+                        <ul>
+                            <li>Ad/Soyad seçiminin altında konumlanır</li>
+                            <li>Açılır listeden "Evet" veya "Hayır" seçeneğini belirleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>TÖS Aktarım:</strong>
+                        <ul>
+                            <li>Gruplanma seçeneğinin altında yer alır</li>
+                            <li>Açılır listeden "Evet" veya "Hayır" seçeneğini belirleyin</li>
+                            <li>Sadece "103,02" ile başlayan hesaplarda aktif kullanılabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Hesap Türü ve Devir Seçenekleri:</h4>
+                <ol>
+                    <li><strong>Hesap Türü Seçimi:</strong>
+                        <ul>
+                            <li>Fiş işlem seçeneklerinin altında yer alır</li>
+                            <li>Açılır listeden hesabın türünü seçin:</li>
+                            <li>Seçenekler:
+                                <ul>
+                                    <li>0.Diger</li>
+                                    <li>1.Bütçe Giderleri</li>
+                                    <li>2.Bütçe Gelirleri</li>
+                                    <li>3.İndirilecek Kdv</li>
+                                    <li>4.Gider Hesabı</li>
+                                    <li>5.Gider Yansıtma Hesabı</li>
+                                    <li>6.Gelirler Hesabı</li>
+                                    <li>7.Gelirlerden Alacaklar Hesabı / Alıcılar Hesabı</li>
+                                    <li>8.Adi Emanetler</li>
+                                    <li>9.Gelir Yansıtma Hesabı</li>
+                                    <li>10.Takipli Alacaklar</li>
+                                    <li>11.Hesaplanan Kdv</li>
+                                    <li>12.Avanslar</li>
+                                    <li>13.Devir Eden Kdv</li>
+                                    <li>14.Kullanılacak Ödenekler Hesabı</li>
+                                    <li>15.Kullanılacak Ödenekler Hesabı Karş.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Pencere Açılma Seçenekleri:</strong>
+                        <ul>
+                            <li>Hesap türü seçiminin altında konumlanır</li>
+                            <li>Açılır listeden seçilebilecek seçenekler:</li>
+                            <li>Seçenekler:
+                                <ul>
+                                    <li>Seçiniz</li>
+                                    <li>1.Gider Penceresi</li>
+                                    <li>2.Gelir Penceresi</li>
+                                    <li>3.Detay Penceresi</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                
+                    <li><strong>Devir Türü Seçimi:</strong>
+                        <ul>
+                            <li>Pencere açılma seçeneklerinin altında yer alır</li>
+                            <li>Açılır listeden seçilebilecek seçenekler:</li>
+                            <li>Seçenekler:
+                                <ul>
+                                    <li>0.Boş</li>
+                                    <li>1.İcmal Olarak Devret</li>
+                                    <li>2.Detay Hareket Şeklinde Devret</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                </div>
+    
+            <div class="step">
+                <h4>Banka Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Banka Adı:</strong>
+                        <ul>
+                            <li>İnce yatay çizginin altında ilk sırada yer alır</li>
+                            <li>Solda "Banka Adı" etiketi, sağında metin kutusu bulunur</li>
+                            <li>En fazla 100 karakter girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Şube:</strong>
+                        <ul>
+                            <li>Banka Adı alanının hemen altında yer alır</li>
+                            <li>Solda "Banka Şube" etiketi, sağında metin kutusu bulunur</li>
+                            <li>En fazla 100 karakter girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Hesap No:</strong>
+                        <ul>
+                            <li>Banka Şube alanının altında konumlanır</li>
+                            <li>Solda "Banka Hesap No" etiketi, sağında metin kutusu bulunur</li>
+                            <li>En fazla 20 karakter girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>IBAN:</strong>
+                        <ul>
+                            <li>En altta yer alan banka bilgisi alanıdır</li>
+                            <li>Solda "IBAN" etiketi, sağında uzun metin kutusu bulunur</li>
+                            <li>En fazla 50 karakter girilebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik Kullanım İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca gezinebilirsiniz</li>
+                    <li>ENTER tuşu da TAB gibi bir sonraki alana geçiş yapar</li>
+                    <li>ESC tuşu açık olan herhangi bir pencereyi kapatır</li>
+                    <li>Hesap arama yaparken ilk birkaç rakamı yazıp arama yapabilirsiniz</li>
+                </ul>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hesap No ve Hesap Adı alanları zorunludur, boş bırakılamaz</li>
+                    <li>TÖS seçeneği sadece belirli hesap numaralarında aktiftir</li>
+                    <li>Banka bilgileri opsiyoneldir, gerektiğinde boş bırakılabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="onemli-uyarilar" class="section">
+        <h2>Önemli Uyarılar ve İpuçları</h2>
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Hesap İşlemlerinde Karşılaşılan Sorunlar:</h4>
+                <ol>
+                    <li><strong>Hesap Silme İşlemi Yapılamıyor:</strong>
+                        <ul>
+                            <li>Sebep: Hesabın alt hesapları olabilir</li>
+                            <li>Çözüm: Önce alt hesapları kontrol edin ve varsa alt hesapları silin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesap Kaydedilemiyor:</strong>
+                        <ul>
+                            <li>Sebep: Hesap numarası hatalı formatta olabilir</li>
+                            <li>Çözüm: Hesap kırılımlarını sistem standartlarına uygun girin</li>
+                        </ul>
+                    </li>
+                    <li><strong>TÖS Seçeneği Seçilemiyor:</strong>
+                        <ul>
+                            <li>Sebep: Hesap numarası "103,02" ile başlamıyor olabilir</li>
+                            <li>Çözüm: TÖS seçeneğini sadece uygun hesap numaralarında kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Sistem Kullanım İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB: Bir sonraki alana geçiş</li>
+                            <li>SHIFT + TAB: Bir önceki alana geçiş</li>
+                            <li>ENTER: Seçili butonu etkinleştirme</li>
+                            <li>ESC: Açık pencereyi kapatma</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verimli Çalışma İçin:</strong>
+                        <ul>
+                            <li>Sık kullandığınız hesap numaralarını not alın</li>
+                            <li>İşlem yapmadan önce hesap numarasını kontrol edin</li>
+                            <li>Önemli değişiklikleri hemen kaydedin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Kritik Uyarılar:</h4>
+                <ul>
+                    <li>Yönetmelikte tanımlı hesapları silerken dikkatli olun</li>
+                    <li>Fiş hareketlerinde kullanılmış hesaplar silinemez</li>
+                    <li>Hesap Adı alanı boş bırakılamaz</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>En İyi Uygulamalar:</h4>
+                <ol>
+                    <li><strong>Hesap Numarası İşlemleri:</strong>
+                        <ul>
+                            <li>Hesap numarası girerken kırılım yapısına dikkat edin</li>
+                            <li>Ana hesap olmadan alt hesap açmaya çalışmayın</li>
+                            <li>Şüphe durumunda hesap listesinden seçim yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi:</strong>
+                        <ul>
+                            <li>Hesap adlarını açıklayıcı şekilde girin</li>
+                            <li>Banka bilgilerini eksiksiz doldurun</li>
+                            <li>Her değişiklik sonrası kaydetmeyi unutmayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Öneriler:</strong>
+                        <ul>
+                            <li>Büyük işlemlerden önce mevcut verileri kontrol edin</li>
+                            <li>Silme işlemlerinde sistem uyarılarını dikkatlice okuyun</li>
+                            <li>Tereddüt durumunda aylık toplamları kontrol edin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

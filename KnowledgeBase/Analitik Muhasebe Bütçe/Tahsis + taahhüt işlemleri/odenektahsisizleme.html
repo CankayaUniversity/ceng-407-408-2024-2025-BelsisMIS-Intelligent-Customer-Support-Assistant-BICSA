@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödenek Tahsis İşlemleri Sistemi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ödenek Tahsis İşlemleri Sistemi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div class="section">
+        <h2>1. Giriş ve Sistem Genel Bakış</h2>
+        <div class="info-box">
+            <p>Ödenek Tahsis İşlemleri Sistemi, kurumunuzun ödenek tahsislerini takip etmenizi ve yönetmenizi sağlayan kapsamlı bir yönetim aracıdır. Bu sistem ile:</p>
+            <ul>
+                <li>Ödenek tahsis işlemlerini görüntüleyebilir ve yönetebilirsiniz</li>
+                <li>Birimlere göre ödenek dağılımlarını takip edebilirsiniz</li>
+                <li>Tahsis edilen ödeneklerin harcama durumlarını izleyebilirsiniz</li>
+                <li>Ödenek tahsis belgesi oluşturabilirsiniz</li>
+                <li>Aktif ve pasif tahsisleri görebilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Kullanım İçin Gerekli Temel Bilgiler:</h4>
+            <ul>
+                <li>İşlem yapmak istediğiniz birim kodu</li>
+                <li>İlgili yıl ve ay bilgisi</li>
+                <li>Takip etmek istediğiniz gider kodları</li>
+                <li>Ödenek tahsis tutarları ve açıklamaları</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Sisteme giriş yapmadan önce kullanıcı yetkinizin olduğundan emin olun</li>
+                <li>İşlemlerinizi yaparken tarih bilgilerini doğru girdiğinizden emin olun</li>
+                <li>Önemli işlemlerden sonra mutlaka belge çıktısı alın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Ana Ekran Düzeni ve Temel Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Yapısı</h3>
+            
+            <div class="step">
+                <h4>Ekran Bölümleri ve Yerleşim:</h4>
+                <ol>
+                    <li>Üst Bölüm:
+                        <ul>
+                            <li>En üstte açık mavi renkte "Ödenek Tahsis İşlemleri" başlığı yer alır</li>
+                            <li>Başlığın hemen altında birim seçim alanı bulunur</li>
+                            <li>Birim seçim alanı, tam genişlikte beyaz bir açılır liste şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li>Orta Bölüm:
+                        <ul>
+                            <li>Yıl ve ay seçim alanları solda yan yana bulunur</li>
+                            <li>Kayıt sayısı seçimi sağ üst köşede yer alır</li>
+                            <li>Gider kodu arama alanı orta kısımda bulunur</li>
+                            <li>Ana liste görüntüleme alanı geniş bir ızgara şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li>Alt Bölüm:
+                        <ul>
+                            <li>İşlem düğmeleri alt kısımda yan yana sıralanmıştır</li>
+                            <li>Düğmeler soldan sağa: "Toplu Tahsis Döküm", "Yeni Oluştur", "İşlemler", "Ödenek Tahsis Belgesi" ve "Çıkış" şeklindedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Ana Liste Görünümü</h3>
+            
+            <div class="step">
+                <h4>Liste Alanı Özellikleri:</h4>
+                <ul>
+                    <li>Sütun Başlıkları:
+                        <ul>
+                            <li>S. No - En solda yer alan sıra numarası</li>
+                            <li>Tarih - Tahsis tarihi bilgisi</li>
+                            <li>Bütçe Tertibi - Bütçe kod bilgisi</li>
+                            <li>İşin Adı - Tahsis açıklaması</li>
+                            <li>Tahsis Tutarı - Sağa dayalı parasal değer</li>
+                            <li>Harcama Tutarı - Sağa dayalı parasal değer</li>
+                            <li>Kalan - Sağa dayalı parasal değer</li>
+                            <li>Aktif - En sağda aktiflik durumu göstergesi</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Dikkat Edilmesi Gerekenler:</h4>
+            <ul>
+                <li>Liste alanı kaydırma çubuğu ile aşağı yukarı hareket ettirilebilir</li>
+                <li>Sütun başlıklarına tıklayarak sıralama yapılabilir</li>
+                <li>Aktif/Pasif durumu yeşil/kırmızı simge ile gösterilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Kullanışlı İpuçları:</h4>
+            <ul>
+                <li>Mouse tekerleği ile listede hızlıca gezinebilirsiniz</li>
+                <li>Bir kayıt üzerine çift tıklayarak detayları görüntüleyebilirsiniz</li>
+                <li>İşlemler menüsüne sağ tıklayarak da erişebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h2>3. Yıl, Ay Seçimi ve Filtreleme İşlemleri</h2>
+        
+        <div class="info-box">
+            <h3>Yıl ve Ay Seçimi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Yıl Seçimi:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Birim seçim kutusunun altında, sayfanın sol üst kısmında yer alır</li>
+                            <li>Koyu renkli bir sayı giriş kutusudur</li>
+                            <li>Yıl seçim kutusunun solunda "Yıl" etiketi bulunur</li>
+                        </ul>
+                    </li>
+                    <li>Yıl Değiştirme Adımları:
+                        <ul>
+                            <li>Kutuya tıklayın</li>
+                            <li>İstediğiniz yılı dört haneli olarak yazın (örnek: 2024)</li>
+                            <li>Enter tuşuna basın veya kutunun dışına tıklayın</li>
+                            <li>Liste otomatik olarak seçilen yıla göre güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ay Seçimi:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Yıl seçim kutusunun hemen sağında yer alır</li>
+                            <li>Açılır liste şeklinde bir seçim kutusudur</li>
+                            <li>Varsayılan olarak "TÜM AYLAR" seçilidir</li>
+                        </ul>
+                    </li>
+                    <li>Ay Seçme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Karşınıza çıkan seçenekler:
+                                <ul>
+                                    <li>TÜM AYLAR (tüm dönemleri görmek için)</li>
+                                    <li>OCAK'tan ARALIK'a kadar olan aylar</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz ayı seçin</li>
+                            <li>Seçiminizle birlikte liste otomatik olarak güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            
+
+            <div class="step">
+                <h4>Aktif/Pasif Durum Filtreleme:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Ay seçim kutusunun hemen sağında yer alır</li>
+                            <li>Üç seçenekli bir açılır liste kutusudur</li>
+                        </ul>
+                    </li>
+                    <li>Filtreleme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Üç seçenek göreceksiniz:
+                                <ul>
+                                    <li>TÜMÜ - Hem aktif hem pasif kayıtları gösterir</li>
+                                    <li>AKTİF - Sadece aktif tahsisleri gösterir</li>
+                                    <li>PASİF - Sadece pasif (kapatılmış) tahsisleri gösterir</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptığınızda liste otomatik olarak güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Belediye kodunuza bağlı olarak, program ilk açıldığında ay seçimi farklı gelebilir:
+                    <ul>
+                        <li>Bazı belediyelerde otomatik olarak "TÜM AYLAR" (0) seçili gelir</li>
+                        <li>Diğer belediyelerde sistem tarihi ayı seçili olarak gelir</li>
+                    </ul>
+                </li>
+                <li>Yıl değiştiğinde tüm liste sıfırlanır ve yeni kayıtlar gelir</li>
+                <li>Ay seçimi yapmak isteğe bağlıdır, tüm ayları görmek için "TÜM AYLAR" seçeneğini kullanabilirsiniz</li>
+                <li>Aktif/Pasif filtresi ödenek takibi için önemlidir, doğru seçeneği seçtiğinizden emin olun</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Faydalı İpuçları:</h4>
+            <ul>
+                <li>Yoğun dönemlerde belirli bir ayı seçerek daha hızlı işlem yapabilirsiniz</li>
+                <li>Aktif ödenekleri kontrol ederken "AKTİF" filtresini kullanmak işinizi kolaylaştırır</li>
+                <li>Tab tuşunu kullanarak yıl, ay ve aktif/pasif seçimleri arasında hızlıca geçiş yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h2>4. Birim Seçimi ve Gider Kodu Filtreleme</h2>
+        
+        <div class="info-box">
+            <h3>Birim Seçimi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Birim Seçim Alanı Kullanımı:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Ana ekranın en üst kısmında, başlığın hemen altında yer alır</li>
+                            <li>Tam ekran genişliğinde beyaz bir açılır liste kutusudur</li>
+                            <li>Varsayılan olarak "--Birim Seçiniz--" yazısı görünür</li>
+                        </ul>
+                    </li>
+                    <li>Birim Seçme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Karşınıza birim kodları ve açıklamaları gelecektir</li>
+                            <li>İstediğiniz birimi seçin - seçtiğiniz birime ait kayıtlar otomatik olarak listelenecektir</li>
+                            <li>Birimi değiştirmek için tekrar listeye tıklayıp farklı bir seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Gider Kodu ile Filtreleme:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Aktif/Pasif filtresinin altında, kayıt listesinin üzerinde bulunur</li>
+                            <li>Solda "Gider Kodu" etiketi ve yanında beyaz bir metin kutusu yer alır</li>
+                            <li>Geniş bir arama kutusu şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li>Filtreleme Adımları:
+                        <ul>
+                            <li>Gider kodu metin kutusuna tıklayın</li>
+                            <li>Aramak istediğiniz gider kodunu yazın:
+                                <ul>
+                                    <li>Tam kod yazabilirsiniz</li>
+                                    <li>Kodun bir kısmını yazabilirsiniz</li>
+                                    <li>Boş bırakırsanız tüm kayıtları görürsünüz</li>
+                                </ul>
+                            </li>
+                            <li>Metin kutusundan çıktığınızda (başka bir yere tıkladığınızda) liste otomatik olarak filtrelenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Birim seçimi yapılmadan liste görüntülenmez</li>
+                <li>Farklı bir birim seçtiğinizde önceki filtrelemeler sıfırlanır</li>
+                <li>Gider kodu araması büyük/küçük harf duyarlı değildir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Sık kullandığınız birimlerin kodlarını not almanız faydalı olacaktır</li>
+                <li>Gider kodu ararken kodun başlangıç kısmını yazarak benzer kodları hızlıca bulabilirsiniz</li>
+                <li>Birim listesinde klavye ile ilk harfleri yazarak hızlı arama yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Kayıt Sayısı ve Görüntüleme Seçenekleri</h2>
+        
+        <div class="info-box">
+            <h3>Kayıt Sayısı Nasıl Belirlenir</h3>
+            
+            <div class="step">
+                <h4>Kayıt Sayısı Seçimi:</h4>
+                <ol>
+                    <li>Konum ve Görünüm:
+                        <ul>
+                            <li>Ana ekranın sağ üst köşesinde bulunur</li>
+                            <li>Yıl ve ay seçiminin yanında, açılır liste şeklindedir</li>
+                            <li>Varsayılan olarak "250 Kayıt" seçilidir</li>
+                        </ul>
+                    </li>
+                    <li>Sayı Belirleme Adımları:
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Üç seçenek göreceksiniz:
+                                <ul>
+                                    <li>250 Kayıt</li>
+                                    <li>500 Kayıt</li>
+                                    <li>1000 Kayıt</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sayıyı seçin - liste otomatik olarak güncellenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Liste Görünümü ve Özellikleri:</h4>
+                <ol>
+                    <li>Liste Sütunları:
+                        <ul>
+                            <li>S. No: En solda, tahsis sıra numarası</li>
+                            <li>Tarih: Tahsis tarihi (GG.AA.YYYY formatında)</li>
+                            <li>Bütçe Tertibi: Genel hesap kodu</li>
+                            <li>İşin Adı: Tahsis açıklaması</li>
+                            <li>Tahsis Tutarı: Sağa dayalı, parasal değer</li>
+                            <li>Harcama Tutarı: Sağa dayalı, parasal değer</li>
+                            <li>Kalan: Sağa dayalı, parasal değer</li>
+                            <li>Aktif: En sağda, durum göstergesi</li>
+                        </ul>
+                    </li>
+                    <li>Sütun Özellikleri:
+                        <ul>
+                            <li>Parasal değerler otomatik olarak binlik ayracı ile gösterilir</li>
+                            <li>Aktif/Pasif durumu simge ile gösterilir</li>
+                            <li>Liste alt kısmında toplam değerler gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Bilgiler:</h4>
+            <ul>
+                <li>Seçilen kayıt sayısı aşıldığında, sistem sizi uyaracaktır</li>
+                <li>Çok sayıda kayıt seçmek sistemin yavaş çalışmasına neden olabilir</li>
+                <li>Kayıtlar tarih sırasına göre yeniden eskiye doğru sıralanır</li>
+                <li>En güncel kayıtlar her zaman listenin başında görünür</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Kullanım İpuçları:</h4>
+            <ul>
+                <li>Genel inceleme için 250 kayıt yeterlidir</li>
+                <li>Detaylı analiz için 500 veya 1000 kayıt seçebilirsiniz</li>
+                <li>Liste üzerinde mouse tekerleği ile hızlıca gezinebilirsiniz</li>
+                <li>Bir kayıt üzerine çift tıklayarak detayları görebilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Excel'e Aktarma:</h4>
+            <ol>
+                <li>Konum:
+                    <ul>
+                        <li>Liste üzerinde sağ tıkladığınızda çıkan menüde "İşlemler" başlığı altında bulunur</li>
+                    </ul>
+                </li>
+                <li>Aktarma Adımları:
+                    <ul>
+                        <li>Liste üzerinde herhangi bir yere sağ tıklayın</li>
+                        <li>"Excele Aktar" seçeneğine tıklayın</li>
+                        <li>Dosyayı kaydetmek istediğiniz konumu seçin</li>
+                        <li>Kaydetme işlemini onaylayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Ödenek Tahsis İşlemleri</h2>
+        
+        <div class="info-box">
+            <h3>Yeni Ödenek Tahsisi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Yeni Tahsis Oluşturma:</h4>
+                <ol>
+                    <li>İşleme Başlama:
+                        <ul>
+                            <li>Ekranın alt kısmında yer alan "Yeni Oluştur" düğmesine tıklayın</li>
+                            <li>Bu düğme gri tonlarda ve üç boyutlu görünümdedir</li>
+                            <li>Tıkladığınızda yeni bir pencere açılacaktır</li>
+                        </ul>
+                    </li>
+                    <li>Tahsis Bilgilerini Girme:
+                        <ul>
+                            <li>Tahsis Tarihi:
+                                <ul>
+                                    <li>Pencerenin üst kısmında yer alır</li>
+                                    <li>Takvim simgesine tıklayarak tarih seçebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Bütçe Tertibi:
+                                <ul>
+                                    <li>Tarih alanının altında yer alır</li>
+                                    <li>Genel hesap kodunu doğrudan yazabilir veya listeden seçebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>İşin Adı:
+                                <ul>
+                                    <li>Bütçe tertibi alanının altında geniş bir metin kutusu bulunur</li>
+                                    <li>Tahsis açıklamasını buraya yazın</li>
+                                </ul>
+                            </li>
+                            <li>Tahsis Tutarı:
+                                <ul>
+                                    <li>İşin adı alanının altında yer alır</li>
+                                    <li>Parasal değeri nokta veya virgül kullanmadan yazın</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tahsis Kaydını Düzenleme:</h4>
+                <ol>
+                    <li>Kayda Erişim:
+                        <ul>
+                            <li>Listeden düzenlemek istediğiniz kaydı seçin</li>
+                            <li>Kaydın üzerine çift tıklayın veya "İşlemler" düğmesine basın</li>
+                        </ul>
+                    </li>
+                    <li>Düzenleme Adımları:
+                        <ul>
+                            <li>Açılan pencerede mevcut bilgileri göreceksiniz</li>
+                            <li>Değiştirmek istediğiniz alanları güncelleyin</li>
+                            <li>Kaydet düğmesine basarak değişiklikleri kaydedin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tahsisi Kapatma veya İptal Etme:</h4>
+                <ol>
+                    <li>İşlem Başlatma:
+                        <ul>
+                            <li>İptal etmek istediğiniz kaydı listeden seçin</li>
+                            <li>"İşlemler" düğmesine tıklayın</li>
+                            <li>Açılan menüden "Tahsisi Kapat" seçeneğini tıklayın</li>
+                        </ul>
+                    </li>
+                    <li>İptal Bilgilerini Girme:
+                        <ul>
+                            <li>Açılan pencerede iptal nedenini belirtin</li>
+                            <li>İptal tarihini seçin</li>
+                            <li>Varsa ek açıklamaları girin</li>
+                            <li>Onaylayarak işlemi tamamlayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Harcama yapılmış bir tahsis silinemez</li>
+                <li>İptal edilmiş bir tahsis tekrar aktif hale getirilemez</li>
+                <li>Tahsis tutarı değiştirildiğinde ilgili tüm raporlar etkilenir</li>
+                <li>Her değişiklik için mutlaka yetkinizin olduğundan emin olun</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Kullanışlı İpuçları:</h4>
+            <ul>
+                <li>Yeni tahsis oluştururken önceki benzer kayıtları referans alabilirsiniz</li>
+                <li>Toplu işlemler için Excel'e aktarma özelliğini kullanabilirsiniz</li>
+                <li>Önemli değişikliklerden önce ilgili kayıtların çıktısını almanız önerilir</li>
+                <li>Sık kullanılan bütçe tertiplerini not almanız işlemleri hızlandırır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. İşlem Menüsü ve Özellikler</h2>
+        
+        <div class="info-box">
+            <h3>İşlem Menüsünün Kullanımı</h3>
+            
+            <div class="step">
+                <h4>İşlem Menüsüne Erişim:</h4>
+                <ol>
+                    <li>Menüyü Açma:
+                        <ul>
+                            <li>Ekranın alt kısmında, "Yeni Oluştur" düğmesinin sağında "İşlemler" düğmesi bulunur</li>
+                            <li>Bir kayıt seçip "İşlemler" düğmesine tıklayın</li>
+                            <li>Veya seçili kayıt üzerinde sağ tıklayın</li>
+                        </ul>
+                    </li>
+                    <li>Menü Seçenekleri:
+                        <ul>
+                            <li>Aktif kayıtlar için görünen seçenekler:
+                                <ul>
+                                    <li>Tahsisi Kapat</li>
+                                    <li>Harcama Kayıtlarını Göster (eğer harcama varsa)</li>
+                                    <li>Tahsis İşlemini Sil (eğer harcama yoksa)</li>
+                                </ul>
+                            </li>
+                            <li>Kapalı kayıtlar için görünen seçenekler:
+                                <ul>
+                                    <li>İptal Bilgisini Göster</li>
+                                    <li>Harcama Kayıtlarını Göster (eğer harcama varsa)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Yetki Kontrolleri:</h4>
+                <ul>
+                    <li>Menüdeki seçenekler kullanıcı yetkinize göre değişiklik gösterir</li>
+                    <li>Tahsis kapatma ve silme işlemleri için özel yetki gereklidir</li>
+                    <li>Yetkisiz olduğunuz işlemler menüde görünmeyecektir</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Harcama Kayıtlarını Görüntüleme:</h4>
+                <ol>
+                    <li>Görüntüleme Adımları:
+                        <ul>
+                            <li>İlgili kaydı seçin</li>
+                            <li>"İşlemler" menüsünden "Harcama Kayıtlarını Göster" seçeneğine tıklayın</li>
+                            <li>Açılan pencerede harcama detayları listelenir</li>
+                        </ul>
+                    </li>
+                    <li>Harcama Penceresi Özellikleri:
+                        <ul>
+                            <li>Harcama tarihleri kronolojik sırada gösterilir</li>
+                            <li>Her harcama için tutar bilgisi sağa dayalı olarak görünür</li>
+                            <li>Toplam harcama tutarı pencerenin alt kısmında gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ödenek Tahsis Belgesi Alma:</h4>
+                <ol>
+                    <li>Belge Oluşturma:
+                        <ul>
+                            <li>Ekranın alt kısmında "Ödenek Tahsis Belgesi" düğmesi bulunur</li>
+                            <li>İlgili kaydı seçin</li>
+                            <li>Düğmeye tıklayarak belge görüntüleme penceresini açın</li>
+                        </ul>
+                    </li>
+                    <li>Belge İşlemleri:
+                        <ul>
+                            <li>Açılan pencerede belgenin ön izlemesini görebilirsiniz</li>
+                            <li>Yazdır düğmesi ile çıktı alabilirsiniz</li>
+                            <li>Belgeyi PDF olarak kaydedebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Dikkat Edilmesi Gerekenler:</h4>
+            <ul>
+                <li>İşlem yapmadan önce doğru kaydı seçtiğinizden emin olun</li>
+                <li>Silme işlemi geri alınamaz, dikkatli kullanın</li>
+                <li>Harcama yapılmış kayıtlar silinemez</li>
+                <li>Belge çıktısı almadan önce tüm bilgilerin doğruluğunu kontrol edin</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Sağ tıklama menüsü işlemlere hızlı erişim sağlar</li>
+                <li>Önemli belgeler için her zaman yedek kopya alın</li>
+                <li>Çift tıklama ile kayıt detaylarına hızlıca ulaşabilirsiniz</li>
+                <li>Liste üzerinde sağ tık menüsünü kullanarak Excel'e aktarma yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Raporlama ve Belge Çıktıları</h2>
+        
+        <div class="info-box">
+            <h3>Toplu Tahsis Dökümü Nasıl Alınır</h3>
+            
+            <div class="step">
+                <h4>Toplu Döküm Alma Adımları:</h4>
+                <ol>
+                    <li>Rapor Başlatma:
+                        <ul>
+                            <li>Ekranın alt kısmında en solda bulunan "Toplu Tahsis Döküm" düğmesine tıklayın</li>
+                            <li>Bu düğme diğer işlem düğmeleriyle aynı gri tonda ve üç boyutludur</li>
+                        </ul>
+                    </li>
+                    <li>Rapor Penceresi:
+                        <ul>
+                            <li>Yeni bir pencere açılacaktır</li>
+                            
+                            <li>Pencerede kaydırma çubukları ve menü çubuğu bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ödenek Tahsis Belgesi Oluşturma:</h4>
+                <ol>
+                    <li>Belge Oluşturma:
+                        <ul>
+                            <li>Listeden ilgili kaydı seçin</li>
+                            <li>Alt kısımda bulunan "Ödenek Tahsis Belgesi" düğmesine tıklayın</li>
+                            <li>Bu düğme "İşlemler" düğmesinin sağında yer alır</li>
+                        </ul>
+                    </li>
+                    <li>Belge Görüntüleme:
+                        <ul>
+                            <li>Belge yeni bir pencerede açılır</li>
+                            <li>Pencerede belge ön izlemesi görüntülenir</li>
+                            <li>Belge üzerinde aşağıdaki bilgiler yer alır:
+                                <ul>
+                                    <li>Tahsis tarihi ve numarası</li>
+                                    <li>Birim bilgileri</li>
+                                    <li>Ödenek tutarı ve açıklaması</li>
+                                    <li>İmza alanları</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ekran Görüntüsünü Excel'e Aktarma:</h4>
+                <ol>
+                    <li>Excel Aktarımı Başlatma:
+                        <ul>
+                            <li>Liste üzerinde sağ tıklayın</li>
+                            <li>Açılan menüde "İşlemler" altında "Excele Aktar" seçeneğini göreceksiniz</li>
+                        </ul>
+                    </li>
+                    <li>Aktarım İçeriği:
+                        <ul>
+                            <li>Tüm sütunlar aynı düzende Excel'e aktarılır</li>
+                            <li>Parasal değerler sayısal formatta aktarılır</li>
+                            <li>Tarihler Excel tarih formatında görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Belge çıktısı almadan önce yazıcı ayarlarını kontrol edin</li>
+                <li>Excel'e aktarırken tüm verilerin doğru aktarıldığından emin olun</li>
+                <li>Önemli belgelerin her zaman yedek kopyasını saklayın</li>
+                <li>Belge üzerindeki imza alanlarının tam olduğunu kontrol edin</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Faydalı İpuçları:</h4>
+            <ul>
+                <li>Raporları mesai saatleri dışında almayı tercih edin</li>
+                <li>Büyük raporları parçalar halinde almak sistem performansını artırır</li>
+                <li>Excel'e aktarılan raporları filtreleme ve sıralama için kullanabilirsiniz</li>
+                <li>Belge çıktılarını PDF formatında saklamak arşivleme için idealdir</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+        <h2>9. Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        
+        <div class="info-box">
+            <h3>Yaygın Sorunlar ve Çözüm Yolları</h3>
+            
+            <div class="step">
+                <h4>Ekran Yükleme Sorunları:</h4>
+                <ol>
+                    <li>Sorun: Liste Görüntülenmiyor
+                        <ul>
+                            <li>Olası Nedenler:
+                                <ul>
+                                    <li>Birim seçimi yapılmamış olabilir</li>
+                                    <li>Seçilen tarih aralığında veri olmayabilir</li>
+                                    <li>Filtreleme kriterleri çok kısıtlayıcı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Çözüm Adımları:
+                                <ul>
+                                    <li>Birim seçimini kontrol edin</li>
+                                    <li>Tarih aralığını genişletin</li>
+                                    <li>Filtreleri temizleyin ve tekrar deneyin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Veri Giriş Sorunları:</h4>
+                <ol>
+                    <li>Sorun: Tahsis Tutarı Girilemiyor
+                        <ul>
+                            <li>Olası Nedenler:
+                                <ul>
+                                    <li>Nokta veya virgül kullanılmış olabilir</li>
+                                    <li>Metin karakterleri girilmiş olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Çözüm:
+                                <ul>
+                                    <li>Sadece rakam kullanın</li>
+                                    <li>Nokta ve virgül kullanmadan yazın</li>
+                                    <li>Kuruş değerlerini son iki haneye yazın</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Sorun: Gider Kodu Kabul Edilmiyor
+                        <ul>
+                            <li>Olası Nedenler:
+                                <ul>
+                                    <li>Geçersiz kod formatı</li>
+                                    <li>Yetkiniz olmayan bir kod</li>
+                                </ul>
+                            </li>
+                            <li>Çözüm:
+                                <ul>
+                                    <li>Kod formatını kontrol edin</li>
+                                    <li>Yetki durumunuzu kontrol edin</li>
+                                    <li>Birim kodlarının doğruluğunu teyit edin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Belge ve Rapor Sorunları:</h4>
+                <ol>
+                    <li>Sorun: Belge Açılmıyor
+                        <ul>
+                            <li>Olası Nedenler:
+                                <ul>
+                                    <li>Pop-up pencereler engellenmiş olabilir</li>
+                                    <li>Tarayıcı ayarları uygun olmayabilir</li>
+                                </ul>
+                            </li>
+                            <li>Çözüm:
+                                <ul>
+                                    <li>Pop-up engelleyiciyi geçici olarak kapatın</li>
+                                    <li>Tarayıcı ayarlarını kontrol edin</li>
+                                    <li>Farklı bir tarayıcı deneyin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Genel Uyarılar:</h4>
+            <ul>
+                <li>İşlem yaparken sayfayı yenilemeyin</li>
+                <li>Uzun süre işlem yapılmadığında sistem oturumu kapatabilir</li>
+                <li>Önemli işlemler sırasında internet bağlantınızın istikrarlı olduğundan emin olun</li>
+                <li>Kritik işlemlerde veri kaybı yaşamamak için düzenli kaydetme yapın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>İyi Uygulama Önerileri:</h4>
+            <ul>
+                <li>Düzenli olarak tarayıcı önbelleğini temizleyin</li>
+                <li>Önemli tahsisler için işlem öncesi ekran görüntüsü alın</li>
+                <li>Sistem yoğun olduğunda büyük raporları mesai saatleri dışında alın</li>
+                <li>Teknik sorunlarla karşılaştığınızda sistem yöneticinizle iletişime geçin</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>Performans İyileştirme Önerileri:</h4>
+            <ul>
+                <li>Aynı anda çok fazla pencere açmaktan kaçının</li>
+                <li>Kullanmadığınız sekmeleri kapatın</li>
+                <li>Büyük listeleri parçalar halinde görüntüleyin</li>
+                <li>Düzenli aralıklarla tarayıcınızı yeniden başlatın</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banka Talimatı (Bank Payment Instruction) - User Manual</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Banka Talimatı (Bank Payment Instruction)</h1>
+        <img src="/api/placeholder/200/50" alt="Logo">
+    </div>
+
+    <div class="section">
+        <h2>1. Genel Bakış (Overview)</h2>
+        <p>Bu sistem, banka talimatlarını oluşturmanıza, düzenlemenize ve yönetmenize olanak sağlar. Sistem üzerinden banka hesaplarına ödeme talimatları verebilir, mevcut talimatları görüntüleyebilir ve düzenleyebilirsiniz.</p>
+    </div>
+
+    <div class="info-box">
+        <strong>Önemli Not:</strong> Sisteme giriş yaptığınızda, ekranın üst kısmında "Banka Talimatı Giriş/Değişiklik/İptal" başlığını göreceksiniz.
+    </div>
+
+    <div class="section">
+        <h2>2. Ana Ekran Bileşenleri</h2>
+        
+        <div class="step">
+            <h3>2.1 Temel Bilgi Alanları</h3>
+            <ul>
+                <li><strong>Muhasebe Hesap No:</strong> Ekranın en üstünde yer alan açılır menüden seçilir. Bu alan, 103,01 ile başlayan hesap kodlarını içerir.</li>
+                <li><strong>Seri/No:</strong> Muhasebe hesap numarasının hemen altında bulunur. 
+                    <ul>
+                        <li>Seri: 2 karakterlik bir alan</li>
+                        <li>No: 5 haneli sayısal bir alan</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>2.2 Tarih ve Banka Bilgileri</h3>
+            <ul>
+                <li><strong>Tarih:</strong> Talimatın düzenlendiği tarihi gösteren alan (GG/AA/YYYY formatında)</li>
+                <li><strong>Banka Adı:</strong> 35 karaktere kadar banka adı girilebilen alan</li>
+                <li><strong>Şube Adı:</strong> 20 karaktere kadar şube adı girilebilen alan</li>
+                <li><strong>IBAN No:</strong> 50 karaktere kadar IBAN numarası girilebilen alan</li>
+                <li><strong>Banka Hesap No:</strong> 20 karaktere kadar hesap numarası girilebilen alan</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>2.3 Gönderen ve Alıcı Bilgileri</h3>
+            <ul>
+                <li><strong>Gönderen Birim:</strong> Açılır menüden seçilir</li>
+                <li><strong>Adı Soyadı:</strong> 75 karaktere kadar isim girilebilen alan
+                    <div class="tip-box">
+                        İpucu: Adı soyadı alanının yanındaki büyüteç simgesine tıklayarak kayıtlı kişiler arasında arama yapabilirsiniz.
+                    </div>
+                </li>
+                <li><strong>Unvanı:</strong> 70 karaktere kadar unvan girilebilen alan</li>
+                <li><strong>Kimlik No:</strong> 15 karaktere kadar kimlik numarası girilebilen alan</li>
+                <li><strong>Vergi No/Dairesi:</strong> Vergi numarası (25 karakter) ve vergi dairesi (35 karakter) bilgilerinin girileceği alanlar</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>2.4 Yetkili Bilgileri ve Tutar</h3>
+            <ul>
+                <li><strong>Muhasebe Yetkilisi:</strong> 20 karaktere kadar yetkili adı girilebilen alan</li>
+                <li><strong>Unvanı:</strong> 40 karaktere kadar yetkili unvanı girilebilen alan</li>
+                <li><strong>Tutar:</strong> Para miktarının girileceği alan (19 karaktere kadar)</li>
+                <li><strong>Açıklama:</strong> Talimatla ilgili açıklamaların yazılabileceği geniş metin alanı</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Temel İşlemler</h2>
+
+        <div class="step">
+            <h3>3.1 Yeni Talimat Oluşturma</h3>
+            <ol>
+                <li>Muhasebe hesap numarasını açılır menüden seçin</li>
+                <li>Seri ve numara bilgilerini girin (sistem otomatik olarak bir sonraki numarayı önerecektir)</li>
+                <li>Tarih alanına talimat tarihini girin</li>
+                <li>Banka ve şube bilgilerini doldurun</li>
+                <li>Gönderen birim bilgisini seçin</li>
+                <li>Alıcı bilgilerini girin veya büyüteç simgesini kullanarak kayıtlı kişiler arasından seçin</li>
+                <li>Tutarı ve açıklamayı girin</li>
+                <li>Kaydet butonuna basın</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <strong>Dikkat:</strong> Tutar alanı boş bırakılamaz ve sıfır (0) girilemez.
+        </div>
+
+        <div class="step">
+            <h3>3.2 Mevcut Talimatı Düzenleme</h3>
+            <ol>
+                <li>Ekranın alt kısmındaki navigasyon butonlarını kullanarak veya arama butonuna tıklayarak ilgili talimata ulaşın</li>
+                <li>Gerekli değişiklikleri yapın</li>
+                <li>Güncelle butonuna basın</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>3.3 Talimat İptali</h3>
+            <ol>
+                <li>İptal edilecek talimata ulaşın</li>
+                <li>İptal butonuna basın</li>
+                <li>Onay mesajında "Evet" seçeneğini tıklayın</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>3.4 Talimat Yazdırma</h3>
+            <ol>
+                <li>Yazdırılacak talimata ulaşın</li>
+                <li>Nüsha sayısını seçin (genellikle 2 veya 3 kopya)</li>
+                <li>Yazdır butonuna basın</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Özel Durumlar</h2>
+        
+        <div class="info-box">
+            <h3>4.1 Muhasebe Fişi İlişkisi</h3>
+            <p>Eğer talimat bir muhasebe fişi ile ilişkilendirilmişse, ekranın üst kısmında "Banka Talimatı X No'lu yevmiye ile oluşturulmuştur" şeklinde kırmızı bir uyarı göreceksiniz.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>4.2 Pratik İpuçları</h3>
+            <ul>
+                <li>Muhasebe hesap numarasını seçtiğinizde, sistem otomatik olarak bir sonraki seri/no kombinasyonunu önerecektir.</li>
+                <li>Kişi bilgilerini hızlıca doldurmak için büyüteç simgesini kullanarak kayıtlı kişiler arasından seçim yapabilirsiniz.</li>
+                <li>Enter tuşu, alanlar arasında hızlı geçiş yapmanızı sağlar.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Hata ve Uyarı Mesajları</h2>
+        <div class="warning-box">
+            <h3>Sık Karşılaşılan Hatalar</h3>
+            <ul>
+                <li><strong>Tutar Hatası:</strong> Tutar alanı boş veya sıfır ise sistem kaydetmenize izin vermeyecektir.</li>
+                <li><strong>Mükerrer Kayıt:</strong> Aynı seri ve numaraya sahip başka bir talimat varsa, sistem sizi uyaracaktır.</li>
+                <li><strong>Eksik Bilgi:</strong> Zorunlu alanlar (muhasebe hesap no, tarih, tutar gibi) boş bırakıldığında sistem uyarı verecektir.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Navigasyon ve Arama</h2>
+        
+        <div class="step">
+            <h3>6.1 Kayıtlar Arası Gezinme</h3>
+            <p>Ekranın alt kısmında bulunan navigasyon butonları:</p>
+            <ul>
+                <li><strong>İleri Buton:</strong> Ekranın alt kısmında, bir sonraki kayda geçmenizi sağlar</li>
+                <li><strong>Geri Buton:</strong> İleri butonunun yanında, bir önceki kayda dönmenizi sağlar</li>
+                <li><strong>Arama Butonu:</strong> Navigasyon butonlarının yanında yer alır ve kayıt aramayı sağlar</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>6.2 Kayıt Arama</h3>
+            <ol>
+                <li>Ekranın alt kısmındaki arama butonuna tıklayın</li>
+                <li>Açılan pencerede arama kriterlerini girin:
+                    <ul>
+                        <li>Muhasebe Hesap No</li>
+                        <li>Seri/No</li>
+                        <li>Tarih aralığı</li>
+                        <li>Tutar</li>
+                    </ul>
+                </li>
+                <li>Arama sonuçlarından ilgili kaydı seçin</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Kişi Bilgilerinin Yönetimi</h2>
+        
+        <div class="step">
+            <h3>7.1 Kayıtlı Kişi Seçimi</h3>
+            <ol>
+                <li>Adı Soyadı alanının yanındaki büyüteç simgesine tıklayın</li>
+                <li>Açılan pencerede:
+                    <ul>
+                        <li>İsim ile arama yapabilirsiniz</li>
+                        <li>TC Kimlik No ile arama yapabilirsiniz</li>
+                        <li>Vergi No ile arama yapabilirsiniz</li>
+                    </ul>
+                </li>
+                <li>Arama sonuçlarından kişiyi seçtiğinizde:
+                    <ul>
+                        <li>Adı Soyadı</li>
+                        <li>TC Kimlik No</li>
+                        <li>Vergi No/Dairesi</li>
+                        <li>Unvan bilgileri otomatik olarak doldurulacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <p>İpucu: Sık kullanılan kişileri daha hızlı bulmak için TC Kimlik No veya Vergi No ile arama yapabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Form Temizleme ve Yeni Kayıt</h2>
+        
+        <div class="step">
+            <h3>8.1 Formu Temizleme</h3>
+            <ol>
+                <li>Ekranın alt kısmında bulunan "Temizle" butonuna tıklayın</li>
+                <li>Tüm alanlar temizlenecek ve form yeni kayıt girişine hazır hale gelecektir</li>
+            </ol>
+        </div>
+
+        <div class="info-box">
+            <p><strong>Not:</strong> Temizle butonuna bastığınızda:</p>
+            <ul>
+                <li>Muhasebe hesap no seçilebilir hale gelir</li>
+                <li>Seri/No alanları düzenlenebilir olur</li>
+                <li>Tarih alanı otomatik olarak güncel tarihe ayarlanır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Yazdırma İşlemleri</h2>
+        
+        <div class="step">
+            <h3>9.1 Yazdırma Öncesi Hazırlık</h3>
+            <ol>
+                <li>Yazdırmak istediğiniz talimatı ekrana getirin:
+                    <ul>
+                        <li>Arama butonunu kullanarak</li>
+                        <li>veya navigasyon butonlarıyla ilerleyerek</li>
+                    </ul>
+                </li>
+                <li>Ekranın alt kısmında bulunan nüsha sayısı seçeneğinden istediğiniz kopya sayısını belirleyin:
+                    <ul>
+                        <li>2 nüsha (varsayılan seçenek)</li>
+                        <li>3 nüsha (gerektiğinde)</li>
+                        <li>1 nüsha (bazı kurumlar için)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <h3>Yazdırma İpuçları</h3>
+            <ul>
+                <li>Yazdırma işlemi öncesi tüm bilgilerin doğruluğunu kontrol edin</li>
+                <li>Yazıcınızda yeterli kağıt olduğundan emin olun</li>
+                <li>Yazıcı ayarlarının A4 kağıt boyutuna göre ayarlandığından emin olun</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>9.2 Yazdırma İşlemi</h3>
+            <ol>
+                <li>Ekranın alt kısmında bulunan "Yazdır" butonuna tıklayın
+                    <div class="info-box">
+                        <p>Yazdır butonu, navigasyon butonlarının yanında yer almaktadır</p>
+                    </div>
+                </li>
+                <li>Açılan yazdırma önizleme ekranında:
+                    <ul>
+                        <li>Talimat bilgilerinin tam ve doğru görüntülendiğini kontrol edin</li>
+                        <li>Sayfa düzeninin doğru olduğunu kontrol edin</li>
+                        <li>İmza alanlarının görünür olduğunu kontrol edin</li>
+                    </ul>
+                </li>
+                <li>Yazdırma önizleme ekranında "Yazdır" butonuna tıklayın</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>9.3 Yeni Talimat Yazdırma</h3>
+            <p>Yeni bir talimat kaydettikten hemen sonra:</p>
+            <ol>
+                <li>Sistem otomatik olarak "Döküm almak istiyor musunuz?" şeklinde bir soru soracaktır</li>
+                <li>"Evet" seçeneğini tıklarsanız:
+                    <ul>
+                        <li>Yazdırma önizleme ekranı otomatik olarak açılacaktır</li>
+                        <li>Seçtiğiniz nüsha sayısı kadar kopya alabilirsiniz</li>
+                    </ul>
+                </li>
+                <li>"Hayır" seçeneğini tıklarsanız:
+                    <ul>
+                        <li>Yazdırma işlemi yapılmayacaktır</li>
+                        <li>Daha sonra istediğiniz zaman yazdırabilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h3>9.4 Önemli Yazdırma Uyarıları</h3>
+            <ul>
+                <li><strong>Muhasebe Fişi İlişkili Talimatlar:</strong>
+                    <ul>
+                        <li>Eğer talimat bir muhasebe fişi ile ilişkiliyse, yazdırma çıktısında yevmiye numarası otomatik olarak görünecektir</li>
+                        <li>Bu bilgi çıktının üst kısmında yer alacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>İmza Yetkilileri:</strong>
+                    <ul>
+                        <li>Çıktıda imza yetkililerinin isimleri ve unvanları otomatik olarak görünecektir</li>
+                        <li>İmza alanlarının boş ve temiz olduğunu kontrol edin</li>
+                    </ul>
+                </li>
+                <li><strong>Çıktı Kontrolü:</strong>
+                    <ul>
+                        <li>Tüm nüshaların okunaklı olduğunu kontrol edin</li>
+                        <li>Özellikle tutar ve hesap numarası gibi kritik bilgilerin net görüntülendiğinden emin olun</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>9.5 Yazdırma Sorunları ve Çözümleri</h3>
+            <ul>
+                <li><strong>Yazdırma Önizleme Açılmıyorsa:</strong>
+                    <ul>
+                        <li>Tarayıcınızın pop-up engelleyicisini kontrol edin</li>
+                        <li>Sayfayı yenileyin ve tekrar deneyin</li>
+                    </ul>
+                </li>
+                <li><strong>Çıktı Düzgün Değilse:</strong>
+                    <ul>
+                        <li>Yazıcı ayarlarından sayfa boyutunun A4 olduğunu kontrol edin</li>
+                        <li>Kenar boşluklarının doğru ayarlandığından emin olun</li>
+                        <li>Gerekirse önizleme ekranında ölçeklendirme ayarını kontrol edin</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
