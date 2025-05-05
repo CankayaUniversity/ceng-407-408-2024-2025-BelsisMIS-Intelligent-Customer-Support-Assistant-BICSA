@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tüketim Malzemeleri Defteri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tüketim Malzemeleri Defteri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-secimi">Yıl Seçimi</a></li>
+                <li><a href="#mudurluk-ambar">Müdürlük ve Ambar Seçimi</a></li>
+                <li><a href="#tasinir-kodu">Taşınır Kodu Seçimi</a></li>
+                <li><a href="#satir-sayisi">Satır Sayısı Belirtme</a></li>
+                <li><a href="#rapor-olusturma">Rapor Oluşturma ve Görüntüleme</a></li>
+                <li><a href="#rapor-gezinme">Rapor Sayfalarında Gezinme</a></li>
+                <li><a href="#rapor-yazdirma">Raporun Yazdırılması</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+                <li><a href="#ozet">Özet ve Sonuç</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Tüketim Malzemeleri Defteri raporu, kurum içerisindeki tüketim malzemelerinin giriş ve çıkış hareketlerini takip etmek için kullanılan bir raporlama aracıdır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir yıla ait tüketim malzemelerinin hareketlerini görüntüleyebilirsiniz</li>
+                <li>Müdürlük ve ambar bazında filtreleme yapabilirsiniz</li>
+                <li>Belirli taşınır kodlarına göre raporlama yapabilirsiniz</li>
+                <li>Tüketim malzemelerinin giriş ve çıkış bilgilerini tek bir raporda görebilirsiniz</li>
+                <li>Raporu yazdırabilir veya ekranda görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Görüntülemek istediğiniz yıl bilgisi</li>
+                    <li>Hangi müdürlük ve ambara ait bilgileri görüntülemek istediğiniz</li>
+                    <li>Varsa görüntülemek istediğiniz taşınır kodu</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Tüketim Malzemeleri Defteri" başlığı yer alır</li>
+                            <li>Bu başlık mavi renkli bir şeritte görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu bölümde rapor için gerekli filtreleme seçenekleri yer alır</li>
+                            <li>Yıl, Müdürlük, Ambar, Taşınır Kodu ve Satır Sayısı alanları buradadır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün altında yer alır</li>
+                            <li>Görüntüle, Yardım ve Kapat butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İlk olarak içinde bulunulan yılı varsayılan olarak getirir</li>
+                    <li>Müdürlük ve Ambar alanları boş olarak başlar</li>
+                    <li>Satır sayısı için varsayılan değer 20'dir</li>
+                    <li>Rapor oluşturmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-secimi" class="section">
+        <h2>Yıl Seçimi</h2>
+        <div class="info-box">
+            <h3>Yıl Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Yıl Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Program ekranının üst kısmında, "Tüketim Malzemeleri Defteri" başlığının hemen altında yer alır</li>
+                            <li>"Yıl" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında iki nokta üst üste (:) işareti ve bir metin kutusu vardır</li>
+                            <li>Metin kutusu varsayılan olarak içinde bulunulan yılı gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanında varsayılan olarak gelen değeri göreceksiniz</li>
+                            <li>Farklı bir yıla ait verileri görüntülemek istiyorsanız, mevcut değeri silin</li>
+                            <li>Görüntülemek istediğiniz yılı 4 haneli olarak girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>Yılı girdikten sonra TAB tuşuna basarak bir sonraki alana (Müdürlük alanına) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Girilen yıla ait veri olmaması durumunda, rapor boş gelecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak Yıl alanından Müdürlük alanına hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yıl değiştirildiğinde, diğer alanlar için seçim yapabileceğiniz değerler de değişebilir</li>
+                    <li>En güncel verileri görmek için içinde bulunulan yılı kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="mudurluk-ambar" class="section">
+        <h2>Müdürlük ve Ambar Seçimi</h2>
+        <div class="info-box">
+            <h3>Müdürlük Seçimi</h3>
+            <div class="step">
+                <h4>Müdürlük Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl alanının hemen altında yer alır</li>
+                            <li>"Müdürlük" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında iki nokta üst üste (:) işareti ve bir açılır liste (dropdown) kutusu vardır</li>
+                            <li>Açılır liste genişliği yaklaşık 200 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, müdürlüklerin listesi açılacaktır</li>
+                            <li>Liste "Seçiniz..." seçeneği ile başlar</li>
+                            <li>Listeden işlem yapmak istediğiniz müdürlüğü seçin
+                                <ul>
+                                    <li>Liste içinde müdürlük adları alfabetik sıralanmış olabilir</li>
+                                    <li>Fare ile ilgili müdürlüğe tıklayarak seçim yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz müdürlük görüntülenecektir</li>
+                            <li>Müdürlük seçimi yaptığınızda, Ambar açılır listesi otomatik olarak güncellenerek, ilgili müdürlüğe ait ambarları gösterecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Ambar Seçimi</h3>
+            <div class="step">
+                <h4>Ambar Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Müdürlük alanının hemen altında yer alır</li>
+                            <li>"Ambar" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında iki nokta üst üste (:) işareti ve bir açılır liste (dropdown) kutusu vardır</li>
+                            <li>Açılır liste genişliği yaklaşık 200 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Öncelikle bir müdürlük seçmelisiniz, yoksa ambar listesi boş gelecektir</li>
+                            <li>Müdürlük seçiminden sonra, açılır listeye tıklayın, ilgili müdürlüğe ait ambarların listesi açılacaktır</li>
+                            <li>Liste "--Seçiniz--" seçeneği ile başlar</li>
+                            <li>Listeden işlem yapmak istediğiniz ambarı seçin
+                                <ul>
+                                    <li>Liste içinde ambar kod ve adları "kod-ad" formatında görünür</li>
+                                    <li>Fare ile ilgili ambara tıklayarak seçim yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz ambar görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Rapor oluşturmadan önce mutlaka bir müdürlük ve ambar seçilmelidir</li>
+                    <li>Ambar seçimi yapmadan önce, mutlaka müdürlük seçimi yapmalısınız</li>
+                    <li>Müdürlük seçimi değiştirildiğinde, ambar listesi otomatik olarak güncellenir</li>
+                    <li>Seçilen ambar ve müdürlük kombinasyonuna ait veri olmaması durumunda, rapor boş gelecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Müdürlük listesini açtığınızda, klavyeden müdürlük adının ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Bir müdürlüğün tek ambarı varsa, müdürlük seçiminden sonra ambar otomatik olarak seçilebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tasinir-kodu" class="section">
+        <h2>Taşınır Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Taşınır Kodu Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Taşınır Kodu Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ambar alanının hemen altında yer alır</li>
+                            <li>"Taşınır Kodu" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında iki nokta üst üste (:) işareti, bir metin kutusu ve bir buton vardır</li>
+                            <li>Metin kutusu genişliği yaklaşık 25 karakter uzunluğundadır</li>
+                            <li>Metin kutusunun sağında küçük bir büyüteç ikonu bulunan buton vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Taşınır kodunu biliyorsanız, doğrudan metin kutusuna yazabilirsiniz
+                                <ul>
+                                    <li>Taşınır kodu rakam ve noktalardan oluşur (örn. 150.01.01)</li>
+                                    <li>Kodu yazarken noktaları da girmelisiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Satır Sayısı alanına) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Taşınır Kodu Listesi Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Taşınır kodunu bilmiyorsanız, metin kutusunun yanındaki büyüteç ikonlu butona tıklayabilirsiniz</li>
+                            <li>Butona tıkladığınızda "Taşınır Kod Listesi" penceresi açılır
+                                <ul>
+                                    <li>Bu pencere, sisteme kayıtlı tüm taşınır kodlarını listeler</li>
+                                    <li>Pencere içinde filtreleme yaparak istediğiniz taşınır kodunu bulabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Açılan pencereden taşınır kodunu seçtiğinizde, seçtiğiniz kod otomatik olarak Taşınır Kodu alanına aktarılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Taşınır Kodu alanı boş bırakılabilir. Boş bırakıldığında, seçilen ambar için tüm taşınır kodlarına ait veriler raporlanır</li>
+                    <li>Taşınır kodunu manuel olarak yazarken, noktalama işaretlerini doğru yerleştirdiğinizden emin olun</li>
+                    <li>Geçersiz bir taşınır kodu girildiğinde, rapor boş gelecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Taşınır kodlarını ezberlemek yerine, liste butonunu kullanarak seçim yapmak daha kolaydır</li>
+                    <li>Liste açıldığında, aradığınız taşınır kodunun ilk rakamlarını yazarak hızlı bir şekilde bulabilirsiniz</li>
+                    <li>Belirli bir taşınır grubuna ait tüm kodları görmek için, grup kodunun ilk rakamlarını yazabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="satir-sayisi" class="section">
+        <h2>Satır Sayısı Belirtme</h2>
+        <div class="info-box">
+            <h3>Satır Sayısı Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Satır Sayısı Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Taşınır Kodu alanının hemen altında yer alır</li>
+                            <li>"Satır Sayısı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında iki nokta üst üste (:) işareti ve bir metin kutusu vardır</li>
+                            <li>Metin kutusu genişliği yaklaşık 2-4 karakter uzunluğundadır</li>
+                            <li>Varsayılan olarak "20" değeri gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Satır Sayısı alanında varsayılan olarak "20" değerini göreceksiniz</li>
+                            <li>Bu değer, raporda her sayfada gösterilecek maksimum satır sayısını belirtir</li>
+                            <li>Daha fazla veya daha az satır göstermek istiyorsanız, mevcut değeri silin</li>
+                            <li>İstediğiniz satır sayısını girin
+                                <ul>
+                                    <li>Bu alan 1-999 arasında bir değer kabul eder</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Satır Sayısı alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Çok yüksek bir satır sayısı belirlerseniz, rapor sayfasının yazdırma formatı bozulabilir</li>
+                    <li>Çok düşük bir satır sayısı belirlerseniz, rapor çok fazla sayfaya bölünebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yazdırılabilir bir rapor için 20-25 arası satır sayısı idealdir</li>
+                    <li>Ekranda görüntülemek için daha fazla satır (örn. 30-40) seçebilirsiniz</li>
+                    <li>Çok fazla veri içeren raporlar için daha az satır sayısı (örn. 15-20) seçmek, sayfalar arasında gezinmeyi kolaylaştırabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rapor-olusturma" class="section">
+        <h2>Rapor Oluşturma ve Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Raporu Oluşturma Adımları</h3>
+            <div class="step">
+                <h4>Görüntüle Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında, ekranın orta alt kısmında yer alır</li>
+                            <li>Buton üzerinde mavi renkli bir onay işareti simgesi ve "Görüntüle" yazısı bulunur</li>
+                            <li>Yardım ve Kapat butonlarının yanında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Oluşturma İşlemi:</strong>
+                        <ol>
+                            <li>Gerekli tüm filtreleme alanlarını doldurun:
+                                <ul>
+                                    <li>Yıl bilgisini girin</li>
+                                    <li>Müdürlük seçin</li>
+                                    <li>Ambar seçin</li>
+                                    <li>İsterseniz Taşınır Kodu seçin (opsiyonel)</li>
+                                    <li>Satır Sayısını belirleyin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri girdikten sonra Görüntüle butonuna tıklayın</li>
+                            <li>Sistem, belirttiğiniz kriterlere göre rapor oluşturacak ve ekranda gösterecektir</li>
+                            <li>Rapor oluşturulduktan sonra aynı pencere içinde rapor görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <h3>Raporu Görüntüleme</h3>
+            <div class="step">
+                <h4>Rapor Ekranı Özellikleri:</h4>
+                <ol>
+                    <li><strong>Rapor Başlığı:</strong>
+                        <ul>
+                            <li>Raporun en üst kısmında "TÜKETİM MALZEMELERİ DEFTERİ" başlığı büyük harflerle ve kalın yazı tipiyle görüntülenir</li>
+                            <li>Başlığın altında seçilen filtreleme bilgileri (il, harcama birimi, ambar, muhasebe birimi) gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Tablosu:</strong>
+                        <ul>
+                            <li>Rapor tablosu iki ana bölüme ayrılmıştır: Giriş ve Çıkış</li>
+                            <li>Sol tarafta "GİRİŞ" bölümü, sağ tarafta "ÇIKIŞ" bölümü bulunur</li>
+                            <li>Her iki bölümde de kendi sütun başlıkları vardır</li>
+                            <li>Taşınır kodu ve adı rapor tablosunun üst kısmında gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo İçeriği:</strong>
+                        <ul>
+                            <li>Giriş bölümünde: Giriş Sıra No, Taşınır İşlem Fişi (Tarih ve No), İşlem Çeşidi, Miktar, Birim Fiyat ve Tutar bilgileri gösterilir</li>
+                            <li>Çıkış bölümünde: Çıkış Sıra No, Taşınır İşlem Fişi (Tarih ve No), İşlem Çeşidi, Nereye/Kime Verildiği, Miktar, Birim Fiyat ve Tutar bilgileri gösterilir</li>
+                            <li>Her sayfanın altında giriş ve çıkış toplamları gösterilir</li>
+                            <li>Raporun en son sayfasında genel toplamlar gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Rapor oluşturmadan önce en azından Müdürlük ve Ambar seçilmiş olmalıdır, aksi halde bir uyarı mesajı görüntülenecektir</li>
+                    <li>Seçilen kriterlere göre veri bulunmadığında, boş bir rapor görüntülenecektir</li>
+                    <li>Rapor oluşturma süresi, veri miktarına bağlı olarak değişebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + G tuş kombinasyonu ile Görüntüle butonunu aktif edebilirsiniz</li>
+                    <li>Çok fazla veri içeren raporlar yerine, taşınır kodu ile filtreleme yaparak daha spesifik raporlar oluşturabilirsiniz</li>
+                    <li>Rapor ilk açıldığında ilk sayfayı gösterir, diğer sayfalara erişmek için rapor içindeki gezinme kontrollerini kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-gezinme" class="section">
+        <h2>Rapor Sayfalarında Gezinme</h2>
+        <div class="info-box">
+            <h3>Çok Sayfalı Raporlarda Gezinme</h3>
+            <div class="step">
+                <h4>Rapor İçerisinde Nasıl Gezinilir:</h4>
+                <ol>
+                    <li><strong>Sayfa Numarası:</strong>
+                        <ul>
+                            <li>Her rapor sayfasının sağ üst köşesinde "Sayfa No: X" şeklinde sayfa numarası gösterilir</li>
+                            <li>Bu bilgi, şu anda hangi sayfayı görüntülediğinizi gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporda Gezinme:</strong>
+                        <ul>
+                            <li>Rapor ekranı açıldığında, ekranın üst kısmında bir gezinme alanı bulunur</li>
+                            <li>Bu alanda "Rapor Ana Sayfası", "Yazdır" ve "Kapat" butonları yer alır</li>
+                            <li>Rapor içinde gezinmek için farenizin kaydırma tekerleğini kullanabilir veya klavyedeki Page Up / Page Down tuşlarını kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapordan Çıkış:</strong>
+                        <ul>
+                            <li>Raporu kapatmak ve rapor ana sayfasına dönmek için "Rapor Ana Sayfası" butonuna tıklayabilirsiniz</li>
+                            <li>Programı tamamen kapatmak için "Kapat" butonuna tıklayabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok sayfalı raporlarda bir sayfadan diğerine geçiş yaptığınızda, raporu yeniden oluşturmanız gerekmez</li>
+                    <li>Rapor parametrelerini değiştirmek istiyorsanız, "Rapor Ana Sayfası" butonuna tıklayarak filtreleme ekranına dönmelisiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Klavyede Home tuşuna basarak raporun başına, End tuşuna basarak raporun sonuna hızlıca gidebilirsiniz</li>
+                    <li>Uzun raporlarda belirli bir bilgiyi aramak için tarayıcının "Sayfada Bul" (Ctrl+F) özelliğini kullanabilirsiniz</li>
+                    <li>Raporu yeniden oluşturmak yerine, tarayıcının Yenile (F5) tuşunu kullanmaktan kaçının, bu durumda filtre ekranına geri döneceksiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rapor-yazdirma" class="section">
+        <h2>Raporun Yazdırılması</h2>
+        <div class="info-box">
+            <h3>Raporu Yazdırma Adımları</h3>
+            <div class="step">
+                <h4>Yazdır Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Rapor görüntülendiğinde, ekranın üst kısmında yer alan butonlar arasında bulunur</li>
+                            <li>"Rapor Ana Sayfası" butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Yazdır" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma İşlemi:</strong>
+                        <ol>
+                            <li>Raporu oluşturup ekranda görüntüledikten sonra "Yazdır" butonuna tıklayın</li>
+                            <li>Sistem, yazdırma işlemi öncesinde raporun yazdırma görünümünü hazırlar
+                                <ul>
+                                    <li>Butonlar geçici olarak gizlenir</li>
+                                    <li>Rapor, yazdırma formatına uygun hale getirilir</li>
+                                </ul>
+                            </li>
+                            <li>Tarayıcının yazdırma penceresi açılır</li>
+                            <li>Yazdırma penceresinde yazıcı seçimi ve diğer yazdırma ayarlarını yapabilirsiniz</li>
+                            <li>Ayarları tamamladıktan sonra yazdırma penceresindeki "Yazdır" butonuna tıklayarak raporu yazdırabilirsiniz</li>
+                            <li>Yazdırma işlemi tamamlandıktan sonra, rapor ekranı normal görünümüne döner ve butonlar tekrar görünür hale gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yazdırma işlemi öncesinde, yazıcınızın açık ve kullanıma hazır olduğundan emin olun</li>
+                    <li>Çok sayfalı raporlarda, yazdırma ayarlarından tüm sayfaları yazdırmayı seçtiğinizden emin olun</li>
+                    <li>Yazdırma ayarlarında sayfa boyutu olarak "A4" seçildiğinden emin olun</li>
+                    <li>Yazdırma işlemi sırasında internet bağlantınızın kesilmemesine dikkat edin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Raporu yazdırmadan önce, yazdırma önizleme seçeneğini kullanarak kağıt üzerindeki görünümünü kontrol edebilirsiniz</li>
+                    <li>Sadece belirli sayfaları yazdırmak istiyorsanız, yazdırma penceresindeki sayfa aralığı seçeneğini kullanabilirsiniz</li>
+                    <li>Kağıt tasarrufu için çift taraflı yazdırma seçeneğini kullanabilirsiniz</li>
+                    <li>Bilgisayarınızda "PDF olarak kaydet" seçeneği varsa, raporu fiziksel olarak yazdırmak yerine PDF dosyası olarak kaydedebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Bazı alanlarda TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Açık olan listeyi veya pencereyi kapatmak için</li>
+                    <li><strong>ALT + G:</strong> Görüntüle butonunu aktif etmek için</li>
+                    <li><strong>ALT + Y:</strong> Yardım butonunu aktif etmek için</li>
+                    <li><strong>ALT + K:</strong> Kapat butonunu aktif etmek için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Öncelikle ambar seçiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Görüntüle butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Müdürlük ve Ambar alanlarını doldurduğunuzdan emin olun. Önce Müdürlük seçin, ardından Ambar seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Öncelikle stok seçiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Taşınır Kodu (stok) alanı boş olduğunda ve Görüntüle butonuna tıkladığınızda bu uyarı görüntülenir.</li>
+                            <li>Çözüm: Ya Taşınır Kodu alanını doldurun ya da tüm taşınır kodları için rapor oluşturmak istiyorsanız, Taşınır Kodu yanındaki büyüteç butonunu kullanarak bir kod seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Rapor Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Rapor oluşturuldu ancak içeriği boş.</li>
+                            <li>Çözüm: Seçtiğiniz filtreleme kriterlerine (Yıl, Müdürlük, Ambar, Taşınır Kodu) uygun veri bulunduğundan emin olun. Farklı bir yıl veya farklı bir ambar seçmeyi deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li>Sorun: Rapor yazdırıldığında sayfa düzeni bozuk görünüyor.</li>
+                            <li>Çözüm: Yazdırma ayarlarında sayfa boyutunun A4 olarak seçildiğinden ve kenar boşluklarının uygun olduğundan emin olun. Ayrıca yazıcı ayarlarından "Sayfaya Sığdır" seçeneğini işaretleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="ozet" class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Tüketim Malzemeleri Defteri raporu, tüketim malzemelerinin giriş ve çıkış hareketlerini takip etmek için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Rapor oluşturmak için gerekli filtreleme alanlarının nasıl kullanılacağı</li>
+                <li>Yıl seçimi ve girişi</li>
+                <li>Müdürlük ve ambar seçimi</li>
+                <li>Taşınır kodu seçimi ve arama</li>
+                <li>Satır sayısı belirleme</li>
+                <li>Rapor oluşturma ve görüntüleme</li>
+                <li>Rapor sayfalarında gezinme</li>
+                <li>Raporun yazdırılması</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu rapor, malzeme takibi ve envanter yönetimi için önemli bir kaynak sağlar. Raporu düzenli olarak oluşturarak, tüketim malzemelerinin hareketlerini etkin bir şekilde izleyebilir ve gerekli kontrolleri yapabilirsiniz.</p>
+            
+            <p>Programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

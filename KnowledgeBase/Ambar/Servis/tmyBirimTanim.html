@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Birimi Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Stok Birimi Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+            <li><a href="#stok-birim-liste">Stok Birimi Listeleme ve Navigasyon</a></li>
+            <li><a href="#stok-birim-ekleme">Stok Birimi Ekleme</a></li>
+            <li><a href="#stok-birim-duzenleme">Stok Birimi Düzenleme</a></li>
+            <li><a href="#stok-birim-silme">Stok Birimi Silme</a></li>
+            <li><a href="#stok-birim-birlestirme">Stok Birimlerini Birleştirme</a></li>
+            <li><a href="#sayfalama">Sayfalama ve Navigasyon</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Stok Birimi Tanımları modülü, sistemde kullanılan stok birimlerinin tanımlanması, düzenlenmesi ve yönetilmesi için kullanılan bir araçtır. Bu modül ile:</p>
+        <ul>
+            <li>Yeni stok birimleri tanımlayabilirsiniz</li>
+            <li>Mevcut stok birimlerini düzenleyebilirsiniz</li>
+            <li>Stok birimlerini silebilirsiniz</li>
+            <li>Stok birimlerini birleştirebilirsiniz</li>
+            <li>Stok birimlerini sayfalayarak görüntüleyebilirsiniz</li>
+        </ul>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu modülü kullanırken dikkat etmeniz gereken hususlar:</p>
+            <ul>
+                <li>Stok birimleri, ürünlerin miktar ölçüm birimlerini tanımlar (örn: adet, kg, litre, kutu)</li>
+                <li>Sistemde kullanılmakta olan stok birimlerini silmeden önce dikkat edilmelidir</li>
+                <li>Stok birimleri birleştirildiğinde, ilk stok biriminin kullanımları ikinci stok birimine aktarılır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Genel Görünüm</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde "Stok Birimi Tanımları" başlığı yer alır</li>
+                        <li>Bu başlık açık mavi (pastel) renkli bir şerit içinde görüntülenir</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                        <li>Bu bölümde mevcut stok birimleri liste halinde görüntülenir</li>
+                        <li>Liste iki sütundan oluşur: "Kayıt Nu." ve "Stok Birimi"</li>
+                        <li>Kayıtlar stok birimi ismine göre alfabetik olarak sıralanır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları:</strong>
+                    <ul>
+                        <li>Liste bölümünün altında yer alır</li>
+                        <li>İşlem butonları bir araç çubuğu (toolbar) içinde görüntülenir</li>
+                        <li>Sol tarafta Ekle, Birleştir ve Sil butonları yer alır</li>
+                        <li>Sağ tarafta Sayfalama Kontrolleri bulunur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında:</p>
+            <ul>
+                <li>Sistem otomatik olarak stok birimlerini yükler ve listeler</li>
+                <li>Eğer çok sayıda stok birimi varsa, bunlar sayfalar halinde görüntülenir</li>
+                <li>Sistemde henüz stok birimi tanımlanmamışsa liste boş görünecektir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="stok-birim-liste" class="section">
+    <h2>Stok Birimi Listeleme ve Navigasyon</h2>
+    <div class="info-box">
+        <h3>Stok Birimi Listesine Erişim ve Görüntüleme</h3>
+
+        <div class="step">
+            <h4>Stok Birimi Listesi Yapısı:</h4>
+            <ol>
+                <li><strong>Liste Konumu:</strong>
+                    <ul>
+                        <li>Stok Birimi listesi, ekranın ana bölümünde, başlığın hemen altında yer alır</li>
+                        <li>Liste gri kenarlıklı bir çerçeve içinde görüntülenir</li>
+                        <li>Liste kaydırılabilir (scroll) bir alan içerisinde gösterilir</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Sütunları:</strong>
+                    <ul>
+                        <li>Kayıt Nu.: Sol taraftaki sütunda her stok biriminin benzersiz kimlik numarası gösterilir</li>
+                        <li>Stok Birimi: Sağ taraftaki sütunda stok biriminin açıklaması/adı görüntülenir</li>
+                        <li>Sütun başlıkları koyu renkte (bold) görüntülenir</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Görünümü:</strong>
+                    <ul>
+                        <li>Liste ızgara (grid) biçiminde düzenlenmiştir</li>
+                        <li>Her satır bir stok birimini temsil eder</li>
+                        <li>Satırlar stok birimi açıklamalarına göre alfabetik olarak sıralanır</li>
+                        <li>Her sayfada en fazla 15 stok birimi gösterilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Stok Birimi Listesinde Navigasyon:</h4>
+            <ol>
+                <li><strong>Stok Birimi Seçme:</strong>
+                    <ol>
+                        <li>Listeden bir stok birimi seçmek için ilgili satıra tıklayın</li>
+                        <li>Seçilen satır vurgulanır (highlight edilir)</li>
+                        <li>Seçtiğiniz stok birimi, düzenleme ve silme işlemleri için "aktif" hale gelir</li>
+                    </ol>
+                </li>
+                <li><strong>Liste İçinde Kaydırma:</strong>
+                    <ol>
+                        <li>Eğer listenizde bir sayfada gösterilebilecek sayıdan fazla stok birimi varsa, sağ tarafta dikey bir kaydırma çubuğu görünür</li>
+                        <li>Kaydırma çubuğunu kullanarak veya fareyle tekerleği çevirerek listede aşağı-yukarı hareket edebilirsiniz</li>
+                        <li>Sayfalar arasında geçiş için, listenin altındaki sayfalama kontrollerini kullanmanız gerekmektedir</li>
+                    </ol>
+                </li>
+                <li><strong>Listenin Yenilenmesi:</strong>
+                    <ol>
+                        <li>Ekleme, düzenleme, silme veya birleştirme işlemi yaptığınızda liste otomatik olarak yenilenir</li>
+                        <li>Eğer liste yenilenmediyse veya başka bir kullanıcı değişiklik yaptıysa, sayfayı yenilemek için sayfalama kontrollerini kullanabilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Notlar:</h4>
+            <ul>
+                <li>Bir stok birimini düzenlemek veya silmek için önce onu seçmeniz gerekir</li>
+                <li>Seçilen stok birimi belirgin bir şekilde vurgulanacaktır</li>
+                <li>Herhangi bir stok birimi seçilmediğinde düzenleme ve silme işlemleri yapılamaz</li>
+                <li>Ekranın alt kısmında gösterilen kayıt bilgisi, toplam kayıt sayısını ve görüntülenen kayıt aralığını gösterir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="stok-birim-ekleme" class="section">
+    <h2>Stok Birimi Ekleme</h2>
+    <div class="info-box">
+        <h3>Yeni Stok Birimi Nasıl Eklenir</h3>
+        <div class="step">
+            <h4>Stok Birimi Ekleme Adımları:</h4>
+            <ol>
+                <li><strong>Ekle Butonuna Erişim:</strong>
+                    <ul>
+                        <li>Ekle butonu, ekranın alt kısmında, sol köşede yer alan araç çubuğunda bulunur</li>
+                        <li>Buton üzerinde yeşil renkli bir artı (+) ikonu vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "stok birim ekle" açıklaması görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Ekleme İşlemini Başlatma:</strong>
+                    <ol>
+                        <li>Ekle butonuna tıklayın</li>
+                        <li>Karşınıza "Stok Birim Tanımı Ekleme" başlıklı bir pencere açılacaktır</li>
+                        <li>Bu pencere ekranın ortasında, diğer içeriğin üzerinde görüntülenir</li>
+                    </ol>
+                </li>
+                <li><strong>Stok Birimi Bilgilerini Girme:</strong>
+                    <ol>
+                        <li>Açılan pencerede "Stok Birimi" etiketli bir alan görüntülenir</li>
+                        <li>Bu alana yeni stok biriminin ismini/açıklamasını yazın (örneğin: "Adet", "Kilogram", "Kutu" gibi)</li>
+                        <li>Metin kutusu etiketin hemen sağında yer alır</li>
+                        <li>Kullanımda olan birimlerden farklı ve açıklayıcı isimler kullanmaya dikkat edin</li>
+                    </ol>
+                </li>
+                <li><strong>Kaydetme İşlemi:</strong>
+                    <ol>
+                        <li>Bilgileri girdikten sonra, pencerenin alt kısmındaki araç çubuğunda yer alan Kaydet butonuna tıklayın</li>
+                        <li>Kaydet butonunun üzerinde bir disket ikonu bulunur</li>
+                        <li>Bilgiler kontrol edilir, herhangi bir sorun yoksa yeni stok birimi sisteme kaydedilir</li>
+                        <li>İşlem başarıyla tamamlandığında pencere otomatik olarak kapanır ve stok birimi listesi güncellenir</li>
+                    </ol>
+                </li>
+                <li><strong>İptal Etme:</strong>
+                    <ol>
+                        <li>Eğer ekleme işleminden vazgeçmek isterseniz, pencerenin alt kısmındaki araç çubuğunda yer alan Vazgeç butonuna tıklayın</li>
+                        <li>Vazgeç butonunun üzerinde bir çarpı (X) ikonu bulunur</li>
+                        <li>Pencere kapatılır ve ana ekrana geri dönersiniz, hiçbir değişiklik yapılmaz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Stok birimi alanı boş bırakılamaz, mutlaka bir değer girmeniz gerekir</li>
+                <li>Boş değer girdiğinizde sistem "eklenecek bilgi boş geçilemez!" uyarısı verecektir</li>
+                <li>Sistemde zaten var olan bir stok birimi eklemeye çalıştığınızda, kaydederken hata alabilirsiniz</li>
+                <li>Uzun isimler yerine kısa ve anlaşılır stok birimi isimleri kullanmak daha uygundur</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Stok birimi isimleri genellikle kısa ve özlü olmalıdır (örn: "kg", "adet", "paket")</li>
+                <li>İlgili tüm stok birimlerini tek seferde eklemeniz, sonradan karışıklık yaşamamanızı sağlar</li>
+                <li>Stok birimi ekleme işlemi tamamlandıktan sonra, yeni eklenen birimin listede olup olmadığını kontrol etmek iyi bir alışkanlıktır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="stok-birim-duzenleme" class="section">
+    <h2>Stok Birimi Düzenleme</h2>
+    <div class="info-box">
+        <h3>Mevcut Stok Birimini Nasıl Düzenlersiniz</h3>
+        <div class="step">
+            <h4>Stok Birimi Düzenleme Adımları:</h4>
+            <ol>
+                <li><strong>Düzenlenecek Stok Birimini Seçme:</strong>
+                    <ol>
+                        <li>Ana ekrandaki stok birimleri listesinden düzenlemek istediğiniz stok birimine tıklayın</li>
+                        <li>Seçilen satır vurgulanacaktır (highlight edilecektir)</li>
+                        <li>Bir satır seçilmediği durumda düzenleme işlemi yapılamaz</li>
+                    </ol>
+                </li>
+                <li><strong>Düzenleme İşlemini Başlatma:</strong>
+                    <ol>
+                        <li>Stok birimini seçtikten sonra, satıra çift tıklayın</li>
+                        <li>Alternatif olarak, satırı seçili durumda iken klavyeden Enter tuşuna basabilirsiniz</li>
+                        <li>Karşınıza "Stok Birim Tanımı Ekleme" başlıklı bir pencere açılacaktır (pencere başlığı "Ekleme" adını taşısa da düzenleme işlevi görecektir)</li>
+                        <li>Bu pencere ekranın ortasında, diğer içeriğin üzerinde görüntülenir</li>
+                    </ol>
+                </li>
+                <li><strong>Stok Birimi Bilgilerini Düzenleme:</strong>
+                    <ol>
+                        <li>Açılan pencerede "Stok Birimi" etiketli bir metin kutusu görüntülenir</li>
+                        <li>Bu metin kutusunda seçtiğiniz stok biriminin mevcut adı/açıklaması görünür</li>
+                        <li>Stok biriminin adını istediğiniz şekilde değiştirin</li>
+                        <li>Metin kutusu, Stok Birimi etiketinin hemen sağında yer alır</li>
+                    </ol>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ol>
+                        <li>Bilgileri düzenledikten sonra, pencerenin alt kısmındaki araç çubuğunda yer alan Kaydet butonuna tıklayın</li>
+                        <li>Kaydet butonu, pencerenin alt kısmında ortada yer alır ve üzerinde bir disket ikonu bulunur</li>
+                        <li>Bilgiler kontrol edilir, herhangi bir sorun yoksa stok birimi güncellenir</li>
+                        <li>İşlem başarıyla tamamlandığında pencere otomatik olarak kapanır ve stok birimi listesi güncellenir</li>
+                    </ol>
+                </li>
+                <li><strong>İptal Etme:</strong>
+                    <ol>
+                        <li>Eğer düzenleme işleminden vazgeçmek isterseniz, pencerenin alt kısmındaki araç çubuğunda yer alan Vazgeç butonuna tıklayın</li>
+                        <li>Vazgeç butonu, Kaydet butonunun sağında yer alır ve üzerinde bir çarpı (X) ikonu bulunur</li>
+                        <li>Pencere kapatılır ve ana ekrana geri dönersiniz, hiçbir değişiklik yapılmaz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Stok birimi alanı düzenlerken boş bırakılamaz, mutlaka bir değer girmeniz gerekir</li>
+                <li>Boş değer girdiğinizde sistem "eklenecek bilgi boş geçilemez!" uyarısı verecektir</li>
+                <li>Sistemde zaten var olan başka bir stok birimi adını girmeye çalıştığınızda, kaydederken hata alabilirsiniz</li>
+                <li>Kullanımda olan stok birimlerini düzenlerken dikkatli olun, bu değişiklik mevcut stok kayıtlarını etkileyebilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Düzenleme penceresinde mevcut stok birimi adı otomatik olarak seçili gelir, hemen yazmaya başlayabilirsiniz</li>
+                <li>Yazım hatalarını düzeltmek için düzenleme özelliğini kullanabilirsiniz</li>
+                <li>Stok birimi isimleri genellikle kısa ve anlaşılır olmalıdır</li>
+                <li>Stok birimi düzenlendikten sonra listede doğru şekilde güncellendiğinden emin olun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="stok-birim-silme" class="section">
+    <h2>Stok Birimi Silme</h2>
+    <div class="info-box">
+        <h3>Stok Birimi Nasıl Silinir</h3>
+        <div class="step">
+            <h4>Stok Birimi Silme Adımları:</h4>
+            <ol>
+                <li><strong>Silinecek Stok Birimini Seçme:</strong>
+                    <ol>
+                        <li>Ana ekrandaki stok birimleri listesinden silmek istediğiniz stok birimine tıklayın</li>
+                        <li>Seçilen satır vurgulanacaktır (highlight edilecektir)</li>
+                        <li>Bir satır seçilmediği durumda silme işlemi yapılamaz</li>
+                    </ol>
+                </li>
+                <li><strong>Silme İşlemini Başlatma:</strong>
+                    <ol>
+                        <li>Stok birimini seçtikten sonra, ekranın alt kısmındaki araç çubuğunda sağ tarafta bulunan Sil butonuna tıklayın</li>
+                        <li>Sil butonu üzerinde kırmızı bir çarpı (X) ikonu bulunur</li>
+                        <li>Simgenin üzerine geldiğinizde "stok birimi sil" açıklaması görünür</li>
+                    </ol>
+                </li>
+                <li><strong>Onay İşlemi:</strong>
+                    <ol>
+                        <li>Sil butonuna tıkladıktan sonra, sistem bir onay mesajı gösterecektir</li>
+                        <li>Onay mesajı "stok birim tanımı silinecek.! emin misiniz?" şeklinde olacaktır</li>
+                        <li>Mesaj penceresi ekranın ortasında, diğer içeriğin üzerinde görüntülenir</li>
+                    </ol>
+                </li>
+                <li><strong>Silme İşlemini Onaylama:</strong>
+                    <ol>
+                        <li>Silme işlemine devam etmek için onay penceresindeki "Evet" butonuna tıklayın</li>
+                        <li>İşlem başarıyla tamamlandığında pencere otomatik olarak kapanır ve stok birimi listesi güncellenir</li>
+                        <li>Silinen stok birimi listeden kaldırılacaktır</li>
+                    </ol>
+                </li>
+                <li><strong>İptal Etme:</strong>
+                    <ol>
+                        <li>Eğer silme işleminden vazgeçmek isterseniz, onay penceresindeki "Hayır" butonuna tıklayın</li>
+                        <li>Pencere kapatılır ve ana ekrana geri dönersiniz, hiçbir değişiklik yapılmaz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Silme işlemi geri alınamaz, silinen stok birimi kalıcı olarak sistemden kaldırılır</li>
+                <li>Eğer silmeye çalıştığınız stok birimi sistemde başka kayıtlarda kullanılıyorsa, silme işlemi başarısız olabilir</li>
+                <li>Sistemde aktif olarak kullanılan stok birimlerini silmemek en doğrusudur</li>
+                <li>Eğer herhangi bir stok birimi seçmeden Sil butonuna tıklarsanız, sistem "silmek için stok birimi seçilmedi.!" uyarısı verecektir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Kullanılmayan stok birimlerini sistemden temizlemek, listenin daha düzenli olmasını sağlar</li>
+                <li>Bir stok birimini silmek yerine, benzer birimler varsa birleştirme işlemi yapmayı düşünebilirsiniz</li>
+                <li>Silme işleminden önce, stok biriminin sistemde başka yerlerde kullanılmadığından emin olun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="stok-birim-birlestirme" class="section">
+    <h2>Stok Birimlerini Birleştirme</h2>
+    <div class="info-box">
+        <h3>İki Stok Birimini Nasıl Birleştirirsiniz</h3>
+        <div class="step">
+            <h4>Stok Birimi Birleştirme Adımları:</h4>
+            <ol>
+                <li><strong>Birleştirilecek Kaynak Stok Birimini Seçme:</strong>
+                    <ol>
+                        <li>Ana ekrandaki stok birimleri listesinden birleştirmek istediğiniz stok birimine tıklayın</li>
+                        <li>Bu, diğer stok birimiyle birleştirilip sonrasında silinecek olan stok birimidir</li>
+                        <li>Seçilen satır vurgulanacaktır</li>
+                        <li>Bir satır seçilmediği durumda birleştirme işlemi yapılamaz</li>
+                    </ol>
+                </li>
+                <li><strong>Birleştirme İşlemini Başlatma:</strong>
+                    <ol>
+                        <li>Stok birimini seçtikten sonra, ekranın alt kısmındaki araç çubuğunda sol tarafta bulunan Birleştir butonuna tıklayın</li>
+                        <li>Birleştir butonu, Ekle butonunun hemen sağında yer alır</li>
+                        <li>Buton üzerinde iki belgeyi birleştiren bir ikon vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "stok birim birleştir" açıklaması görünür</li>
+                    </ol>
+                </li>
+                <li><strong>Hedef Stok Birimini Seçme:</strong>
+                    <ol>
+                        <li>Karşınıza "Birleştirilecek Stok Birimini Seçiniz" başlıklı bir pencere açılacaktır</li>
+                        <li>Bu pencere ekranın ortasında, diğer içeriğin üzerinde görüntülenir</li>
+                        <li>Pencerede "Stok Birimi" etiketli bir açılır liste (dropdown) kutusu görünür</li>
+                        <li>Açılır listeye tıklayarak, mevcut kaynak stok birimi dışındaki tüm stok birimlerini içeren bir liste açılır</li>
+                        <li>Bu listeden, seçtiğiniz stok birimini birleştirmek istediğiniz hedef stok birimini seçin</li>
+                        <li>Açılır liste, etiketin sağında yer alır</li>
+                    </ol>
+                </li>
+                <li><strong>Birleştirme İşlemini Onaylama:</strong>
+                    <ol>
+                        <li>Hedef stok birimini seçtikten sonra, pencerenin alt kısmındaki araç çubuğunda yer alan Kaydet (disket ikonu) butonuna tıklayın</li>
+                        <li>Sistem bir onay mesajı gösterecektir: "birim tanımı seçilen birim tanımı ile birleştirilecektir.! onaylıyor musunuz?"</li>
+                        <li>Onay mesajında "Evet" butonuna tıklayarak işlemi onaylayın</li>
+                    </ol>
+                </li>
+                <li><strong>İşlemin Tamamlanması:</strong>
+                    <ol>
+                        <li>Onay verdikten sonra sistem birleştirme işlemini gerçekleştirir</li>
+                        <li>İşlem başarıyla tamamlandığında birleştirme penceresi otomatik olarak kapanır</li>
+                        <li>Stok birimi listesi yenilenir ve artık kaynak stok birimi listede görünmez</li>
+                        <li>Kaynak stok birimini kullanan tüm kayıtlar artık hedef stok birimini kullanacaktır</li>
+                    </ol>
+                </li>
+                <li><strong>İptal Etme:</strong>
+                    <ol>
+                        <li>Birleştirme penceresinde işlemden vazgeçmek isterseniz, pencerenin alt kısmındaki araç çubuğunda yer alan Vazgeç (çarpı ikonu) butonuna tıklayın</li>
+                        <li>Onay penceresinde işlemden vazgeçmek isterseniz, "Hayır" butonuna tıklayın</li>
+                        <li>Herhangi bir aşamada iptal ederseniz hiçbir değişiklik yapılmaz ve ana ekrana geri dönersiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Birleştirme işlemi geri alınamaz, kaynak stok birimi kalıcı olarak silinir</li>
+                <li>Kaynak stok birimini kullanan tüm kayıtlar otomatik olarak hedef stok birimini kullanacak şekilde güncellenecektir</li>
+                <li>Eğer herhangi bir stok birimi seçmeden Birleştir butonuna tıklarsanız, sistem "birleştirilecek stok birimi seçilmedi.!" uyarısı verecektir</li>
+                <li>Birleştirme işlemi, özellikle çok sayıda kayıt içeren stok birimleri için biraz zaman alabilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Birleştirme işlemi, yanlışlıkla oluşturulmuş veya artık kullanılmayan stok birimlerini temizlemek için idealdir</li>
+                <li>Birden fazla stok birimini tek bir standart birime dönüştürmek için birleştirme işlemini kullanabilirsiniz</li>
+                <li>Birleştirme yapmadan önce, birleştirilecek stok birimlerinin gerçekten aynı ölçü birimini temsil ettiğinden emin olun</li>
+                <li>Birleştirme işleminden sonra, işlemin doğru şekilde gerçekleştiğini kontrol etmek için ilgili kayıtları inceleyebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="sayfalama" class="section">
+    <h2>Sayfalama ve Navigasyon</h2>
+    <div class="info-box">
+        <h3>Sayfalar Arası Geçiş ve Navigasyon Kontrolleri</h3>
+        <div class="step">
+            <h4>Sayfalama Kontrollerinin Kullanımı:</h4>
+            <ol>
+                <li><strong>Sayfalama Kontrollerinin Konumu:</strong>
+                    <ul>
+                        <li>Sayfalama kontrolleri, ekranın alt kısmında, araç çubuğunun orta bölümünde yer alır</li>
+                        <li>Bu kontroller, gri arka plan üzerinde bir grup halinde görüntülenir</li>
+                        <li>Sayfalama kontrolleri toplam 7 öğeden oluşur: İlk sayfa, Önceki sayfa, Sayfa numarası kutusu, Bölüm işareti (/), Toplam sayfa sayısı kutusu, Sonraki sayfa ve Son sayfa butonları</li>
+                    </ul>
+                </li>
+                <li><strong>İlk Sayfaya Gitme:</strong>
+                    <ol>
+                        <li>İlk sayfaya gitmek için, sayfalama kontrollerinin en solunda bulunan İlk Sayfa butonuna tıklayın</li>
+                        <li>Bu buton üzerinde çift ok ve bir çizgi işareti (|◀◀) benzeri bir ikon vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "ilk sayfa" açıklaması görünür</li>
+                        <li>Bu butona tıkladığınızda, listenin ilk sayfası görüntülenir</li>
+                    </ol>
+                </li>
+                <li><strong>Önceki Sayfaya Gitme:</strong>
+                    <ol>
+                        <li>Önceki sayfaya gitmek için, İlk Sayfa butonunun hemen sağında bulunan Önceki Sayfa butonuna tıklayın</li>
+                        <li>Bu buton üzerinde tek bir sol ok (◀) ikonu vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "önceki sayfa" açıklaması görünür</li>
+                        <li>Bu butona tıkladığınızda, listenin bir önceki sayfası görüntülenir</li>
+                        <li>Eğer zaten ilk sayfadaysanız, bu buton işlevsiz olacaktır</li>
+                    </ol>
+                </li>
+                <li><strong>Belirli Bir Sayfaya Gitme:</strong>
+                    <ol>
+                        <li>Doğrudan belirli bir sayfaya gitmek için, ok butonları arasında yer alan Sayfa Numarası kutusuna tıklayın</li>
+                        <li>Bu kutu, içinde o an görüntülenen sayfanın numarasını gösterir</li>
+                        <li>Kutuya gitmek istediğiniz sayfa numarasını yazın</li>
+                        <li>Klavyeden Enter tuşuna basın veya başka bir alana tıklayın</li>
+                        <li>Yazdığınız sayfa numarası toplam sayfa sayısından büyük olamaz</li>
+                    </ol>
+                </li>
+                <li><strong>Sonraki Sayfaya Gitme:</strong>
+                    <ol>
+                        <li>Sonraki sayfaya gitmek için, Toplam Sayfa Sayısı kutusunun hemen sağında bulunan Sonraki Sayfa butonuna tıklayın</li>
+                        <li>Bu buton üzerinde tek bir sağ ok (▶) ikonu vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "sonraki sayfa" açıklaması görünür</li>
+                        <li>Bu butona tıkladığınızda, listenin bir sonraki sayfası görüntülenir</li>
+                        <li>Eğer zaten son sayfadaysanız, bu buton işlevsiz olacaktır</li>
+                    </ol>
+                </li>
+                <li><strong>Son Sayfaya Gitme:</strong>
+                    <ol>
+                        <li>Son sayfaya gitmek için, sayfalama kontrollerinin en sağında bulunan Son Sayfa butonuna tıklayın</li>
+                        <li>Bu buton üzerinde çift ok ve bir çizgi işareti (▶▶|) benzeri bir ikon vardır</li>
+                        <li>Simgenin üzerine geldiğinizde "son sayfa" açıklaması görünür</li>
+                        <li>Bu butona tıkladığınızda, listenin son sayfası görüntülenir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Kayıt Bilgisi Görüntüleme:</h4>
+            <ol>
+                <li><strong>Kayıt Bilgisi Alanı:</strong>
+                    <ul>
+                        <li>Kayıt bilgisi, sayfalama kontrollerinin hemen altında yer alır</li>
+                        <li>Küçük, gri yazı fontuyla "kayıt: X - Y / Z" formatında gösterilir</li>
+                        <li>Bu bilgide:
+                            <ul>
+                                <li>X: Görüntülenen ilk kaydın sıra numarası</li>
+                                <li>Y: Görüntülenen son kaydın sıra numarası</li>
+                                <li>Z: Sistemdeki toplam kayıt sayısı</li>
+                            </ul>
+                        </li>
+                        <li>Örneğin, "kayıt: 1 - 15 / 45" ifadesi, toplam 45 kayıt içinden ilk 15 kaydın görüntülendiğini belirtir</li>
+                    </ul>
+                </li>
+                <li><strong>Toplam Sayfa Sayısı:</strong>
+                    <ul>
+                        <li>Toplam sayfa sayısı, sayfalama kontrollerindeki sayfa numarası kutusunun sağında, bölü işaretinden (/) sonra gösterilir</li>
+                        <li>Bu değer salt okunur bir alandır ve değiştirilemez</li>
+                        <li>Örneğin, "3 / 5" ifadesi, toplam 5 sayfa olduğunu ve şu anda 3. sayfanın görüntülendiğini belirtir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Notlar:</h4>
+            <ul>
+                <li>Her sayfada en fazla 15 stok birimi görüntülenir</li>
+                <li>Sayfa numarası kutusuna geçersiz bir değer (örneğin, sayfa sayısından büyük bir rakam veya harf) girdiğinizde, sistem hata verebilir veya en yakın geçerli sayfaya yönlendirebilir</li>
+                <li>İlk açılışta, sistem otomatik olarak ilk sayfayı gösterir</li>
+                <li>Sistemde hiç kayıt yoksa, sayfalama kontrolleri pasif olacaktır</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Klavye ile hızlı gezinmek için, sayfa numarası kutusuna doğrudan sayı yazıp Enter tuşuna basabilirsiniz</li>
+                <li>Kayıt bilgisi alanından, görüntülenen kayıt sayısını ve toplam kayıt sayısını hızlıca kontrol edebilirsiniz</li>
+                <li>Çok sayıda stok birimi varsa, belirli bir sayfaya doğrudan gitmek için sayfa numarası kutusunu kullanmak daha hızlı olabilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Klavye Kısayolları ve Hızlı İşlemler:</h4>
+            <ul>
+                <li><strong>Enter Tuşu:</strong> Seçili bir stok birimini düzenleme penceresini açar</li>
+                <li><strong>Tab Tuşu:</strong> Bir sonraki alana geçmek için kullanılır</li>
+                <li><strong>Shift + Tab:</strong> Bir önceki alana geçmek için kullanılır</li>
+                <li><strong>Escape (ESC):</strong> Açık olan bir pencereyi kapatmak için kullanılabilir</li>
+                <li><strong>Çift Tıklama:</strong> Bir stok birimine çift tıklamak, düzenleme penceresini açar</li>
+                <li><strong>Sayfa Numarası:</strong> Doğrudan sayfa numarası kutusuna yazıp Enter tuşuna basarak hızlı sayfa geçişi yapabilirsiniz</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>"Düzenlemek için stok birimi seçilmedi" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Düzenleme yapmaya çalıştığınızda bu uyarıyı alıyorsunuz</li>
+                        <li>Çözüm: İşlem yapmadan önce listeden bir stok birimi seçtiğinizden emin olun. Stok birimini seçmek için listeden bir satıra tıklayın.</li>
+                    </ul>
+                </li>
+                <li><strong>"Silmek için stok birimi seçilmedi" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Silme butonuna tıkladığınızda bu uyarıyı alıyorsunuz</li>
+                        <li>Çözüm: İşlem yapmadan önce listeden silinecek stok birimini seçtiğinizden emin olun</li>
+                    </ul>
+                </li>
+                <li><strong>"Birleştirilecek stok birimi seçilmedi" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Birleştirme butonuna tıkladığınızda bu uyarıyı alıyorsunuz</li>
+                        <li>Çözüm: İşlem yapmadan önce listeden birleştirilecek kaynak stok birimini seçtiğinizden emin olun</li>
+                    </ul>
+                </li>
+                <li><strong>"Eklenecek bilgi boş geçilemez" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Stok birimi eklerken veya düzenlerken boş bir değer girmeye çalıştığınızda bu uyarıyı alıyorsunuz</li>
+                        <li>Çözüm: Stok birimi alanına mutlaka bir değer girin. Boş stok birimi tanımlanamaz.</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemi Başarısız:</strong>
+                    <ul>
+                        <li>Sorun: Bir stok birimini silmeye çalıştığınızda işlem başarısız oluyor</li>
+                        <li>Çözüm: Silmeye çalıştığınız stok birimi muhtemelen sistemde başka kayıtlarda kullanılıyor. Bu durumda ya ilgili kayıtları güncelleyin ya da stok birimini silmek yerine başka bir stok birimiyle birleştirin.</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Güncellenmiyor:</strong>
+                    <ul>
+                        <li>Sorun: İşlem yaptıktan sonra liste otomatik olarak yenilenmiyor</li>
+                        <li>Çözüm: Sayfayı yenilemek için sayfalama kontrollerini kullanın. Örneğin, mevcut sayfanın numarasını tekrar girerek Enter tuşuna basın.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Stok Birimi Yönetimi İçin En İyi Uygulamalar:</h4>
+            <ul>
+                <li>Stok birimi adlarını kısa ve anlaşılır tutun (örn: "kg", "adet", "kutu")</li>
+                <li>Aynı ölçü birimini farklı şekillerde yazmaktan kaçının (örn: "kilogram" ve "kg" gibi)</li>
+                <li>Düzenli olarak kullanılmayan stok birimlerini temizleyin veya birleştirin</li>
+                <li>Sistemde yaygın olarak kullanılan stok birimlerini silmekten kaçının</li>
+                <li>Birleştirme işlemlerini dikkatli yapın, özellikle çok sayıda kaydı etkileyecekse</li>
+                <li>Düzenli olarak stok birimi listesini gözden geçirin ve standardize edin</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Silme ve birleştirme işlemleri geri alınamaz, bu işlemleri yapmadan önce emin olun</li>
+                <li>Çok sayıda kaydı etkileyen işlemler sistem performansını geçici olarak etkileyebilir</li>
+                <li>Stok birimlerinin isimlerini değiştirdiğinizde, stok birimine ait tüm kayıtlar da etkilenir</li>
+                <li>Birden fazla kullanıcının aynı anda stok birimi tanımlarıyla çalışması karışıklığa neden olabilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li>Çok sık kullanılan stok birimlerini listenin ilk sayfasında görüntülemek için, isimlendirme standardı oluşturun</li>
+                <li>Benzer veya yanlış yazılmış stok birimlerini düzenli olarak kontrol edin ve birleştirin</li>
+                <li>Yeni stok birimi eklemeden önce, listede zaten var olup olmadığını kontrol edin</li>
+                <li>Çok fazla kayıt olduğunda, sayfa numarası kutusunu kullanarak hızlıca gezinin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Stok Birimi Tanımları modülü, işletmenizdeki stok birimlerinin etkin bir şekilde yönetilmesini sağlar. Bu kılavuzda öğrendiğiniz temel işlevler:</p>
+        <ul>
+            <li>Stok birimlerini listeleme ve görüntüleme</li>
+            <li>Yeni stok birimi ekleme</li>
+            <li>Mevcut stok birimlerini düzenleme</li>
+            <li>Kullanılmayan stok birimlerini silme</li>
+            <li>Benzer stok birimlerini birleştirme</li>
+            <li>Sayfalar arasında gezinme ve listeleme</li>
+        </ul>
+        <p>Bu modülü kullanırken karşılaşabileceğiniz sorunlar için "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurabilirsiniz. Stok birimlerinin düzenli ve standart bir şekilde yönetilmesi, stok yönetiminin ve raporlamanın daha verimli olmasını sağlayacaktır.</p>
+    
+    <p>Stok birimlerinin doğru ve tutarlı bir şekilde tanımlanması, işletmenizin envanter yönetiminde önemli bir rol oynar. Standart ölçü birimleri kullanmak, raporlama ve analiz süreçlerini kolaylaştırır ve hataları en aza indirir.</p>
+</div>
+</div>
+
+</body>
+</html>

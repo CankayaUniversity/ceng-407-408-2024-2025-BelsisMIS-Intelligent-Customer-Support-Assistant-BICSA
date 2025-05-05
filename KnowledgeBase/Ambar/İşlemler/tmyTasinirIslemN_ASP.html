@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taşınır Yönetimi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Taşınır Yönetimi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#arayuz">Arayüz Tanıtımı ve Ana Bileşenler</a></li>
+                <li><a href="#stok-islemleri">Stok İşlemleri</a>
+                    <ul>
+                        <li><a href="#tasinir-islem-fisleri">Taşınır İşlem Fişleri</a></li>
+                        <li><a href="#istek-fisi-giris">İstek Fişi Girişi</a></li>
+                        <li><a href="#ambara-iletilen-talepler">Ambara İletilen Talepler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#demirbas-islemleri">Demirbaş İşlemleri</a>
+                    <ul>
+                        <li><a href="#zimmet-fisleri">Zimmet Fişleri</a></li>
+                        <li><a href="#demirbaslar">Demirbaşlar</a></li>
+                        <li><a href="#dayanikli-tasinirlar">Dayanıklı Taşınırlar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#diger-islemler">Diğer İşlemler</a>
+                    <ul>
+                        <li><a href="#aylik-raporlar">Aylık Raporlar / Kesin Hesap</a></li>
+                    </ul>
+                </li>
+                <li><a href="#arama-filtreleme">Arama ve Filtreleme İşlemleri</a></li>
+                <li><a href="#rapor-yazdirma">Rapor ve Yazdırma İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Taşınır Yönetimi" ekranı, kurumunuzun taşınır mallarının takibi, stok işlemleri, demirbaş işlemleri ve ilgili raporların oluşturulması için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Taşınır işlem fişlerini oluşturma ve takip etme</li>
+                <li>İstek fişlerini düzenleme ve yönetme</li>
+                <li>Demirbaş kayıtlarını tutma ve zimmet işlemlerini gerçekleştirme</li>
+                <li>Aylık ve üç aylık kesin hesap raporlarını oluşturma</li>
+                <li>Çeşitli taşınır mal raporlarını görüntüleme ve yazdırma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Erişim yetkinizin bulunduğu müdürlük ve ambarların bilgisi</li>
+                    <li>İlgili yıl için yapılacak işlemlerin amacı ve kapsamı</li>
+                    <li>Taşınır mal işlemleri için gerekli olan yönetmelik bilgileri</li>
+                    <li>Temel bilgisayar kullanım becerileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arayuz" class="section">
+        <h2>Arayüz Tanıtımı ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Filtre alanlarının altında, seçilen ambara ait zimmet fişlerinin listelendiği tablo yer alır.</li>
+                            <li>Tabloda şu sütunlar bulunur: Sıra No, İşlem Tarih, Fiş No, Zimmetlenen Kişi/Konulduğu Yer, Açıklama, Teslim Eden ve Onay.</li>
+                            <li>Her zimmet fişi satırı, o fişin temel bilgilerini gösterir.</li>
+                            <li>Onay sütununda, zimmet fişinin onay durumunu gösteren simgeler bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfalama Kontrolü:</strong>
+                        <ul>
+                            <li>Listenin alt kısmında, birden fazla sayfa varsa, sayfalar arasında gezinmenizi sağlayan düğmeler bulunur.</li>
+                            <li>Bunların altında toplam kayıt sayısı ve geçerli sayfa bilgisi gösterilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Zimmet Fişi İşlemleri:</h4>
+                <ol>
+                    <li><strong>Yeni Zimmet Fişi Ekleme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sol tarafta bulunan "Ekle" butonuna tıklayarak yeni bir zimmet fişi oluşturabilirsiniz.</li>
+                            <li>Bu butona tıkladığınızda, ayrı bir pencerede zimmet fişi ekleme ekranı açılır.</li>
+                            <li>Bu işlem için önce sol panelden bir ambar seçmiş olmanız gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zimmet Fişi Silme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sağ tarafta bulunan "Sil" butonuna tıklayarak seçili zimmet fişini silebilirsiniz.</li>
+                            <li>Silme işlemi için önce listeden bir zimmet fişi seçmeniz gerekir.</li>
+                            <li>Silme işlemi onay gerektirir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zimmet Fişi Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir zimmet fişine tıkladığınızda, o fişin detaylarını gösteren yeni bir pencere açılır.</li>
+                            <li>Bu pencerede zimmet fişinin tüm detaylarını görüntüleyebilir ve düzenleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporlar ve Yazdırma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Yazdır" simgesine (yazıcı ikonu) tıklayarak zimmet fişleri ve demirbaşlarla ilgili çeşitli raporlara erişebilirsiniz.</li>
+                            <li>Bir zimmet fişi seçiliyken bu menüden "Zimmet Fişi (Demirbaş, Makine ve Cihaz İçin)" veya "Zimmet Fişi (Taşıt ve İş Makineleri İçin)" seçenekleriyle yazdırılabilir belge oluşturabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu Zimmet İşlemleri:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Diğer İşlemler" simgesine tıklayarak açılan menüden "Toplu Zimmet İşlemleri" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu özellik, birden fazla demirbaşı aynı anda zimmetlemenizi sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Belirli bir kişiye zimmetlenmiş tüm demirbaşları görmek için "Zimmetlenen Kişi" filtresini kullanabilirsiniz.</li>
+                        <li>Toplu zimmet özelliği, yeni bir birime veya personele çok sayıda demirbaş zimmetlerken zaman kazandırır.</li>
+                        <li>Zimmet fişlerini yazdırırken, zimmetlenen demirbaşın türüne göre doğru fiş formatını seçmeye dikkat edin.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="demirbaslar" class="step">
+                <h3>Demirbaşlar</h3>
+                <p>Bu sekme, ambardaki tüm demirbaşları kategorik olarak görüntülemek ve yönetmek için kullanılır.</p>
+                
+                <h4>Demirbaş Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Hesap Kodu Ağacı:</strong>
+                        <ul>
+                            <li>Ekranda, demirbaşların hesap kodlarına göre hiyerarşik bir liste görüntülenir.</li>
+                            <li>Bu liste, hesap kodları, hesap adları ve her hesap kodundaki demirbaş sayılarını gösterir.</li>
+                            <li>Tabloda şu sütunlar bulunur: Hesap Kodu, Hesap Adı, Girilmiş, Çıkılmış, Toplam, Zimmetli ve Ambarda.</li>
+                            <li>Her hesap kodu satırı, o hesap kodundaki demirbaşların özet bilgilerini gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Kategoriler ve Demirbaşlar:</strong>
+                        <ul>
+                            <li>Bir hesap koduna tıkladığınızda, o kodun altındaki alt kategoriler veya doğrudan demirbaşlar listelenir.</li>
+                            <li>Alt kategoriler genellikle açılıp kapanabilen ağaç yapısında gösterilir.</li>
+                            <li>En alt seviyedeki demirbaşlar, doğrudan demirbaş bilgilerini gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Demirbaş İşlemleri:</h4>
+                <ol>
+                    <li><strong>Demirbaş Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir demirbaşa tıkladığınızda, o demirbaşın detaylarını gösteren yeni bir pencere açılır.</li>
+                            <li>Bu pencerede demirbaşın tüm özelliklerini, geçmiş işlemlerini ve zimmet bilgilerini görüntüleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporlar ve Yazdırma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Yazdır" simgesine tıklayarak demirbaşlarla ilgili çeşitli raporlara erişebilirsiniz.</li>
+                            <li>Bu menüden "Demirbaş Listesi", "Demirbaş Defteri", "Personel Demirbaş Listesi", "Oda Demirbaş Listesi", "Bina Demirbaş Listesi", "Hurdaya Ayrılanlar Listesi" ve "Demirbaş Hareket Listesi" gibi raporları alabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Hesap kodlarının yanındaki Toplam, Zimmetli ve Ambarda sütunları, hızlı bir şekilde stok durumunu anlamanızı sağlar.</li>
+                        <li>Zimmetli sayısı Toplam sayıdan fazla görünüyorsa (kırmızı renkte), bu bir veri hatası olduğunu gösterir ve düzeltilmesi gerekir.</li>
+                        <li>Farklı rapor formatları, envanter sayımı, denetim veya kontrol işlemleri için uygun seçenekler sunar.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="dayanikli-tasinirlar" class="step">
+                <h3>Dayanıklı Taşınırlar</h3>
+                <p>Bu sekme, bina bazında dayanıklı taşınırları görüntülemek ve yönetmek için kullanılır.</p>
+                
+                <h4>Dayanıklı Taşınır Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Bina Listesi:</strong>
+                        <ul>
+                            <li>Ekranda, dayanıklı taşınırların bulunduğu binaların listesi görüntülenir.</li>
+                            <li>Bu listede her bina satırı, o binada bulunan dayanıklı taşınırların özet bilgilerini gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Dayanıklı Taşınır İşlemleri:</h4>
+                <ol>
+                    <li><strong>Bina Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir binaya tıkladığınızda, o binadaki dayanıklı taşınırların detaylarını gösteren yeni bir pencere açılabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporlar ve Yazdırma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Yazdır" simgesine tıklayarak dayanıklı taşınırlarla ilgili çeşitli raporlara erişebilirsiniz.</li>
+                            <li>Bu menüden bina bazlı veya genel dayanıklı taşınır raporları alabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Bina bazlı raporlar, fiziksel envanter sayımı sırasında kullanışlıdır.</li>
+                        <li>Dayanıklı taşınırların bina ve oda bilgilerinin güncel tutulması, envanter yönetimini kolaylaştırır.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="diger-islemler" class="section">
+        <h2>Diğer İşlemler</h2>
+        <div class="info-box">
+            <p>Diğer İşlemler sekmesi, aylık raporlar ve kesin hesap işlemlerini yönetmenizi sağlar. Bu bölüm bir alt sekmeden oluşur:</p>
+            
+            <div id="aylik-raporlar" class="step">
+                <h3>Aylık Raporlar / Kesin Hesap</h3>
+                <p>Bu sekme, aylık ve üç aylık kesin hesap raporlarını oluşturmak ve yönetmek için kullanılır.</p>
+                
+                <h4>Dönem Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Dönem Listesi:</strong>
+                        <ul>
+                            <li>Ekranda, taşınır işlemlerinin yapıldığı dönemlerin bir listesi görüntülenir.</li>
+                            <li>Tabloda şu sütunlar bulunur: Dönem, Başlangıç Tarihi, Bitiş Tarihi, Durumu ve İşlemler.</li>
+                            <li>Her dönem satırı, o dönemin özet bilgilerini ve yapılabilecek işlemleri gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemler Sütunu:</strong>
+                        <ul>
+                            <li>Her dönem için yapılabilecek işlemleri gösteren butonlar bulunur.</li>
+                            <li>Dönemin durumuna göre "Raporları Oluştur", "Aylık Raporlar", "Üç Aylık Raporlar" ve "Raporları Kaldır" gibi butonlar görüntülenebilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Dönem İşlemleri:</h4>
+                <ol>
+                    <li><strong>Raporları Oluşturma:</strong>
+                        <ul>
+                            <li>Henüz raporu oluşturulmamış bir dönem için "Raporları Oluştur" veya "Kesin Hesap Raporları Oluştur" butonuna tıklayarak dönem raporlarını oluşturabilirsiniz.</li>
+                            <li>Bu işlem, dönem içerisinde yapılan tüm taşınır işlemlerini analiz ederek raporları hazırlar.</li>
+                            <li>İşlem onay gerektirir, çünkü raporlar oluşturulduktan sonra dönem içerisinde yeni işlem yapılamaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aylık Raporları Görüntüleme:</strong>
+                        <ul>
+                            <li>Raporu oluşturulmuş bir dönem için "Aylık Raporlar" butonuna tıklayarak açılan menüden istediğiniz raporu seçebilirsiniz.</li>
+                            <li>Bu menüde "Kesin Hesap Cetveli", "Kesin Hesap Cetvel İcmali" ve "Tüketime Verilen Malzeme Listesi" gibi seçenekler bulunur.</li>
+                            <li>Seçilen rapor yeni bir pencerede açılır ve yazdırılabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üç Aylık Raporları Görüntüleme:</strong>
+                        <ul>
+                            <li>Üçüncü ay dönemlerinde (3, 6, 9, 12. aylar) "Üç Aylık Raporlar" butonu aktif olur.</li>
+                            <li>Bu butona tıklayarak açılan menüden üç aylık döneme ait raporları seçebilirsiniz.</li>
+                            <li>Bu menüde "Kesin Hesap Cetveli", "Kesin Hesap Cetvel İcmali" ve "Tüketime Verilen Malzeme Listesi" seçenekleri üç aylık verilerle sunulur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporları Kaldırma:</strong>
+                        <ul>
+                            <li>Gerektiğinde "Raporları Kaldır" butonuna tıklayarak oluşturulmuş raporları kaldırabilirsiniz.</li>
+                            <li>Bu işlem, dönem içerisinde değişiklik yapmanız gerektiğinde kullanışlıdır.</li>
+                            <li>İşlem onay gerektirir, çünkü raporlar kaldırıldığında dönem içerisindeki taşınır işlemleri tekrar düzenlenebilir hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Müdürlük Raporları:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Diğer İşlemler" simgesine tıklayarak açılan menüden müdürlük bazında raporlara erişebilirsiniz.</li>
+                            <li>Bu menüde "Müdürlük İçin Kesin Hesap", "Müdürlük İçin Kesin Hesap İcmali" ve "Müdürlük İçin Tüketime Verilen Malzemeler" gibi seçenekler bulunur.</li>
+                            <li>Üçüncü ay dönemlerinde, aynı raporların üç aylık versiyonlarına da erişebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="warning-box">
+                    <h4>Önemli Uyarılar:</h4>
+                    <ul>
+                        <li>Raporları oluşturma işlemi, dönem içerisinde yapılan tüm taşınır işlemlerini kilitler ve yeni işlem yapılmasını engeller.</li>
+                        <li>Raporları kaldırma işlemi, daha önce oluşturulmuş raporları silecektir ve dönem içi işlemlerin değiştirilmesine olanak tanır.</li>
+                        <li>Kesin hesap raporları, resmi evrak niteliğindedir ve dikkatle kontrol edilmelidir.</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Dönem sonu yaklaşırken, tüm taşınır işlemlerinin tamamlandığından emin olun, raporlar oluşturulduktan sonra değişiklik yapmak için raporları kaldırmanız gerekecektir.</li>
+                        <li>Üç aylık raporlar, üst yönetime ve denetçilere sunulmak üzere daha kapsamlı bilgiler içerir.</li>
+                        <li>Müdürlük bazında raporlar, tüm ambarların konsolide verilerini gösterir ve genel durum değerlendirmesi için kullanışlıdır.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="arama-filtreleme" class="section">
+        <h2>Arama ve Filtreleme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Genel Arama ve Filtreleme Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Fiş Numarasına Göre Arama:</h4>
+                <ol>
+                    <li><strong>Fiş No Alanını Kullanma:</strong>
+                        <ul>
+                            <li>Çoğu sekmedeki "Fiş No" alanına aradığınız fişin numarasını yazabilirsiniz.</li>
+                            <li>Bu alana değer girildiğinde, Enter tuşuna bastığınızda veya alanın dışına tıkladığınızda arama otomatik olarak gerçekleşir.</li>
+                            <li>Yalnızca tam eşleşmeler gösterilir, yani 123 numaralı fiş için "123" yazmalısınız.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yevmiye Numarasına Göre Arama:</h4>
+                <ol>
+                    <li><strong>Yevmiye No Alanını Kullanma:</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesindeki "Yevmiye No" alanına muhasebe sistemindeki yevmiye numarasını yazabilirsiniz.</li>
+                            <li>Bu alana değer girildiğinde, Enter tuşuna bastığınızda veya alanın dışına tıkladığınızda arama otomatik olarak gerçekleşir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hareket Tipine Göre Filtreleme:</h4>
+                <ol>
+                    <li><strong>Hareket Tipi Alanını Kullanma:</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesindeki "Hareket Tipi" açılır menüsünden istediğiniz hareket tipini seçebilirsiniz.</li>
+                            <li>Seçim yaptığınızda, liste otomatik olarak güncellenir ve yalnızca seçtiğiniz hareket tipindeki fişler gösterilir.</li>
+                            <li>"Tümü" seçeneği, tüm hareket tiplerindeki fişleri gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İlgili Kişi veya Birim Bilgisine Göre Arama:</h4>
+                <ol>
+                    <li><strong>İlgilisi/Zimmetlenen Kişi Alanını Kullanma:</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesindeki "İlgilisi" alanına, "İstek Fişi Giriş" sekmesindeki "İlgilisi" alanına veya "Zimmet Fişleri" sekmesindeki "Zimmetlenen Kişi" alanına aradığınız kişi veya birim adının bir kısmını yazabilirsiniz.</li>
+                            <li>Arama, girilen metni içeren tüm kayıtları bulur. Örneğin, "Ahmet" yazarsanız, ilgili alanında "Ahmet" kelimesini içeren tüm kayıtlar gösterilir.</li>
+                            <li>Büyük/küçük harf duyarlılığı yoktur, yani "ahmet" veya "AHMET" yazmanız aynı sonuçları verir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Açıklama İçeriğine Göre Arama:</h4>
+                <ol>
+                    <li><strong>Açıklama Alanını Kullanma:</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesindeki "Açıklama" alanına, aradığınız açıklama metninin bir kısmını yazabilirsiniz.</li>
+                            <li>Arama, girilen metni içeren tüm kayıtları bulur.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Onay Durumuna Göre Filtreleme:</h4>
+                <ol>
+                    <li><strong>Durumu Alanını Kullanma:</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" veya "İstek Fişi Giriş" sekmelerindeki "Durumu" açılır menüsünden istediğiniz onay durumunu seçebilirsiniz.</li>
+                            <li>"Taşınır İşlem Fişleri" sekmesinde "Tümü", "Onaylı", "Onay Bekliyor" veya "Karşıdan Onay Bekliyor" seçenekleri bulunur.</li>
+                            <li>"İstek Fişi Giriş" sekmesinde "Tümü", "Onaylı" veya "Onay Bekliyor" seçenekleri bulunur.</li>
+                            <li>Seçim yaptığınızda, liste otomatik olarak güncellenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla filtreyi aynı anda kullanabilirsiniz. Örneğin, hem hareket tipini hem de onay durumunu filtreleyebilirsiniz.</li>
+                    <li>Filtreleri temizlemek için, ilgili alanlardaki değerleri silin veya açılır menülerde "Tümü" seçeneğini seçin.</li>
+                    <li>Aradığınız kaydı bulamıyorsanız, filtreleri genişleterek daha genel bir arama yapın.</li>
+                    <li>Kişi adı veya açıklama gibi metin aramalarında, tam adı veya cümleyi yazmanız gerekmez, içeriğin bir kısmını yazmanız yeterlidir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-yazdirma" class="section">
+        <h2>Rapor ve Yazdırma İşlemleri</h2>
+        <div class="info-box">
+            <h3>Raporlar ve Yazdırma Seçenekleri</h3>
+            
+            <div class="step">
+                <h4>Demirbaş Raporları:</h4>
+                <ol>
+                    <li><strong>Demirbaş Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Demirbaş Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, seçili ambardaki tüm demirbaşların liste halinde dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Demirbaş Defteri:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Demirbaş Defteri" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, demirbaşların resmi kayıt defteri formatında dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Demirbaş Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Personel Demirbaş Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, personel bazında zimmetlenmiş demirbaşların dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oda Demirbaş Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Oda Demirbaş Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, oda bazında bulunan demirbaşların dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bina Demirbaş Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Bina Demirbaş Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, bina bazında bulunan demirbaşların dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hurdaya Ayrılanlar Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Hurdaya Ayrılanlar Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, hurdaya ayrılmış demirbaşların dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Demirbaş Hareket Listesi:</strong>
+                        <ul>
+                            <li>"Demirbaşlar" veya "Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Demirbaş Hareket Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, demirbaşların giriş-çıkış ve zimmet hareketlerinin dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dayanıklı Taşınır Listesi (Müdürlük):</strong>
+                        <ul>
+                            <li>"Zimmet Fişleri" sekmesinde, "Yazdır" simgesine tıkladığınızda açılan menüden "Dayanıklı Taşınır Listesi (Müdürlük)" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, müdürlük bazında dayanıklı taşınırların dökümünü verir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Zimmet Fişi Raporları:</h4>
+                <ol>
+                    <li><strong>Zimmet Fişi (Demirbaş, Makine ve Cihaz İçin):</strong>
+                        <ul>
+                            <li>"Zimmet Fişleri" sekmesinde bir zimmet fişi seçili iken, "Yazdır" simgesine tıkladığınızda açılan menüden "Zimmet Fişi (Demirbaş, Makine ve Cihaz İçin)" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, seçili zimmet fişini resmi format olan Örnek 6A formunda yazdırır.</li>
+                            <li>Demirbaş, makine ve cihaz türündeki taşınırlar için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zimmet Fişi (Taşıt ve İş Makineleri İçin):</strong>
+                        <ul>
+                            <li>"Zimmet Fişleri" sekmesinde bir zimmet fişi seçili iken, "Yazdır" simgesine tıkladığınızda açılan menüden "Zimmet Fişi (Taşıt ve İş Makineleri İçin)" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, seçili zimmet fişini resmi format olan Örnek 6 formunda yazdırır.</li>
+                            <li>Taşıt ve iş makineleri türündeki taşınırlar için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kesin Hesap Raporları:</h4>
+                <ol>
+                    <li><strong>Aylık Kesin Hesap Cetveli:</strong>
+                        <ul>
+                            <li>"Aylık Raporlar / Kesin Hesap" sekmesinde, raporları oluşturulmuş bir dönem için "Aylık Raporlar" butonuna tıkladığınızda açılan menüden "Kesin Hesap Cetveli" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, ilgili dönem için taşınır hesap kodlarına göre giriş-çıkış hareketlerinin detaylı dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aylık Kesin Hesap Cetvel İcmali:</strong>
+                        <ul>
+                            <li>"Aylık Raporlar / Kesin Hesap" sekmesinde, raporları oluşturulmuş bir dönem için "Aylık Raporlar" butonuna tıkladığınızda açılan menüden "Kesin Hesap Cetvel İcmali" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, ilgili dönem için taşınır hesap kodlarına göre giriş-çıkış hareketlerinin özet dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aylık Tüketime Verilen Malzeme Listesi:</strong>
+                        <ul>
+                            <li>"Aylık Raporlar / Kesin Hesap" sekmesinde, raporları oluşturulmuş bir dönem için "Aylık Raporlar" butonuna tıkladığınızda açılan menüden "Tüketime Verilen Malzeme Listesi" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu rapor, ilgili dönemde tüketime verilen malzemelerin dökümünü verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üç Aylık Kesin Hesap Raporları:</strong>
+                        <ul>
+                            <li>"Aylık Raporlar / Kesin Hesap" sekmesinde, üçüncü ay dönemlerinde (3, 6, 9, 12. aylar) "Üç Aylık Raporlar" butonuna tıkladığınızda açılan menüden yukarıdaki raporların üç aylık versiyonlarını seçebilirsiniz.</li>
+                            <li>Bu raporlar, üç aylık dönem için konsolide edilmiş verileri gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Müdürlük Bazlı Kesin Hesap Raporları:</strong>
+                        <ul>
+                            <li>"Aylık Raporlar / Kesin Hesap" sekmesinde, "Diğer İşlemler" simgesine tıkladığınızda açılan menüden müdürlük bazlı raporları seçebilirsiniz.</li>
+                            <li>Bu menüden "Müdürlük İçin Kesin Hesap", "Müdürlük İçin Kesin Hesap İcmali" ve "Müdürlük İçin Tüketime Verilen Malzemeler" seçeneklerini kullanabilirsiniz.</li>
+                            <li>Üçüncü ay dönemlerinde, aynı raporların üç aylık versiyonlarına da erişebilirsiniz.</li>
+                            <li>Bu raporlar, müdürlüğe bağlı tüm ambarların konsolide verilerini gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Taşınır İşlem Fişi Raporları:</h4>
+                <ol>
+                    <li><strong>Taşınır İşlem Fişi (Örnek 5):</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesinde, fiş detayları ekranında "Yazdır" veya benzeri bir seçenek kullanılarak Taşınır İşlem Fişini resmi format olan Örnek 5 formunda yazdırabilirsiniz.</li>
+                            <li>Bu rapor, taşınır giriş-çıkış işlemlerinin resmi evrakıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Taşınır Geçici Alındısı (Örnek 9):</strong>
+                        <ul>
+                            <li>"Taşınır İşlem Fişleri" sekmesinde, fiş detayları ekranında "Yazdır" veya benzeri bir seçenek kullanılarak Taşınır Geçici Alındısını resmi format olan Örnek 9 formunda yazdırabilirsiniz.</li>
+                            <li>Bu rapor, taşınırların geçici olarak teslim alındığını gösteren resmi evraktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İstek Fişi Raporları:</h4>
+                <ol>
+                    <li><strong>Taşınır İstek Fişi (Örnek 7):</strong>
+                        <ul>
+                            <li>"İstek Fişi Giriş" sekmesinde, fiş detayları ekranında "Yazdır" veya benzeri bir seçenek kullanılarak Taşınır İstek Fişini resmi format olan Örnek 7 formunda yazdırabilirsiniz.</li>
+                            <li>Bu rapor, taşınır taleplerinin resmi evrakıdır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Notlar:</h4>
+                <ul>
+                    <li>Raporlar yazdırılmadan önce ön izleme penceresinde görüntülenir ve burada son kontrolleri yapabilirsiniz.</li>
+                    <li>Resmi belge niteliğindeki raporlar (Taşınır İşlem Fişi, Zimmet Fişi vb.) kurumsal prosedürlere uygun şekilde imzalanmalı ve arşivlenmelidir.</li>
+                    <li>Kesin hesap raporları, mali yıl sonunda denetim için kullanılacak önemli belgelerdir ve dikkatle kontrol edilmelidir.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Rapor İpuçları:</h4>
+                <ul>
+                    <li>Raporlar genellikle yeni bir pencerede açılır ve buradan doğrudan yazıcıya gönderilebilir veya PDF olarak kaydedilebilir.</li>
+                    <li>Büyük raporları yazdırmadan önce sayfa ayarlarını kontrol ederek kağıt tasarrufu sağlayabilirsiniz.</li>
+                    <li>Dönem sonu raporlarını oluşturmadan önce tüm taşınır işlemlerinin tamamlandığından emin olun.</li>
+                    <li>Farklı amaçlar için farklı rapor formatları kullanmak, bilgiye erişimi ve analizini kolaylaştırır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Genel Kullanım İpuçları:</h4>
+                <ol>
+                    <li><strong>Ambar Seçimi Önceliği:</strong>
+                        <ul>
+                            <li>Herhangi bir işlem yapmadan önce, sol panelden ilgili ambarı seçtiğinizden emin olun.</li>
+                            <li>Müdürlük düzeyinde değil, mutlaka bir ambar seçili olmalıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleri Etkin Kullanma:</strong>
+                        <ul>
+                            <li>Büyük veri listeleriyle çalışırken, filtreleme özelliklerini kullanarak listeleri daraltın.</li>
+                            <li>Birden fazla filtreyi aynı anda kullanarak daha spesifik sonuçlar elde edebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzenli Rapor Kontrolleri:</strong>
+                        <ul>
+                            <li>Dönem sonu raporlarını oluşturmadan önce, tüm taşınır işlemlerinin doğru şekilde kaydedildiğinden emin olmak için stok ve zimmet listelerini kontrol edin.</li>
+                            <li>Özellikle zimmetli demirbaş sayısının toplam demirbaş sayısını aşmamasına dikkat edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Öncesi Kaydetme:</strong>
+                        <ul>
+                            <li>Yeni bir işleme başlamadan önce, mevcut ekranda yaptığınız değişiklikleri kaydettiğinizden emin olun.</li>
+                            <li>Kaydedilmemiş değişiklikler genellikle bir uyarı mesajıyla bildirilir, ancak her zaman dikkatli olmakta fayda vardır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu İşlemlerden Yararlanma:</strong>
+                        <ul>
+                            <li>Çok sayıda demirbaşı zimmetlerken "Toplu Zimmet İşlemleri" özelliğini kullanın.</li>
+                            <li>Benzer fişleri tekrar tekrar oluşturmak yerine, mevcut bir fişi kopyalayıp üzerinde değişiklik yaparak zaman kazanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kayıt Bulunamadı Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Aradığınız fiş veya demirbaş kayıtlarını bulamıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Doğru ambarı seçtiğinizden emin olun.</li>
+                                    <li>Filtreleri temizleyerek tüm kayıtları görüntüleyin.</li>
+                                    <li>Arama yaparken yazım hatası olmadığından emin olun.</li>
+                                    <li>Geçerli yılın seçili olduğunu kontrol edin, çünkü program belirli bir yıla ait kayıtları gösterir.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Yapılamıyor Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Bir taşınır işlemi yapmaya çalıştığınızda işlem gerçekleştirilemiyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>İlgili dönemin raporlarının oluşturulup oluşturulmadığını kontrol edin. Raporu oluşturulmuş dönemlerde işlem yapılamaz.</li>
+                                    <li>Yetki seviyenizin bu işlemi yapmaya uygun olduğundan emin olun.</li>
+                                    <li>İşlemle ilgili tüm zorunlu alanları doldurduğunuzdan emin olun.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Silme Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Bir fişi silmeye çalıştığınızda hata alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Fişin başka işlemlerle ilişkilendirilmiş olup olmadığını kontrol edin. Örneğin, bir taşınır işlem fişi, bir zimmet fişinde kullanılmışsa silinemeyebilir.</li>
+                                    <li>Fişin onaylı olup olmadığını kontrol edin. Onaylı fişler bazı durumlarda silinemeyebilir.</li>
+                                    <li>Fişin ait olduğu dönemin raporlarının oluşturulup oluşturulmadığını kontrol edin. Raporu oluşturulmuş dönemlerdeki fişler silinemez.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Oluşturma Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kesin hesap raporlarını oluşturamıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Rapor oluşturma yetkisine sahip olduğunuzdan emin olun.</li>
+                                    <li>Dönem içindeki tüm taşınır işlemlerinin tamamlandığından ve hatalı işlem olmadığından emin olun.</li>
+                                    <li>Sistem yöneticinizle iletişime geçerek yetki durumunuzu kontrol ettirin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Zimmet ve Toplam Sayı Uyumsuzluğu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Zimmetli demirbaş sayısı, toplam demirbaş sayısından fazla görünüyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Bu bir veri tutarsızlığıdır ve düzeltilmesi gerekir.</li>
+                                    <li>İlgili hesap kodundaki demirbaşları detaylı olarak inceleyin ve zimmet durumlarını kontrol edin.</li>
+                                    <li>Hatalı zimmet kayıtlarını tespit ederek düzeltin veya sistem yöneticinizden yardım isteyin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Kritik Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemleri genellikle geri alınamaz, bu nedenle silme işlemi yapmadan önce verilerin doğruluğundan ve gerekliliğinden emin olun.</li>
+                    <li>Kesin hesap raporları oluşturulduktan sonra, ilgili döneme ait işlemlerde değişiklik yapılamaz. Değişiklik gerekiyorsa önce raporları kaldırmanız gerekir.</li>
+                    <li>Zimmet fişleri, yasal sorumluluk taşıyan belgelerdir. Zimmet fişlerinin ilgili kişilerce imzalanması ve arşivlenmesi önemlidir.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>İleri Düzey Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Düzenli olarak stok ve demirbaş listelerini kontrol ederek, fiziksel sayımlarla tutarlılığını doğrulayın.</li>
+                    <li>Taşınır işlemlerini zamanında kaydedin, dönem sonu yaklaşırken işlem yoğunluğu yaşamamak için işlemleri ertelemeyin.</li>
+                    <li>Farklı rapor formatlarını öğrenerek, amacınıza en uygun raporu seçin. Örneğin, envanter sayımında oda bazlı raporlar daha kullanışlı olabilir.</li>
+                    <li>Bilgisayarınızdaki "Taşınır Yönetimi" ekranını her zaman tek pencerede çalıştırın, birden fazla oturum açmak veri tutarsızlığına neden olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Taşınır Yönetimi" uygulaması, kurumunuzun taşınır mallarını etkin bir şekilde yönetmenizi sağlayan kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>İşlemlerinizi düzenli olarak kaydedin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Dönem sonu raporlarını zamanında ve dikkatle oluşturun.</li>
+                    <li>Zimmet fişlerinin imzalanmasını ve arşivlenmesini sağlayın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>Ekranın en üstünde "Taşınır Yönetimi (Yıl)" başlığı yer alır.</li>
+                            <li>Burada görünen yıl, aktif çalışma yılınızı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sol Panel - Müdürlük/Ambar Listesi:</strong>
+                        <ul>
+                            <li>Ekranın sol tarafında, erişim yetkiniz olan müdürlük ve ambarların hiyerarşik bir listesi bulunur.</li>
+                            <li>Bu liste, müdürlükleri ve her müdürlüğe ait ambarları görüntüler.</li>
+                            <li>Müdürlükler koyu renkle, ambarlar ise normal yazı ile gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üst Menü - Ana Kategori Sekmeleri:</strong>
+                        <ul>
+                            <li>Sol panelin hemen sağında, üstte 3 ana sekme bulunur: "Stok İşlemleri", "Demirbaş İşlemleri" ve "Diğer İşlemler".</li>
+                            <li>Bu sekmeler, programın ana fonksiyonlarına erişim sağlar.</li>
+                            <li>Seçilen sekme vurgulanır ve ilgili alt sekmeleri görüntüler.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Menü - İşlem Sekmeleri:</strong>
+                        <ul>
+                            <li>Üst menüdeki ana kategoriye bağlı olarak değişen alt sekmeler görüntülenir.</li>
+                            <li>Örneğin, "Stok İşlemleri" seçildiğinde: "Taşınır İşlem Fişleri", "İstek Fişi Giriş" ve "Ambara İletilen Talepler" sekmeleri görünür.</li>
+                            <li>Seçilen alt sekme vurgulanır ve ilgili verileri ana çalışma alanında gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana Çalışma Alanı:</strong>
+                        <ul>
+                            <li>Ekranın orta ve sağ bölümünü kaplayan, seçilen sekmeye göre ilgili verilerin listelendiği alandır.</li>
+                            <li>Bu alan, seçilen müdürlük/ambar ve işlem tipine göre veri gösterir.</li>
+                            <li>Veriler genellikle tablo formatında listelenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Alanı:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının üst kısmında, görüntülenen verileri filtrelemeye yarayan seçenekler bulunabilir.</li>
+                            <li>Bu filtreler, seçilen sekmeye göre değişiklik gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları ve Sayfalama Kontrolleri:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, "Ekle", "Sil" gibi işlem butonları bulunur.</li>
+                            <li>Ayrıca verilerin birden fazla sayfa olması durumunda, sayfalar arası gezinmeyi sağlayan kontroller de burada yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Varsayılan olarak "Stok İşlemleri" sekmesi ve altında "Taşınır İşlem Fişleri" alt sekmesi seçili olarak gelir.</li>
+                    <li>Sol panelde müdürlük ve ambar listesi kapalı olarak gösterilir, ihtiyaç duyduğunuz birimi açarak seçmeniz gerekir.</li>
+                    <li>İşlem yapmak için önce sol panelden bir ambar seçmelisiniz, müdürlük düzeyindeki seçimler genellikle sadece görüntüleme amaçlıdır.</li>
+                    <li>Seçtiğiniz ambar ile ilgili veri olmadığında, ana çalışma alanı boş görünecektir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="stok-islemleri" class="section">
+        <h2>Stok İşlemleri</h2>
+        <div class="info-box">
+            <p>Stok İşlemleri sekmesi, taşınır malların giriş-çıkış işlemlerini, istek fişlerini ve talepleri yönetmenizi sağlar. Bu bölüm üç alt sekmeden oluşur:</p>
+            
+            <div id="tasinir-islem-fisleri" class="step">
+                <h3>Taşınır İşlem Fişleri</h3>
+                <p>Bu sekme, taşınır malların giriş-çıkış işlemlerini kaydetmek ve takip etmek için kullanılır.</p>
+                
+                <h4>Fiş Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Filtre Alanları:</strong>
+                        <ul>
+                            <li><strong>Fiş No:</strong> Ekranın üst kısmında, en sol tarafta yer alır. Belirli bir fiş numarasını aramak için kullanılır.</li>
+                            <li><strong>Yevmiye No:</strong> Fiş No alanının hemen sağında bulunur. Muhasebe sistemindeki yevmiye numarasına göre arama yapar.</li>
+                            <li><strong>Hareket Tipi:</strong> Yevmiye No alanının sağında yer alır. Açılır menüden seçim yaparak belirli hareket tiplerine göre filtreleme yapabilirsiniz.</li>
+                            <li><strong>İlgilisi:</strong> Hareket Tipi alanının sağında bulunur. Fiş ilgilisine göre arama yapmanızı sağlar.</li>
+                            <li><strong>Açıklama:</strong> İlgilisi alanının sağındadır. Fiş açıklamasına göre arama yapabilirsiniz.</li>
+                            <li><strong>Durumu:</strong> En sağda yer alan açılır menüdür. Fişleri onay durumuna göre filtrelemenizi sağlar (Tümü, Onaylı, Onay Bekliyor, Karşıdan Onay Bekliyor).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Listesi:</strong>
+                        <ul>
+                            <li>Filtre alanlarının altında, seçilen ambara ait fişlerin listelendiği tablo yer alır.</li>
+                            <li>Tabloda şu sütunlar bulunur: Sıra No, İşlem Tarihi, Fiş No, Hareket Tipi, İlgilisi, Tutar, Bir. Fiş, Muh. Fiş ve Onay.</li>
+                            <li>Her fiş satırı, o fişin temel bilgilerini gösterir.</li>
+                            <li>Onay sütununda, fişin onay durumunu gösteren simgeler bulunur: Onaylı (yeşil tik), Onaylanmamış (kırmızı çarpı), Karşıdan Onay Bekliyor (soru işareti).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfalama Kontrolü:</strong>
+                        <ul>
+                            <li>Listenin alt kısmında, birden fazla sayfa varsa, sayfalar arasında gezinmenizi sağlayan düğmeler bulunur: İlk Sayfa, Önceki Sayfa, Sayfa Numarası (giriş kutusu), Toplam Sayfa, Sonraki Sayfa ve Son Sayfa.</li>
+                            <li>Bunların altında "kayıt: x - y / z" formatında bir bilgi gösterilir, burada x-y geçerli sayfada gösterilen kayıt aralığını, z ise toplam kayıt sayısını belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Fiş İşlemleri:</h4>
+                <ol>
+                    <li><strong>Yeni Fiş Ekleme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sol tarafta bulunan "Ekle" butonuna (+ simgesi) tıklayarak yeni bir taşınır işlem fişi oluşturabilirsiniz.</li>
+                            <li>Bu butona tıkladığınızda, ayrı bir pencerede fiş ekleme ekranı açılır.</li>
+                            <li>Bu işlem için önce sol panelden bir ambar seçmiş olmanız gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Silme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sağ tarafta bulunan "Sil" butonuna (- simgesi) tıklayarak seçili fişi silebilirsiniz.</li>
+                            <li>Silme işlemi için önce listeden bir fiş seçmeniz gerekir.</li>
+                            <li>Silme işlemi onay gerektirir, "Emin misiniz?" sorusuna "Evet" yanıtını vermeniz gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir fişe tıkladığınızda, o fişin detaylarını gösteren yeni bir pencere açılır.</li>
+                            <li>Bu pencerede fişin tüm detaylarını görüntüleyebilir ve düzenleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Belirli bir fişi hızlıca bulmak için Fiş No alanını kullanabilirsiniz.</li>
+                        <li>Onay durumuna göre filtreleme, işlem bekleyen fişleri kolayca bulmanızı sağlar.</li>
+                        <li>Fiş listesi çok uzunsa, İlgilisi veya Açıklama filtrelerini kullanarak aramanızı daraltabilirsiniz.</li>
+                        <li>Fiş detaylarını görüntülemek için satıra çift tıklamak yerine tek tıklama yeterlidir.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="istek-fisi-giris" class="step">
+                <h3>İstek Fişi Girişi</h3>
+                <p>Bu sekme, ambara yapılan malzeme taleplerini kaydetmek ve takip etmek için kullanılır.</p>
+                
+                <h4>İstek Fişi Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Filtre Alanları:</strong>
+                        <ul>
+                            <li><strong>Fiş No:</strong> Ekranın üst kısmında, sol tarafta yer alır. Belirli bir istek fişi numarasını aramak için kullanılır.</li>
+                            <li><strong>İlgilisi:</strong> Fiş No alanının sağında bulunur. İstek yapan birime veya açıklamaya göre arama yapmanızı sağlar.</li>
+                            <li><strong>Durumu:</strong> En sağda yer alan açılır menüdür. İstek fişlerini onay durumuna göre filtrelemenizi sağlar (Tümü, Onaylı, Onay Bekliyor).</li>
+                        </ul>
+                    </li>
+                    <li><strong>İstek Fişi Listesi:</strong>
+                        <ul>
+                            <li>Filtre alanlarının altında, seçilen ambara ait istek fişlerinin listelendiği tablo yer alır.</li>
+                            <li>Tabloda şu sütunlar bulunur: Sıra No, İşlem Tarih, Fiş No, İstek Yapan Birim/Açıklama, Onay ve Karşılanma/Reddilme Oranı.</li>
+                            <li>Her istek fişi satırı, o fişin temel bilgilerini gösterir.</li>
+                            <li>Karşılanma/Reddilme Oranı sütununda, isteğin ne kadarının karşılandığını ve ne kadarının reddedildiğini gösteren görsel çubuklar bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfalama Kontrolü:</strong>
+                        <ul>
+                            <li>Listenin alt kısmında, birden fazla sayfa varsa, sayfalar arasında gezinmenizi sağlayan düğmeler bulunur.</li>
+                            <li>Bunların altında toplam kayıt sayısı ve geçerli sayfa bilgisi gösterilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>İstek Fişi İşlemleri:</h4>
+                <ol>
+                    <li><strong>Yeni İstek Fişi Ekleme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sol tarafta bulunan "Ekle" butonuna tıklayarak yeni bir istek fişi oluşturabilirsiniz.</li>
+                            <li>Bu butona tıkladığınızda, ayrı bir pencerede istek fişi ekleme ekranı açılır.</li>
+                            <li>Bu işlem için önce sol panelden bir ambar seçmiş olmanız gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İstek Fişi Silme:</strong>
+                        <ul>
+                            <li>Ana çalışma alanının alt kısmında, sağ tarafta bulunan "Sil" butonuna tıklayarak seçili istek fişini silebilirsiniz.</li>
+                            <li>Silme işlemi için önce listeden bir istek fişi seçmeniz gerekir.</li>
+                            <li>Silme işlemi onay gerektirir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İstek Fişi Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir istek fişine tıkladığınızda, o fişin detaylarını gösteren yeni bir pencere açılır.</li>
+                            <li>Bu pencerede istek fişinin tüm detaylarını görüntüleyebilir ve düzenleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Karşılanma/Reddilme Oranı çubuklarının rengi, karşılanma düzeyini gösterir: Yeşil ton yüksek karşılanma, kırmızı ton yüksek reddedilme oranını belirtir.</li>
+                        <li>İstek fişlerini durumuna göre filtreleyerek, henüz işlem yapılmamış istekleri kolayca tespit edebilirsiniz.</li>
+                        <li>İstek fişi oluştururken, talep edilen malzemelerin doğru kodlarla ve miktarlarla girildiğinden emin olun.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="ambara-iletilen-talepler" class="step">
+                <h3>Ambara İletilen Talepler</h3>
+                <p>Bu sekme, diğer birimlerden ambara iletilen malzeme taleplerini görüntülemek ve işlem yapmak için kullanılır.</p>
+                
+                <h4>Talep Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Talep Listesi:</strong>
+                        <ul>
+                            <li>Ekranda, seçilen ambara iletilmiş tüm taleplerin listelendiği bir görünüm bulunur.</li>
+                            <li>Her talep satırı, istek yapan birimin adını, istek tarihini, fiş numarasını ve karşılanma/reddedilme oranlarını gösterir.</li>
+                            <li>Ambar istekleri yeşil renkte, birimler arası devir istekleri kırmızı renkte belirtilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Karşılanma/Reddilme Oranları:</strong>
+                        <ul>
+                            <li>Her talep için karşılanma ve reddedilme oranlarını gösteren görsel çubuklar bulunur.</li>
+                            <li>Bu çubuklar, talebin ne kadarının işlem gördüğünü anlamanızı sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Talep İşlemleri:</h4>
+                <ol>
+                    <li><strong>Talep Detaylarını Görüntüleme:</strong>
+                        <ul>
+                            <li>Listeden herhangi bir talebe tıkladığınızda, o talebin detaylarını gösteren yeni bir pencere açılır.</li>
+                            <li>Bu pencerede talebin tüm detaylarını görüntüleyebilir ve işlem yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Farklı Birimden İsteme:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Diğer İşlemler" simgesine (üç çizgili menü) tıklayarak açılan menüden "Farklı Birimden İste" seçeneğini kullanabilirsiniz.</li>
+                            <li>Bu işlem, kendi ambarınızda olmayan bir malzemeyi başka bir birimden talep etmenizi sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>Talep listesinde, ambar istekleri (yeşil) ile birimler arası devir isteklerini (kırmızı) ayırt ederek, farklı işlem süreçlerini yönetebilirsiniz.</li>
+                        <li>Karşılanma oranı düşük olan taleplere öncelik vererek, bekleyen işlemleri hızlandırabilirsiniz.</li>
+                        <li>Farklı birimden isteme özelliği, kendi ambarınızda bulunmayan acil malzemeleri temin etmek için kullanışlıdır.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="demirbas-islemleri" class="section">
+        <h2>Demirbaş İşlemleri</h2>
+        <div class="info-box">
+            <p>Demirbaş İşlemleri sekmesi, kurumunuzun demirbaş mallarını yönetmenizi, zimmet işlemlerini yapmanızı ve dayanıklı taşınırları takip etmenizi sağlar. Bu bölüm üç alt sekmeden oluşur:</p>
+            
+            <div id="zimmet-fisleri" class="step">
+                <h3>Zimmet Fişleri</h3>
+                <p>Bu sekme, demirbaşların kişilere veya odalara zimmetlenmesi işlemlerini yönetmek için kullanılır.</p>
+                
+                <h4>Zimmet Fişi Listesi Ekranı:</h4>
+                <ol>
+                    <li><strong>Filtre Alanları:</strong>
+                        <ul>
+                            <li><strong>Fiş No:</strong> Ekranın üst kısmında, sol tarafta yer alır. Belirli bir zimmet fişi numarasını aramak için kullanılır.</li>
+                            <li><strong>Zimmetlenen Kişi:</strong> Fiş No alanının sağında bulunur. Zimmet yapılan kişiye göre arama yapmanızı sağlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zimmet Fişi Listesi:</strong>
+                        <ul>
+                            <li>

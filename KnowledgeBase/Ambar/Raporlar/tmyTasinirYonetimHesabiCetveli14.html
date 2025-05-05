@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taşınır Yönetim Hesabı Cetveli Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Harcama Birimi Taşınır Mal Yönetim Hesabı Cetveli Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-secimi">Yıl Seçimi</a></li>
+                <li><a href="#mudurluk-ambar">Müdürlük ve Ambar Seçimi</a></li>
+                <li><a href="#hesap-kodu">Hesap Kodu Seçimi</a></li>
+                <li><a href="#personel-bilgileri">Personel Bilgileri Girişi</a></li>
+                <li><a href="#tarih-bilgisi">Tarih Bilgisi Girişi</a></li>
+                <li><a href="#rapor-goruntuleme">Raporun Görüntülenmesi ve Navigasyon</a></li>
+                <li><a href="#yazdirma">Yazdırma İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Harcama Birimi Taşınır Mal Yönetim Hesabı Cetveli programı, kurumunuzun taşınır mal varlıklarının hesap dökümlerini oluşturmak, görüntülemek ve yazdırmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Farklı hesap kodlarına göre taşınır malların dökümünü alabilirsiniz</li>
+                <li>Belirli bir müdürlük veya ambarın taşınır mallarını listeleyebilirsiniz</li>
+                <li>Yıl bazında taşınır mal hareketlerini izleyebilirsiniz</li>
+                <li>Taşınır Kayıt Yetkilisi, Taşınır Kontrol Yetkilisi, Harcama Yetkilisi ve Muhasebe Yetkilisi bilgilerini kaydedebilirsiniz</li>
+                <li>Cetveli Excel formatında dışa aktarabilir veya yazdırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Raporlamak istediğiniz yıl bilgisi</li>
+                    <li>Hangi müdürlük ve ambar için rapor alacağınız</li>
+                    <li>Hangi hesap kodu için rapor oluşturacağınız</li>
+                    <li>İlgili yetkililerin (Taşınır Kayıt Yetkilisi, Taşınır Kontrol Yetkilisi, Harcama Yetkilisi, Muhasebe Yetkilisi) ad, soyad ve unvan bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "HARCAMA BİRİMİ TAŞINIR MAL YÖNETİM HESABI CETVELİ" başlığı yer alır</li>
+                            <li>Bu başlık sayfanın orta üst kısmında, kalın ve büyük fontla gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Formu:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana form alanı bulunur</li>
+                            <li>Form, sayfanın ortasında, iki sütunlu bir tablo şeklinde düzenlenmiştir</li>
+                            <li>Sol sütunda etiketler (Müdürlük, Ambar, Hesap Kodu, Yıl vs.), sağ sütunda ise giriş alanları yer alır</li>
+                            <li>Form, açık renkli bir kenarlıkla çevrelenmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları:</strong>
+                        <ul>
+                            <li>Formun en altında, ortada "Görüntüle" ve "Kapat" butonları yer alır</li>
+                            <li>Aynı satırda sol tarafta "Excele Aktar" seçeneği için bir onay kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Görüntüleme Alanı:</strong>
+                        <ul>
+                            <li>"Görüntüle" butonuna basıldıktan sonra, form gizlenir ve rapor görüntüleme alanı açılır</li>
+                            <li>Rapor görüntüleme alanının üstünde navigasyon butonları yer alır (İlk Sayfa, Önceki Sayfalar, Sonraki Sayfalar, Son Sayfa gibi)</li>
+                            <li>Navigasyon butonlarının altında rapor içeriği tablo formatında gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Veri giriş formu aktif durumdadır</li>
+                    <li>Rapor görüntüleme alanı henüz görünmez durumdadır</li>
+                    <li>Yıl alanı otomatik olarak içinde bulunulan yılı gösterir</li>
+                    <li>Diğer alanlar boş olarak başlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-secimi" class="section">
+        <h2>Yıl Seçimi</h2>
+        <div class="info-box">
+            <h3>Rapor Yılı Girişi</h3>
+            <div class="step">
+                <h4>Yıl Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl alanı, form tablosunda Hesap Kodu alanının hemen altında bulunur</li>
+                            <li>"Yıl" etiketi sol sütunda, metin kutusu sağ sütunda yer alır</li>
+                            <li>Metin kutusu küçük bir alandır ve sadece 4 rakam girişi yapılabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayarak veya TAB tuşuyla alana gelerek aktif hale getirin</li>
+                            <li>Raporlamak istediğiniz yılı 4 haneli olarak girin (örneğin: 2023)</li>
+                            <li>Program açıldığında bu alanda otomatik olarak sistem yılı görünür, bu değeri değiştirebilirsiniz</li>
+                            <li>Geçmiş yıllar için rapor almak istiyorsanız, ilgili yılı manuel olarak girmeniz gerekir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına sadece 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Geçersiz bir tarih formatı girildiğinde (örneğin harf veya 4'ten az rakam) sistem uyarı verebilir</li>
+                    <li>Rapor, girdiğiniz yıla ait taşınır mal hareketlerini gösterecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Rapor almak istediğiniz yılın, sistemde kayıtlı verilere sahip olduğundan emin olun</li>
+                    <li>Eğer ekranı kapatıp tekrar açarsanız, yıl alanı tekrar otomatik olarak sistem yılını gösterecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="mudurluk-ambar" class="section">
+        <h2>Müdürlük ve Ambar Seçimi</h2>
+        <div class="info-box">
+            <h3>Müdürlük Seçimi</h3>
+            <div class="step">
+                <h4>Müdürlük Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Müdürlük alanı, form tablosunun en üst satırında yer alır</li>
+                            <li>"Müdürlük" etiketi sol sütunda, açılır liste (dropdown) kutusu sağ sütunda bulunur</li>
+                            <li>Açılır liste kutusu yaklaşık 200 piksel genişliğindedir ve "Müdürlük seçin..." yazısı ile başlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, sistem kayıtlı müdürlüklerin listesini gösterecektir</li>
+                            <li>Liste alfabetik sırada düzenlenmiş müdürlükleri gösterir</li>
+                            <li>Listeden rapor almak istediğiniz müdürlüğü seçin
+                                <ul>
+                                    <li>Eğer tüm müdürlükleri kapsayan bir rapor almak istiyorsanız, "Müdürlük seçin..." seçeneğini bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz müdürlük görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ambar Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ambar alanı, Müdürlük alanının hemen altında yer alır</li>
+                            <li>"Ambar" etiketi sol sütunda, açılır liste (dropdown) kutusu sağ sütunda bulunur</li>
+                            <li>Açılır liste kutusu başlangıçta boştur ve müdürlük seçimi yapılmadan aktif olmaz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Öncelikle bir müdürlük seçmeniz gerekir, aksi halde ambar listesi boş olacaktır</li>
+                            <li>Müdürlük seçimi yaptıktan sonra, ambar açılır listesi otomatik olarak seçilen müdürlüğe ait ambarlarla doldurulur</li>
+                            <li>Açılır listeye tıklayın ve listeden rapor almak istediğiniz ambarı seçin
+                                <ul>
+                                    <li>Liste en üstte "Ambar Seçiniz.." seçeneği ile başlar</li>
+                                    <li>Eğer seçilen müdürlüğün tüm ambarlarını kapsayan bir rapor almak istiyorsanız, "Ambar Seçiniz.." seçeneğini bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra, ambar seçiminize bağlı olarak, aşağıdaki personel bilgileri alanları otomatik olarak doldurulabilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Müdürlük seçimi yapmadan ambar seçimi yapamazsınız</li>
+                    <li>Müdürlük değiştirildiğinde, ambar listesi de güncellenir ve daha önceden seçilmiş ambar silinir</li>
+                    <li>Ambar seçimi yapıldığında, ilgili ambara atanmış olan personel bilgileri (Taşınır Kayıt Yetkilisi, Taşınır Kontrol Yetkilisi, Harcama Yetkilisi) otomatik olarak doldurulabilir</li>
+                    <li>Eğer müdürlük seçmezseniz, tüm müdürlüklere ait veriler raporda görüntülenecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Müdürlük listesi uzunsa, klavyeden ilk birkaç harfi yazarak listede hızlıca ilerleme yapabilirsiniz</li>
+                    <li>Müdürlük ve ambar seçimi, raporun kapsamını daraltır ve daha spesifik sonuçlar almanızı sağlar</li>
+                    <li>Ambar seçiminin, personel bilgilerini otomatik doldurma özelliğinden faydalanmak için, ilgili ambarın bilgilerinin sistemde tanımlı olduğundan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hesap-kodu" class="section">
+        <h2>Hesap Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Hesap Kodu Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Hesap Kodu Seçim Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hesap Kodu alanı, Ambar alanının hemen altında yer alır</li>
+                            <li>"Hesap Kodu" etiketi sol sütunda, açılır liste (dropdown) kutusu sağ sütunda bulunur</li>
+                            <li>Açılır liste kutusu yaklaşık 200 piksel genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut hesap kodlarının listesi görüntülenecektir</li>
+                            <li>Liste şu seçenekleri içerir:
+                                <ul>
+                                    <li>"Ana Hesap Seçiniz." (varsayılan seçenek)</li>
+                                    <li>"150" (Tüketim malzemeleri hesap kodu)</li>
+                                    <li>"253" (Tesis, makine ve cihazlar hesap kodu)</li>
+                                    <li>"254" (Taşıtlar hesap kodu)</li>
+                                    <li>"255" (Demirbaşlar hesap kodu)</li>
+                                </ul>
+                            </li>
+                            <li>Listeden rapor almak istediğiniz hesap kodunu seçin
+                                <ul>
+                                    <li>Eğer belirli bir hesap koduna ait taşınır malları görüntülemek istiyorsanız, ilgili kodu seçin</li>
+                                    <li>Tüm hesap kodlarına ait taşınır malları görüntülemek istiyorsanız, "Ana Hesap Seçiniz." seçeneğini bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz hesap kodu görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hesap kodu seçimi, raporun içeriğini önemli ölçüde etkiler</li>
+                    <li>Seçilen hesap koduna ait taşınır mallar raporda listelenecektir</li>
+                    <li>Hesap kodu seçmek zorunlu değildir, ancak daha spesifik bir rapor için seçim yapmanız önerilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Hesap Kodları Hakkında Bilgi:</h4>
+                <ul>
+                    <li><strong>150:</strong> Tüketim malzemeleri (kırtasiye, temizlik malzemeleri, yiyecek vb.)</li>
+                    <li><strong>253:</strong> Tesis, makine ve cihazlar (elektronik cihazlar, makineler vb.)</li>
+                    <li><strong>254:</strong> Taşıtlar (araçlar, nakil vasıtaları vb.)</li>
+                    <li><strong>255:</strong> Demirbaşlar (mobilya, büro malzemeleri vb.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="personel-bilgileri" class="section">
+        <h2>Personel Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Taşınır Kayıt Yetkilisi Bilgileri</h3>
+            <div class="step">
+                <h4>Taşınır Kayıt Yetkilisi Bilgileri Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Taşınır Kayıt Yetkilisi alanı, Yıl alanının hemen altında yer alır</li>
+                            <li>"Taşınır Kayıt Yetkilisi" etiketi sol sütunda, iki adet metin kutusu ve bir arama butonu sağ sütunda bulunur</li>
+                            <li>İlk metin kutusu ad-soyad bilgisi için, ikinci metin kutusu unvan bilgisi içindir</li>
+                            <li>Her iki metin kutusu da yaklaşık 20 karakter genişliğindedir</li>
+                            <li>Metin kutularının hemen sağında küçük bir büyüteç ikonu bulunan arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li><strong>Manuel Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>İlk metin kutusuna tıklayın veya TAB tuşuyla alana gelin</li>
+                                    <li>Taşınır Kayıt Yetkilisinin adını ve soyadını yazın</li>
+                                    <li>TAB tuşuna basarak unvan alanına geçin</li>
+                                    <li>Taşınır Kayıt Yetkilisinin unvanını yazın</li>
+                                </ul>
+                            </li>
+                            <li><strong>Arama Butonu ile Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>Metin kutularının yanındaki arama butonuna (büyüteç ikonu) tıklayın</li>
+                                    <li>Açılan arama penceresinde filtre kriterlerini belirleyebilirsiniz (opsiyonel)</li>
+                                    <li>Personel listesi görüntülenecektir</li>
+                                    <li>Listeden Taşınır Kayıt Yetkilisini seçin</li>
+                                    <li>Seçilen personelin ad-soyad ve unvan bilgileri otomatik olarak ilgili alanlara aktarılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Taşınır Kontrol Yetkilisi Bilgileri Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Taşınır Kontrol Yetkilisi alanı, Taşınır Kayıt Yetkilisi alanının hemen altında yer alır</li>
+                            <li>"Taşınır Kontrol Yetkilisi" etiketi sol sütunda, iki adet metin kutusu ve bir arama butonu sağ sütunda bulunur</li>
+                            <li>İlk metin kutusu ad-soyad bilgisi için, ikinci metin kutusu unvan bilgisi içindir</li>
+                            <li>Metin kutularının hemen sağında küçük bir büyüteç ikonu bulunan arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li><strong>Manuel Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>İlk metin kutusuna tıklayın veya TAB tuşuyla alana gelin</li>
+                                    <li>Taşınır Kontrol Yetkilisinin adını ve soyadını yazın</li>
+                                    <li>TAB tuşuna basarak unvan alanına geçin</li>
+                                    <li>Taşınır Kontrol Yetkilisinin unvanını yazın</li>
+                                </ul>
+                            </li>
+                            <li><strong>Arama Butonu ile Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>Metin kutularının yanındaki arama butonuna (büyüteç ikonu) tıklayın</li>
+                                    <li>Açılan personel arama penceresinden Taşınır Kontrol Yetkilisini seçin</li>
+                                    <li>Seçilen personelin ad-soyad ve unvan bilgileri otomatik olarak ilgili alanlara aktarılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Harcama Yetkilisi Bilgileri Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Harcama Yetkilisi alanı, Taşınır Kontrol Yetkilisi alanının hemen altında yer alır</li>
+                            <li>"Harcama Yetkilisi" etiketi sol sütunda, iki adet metin kutusu ve bir arama butonu sağ sütunda bulunur</li>
+                            <li>İlk metin kutusu ad-soyad bilgisi için, ikinci metin kutusu unvan bilgisi içindir</li>
+                            <li>Metin kutularının hemen sağında küçük bir büyüteç ikonu bulunan arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li><strong>Manuel Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>İlk metin kutusuna tıklayın veya TAB tuşuyla alana gelin</li>
+                                    <li>Harcama Yetkilisinin adını ve soyadını yazın</li>
+                                    <li>TAB tuşuna basarak unvan alanına geçin</li>
+                                    <li>Harcama Yetkilisinin unvanını yazın</li>
+                                </ul>
+                            </li>
+                            <li><strong>Arama Butonu ile Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>Metin kutularının yanındaki arama butonuna (büyüteç ikonu) tıklayın</li>
+                                    <li>Açılan arama penceresinde filtre kriterlerini belirleyebilirsiniz (opsiyonel)</li>
+                                    <li>Personel listesi görüntülenecektir</li>
+                                    <li>Listeden Harcama Yetkilisini seçin</li>
+                                    <li>Seçilen personelin ad-soyad ve unvan bilgileri otomatik olarak ilgili alanlara aktarılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Muhasebe Yetkilisi Bilgileri Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Muhasebe Yetkilisi alanı, Harcama Yetkilisi alanının hemen altında yer alır</li>
+                            <li>"Muhasebe Yetkilisi" etiketi sol sütunda, iki adet metin kutusu ve bir arama butonu sağ sütunda bulunur</li>
+                            <li>İlk metin kutusu ad-soyad bilgisi için, ikinci metin kutusu unvan bilgisi içindir</li>
+                            <li>Her iki metin kutusu da yaklaşık 20 karakter genişliğindedir</li>
+                            <li>Metin kutularının hemen sağında küçük bir büyüteç ikonu bulunan arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li><strong>Manuel Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>İlk metin kutusuna tıklayın veya TAB tuşuyla alana gelin</li>
+                                    <li>Muhasebe Yetkilisinin adını ve soyadını yazın</li>
+                                    <li>TAB tuşuna basarak unvan alanına geçin</li>
+                                    <li>Muhasebe Yetkilisinin unvanını yazın</li>
+                                </ul>
+                            </li>
+                            <li><strong>Arama Butonu ile Giriş Yöntemi:</strong>
+                                <ul>
+                                    <li>Metin kutularının yanındaki arama butonuna (büyüteç ikonu) tıklayın</li>
+                                    <li>Açılan arama penceresinde filtre kriterlerini belirleyebilirsiniz (opsiyonel)</li>
+                                    <li>Personel listesi görüntülenecektir</li>
+                                    <li>Listeden Muhasebe Yetkilisini seçin</li>
+                                    <li>Seçilen personelin ad-soyad ve unvan bilgileri otomatik olarak ilgili alanlara aktarılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Personel bilgileri girişi rapor için zorunludur; boş bırakılmamalıdır</li>
+                    <li>Doğru kişilerin bilgilerini girdiğinizden emin olun, çünkü bu bilgiler raporun alt kısmında imza bölümünde görüntülenecektir</li>
+                    <li>Ambar seçimi yapıldığında, bazı personel bilgileri otomatik olarak doldurulabilir, bu bilgileri kontrol edip gerekirse düzeltebilirsiniz</li>
+                    <li>Arama butonu ile personel seçimi, manuel girişe göre daha hızlı ve hatasızdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan personel bilgilerini not alarak, manuel giriş yapmanız gerektiğinde hızlıca yazabilirsiniz</li>
+                    <li>Arama penceresindeki filtre özelliğini kullanarak, büyük personel listelerinde istediğiniz kişiyi daha kolay bulabilirsiniz</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Personel bilgilerini girerken unvan bilgisine dikkat edin, doğru unvanların raporda yer alması önemlidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tarih-bilgisi" class="section">
+        <h2>Tarih Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Tarih Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Tarih Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tarih alanı, Muhasebe Yetkilisi alanının hemen altında, formun en alt satırında yer alır</li>
+                            <li>"Tarih" etiketi sol sütunda, tarih girişi için metin kutusu sağ sütunda bulunur</li>
+                            <li>Metin kutusu 10 karakter genişliğindedir (GG.AA.YYYY formatında giriş için)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla alana gelin</li>
+                            <li>Raporun tarihini GG.AA.YYYY formatında girin (örneğin: 15.03.2023)
+                                <ul>
+                                    <li>Gün için 1-31 arası bir değer girin</li>
+                                    <li>Ay için 1-12 arası bir değer girin</li>
+                                    <li>Yıl için 4 haneli bir değer girin</li>
+                                </ul>
+                            </li>
+                            <li>Nokta işaretlerini (.) koymayı unutmayın, sistem otomatik olarak tarih formatını kontrol eder</li>
+                            <li>Tarih girildiğinde, sistem formatın doğruluğunu kontrol eder</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih alanı boş bırakılabilir, bu durumda rapor sistem tarihini gösterecektir</li>
+                    <li>Tarih formatına dikkat edin: Gün.Ay.Yıl (GG.AA.YYYY) şeklinde olmalıdır</li>
+                    <li>Geçersiz bir tarih girildiğinde (örneğin 32.13.2023) sistem uyarı verecektir</li>
+                    <li>Tarih, raporun oluşturulduğu tarihi belirtir ve raporda yer alır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Genellikle güncel tarihi kullanmak en doğrusudur, böylece raporun ne zaman oluşturulduğu net olarak anlaşılır</li>
+                    <li>Tarih alanı zorunlu değildir, acil durumlarda boş bırakabilirsiniz</li>
+                    <li>Tüm alanları doldurduktan sonra, son olarak tarihi kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-goruntuleme" class="section">
+        <h2>Raporun Görüntülenmesi ve Navigasyon</h2>
+        <div class="info-box">
+            <h3>Rapor Oluşturma ve Görüntüleme</h3>
+            <div class="step">
+                <h4>Rapor Nasıl Oluşturulur ve Görüntülenir:</h4>
+                <ol>
+                    <li><strong>Görüntüle Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Tüm gerekli bilgileri girdikten sonra, formun alt kısmında yer alan "Görüntüle" butonuna tıklayın</li>
+                            <li>"Görüntüle" butonu, formun alt ortasında yer alır, hemen sol yanında "Excele Aktar" onay kutusu, sağ yanında ise "Kapat" butonu bulunur</li>
+                            <li>Butona tıklandığında, sistem girilen kriterlere göre raporu oluşturur ve görüntüler</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Ekranı Bileşenleri:</strong>
+                        <ol>
+                            <li>Veri giriş formu gizlenir ve yerine rapor görüntüleme ekranı açılır</li>
+                            <li>Rapor ekranının üst kısmında navigasyon butonları yer alır:
+                                <ul>
+                                    <li>"İlk Sayfa": Raporun ilk sayfasına gider</li>
+                                    <li>"Önceki Sayfalar": Bir önceki sayfaya gider</li>
+                                    <li>"Sonraki Sayfalar": Bir sonraki sayfaya gider</li>
+                                    <li>"Son Sayfa": Raporun son sayfasına gider</li>
+                                    <li>"Yazdır": Görüntülenen sayfayı yazdırır</li>
+                                    <li>"Tüm Sayfaları Yazdır": Raporun tüm sayfalarını yazdırır</li>
+                                    <li>"Sayfa Yapısı": Yazdırma öncesi sayfa ayarlarını düzenler</li>
+                                    <li>"Rapor Ana Sayfası": Veri giriş formuna geri döner</li>
+                                    <li>"Kapat": Programdan çıkar</li>
+                                </ul>
+                            </li>
+                            <li>Navigasyon butonlarının altında, rapor içeriği tablo formatında gösterilir</li>
+                            <li>Rapor, üç ana bölümden oluşur:
+                                <ul>
+                                    <li>Üst Bilgi Tablosu: İl/ilçe bilgileri, müdürlük bilgileri, yıl ve hesap kodu gösterilir</li>
+                                    <li>Detay Tablosu: Taşınır malların listesi, miktarları, tutarları vb. bilgiler gösterilir</li>
+                                    <li>Alt Bilgi Tablosu: Yetkililerin (Taşınır Kayıt Yetkilisi, Taşınır Kontrol Yetkilisi, Harcama Yetkilisi, Muhasebe Yetkilisi) ad-soyad ve unvan bilgileri gösterilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Rapor Sayfaları Arasında Navigasyon:</h4>
+                <ol>
+                    <li><strong>Navigasyon Butonları Kullanımı:</strong>
+                        <ul>
+                            <li>Rapor birden fazla sayfadan oluşabilir, bu durumda navigasyon butonları aktif hale gelir</li>
+                            <li>"İlk Sayfa" butonuna tıklayarak raporun ilk sayfasına dönebilirsiniz</li>
+                            <li>"Önceki Sayfalar" butonuna tıklayarak bir önceki sayfaya gidebilirsiniz (ilk sayfadayken bu buton devre dışıdır)</li>
+                            <li>"Sonraki Sayfalar" butonuna tıklayarak bir sonraki sayfaya gidebilirsiniz (son sayfadayken bu buton devre dışıdır)</li>
+                            <li>"Son Sayfa" butonuna tıklayarak raporun son sayfasına gidebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfa Numarası Bilgisi:</strong>
+                        <ul>
+                            <li>Navigasyon butonlarının altında, rapor sayfalarının sayısı ve mevcut sayfa numarası görüntülenebilir</li>
+                            <li>Bu bilgi, hangi sayfada olduğunuzu ve toplam kaç sayfa olduğunu gösterir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Rapor görüntülenmeden önce tüm zorunlu alanların doldurulduğundan emin olun</li>
+                    <li>Büyük miktarda veri içeren raporlar, birden fazla sayfadan oluşabilir</li>
+                    <li>Sayfa numaralarına dikkat ederek, tüm raporu incelediğinizden emin olun</li>
+                    <li>Sayfa yapısını değiştirmeden önce, raporu bir kez görüntüleyin ve içeriğini kontrol edin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Uzun raporlarda, "Son Sayfa" butonunu kullanarak toplam sayfa sayısını hızlıca öğrenebilirsiniz</li>
+                    <li>Raporu görüntüledikten sonra, tekrar veri giriş formuna dönmek için "Rapor Ana Sayfası" butonunu kullanın</li>
+                    <li>Rapor içeriğini kontrol ettikten sonra, gerekirse kriterleri değiştirerek raporu yeniden oluşturabilirsiniz</li>
+                    <li>Rapor ekranında yapılan işlemler, veri giriş formundaki bilgileri etkilemez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yazdirma" class="section">
+        <h2>Yazdırma İşlemleri</h2>
+        <div class="info-box">
+            <h3>Rapor Yazdırma Seçenekleri</h3>
+            <div class="step">
+                <h4>Tek Sayfa Yazdırma İşlemi:</h4>
+                <ol>
+                    <li><strong>Yazdır Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Yazdır butonu, rapor görüntüleme ekranının üst kısmında, navigasyon butonları arasında yer alır</li>
+                            <li>Üzerinde "Yazdır" yazısı bulunan bu buton, görüntülenen mevcut sayfayı yazdırmak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tek Sayfa Yazdırma Adımları:</strong>
+                        <ol>
+                            <li>İlk olarak yazdırmak istediğiniz sayfayı görüntüleyin (navigasyon butonlarını kullanarak)</li>
+                            <li>"Yazdır" butonuna tıklayın</li>
+                            <li>Sistem yazdırma işlemi öncesinde "Yazdır" iletişim penceresini açacaktır</li>
+                            <li>Bu pencerede yazıcı seçimi, kopya sayısı gibi ayarları düzenleyebilirsiniz</li>
+                            <li>Ayarları tamamladıktan sonra "Yazdır" butonuna tıklayarak yazdırma işlemini başlatın</li>
+                            <li>Yazdırma işlemi tamamlandıktan sonra, rapor görüntüleme ekranına geri döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Tüm Sayfaları Yazdırma İşlemi:</h4>
+                <ol>
+                    <li><strong>Tüm Sayfaları Yazdır Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Tüm Sayfaları Yazdır butonu, Yazdır butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Tüm Sayfaları Yazdır" yazısı bulunan bu buton, raporun tüm sayfalarını sırayla yazdırmak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tüm Sayfaları Yazdırma Adımları:</strong>
+                        <ol>
+                            <li>"Tüm Sayfaları Yazdır" butonuna tıklayın</li>
+                            <li>Sistem bir onay mesajı gösterecektir: "Uyarı! Toplam [x] Sayfa Yazdırılacaktır. Yazdırmadan önce sayfa ayarlarını yapmak için Sayfa Yapısı seçeneğini kullanabilirsiniz. Yazdırmak istiyor musunuz?"</li>
+                            <li>Onay mesajında "Evet" seçeneğini seçin</li>
+                            <li>Sistem her sayfayı sırayla yazdıracaktır</li>
+                            <li>Yazdırma işlemi tamamlandıktan sonra, rapor görüntüleme ekranına geri döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sayfa Yapısı Ayarları:</h4>
+                <ol>
+                    <li><strong>Sayfa Yapısı Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Sayfa Yapısı butonu, Tüm Sayfaları Yazdır butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Sayfa Yapısı" yazısı bulunan bu buton, yazdırma öncesi sayfa düzenini ayarlamak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfa Yapısı Ayarlama Adımları:</strong>
+                        <ol>
+                            <li>"Sayfa Yapısı" butonuna tıklayın</li>
+                            <li>Sistem, tarayıcının sayfa yapısı ayarları penceresini açacaktır</li>
+                            <li>Bu pencerede:
+                                <ul>
+                                    <li>Kağıt boyutu (A4, Letter vb.)</li>
+                                    <li>Sayfa yönü (Dikey, Yatay)</li>
+                                    <li>Kenar boşlukları (üst, alt, sağ, sol)</li>
+                                    <li>Üstbilgi ve altbilgi içeriği</li>
+                                </ul>
+                                gibi ayarları düzenleyebilirsiniz
+                            </li>
+                            <li>Ayarları tamamladıktan sonra "Tamam" butonuna tıklayarak pencereyi kapatın</li>
+                            <li>Bu ayarlar, sonraki yazdırma işlemlerinde kullanılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Excel'e Aktarma İşlemi:</h4>
+                <ol>
+                    <li><strong>Excel'e Aktarma Seçeneği Kullanımı:</strong>
+                        <ul>
+                            <li>Excel'e aktarma seçeneği, veri giriş formunun alt kısmında, "Görüntüle" butonunun hemen solunda yer alır</li>
+                            <li>"Excele Aktar" yazısının yanında bir onay kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excel'e Aktarma Adımları:</strong>
+                        <ol>
+                            <li>Veri giriş formunda "Excele Aktar" onay kutusunu işaretleyin</li>
+                            <li>"Görüntüle" butonuna tıklayın</li>
+                            <li>Sistem, raporu Excel formatında (.xls) hazırlayacaktır</li>
+                            <li>Tarayıcı, dosyayı indirme seçeneği sunacaktır</li>
+                            <li>İndirme işlemini onaylayın ve dosyayı bilgisayarınıza kaydedin</li>
+                            <li>Kaydedilen Excel dosyasını Microsoft Excel veya uyumlu bir program ile açabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yazdırmadan önce, yazıcınızın açık ve hazır olduğundan emin olun</li>
+                    <li>Büyük raporları yazdırmadan önce, sayfa yapısı ayarlarını kontrol edin</li>
+                    <li>Excel'e aktarma işlemi, raporu görsel olarak biraz farklı gösterebilir</li>
+                    <li>"Tüm Sayfaları Yazdır" seçeneği, çok sayfalı raporlarda fazla kağıt kullanımına neden olabilir</li>
+                    <li>Yazdırma işlemi sırasında program penceresini kapatmayın</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Raporları arşivlemek için Excel'e aktarma seçeneğini kullanabilirsiniz</li>
+                    <li>Excel'e aktarılan raporlar üzerinde ek düzenlemeler ve analizler yapabilirsiniz</li>
+                    <li>Düzenli olarak oluşturulan raporlar için, sayfa yapısı ayarlarını bir kez yapıp sonraki yazdırmalarda da aynı ayarları kullanabilirsiniz</li>
+                    <li>Kağıt tasarrufu için, gerektiğinde yazdırma önizleme özelliğini kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Birçok durumda TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Kapat butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Servis/Genel Parametreler den muhasebe birimini tanımlatınız!" Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Raporu görüntülemeye çalıştığınızda bu hata mesajını alıyorsunuz.</li>
+                            <li>Çözüm: Sistem yöneticinize başvurun ve muhasebe birimi tanımlamasının yapılmasını sağlayın. Bu hata, sistemin temel ayarlarıyla ilgilidir ve kullanıcı tarafından çözülemez.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Bilgileri Otomatik Dolmuyor:</strong>
+                        <ul>
+                            <li>Sorun: Ambar seçimi yapmanıza rağmen personel bilgileri otomatik olarak dolmuyor.</li>
+                            <li>Çözüm: İlgili ambara personel atanmamış olabilir. Bu durumda personel bilgilerini manuel olarak girmeniz gerekir. Arama butonunu kullanarak personel listesinden seçim yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporda Veri Görünmüyor:</strong>
+                        <ul>
+                            <li>Sorun: Raporu görüntülediğinizde, detay tablosunda herhangi bir veri göremiyorsunuz.</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>Seçtiğiniz müdürlük, ambar ve hesap kodu bilgilerinin doğruluğunu kontrol edin</li>
+                                    <li>Girdiğiniz yılda ilgili kriterlere uygun kayıt olmayabilir</li>
+                                    <li>Farklı bir hesap kodu veya müdürlük seçerek tekrar deneyin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Türkçe Karakter Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Raporda veya yazdırma sırasında Türkçe karakterler hatalı görünüyor.</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>Excel'e aktarma seçeneğini kullanın, Excel'de Türkçe karakter desteği daha iyidir</li>
+                                    <li>Sistem yöneticinize başvurarak tarayıcı ve sistem dil ayarlarının düzeltilmesini sağlayın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırırken Sayfa Kesme Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Yazdırılan raporda bazı satırlar veya sütunlar kesiliyor veya ikiye bölünüyor.</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>"Sayfa Yapısı" butonunu kullanarak sayfa düzenini ayarlayın</li>
+                                    <li>Sayfa yönünü yatay (landscape) olarak değiştirmeyi deneyin</li>
+                                    <li>Kenar boşluklarını azaltarak daha fazla içeriğin sığmasını sağlayın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Raporları düzenli olarak (örneğin her ay veya her çeyrek) oluşturarak, taşınır mal hareketlerini takip edin</li>
+                    <li>İşlem yapmadan önce doğru müdürlük, ambar ve hesap kodunu seçtiğinizden emin olun</li>
+                    <li>Sık kullandığınız personel bilgilerini not edin, böylece her seferinde arama yapmak zorunda kalmazsınız</li>
+                    <li>Önemli raporları hem elektronik (Excel) hem de kağıt ortamında arşivleyin</li>
+                    <li>Raporlar arasında tutarsızlık fark ederseniz, verileri kontrol edin ve gerekirse sistem yöneticinize başvurun</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Rapor görüntüleme ve yazdırma işlemleri sırasında program penceresini kapatmayın</li>
+                    <li>Tüm sayfaları yazdırmadan önce, toplam sayfa sayısını kontrol edin ve gereksiz kağıt israfından kaçının</li>
+                    <li>Personel bilgilerinin doğruluğundan emin olun, çünkü bu bilgiler resmi raporda yer alacaktır</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Harcama Birimi Taşınır Mal Yönetim Hesabı Cetveli programı, taşınır mal varlıklarının hesap dökümlerini oluşturmak, görüntülemek ve yazdırmak için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Müdürlük ve ambar seçimi</li>
+                <li>Hesap kodu seçimi ve yıl girişi</li>
+                <li>Personel bilgileri girişi (Taşınır Kayıt Yetkilisi, Taşınır Kontrol Yetkilisi, Harcama Yetkilisi, Muhasebe Yetkilisi)</li>
+                <li>Rapor görüntüleme ve navigasyon işlemleri</li>
+                <li>Yazdırma ve Excel'e aktarma seçenekleri</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

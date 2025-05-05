@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yıl Sonu Devir İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yıl Sonu Devir İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Bileşenler</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a>
+                    <ul>
+                        <li><a href="#parametre-aktar">Parametre Aktar Butonu</a></li>
+                        <li><a href="#stok-aktar">Stok Kartlarını Aktar Butonu</a></li>
+                        <li><a href="#devir-fisi">Devir Fişi Oluştur Butonu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#islemler">Yıl Sonu Devir İşlemleri</a>
+                    <ul>
+                        <li><a href="#parametre-aktar-islem">Parametre Aktarma İşlemi</a></li>
+                        <li><a href="#stok-aktar-islem">Stok Kartlarını Aktarma İşlemi</a></li>
+                        <li><a href="#devir-fisi-islem">Devir Fişi Oluşturma İşlemi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#hatalar">Sık Karşılaşılan Hatalar ve Çözümleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+                <li><a href="#devir-fisi-iptal">Devir Fişi İptal İşlemi</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Yıl Sonu Devir İşlemleri" ekranı, bir mali yıldan diğerine geçerken ambar ve stok bilgilerinizin aktarılması için kullanılan önemli bir araçtır. Bu program ile üç temel işlemi yapabilirsiniz:</p>
+            <ul>
+                <li>Ambar parametrelerini bir sonraki yıla aktarma</li>
+                <li>Stok kartlarını bir sonraki yıla aktarma</li>
+                <li>Devir fişi oluşturarak kalan malzemeleri bir sonraki yıla aktarma</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu işlemleri yapmadan önce şunlardan emin olun:</p>
+                <ul>
+                    <li>Muhasebe müdürlük eşleştirme işlemlerinin tamamlanmış olması</li>
+                    <li>Programa devir yapacağınız yıl ile giriş yapmış olmanız</li>
+                    <li>İşlemleri mutlaka sırasıyla yapmanız (önce parametre aktarma, sonra stok kartı aktarma, en son devir fişi oluşturma)</li>
+                    <li>İşlemlere başlamadan önce tüm önemli raporlarınızı almış olmanız</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bileşenleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde gri renkli bir şeritte "Yıl Sonu Devir İşlemleri" başlığı yer alır.</li>
+                            <li>Başlık çubuğunda çalıştığınız mevcut yılı görürsünüz (örneğin "2024 Yıl Sonu Devir İşlemleri").</li>
+                            <li>Başlık çubuğunda ayrıca belediye adı, kullanıcı adınız ve mevcut tarih bilgileri de görünür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana İşlem Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında gri kenarlı merkezi bir tablo bulunur.</li>
+                            <li>Bu tablonun içinde yukarıdan aşağıya doğru sıralanmış üç adet buton yer alır.</li>
+                            <li>Butonlar: "Parametre Aktar" (en üstte), "Stok Kartlarını Aktar" (ortada) ve "Devir Fişi Oluştur" (en altta) şeklinde sıralanmıştır.</li>
+                            <li>Her buton gri kenarlı ve yaklaşık 140 piksel genişliğindedir.</li>
+                            <li>Butonlar tablonun merkezine hizalanmış şekilde yerleştirilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Bölümü:</strong>
+                        <ul>
+                            <li>Butonların altında kırmızı renkli bilgi metinleri yer alır.</li>
+                            <li>Bu bölümde "Parametre düzenle:" ve "Devir Fişi Oluştur:" başlıkları altında her bir butonun ne işe yaradığı kısaca açıklanmıştır.</li>
+                            <li>Eğer devir fişi daha önce oluşturulmuşsa, "Devir Fişi Oluştur" butonunun altında kırmızı renkli şu uyarı mesajı görüntülenir: "Bir sonraki yıla ait otomatik oluşturulan devir fişleri mevcuttur. Tekrar devir yapmak için ilgili devir fişlerini iptal ediniz."</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Ekranın en üst kısmında, içinde bulunduğunuz yılı gösterir (sistem tarihinden alınan bilgi).</li>
+                    <li>Muhasebe müdürlük eşleştirme kontrolü yapar. Eğer bu işlem yapılmamışsa, şu mesajı gösterir: "Muhasebe müdürlük eşleştirme işlemi yapılmamış. Önce Analitik Bütçe Muhasebe -- Servis -- Müdürlük Eşleştirme den işlemleri tamamlayınız."</li>
+                    <li>Devir fişlerinin daha önce oluşturulup oluşturulmadığını kontrol eder.</li>
+                    <li>Eğer devir fişi daha önce oluşturulmuşsa, "Devir Fişi Oluştur" butonunu devre dışı bırakır ve ekranda uyarı mesajı gösterir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        
+        <div id="parametre-aktar" class="info-box">
+            <h3>Parametre Aktar Butonu</h3>
+            
+            <div class="step">
+                <h4>Buton Özellikleri:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Tablonun en üstünde, ilk sırada yer alır.</li>
+                    <li><strong>Görünüm:</strong> Gri kenarlı, yaklaşık 140 piksel genişliğinde "Parametre Aktar" yazılı buton.</li>
+                    <li><strong>İşlev:</strong> Ambar tanımlamalarını, kullanıcı tanımlarını ve stokkart bilgilerini bir sonraki yıl için tanımlar.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Parametre Aktar Butonu İpuçları:</h4>
+                <ul>
+                    <li>Bu buton, yıl sonu işlemlerinin <strong>kesinlikle ilk adımıdır</strong> ve diğer işlemlerden önce kullanılmalıdır.</li>
+                    <li>İşlem öncesi sistem, mevcut yıl parametrelerinin olup olmadığını kontrol eder.</li>
+                    <li>Eğer mevcut yıl parametreleri bulunamazsa, şu mesajı görürsünüz: "Sistemden [YIL] Yılı parametreleri Bulunamadı. Lütfen Programa Devir Yapacağınız Yıl ile giriş yapınız."</li>
+                    <li>Bu işlem genellikle 1-5 dakika arasında tamamlanır, ancak veri miktarına göre daha uzun sürebilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="stok-aktar" class="info-box">
+            <h3>Stok Kartlarını Aktar Butonu</h3>
+            
+            <div class="step">
+                <h4>Buton Özellikleri:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Parametre Aktar" butonunun hemen altında, ikinci sırada yer alır.</li>
+                    <li><strong>Görünüm:</strong> Gri kenarlı, yaklaşık 140 piksel genişliğinde "Stok Kartlarını Aktar" yazılı buton.</li>
+                    <li><strong>İşlev:</strong> Mevcut stok kartlarını yeni yıla aktarır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Stok Kartlarını Aktar Butonu İpuçları:</h4>
+                <ul>
+                    <li>Bu buton, <strong>yalnızca "Parametre Aktar" işleminden sonra</strong> kullanılmalıdır.</li>
+                    <li>İşlem öncesi sistem, mevcut yıldaki stok kartlarının varlığını kontrol eder.</li>
+                    <li>Eğer mevcut yıl stok kartları bulunamazsa şu mesajı görürsünüz: "Sistemden [YIL] Yılı parametreleri Bulunamadı. Lütfen Programa Devir Yapacağınız Yıl ile giriş yapınız."</li>
+                    <li>Bu işlem, stok kart sayınıza bağlı olarak 5-20 dakika arasında tamamlanabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="devir-fisi" class="info-box">
+            <h3>Devir Fişi Oluştur Butonu</h3>
+            
+            <div class="step">
+                <h4>Buton Özellikleri:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Stok Kartlarını Aktar" butonunun hemen altında, üçüncü sırada yer alır.</li>
+                    <li><strong>Görünüm:</strong> Gri kenarlı, yaklaşık 140 piksel genişliğinde "Devir Fişi Oluştur" yazılı buton.</li>
+                    <li><strong>İşlev:</strong> Birimlere göre devir eden malzemeleri bir sonraki yılın ilk fişine aktarır.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu buton yıl sonu işlemlerinin <strong>mutlaka son adımıdır</strong> ve diğer aktarma işlemlerinden sonra kullanılmalıdır.</li>
+                    <li>Eğer daha önce devir fişi oluşturulmuşsa, bu buton devre dışı kalır ve kırmızı renkli şu uyarı mesajı görüntülenir: "Bir sonraki yıla ait otomatik oluşturulan devir fişleri mevcuttur. Tekrar devir yapmak için ilgili devir fişlerini iptal ediniz."</li>
+                    <li>İşlem öncesi sistem, yeni yıl ambar parametrelerinin tanımlanmış olup olmadığını kontrol eder.</li>
+                    <li>Ambar parametreleri düzenlenmeden bu işlem yapılamaz ve şu mesajı görürsünüz: "Ambar parametrelerini düzenlemeden aktarma işlemi yapamazsınız."</li>
+                    <li>Eğer yeni yılda devir fişi daha önce oluşturulmuşsa şu mesajı görürsünüz: "[YIL+1] Yılı Devir Fişi Zaten Oluşturulmuş. Devir Fişini Tekrar oluşturmak için öncelikle programa [YIL+1] yılı ile giriş yapıp devir fişlerini iptal etmeniz gerekmektedir."</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Devir Fişi Oluştur Butonu İpuçları:</h4>
+                <ul>
+                    <li>Devir fişi, bir önceki yıldan kalan malzemelerin bakiyelerini yeni yıla aktarır.</li>
+                    <li>Bu işlem tamamlandıktan sonra yeni yılda çalışmaya başlayabilirsiniz.</li>
+                    <li>İşlem bir kez yapılabilir. Tekrar yapmak için, yeni yıl programına giriş yapıp önce oluşturulan devir fişlerini iptal etmelisiniz.</li>
+                    <li>Bu işlem, stok miktarlarınıza bağlı olarak 10-30 dakika arasında tamamlanabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Yıl Sonu Devir İşlemleri</h2>
+        
+        <div id="parametre-aktar-islem" class="info-box">
+            <h3>Parametre Aktarma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Parametre Aktarma Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Hazırlık:</strong>
+                        <ul>
+                            <li>Programda devir yapacağınız yıl ile (örneğin 2024) giriş yapmış olduğunuzdan emin olun.</li>
+                            <li>Muhasebe müdürlük eşleştirme işlemlerinin tamamlanmış olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında görünen başlıkta doğru yılın görüntülendiğini kontrol edin (örneğin "2024 Yıl Sonu Devir İşlemleri").</li>
+                            <li>Bu bilgi, programın sağ üst köşesinde yer alan tarih bilgisinden gelmektedir ve otomatik olarak gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemi Başlatma:</strong>
+                        <ul>
+                            <li>Gri kenarlı tablonun en üstünde yer alan "Parametre Aktar" butonuna tıklayın.</li>
+                            <li>"İşlemi onaylıyor musunuz?" şeklinde bir onay penceresi açılacaktır.</li>
+                            <li>İşlemi onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemin Tamamlanması:</strong>
+                        <ul>
+                            <li>Onayladıktan sonra sistem işlemi gerçekleştirecektir.</li>
+                            <li>İşlem sırasında ekranda herhangi bir ilerleme çubuğu veya bilgi mesajı görünmez, lütfen sabırla bekleyin.</li>
+                            <li>İşlem başarıyla tamamlandığında herhangi bir mesaj görüntülenmez, ancak herhangi bir hata mesajı da görmezseniz işlem başarılı demektir.</li>
+                            <li>Hata durumunda ekranda kırmızı renkli hata mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu işlem, diğer devir işlemlerinin öncesinde yapılmalıdır.</li>
+                    <li>Eğer mevcut yıl parametreleri bulunamazsa "Sistemden [YIL] Yılı parametreleri Bulunamadı. Lütfen Programa Devir Yapacağınız Yıl ile giriş yapınız." şeklinde bir uyarı mesajı alırsınız.</li>
+                    <li>İşlem sırasında sistem yavaşlayabilir, lütfen sabırla bekleyin ve programı kapatmayın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="stok-aktar-islem" class="info-box">
+            <h3>Stok Kartlarını Aktarma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Stok Kartlarını Aktarma Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Hazırlık:</strong>
+                        <ul>
+                            <li>Öncelikle "Parametre Aktar" işlemini tamamlamış olduğunuzdan emin olun.</li>
+                            <li>Programda devir yapacağınız yıl ile (örneğin 2024) giriş yapmış olduğunuzdan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında görünen başlıkta doğru yılın görüntülendiğini kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemi Başlatma:</strong>
+                        <ul>
+                            <li>Gri kenarlı tablonun ortasında, "Parametre Aktar" butonunun hemen altında yer alan "Stok Kartlarını Aktar" butonuna tıklayın.</li>
+                            <li>"İşlemi onaylıyor musunuz?" şeklinde bir onay penceresi açılacaktır.</li>
+                            <li>İşlemi onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemin Tamamlanması:</strong>
+                        <ul>
+                            <li>Onayladıktan sonra sistem işlemi gerçekleştirecektir.</li>
+                            <li>İşlem sırasında ekranda herhangi bir ilerleme çubuğu veya bilgi mesajı görünmez, lütfen sabırla bekleyin.</li>
+                            <li>İşlem başarıyla tamamlandığında herhangi bir mesaj görüntülenmez, ancak herhangi bir hata mesajı da görmezseniz işlem başarılı demektir.</li>
+                            <li>Hata durumunda ekranda kırmızı renkli hata mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu işlem, <strong>kesinlikle "Parametre Aktar" işleminden sonra</strong> yapılmalıdır.</li>
+                    <li>Eğer mevcut yıl stok kartları bulunamazsa "Sistemden [YIL] Yılı parametreleri Bulunamadı. Lütfen Programa Devir Yapacağınız Yıl ile giriş yapınız." şeklinde bir uyarı mesajı alırsınız.</li>
+                    <li>Stok kart sayınıza bağlı olarak bu işlem 5-20 dakika arasında sürebilir, lütfen sabırla bekleyin ve işlem sırasında programı kapatmayın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="devir-fisi-islem" class="info-box">
+            <h3>Devir Fişi Oluşturma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Devir Fişi Oluşturma Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Hazırlık:</strong>
+                        <ul>
+                            <li>Öncelikle "Parametre Aktar" ve "Stok Kartlarını Aktar" işlemlerini tamamlamış olduğunuzdan emin olun.</li>
+                            <li>Programda devir yapacağınız yıl ile (örneğin 2024) giriş yapmış olduğunuzdan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında görünen başlıkta doğru yılın görüntülendiğini kontrol edin.</li>
+                            <li>"Devir Fişi Oluştur" butonunun aktif olduğundan emin olun. Eğer daha önce devir fişi oluşturulmuşsa bu buton devre dışı olacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemi Başlatma:</strong>
+                        <ul>
+                            <li>Gri kenarlı tablonun en altında, "Stok Kartlarını Aktar" butonunun hemen altında yer alan "Devir Fişi Oluştur" butonuna tıklayın.</li>
+                            <li>"İşlemi onaylıyor musunuz?" şeklinde bir onay penceresi açılacaktır.</li>
+                            <li>İşlemi onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlemin Tamamlanması:</strong>
+                        <ul>
+                            <li>Onayladıktan sonra sistem işlemi gerçekleştirecektir.</li>
+                            <li>İşlem sırasında ekranda herhangi bir ilerleme çubuğu veya bilgi mesajı görünmez, lütfen sabırla bekleyin.</li>
+                            <li>İşlem başarıyla tamamlandığında herhangi bir mesaj görüntülenmez, ancak "Devir Fişi Oluştur" butonu devre dışı kalır ve butonun altında kırmızı renkli bir uyarı mesajı görüntülenir.</li>
+                            <li>Bu işlem, sistem üzerindeki en uzun işlemdir ve malzeme miktarınıza bağlı olarak 10-30 dakika arasında sürebilir.</li>
+                            <li>Hata durumunda ekranda kırmızı renkli hata mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu işlem, diğer devir işlemlerinin sonuncusudur ve <strong>kesinlikle onlardan sonra</strong> yapılmalıdır.</li>
+                    <li>Eğer ambar parametreleri düzenlenmemişse "Ambar parametrelerini düzenlemeden aktarma işlemi yapamazsınız." şeklinde bir uyarı mesajı alırsınız.</li>
+                    <li>Eğer devir fişi daha önce oluşturulmuşsa "[YIL+1] Yılı Devir Fişi Zaten Oluşturulmuş. Devir Fişini Tekrar oluşturmak için öncelikle programa [YIL+1] yılı ile giriş yapıp devir fişlerini iptal etmeniz gerekmektedir." şeklinde bir uyarı mesajı alırsınız.</li>
+                    <li>İşlem sırasında sistem performansı düşebilir, lütfen sabırla bekleyin ve programı kapatmayın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hatalar" class="section">
+        <h2>Sık Karşılaşılan Hatalar ve Çözümleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yaygın Hata Mesajları ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Muhasebe müdürlük eşleştirme işlemi yapılmamış hatası:</strong>
+                        <ul>
+                            <li><strong>Hata Mesajı:</strong> "Muhasebe müdürlük eşleştirme işlemi yapılmamış. Önce Analitik Bütçe Muhasebe -- Servis -- Müdürlük Eşleştirme den işlemleri tamamlayınız."</li>
+                            <li><strong>Çözüm:</strong> Öncelikle Analitik Bütçe Muhasebe modülündeki Servis menüsünden Müdürlük Eşleştirme ekranına gidin ve eşleştirme işlemlerini tamamlayın. Daha sonra Yıl Sonu Devir işlemlerine devam edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl parametreleri bulunamadı hatası:</strong>
+                        <ul>
+                            <li><strong>Hata Mesajı:</strong> "Sistemden [YIL] Yılı parametreleri Bulunamadı. Lütfen Programa Devir Yapacağınız Yıl ile giriş yapınız."</li>
+                            <li><strong>Çözüm:</strong> Programdan çıkış yapın ve doğru yıl bilgisiyle tekrar giriş yapın. Program otomatik olarak giriş yaptığınız yılı kullanır. Doğru yılda olduğunuzdan emin olmak için ekranın üst kısmında görünen tarih bilgisini kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ambar parametreleri düzenlenmemiş hatası:</strong>
+                        <ul>
+                            <li><strong>Hata Mesajı:</strong> "Ambar parametrelerini düzenlemeden aktarma işlemi yapamazsınız."</li>
+                            <li><strong>Çözüm:</strong> Öncelikle "Parametre Aktar" butonuna tıklayarak ambar parametrelerini yeni yıla aktarın, daha sonra devir fişi oluşturma işlemine devam edin. İşlemleri sırayla yapmak önemlidir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir fişi zaten oluşturulmuş hatası:</strong>
+                        <ul>
+                            <li><strong>Hata Mesajı:</strong> "[YIL+1] Yılı Devir Fişi Zaten Oluşturulmuş. Devir Fişini Tekrar oluşturmak için öncelikle programa [YIL+1] yılı ile giriş yapıp devir fişlerini iptal etmeniz gerekmektedir."</li>
+                            <li><strong>Çözüm:</strong> Programdan çıkış yapın ve bir sonraki yıl (örneğin 2025) ile tekrar giriş yapın. Yeni yılda oluşturulan devir fişlerini iptal edin (iptal işlemi için "Devir Fişi İptal İşlemi" bölümüne bakın), sonra tekrar önceki yıla (2024) dönüp devir işlemlerini yapın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Genel Hata Önleme İpuçları:</h4>
+                <ul>
+                    <li>İşlemleri her zaman belirtilen sırayla yapın: Önce Parametre Aktarma, sonra Stok Kartı Aktarma, en son Devir Fişi Oluşturma.</li>
+                    <li>İşleme başlamadan önce programda doğru yıl ile giriş yaptığınızdan emin olun.</li>
+                    <li>Muhasebe müdürlük eşleştirme işlemlerinin önceden tamamlanmış olduğundan emin olun.</li>
+                    <li>Devir fişlerini ikinci kez oluşturmanız gerekiyorsa, önce yeni yıla giriş yapıp mevcut devir fişlerini iptal edin.</li>
+                    <li>İşlem sırasında programı kapatmayın veya başka bir işlem yapmayın.</li>
+                    <li>Sorun yaşadığınızda ekranda görünen hata mesajının tam metnini not alın ve sistem yöneticinize bildirin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Planlama:</strong>
+                        <ul>
+                            <li>Yıl sonu devir işlemlerini mümkünse mesai saatleri dışında veya sistem yoğunluğunun az olduğu zamanlarda yapın.</li>
+                            <li>İşlemleri yapmadan önce tüm kullanıcıları haberdar edin, böylece onlar da işlemlerini buna göre planlayabilirler.</li>
+                            <li>İşlem öncesinde tüm raporları alın ve yedekleyin.</li>
+                            <li>Toplam işlem süresi yaklaşık 20-60 dakika arası sürebileceğinden, bu zaman dilimini uygun şekilde planlayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol:</strong>
+                        <ul>
+                            <li>Her adımdan sonra verilerinizi kontrol edin, özellikle de stok kartı aktarımı sonrasında.</li>
+                            <li>Devir fişi oluşturulduktan sonra malzeme bakiyelerinin doğru şekilde aktarıldığından emin olun.</li>
+                            <li>Şüphelendiğiniz bir durum olursa, işlemlere devam etmeden önce sistem yöneticinize danışın.</li>
+                            <li>Yeni yıla geçtikten sonra ilk birkaç işlemi dikkatle kontrol edin ve bakiyelerin doğru aktarıldığından emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Güvenlik:</strong>
+                        <ul>
+                            <li>İşlemlere başlamadan önce sistem yöneticinizin veri yedeklemesi yaptığından emin olun.</li>
+                            <li>Devir işlemlerini tamamladıktan sonra, bir süre eski yıl verilerini silmeyin, gerektiğinde kontrol için kullanabilirsiniz.</li>
+                            <li>İşlem sırasında herhangi bir elektrik kesintisi veya sistem sorunu yaşamamak için gerekli önlemleri alın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Zaman Kazandıran İpuçları:</h4>
+                <ul>
+                    <li>Üç işlem de tamamlanıncaya kadar programdan çıkmayın, ardışık olarak tamamlamak daha hızlı olacaktır.</li>
+                    <li>İşlem sırasını not alın: 1) Parametre Aktar, 2) Stok Kartlarını Aktar, 3) Devir Fişi Oluştur.</li>
+                    <li>Muhasebe müdürlük eşleştirme işlemlerinin önceden yapıldığından emin olun, aksi takdirde devir işlemlerine başlayamazsınız.</li>
+                    <li>Devir işlemlerini bir kez yapın. Tekrar yapmanız gerekirse, yeni yıla geçip devir fişlerini iptal etmeyi unutmayın.</li>
+                    <li>İşlemlerin uzun sürdüğü zamanlarda, başka işlerinizi halledebilirsiniz ancak program penceresini kapatmayın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="devir-fisi-iptal" class="section">
+        <h2>Devir Fişi İptal İşlemi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Devir Fişi Nasıl İptal Edilir:</h4>
+                <ol>
+                    <li><strong>Hazırlık:</strong>
+                        <ul>
+                            <li>Programdan çıkış yapın.</li>
+                            <li>Programa yeni yıl (devir fişinin oluşturulduğu yıl, örneğin 2025) ile tekrar giriş yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir Fişini Bulma:</strong>
+                        <ul>
+                            <li>Taşınır İşlem Fişleri modülüne girin.</li>
+                            <li>Fiş türü olarak "Devir" seçeneğini işaretleyin.</li>
+                            <li>Listelenen fişler arasında yıl başında otomatik oluşturulan devir fişlerini bulun. Bu fişler genellikle listede ilk sıralarda yer alır ve fiş türünde "Devir" yazmaktadır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir Fişini İptal Etme:</strong>
+                        <ul>
+                            <li>İptal etmek istediğiniz devir fişini seçin ve açın.</li>
+                            <li>Fiş detayları ekranında "İptal" butonuna tıklayın.</li>
+                            <li>"İşlemi onaylıyor musunuz?" şeklinde bir onay penceresi açılacaktır.</li>
+                            <li>İşlemi onaylamak için "Evet" butonuna tıklayın.</li>
+                            <li>Bu işlemi tüm devir fişleri için tekrarlayın.</li>
+                            <li>Not: Devir fişlerinin iptal edilmesi, önceki yıldan aktarılan malzeme bakiyelerini sıfırlayacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir İşlemlerini Tekrar Yapma:</strong>
+                        <ul>
+                            <li>Tüm devir fişlerini iptal ettikten sonra, programdan çıkış yapın.</li>
+                            <li>Programa önceki yıl (örneğin 2024) ile giriş yapın.</li>
+                            <li>Yıl Sonu Devir İşlemleri ekranına girin ve adımları tekrar uygulayın.</li>
+                            <li>Bu kez "Devir Fişi Oluştur" butonunun aktif olduğunu göreceksiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Devir fişlerini iptal etmek, yeni yılda yapılmış olan tüm işlemleri etkileyebilir. Bu nedenle, mümkünse devir işlemlerini yeni yılda işlem yapmadan önce doğru şekilde tamamlayın.</li>
+                    <li>Devir fişlerini iptal etmeden önce, sistem yöneticinize danışmanız ve gerekli yedeklerin alınması önerilir.</li>
+                    <li>Devir fişi iptal işlemi sonrası tekrar devir yaparken, tüm adımları (Parametre Aktar, Stok Kartlarını Aktar, Devir Fişi Oluştur) sırasıyla tekrarlamanız gerektiğini unutmayın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>İşlem Akışı Özeti</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yıl Sonu Devir İşlemleri Adım Adım:</h4>
+                <ol>
+                    <li><strong>Hazırlık Aşaması:</strong>
+                        <ul>
+                            <li>Programda devir yapacağınız yıl ile giriş yapın.</li>
+                            <li>Muhasebe müdürlük eşleştirme işlemlerinin tamamlandığından emin olun.</li>
+                            <li>Gerekli raporları alın ve yedekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Parametre Aktarma:</strong>
+                        <ul>
+                            <li>"Parametre Aktar" butonuna tıklayın.</li>
+                            <li>Onay penceresinde "Evet" seçeneğini seçin.</li>
+                            <li>İşlemin tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Stok Kartlarını Aktarma:</strong>
+                        <ul>
+                            <li>"Stok Kartlarını Aktar" butonuna tıklayın.</li>
+                            <li>Onay penceresinde "Evet" seçeneğini seçin.</li>
+                            <li>İşlemin tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir Fişi Oluşturma:</strong>
+                        <ul>
+                            <li>"Devir Fişi Oluştur" butonuna tıklayın.</li>
+                            <li>Onay penceresinde "Evet" seçeneğini seçin.</li>
+                            <li>İşlemin tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol ve Doğrulama:</strong>
+                        <ul>
+                            <li>Devir işlemleri tamamlandıktan sonra yeni yıla geçiş yapın.</li>
+                            <li>Stok bakiyelerinin doğru aktarıldığını kontrol edin.</li>
+                            <li>Devir fişlerini inceleyin ve onaylayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Son Kontrol Noktaları:</h4>
+                <ul>
+                    <li>Tüm butonlara sırasıyla tıklandı mı?</li>
+                    <li>Her işlem onaylandı mı?</li>
+                    <li>Devir fişi oluşturduktan sonra "Devir Fişi Oluştur" butonu devre dışı kaldı mı?</li>
+                    <li>Butonların altında kırmızı renkli uyarı mesajı görüntülendi mi?</li>
+                    <li>Herhangi bir hata mesajı aldınız mı?</li>
+                    <li>Yeni yıla geçiş yaparken başka sorunlarla karşılaştınız mı?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Yıl Sonu Devir İşlemleri ekranı, bir mali yıldan diğerine geçerken ambar, stok ve malzeme bilgilerinizi sorunsuz bir şekilde aktarmanızı sağlayan önemli bir araçtır. Bu kılavuzda, programın kullanımı, butonların işlevleri, devir işlemlerinin sırası ve sık karşılaşılan hatalar hakkında bilgiler verilmiştir.</p>
+
+            <p>Yıl sonu devir işlemlerini yaparken, işlemlerin doğru sırada yapılması ve her adımın tamamlanmasının kontrol edilmesi çok önemlidir. İşlemleri doğru bir şekilde tamamladıktan sonra, yeni mali yılda çalışmalarınıza sorunsuz bir şekilde devam edebilirsiniz.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>İşlem sırası:</p>
+                <ol>
+                    <li>Parametre Aktar</li>
+                    <li>Stok Kartlarını Aktar</li>
+                    <li>Devir Fişi Oluştur</li>
+                </ol>
+                <p>Bu sırayı takip etmek, yıl sonu devir işlemlerinizin sorunsuz gerçekleşmesini sağlayacaktır.</p>
+                <p>Herhangi bir sorun yaşarsanız veya bu kılavuzda yanıtını bulamadığınız sorularınız olursa, lütfen sistem yöneticinize danışın.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

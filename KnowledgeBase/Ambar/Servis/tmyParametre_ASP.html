@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taşınır Yönetim Sistemi Yıllık Parametreleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Taşınır Yönetim Sistemi Yıllık Parametreleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#temel-ayarlar">Temel Ayarlar</a>
+                    <ul>
+                        <li><a href="#yil">Yıl Seçimi</a></li>
+                        <li><a href="#muhasebe">Muhasebe Birimi</a></li>
+                        <li><a href="#fis-dokum">Fiş Döküm Şekli</a></li>
+                        <li><a href="#zimmet-istek">Zimmet İşleminde İstek Fişi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#numaralandirma">Numaralandırma Ayarları</a>
+                    <ul>
+                        <li><a href="#islem-fisi">Taşınır İşlem Fişleri</a></li>
+                        <li><a href="#istek-fisi">Taşınır İstek Fişleri</a></li>
+                        <li><a href="#demirbas">Demirbaşlar</a></li>
+                        <li><a href="#tutanak">Tutanaklar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#goruntulenme">Raporlarda Fiş Numaraları Görüntüleme</a>
+                    <ul>
+                        <li><a href="#kurum-fis">Kurum Fiş Numarası</a></li>
+                        <li><a href="#birim-fis">Birim Fiş Numarası</a></li>
+                        <li><a href="#ambar-fis">Ambar Fiş Numarası</a></li>
+                        <li><a href="#eski-fis">Eski Fiş Numarası</a></li>
+                    </ul>
+                </li>
+                <li><a href="#diger-ayarlar">Diğer Ayarlar</a>
+                    <ul>
+                        <li><a href="#ambar-raf">Ambar Raf Göz Takip</a></li>
+                        <li><a href="#kayit-dusme">Kayıttan Düşme Onay Limiti</a></li>
+                        <li><a href="#yetkili">Kayıttan Düşme Onay Yetkilisi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kaydetme">Ayarları Kaydetme</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Taşınır Yönetim Sistemi Yıllık Parametreleri" ekranı, kurumunuzun tüm taşınır malzeme yönetimi ayarlarını belirlemenizi sağlayan önemli bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Taşınırların nasıl numaralandırılacağını (kurum, birim veya ambar bazında)</li>
+                <li>Hangi fiş numaralarının raporlarda görüntüleneceğini</li>
+                <li>Zimmet işlemlerinde istek fişinin otomatik oluşturulup oluşturulmayacağını</li>
+                <li>Fiş dökümlerinde sicil numaralarının çıkıp çıkmayacağını</li>
+                <li>Kayıttan düşme süreçlerindeki limit ve yetkilendirme ayarlarını</li>
+                <li>Ambar raf göz takibi yapılıp yapılmayacağını</li>
+            </ul>
+            <p>belirleyebilirsiniz. Bu ayarlar, tüm yıl boyunca sistemin işleyişini etkileyeceğinden, dikkatle yapılmalıdır.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu parametreler yıllık olarak girilir ve düzenlenebilir. Her yeni mali yıl için parametrelerin yeniden ayarlanması gerekmektedir. Değişikliklerin sistem genelinde etkili olacağını unutmayın.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi arka planlı bir şeritte "Taşınır Yönetim Sistemi Yıllık Parametreleri" başlığı yer alır.</li>
+                            <li>Başlığın sağında bir kapat (X) butonu bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm kategorilere ayrılmış şekilde parametreleri içerir.</li>
+                            <li>Her parametre için etiket ve değer seçme alanları vardır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında mavi bir şerit içerisinde sağ tarafta disk simgeli kaydet butonu yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Sistem mevcut yıl için kaydedilmiş parametreleri yükler.</li>
+                    <li>Eğer mevcut yıl için parametre kaydı yoksa, boş bir form gösterilir.</li>
+                    <li>Yıl alanında otomatik olarak sistem tarihi yılı görünür.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="temel-ayarlar" class="section">
+        <h2>Temel Ayarlar</h2>
+        
+        <div id="yil" class="info-box">
+            <h3>Yıl Seçimi</h3>
+            
+            <div class="step">
+                <h4>Yıl Bilgisi:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Ekranın üst kısmında sol tarafta yer alır.</li>
+                    <li><strong>Etiket:</strong> "Yılı" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Sistem tarafından otomatik olarak mevcut yıl değeri görünür.</li>
+                    <li><strong>Kullanım:</strong> Parametrelerin hangi yıl için geçerli olacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>İpucu:</h4>
+                <p>Yıl alanını değiştirmemeniz önerilir. Sistem genellikle mevcut yıl için çalışır ve geçmiş yıllara ait parametrelerde değişiklik yapılması önerilmez.</p>
+            </div>
+        </div>
+
+        <div id="muhasebe" class="info-box">
+            <h3>Muhasebe Birimi</h3>
+            
+            <div class="step">
+                <h4>Muhasebe Birimi Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Yılı" alanının hemen altında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Muhasebe Birimi" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Metin alanıdır, kurumunuzun muhasebe birimi adını yazmak için kullanılır.</li>
+                    <li><strong>Kullanım:</strong> Kurumunuzun resmi muhasebe biriminin adını tam olarak girin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Muhasebe Birimi Doldurma İpucu:</h4>
+                <p>Muhasebe birimi adını resmi yazışmalarda kullanıldığı tam haliyle yazın. Bu alan raporların ve resmî belgelerin üst kısmında görüntülenecektir.</p>
+            </div>
+        </div>
+
+        <div id="fis-dokum" class="info-box">
+            <h3>Fiş Döküm Şekli</h3>
+            
+            <div class="step">
+                <h4>Fiş Döküm Şekli Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Muhasebe Birimi" alanının hemen altında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Fiş Döküm Şekli" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Sicil Numaraları Çıksın"</li>
+                            <li>"Sicil Numaraları Çıkmasın"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Fiş dökümleri alınırken sicil numaralarının çıkıp çıkmayacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Fiş Döküm Şekli Seçimi İpucu:</h4>
+                <p>Eğer döküm alırken personel sicil numaralarının da görünmesini istiyorsanız "Sicil Numaraları Çıksın" seçeneğini, gizli kalmasını istiyorsanız "Sicil Numaraları Çıkmasın" seçeneğini tercih edin.</p>
+            </div>
+        </div>
+
+        <div id="zimmet-istek" class="info-box">
+            <h3>Zimmet İşleminde İstek Fişi</h3>
+            
+            <div class="step">
+                <h4>Zimmet İşleminde İstek Fişi Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Fiş Döküm Şekli" alanının hemen altında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Zimmet İşleminde İstek Fişi" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Oluşturma"</li>
+                            <li>"Oluştur"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Bir kişiye zimmet işlemi yapıldığında otomatik olarak istek fişi oluşturulup oluşturulmayacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Zimmet İstek Fişi Seçimi İpucu:</h4>
+                <p>"Oluştur" seçeneği ile zimmet işlemlerinde otomatik olarak istek fişi oluşturulur ve süreç hızlanır. "Oluşturma" seçeneği ile istek fişlerinin manuel olarak oluşturulması gerekir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="numaralandirma" class="section">
+        <h2>Numaralandırma Ayarları</h2>
+        
+        <div class="info-box">
+            <h3>Numaralandırma Ayarları Bölümü</h3>
+            <p>Bu bölüm, taşınır işlem fişleri, istek fişleri, demirbaşlar ve tutanaklar için numaralandırma yöntemini belirlemenizi sağlar. Ekranın orta kısmında "Numaralandırma Ayarları" başlığı altında yer alır.</p>
+            
+            <div id="islem-fisi" class="step">
+                <h4>Taşınır İşlem Fişleri:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Numaralandırma ayarları bölümünün sol üst kısmında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Taşınır İşlem Fişleri" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Kurum Bazında Sırayla"</li>
+                            <li>"Birim Bazında Sırayla"</li>
+                            <li>"Ambar Bazında Sırayla"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Taşınır işlem fişlerinin nasıl numaralandırılacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div id="istek-fisi" class="step">
+                <h4>Taşınır İstek Fişleri:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Taşınır İşlem Fişleri" alanının sağında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Taşınır İstek Fişleri" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Kurum Bazında Sırayla"</li>
+                            <li>"Birim Bazında Sırayla"</li>
+                            <li>"Ambar Bazında Sırayla"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Taşınır istek fişlerinin nasıl numaralandırılacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div id="demirbas" class="step">
+                <h4>Demirbaşlar:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Taşınır İşlem Fişleri" alanının altında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Demirbaşlar" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Kurum Bazında Sırayla"</li>
+                            <li>"Birim Bazında Sırayla"</li>
+                            <li>"Ambar Bazında Sırayla"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Demirbaşların nasıl numaralandırılacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div id="tutanak" class="step">
+                <h4>Tutanaklar:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Demirbaşlar" alanının sağında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Tutanaklar" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Kurum Bazında Sırayla"</li>
+                            <li>"Birim Bazında Sırayla"</li>
+                            <li>"Ambar Bazında Sırayla"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Tutanakların nasıl numaralandırılacağını belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Numaralandırma Seçimi İpuçları:</h4>
+                <ul>
+                    <li><strong>Kurum Bazında Sırayla:</strong> Tüm kurum için tek bir numara serisi kullanılır. Örneğin: 1, 2, 3...</li>
+                    <li><strong>Birim Bazında Sırayla:</strong> Her birim için ayrı numara serisi kullanılır. Örneğin: İnsan Kaynakları için 1, 2, 3... / Muhasebe için 1, 2, 3...</li>
+                    <li><strong>Ambar Bazında Sırayla:</strong> Her ambar için ayrı numara serisi kullanılır. Örneğin: A Ambarı için 1, 2, 3... / B Ambarı için 1, 2, 3...</li>
+                </ul>
+                <p>Kurumunuzdaki iş akışına en uygun seçeneği tercih edin.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="goruntulenme" class="section">
+        <h2>Raporlarda Fiş Numaraları Görüntüleme</h2>
+        
+        <div class="info-box">
+            <h3>Fiş Numarası Görüntüleme Ayarları</h3>
+            <p>Bu bölüm, raporlarda hangi fiş numaralarının görüntüleneceğini belirlemenizi sağlar. Ekranın alt kısmında "Raporlarda Fiş Numaraları Görüntüleme" başlığı altında yer alır.</p>
+            
+            <div id="kurum-fis" class="step">
+                <h4>Kurum Fiş Numarası:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Fiş numarası görüntüleme bölümünün sol üst kısmında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Kurum Fiş Numarası" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Gösterme"</li>
+                            <li>"Göster"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Raporlarda kurum fiş numarasının görünüp görünmeyeceğini belirler.</li>
+                </ul>
+            </div>
+
+            <div id="birim-fis" class="step">
+                <h4>Birim Fiş Numarası:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Kurum Fiş Numarası" alanının sağında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Birim Fiş Numarası" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Gösterme"</li>
+                            <li>"Göster"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Raporlarda birim fiş numarasının görünüp görünmeyeceğini belirler.</li>
+                </ul>
+            </div>
+
+            <div id="ambar-fis" class="step">
+                <h4>Ambar Fiş Numarası:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Kurum Fiş Numarası" alanının altında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Ambar Fiş Numarası" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Gösterme"</li>
+                            <li>"Göster"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Raporlarda ambar fiş numarasının görünüp görünmeyeceğini belirler.</li>
+                </ul>
+            </div>
+
+            <div id="eski-fis" class="step">
+                <h4>Eski Fiş Numarası:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Ambar Fiş Numarası" alanının sağında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Eski Fiş Numarası" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Gösterme"</li>
+                            <li>"Göster"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Raporlarda eski fiş numarasının görünüp görünmeyeceğini belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Fiş Numarası Görüntüleme İpuçları:</h4>
+                <p>Raporlarda hangi fiş numaralarının görünmesini istediğinize karar verirken şunları göz önünde bulundurun:</p>
+                <ul>
+                    <li>İş akışınızda en çok kullandığınız fiş numaralarını "Göster" olarak ayarlayın.</li>
+                    <li>Çok fazla fiş numarası göstermek rapor okunabilirliğini azaltabilir.</li>
+                    <li>Denetim ve kontroller için hangi fiş numaralarının gerekli olduğunu göz önünde bulundurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="diger-ayarlar" class="section">
+        <h2>Diğer Ayarlar</h2>
+        
+        <div id="ambar-raf" class="info-box">
+            <h3>Ambar Raf Göz Takip</h3>
+            
+            <div class="step">
+                <h4>Ambar Raf Göz Takip Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Ambar Fiş Numarası" alanının altında, sol tarafta yer alır.</li>
+                    <li><strong>Etiket:</strong> "Ambar Raf Göz Takip" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                    <li><strong>Seçenekler:</strong> 
+                        <ul>
+                            <li>"Takip Etme"</li>
+                            <li>"Takip Et"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> Malzemelerin ambarlardaki raf ve göz yerleşimlerinin takip edilip edilmeyeceğini belirler.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Ambar Raf Göz Takip İpucu:</h4>
+                <p>"Takip Et" seçeneği ile malzemelerin ambardaki konumları (hangi rafta, hangi gözde) sistem tarafından izlenir. Çok çeşitli malzeme bulunan büyük ambarlarda bu özellik oldukça faydalıdır.</p>
+            </div>
+        </div>
+
+        <div id="kayit-dusme" class="info-box">
+            <h3>Kayıttan Düşme Onay Limiti</h3>
+            
+            <div class="step">
+                <h4>Kayıttan Düşme Onay Limiti Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Ambar Raf Göz Takip" alanının altında, sol tarafta yer alır.</li>
+                    <li><strong>Etiket:</strong> "Kayıttan Düşme Onay Limiti" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Metin kutusu şeklindedir, sayı girilir.</li>
+                    <li><strong>Kullanım:</strong> Belirli bir değerin üzerindeki kayıttan düşme işlemlerinin özel onaya tabi tutulması için limit belirtir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kayıttan Düşme Onay Limiti İpucu:</h4>
+                <p>Bu alana girilen değerin üzerindeki kayıttan düşme işlemleri, kayıttan düşme onay yetkilisi tarafından onaylanmalıdır. Kurumunuzun mali politikasına uygun bir limit belirleyin.</p>
+            </div>
+        </div>
+
+        <div id="yetkili" class="info-box">
+            <h3>Kayıttan Düşme Onay Yetkilisi</h3>
+            
+            <div class="step">
+                <h4>Kayıttan Düşme Onay Yetkilisi Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> "Kayıttan Düşme Onay Limiti" alanının sağında yer alır.</li>
+                    <li><strong>Etiket:</strong> "Kayıttan Düşme Onay Yetkilisi" olarak belirtilmiştir.</li>
+                    <li><strong>Özellik:</strong> Metin kutusu şeklindedir.</li>
+                    <li><strong>Kullanım:</strong> Belirlenen limitin üzerindeki kayıttan düşme işlemlerini onaylayacak kişinin adı veya unvanını girin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Onay Yetkilisi İpucu:</h4>
+                <p>Bu alana kurumunuzda kayıttan düşme işlemlerini onaylamaya yetkili kişinin tam adını veya resmi unvanını girin. Yetkili kişi değiştiğinde bu alan güncellenmelidir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="kaydetme" class="section">
+        <h2>Ayarları Kaydetme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ayarları Kaydetme İşlemi:</h4>
+                <ol>
+                    <li><strong>Tüm ayarları gözden geçirin:</strong>
+                        <ul>
+                            <li>Tüm parametreleri doğru şekilde ayarladığınızdan emin olun.</li>
+                            <li>Özellikle numaralandırma ayarları ve onay limitleri dikkatle kontrol edilmelidir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet butonuna tıklayın:</strong>
+                        <ul>
+                            <li>Ekranın en altında bulunan mavi şerit içindeki sağ tarafta yer alan disk simgeli kaydet butonuna tıklayın.</li>
+                            <li>Butona tıkladığınızda ekranda "Kaydediliyor..." mesajı görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydın tamamlanmasını bekleyin:</strong>
+                        <ul>
+                            <li>Sistem, girilen tüm parametreleri veritabanına kaydedecektir.</li>
+                            <li>Kayıt işlemi tamamlandığında ekran yenilenecek ve güncel değerler gösterilecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yapılan değişiklikler kaydet butonuna basılmadıkça sisteme kaydedilmez.</li>
+                    <li>Kaydetmeden ekranı kapatırsanız, tüm değişiklikler kaybolacaktır.</li>
+                    <li>Kaydetme işlemi tamamlandıktan sonra, yeni ayarlar tüm sistem kullanıcıları için geçerli olacaktır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kaydetme İpuçları:</h4>
+                <ul>
+                    <li>Önemli bir parametre değişikliği yapmadan önce mevcut ayarları not alın.</li>
+                    <li>Kritik parametrelerde değişiklik yapmadan önce sistem yöneticinize danışın.</li>
+                    <li>Ayarlar kaydedildikten sonra, değişikliklerin doğru çalıştığını kontrol etmek için bir test işlemi yapmanız önerilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Parametre Değişiklikleri Uygulanmıyor:</strong>
+                        <ul>
+                            <li>Kaydet butonuna bastığınızdan emin olun.</li>
+                            <li>Sistem yoğunluğuna bağlı olarak değişikliklerin uygulanması biraz zaman alabilir.</li>
+                            <li>Tarayıcınızın önbelleğini temizleyip sayfayı yenileyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Numaralandırma Yöntemi Değiştiğinde Sorun Yaşanıyor:</strong>
+                        <ul>
+                            <li>Numaralandırma yöntemini yıl başında bir kez ayarlayın, yıl içinde değiştirmeyin.</li>
+                            <li>Yöntem değişikliği yaparsanız, önceki kayıtlar etkilenmez ancak yeni kayıtlar seçilen yönteme göre numaralandırılır.</li>
+                            <li>Bu durum karışıklık yaratabilir, sadece gerekli olduğunda değiştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıttan Düşme Onay Limiti Çalışmıyor:</strong>
+                        <ul>
+                            <li>Limit değerini doğru formatta girdiğinizden emin olun (sadece rakam kullanın).</li>
+                            <li>Yetkilinin adını doğru yazdığınızı kontrol edin.</li>
+                            <li>Kullanıcı yetkilerinin doğru ayarlandığını kontrol edin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Parametreleri Belirleme:</strong>
+                        <ul>
+                            <li>Yeni yıl başlangıcında tüm parametreleri dikkatle belirleyin.</li>
+                            <li>Kurumunuzun iş akışına en uygun yapılandırmayı seçin.</li>
+                            <li>Tereddütte kaldığınız konularda diğer kullanıcılarla istişare edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Numaralandırma Seçimi:</strong>
+                        <ul>
+                            <li>Küçük kurumlar için "Kurum Bazında Sırayla" tercih edilebilir.</li>
+                            <li>Çok birimli büyük kurumlar için "Birim Bazında Sırayla" daha uygun olabilir.</li>
+                            <li>Çok ambarlı yapılar için "Ambar Bazında Sırayla" düşünülebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiş Numarası Görüntüleme:</strong>
+                        <ul>
+                            <li>Sadece gerçekten ihtiyaç duyulan fiş numaralarını görüntüleyin.</li>
+                            <li>Çok fazla numara göstermek raporlarda karmaşıklığa neden olabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Parametreler tüm sistemi etkiler, dikkatle değiştirilmelidir.</li>
+                    <li>Mevcut iş akışınıza uygun olmayan değişiklikler sorunlara neden olabilir.</li>
+                    <li>Yıl içinde sık sık parametre değişikliği yapmaktan kaçının.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Yeni yıla geçmeden önce, bir sonraki yılın parametrelerini planlayın.</li>
+                    <li>Yıl sonu raporları çıkarılmadan önce tüm parametre ayarlarının doğru olduğunu kontrol edin.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Parametrelerinizi yıllık olarak yedekleyin ve kaydedin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Taşınır Yönetim Sistemi Yıllık Parametreleri ekranı, kurumunuzun taşınır malzeme yönetimini etkili bir şekilde yapmanızı sağlayan önemli bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Bilgilerinizi düzenli olarak kaydedin.</li>
+                    <li>Parametre değişikliklerinde dikkatli olun.</li>
+                    <li>Yıl başında doğru ayarları yapın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

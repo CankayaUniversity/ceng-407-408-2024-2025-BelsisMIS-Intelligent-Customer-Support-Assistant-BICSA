@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayanıklı Taşınırlar Defteri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dayanıklı Taşınırlar Defteri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-satir">Yıl ve Satır Sayısı Belirtme</a></li>
+                <li><a href="#mudurluk-ambar">Müdürlük ve Ambar Seçimi</a></li>
+                <li><a href="#tasinir-kod">Dayanıklı Taşınır Kodu Seçimi</a></li>
+                <li><a href="#raporlama">Görüntüleme ve Raporlama İşlemleri</a></li>
+                <li><a href="#rapor-ekrani">Rapor Ekranı ve Özellikleri</a></li>
+                <li><a href="#yazdirma">Yazdırma İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Dayanıklı Taşınırlar Defteri programı, kurumunuzdaki dayanıklı taşınırların (demirbaşların) takip ve yönetimini sağlamak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Dayanıklı taşınırlar için kayıt görüntüleme işlemlerini yapabilirsiniz</li>
+                <li>Müdürlük, ambar ve sicil numarasına göre filtreleme yapabilirsiniz</li>
+                <li>Taşınırların giriş ve çıkış bilgilerini raporlayabilirsiniz</li>
+                <li>Taşınırların sicil numaralarını, değerlerini ve özelliklerini takip edebilirsiniz</li>
+                <li>Kullanımdaki ve hurdaya ayrılan taşınırları izleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Raporlamak istediğiniz yıl bilgisi</li>
+                    <li>Hangi müdürlük ve ambarda işlem yapacağınız</li>
+                    <li>Raporlamak istediğiniz dayanıklı taşınır kodu (opsiyonel)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Dayanıklı Taşınırlar Defteri" başlığı yer alır</li>
+                            <li>Bu bölüm gri renktedir ve sayfanın tamamına yayılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır ve formun ana kısmını oluşturur</li>
+                            <li>Rapor kriterlerini seçebileceğiniz alanları içerir</li>
+                            <li>Yıl, müdürlük, ambar, dayanıklı taşınır kodu ve satır sayısı alanlarını içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Yardım, Görüntüle ve Kapat butonlarını içerir</li>
+                            <li>Butonlar yan yana dizilmiş şekildedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Yıl alanı otomatik olarak sistem tarihi yılı ile doldurulur</li>
+                    <li>Diğer alanlar boş olarak başlar</li>
+                    <li>Rapor görüntülemek için en azından Müdürlük ve Ambar seçilmelidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-satir" class="section">
+        <h2>Yıl ve Satır Sayısı Belirtme</h2>
+        <div class="info-box">
+            <h3>Yıl ve Satır Sayısı Girişi</h3>
+            <div class="step">
+                <h4>Yıl Bilgisi Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Program ekranının üst kısmında, başlık çizgisinin hemen altında yer alır</li>
+                            <li>"Yıl" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi:</strong>
+                        <ol>
+                            <li>Yıl alanına raporlamak istediğiniz yılı girin (örn. 2024)
+                                <ul>
+                                    <li>Bu alan otomatik olarak sistem yılı ile doldurulur</li>
+                                    <li>Değiştirmek isterseniz 4 haneli olarak girmelisiniz</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile bir sonraki alana geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Satır Sayısı Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dayanıklı Taşınır Kodu alanının hemen altında yer alır</li>
+                            <li>"Satır Sayısı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında küçük bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi:</strong>
+                        <ol>
+                            <li>Satır Sayısı alanına raporda görmek istediğiniz kayıt sayısını girin
+                                <ul>
+                                    <li>Varsayılan değer 25'tir</li>
+                                    <li>En fazla 4 haneli bir sayı olabilir</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>Bu değer, rapor sayfalarında gösterilecek satır sayısını belirler</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Satır sayısı raporun sayfa düzenini belirler, çok yüksek değerler raporun okunabilirliğini zorlaştırabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yazdırma işlemi yapacaksanız, sayfa düzeni için uygun bir satır sayısı belirleyin (genellikle 20-30 arası idealdir)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mudurluk-ambar" class="section">
+        <h2>Müdürlük ve Ambar Seçimi</h2>
+        <div class="info-box">
+            <h3>Müdürlük ve Ambar Bilgisi Seçimi</h3>
+            <div class="step">
+                <h4>Müdürlük Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl alanının hemen altında yer alır</li>
+                            <li>"Müdürlük" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında genişçe bir açılır liste (dropdown) kutusu vardır</li>
+                            <li>Listenin yanında ":" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut müdürlüklerin listesi açılacaktır</li>
+                            <li>Listenin en üstünde "Seçiniz..." seçeneği yer alır</li>
+                            <li>Listeden işlem yapmak istediğiniz müdürlüğü seçin
+                                <ul>
+                                    <li>Liste içinde müdürlük adları alfabetik sırada listelenir</li>
+                                    <li>Liste içinde aşağı ve yukarı ok tuşlarıyla gezinebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz müdürlük görüntülenecektir</li>
+                            <li>Müdürlük seçildiğinde, ilgili müdürlüğe ait ambar listesi otomatik olarak yüklenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Ambar Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Müdürlük alanının hemen altında yer alır</li>
+                            <li>"Ambar" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında genişçe bir açılır liste (dropdown) kutusu vardır</li>
+                            <li>Listenin yanında ":" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Müdürlük seçiminden sonra, ambar listesi ilgili müdürlüğe ait ambarlarla doldurulur</li>
+                            <li>Açılır listeye tıklayın, ilgili müdürlüğe ait ambarların listesi açılacaktır</li>
+                            <li>Listenin en üstünde "--Seçiniz--" seçeneği yer alır</li>
+                            <li>Listeden işlem yapmak istediğiniz ambarı seçin
+                                <ul>
+                                    <li>Liste içinde ambar kodları ve adları birlikte görüntülenir (Örn: "123-Ana Ambar")</li>
+                                    <li>Listede sadece seçilen müdürlüğe ait ambarlar bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz ambar görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Müdürlük seçilmeden ambar seçimi yapılamaz</li>
+                    <li>Müdürlük değiştirildiğinde ambar listesi de değişir, bu nedenle önce müdürlük sonra ambar seçimi yapılmalıdır</li>
+                    <li>Rapor görüntülemek için hem müdürlük hem de ambar seçimi yapılması zorunludur</li>
+                    <li>Eğer müdürlük seçimi yapılmazsa, sistem "Öncelikle müdürlük seçiniz!" uyarısı verecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listeleri açtığınızda klavyeden ilgili müdürlüğün veya ambarın ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Sık kullandığınız müdürlük-ambar kombinasyonlarını not edebilirsiniz</li>
+                    <li>Müdürlük seçilir seçilmez, ambar listesinde genellikle ilk ambar otomatik olarak seçilir (bu durumu kontrol etmeyi unutmayın)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tasinir-kod" class="section">
+        <h2>Dayanıklı Taşınır Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Dayanıklı Taşınır Kodu Filtreleme</h3>
+            <div class="step">
+                <h4>Dayanıklı Taşınır Kodu Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ambar alanının hemen altında yer alır</li>
+                            <li>"Dayanıklı Taşınır Kodu" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                            <li>Metin kutusunun yanında küçük bir büyüteç simgeli buton bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manuel Filtreleme:</strong>
+                        <ol>
+                            <li>Metin kutusuna doğrudan bir sicil numarası girebilirsiniz
+                                <ul>
+                                    <li>Bu alana filtrelemek istediğiniz taşınırın sicil numarasını veya numaranın bir kısmını yazabilirsiniz</li>
+                                    <li>Sicil numarasının başlangıç kısmını yazarak belirli bir seriye ait taşınırları filtreleyebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile bir sonraki alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Taşınır Kodu Listesinden Seçim:</strong>
+                        <ol>
+                            <li>Metin kutusunun yanındaki büyüteç simgeli butona tıklayın</li>
+                            <li>Açılan pencerede filtreleme seçenekleri sunan "Taşınır Kod Filtresi" ekranı görüntülenir</li>
+                            <li>Bu ekranda taşınır kodunu, açıklamayı ve raf numarasını kullanarak filtreleme yapabilirsiniz</li>
+                            <li>Filtreleme kriterlerini girdikten sonra "Tamam" butonuna tıklayın</li>
+                            <li>Filtre kriterleri başka bir pencerede taşınır listesi olarak görüntülenir</li>
+                            <li>Listeden istediğiniz taşınır kodunu seçin</li>
+                            <li>Seçilen taşınır kodu otomatik olarak ana ekrandaki metin kutusuna aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dayanıklı Taşınır Kodu alanı boş bırakılabilir, bu durumda seçilen ambardaki tüm taşınırlar listelenecektir</li>
+                    <li>Sicil numarası girişinde nokta, virgül gibi karakterler dikkate alınmaz</li>
+                    <li>Çok genel bir sicil numarası filtresi kullanılması durumunda rapor çok uzun olabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir taşınır türünü aramak için büyüteç butonunu kullanmak daha kolaydır</li>
+                    <li>Sicil numarasını biliyorsanız doğrudan metin kutusuna yazabilirsiniz</li>
+                    <li>Taşınır kod listesinden seçim yapmak, kod hatalarını önlemeye yardımcı olur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="raporlama" class="section">
+        <h2>Görüntüleme ve Raporlama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Rapor Görüntüleme İşlemleri</h3>
+            <div class="step">
+                <h4>Rapor Nasıl Görüntülenir:</h4>
+                <ol>
+                    <li><strong>Gerekli Alanları Doldurun:</strong>
+                        <ul>
+                            <li>Yıl bilgisini kontrol edin (varsayılan olarak sistem yılı gelir)</li>
+                            <li>Müdürlük seçimini yapın</li>
+                            <li>Ambar seçimini yapın</li>
+                            <li>İsterseniz Dayanıklı Taşınır Kodu girin veya seçin (opsiyonel)</li>
+                            <li>Satır Sayısını belirleyin (varsayılan 25'tir)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görüntüle Butonunun Konumu ve Kullanımı:</strong>
+                        <ul>
+                            <li>Görüntüle butonu, ekranın alt kısmında ortada yer alır</li>
+                            <li>Butonun üzerinde bir disk ikonu ve "Görüntüle" yazısı bulunur</li>
+                            <li>Yardım butonunun sağında, Kapat butonunun solunda konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görüntüleme İşlemi:</strong>
+                        <ol>
+                            <li>Tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                            <li>Görüntüle butonuna tıklayın</li>
+                            <li>Sistem belirtilen kriterlere göre raporu hazırlayacak ve görüntüleyecektir</li>
+                            <li>Rapor ayrı bir ekranda açılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Görüntüleme Öncesi Uyarılar:</h4>
+                <ul>
+                    <li>Müdürlük seçilmeden Görüntüle butonuna tıklanırsa, "Öncelikle müdürlük seçiniz!" uyarısı görüntülenir</li>
+                    <li>Ambar seçilmeden Görüntüle butonuna tıklanırsa, "Öncelikle ambar seçiniz!" uyarısı görüntülenir</li>
+                    <li>Çok geniş kapsamlı raporlar için sistemin yanıt vermesi zaman alabilir</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Diğer Butonların Kullanımı:</h4>
+                <ol>
+                    <li><strong>Yardım Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Görüntüle butonunun solunda yer alır</li>
+                            <li>Bu butona tıklandığında program hakkında yardım bilgileri içeren bir pencere açılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kapat Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Görüntüle butonunun sağında yer alır</li>
+                            <li>Bu butona tıklandığında program penceresi kapanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="rapor-ekrani" class="section">
+    <h2>Rapor Ekranı ve Özellikleri</h2>
+    <div class="info-box">
+        <h3>Rapor Ekranı Bölümleri ve Kullanımı</h3>
+        <div class="step">
+            <h4>Rapor Ekranı Genel Görünümü:</h4>
+            <ol>
+                <li><strong>Rapor Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde "DAYANIKLI TAŞINIRLAR DEFTERİ" başlığı yer alır</li>
+                        <li>Başlığın sağ tarafında sayfa numarası görünür (örn: "Sayfa No: 1")</li>
+                        <li>Başlık altında "GİRİŞ" ve "ÇIKIŞ" etiketlerini içeren bir üst bilgi bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Kurum Bilgileri Bölümü:</strong>
+                    <ul>
+                        <li>Rapor üst kısmında il/ilçe, harcama birimi, ambar ve muhasebe birimi bilgileri tablo formatında yer alır</li>
+                        <li>Her birim için ad ve kod bilgileri yan yana gösterilir</li>
+                        <li>Sağ tarafta seçilen taşınırın adı, kodu ve ölçü birimi bilgileri yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Rapor Tablosu:</strong>
+                    <ul>
+                        <li>Kurum bilgilerinin altında, rapor ana tablosu yer alır</li>
+                        <li>Tablo "GİREN TAŞINIRIN" ve "ÇIKAN TAŞINIRIN" olmak üzere iki ana bölüme ayrılmıştır</li>
+                        <li>Her bir taşınır kaydı bir satırda gösterilir</li>
+                        <li>Tablonun en altında toplam değer bilgisi yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Butonlar Bölümü:</strong>
+                    <ul>
+                        <li>Rapor ekranının en üstünde "Rapor Ana Sayfası", "Yazdır" ve "Kapat" butonları yer alır</li>
+                        <li>Butonlar yan yana ve ekranın üst orta kısmında konumlanmıştır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Tablo Sütunları ve İçerikleri:</h4>
+            <ol>
+                <li><strong>Giren Taşınır Bilgileri (Sol Bölüm):</strong>
+                    <ul>
+                        <li><strong>SIRA NO:</strong> Taşınırın sıra numarası</li>
+                        <li><strong>TAŞINIR İŞLEM FİŞİ (TARİH):</strong> Taşınırın giriş tarihi</li>
+                        <li><strong>TAŞINIR İŞLEM FİŞİ (NO):</strong> Taşınır işlem fişi numarası</li>
+                        <li><strong>SİCİL NUMARASI:</strong> Taşınırın sicil numarası</li>
+                        <li><strong>İŞLEM ÇEŞİDİ:</strong> Taşınırın giriş işlem türü</li>
+                        <li><strong>NEREDEN GELDİĞİ:</strong> Taşınırın geldiği kişi veya kurum adı</li>
+                        <li><strong>BİRİM FİYATI:</strong> Taşınırın birim fiyatı</li>
+                        <li><strong>MİKTAR:</strong> Taşınırın adeti</li>
+                        <li><strong>DEĞER ARTIRICI HARCAMALAR:</strong> Taşınıra yapılan ek harcamalar</li>
+                        <li><strong>TOPLAM DEĞERİ:</strong> Taşınırın toplam değeri</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkan Taşınır Bilgileri (Sağ Bölüm):</strong>
+                    <ul>
+                        <li><strong>KARŞILIĞINDA DÜZENLENEN BELGENİN (CİNSİ):</strong> Belge türü (TİF, Zimmet vb.)</li>
+                        <li><strong>KARŞILIĞINDA DÜZENLENEN BELGENİN (TARİH):</strong> Çıkış belgesi tarihi</li>
+                        <li><strong>KARŞILIĞINDA DÜZENLENEN BELGENİN (NO):</strong> Çıkış belgesi numarası</li>
+                        <li><strong>İŞLEM ÇEŞİDİ:</strong> Taşınırın çıkış işlem türü</li>
+                        <li><strong>KİME VERİLDİĞİ:</strong> Taşınırın zimmetlendiği kişi adı</li>
+                        <li><strong>NEREYE VERİLDİĞİ:</strong> Taşınırın zimmetlendiği/gönderildiği birim</li>
+                        <li><strong>NEREYE GÖNDERİLDİĞİ:</strong> Taşınırın gönderildiği yer bilgisi</li>
+                        <li><strong>ÖZELLİKLERİ:</strong> Taşınırın açıklama ve özellikleri</li>
+                        <li><strong>SATIŞ, DEVİR, İMHA, HURDAYA AYIRMA V.B. NEDENLERLE ÇIKAN DEĞER:</strong> Taşınırın çıkış değeri</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Raporun Sayfalara Ayrılması:</h4>
+            <ol>
+                <li><strong>Sayfa Boyutu ve Düzeni:</strong>
+                    <ul>
+                        <li>Her sayfada, ana ekranda belirtilen "Satır Sayısı" kadar kayıt gösterilir</li>
+                        <li>Eğer belirlenen satır sayısından daha az kayıt varsa, kalan boşluklar boş satırlarla doldurulur</li>
+                        <li>Her sayfanın alt kısmında sayfa toplamı gösterilir</li>
+                        <li>Sayfalar arasında geçiş butonları raporda yer almaz, bu nedenle yazdırma işlemi her sayfa için ayrı ayrı yapılmalıdır</li>
+                    </ul>
+                </li>
+                <li><strong>Taşınır Değişikliklerinde Sayfa Düzeni:</strong>
+                    <ul>
+                        <li>Farklı taşınır kodları, ayrı sayfalarda gösterilir</li>
+                        <li>Bir taşınır kodu için belirlenen satır sayısından fazla kayıt varsa, sonraki sayfadan devam eder</li>
+                        <li>Her taşınır kodu değişikliğinde, yeni bir sayfa başlar ve kurum bilgileri tekrar gösterilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Rapor Ekranı İpuçları:</h4>
+            <ul>
+                <li>Rapor ayarlarını değiştirmek isterseniz "Rapor Ana Sayfası" butonunu kullanarak ilk ekrana dönebilirsiniz</li>
+                <li>Çok fazla kayıt içeren raporlarda, taşınır koduna göre filtreleme yaparak daha yönetilebilir raporlar elde edebilirsiniz</li>
+                <li>Sayfanın en altındaki toplam değer, o sayfadaki taşınırların toplam değerini gösterir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="yazdirma" class="section">
+    <h2>Yazdırma İşlemleri</h2>
+    <div class="info-box">
+        <h3>Rapor Yazdırma İşlemleri</h3>
+        <div class="step">
+            <h4>Tek Sayfa Yazdırma İşlemi:</h4>
+            <ol>
+                <li><strong>Yazdır Butonunun Konumu:</strong>
+                    <ul>
+                        <li>Yazdır butonu, rapor ekranının en üst kısmında yer alır</li>
+                        <li>"Rapor Ana Sayfası" butonunun sağında, "Kapat" butonunun solunda konumlanmıştır</li>
+                        <li>Üzerinde "Yazdır" yazısı bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Yazdırma Adımları:</strong>
+                    <ol>
+                        <li>Yazdırmak istediğiniz rapor sayfasını ekranda görüntüleyin</li>
+                        <li>Yazdır butonuna tıklayın</li>
+                        <li>Sistem yazıcı diyalog kutusunu açmadan doğrudan yazdırma işlemini başlatır</li>
+                        <li>Yazdırma işlemi tamamlandığında ekran eski haline döner</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Tüm Sayfaları Yazdırma İşlemi:</h4>
+            <ol>
+                <li><strong>Otomatik Yazdırma Özelliği:</strong>
+                    <ul>
+                        <li>Sistem, çok sayfalı raporlarda tüm sayfaları otomatik olarak yazdırma özelliği sunar</li>
+                        <li>Raporda birden fazla sayfa varsa, ilk sayfayı yazdırdıktan sonra sistem bir onay mesajı gösterir</li>
+                        <li>Onay mesajında "Uyarı! Toplam X Sayfa Yazdırılacaktır. Emin misiniz?" ifadesi yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Tüm Sayfaları Yazdırma Adımları:</strong>
+                    <ol>
+                        <li>Raporun ilk sayfasını görüntüleyin</li>
+                        <li>Yazdır butonuna tıklayın</li>
+                        <li>Sistem onay mesajı gösterdiğinde "Evet" butonuna tıklayın</li>
+                        <li>Sistem sırayla tüm sayfaları yazdıracaktır</li>
+                        <li>Her sayfa yazdırıldıktan sonra sistem otomatik olarak bir sonraki sayfaya geçer</li>
+                        <li>Tüm sayfalar yazdırıldığında sistem normal görünüme döner</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Yazdırma İşlemi Uyarıları:</h4>
+            <ul>
+                <li>Yazdırma işlemi başladığında, işlem tamamlanana kadar bekleyin ve programı kapatmayın</li>
+                <li>Çok sayfalı raporlarda tüm sayfaları yazdırmak isteyip istemediğiniz sorulduğunda, gereksiz kağıt kullanımını önlemek için sadece ihtiyacınız olan sayfaları seçin</li>
+                <li>Yazdırma işlemi sırasında yazıcı hatası oluşursa, raporu tekrar görüntüleyip yazdırma işlemini tekrarlayın</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Yazdırma İpuçları:</h4>
+            <ul>
+                <li>Yazdırmadan önce yazıcı ayarlarının doğru olduğundan emin olun</li>
+                <li>Rapor çok sayfalı ise sadece gerekli sayfaları yazdırmak için internet tarayıcınızın yazdırma diyalogunu kullanabilirsiniz (CTRL+P)</li>
+                <li>Yazdırma işlemini iptal etmek isterseniz, tarayıcınızın yazdırma kuyruğundan iptal edebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                <li><strong>CTRL + Tıklama:</strong> Listelerde birden fazla öğe seçmek için</li>
+                <li><strong>Harf Tuşları:</strong> Açılır listelerde ilgili harfle başlayan öğelere hızlı geçiş için</li>
+            </ul>
+        </div>
+    
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>"Öncelikle ambar seçiniz!" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Görüntüle butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Önce müdürlük seçin, sonra açılan ambar listesinden uygun ambarı seçin.</li>
+                    </ul>
+                </li>
+                <li><strong>"Öncelikle stok seçiniz!" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Dayanıklı Taşınır Kodu alanı boş bırakılmış olabilir.</li>
+                        <li>Çözüm: Dayanıklı Taşınır Kodu alanına bir değer girin veya taşınır listesinden seçim yapın. Tüm taşınırları görmek istiyorsanız, farklı bir filtreleme seçeneği kullanın.</li>
+                    </ul>
+                </li>
+                <li><strong>Rapor Görüntülenmiyor veya Boş Görünüyor:</strong>
+                    <ul>
+                        <li>Sorun: Rapor kriterlerine uygun kayıt bulunamıyor olabilir.</li>
+                        <li>Çözüm: Filtreleme kriterlerinizi genişletin, özellikle sicil numarası filtresini daha genel yapın veya kaldırın. Doğru yılı seçtiğinizden emin olun.</li>
+                    </ul>
+                </li>
+                <li><strong>Çok Fazla Kayıt Görüntüleniyor:</strong>
+                    <ul>
+                        <li>Sorun: Filtreleme kriterleri çok genel olabilir.</li>
+                        <li>Çözüm: Daha spesifik bir Dayanıklı Taşınır Kodu kullanın veya sicil numarası filtresini daraltın.</li>
+                    </ul>
+                </li>
+                <li><strong>Yazdırma İşlemi Çalışmıyor:</strong>
+                    <ul>
+                        <li>Sorun: Yazıcı bağlantısı veya ayarları sorunlu olabilir.</li>
+                        <li>Çözüm: Yazıcı bağlantınızı kontrol edin, tarayıcı ayarlarınızda yazdırma işlemine izin verildiğinden emin olun. Gerekirse tarayıcınızın yazdırma özelliğini (CTRL+P) kullanın.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Sık kullandığınız müdürlük ve ambar kombinasyonlarını not edin</li>
+                <li>Taşınır kod listesinden seçim yapmak, hatalı girişleri önlemeye yardımcı olur</li>
+                <li>Rapor görüntülemeden önce doğru filtreleme kriterlerini belirlediğinizden emin olun</li>
+                <li>Büyük raporlar için satır sayısını uygun bir değere ayarlayın</li>
+                <li>Rapor sonuçlarını kontrol ederek beklediğiniz kayıtların listelendiğinden emin olun</li>
+                <li>Yazdırma işlemi öncesinde raporu dikkatle gözden geçirin</li>
+            </ul>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Rapor sonuçlarınızı düzenli olarak kontrol edin ve beklenmeyen sonuçlar için yöneticinize danışın</li>
+                <li>Program kullanımında sorun yaşarsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                <li>Taşınır işlemlerinin doğru kodlarla yapıldığından emin olun</li>
+                <li>Raporlarda gördüğünüz bilgileri, fiziksel varlıklarla karşılaştırarak düzenli kontroller yapın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet</h2>
+    <div class="info-box">
+        <p>Dayanıklı Taşınırlar Defteri programı, kurumunuzdaki dayanıklı taşınırların (demirbaşların) kayıtlarını izlemek ve raporlamak için kullanılan önemli bir araçtır. Bu kılavuz ile şu konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Yıl ve satır sayısı bilgisi girişi</li>
+            <li>Müdürlük ve ambar seçimi</li>
+            <li>Dayanıklı taşınır kodu filtreleme</li>
+            <li>Rapor görüntüleme ve yazdırma işlemleri</li>
+            <li>Rapor ekranının bölümleri ve içerikleri</li>
+            <li>Verimli çalışma için pratik ipuçları</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>

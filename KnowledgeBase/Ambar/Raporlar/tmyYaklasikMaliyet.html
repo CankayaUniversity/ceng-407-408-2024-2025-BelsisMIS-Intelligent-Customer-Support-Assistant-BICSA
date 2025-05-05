@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaklaşık Maliyet Hesap Cetveli - Kullanım Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yaklaşık Maliyet Hesap Cetveli</h1>
+        <img src="/api/placeholder/180/50" alt="Kurum Logosu">
+    </div>
+
+    <div class="section">
+        <h1>Yaklaşık Maliyet Hesap Cetveli Kullanım Kılavuzu</h1>
+        
+        <div class="info-box">
+            Bu kılavuz, Yaklaşık Maliyet Hesap Cetveli uygulamasının kullanımı hakkında bilgi vermektedir. Sistem ile ilgili sorularınız için lütfen bilgi işlem birimiyle iletişime geçiniz.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. Genel Bakış</h2>
+        <p>Yaklaşık Maliyet Hesap Cetveli ekranı, taşınır istek fişlerine bağlı olarak yaklaşık maliyet hesaplamalarını yapmak ve raporlamak için kullanılır. Bu ekran sayesinde:</p>
+        <ul>
+            <li>Belirli bir yıl, müdürlük ve fiş numarasına göre taşınır istek detaylarını listeleyebilirsiniz</li>
+            <li>Listeden istediğiniz stok kalemlerini seçerek yaklaşık maliyet hesap cetvelini yazdırabilirsiniz</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Ekran Görünümü ve Temel Bileşenler</h2>
+        <p>Yaklaşık Maliyet Hesap Cetveli ekranı iki ana bölümden oluşmaktadır:</p>
+        <ol>
+            <li>Üst bölüm: Filtreleme ve seçim alanları</li>
+            <li>Alt bölüm: Taşınır istek detaylarının listelendiği tablo</li>
+        </ol>
+
+        <div class="step">
+            <h3>Üst Bölüm Alanları</h3>
+            <p>Ekranın üst kısmında bulunan filtreleme alanları şunlardır:</p>
+            <table>
+                <tr>
+                    <th>Alan Adı</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Yıl</td>
+                    <td>İsteklerin ait olduğu yıl bilgisi (4 haneli sayı formatında, örneğin: 2023)</td>
+                </tr>
+                <tr>
+                    <td>Müdürlük</td>
+                    <td>İsteği yapan müdürlük seçimi için açılır liste</td>
+                </tr>
+                <tr>
+                    <td>Taşınır İstek Fiş No</td>
+                    <td>Sorgulanacak taşınır istek fişinin numarası</td>
+                </tr>
+                <tr>
+                    <td>Satınalma Görevlisi - 1</td>
+                    <td>Satınalma işlemi için görevlendirilen birinci personelin adı</td>
+                </tr>
+                <tr>
+                    <td>Satınalma Görevlisi - 2</td>
+                    <td>Satınalma işlemi için görevlendirilen ikinci personelin adı</td>
+                </tr>
+                <tr>
+                    <td>Satınalma Servisi Sorumlusu</td>
+                    <td>Satınalma servisi sorumlusunun adı</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <strong>İpucu:</strong> Yıl alanı otomatik olarak içinde bulunduğunuz yılı gösterir, ancak geçmiş yıllara ait sorgulama yapmak isterseniz değiştirebilirsiniz.
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Ekran Butonları</h3>
+            <p>Üst bölümün alt kısmında yer alan butonlar şunlardır:</p>
+            <table>
+                <tr>
+                    <th>Buton</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Listele</td>
+                    <td>Seçilen kriterlere göre taşınır istek detaylarını listelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Yazdır</td>
+                    <td>Seçili stok kalemlerinin yaklaşık maliyet hesap cetvelini oluşturup yazdırmak için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Çıkış</td>
+                    <td>Ekrandan çıkış yapmak için kullanılır</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="step">
+            <h3>Alt Bölüm - Stok Listesi</h3>
+            <p>Ekranın alt kısmında bulunan tabloda, listele işlemi sonucunda bulunan stok kalemleri görüntülenir. Tablo şu sütunlardan oluşur:</p>
+            <table>
+                <tr>
+                    <th>Sütun</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Seçim Kutusu</td>
+                    <td>Yaklaşık maliyet hesabına dahil edilecek stok kalemlerini seçmek için işaretleyeceğiniz kutular</td>
+                </tr>
+                <tr>
+                    <td>Stok Kodu</td>
+                    <td>Stok kaleminin sistem içindeki kod numarası</td>
+                </tr>
+                <tr>
+                    <td>Stok Adı</td>
+                    <td>Stok kaleminin açıklaması</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <strong>İpucu:</strong> Tablonun en üstündeki seçim kutusunu işaretlerseniz, tüm stok kalemleri bir defada seçilecektir.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. İşlem Adımları</h2>
+        
+        <div class="step">
+            <h3>3.1. Taşınır İstek Detaylarını Listeleme</h3>
+            <ol>
+                <li>Ekranın üst kısmındaki "Yıl" alanına isteklerin ait olduğu yılı girin (varsayılan olarak içinde bulunduğunuz yıl gelecektir)</li>
+                <li>"Müdürlük" açılır listesinden ilgili müdürlüğü seçin</li>
+                <li>Belirli bir fişe ait detayları görmek istiyorsanız, "Taşınır İstek Fiş No" alanına fiş numarasını girin</li>
+                <li>Ekranın orta kısmında bulunan "Listele" butonuna tıklayın</li>
+                <li>Eğer kriterlere uygun kayıt bulunursa, ekranın alt kısmındaki tabloda taşınır istek detayları listelenecektir</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>Uyarı:</strong> Eğer girdiğiniz kriterlere uygun kayıt bulunamazsa, "Kayıt bulunamadı!" şeklinde bir mesaj görüntülenecektir.
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>3.2. Yaklaşık Maliyet Hesap Cetvelini Yazdırma</h3>
+            <ol>
+                <li>Öncelikle "Listele" butonuna basarak taşınır istek detaylarını getirin</li>
+                <li>Ekranın alt kısmındaki tabloda listelenen stok kalemlerinden yaklaşık maliyet hesabına dahil etmek istediklerinizin yanındaki seçim kutularını işaretleyin
+                    <ul>
+                        <li>Tüm kalemleri bir seferde seçmek için, tablonun en üstündeki seçim kutusunu işaretleyebilirsiniz</li>
+                    </ul>
+                </li>
+                <li>Eğer görüntülenmişse, Satınalma Görevlileri ve Sorumlu bilgilerini kontrol edin veya değiştirin</li>
+                <li>Ekranın orta kısmında bulunan "Yazdır" butonuna tıklayın</li>
+                <li>Sistem yaklaşık maliyet hesap cetvelini yeni bir pencerede açacaktır</li>
+            </ol>
+            
+            <div class="info-box">
+                <strong>Bilgi:</strong> Yazdır butonu, seçilen kriterlere uygun kayıt olup olmadığını kontrol eder. Eğer kayıt yoksa, "Kayıt bulunamadı!" uyarısı görüntülenir.
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>3.3. Ekrandan Çıkış Yapma</h3>
+            <p>İşlemlerinizi tamamladıktan sonra, ekranın orta kısmında bulunan "Çıkış" butonuna tıklayarak Yaklaşık Maliyet Hesap Cetveli ekranından çıkabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Hata ve Uyarı Mesajları</h2>
+        <p>Uygulamayı kullanırken karşılaşabileceğiniz mesajlar ve çözümleri:</p>
+        
+        <table>
+            <tr>
+                <th>Mesaj</th>
+                <th>Açıklama</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>"Kayıt bulunamadı!"</td>
+                <td>Girilen kriterlere uygun taşınır istek kaydı bulunamadı</td>
+                <td>Kriterleri kontrol edin, özellikle yıl, müdürlük ve fiş no alanlarını gözden geçirin</td>
+            </tr>
+            <tr>
+                <td>"Parametreler tanımlanmamış! Lütfen parametre ekranından tanımlamaları yapınız."</td>
+                <td>Sistem parametreleri eksik veya hatalı</td>
+                <td>Sistem yöneticinize başvurun</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>5. Sık Sorulan Sorular</h2>
+        
+        <div class="info-box">
+            <strong>Soru:</strong> Yaklaşık Maliyet Hesap Cetveli nedir ve ne için kullanılır?<br>
+            <strong>Cevap:</strong> Yaklaşık Maliyet Hesap Cetveli, taşınır isteklerine bağlı olarak satın alınacak malzemelerin yaklaşık maliyetlerini hesaplamak ve belgelemek için kullanılan bir raporlama aracıdır. Bu belge, satın alma süreçlerinde yasal bir gereklilik olarak kullanılır.
+        </div>
+        
+        <div class="info-box">
+            <strong>Soru:</strong> Satınalma görevlileri ve sorumlu bilgileri neden önemlidir?<br>
+            <strong>Cevap:</strong> Bu bilgiler, oluşturulacak yaklaşık maliyet hesap cetvelinde görev ve sorumluluk alanlarını belirtmek için kullanılır. Doğru kişilerin adlarının yazılması, belgenin resmi geçerliliği açısından önemlidir.
+        </div>
+        
+        <div class="info-box">
+            <strong>Soru:</strong> Listede göremediğim bir taşınır istek fişini nasıl sorgulayabilirim?<br>
+            <strong>Cevap:</strong> Doğru yılı seçtiğinizden, müdürlük bilgisinin doğru olduğundan ve fiş numarasını doğru girdiğinizden emin olun. Eğer bunlara rağmen sonuç alamıyorsanız, taşınır istek fişinin sistem üzerinde kaydedildiğinden emin olun.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. İletişim ve Destek</h2>
+        <p>Bu kılavuzda yanıtını bulamadığınız sorular veya karşılaştığınız sorunlar için lütfen:</p>
+        <ul>
+            <li>Birim sorumlusu ile iletişime geçin</li>
+            <li>Bilgi İşlem Müdürlüğü'ne başvurun</li>
+            <li>Yardım masasını arayın</li>
+        </ul>
+        
+        <div class="warning-box">
+            <strong>Not:</strong> Sistem üzerinde herhangi bir hataya rastlarsanız, hatanın oluştuğu ekranın görüntüsünü (ekran görüntüsü) alarak Bilgi İşlem birimine iletmeniz sorunun daha hızlı çözülmesine yardımcı olacaktır.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Durumları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Stok Durumları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#mudurluk-ambar">Müdürlük ve Ambar Seçimi</a></li>
+                        <li><a href="#hesap-bilgileri">Hesap Bilgileri</a></li>
+                        <li><a href="#fis-ve-tarih">Fiş Türleri ve Tarih Aralığı</a></li>
+                    </ul>
+                </li>
+                <li><a href="#arama-islemleri">Arama İşlemleri</a>
+                    <ul>
+                        <li><a href="#tumu-arama">Tüm Stokları Arama</a></li>
+                        <li><a href="#mevcut-arama">Sadece Mevcut Stokları Arama</a></li>
+                    </ul>
+                </li>
+                <li><a href="#sonuc-tablosu">Sonuç Tablosu ve Stok Durumları</a>
+                    <ul>
+                        <li><a href="#tablo-sutunlari">Tablo Sütunları ve Anlamları</a></li>
+                        <li><a href="#detay-goruntuleme">Detay Görüntüleme</a></li>
+                        <li><a href="#agac-yapisi">Ağaç Yapısını Kullanma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#excel-aktarim">Excel'e Aktarma</a></li>
+                <li><a href="#sag-tik-menu">Sağ Tık Menüsü Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+            </ol>
+        </div>
+        
+        <div id="detay-goruntuleme" class="info-box">
+            <h3>Detay Görüntüleme</h3>
+            
+            <div class="step">
+                <h4>Stok Detaylarını Nasıl Görüntülersiniz:</h4>
+                <ol>
+                    <li><strong>Ana Stok Kalemini Seçme:</strong>
+                        <ul>
+                            <li>Arama sonuçlarında görüntülenen stok kalemlerinden birine tıklayın.</li>
+                            <li>Seçilen stok kalemi mavi ile vurgulanacaktır.</li>
+                            <li>Sistem, seçilen stok kalemine ait detay hareketleri yükleyecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detayları Görüntüleme:</strong>
+                        <ul>
+                            <li>Ana stok kalemi seçildikten sonra, o kaleme ait alt hareketler ağaç yapısında açılır.</li>
+                            <li>Bu alt hareketler, seçilen stok kalemine ait giriş ve çıkış detaylarını gösterir.</li>
+                            <li>Detay satırlarında yer alan bir hareket kaydına tıkladığınızda, o hareketin ayrıntılı bilgilerini içeren yeni bir pencere açılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detay Penceresini Kullanma:</strong>
+                        <ul>
+                            <li>Açılan detay penceresi, seçilen stok hareketinin tüm bilgilerini gösterir.</li>
+                            <li>Bu pencerede fiş bilgileri, miktar, tutar, tarih gibi detayları inceleyebilirsiniz.</li>
+                            <li>İncelemeniz bittiğinde pencereyi kapatabilir ve ana ekrana dönebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Detay Görüntüleme İpuçları:</h4>
+                <ul>
+                    <li>Detay görüntüleme, stok hareketlerinin kaynağını ve nedenini anlamak için çok faydalıdır.</li>
+                    <li>Bir tutarsızlık veya hata tespit ederseniz, detay sayfasındaki bilgileri not alarak muhasebe veya depo sorumlusuna iletebilirsiniz.</li>
+                    <li>Detay penceresinde gördüğünüz fiş numaralarını kullanarak ilgili belgelere ulaşabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="agac-yapisi" class="info-box">
+            <h3>Ağaç Yapısını Kullanma</h3>
+            
+            <div class="step">
+                <h4>Ağaç Yapısı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Ana Seviye (Seviye 0):</strong>
+                        <ul>
+                            <li>Arama sonuçlarında ilk görüntülenen satırlar ana seviyedir.</li>
+                            <li>Her ana seviye satırı, bir stok kalemini ve onun özet bilgilerini gösterir.</li>
+                            <li>Ana seviye satırları açık mavi (#ccccff) arka plan rengiyle gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detay Seviyesi (Seviye 1):</strong>
+                        <ul>
+                            <li>Ana seviyede bir satıra tıkladığınızda, o stok kalemine ait detay hareketler açılır.</li>
+                            <li>Detay seviyesi satırları, daha açık mavi (#ddddff) arka plan rengiyle gösterilir.</li>
+                            <li>Bu seviyede, stok kaleminin her bir hareket kaydı ayrı satırlarda listelenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ağaç Yapısını Genişletme ve Daraltma:</strong>
+                        <ul>
+                            <li>Bir ana seviye satırına tıkladığınızda, detaylar genişler ve görünür hale gelir.</li>
+                            <li>Aynı ana seviye satırına tekrar tıkladığınızda, detaylar daraltılır ve gizlenir.</li>
+                            <li>Birden fazla ana seviye satırının detaylarını aynı anda görüntüleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Ağaç Yapısı Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda sonuç varsa, sadece incelemek istediğiniz stok kalemlerinin detaylarını açın.</li>
+                    <li>İncelemeniz bittikten sonra detayları kapatarak ekranı daha düzenli hale getirebilirsiniz.</li>
+                    <li>Farklı renk tonları, hangi seviyede olduğunuzu kolayca anlamanıza yardımcı olur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="excel-aktarim" class="section">
+        <h2>Excel'e Aktarma</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sonuçları Excel'e Nasıl Aktarırsınız:</h4>
+                <ol>
+                    <li><strong>Bağlam Menüsünü Açma:</strong>
+                        <ul>
+                            <li>Sonuç tablosunda herhangi bir yere sağ tıklayın.</li>
+                            <li>"İşlemler" başlıklı bir bağlam menüsü açılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excel'e Aktarma Seçeneğini Kullanma:</strong>
+                        <ul>
+                            <li>Açılan menüde "Excele Aktar" seçeneğine tıklayın.</li>
+                            <li>Sistem, tabloda görüntülenen tüm verileri Excel formatına dönüştürecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excel Dosyasını Kaydetme:</strong>
+                        <ul>
+                            <li>İşlem tamamlandığında, tarayıcınız Excel dosyasını indirmeniz için bir pencere açacaktır.</li>
+                            <li>Dosyayı istediğiniz konuma kaydedin.</li>
+                            <li>Kaydedilen dosya, tabloda görüntülenen tüm bilgileri içerecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Excel'e Aktarma İpuçları:</h4>
+                <ul>
+                    <li>Excel'e aktarmadan önce arama kriterlerinizi daraltarak sadece ihtiyacınız olan verileri listeleyin.</li>
+                    <li>Excel dosyası, tabloda görünen sütunların yanı sıra gizli sütunlardaki bilgileri de içerebilir.</li>
+                    <li>Excel'e aktarılan dosyayı daha sonra analiz, raporlama veya arşivleme amaçlı kullanabilirsiniz.</li>
+                    <li>Excel'de filtreleme, sıralama ve formül özellikleriyle verileri daha detaylı analiz edebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sag-tik-menu" class="section">
+        <h2>Sağ Tık Menüsü Kullanımı</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sağ Tık Menüsünü Nasıl Kullanırsınız:</h4>
+                <ol>
+                    <li><strong>Menüyü Açma:</strong>
+                        <ul>
+                            <li>Sonuç tablosunun herhangi bir yerinde farenin sağ tuşuna tıklayın.</li>
+                            <li>"İşlemler" başlıklı bir bağlam menüsü açılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanılabilir Seçenekler:</strong>
+                        <ul>
+                            <li><strong>Excele Aktar:</strong> Sonuçları Excel formatında dışa aktarır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Menüyü Kapatma:</strong>
+                        <ul>
+                            <li>Bir seçenek seçtikten sonra menü otomatik olarak kapanır.</li>
+                            <li>Menüyü kullanmadan kapatmak için menü dışında herhangi bir yere tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sağ Tık Menüsü İpuçları:</h4>
+                <ul>
+                    <li>Sağ tık menüsü, tablodaki verilerle ilgili hızlı işlemler yapmanızı sağlar.</li>
+                    <li>Gelecekte menüye yeni seçenekler eklenebilir, bu nedenle zaman zaman kontrol edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Etkili Kullanım İçin İpuçları:</h4>
+                <ol>
+                    <li><strong>Arama Stratejileri:</strong>
+                        <ul>
+                            <li>Belirli bir stok kodu arıyorsanız, doğrudan Hesap Kodu alanına yazın.</li>
+                            <li>Tam adını bilmediğiniz stoklar için, adın bir kısmını yazarak arama yapabilirsiniz.</li>
+                            <li>Önce genel bir arama yapıp sonra sonuçları daraltmak daha etkili olabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verimli Çalışma:</strong>
+                        <ul>
+                            <li>Sık kullandığınız arama kriterlerini not alın, böylece hızlıca aynı aramayı tekrarlayabilirsiniz.</li>
+                            <li>Tablodaki önemli bilgileri Excel'e aktararak daha sonra kullanmak üzere saklayabilirsiniz.</li>
+                            <li>Çok sayıda sonuç varsa, "Mevcut" butonu ile aramayı daraltmak ekranı daha yönetilebilir hale getirir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun Giderme:</strong>
+                        <ul>
+                            <li>Arama sonuç vermiyorsa, arama kriterlerinizi genişletin veya daha az kriter kullanın.</li>
+                            <li>Yanlış sonuçlar alıyorsanız, tarih aralığını kontrol edin.</li>
+                            <li>Sistem yavaş çalışıyorsa, daha spesifik arama kriterleri kullanmayı deneyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Çok geniş tarih aralıkları seçmek sistemin yavaşlamasına neden olabilir.</li>
+                    <li>Onaylanmamış stok hareketleri gerçek stok miktarını etkileyebilir, bu değerlere dikkat edin.</li>
+                    <li>Excel'e aktardığınız verilerin gizlilik gerektiren bilgiler içerebileceğini unutmayın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yararlı Kısayollar ve Teknikler:</h4>
+                <ul>
+                    <li>Liste içinde hızlıca gezinmek için fare tekerleğini kullanabilirsiniz.</li>
+                    <li>Detaylı bilgi gerektiren bir stok kalemi bulduğunuzda, o kalemle ilgili fiş ve belge numaralarını not alın.</li>
+                    <li>Düzenli olarak stok durumlarını kontrol etmek, envanter yönetimini daha verimli hale getirir.</li>
+                    <li>Önemli stok kalemlerini izlemek için periyodik raporlar oluşturun ve bunları karşılaştırın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Stok Durumları ekranı, kurumunuzdaki stokların durumunu izlemek, filtrelemek ve raporlamak için güçlü bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Programı etkin bir şekilde kullanarak stok takibi, envanter kontrolü ve raporlama işlemlerinizi kolaylaştırabilirsiniz.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru tarih aralıklarını seçin.</li>
+                    <li>Arama yapmadan önce kriterleri dikkatlice belirleyin.</li>
+                    <li>Detaylı analiz için Excel'e aktarma özelliğini kullanın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Stok Durumları" ekranı, kurumunuzdaki stokların durum bilgilerini görüntülemek, filtrelemek ve raporlamak için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir müdürlük veya ambardaki stok durumlarını görüntüleme</li>
+                <li>Stok hesap koduna veya adına göre arama yapma</li>
+                <li>Belirli bir tarih aralığındaki stok hareketlerini inceleme</li>
+                <li>Giriş ve çıkış fiş türlerine göre filtreleme</li>
+                <li>Stok miktarlarını ve tutarlarını detaylı şekilde görüntüleme</li>
+                <li>Sonuçları Excel'e aktarma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu program size şu bilgileri sağlar:</p>
+                <ul>
+                    <li>Devirle gelen stok miktarı ve tutarı</li>
+                    <li>Dönem içinde giren stok miktarı ve tutarı</li>
+                    <li>Toplam stok miktarı ve tutarı</li>
+                    <li>Dönem içinde çıkan stok miktarı ve tutarı</li>
+                    <li>Kalan stok miktarı ve tutarı</li>
+                    <li>Onaylanmamış gelen ve giden stok miktarları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Stok Durumları" başlığı yer alır.</li>
+                            <li>Bu bölüm açık mavi renkli bir şerit içinde görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Kriterleri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, açık mavi arka planlı bir bölümde arama kriterleri yer alır.</li>
+                            <li>Bu bölüm, müdürlük, ambar, hesap kodu, hesap adı, tarih aralığı ve fiş türü seçimlerini yapabileceğiniz alanları içerir.</li>
+                            <li>Alanlar üç satır halinde düzenlenmiştir.</li>
+                            <li>Sağ tarafta "Tümü" ve "Mevcut" olmak üzere iki arama butonu bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuç Tablosu Bölümü:</strong>
+                        <ul>
+                            <li>Arama kriterleri bölümünün altında, ekranın büyük bir kısmını kaplayan sonuç tablosu yer alır.</li>
+                            <li>Bu tablo, stok bilgilerini ağaç yapısında görüntüler.</li>
+                            <li>Tablo, arama sonucunda bulunan stokları ve detaylarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Bilgi Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alan bu bölüm, program ile ilgili ek bilgiler içerebilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgi:</h4>
+                <p>Tablodaki renkli yazılar ve değerler, stok durumunu hızlıca analiz etmenize yardımcı olur:</p>
+                <ul>
+                    <li>Mavi renkli değerler: Devirle gelen stok bilgilerini gösterir.</li>
+                    <li>Yeşil renkli değerler: Dönem içinde giren veya onaylanmamış gelen stok bilgilerini gösterir.</li>
+                    <li>Kırmızı renkli değerler: Hesap kodları veya onaylanmamış giden stok bilgilerini gösterir.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Başlangıç Tarihi otomatik olarak içinde bulunulan yılın 1 Ocak tarihine ayarlanır.</li>
+                    <li>Bitiş Tarihi otomatik olarak içinde bulunulan yılın 31 Aralık tarihine ayarlanır.</li>
+                    <li>Sonuç tablosu boş olarak görüntülenir, arama yapmanız gerekir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arama-kriterleri" class="section">
+        <h2>Arama Kriterleri ve Kullanımları</h2>
+        
+        <div id="mudurluk-ambar" class="info-box">
+            <h3>Müdürlük ve Ambar Seçimi</h3>
+            
+            <div class="step">
+                <h4>Müdürlük ve Ambar Seçim Alanları:</h4>
+                <ol>
+                    <li><strong>Müdürlük:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Arama kriterleri bölümünün ilk satırında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır kutu (dropdown) şeklindedir ve yanında seçim ve temizleme butonları bulunur.</li>
+                            <li><strong>Kullanım:</strong> Stok durumları görüntülenecek müdürlüğü seçmek için kullanılır.</li>
+                            <li><strong>İşlev:</strong> Seçilen müdürlüğe bağlı ambarlar, Ambar alanında listelenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ambar:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Müdürlük alanının sağında, aynı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır kutu (dropdown) şeklindedir ve yanında seçim ve temizleme butonları bulunur.</li>
+                            <li><strong>Kullanım:</strong> Seçilen müdürlüğe bağlı ambarlardan birini seçmek için kullanılır.</li>
+                            <li><strong>İşlev:</strong> Seçilen ambara ait stok durumlarını filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Müdürlük ve Ambar Nasıl Seçilir:</h4>
+                <ol>
+                    <li>Müdürlük alanının yanındaki seçim butonuna (üçgen simgeli buton) tıklayın.</li>
+                    <li>Açılan listeden ilgili müdürlüğü seçin.</li>
+                    <li>Seçim yaptıktan sonra, Ambar alanında o müdürlüğe bağlı ambarlar listelenir.</li>
+                    <li>Ambar alanının yanındaki seçim butonuna tıklayın.</li>
+                    <li>Açılan listeden ilgili ambarı seçin.</li>
+                    <li>Seçimlerinizi temizlemek isterseniz, alanın yanındaki temizleme butonuna (X simgeli buton) tıklayabilirsiniz.</li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Seçim İpuçları:</h4>
+                <ul>
+                    <li>Tüm müdürlüklere ait stokları görmek için Müdürlük alanını boş bırakabilirsiniz.</li>
+                    <li>Belirli bir müdürlüğün tüm ambarlarındaki stokları görmek için Müdürlük seçip Ambar alanını boş bırakabilirsiniz.</li>
+                    <li>Daha spesifik sonuçlar için hem Müdürlük hem de Ambar seçimi yapabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="hesap-bilgileri" class="info-box">
+            <h3>Hesap Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Hesap Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Hesap Kodu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Arama kriterleri bölümünün ikinci satırında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Aramak istediğiniz stok hesap kodunu yazabilirsiniz.</li>
+                            <li><strong>İşlev:</strong> Yazılan koda sahip stokları filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesap Adı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hesap Kodu alanının sağında, aynı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Aramak istediğiniz stok hesap adını yazabilirsiniz.</li>
+                            <li><strong>İşlev:</strong> Yazılan adı içeren stokları filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Giriş Fişi Türü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hesap Adı alanının sağında, aynı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır kutu (dropdown) şeklindedir ve yanında seçim ve temizleme butonları bulunur.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir giriş fişi türüne göre filtreleme yapmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Hesap Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Hesap Kodu alanına tam kod yazabileceğiniz gibi, kodun bir kısmını da yazabilirsiniz (örn. "2%" gibi).</li>
+                    <li>Hesap Adı alanına stok adının tamamını veya bir kısmını yazabilirsiniz. Büyük-küçük harf duyarlılığı yoktur.</li>
+                    <li>Hem kod hem de ad ile arama yaparak sonuçları daraltabilirsiniz.</li>
+                    <li>Hesap kodlarında özel karakterlerden kaçınmak en iyi uygulamadır, sistemin düzgün arama yapabilmesi için.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="fis-ve-tarih" class="info-box">
+            <h3>Fiş Türleri ve Tarih Aralığı</h3>
+            
+            <div class="step">
+                <h4>Fiş Türleri ve Tarih Alanları:</h4>
+                <ol>
+                    <li><strong>Başlangıç Tarihi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Arama kriterleri bölümünün üçüncü satırında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Tarih giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Stok hareketlerinin başlangıç tarihini belirtir.</li>
+                            <li><strong>İşlev:</strong> Bu tarihten itibaren olan stok hareketlerini görüntülemek için kullanılır.</li>
+                            <li><strong>Varsayılan Değer:</strong> İçinde bulunulan yılın 1 Ocak tarihidir (örn. "01.01.2023").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bitiş Tarihi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç Tarihi alanının sağında, aynı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Tarih giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Stok hareketlerinin bitiş tarihini belirtir.</li>
+                            <li><strong>İşlev:</strong> Bu tarihe kadar olan stok hareketlerini görüntülemek için kullanılır.</li>
+                            <li><strong>Varsayılan Değer:</strong> İçinde bulunulan yılın 31 Aralık tarihidir (örn. "31.12.2023").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Fişi Türü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Bitiş Tarihi alanının sağında, aynı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır kutu (dropdown) şeklindedir ve yanında seçim ve temizleme butonları bulunur.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir çıkış fişi türüne göre filtreleme yapmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tarih ve Fiş Türü Nasıl Seçilir:</h4>
+                <ol>
+                    <li>Başlangıç Tarihi ve Bitiş Tarihi alanlarına doğrudan tarih yazabilirsiniz (GG.AA.YYYY formatında).</li>
+                    <li>Tarih alanlarının yanındaki takvim simgesine tıklayarak açılan takvimden de tarih seçebilirsiniz.</li>
+                    <li>Giriş Fişi Türü ve Çıkış Fişi Türü alanlarının yanındaki seçim butonlarına tıklayarak açılan listeden fiş türünü seçebilirsiniz.</li>
+                    <li>Seçimlerinizi temizlemek isterseniz, alanın yanındaki temizleme butonuna (X simgeli buton) tıklayabilirsiniz.</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Başlangıç Tarihi, Bitiş Tarihinden sonraki bir tarih olmamalıdır.</li>
+                    <li>Tarih formatı "GG.AA.YYYY" şeklinde olmalıdır (örn. "15.06.2023").</li>
+                    <li>Çok geniş tarih aralıkları seçmek, sonuçların geç yüklenmesine neden olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arama-islemleri" class="section">
+        <h2>Arama İşlemleri</h2>
+        
+        <div id="tumu-arama" class="info-box">
+            <h3>Tüm Stokları Arama</h3>
+            
+            <div class="step">
+                <h4>Tüm Stokları Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Arama Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>Müdürlük ve Ambar seçimlerinizi yapın (opsiyonel).</li>
+                            <li>Hesap Kodu ve/veya Hesap Adı alanlarını doldurun (opsiyonel).</li>
+                            <li>Giriş Fişi Türü ve/veya Çıkış Fişi Türü seçimlerinizi yapın (opsiyonel).</li>
+                            <li>Başlangıç Tarihi ve Bitiş Tarihi alanlarını istediğiniz tarihlere ayarlayın veya varsayılan değerlerini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aramayı Başlatma:</strong>
+                        <ul>
+                            <li>Arama kriterleri bölümünün sağ üst köşesinde yer alan "Tümü" butonuna tıklayın.</li>
+                            <li>Buton, "Tümü" yazısı ve altında bir büyüteç simgesi şeklinde görünür.</li>
+                            <li>Butona tıkladığınızda arama işlemi başlar ve sonuçlar yüklenirken "Yükleniyor" mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuçları Görüntüleme:</strong>
+                        <ul>
+                            <li>Arama tamamlandığında, belirlediğiniz kriterlere uyan tüm stoklar (kalan miktarı sıfır olanlar dahil) sonuç tablosunda görüntülenir.</li>
+                            <li>Sonuçlar, hesap koduna göre sıralanmış şekilde gösterilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tümü Arama İpuçları:</h4>
+                <ul>
+                    <li>Bu arama seçeneği, stok miktarı sıfır olanlar da dahil olmak üzere tüm stokları gösterir.</li>
+                    <li>Envanter durumunu tam olarak görmek ve geçmiş hareketleri incelemek istediğinizde bu seçeneği kullanın.</li>
+                    <li>Sonuçlar çok fazla olduğunda, daha spesifik kriterler belirleyerek aramayı daraltabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mevcut-arama" class="info-box">
+            <h3>Sadece Mevcut Stokları Arama</h3>
+            
+            <div class="step">
+                <h4>Mevcut Stokları Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Arama Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>Müdürlük ve Ambar seçimlerinizi yapın (opsiyonel).</li>
+                            <li>Hesap Kodu ve/veya Hesap Adı alanlarını doldurun (opsiyonel).</li>
+                            <li>Giriş Fişi Türü ve/veya Çıkış Fişi Türü seçimlerinizi yapın (opsiyonel).</li>
+                            <li>Başlangıç Tarihi ve Bitiş Tarihi alanlarını istediğiniz tarihlere ayarlayın veya varsayılan değerlerini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aramayı Başlatma:</strong>
+                        <ul>
+                            <li>Arama kriterleri bölümünün sağ üst köşesinde yer alan "Mevcut" butonuna tıklayın.</li>
+                            <li>Buton, "Mevcut" yazısı ve altında bir büyüteç simgesi şeklinde görünür.</li>
+                            <li>Butona tıkladığınızda arama işlemi başlar ve sonuçlar yüklenirken "Yükleniyor" mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuçları Görüntüleme:</strong>
+                        <ul>
+                            <li>Arama tamamlandığında, belirlediğiniz kriterlere uyan ve kalan miktarı sıfırdan büyük olan stoklar sonuç tablosunda görüntülenir.</li>
+                            <li>Sonuçlar, hesap koduna göre sıralanmış şekilde gösterilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgi:</h4>
+                <p>"Mevcut" butonu ile yapılan aramada, sadece kalan miktarı sıfırdan büyük olan stoklar listelenir. Yani şu anda ambarda bulunan stoklar gösterilir.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>Mevcut Arama İpuçları:</h4>
+                <ul>
+                    <li>Güncel stok durumunu görmek istediğinizde bu seçeneği kullanın.</li>
+                    <li>Stok sayımı veya kontrol işlemleri için bu arama daha uygundur.</li>
+                    <li>Ambar görevlilerinin günlük işlemler için en çok kullanacağı arama türüdür.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc-tablosu" class="section">
+        <h2>Sonuç Tablosu ve Stok Durumları</h2>
+        
+        <div id="tablo-sutunlari" class="info-box">
+            <h3>Tablo Sütunları ve Anlamları</h3>
+            
+            <div class="step">
+                <h4>Sonuç Tablosu Bileşenleri:</h4>
+                <ol>
+                    <li><strong>Sıra Numarası:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tablonun en sol sütununda yer alır.</li>
+                            <li><strong>İçerik:</strong> Stokların sıra numaralarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesap:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Sıra numarasının sağındaki sütunda yer alır.</li>
+                            <li><strong>İçerik:</strong> Hesap kodu (kırmızı renkte) ve hesap adı (kalın yazı ile) gösterilir.</li>
+                            <li><strong>Ek Bilgi:</strong> Ambar adı varsa, sağ üst köşede mavi renkte gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Stok Birimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hesap sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Stok birimini gösterir (örn. "Adet", "Kg", "Litre" vb.).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devirle Gelen/Dönemde Giren:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Stok Birimi sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> İki satırda görüntülenir: Üstte mavi renkle devirle gelen miktar, altta yeşil renkle dönemde giren miktar gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Devirle Gelen/Dönemde Giren sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Devirle gelen ve dönemde giren miktarların toplamını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkan:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Toplam sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Dönem içinde çıkan stok miktarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kalan:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Çıkan sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Toplam miktardan çıkan miktar çıkarıldıktan sonra kalan stok miktarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onaysız Gelen/Onaysız Giden:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kalan sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> İki satırda görüntülenir: Üstte yeşil renkle onaylanmamış gelen miktar, altta kırmızı renkle onaylanmamış giden miktar gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Devir Tutarı/Dönemde Giren:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Onaysız Gelen/Onaysız Giden sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> İki satırda görüntülenir: Üstte mavi renkle devirle gelen tutarı, altta yeşil renkle dönemde giren tutarı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Tutar:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Devir Tutarı/Dönemde Giren sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Devirle gelen ve dönemde giren tutarların toplamını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkan Tutar:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Toplam Tutar sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Dönem içinde çıkan stokların tutarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kalan Tutar:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Çıkan Tutar sütununun sağında yer alır.</li>
+                            <li><strong>İçerik:</strong> Toplam tutardan çıkan tutar çıkarıldıktan sonra kalan stok tutarını gösterir.</li>
+                        </ul>
+                    </li>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İdare Taşınır Mal Yönetimi Ayrıntılı Hesap Cetveli Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İdare Taşınır Mal Yönetimi Ayrıntılı Hesap Cetveli Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#rapor-filtreleme">Rapor Filtreleme ve Veri Giriş Bölümü</a>
+                    <ul>
+                        <li><a href="#mudurluk-ambar">Müdürlük ve Ambar Seçimi</a></li>
+                        <li><a href="#hesap-yil">Hesap Kodu ve Yıl Seçimi</a></li>
+                        <li><a href="#konsolide-gorevlisi">Konsolide Görevlisi Bilgileri</a></li>
+                        <li><a href="#tarih-araligi">Tarih Aralığı Belirtme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#rapor-goruntuleme">Rapor Görüntüleme ve Sayfalama</a></li>
+                <li><a href="#rapor-yazdirma">Rapor Çıktı Alma ve Yazdırma Seçenekleri</a></li>
+                <li><a href="#csv-excel">CSV Oluşturma ve Excel'e Aktarma</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>İdare Taşınır Mal Yönetimi Ayrıntılı Hesap Cetveli programı, kurumunuzdaki taşınır malların hesap dökümlerini görüntülemenizi, raporlamanızı ve çıktı almanızı sağlayan bir araçtır. Bu programla:</p>
+            <ul>
+                <li>Belirli müdürlük veya ambara ait taşınır mal hesap dökümlerini görüntüleyebilirsiniz</li>
+                <li>Hesap koduna göre filtreleme yapabilirsiniz</li>
+                <li>Detaylı veya özet rapor alabilirsiniz</li>
+                <li>Belirli bir yıla ait kayıtları listeleyebilirsiniz</li>
+                <li>Tarih aralığına göre raporlama yapabilirsiniz</li>
+                <li>Raporu yazdırabilir, Excel'e aktarabilir veya CSV formatında dışa aktarabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Raporlamak istediğiniz müdürlük ve/veya ambar bilgisi</li>
+                    <li>Hangi taşınır hesap kodları için rapor alacağınız</li>
+                    <li>Hangi yıla ait rapor istediğiniz</li>
+                    <li>Raporu almak istediğiniz tarih aralığı (opsiyonel)</li>
+                    <li>Konsolide görevlisi bilgileri (opsiyonel)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "İDARE TAŞINIR MAL YÖNETİMİ AYRINTILI HESAP CETVELİ" başlığı yer alır</li>
+                            <li>Bu başlık koyu ve büyük punto ile ortada görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, sayfanın ortasında, iki sütunlu bir tablo halinde yer alır</li>
+                            <li>Sol sütunda alan etiketleri, sağ sütunda giriş alanları bulunur</li>
+                            <li>Müdürlük, Ambar, Hesap Kodu, Yıl, Konsolide Görevlisi ve Tarih bilgilerini girme alanlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş tablosunun en altında, ortalanmış şekilde butonlar yer alır</li>
+                            <li>"Excele Aktar" seçeneği, "Görüntüle", "Csv Oluştur" ve "Kapat" butonlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Görüntüleme Bölümü:</strong>
+                        <ul>
+                            <li>Görüntüle butonuna basıldıktan sonra rapor içeriği bu alanda gösterilir</li>
+                            <li>Rapor başlığı, idarenin bilgileri ve taşınır mal detaylarını içeren bir tablo bulunur</li>
+                            <li>Tablonun altında Taşınır Konsolide Görevlisi bilgileri ve imza alanları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfalama ve Yazdırma Butonları:</strong>
+                        <ul>
+                            <li>Rapor görüntüleme ekranının üst kısmında sayfalama butonları ve yazdırma seçenekleri bulunur</li>
+                            <li>"İlk Sayfa", "Önceki Sayfalar", "Sonraki Sayfalar", "Son Sayfa", "Yazdır", "Tüm Sayfaları Yazdır", "Sayfa Yapısı", "Rapor Ana Sayfası" ve "Kapat" butonları yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İlk olarak veri giriş ekranı görüntülenir</li>
+                    <li>Programın varsayılan olarak gösterdiği yıl değeri dışında tüm alanlar boş olarak başlar</li>
+                    <li>Rapor görüntülemek için gerekli filtreleme kriterlerini belirleyip Görüntüle butonuna basmanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rapor-filtreleme" class="section">
+        <h2>Rapor Filtreleme ve Veri Giriş Bölümü</h2>
+        <div class="info-box">
+            <p>Rapor filtreleme ve veri giriş bölümü, rapor almak istediğiniz verileri seçmenize ve filtrelemenize olanak sağlar. Bu bölüm, programın ilk açıldığında karşınıza çıkan ana bölümdür.</p>
+            
+            <div id="mudurluk-ambar" class="step">
+                <h3>Müdürlük ve Ambar Seçimi Nasıl Yapılır</h3>
+                <h4>Müdürlük Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Veri giriş tablosunun ilk satırında, en üstte yer alır</li>
+                            <li>Sol sütunda "Müdürlük" etiketi, sağ sütunda açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır liste, genişliği yaklaşık 200 piksel olan mavi tonlu bir kutudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Müdürlük Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın. Sistem, erişim yetkiniz olan müdürlüklerin listesini görüntüler</li>
+                            <li>Listede müdürlükler alfabetik sırayla (veya bazı kurumlarda kod sırasına göre) görüntülenir</li>
+                            <li>Listenin en üstünde "Müdürlük seçin..." varsayılan seçeneği yer alır</li>
+                            <li>İstediğiniz müdürlüğe fare ile tıklayarak seçim yapın</li>
+                            <li>Müdürlüğü seçtikten sonra, ambar listesi otomatik olarak seçilen müdürlüğe ait ambarlarla güncellenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Ambar Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Müdürlük satırının hemen altında, ikinci satırda yer alır</li>
+                            <li>Sol sütunda "Ambar" etiketi, sağ sütunda açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Bu liste, müdürlük açılır listesiyle aynı boyut ve stildedir</li>
+                            <li>Bu liste, seçtiğiniz müdürlüğe bağlı olarak güncellenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ambar Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Önce bir müdürlük seçin (yukarıdaki adımları izleyin)</li>
+                            <li>Müdürlük seçildikten sonra ambar listesi otomatik olarak dolar</li>
+                            <li>Açılır listeye tıklayın ve seçilen müdürlüğe ait ambarlar listeden görüntülenir</li>
+                            <li>Listenin en üstünde "Ambar Seçiniz.." varsayılan seçeneği yer alır</li>
+                            <li>İstediğiniz ambara fare ile tıklayarak seçim yapın</li>
+                            <li>Ambar seçimi yapıldığında, eğer seçilen ambara ait konsolide görevlisi bilgileri sistemde kayıtlı ise, Konsolide Görevlisi alanları otomatik olarak dolar</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Müdürlük ve Ambar seçimleri zorunlu değildir. Seçim yapılmadığında tüm müdürlük ve ambarlara ait veriler listelenir (yetkileriniz dahilinde)</li>
+                    <li>Önce müdürlük seçilmesi gerekir, aksi halde ambar listesi boş görünecektir</li>
+                    <li>Müdürlük değiştirildiğinde, ambar listesi yeni müdürlüğe göre otomatik olarak güncellenir</li>
+                    <li>Listeden göremediğiniz müdürlükler veya ambarlar için yetkiniz olmayabilir, sistem yöneticinize başvurun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Müdürlük listesindeki bir öğenin ilk harflerini klavyeden yazarak, o harflerle başlayan müdürlüğe hızlıca erişebilirsiniz</li>
+                    <li>Tüm müdürlüklere ait rapor almak için müdürlük seçimini boş bırakabilirsiniz</li>
+                    <li>Belirli bir müdürlüğün tüm ambarlarına ait rapor almak için müdürlüğü seçip, ambar seçimini boş bırakabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div id="hesap-yil" class="step">
+                <h3>Hesap Kodu ve Yıl Seçimi Nasıl Yapılır</h3>
+                <h4>Hesap Kodu Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ambar satırının hemen altında, üçüncü satırda yer alır</li>
+                            <li>Sol sütunda "Hesap Kodu" etiketi, sağ sütunda bir metin kutusu ve "Detay Göster" onay kutusu bulunur</li>
+                            <li>Metin kutusu açık gri arka plana sahiptir ve "MTextBox" adı verilen bir stil ile görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesap Kodu Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna, raporlamak istediğiniz taşınır hesap kodunu girin
+                                <ul>
+                                    <li>Örnek: 255.02.01.01 (Demirbaşlar-Büro Makineleri-Bilgisayarlar)</li>
+                                </ul>
+                            </li>
+                            <li>Belirli bir hesap kodu için filtreleme yapmak istiyorsanız, tam kod değerini girin</li>
+                            <li>Bir ana grup için rapor almak isterseniz, ana grup kodunu girin (örn: 255 - Demirbaşlar)</li>
+                            <li>Tüm taşınırlar için rapor almak isterseniz, bu alanı boş bırakın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Detay Göster Onay Kutusu Kullanımı:</strong>
+                        <ol>
+                            <li>Hesap Kodu alanının hemen sağında "Detay Göster" onay kutusu yer alır</li>
+                            <li>Bu kutu küçük bir kare şeklindedir ve yanında "Detay Göster" metni bulunur</li>
+                            <li>Bu kutu işaretlendiğinde, raporda seçilen hesap kodunun detayları (alt hesap kodları) görüntülenir</li>
+                            <li>İşaretlenmediğinde, sadece seçilen hesap kodunun özet bilgileri görüntülenir</li>
+                            <li>Onay kutusunu işaretlemek için üzerine tıklayın (bir onay işareti görünecektir)</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yıl Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hesap Kodu satırının hemen altında, dördüncü satırda yer alır</li>
+                            <li>Sol sütunda "Yıl" etiketi, sağ sütunda küçük bir metin kutusu bulunur</li>
+                            <li>Metin kutusu kısa genişlikli (yaklaşık 4 karakter genişliğinde) ve "MTextBox" stili ile görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna, raporlamak istediğiniz yılı dört haneli olarak girin (örn: 2023)</li>
+                            <li>Yıl alanı varsayılan olarak içinde bulunduğunuz yıl ile doldurulmuş olarak gelir</li>
+                            <li>Geçmiş yıllara ait raporlar için, bu değeri değiştirip istediğiniz yılı girebilirsiniz</li>
+                            <li>Sadece 4 rakam girişine izin verilir, diğer karakterler kabul edilmez</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hesap Kodu alanı boş bırakılabilir. Boş bırakıldığında tüm hesap kodları için rapor oluşturulur</li>
+                    <li>Geçerli bir hesap kodu girildiğinden emin olun, aksi halde sonuç bulunamayabilir</li>
+                    <li>Yıl alanı boş bırakılamaz ve mutlaka dört haneli olmalıdır</li>
+                    <li>Sistem, girilen yıl için veri bulunamadığında boş rapor döndürecektir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Daha spesifik bir rapor için tam hesap kodunu girin</li>
+                    <li>Genel bir bakış için hesap kodunu boş bırakın</li>
+                    <li>Detay Göster seçeneği, özellikle büyük hesap grupları için tüm alt hesapları görmek istediğinizde kullanışlıdır</li>
+                    <li>Farklı yılları karşılaştırmak için aynı kriterleri kullanarak, yıl değerini değiştirerek ardışık raporlar alabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div id="konsolide-gorevlisi" class="step">
+                <h3>Konsolide Görevlisi Bilgileri Nasıl Girilir</h3>
+                <h4>Konsolide Görevlisi Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl satırının hemen altında, beşinci satırda yer alır</li>
+                            <li>Sol sütunda "Konsolide Görevlisi" etiketi, sağ sütunda iki metin kutusu yan yana bulunur</li>
+                            <li>Sol kutucuk görevlinin adı-soyadı, sağ kutucuk ise unvanı içindir</li>
+                            <li>Her iki kutucuk da "MTextBox" stili ile görüntülenir ve yaklaşık 20 karakter genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Konsolide Görevlisi Bilgisi Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol metin kutusuna görevlinin adını ve soyadını girin</li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ metin kutusuna geçin</li>
+                            <li>Sağ metin kutusuna görevlinin unvanını girin</li>
+                            <li>Eğer daha önce bir ambar seçtiyseniz ve bu ambara ait konsolide görevlisi sistemde kayıtlı ise, bu alanlar otomatik olarak doldurulabilir</li>
+                            <li>Otomatik doldurulan bilgileri değiştirmek isterseniz, metin kutularına tıklayıp yeni bilgileri yazabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Konsolide Görevlisi bilgisi raporun alt kısmında imza bölümünde görüntülenir</li>
+                    <li>Bu alanların doldurulması zorunlu değildir, ancak resmi raporlar için doldurulması önerilir</li>
+                    <li>Raporun yazdırılıp imzalanması gerekiyorsa, bu alanları doğru bilgilerle doldurun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullandığınız konsolide görevlisi bilgilerini not alın, böylece her seferinde yeniden yazmak zorunda kalmazsınız</li>
+                    <li>Resmi olmayan veya kişisel kullanım için alınan raporlarda bu alanları boş bırakabilirsiniz</li>
+                    <li>Bir ambar seçildiğinde, konsolide görevlisi bilgilerinin otomatik doldurulup dolmadığını kontrol edin</li>
+                </ul>
+            </div>
+            
+            <div id="tarih-araligi" class="step">
+                <h3>Tarih Aralığı Belirtme Nasıl Yapılır</h3>
+                <h4>Tarih Aralığı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Konsolide Görevlisi satırının hemen altında, altıncı satırda (son satır) yer alır</li>
+                            <li>Sol sütunda "Tarih" etiketi, sağ sütunda yan yana iki tarih giriş kutusu bulunur</li>
+                            <li>Sol kutu başlangıç tarihi, sağ kutu bitiş tarihi içindir</li>
+                            <li>Her iki kutucuk da "MTextBox" stili ile görüntülenir ve yaklaşık 10 karakter genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Aralığı Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç tarihini girin
+                                <ul>
+                                    <li>Tarih formatı: GG.AA.YYYY (örn: 01.01.2023)</li>
+                                    <li>Tarih ayıraç karakteri olarak nokta (.) kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş tarihini girin
+                                <ul>
+                                    <li>Aynı tarih formatı: GG.AA.YYYY (örn: 31.12.2023)</li>
+                                    <li>Bitiş tarihi, başlangıç tarihinden sonraki bir tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih alanları boş bırakılabilir. Boş bırakıldığında, seçilen yılın tüm verileri raporlanır</li>
+                    <li>Tarih girerken doğru format kullanılmalıdır: GG.AA.YYYY</li>
+                    <li>Başlangıç tarihi, bitiş tarihinden sonraki bir tarih olmamalıdır</li>
+                    <li>Tarih aralığı, seçilen yıl ile uyumlu olmalıdır (örn: 2023 yılı seçiliyse, tarih aralığı da 2023 yılına ait olmalıdır)</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir döneme ait rapor almak için tarih aralığını kullanın (örn: birinci çeyrek için 01.01.2023-31.03.2023)</li>
+                    <li>Tüm yıl için rapor almak istiyorsanız, tarih alanlarını boş bırakabilirsiniz</li>
+                    <li>Tarih kutularında otomatik biçimlendirme özelliği olmadığından, nokta işaretlerini kendiniz girmelisiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Veri Giriş Ekranındaki Butonların Kullanımı</h3>
+            <div class="step">
+                <h4>İşlem Butonlarının Konumu ve Kullanımı:</h4>
+                <ol>
+                    <li><strong>Butonların Konumu:</strong>
+                        <ul>
+                            <li>Veri giriş tablosunun en alt satırında, tüm alanların altında, ortalanmış olarak yer alırlar</li>
+                            <li>Butonlar soldan sağa doğru yan yana sıralanmıştır</li>
+                            <li>Tüm butonlar aynı stil ile görüntülenir (gri arka plan, siyah metin, hafif 3D görünüm)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excele Aktar Onay Kutusu:</strong>
+                        <ol>
+                            <li>En solda bir onay kutusu ve yanında "Excele Aktar" metni yer alır</li>
+                            <li>Bu kutu işaretlendiğinde, Görüntüle butonuna tıklandığında raporun Excel'e aktarılmasını sağlar</li>
+                            <li>İşaretlemek için onay kutusuna tıklayın (bir onay işareti görünecektir)</li>
+                        </ol>
+                    </li>
+                    <li><strong>Görüntüle Butonu:</strong>
+                        <ol>
+                            <li>Excele Aktar onay kutusunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Görüntüle" metni yazar</li>
+                            <li>Tıklandığında, belirlediğiniz kriterlere göre raporu oluşturur ve ekranda görüntüler</li>
+                            <li>Eğer Excele Aktar onay kutusu işaretli ise, rapor Excel formatında açılır</li>
+                            <li>Kullanmak için butona tıklayın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Csv Oluştur Butonu:</strong>
+                        <ol>
+                            <li>Görüntüle butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Csv Oluştur" metni yazar</li>
+                            <li>Tıklandığında, belirlediğiniz kriterlere göre CSV formatında bir dosya oluşturur ve indirmenizi sağlar</li>
+                            <li>CSV dosyası, Sayıştay'a gönderilmek üzere formatlanan veriyi içerir</li>
+                            <li>Kullanmak için butona tıklayın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kapat Butonu:</strong>
+                        <ol>
+                            <li>En sağda yer alır</li>
+                            <li>Üzerinde "Kapat" metni yazar</li>
+                            <li>Tıklandığında, programı kapatır ve pencereyi kapatır</li>
+                            <li>Kullanmak için butona tıklayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Görüntüle butonuna tıklamadan önce, gerekli tüm filtreleme kriterlerini belirlediğinizden emin olun</li>
+                    <li>Excele Aktar onay kutusu işaretlendiğinde, rapor doğrudan Excel'de açılacaktır, ekranda önizleme görüntülenmez</li>
+                    <li>Csv Oluştur butonu, özellikle Sayıştay raporlamaları için özel formatta veri oluşturur</li>
+                    <li>Kapat butonunu kullanmadan önce, yaptığınız işlemleri kaydettiğinizden emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Raporu önce ekranda görüntüleyip kontrol ettikten sonra, Excel'e aktarmak veya CSV oluşturmak daha güvenlidir</li>
+                    <li>Büyük veri setleri için Excel'e aktarma işlemi birkaç saniye sürebilir, sabırlı olun</li>
+                    <li>ESC tuşuna basarak da programdan çıkabilirsiniz (Kapat butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-goruntuleme" class="section">
+        <h2>Rapor Görüntüleme ve Sayfalama</h2>
+        <div class="info-box">
+            <h3>Rapor Görüntüleme Ekranındaki Sayfalama Butonlarının Kullanımı</h3>
+            <div class="step">
+                <h4>Rapor Görüntüleme Ekranının Genel Yapısı:</h4>
+                <ol>
+                    <li><strong>Ekran Bölümleri:</strong>
+                        <ul>
+                            <li>Üst kısımda sayfalama ve işlem butonları bölümü</li>
+                            <li>Ortada rapor başlığı ve idarenin bilgileri</li>
+                            <li>Aşağıda rapor içeriği (tablo halinde)</li>
+                            <li>En altta toplam değerler ve imza bölümü</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor İçeriği:</strong>
+                        <ul>
+                            <li>Rapor, taşınır mal bilgilerini tablo halinde görüntüler</li>
+                            <li>Tabloda sütunlar: Taşınır Kodu, Taşınır Adı, Ölçü Birimi, Geçen Yıldan Devreden (Miktar/Tutar), Yıl İçinde Giren (Miktar/Tutar), Toplam (Miktar/Tutar), Yıl İçinde Çıkan (Miktar/Tutar), Gelecek Yıla Devreden (Miktar/Tutar)</li>
+                            <li>Her sayfada sınırlı sayıda kayıt gösterilir (varsayılan olarak 25 kayıt)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sayfalama Butonlarının Kullanımı:</h4>
+                <ol>
+                    <li><strong>Butonların Konumu:</strong>
+                        <ul>
+                            <li>Sayfalama butonları, rapor görüntüleme ekranının üst kısmında, ortada yan yana sıralanmıştır</li>
+                            <li>Butonlar soldan sağa doğru: İlk Sayfa, Önceki Sayfalar, Sonraki Sayfalar, Son Sayfa şeklinde sıralanır</li>
+                            <li>Bu butonların sağında ise yazdırma ve diğer işlem butonları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlk Sayfa Butonu:</strong>
+                        <ol>
+                            <li>En soldaki butondur, üzerinde "İlk Sayfa" yazar</li>
+                            <li>Tıklandığında, raporun ilk sayfasına gider</li>
+                            <li>Eğer zaten ilk sayfadaysanız, bu buton devre dışı (gri renkli) görünür</li>
+                        </ol>
+                    </li>
+                    <li><strong>Önceki Sayfalar Butonu:</strong>
+                        <ol>
+                            <li>İlk Sayfa butonunun sağında yer alır, üzerinde "Önceki Sayfalar" yazar</li>
+                            <li>Tıklandığında, bir önceki sayfaya gider</li>
+                            <li>Eğer ilk sayfadaysanız, bu buton devre dışı (gri renkli) görünür</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sonraki Sayfalar Butonu:</strong>
+                        <ol>
+                            <li>Önceki Sayfalar butonunun sağında yer alır, üzerinde "Sonraki Sayfalar" yazar</li>
+                            <li>Tıklandığında, bir sonraki sayfaya gider</li>
+                            <li>Eğer son sayfadaysanız, bu buton devre dışı (gri renkli) görünür</li>
+                        </ol>
+                    </li>
+                    <li><strong>Son Sayfa Butonu:</strong>
+                        <ol>
+                            <li>Sonraki Sayfalar butonunun sağında yer alır, üzerinde "Son Sayfa" yazar</li>
+                            <li>Tıklandığında, raporun son sayfasına gider</li>
+                            <li>Eğer zaten son sayfadaysanız, bu buton devre dışı (gri renkli) görünür</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sayfalama butonları, raporda birden fazla sayfa varsa aktif olur</li>
+                    <li>Sayfalar arasında geçiş yaparken, sayfanın tamamen yüklenmesini bekleyin</li>
+                    <li>Son sayfada, sayfanın altında "GENEL TOPLAM" satırı görüntülenir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Büyük raporlarda, hızlıca son sayfaya gitmek için Son Sayfa butonunu kullanabilirsiniz</li>
+                    <li>Sayfalar arasında klavye kısayolları ile de geçiş yapabilirsiniz (Page Up/Page Down tuşları)</li>
+                    <li>Her sayfanın altında o sayfaya ait toplam değerler görüntülenir, genel toplam için son sayfaya gitmelisiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-yazdirma" class="section">
+        <h2>Rapor Çıktı Alma ve Yazdırma Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Yazdırma Butonlarının Kullanımı</h3>
+            <div class="step">
+                <h4>Yazdırma ve İlgili Butonların Konumu ve Kullanımı:</h4>
+                <ol>
+                    <li><strong>Butonların Konumu:</strong>
+                        <ul>
+                            <li>Yazdırma butonları, rapor görüntüleme ekranının üst kısmında, sayfalama butonlarının sağında yer alır</li>
+                            <li>Butonlar soldan sağa doğru: Yazdır, Tüm Sayfaları Yazdır, Sayfa Yapısı, Rapor Ana Sayfası, Kapat şeklinde sıralanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdır Butonu:</strong>
+                        <ol>
+                            <li>Sayfalama butonlarının sağında, üzerinde "Yazdır" yazar</li>
+                            <li>Tıklandığında, sadece ekranda görüntülenen mevcut sayfayı yazdırma penceresine gönderir</li>
+                            <li>Yazdırma penceresi açılır ve yazıcı seçimi yapmanıza olanak tanır</li>
+                            <li>Yazıcı seçildikten sonra, "Yazdır" veya "OK" butonuna tıklayarak yazdırma işlemini başlatabilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tüm Sayfaları Yazdır Butonu:</strong>
+                        <ol>
+                            <li>Yazdır butonunun sağında, üzerinde "Tüm Sayfaları Yazdır" yazar</li>
+                            <li>İlk kez tıklandığında, bir onay mesajı görüntülenir ve toplam sayfa sayısını bildirir</li>
+                            <li>Onay mesajında "Evet" seçeneğine tıklarsanız, raporun tüm sayfaları sırayla yazdırma penceresine gönderilir</li>
+                            <li>Yazdırma işlemi tamamlandıktan sonra, butonun metni "Sonraki Tüm Sayfaları Yazdır" olarak değişir</li>
+                            <li>Bu durumda butona tıklandığında, kalan sayfalar yazdırılır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sayfa Yapısı Butonu:</strong>
+                        <ol>
+                            <li>Tüm Sayfaları Yazdır butonunun sağında, üzerinde "Sayfa Yapısı" yazar</li>
+                            <li>Tıklandığında, yazdırma öncesi sayfa yapısı ayarlarını yapabileceğiniz bir pencere açılır</li>
+                            <li>Bu pencerede kağıt boyutu, yönlendirme, kenar boşlukları gibi ayarları değiştirebilirsiniz</li>
+                            <li>Ayarları tamamladıktan sonra, "OK" butonuna tıklayarak ayarları kaydedebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Rapor Ana Sayfası Butonu:</strong>
+                        <ol>
+                            <li>Sayfa Yapısı butonunun sağında, üzerinde "Rapor Ana Sayfası" yazar</li>
+                            <li>Tıklandığında, rapor görüntüleme ekranı kapanır ve veri giriş ekranına geri dönersiniz</li>
+                            <li>Bu buton, yeni bir rapor almak için kriterleri değiştirmek istediğinizde kullanışlıdır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kapat Butonu:</strong>
+                        <ol>
+                            <li>En sağda yer alır, üzerinde "Kapat" yazar</li>
+                            <li>Tıklandığında, programı tamamen kapatır ve pencereyi kapatır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yazdırma işlemi öncesinde, Sayfa Yapısı butonuyla yazdırma ayarlarını yapmanız önerilir</li>
+                    <li>Tüm Sayfaları Yazdır butonunu kullanırken, birçok sayfa yazdırılacağını unutmayın</li>
+                    <li>Yazdırma işlemi sırasında yazdırma penceresini kapatmayın</li>
+                    <li>Rapor Ana Sayfası butonu, mevcut raporu kapatır ve kriterleri yeniden belirlemenizi gerektirir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>    
+                    <li>Yazdırmadan önce, raporu ekranda kontrol edin ve doğruluğundan emin olun</li>
+                    <li>Sayfa Yapısı'nda yatay (landscape) yönlendirme seçmek, geniş raporlar için daha uygun olabilir</li>
+                    <li>Yazıcı ayarlarında "2 sayfayı bir sayfaya sığdır" seçeneği, kağıt tasarrufu sağlayabilir</li>
+                    <li>Tüm raporu yazdırmak yerine, sadece gerekli sayfaları yazdırmak için sayfalama butonlarıyla ilgili sayfaya gidip Yazdır butonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="csv-excel" class="section">
+        <h2>CSV Oluşturma ve Excel'e Aktarma</h2>
+        <div class="info-box">
+            <h3>CSV ve Excel Raporları Nasıl Oluşturulur</h3>
+            <div class="step">
+                <h4>Excel'e Aktarma:</h4>
+                <ol>
+                    <li><strong>Excel'e Aktarma Adımları:</strong>
+                        <ol>
+                            <li>Veri giriş ekranında, raporlamak istediğiniz kriterleri belirleyin (Müdürlük, Ambar, Hesap Kodu, Yıl vb.)</li>
+                            <li>Ekranın alt kısmında, "Görüntüle" butonunun sol tarafında yer alan "Excele Aktar" onay kutusunu işaretleyin (kutuya tıklayarak onay işareti koyun)</li>
+                            <li>"Görüntüle" butonuna tıklayın</li>
+                            <li>Sistem, verileri Excel formatında hazırlar ve tarayıcınızda Excel uygulamasını açar</li>
+                            <li>Açılan Excel dosyasında rapor verileri düzenli bir şekilde görüntülenir</li>
+                            <li>Excel uygulamasında gerekli düzenlemeleri yapabilir ve dosyayı bilgisayarınıza kaydedebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Excel Raporunun İçeriği:</strong>
+                        <ul>
+                            <li>Excel dosyası, ekranda görüntülenen rapor ile aynı içeriğe sahiptir</li>
+                            <li>Raporda başlık, idarenin bilgileri, taşınır mal detayları ve toplam değerler yer alır</li>
+                            <li>Excel formatı, verileri filtreleme, sıralama ve ek hesaplamalar yapma olanağı tanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>CSV Oluşturma:</h4>
+                <ol>
+                    <li><strong>CSV Oluşturma Adımları:</strong>
+                        <ol>
+                            <li>Veri giriş ekranında, raporlamak istediğiniz kriterleri belirleyin (Müdürlük, Ambar, Hesap Kodu, Yıl vb.)</li>
+                            <li>Konsolide Görevlisi alanına bilgileri girin (CSV raporlarında bu bilgi kullanılır)</li>
+                            <li>"Excele Aktar" onay kutusunun yanında yer alan "Csv Oluştur" butonuna tıklayın</li>
+                            <li>Sistem, taşınır kesin hesap cetveli verilerini CSV formatında hazırlar</li>
+                            <li>Tarayıcınız, "tasinirkesinhesapcetvel.csv" adlı dosyayı indirmenizi isteyecektir</li>
+                            <li>Dosyayı bilgisayarınıza kaydedin</li>
+                        </ol>
+                    </li>
+                    <li><strong>CSV Dosyasının İçeriği ve Kullanımı:</strong>
+                        <ul>
+                            <li>CSV dosyası, Sayıştay'a gönderilmek üzere özel bir formatta oluşturulur</li>
+                            <li>Dosya, "|" (dikey çizgi) karakteriyle ayrılmış alanlar içerir</li>
+                            <li>CSV dosyası, yıl, kurum adı, kurum kodu, hesap düzeyi, hesap kodu, hesap adı, birim adı, miktar ve tutar bilgilerini içerir</li>
+                            <li>Bu dosya, Sayıştay raporlamaları veya diğer sistemlere veri aktarımı için kullanılabilir</li>
+                            <li>CSV dosyası, Excel veya benzeri bir program ile açılarak incelenebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>CSV oluşturmadan önce, Konsolide Görevlisi bilgilerini girdiğinizden emin olun, bu bilgi CSV dosyasında yer alır</li>
+                    <li>Excel'e aktarma işlemi sırasında, Excel programının bilgisayarınızda kurulu olması gerekir</li>
+                    <li>CSV dosyası özel bir formatta oluşturulduğundan, formatı değiştirmeden Sayıştay'a göndermeniz önerilir</li>
+                    <li>CSV dosyasını Excel'de açtığınızda, metin biçimlendirme sorunları yaşayabilirsiniz (Türkçe karakterler vb.)</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Excel raporları, veriler üzerinde ek analiz yapmak veya özel formatlamalar uygulamak istediğinizde kullanışlıdır</li>
+                    <li>CSV dosyaları, özellikle Sayıştay'a veri gönderimi veya başka sistemlere veri aktarımı için idealdir</li>
+                    <li>CSV dosyasını Excel'de açarken, UTF-8 karakter kodlaması seçeneğini kullanarak Türkçe karakter sorunlarını önleyebilirsiniz</li>
+                    <li>İndirilen CSV dosyasını, belirli bir klasörde düzenli olarak arşivlemeniz, ileride referans olarak kullanmanızı kolaylaştırır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Programı Daha Verimli Kullanmak İçin İpuçları</h3>
+            <div class="step">
+                <h4>Klavye Kısayolları ve Hızlı Kullanım:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Bir form alanında iken, sonraki alana geçmek için kullanılabilir</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Kapat butonu ile aynı işlevi görür)</li>
+                    <li><strong>Açılır listelerde ilk harf yazma:</strong> Açılır listelerde, istediğiniz değerin ilk harfini yazarak o değere hızlıca ulaşabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Raporda Veri Görüntülenmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Görüntüle butonuna tıkladığınızda boş bir rapor görüntüleniyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Seçtiğiniz müdürlük, ambar, hesap kodu ve yıl için veri olduğundan emin olun</li>
+                                    <li>Hesap kodunu doğru girdiğinizi kontrol edin</li>
+                                    <li>Tarih aralığının, seçilen yıl ile uyumlu olduğunu kontrol edin</li>
+                                    <li>Daha geniş bir filtreleme yaparak (örn: hesap kodunu boş bırakarak) tekrar deneyin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Excel'e Aktarma Çalışmıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Excele Aktar onay kutusunu işaretleyip Görüntüle butonuna tıkladığınızda Excel açılmıyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Bilgisayarınızda Excel programının kurulu olduğundan emin olun</li>
+                                    <li>Tarayıcınızın açılır pencere (pop-up) engelleme ayarlarını kontrol edin ve gerekirse izin verin</li>
+                                    <li>Geçici bir çözüm olarak, önce ekranda görüntüleyip, ardından raporu tarayıcıdan kopyalayıp Excel'e yapıştırabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Türkçe Karakter Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Raporda Türkçe karakterler (ç, ğ, ı, ö, ş, ü) hatalı görüntüleniyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Tarayıcınızın karakter kodlamasını UTF-8 veya ISO-8859-9 olarak ayarlayın</li>
+                                    <li>Excele Aktar seçeneğini kullanarak raporu Excel'de açın, orada Türkçe karakterler genellikle doğru görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Rapor yazdırıldığında bazı sütunlar kesiliyor veya sayfa düzeni bozuluyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Sayfa Yapısı butonunu kullanarak, yazdırma yönünü "Yatay" (Landscape) olarak ayarlayın</li>
+                                    <li>Kenar boşluklarını azaltarak daha fazla içeriğin sığmasını sağlayın</li>
+                                    <li>Yazdırmadan önce sayfa önizleme seçeneğini kullanarak düzeni kontrol edin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Büyük veri setleri için rapor oluşturulurken program donuyor veya çok yavaş çalışıyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Daha spesifik filtreleme kriterleri belirleyerek, daha küçük veri setleri oluşturmaya çalışın</li>
+                                    <li>İşlem tamamlanana kadar bekleyin, büyük raporlar için işlem süresi uzayabilir</li>
+                                    <li>Tarayıcınızı yenileyin ve tekrar deneyin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Rapor oluşturmadan önce, tüm filtreleme kriterlerini doğru şekilde belirlediğinizden emin olun</li>
+                    <li>Sık kullandığınız filtreleme kriterlerini not alın veya kaydedin</li>
+                    <li>Büyük raporları parçalara bölerek (örn: müdürlük bazında veya belirli hesap kodları için ayrı ayrı) daha hızlı ve yönetilebilir raporlar oluşturun</li>
+                    <li>Resmi raporlar için, Konsolide Görevlisi bilgilerini doğru ve eksiksiz girin</li>
+                    <li>Arşivleme amacıyla, önemli raporları hem Excel hem de CSV formatında saklayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>İdare Taşınır Mal Yönetimi Ayrıntılı Hesap Cetveli programı, kurumunuzdaki taşınır malların hesap dökümlerini görüntülemenizi, raporlamanızı ve çıktı almanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Veri giriş ekranında filtreleme kriterleri belirleme (Müdürlük, Ambar, Hesap Kodu, Yıl, Tarih Aralığı)</li>
+                <li>Konsolide Görevlisi bilgilerini girme</li>
+                <li>Rapor görüntüleme, sayfalama ve yazdırma</li>
+                <li>Excel'e aktarma ve CSV formatında dışa aktarma</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+            
+            <p>Not: Bu program, T.M.Y. Örnek No:16 formatında rapor oluşturmaktadır ve resmi raporlama gereksinimlerine uygundur.</p>
+        </div>
+    </div>
+</body>
+</html>

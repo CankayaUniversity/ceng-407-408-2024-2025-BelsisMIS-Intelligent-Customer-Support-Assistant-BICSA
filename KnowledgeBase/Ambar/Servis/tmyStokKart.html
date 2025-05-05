@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taşınır Kod Listesi Düzenleme Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Taşınır Kod Listesi Düzenleme Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#hesap-kodu">Hesap Kodu Seçimi</a></li>
+                <li><a href="#seviye1-kodu">Seviye 1 Kodu Seçimi</a></li>
+                <li><a href="#seviye2-kodu">Seviye 2 Kodu Seçimi</a></li>
+                <li><a href="#seviye3-kodu">Seviye 3 ve Üstü Kodların Seçimi</a></li>
+                <li><a href="#butonlar">Bul ve Düzenle Butonlarının Kullanımı</a></li>
+                <li><a href="#entegrasyon">Entegrasyon Kodu İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Taşınır Kod Listesi Düzenleme programı, kurum bünyesindeki taşınır malların kodlarını düzenlemek ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Farklı seviyedeki taşınır kodlarını görüntüleyebilirsiniz</li>
+                <li>Kodlar arasında hiyerarşik gezinme yapabilirsiniz</li>
+                <li>Taşınır kodlarını filtreleyerek arayabilirsiniz</li>
+                <li>Kodlar üzerinde düzenleme işlemleri yapabilirsiniz</li>
+                <li>Entegrasyon kodlarını görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Taşınır kodların hiyerarşik yapısı (hesap kodu, seviye 1, seviye 2 gibi)</li>
+                    <li>Hangi seviyede işlem yapmak istediğiniz</li>
+                    <li>İşlem yapmak istediğiniz taşınır malzemenin kod bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde mavi tonlu bir şeritte "Taşınır Kod Listesi Düzenleme" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup ekranın genişliğini kaplar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kod Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Başlık şeridinin hemen altında başlayan ana çalışma alanı</li>
+                            <li>Hesap Kodu seçim alanıyla başlar</li>
+                            <li>Ardından Seviye 1, Seviye 2 ve diğer seviyelerin seçim alanları sıralanır</li>
+                            <li>Her seviye için etiket ve seçim kutusu yan yana bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları:</strong>
+                        <ul>
+                            <li>Seviye 3 ve üstü kodların yanında "Bul" ve "Düzenle" butonları</li>
+                            <li>Seviye 2 kodu alanının yanında "Entegrasyon Kodu" butonu</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gizli Elementler:</strong>
+                        <ul>
+                            <li>Ekranda görünmeyen, sistem tarafından kullanılan çeşitli alanlar</li>
+                            <li>Bu alanlar kullanıcı tarafından görülmez ve değiştirilmez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm seçim listeleri boş olarak başlar</li>
+                    <li>İlk olarak Hesap Kodu alanından seçim yapmanız gerekir</li>
+                    <li>Aşağı doğru hiyerarşik bir sırayla işlem yapmalısınız (önce Hesap Kodu, sonra Seviye 1, sonra Seviye 2...)</li>
+                    <li>Her seviyede seçim yaptığınızda bir sonraki seviyenin seçenekleri yüklenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hesap-kodu" class="section">
+        <h2>Hesap Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Hesap Kodu Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Hesap Kodu Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, ekranın üst kısmında yer alır</li>
+                            <li>"Hesap Kodu:" etiketi sol tarafta kalın (bold) yazı tipiyle görünür</li>
+                            <li>Etiketin hemen sağında açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır liste genişliği yaklaşık 300 piksel olup, ekranın sol tarafında konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Hesap Kodu açılır listesine fare ile tıklayın, liste açılacaktır</li>
+                            <li>Açılan listede taşınır hesap kodları ve açıklamaları birlikte görünür (örn. "150-Tüketim Malzemeleri")</li>
+                            <li>Liste içeriği aşağıdaki hesap gruplarından oluşur:
+                                <ul>
+                                    <li>150 kodlu hesaplar (Tüketim Malzemeleri)</li>
+                                    <li>253 kodlu hesaplar (Tesis Makine ve Cihazlar)</li>
+                                    <li>254 kodlu hesaplar (Taşıtlar)</li>
+                                    <li>255 kodlu hesaplar (Demirbaşlar)</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz hesap koduna tıklayarak seçin</li>
+                            <li>Seçim yaptığınız anda, sistem otomatik olarak sayfayı yenileyecek ve Seviye 1 Kodu listesini seçtiğiniz hesap koduna göre güncelleyecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hesap kodu seçmeden diğer seviye kodlarına erişemezsiniz</li>
+                    <li>Hesap kodu değiştirdiğinizde, daha önce seçmiş olduğunuz tüm seviye kodları sıfırlanır</li>
+                    <li>Sistem sadece 150, 253, 254 ve 255 ile başlayan hesap kodlarını listeler</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listeyi açtığınızda klavyeden ilgili hesap kodunun ilk rakamını yazarak (örn. "1" veya "2") listede hızlı gezinme yapabilirsiniz</li>
+                    <li>Açılır listedeki hesap kodlarının anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz:
+                        <ul>
+                            <li>150: Tüketim Malzemeleri</li>
+                            <li>253: Tesis Makine ve Cihazlar</li>
+                            <li>254: Taşıtlar</li>
+                            <li>255: Demirbaşlar</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="seviye1-kodu" class="section">
+        <h2>Seviye 1 Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Seviye 1 Kodu Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Seviye 1 Kodu Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hesap Kodu alanının hemen altında, bir satır aşağıda yer alır</li>
+                            <li>"Seviye 1 Kodu:" etiketi sol tarafta kalın (bold) yazı tipiyle görünür</li>
+                            <li>Etiketin hemen sağında açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır liste, Hesap Kodu listesinin alt kısmında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Öncelikle Hesap Kodu alanından bir hesap kodu seçmiş olmalısınız</li>
+                            <li>Seviye 1 Kodu açılır listesine fare ile tıklayın, liste açılacaktır</li>
+                            <li>Açılan listede, seçtiğiniz Hesap Koduna bağlı olan Seviye 1 kodları ve açıklamaları görünür</li>
+                            <li>Liste, kod ve açıklama formatında gösterilir (örn. "001-Kırtasiye Malzemeleri")</li>
+                            <li>İstediğiniz Seviye 1 koduna tıklayarak seçin</li>
+                            <li>Seçim yaptığınız anda, sistem otomatik olarak sayfayı yenileyecek ve Seviye 2 Kodu listesini seçtiğiniz Seviye 1 koduna göre güncelleyecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Seviye 1 kodu listesi, yalnızca Hesap Kodu seçildikten sonra içerik ile dolar</li>
+                    <li>Seviye 1 kodu değiştirdiğinizde, daha önce seçmiş olduğunuz tüm alt seviye kodları (Seviye 2 ve üzeri) sıfırlanır</li>
+                    <li>Eğer listede hiç kod görünmüyorsa, seçtiğiniz Hesap Koduna ait Seviye 1 kodu tanımlanmamış olabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listeyi açtığınızda klavyeden ilgili seviye kodunun ilk rakamını yazarak listede hızlı gezinme yapabilirsiniz</li>
+                    <li>Daha önce çalıştığınız kodları not etmek, benzer işlemlerde hızlı bulmayı sağlar</li>
+                    <li>Tab tuşunu kullanarak Hesap Kodundan Seviye 1 Koduna hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="seviye2-kodu" class="section">
+        <h2>Seviye 2 Kodu Seçimi</h2>
+        <div class="info-box">
+            <h3>Seviye 2 Kodu Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Seviye 2 Kodu Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Seviye 1 Kodu alanının hemen altında, bir satır aşağıda yer alır</li>
+                            <li>"Seviye 2 Kodu:" etiketi sol tarafta kalın (bold) yazı tipiyle görünür</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Aynı satırın en sağında "Entegrasyon Kodu" butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Öncelikle Hesap Kodu ve Seviye 1 Kodu alanlarından seçim yapmış olmalısınız</li>
+                            <li>Seviye 2 Kodu açılır listesine fare ile tıklayın, liste açılacaktır</li>
+                            <li>Açılan listede, seçtiğiniz Seviye 1 Koduna bağlı olan Seviye 2 kodları ve açıklamaları görünür</li>
+                            <li>Liste, kod ve açıklama formatında gösterilir (örn. "001-Yazı Kağıdı")</li>
+                            <li>İstediğiniz Seviye 2 koduna tıklayarak seçin</li>
+                            <li>Seçim yaptığınız anda, sistem otomatik olarak sayfayı yenileyecek ve seviye değişikliğine bağlı olarak:
+                                <ul>
+                                    <li>Eğer seçtiğiniz koda ait alt seviye varsa, Seviye 3 Kodu listesi görüntülenecektir</li>
+                                    <li>Daha önceden seçilmiş olan daha alt seviyedeki kodlar (varsa) sıfırlanacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Seviye 2 kodu listesi, yalnızca Seviye 1 Kodu seçildikten sonra içerik ile dolar</li>
+                    <li>Seviye 2 kodu değiştirdiğinizde, daha önce seçmiş olduğunuz tüm alt seviye kodları sıfırlanır</li>
+                    <li>Eğer listede hiç kod görünmüyorsa, seçtiğiniz Seviye 1 Koduna ait Seviye 2 kodu tanımlanmamış olabilir</li>
+                    <li>Seviye 2 Kodu seçildikten sonra, bu koda ait entegrasyon kodlarını görmek için "Entegrasyon Kodu" butonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullandığınız seviye 2 kodlarını not edin, böylece gelecekteki işlemlerde hızlıca bulabilirsiniz</li>
+                    <li>Entegrasyon kodlarına ihtiyacınız olduğunda, Seviye 2 kodunu seçtikten sonra Entegrasyon Kodu butonunu kullanabilirsiniz</li>
+                    <li>Tab tuşunu kullanarak Seviye 1 Kodundan Seviye 2 Koduna hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="seviye3-kodu" class="section">
+        <h2>Seviye 3 ve Üstü Kodların Seçimi</h2>
+        <div class="info-box">
+            <h3>Seviye 3 ve Üstü Kodlar Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Seviye 3 ve Üstü Kod Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Seviye 2 Kodu alanının hemen altında, aşağıya doğru yeni alanlar olarak görünür</li>
+                            <li>"Seviye 3 Kodu:", "Seviye 4 Kodu:" vb. etiketler sol tarafta kalın (bold) yazı tipiyle görünür</li>
+                            <li>Etiketlerin sağında geniş, yüksek bir liste kutusu bulunur (yaklaşık 300 piksel genişliğinde ve 110 piksel yüksekliğinde)</li>
+                            <li>Her seviye satırının sağında "Düzenle" butonu, Seviye 3 satırında ayrıca "Bul" butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seviye 3 Kodu Seçimi:</strong>
+                        <ol>
+                            <li>Öncelikle Hesap Kodu, Seviye 1 Kodu ve Seviye 2 Kodu alanlarından seçim yapmış olmalısınız</li>
+                            <li>Seviye 3 Kodu liste kutusunda, seçtiğiniz Seviye 2 Koduna bağlı taşınır kodları ve açıklamaları görünür</li>
+                            <li>Liste daha büyüktür ve birden fazla satırı aynı anda görebilirsiniz</li>
+                            <li>İstediğiniz Seviye 3 koduna tıklayarak seçin</li>
+                            <li>Seçim yaptığınız anda, sistem otomatik olarak sayfayı yenileyecek ve Seviye 4 Kodu listesi (varsa) güncellenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Seviye 4 ve Üstü Kodların Seçimi:</strong>
+                        <ol>
+                            <li>Seviye 3 Kodu seçtikten sonra, eğer alt seviye varsa, Seviye 4 Kodu liste kutusu görüntülenir</li>
+                            <li>Seviye 4 Kodu liste kutusunda, seçtiğiniz Seviye 3 Koduna bağlı taşınır kodları ve açıklamaları görünür</li>
+                            <li>İstediğiniz Seviye 4 koduna tıklayarak seçin</li>
+                            <li>Bu şekilde sistem yeterli seviye varsa Seviye 5 ve üstü kodlar için de yeni liste kutuları oluşturacaktır</li>
+                            <li>Her seviyede seçim yaptığınızda, bir sonraki alt seviye listesi (varsa) otomatik olarak güncellenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Bul Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Seviye 3 Kodu liste kutusunun sağında "Bul" adlı küçük bir buton bulunur</li>
+                            <li>"Bul" butonu, Seviye 3 Kodu liste kutusuna göre hizalanmış, sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bul Butonunun Kullanımı:</strong>
+                        <ol>
+                            <li>Öncelikle Seviye 2 Kodu seçilmiş olmalıdır</li>
+                            <li>"Bul" butonuna tıklayın</li>
+                            <li>Açılan küçük bir pencerede arama kriteri girmeniz istenecektir</li>
+                            <li>Aradığınız taşınır kodunun açıklama metnini veya bir kısmını yazın</li>
+                            <li>"Tamam" veya "Ara" butonuna tıklayın</li>
+                            <li>Sistem, yeni bir pencerede arama kriterinize uyan taşınır kodlarını listeleyecektir</li>
+                            <li>Listeden istediğiniz kodu seçerek ana ekrana dönebilirsiniz</li>
+                            <li>Seçtiğiniz kod, Seviye 3 Kodu alanına otomatik olarak yerleştirilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Seviye 3 ve üstü kodların görüntülenmesi için mutlaka Seviye 2 Kodu seçilmiş olmalıdır</li>
+                    <li>Üst seviye bir kod seçtiğinizde, o seviyede daha önce işlem görmüş (kullanılmış) bir kod ise alt seviyelerine erişemeyebilirsiniz</li>
+                    <li>Liste kutularında çok sayıda kod varsa, listenin tamamını görmek için kaydırma çubuğunu kullanmanız gerekebilir</li>
+                    <li>Her seviyedeki liste kutusu, sadece o seviyedeki kodları gösterir</li>
+                    <li>Her seviye kodunu değiştirdiğinizde, o kodun alt seviyelerindeki seçimler sıfırlanır</li>
+        <li>Bul butonu sadece Seviye 3 için mevcuttur, diğer seviyelerde bu butonu göremezsiniz</li>
+                </ul>
+            </div>
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda kod arasında arama yapmak için "Bul" butonunu kullanmak daha pratiktir</li>
+                    <li>Liste kutularında bir kodun üzerine tıkladığınızda klavyeden ilk harflerini yazarak listeyi hızlıca filtreleyebilirsiniz</li>
+                    <li>Seviye 3 ve üstü kodlar arasında gezinirken, her seviyedeki kod seçiminin sizi daha spesifik ürün gruplarına yönlendirdiğini unutmayın</li>
+                </ul>
+            </div>
+            </div>
+            
+            <div id="butonlar" class="section">
+                <h2>Bul ve Düzenle Butonlarının Kullanımı</h2>
+                <div class="info-box">
+                    <h3>Bul Butonu Nasıl Kullanılır</h3>
+                    
+                    <div class="step">
+                        <h4>Bul Butonunun Detaylı Kullanımı:</h4>
+                        <ol>
+                            <li><strong>Buton Konumu:</strong>
+                                <ul>
+                                    <li>Seviye 3 Kodu liste kutusunun sağında, "Düzenle" butonunun sol tarafında yer alır</li>
+                                    <li>Üzerinde "Bul" yazısı bulunan dikdörtgen şeklinde bir butondur</li>
+                                    <li>Yalnızca Seviye 3 Kodu satırında bulunur</li>
+                                </ul>
+                            </li>
+                            <li><strong>Bul Butonu ile Arama Yapma:</strong>
+                                <ol>
+                                    <li>Öncelikle Hesap Kodu, Seviye 1 ve Seviye 2 kodlarını seçmiş olmalısınız</li>
+                                    <li>"Bul" butonuna tıklayın</li>
+                                    <li>"Taşınır Kod Listesi Filtreleme" adlı küçük bir pencere açılacaktır</li>
+                                    <li>Bu penceredeki metin kutusuna aramak istediğiniz taşınır kodunun açıklama metnini veya bir kısmını yazın
+                                        <ul>
+                                            <li>Örneğin: "Yazı Makinesi", "Toner" veya "Kağıt" gibi</li>
+                                        </ul>
+                                    </li>
+                                    <li>Metin girdikten sonra penceredeki "Tamam" butonuna tıklayın</li>
+                                    <li>Sistem "Taşınır Kod Listesi" adında yeni bir pencere açarak, arama kriterinize uyan tüm kodları listeleyecektir</li>
+                                    <li>Bu listede kodun numarası ve açıklaması sütunlar halinde görüntülenir</li>
+                                    <li>Listeden kullanmak istediğiniz koda tıklayarak seçin</li>
+                                    <li>Seçim yaptıktan sonra bu pencere kapanacak ve seçtiğiniz kod ana ekrandaki Seviye 3 Kodu alanına otomatik olarak yerleştirilecektir</li>
+                                    <li>Bu işlem sonrasında sistem sayfayı yenileyecek ve Seviye 4 Kodu listesi (varsa) güncellenecektir</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>Bul Butonu ile İlgili Önemli Uyarılar:</h4>
+                        <ul>
+                            <li>Bul butonu yalnızca Seviye 2 Kodu seçildikten sonra aktif hale gelir</li>
+                            <li>Arama yaparken çok genel terimler kullanırsanız (örn. "A", "E" gibi), çok fazla sonuç dönebilir</li>
+                            <li>Arama sonuçları en fazla 500 kayıt gösterir. Daha spesifik terimler kullanmanız önerilir</li>
+                            <li>Arama, seçtiğiniz üst seviye kodlarla sınırlıdır (yani sadece seçtiğiniz Seviye 2 Koduna bağlı olan Seviye 3 kodları arasında arama yapar)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>Bul Butonu Kullanım İpuçları:</h4>
+                        <ul>
+                            <li>Arama sonuçlarını sınırlamak için mümkün olduğunca spesifik arama terimleri kullanın</li>
+                            <li>Aramanızda birden fazla kelime kullanabilirsiniz (örn. "Lazer Yazıcı")</li>
+                            <li>Aradığınız kelime, açıklamanın herhangi bir yerinde geçebilir, başta veya sonda olması gerekmez</li>
+                            <li>Eğer tam olarak hangi kodu aradığınızı bilmiyorsanız, Bul butonu en iyi arkadaşınızdır</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>Düzenle Butonu Nasıl Kullanılır</h3>
+                    
+                    <div class="step">
+                        <h4>Düzenle Butonunun Kullanımı:</h4>
+                        <ol>
+                            <li><strong>Buton Konumu:</strong>
+                                <ul>
+                                    <li>Her seviye (Seviye 3 ve üstü) liste kutusunun sağında yer alır</li>
+                                    <li>Üzerinde "Düzenle" yazısı bulunan dikdörtgen şeklinde bir butondur</li>
+                                    <li>Seviye 3 için Bul butonunun sağında, diğer seviyeler için liste kutusunun hemen sağında konumlanmıştır</li>
+                                </ul>
+                            </li>
+                            <li><strong>Düzenle Butonu ile Kod Düzenleme:</strong>
+                                <ol>
+                                    <li>İlgili seviyeyi seçtikten sonra (yani Seviye 3 için Seviye 2 kodunu seçmiş olmalısınız)</li>
+                                    <li>O seviyedeki "Düzenle" butonuna tıklayın</li>
+                                    <li>"Taşınır Stok Kart Düzenleme" adlı yeni bir pencere açılacaktır</li>
+                                    <li>Bu pencerede, seçili olan üst seviye koda bağlı alt seviye kodların listesi ve düzenleme seçenekleri bulunur</li>
+                                    <li>Pencerede şu işlemleri yapabilirsiniz:
+                                        <ul>
+                                            <li>Mevcut kodları görüntüleme</li>
+                                            <li>Yeni kod ekleme</li>
+                                            <li>Mevcut kodları düzenleme</li>
+                                            <li>Kod silme (kullanılmamış kodlar için)</li>
+                                        </ul>
+                                    </li>
+                                    <li>İşlemlerinizi tamamladıktan sonra "Kaydet" veya "Kapat" butonuna tıklayarak bu pencereyi kapatabilirsiniz</li>
+                                    <li>Ana ekrana döndüğünüzde, yaptığınız değişikliklerin yansıması için sayfayı yenilemeniz gerekebilir</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>Düzenle Butonu ile İlgili Önemli Uyarılar:</h4>
+                        <ul>
+                            <li>Düzenle butonu sadece ilgili üst seviye kod seçildiğinde aktif hale gelir</li>
+                            <li>İşlem görmüş (kullanılmış) kodlarda bazı düzenleme işlemleri yapılamayabilir</li>
+                            <li>Eğer bir kod daha önce herhangi bir işlemde kullanılmışsa, alt kodlarına erişilemeyebilir ve düzenleme kısıtlı olabilir</li>
+                            <li>Kod düzenleme işlemleri sistem genelinde etkilidir, bu nedenle dikkatli olunmalıdır</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>Düzenle Butonu Kullanım İpuçları:</h4>
+                        <ul>
+                            <li>Kod düzenleme işlemlerinden önce, o kodun kullanım durumunu kontrol edin</li>
+                            <li>Yeni kodlar eklerken mevcut kod yapısına uygun kodlar oluşturun</li>
+                            <li>Kod düzenleme işlemleri genellikle yetkilendirilmiş kullanıcılar tarafından yapılmalıdır</li>
+                            <li>Önemli değişikliklerden önce sistem yöneticinize danışmanız önerilir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="entegrasyon" class="section">
+                <h2>Entegrasyon Kodu İşlemleri</h2>
+                <div class="info-box">
+                    <h3>Entegrasyon Kodu Nasıl Görüntülenir</h3>
+                    
+                    <div class="step">
+                        <h4>Entegrasyon Kodu Butonu Kullanımı:</h4>
+                        <ol>
+                            <li><strong>Buton Konumu:</strong>
+                                <ul>
+                                    <li>Seviye 2 Kodu alanının sağında yer alır</li>
+                                    <li>Üzerinde "Entegrasyon Kodu" yazısı bulunan dikdörtgen şeklinde bir butondur</li>
+                                    <li>Seviye 2 Kodu açılır listesinin hemen sağında konumlanmıştır</li>
+                                </ul>
+                            </li>
+                            <li><strong>Entegrasyon Kodu Görüntüleme Adımları:</strong>
+                                <ol>
+                                    <li>Öncelikle Hesap Kodu, Seviye 1 ve Seviye 2 kodlarını seçmiş olmalısınız</li>
+                                    <li>"Entegrasyon Kodu" butonuna tıklayın</li>
+                                    <li>Eğer Seviye 2 Kodu seçili değilse, sistem "Öncelikle entegrasyon kodunu görmek istediğiniz 2. seviye kodu seçiniz" uyarısı verecektir</li>
+                                    <li>Seviye 2 Kodu seçili ise, "Taşınır Entegrasyon Kodu" adlı yeni bir pencere açılacaktır</li>
+                                    <li>Bu pencerede, seçtiğiniz Seviye 2 Koduna ait entegrasyon kodları ve açıklamaları görüntülenir</li>
+                                    <li>İşleminizi tamamladıktan sonra pencereyi kapatabilirsiniz</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4>Entegrasyon Kodu ile İlgili Önemli Uyarılar:</h4>
+                        <ul>
+                            <li>Entegrasyon Kodu butonu, sadece Seviye 2 Kodu seçildiğinde aktif hale gelir</li>
+                            <li>Entegrasyon kodları, muhasebe sistemleri ile entegrasyonda kullanılan kodlardır</li>
+                            <li>Bu kodlar genellikle sadece görüntüleme amaçlıdır, düzenleme yapılamaz</li>
+                            <li>Her Seviye 2 Kodunun entegrasyon kodu olmayabilir</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <h4>Entegrasyon Kodu Kullanım İpuçları:</h4>
+                        <ul>
+                            <li>Entegrasyon kodlarını, muhasebe departmanı ile iletişimde kullanabilirsiniz</li>
+                            <li>Bazı raporlarda entegrasyon kodlarına göre sınıflandırma yapılabilir</li>
+                            <li>Entegrasyon kodlarını not almak, diğer sistemler ile veri alışverişinde faydalı olabilir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                <div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için kullanılır</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için kullanılır</li>
+                <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                <li><strong>ESC:</strong> Açık olan pencereyi kapatmak için kullanılır</li>
+                <li><strong>Alt + İlk Harf:</strong> Bazı butonları etkinleştirmek için kullanabilirsiniz (örn. Alt+B: Bul butonu)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Liste Kutularında Pratik Gezinme:</h4>
+            <ul>
+                <li><strong>İlk Harfle Gezinme:</strong> Liste açıkken, klavyeden bir harf yazarak o harfle başlayan ilk öğeye gidebilirsiniz</li>
+                <li><strong>Sayı Yazarak Gezinme:</strong> Hesap kodlarında, liste açıkken klavyeden rakam yazarak ilgili kodlara hızlıca gidebilirsiniz</li>
+                <li><strong>Kaydırma Çubuğu:</strong> Uzun listelerde, farenin tekerleğini veya sağdaki kaydırma çubuğunu kullanarak gezinebilirsiniz</li>
+                <li><strong>Açılır Liste Filtresi:</strong> Açılır listelerde, ilk karakterleri yazarak listeyi daraltabilirsiniz</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Kullanılan Kod Bilgilerini Not Edin:</h4>
+            <ul>
+                <li>Sık kullandığınız kodların tam yolunu not edin (örn. 150 > 002 > 003 > 004)</li>
+                <li>Bu notlar, benzer işlemlerde hızlıca navigasyon yapmanızı sağlayacaktır</li>
+                <li>Özellikle spesifik malzeme kodlarını bir referans listesi olarak saklayın</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>"Bu kod işlem gördüğü için alt kodlarına erişilemez" Uyarısı:</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Bir seviye kodunu seçtiğinizde bu uyarıyı alıyorsunuz.</li>
+                        <li><strong>Neden:</strong> Seçtiğiniz kod daha önce bir işlemde (taşınır işlem, demirbaş kaydı veya taşınır istek) kullanılmıştır.</li>
+                        <li><strong>Çözüm:</strong> Bu kod için alt seviye kodlara erişim mümkün olmadığından, daha yüksek bir seviyede işlem yapmanız veya farklı bir kod seçmeniz gerekir. Eğer bu koda bağlı alt kodlara mutlaka erişmeniz gerekiyorsa, sistem yöneticinizle iletişime geçin.</li>
+                    </ul>
+                </li>
+                <li><strong>Listede Hiç Kod Görünmüyor:</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Bir seviye kodu seçtikten sonra bir alt seviyede hiç kod görünmüyor.</li>
+                        <li><strong>Neden:</strong> Seçtiğiniz üst seviye koda bağlı alt seviye kod tanımlanmamış olabilir.</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Doğru üst seviye kodu seçtiğinizden emin olun</li>
+                                <li>Eğer yetkili bir kullanıcıysanız, "Düzenle" butonunu kullanarak bu seviyeye yeni kodlar ekleyebilirsiniz</li>
+                                <li>Yetkili değilseniz, sistem yöneticinize başvurarak yeni kod tanımlanmasını talep edin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Sayfa Yenilendiğinde Seçimler Kaybolur:</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Her seviye seçiminde sayfa yenileniyor ve üst seviye seçimleriniz dışındaki seçimler sıfırlanıyor.</li>
+                        <li><strong>Neden:</strong> Bu sistemin normal davranışıdır. Üst seviye kod değiştiğinde, alt seviyelerin içeriği de değişeceği için sıfırlanır.</li>
+                        <li><strong>Çözüm:</strong> Yukarıdan aşağıya doğru sırayla seçim yapın ve üst seviye kodları değiştirmemeye özen gösterin. Eğer üst seviye kodu değiştirirseniz, alt seviyeleri tekrar seçmeniz gerekecektir.</li>
+                    </ul>
+                </li>
+                <li><strong>"Öncelikle entegrasyon kodunu görmek istediğiniz 2. seviye kodu seçiniz" Uyarısı:</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Entegrasyon Kodu butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                        <li><strong>Neden:</strong> Entegrasyon Kodu görüntülemek için öncelikle bir Seviye 2 Kodu seçmeniz gerekmektedir.</li>
+                        <li><strong>Çözüm:</strong> Sırasıyla Hesap Kodu, Seviye 1 Kodu ve Seviye 2 Kodunu seçtikten sonra Entegrasyon Kodu butonuna tıklayın.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Taşınır Kod Listesi hiyerarşik bir yapıya sahiptir, her zaman yukarıdan aşağıya doğru ilerleyin</li>
+                <li>Kod düzenleme işlemleri genellikle yetkilendirilmiş kullanıcılar tarafından yapılmalıdır</li>
+                <li>Bir kod işlem gördüyse (kullanıldıysa), alt kodlarına erişim kısıtlanabilir</li>
+                <li>Entegrasyon Kodu bilgileri muhasebe entegrasyonu için önemlidir, bu kodları dikkatle not edin</li>
+                <li>Taşınır kodları hakkında tereddüt yaşarsanız, mutlaka sistem yöneticinize danışın</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Taşınır Kod Arama Stratejileri:</h4>
+            <ul>
+                <li><strong>Kesin Kodu Biliyorsanız:</strong> Sırasıyla üst seviye kodlarını seçerek doğrudan hedefe ilerleyin</li>
+                <li><strong>Yaklaşık Bir Fikriniz Varsa:</strong> Üst seviye kodları seçtikten sonra, liste kutularında göz gezdirin</li>
+                <li><strong>Sadece Açıklamayı Biliyorsanız:</strong> Seviye 3 için "Bul" butonunu kullanarak açıklama metninde arama yapın</li>
+                <li><strong>Tamamen Emin Değilseniz:</strong> Hesap kodundan başlayarak (150, 253, 254, 255), adım adım seviye kodlarını inceleyerek ilerleyin</li>
+                <li><strong>Sık Kullanılan Kodlar İçin:</strong> Kendinize bir referans listesi oluşturun ve bu listeyi el altında bulundurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Taşınır Kod Listesi Düzenleme programı, taşınır malzeme kodlarını görüntülemek, aramak ve düzenlemek için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Temel taşınır kod yapısı ve hiyerarşisi</li>
+            <li>Hesap Kodu, Seviye 1, Seviye 2 ve daha üst seviye kodların seçimi</li>
+            <li>Bul butonu ile taşınır kod araması yapma</li>
+            <li>Düzenle butonu ile kodları düzenleme</li>
+            <li>Entegrasyon Kodu görüntüleme</li>
+            <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        
+        <div class="tip-box">
+            <p><strong>Son Öneri:</strong> Taşınır kodları karmaşık ve çok seviyeli olabilir. Zamanla bu kodları daha iyi tanıyacak ve hızlıca gezinebileceksiniz. Sık kullandığınız kodları not etmek ve sistem mantığını kavramak, işlerinizi önemli ölçüde kolaylaştıracaktır.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

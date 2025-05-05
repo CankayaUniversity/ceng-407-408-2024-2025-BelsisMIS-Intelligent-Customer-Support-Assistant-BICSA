@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Personel Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#personel-arama">Personel Arama</a></li>
+                <li><a href="#personel-listeleme">Personel Listeleme ve Gezinme</a></li>
+                <li><a href="#personel-islemler">Personel İşlemleri</a>
+                    <ul>
+                        <li><a href="#personel-ekleme">Personel Ekleme</a></li>
+                        <li><a href="#personel-duzenleme">Personel Düzenleme</a></li>
+                        <li><a href="#personel-silme">Personel Silme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#sayfa-gezinme">Sayfalarda Gezinme</a></li>
+                <li><a href="#kullanici-secme">Belsis.Net Kullanıcısı Seçme</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Personel Tanımları" ekranı, kurumunuzdaki personel bilgilerinin girilmesi, güncellenmesi ve görüntülenmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel bilgilerini (T.C. Kimlik No, Ad Soyad, Ünvan) tanımlama ve güncelleme</li>
+                <li>Personeli Belsis.Net kullanıcısı ile ilişkilendirme</li>
+                <li>Mevcut personel bilgilerini listeleme ve arama</li>
+                <li>Personel bilgilerini silme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Eklemek istediğiniz personelin T.C. Kimlik Numarası</li>
+                    <li>Personelin Adı ve Soyadı</li>
+                    <li>Personelin Ünvanı (zorunlu değil ama önerilir)</li>
+                    <li>Eğer varsa, personelin Belsis.Net kullanıcı bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi (uiPastelCaption) renkli bir şeritte "Personel Tanımları" başlığı yer alır.</li>
+                            <li>Bu başlık, ekranın üst kısmında kolayca görülebilir şekilde konumlandırılmıştır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, açık mavi bir arka plan üzerinde (uiPastelToolBar) arama alanı bulunur.</li>
+                            <li>Sol tarafta "Adı Soyadı :" etiketi, yanında geniş bir metin kutusu ve sağ tarafta arama butonu yer alır.</li>
+                            <li>Arama butonu üzerinde bir büyüteç simgesi (goSearch.png) bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Arama bölümünün altında, ekranın büyük bir kısmını kaplayan personel listesi yer alır.</li>
+                            <li>Liste gümüş renkli bir kenarlık içinde yer alır ve kaydırma çubuğuna sahiptir.</li>
+                            <li>Liste sütunları şunlardır: "T.C. Kimlik Numarası" (ana sütun), "Adı Soyadı", "Ünvanı" ve "Belsis.Net Kullanıcısı".</li>
+                            <li>Tüm sütun başlıkları kalın yazı tipi ile belirtilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, listenin hemen altında açık mavi bir şerit (uiPastelToolBar) içinde işlem butonları bulunur.</li>
+                            <li>Sol köşede personel ekleme butonu ("+" simgesi, listAdd.png)</li>
+                            <li>Orta kısımda sayfalama kontrolleri</li>
+                            <li>Sağ köşede personel silme butonu ("-" simgesi, listRemove.png)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Mevcut personel kayıtları alfabetik sırayla (Adı Soyadı'na göre) listelenir.</li>
+                    <li>Her sayfada maksimum 15 kayıt gösterilir (RecordPerPage: 15).</li>
+                    <li>İmleç "Adı Soyadı" arama kutusunda konumlanır.</li>
+                    <li>Ekranın alt kısmında kayıt ve sayfa bilgileri görüntülenir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="personel-arama" class="section">
+        <h2>Personel Arama</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Personel Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Arama Bölümünü Kullanma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlığın hemen altında "Adı Soyadı :" etiketi yanında geniş bir metin kutusu bulunur.</li>
+                            <li>Bu metin kutusuna aramak istediğiniz personelin adını ya da soyadını (veya bir kısmını) yazın.</li>
+                            <li>Metin kutusunun boyutu ekran genişliğine göre ayarlanmıştır ve büyük yazı tipiyle (font-size: 16px) kullanılır.</li>
+                            <li>Metin kutusunun sağında küçük bir büyüteç (arama) simgesi olan buton bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aramayı Başlatma:</strong>
+                        <ul>
+                            <li>Arama yapmak için büyüteç simgeli butona tıklayın.</li>
+                            <li>Alternatif olarak, arama kutusuna bilgiyi girdikten sonra klavyeden Enter tuşuna basabilirsiniz.</li>
+                            <li>Arama başladığında ekranda "Yükleniyor.!" mesajlı bir gösterge (belIndicator) görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Sonuçları:</strong>
+                        <ul>
+                            <li>Arama tamamlandığında, girdiğiniz metni içeren tüm personel kayıtları liste halinde gösterilir.</li>
+                            <li>Arama sonuçları personel adı içinde aradığınız metni içeren tüm kayıtları gösterecektir (SQL sorgusunda "%arama_metni%" kullanılır).</li>
+                            <li>Çok sayıda sonuç olduğunda, sayfalar halinde gösterilir ve ekranın alt kısmındaki sayfalama kontrollerini kullanarak diğer sayfalara geçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Arama İpuçları:</h4>
+                <ul>
+                    <li>Arama yaparken adın veya soyadın tam halini yazmak zorunda değilsiniz, bir kısmını yazmanız da yeterlidir.</li>
+                    <li>Örneğin, "Ahmet" yazarsanız, adında "Ahmet" geçen tüm personeli görebilirsiniz.</li>
+                    <li>Arama kutusunu tamamen boş bırakıp arama yaparsanız, tüm personel kayıtları listelenecektir.</li>
+                    <li>Arama kutusu içindeki metni temizlemek için içeriği seçip Delete tuşuna basabilirsiniz.</li>
+                    <li>Çok sayıda personel kaydı olduğunda, aramayı kullanmak listeleme işlemini hızlandıracaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="personel-listeleme" class="section">
+        <h2>Personel Listeleme ve Gezinme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Personel Listesi Özellikleri:</h4>
+                <ol>
+                    <li><strong>Liste Sütunları:</strong>
+                        <ul>
+                            <li>Liste dört ana sütundan oluşur:</li>
+                            <ul>
+                                <li><strong>T.C. Kimlik Numarası:</strong> Ana sütun olarak solda bulunur.</li>
+                                <li><strong>Adı Soyadı:</strong> İkinci sütun, 250 piksel genişliğindedir.</li>
+                                <li><strong>Ünvanı:</strong> Üçüncü sütun, 250 piksel genişliğindedir.</li>
+                                <li><strong>Belsis.Net Kullanıcısı:</strong> Dördüncü sütun, 250 piksel genişliğindedir.</li>
+                            </ul>
+                            <li>Tüm sütun başlıkları kalın yazı tipi ile belirtilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Seçme:</strong>
+                        <ul>
+                            <li>Listede herhangi bir personele tıklayarak o personeli seçebilirsiniz (commandClick özelliği aktiftir).</li>
+                            <li>Seçilen personel satırı vurgulanır (genellikle arka planı farklı renkte görünür).</li>
+                            <li>Personeli seçtiğinizde "getActiveNode" komutu çalışır ve bu personel üzerinde düzenleme yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Görünümü:</strong>
+                        <ul>
+                            <li>Liste bir kaydırma çubuğuyla (overflow-y: scroll) donatılmıştır, böylece çok sayıda kayıt olduğunda aşağı-yukarı kaydırarak tümünü görebilirsiniz.</li>
+                            <li>Liste içinde tablo görünümünde (gridMode) düzenlenmiş satırlar bulunur.</li>
+                            <li>Liste içeriği ekran alanını maksimum kullanacak şekilde otomatik boyutlandırılır (autoLayout özelliği aktiftir).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Listeleme İpuçları:</h4>
+                <ul>
+                    <li>Personel listesinde satıra tıklayarak personeli seçebilirsiniz.</li>
+                    <li>Personeli seçtikten sonra alt kısımdaki butonları kullanarak düzenleme veya silme işlemlerini gerçekleştirebilirsiniz.</li>
+                    <li>Listenin alt kısmında görünen kayıt bilgisi (örneğin "kayıt: 1 - 15 / 45"), mevcut sayfada görüntülenen kayıt aralığını ve toplam kayıt sayısını gösterir.</li>
+                    <li>Liste kaydırma çubuğuyla aşağı-yukarı hareket ettirilebilir, ancak soldaki sütun başlıkları sabit kalır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="personel-islemler" class="section">
+        <h2>Personel İşlemleri</h2>
+        
+        <div id="personel-ekleme" class="info-box">
+            <h3>Personel Ekleme</h3>
+            
+            <div class="step">
+                <h4>Yeni Personel Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Ekleme İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, listenin altındaki araç çubuğunun sol tarafında "+" simgeli (listAdd.png) bir düğme bulunur.</li>
+                            <li>Fare imlecini bu düğmenin üzerine getirdiğinizde "personel ekle" açıklaması belirir.</li>
+                            <li>Bu düğmeye tıklayarak personel ekleme penceresini (doPersonelEkle fonksiyonu) açabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ekleme Formunun Açılması:</strong>
+                        <ul>
+                            <li>Ekleme butonuna tıkladığınızda ekranın ortasında bir pencere açılır (uiModalBox).</li>
+                            <li>Bu pencerenin başlığında "Personel Tanımı Ekleme" yazar (tdEkleHeader).</li>
+                            <li>Pencere genişliği 450 piksel, yüksekliği 200 pikseldir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Formu Doldurma:</strong>
+                        <ul>
+                            <li>Açılan formda sırasıyla şu alanlar bulunur:</li>
+                            <ul>
+                                <li><strong>T.C. Kimlik Numarası:</strong> Sol tarafta etiket, sağda metin giriş alanı.</li>
+                                <li><strong>Adı Soyadı:</strong> Sol tarafta etiket, sağda metin giriş alanı.</li>
+                                <li><strong>Ünvanı:</strong> Sol tarafta etiket, sağda metin giriş alanı.</li>
+                                <li><strong>Belsis.Net Kullanıcısı:</strong> Sol tarafta etiket, sağda metin giriş alanı ve yanında arama ve temizleme butonları.</li>
+                            </ul>
+                            <li>T.C. Kimlik Numarası ve Adı Soyadı alanları zorunludur (doKontrol fonksiyonu bunları kontrol eder).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Belsis.Net Kullanıcısı Seçimi:</strong>
+                        <ul>
+                            <li>Belsis.Net Kullanıcısı alanının sağında bir arama (büyüteç) düğmesi bulunur.</li>
+                            <li>Bu düğmeye tıklayarak kullanıcı seçme penceresini açabilirsiniz (secKullanici fonksiyonu).</li>
+                            <li>Kullanıcı seçme işlemi için <a href="#kullanici-secme">Belsis.Net Kullanıcısı Seçme</a> bölümüne bakınız.</li>
+                            <li>Alanın yanında ayrıca bir temizleme (X) düğmesi de bulunur, bu düğmeye tıklayarak seçilmiş kullanıcıyı kaldırabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm gerekli bilgileri girdikten sonra, formun alt kısmındaki "Kaydet" düğmesine (disket simgesi, goSave.png) tıklayın.</li>
+                            <li>Eğer zorunlu alanları doldurmadıysanız "Eklenecek Bilgi Boş Geçilemez!" uyarısı alırsınız.</li>
+                            <li>Tüm bilgiler doğru ise, yeni personel kaydedilir ve liste güncellenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal Etme:</strong>
+                        <ul>
+                            <li>Ekleme işleminden vazgeçmek isterseniz, formun alt kısmındaki "Vazgeç" düğmesine (çarpı simgesi, goCancel.png) tıklayabilirsiniz.</li>
+                            <li>Bu işlem ekleme penceresini kapatır (doEkleVazgec fonksiyonu) ve ana ekrana geri dönersiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>T.C. Kimlik Numarası ve Adı Soyadı alanları zorunludur, boş bırakılamaz.</li>
+                    <li>Ünvan alanı zorunlu olmasa da doldurulması önerilir (kaynak kodda zorunlu değil, ancak işlevsellik için önemlidir).</li>
+                    <li>Personel, istenirse Belsis.Net kullanıcısı ile ilişkilendirilebilir ancak bu zorunlu değildir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Ekleme İpuçları:</h4>
+                <ul>
+                    <li>Alanlar arasında geçiş yapmak için Tab tuşunu kullanabilirsiniz.</li>
+                    <li>Adı ve soyadı yazarken dikkatli olun, bu bilgiler aramalar için kullanılacaktır.</li>
+                    <li>Birden fazla personel ekleyecekseniz, her kayıttan sonra form temizlenir ve yeni kayıt için hazır hale gelir.</li>
+                    <li>Personel eklemek için yeniden "+" butonuna tıklamanız yeterlidir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="personel-duzenleme" class="info-box">
+            <h3>Personel Düzenleme</h3>
+            
+            <div class="step">
+                <h4>Personel Bilgileri Nasıl Düzenlenir:</h4>
+                <ol>
+                    <li><strong>Düzenlenecek Personeli Seçme:</strong>
+                        <ul>
+                            <li>Öncelikle listeden düzenlemek istediğiniz personele tıklayarak seçin.</li>
+                            <li>Seçilen personelin satırı vurgulanacaktır (getActiveNode fonksiyonu çalışır).</li>
+                            <li>Personeli seçtikten sonra satıra çift tıklayarak düzenleme işlemini başlatabilirsiniz (commandEvent fonksiyonu ile doPersonelDuzenle çalışır).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzenleme Penceresinin Açılması:</strong>
+                        <ul>
+                            <li>Personele çift tıkladığınızda "Personel Tanımı Düzenleme" başlıklı bir pencere açılır (tdEkleHeader).</li>
+                            <li>Bu pencere, ekleme penceresine benzer ancak mevcut personel bilgileri dolu olarak gelir (showDuzenle fonksiyonu).</li>
+                            <li>Pencere genişliği 450 piksel, yüksekliği 200 pikseldir (uiModalBox).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ul>
+                            <li>Formda görüntülenen mevcut bilgileri değiştirebilirsiniz:</li>
+                            <ul>
+                                <li><strong>T.C. Kimlik Numarası:</strong> Personelin T.C. kimlik numarasını değiştirebilirsiniz.</li>
+                                <li><strong>Adı Soyadı:</strong> Personelin adını ve soyadını düzenleyebilirsiniz.</li>
+                                <li><strong>Ünvanı:</strong> Personelin ünvan bilgisini değiştirebilirsiniz.</li>
+                                <li><strong>Belsis.Net Kullanıcısı:</strong> Personelin ilişkilendirildiği kullanıcıyı değiştirebilirsiniz.</li>
+                            </ul>
+                            <li>Zorunlu alanları (T.C. Kimlik Numarası ve Adı Soyadı) boş bırakamazsınız.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Belsis.Net Kullanıcısını Değiştirme:</strong>
+                        <ul>
+                            <li>Mevcut kullanıcıyı değiştirmek için, alanın sağındaki arama (büyüteç) düğmesine tıklayabilirsiniz.</li>
+                            <li>Açılan pencereden yeni bir kullanıcı seçebilirsiniz (secKullanici fonksiyonu).</li>
+                            <li>Kullanıcı bilgisini tamamen kaldırmak için, alanın sağındaki temizle (X) düğmesine tıklayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikleri yaptıktan sonra, formun alt kısmındaki "Kaydet" düğmesine (disket simgesi, goSave.png) tıklayın (doEkleOnay fonksiyonu).</li>
+                            <li>Zorunlu alanlar dolu ise, değişiklikler kaydedilir ve liste güncellenir.</li>
+                            <li>Güncelleme işlemi tamamlandığında form kapanır ve ana listeye geri dönersiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal Etme:</strong>
+                        <ul>
+                            <li>Değişikliklerden vazgeçmek isterseniz, formun alt kısmındaki "Vazgeç" düğmesine (çarpı simgesi, goCancel.png) tıklayabilirsiniz (doEkleVazgec fonksiyonu).</li>
+                            <li>Bu işlem düzenleme penceresini kapatır ve değişiklikler kaydedilmez.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Düzenleme penceresini açmak için önce listeden bir personel seçmeniz gerekir.</li>
+                    <li>Personel seçilmeden düzenleme işlemi başlatılamaz, "Düzenlemek için Personel Seçilmedi.!" uyarısı alırsınız.</li>
+                    <li>Zorunlu alanları boş bırakırsanız, "Eklenecek Bilgi Boş Geçilemez!" uyarısı alırsınız ve değişiklikler kaydedilmez.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Düzenleme İpuçları:</h4>
+                <ul>
+                    <li>Sadece değiştirmek istediğiniz alanları güncelleyin, diğerlerini olduğu gibi bırakabilirsiniz.</li>
+                    <li>Bir alanın içeriğini tamamen silmek için, içindeki metni seçip Delete tuşuna basabilirsiniz.</li>
+                    <li>Değişiklik yaparken dikkatli olun, özellikle T.C. Kimlik Numarası gibi kritik bilgileri doğru girdiğinizden emin olun.</li>
+                    <li>Personel bilgilerini düzenlemek için personeli seçip çift tıklayarak da düzenleme penceresini açabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="personel-silme" class="info-box">
+            <h3>Personel Silme</h3>
+            
+            <div class="step">
+                <h4>Personel Kaydı Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Silinecek Personeli Seçme:</strong>
+                        <ul>
+                            <li>Listeden silmek istediğiniz personele tıklayarak seçin.</li>
+                            <li>Seçilen personelin satırı vurgulanacaktır (getActiveNode fonksiyonu çalışır).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, listenin altındaki araç çubuğunun sağ tarafında "-" simgeli (listRemove.png) bir düğme bulunur.</li>
+                            <li>Fare imlecini bu düğmenin üzerine getirdiğinizde "personeli sil" açıklaması belirir.</li>
+                            <li>Personeli seçtikten sonra bu düğmeye tıklayarak silme işlemini başlatabilirsiniz (doPersonelSil fonksiyonu).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onaylama:</strong>
+                        <ul>
+                            <li>Silme düğmesine tıkladığınızda "Personel Tanımı Silinecek.! Emin misiniz?" şeklinde bir onay mesajı görüntülenir (uiSoruSor fonksiyonu).</li>
+                            <li>Silme işlemini onaylamak için "Evet" düğmesine tıklayın.</li>
+                            <li>İptal etmek için "Hayır" düğmesine tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Sonrası:</strong>
+                        <ul>
+                            <li>Silme işlemi onaylandıktan sonra, personel kaydı sistemden tamamen silinir (tmySilPersonel işlemi).</li>
+                            <li>Liste otomatik olarak güncellenir (refreshPersonel fonksiyonu) ve silinen personel artık görüntülenmez.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemini başlatmak için önce bir personel seçmeniz gerekir.</li>
+                    <li>Personel seçilmeden silme işlemi başlatılamaz, "Silmek için Personel Tanımı Seçilmedi.!" uyarısı alırsınız.</li>
+                    <li>Silme işlemi geri alınamaz! Silinen kayıtlar sistemden tamamen kaldırılır.</li>
+                    <li>Sistemde aktif olarak kullanılan bir personeli silmek, bağlantılı verilerde sorunlara yol açabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Silme İpuçları:</h4>
+                <ul>
+                    <li>Silme işlemi öncesinde, doğru personeli seçtiğinizden emin olun.</li>
+                    <li>Silmeden önce personel bilgilerini kontrol etmek için personele çift tıklayıp düzenleme penceresini açabilirsiniz.</li>
+                    <li>Emin olmadığınız durumlarda, silme işlemini onay ekranında "Hayır" seçeneği ile iptal edin.</li>
+                    <li>Personel silindikten sonra, aynı T.C. kimlik numarasıyla yeni bir personel eklenebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sayfa-gezinme" class="section">
+        <h2>Sayfalarda Gezinme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sayfalama Kontrollerinin Kullanımı:</h4>
+                <ol>
+                    <li><strong>Sayfalama Kontrolleri Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, listenin altındaki araç çubuğunun orta bölümünde sayfalama kontrolleri bulunur.</li>
+                            <li>Bu kontroller 225 piksel genişliğinde bir alanda yer alır ve tüm sayfalama işlemleri için gerekli düğmeleri içerir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfalama Düğmeleri:</strong>
+                        <ul>
+                            <li>Soldan sağa doğru şu düğmeler bulunur:</li>
+                            <ul>
+                                <li><strong>"İlk sayfa" düğmesi (goFirst.png):</strong> İlk sayfaya gitmek için tıklayın (doFirstPage fonksiyonu).</li>
+                                <li><strong>"Önceki sayfa" düğmesi (goPrev.png):</strong> Bir önceki sayfaya gitmek için tıklayın (doPrevPage fonksiyonu).</li>
+                                <li><strong>Sayfa numarası kutusu:</strong> Mevcut sayfa numarasını gösteren ve yeni sayfa numarası girebileceğiniz metin kutusu.</li>
+                                <li><strong>Bölme işareti (/):</strong> Sayfa numarası ile toplam sayfa sayısını ayıran işaret.</li>
+                                <li><strong>Toplam sayfa sayısı kutusu:</strong> Toplam sayfa sayısını gösteren (düzenlenemez) metin kutusu.</li>
+                                <li><strong>"Sonraki sayfa" düğmesi (goNext.png):</strong> Bir sonraki sayfaya gitmek için tıklayın (doNextPage fonksiyonu).</li>
+                                <li><strong>"Son sayfa" düğmesi (goLast.png):</strong> Son sayfaya gitmek için tıklayın (doLastPage fonksiyonu).</li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li><strong>Sayfa Numarası Girme:</strong>
+                        <ul>
+                            <li>Mevcut sayfa numarası, sağa hizalı bir metin kutusunda (tSayfa) gösterilir.</li>
+                            <li>Bu kutuya tıklayarak doğrudan bir sayfa numarası girebilirsiniz.</li>
+                            <li>Sayfa numarasını girdikten sonra kutudan çıkarak (onblur olayı ile) o sayfaya gidebilirsiniz (doGotoPage fonksiyonu).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Bilgileri:</strong>
+                        <ul>
+                            <li>Sayfalama butonlarının altında küçük yazı tipiyle (font-size: 8px) "kayıt: X - Y / Z" şeklinde bir bilgi satırı bulunur (tKayit).</li>
+                            <li>Bu bilgi, görüntülenen kayıt aralığını (X-Y) ve toplam kayıt sayısını (Z) gösterir.</li>
+                            <li>Örneğin "kayıt: 1 - 15 / 45" ifadesi, toplam 45 kayıttan 1 ile 15 arasındakilerin görüntülendiğini belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Sayfalama Uyarıları:</h4>
+                <ul>
+                    <li>Kayıt olmadığında sayfa kontrolleri devre dışı kalır (disabled).</li>
+                    <li>Geçersiz bir sayfa numarası girerseniz, sistem otomatik olarak mevcut sayfada kalır.</li>
+                    <li>Her sayfada en fazla 15 kayıt gösterilir (RecordPerPage: 15 ayarı).</li>
+                    <li>Arama yaptığınızda, sayfalama bilgileri arama sonuçlarına göre güncellenir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sayfalama İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda personel kaydı olduğunda, sayfa numarasını doğrudan girmek, sayfalar arasında hızlı gezinmenizi sağlar.</li>
+                    <li>İlk ve son sayfa düğmeleri, uzun listelerde hızlıca başa veya sona gitmenizi sağlar.</li>
+                    <li>Arama yapmak, sonuçları daraltarak daha az sayfa ile çalışmanızı sağlayabilir.</li>
+                    <li>Kayıt bilgisi, kaç personel kaydının olduğunu ve hangi aralığı görüntülediğinizi kolayca anlamanızı sağlar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kullanici-secme" class="section">
+        <h2>Belsis.Net Kullanıcısı Seçme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kullanıcı Seçme İşlemi:</h4>
+                <ol>
+                    <li><strong>Kullanıcı Seçme Penceresini Açma:</strong>
+                        <ul>
+                            <li>Personel ekleme veya düzenleme formundaki "Belsis.Net Kullanıcısı" alanının yanındaki arama (büyüteç) düğmesine tıklayın.</li>
+                            <li>Bu işlem, kullanıcı seçme penceresini açar (secKullanici fonksiyonu).</li>
+                            <li>Açılan pencere 600 piksel genişliğinde ve 500 piksel yüksekliğindedir (gnlSecKullanici fonksiyonu).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Arama ve Seçme:</strong>
+                        <ul>
+                            <li>Açılan pencerede sistem kullanıcılarının listesi görüntülenir.</li>
+                            <li>Listeden istediğiniz kullanıcıyı bulun ve üzerine tıklayarak seçin.</li>
+                            <li>Kullanıcı adının bir kısmını yazarak arama yapabilirsiniz (genellikle üst kısımda bir arama kutusu bulunur).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçimi Tamamlama:</strong>
+                        <ul>
+                            <li>İstediğiniz kullanıcıyı seçtikten sonra, kullanıcı bilgisi otomatik olarak personel formuna aktarılır (returnPersonelKullanici fonksiyonu).</li>
+                            <li>Seçilen kullanıcının kulno değeri, formda kullanıcı alanına atanır.</li>
+                            <li>Kullanıcı seçme penceresi kapanır (uiB1Close fonksiyonu) ve personel formuna geri dönersiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Bilgisini Temizleme:</strong>
+                        <ul>
+                            <li>Kullanıcı alanının yanında bulunan temizle (X) düğmesine tıklayarak mevcut kullanıcı atamasını kaldırabilirsiniz (clearBtn özelliği).</li>
+                            <li>Bu işlem kullanıcı alanını boşaltır ve personel-kullanıcı ilişkisini kaldırır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bir personele Belsis.Net kullanıcısı atamak zorunlu değildir, bu alan boş bırakılabilir.</li>
+                    <li>Aynı kullanıcıyı birden fazla personele atamamaya özen gösterin, bu karışıklığa neden olabilir.</li>
+                    <li>Kullanıcı seçme penceresi açıkken ana pencere üzerinde işlem yapamazsınız (pencere modaldir).</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kullanıcı Seçme İpuçları:</h4>
+                <ul>
+                    <li>Kullanıcı adını biliyorsanız, arama yaparak daha hızlı bulabilirsiniz.</li>
+                    <li>Eğer atamak istediğiniz kullanıcı listede yoksa, önce sistem yöneticinizden bu kullanıcının tanımlanmasını isteyin.</li>
+                    <li>Bir personele yanlış kullanıcı atadıysanız, düzenleme formunu açıp değiştirebilir veya temizleme düğmesini kullanarak kaldırabilirsiniz.</li>
+                    <li>Kullanıcılar, genellikle kullanıcı adlarına göre alfabetik sıralanır, bu da aradığınız kullanıcıyı bulmanızı kolaylaştırır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Personel Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Zorunlu alanların (T.C. Kimlik Numarası ve Adı Soyadı) doldurulduğundan emin olun.</li>
+                            <li>T.C. Kimlik Numarasının doğru formatta olduğunu kontrol edin.</li>
+                            <li>Aynı T.C. Kimlik Numarasıyla başka bir personel olup olmadığını kontrol edin.</li>
+                            <li>Hata mesajını dikkatlice okuyun, sorunu belirten bilgi içerebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Personel Bulunamıyor:</strong>
+                        <ul>
+                            <li>Arama kutusuna doğru bilgiyi girdiğinizden emin olun.</li>
+                            <li>Aramayı genişletmek için daha az karakter kullanmayı deneyin.</li>
+                            <li>Arama kutusunu tamamen temizleyip arama yaparak tüm personel listesini görüntüleyin ve manuel olarak arayın.</li>
+                            <li>Büyük/küçük harf kullanımı arama sonuçlarını etkilemez, endişelenmeyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzenleme/Silme Yapılamıyor:</strong>
+                        <ul>
+                            <li>İşlem öncesinde listeden bir personel seçtiğinizden emin olun.</li>
+                            <li>Personel seçilmeden düzenleme veya silme işlemleri yapılamaz.</li>
+                            <li>Bir personel seçtikten sonra başka personele tıklarsanız, seçim değişir.</li>
+                            <li>Uyarı mesajlarına dikkat edin, genellikle sorunu açıklarlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Seçilemiyor:</strong>
+                        <ul>
+                            <li>Kullanıcı seçme penceresinin düzgün açıldığından emin olun.</li>
+                            <li>Listede istediğiniz kullanıcının olup olmadığını kontrol edin.</li>
+                            <li>Seçim sonrası pencerenin kapandığından ve bilgilerin aktarıldığından emin olun.</li>
+                            <li>Sorun devam ederse, sisteme yeniden giriş yapmayı deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yükleniyor" Mesajı Kaybolmuyor:</strong>
+                        <ul>
+                            <li>Bazen ağ sorunları veya sunucu yoğunluğu nedeniyle yükleme göstergesi (aInd) ekranda kalabilir.</li>
+                            <li>Bir süre bekleyin, genellikle işlem tamamlandığında otomatik kaybolur.</li>
+                            <li>Uzun süre beklediğiniz halde kaybolmazsa, sayfayı yenileyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Arama Kullanımı:</strong>
+                        <ul>
+                            <li>Çok sayıda personel arasında belirli birini bulmak için arama özelliğini etkin şekilde kullanın.</li>
+                            <li>Ad, soyad veya her ikisini birden yazarak arama yapabilirsiniz.</li>
+                            <li>Aramanızı ne kadar özgün yaparsanız, sonuçlar o kadar daraltılmış olur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>Formlar arasında geçiş yapmak için Tab tuşunu kullanın.</li>
+                            <li>Metin kutularında içeriği seçmek için Ctrl+A tuş kombinasyonunu kullanabilirsiniz.</li>
+                            <li>Aramayı başlatmak için Enter tuşunu kullanabilirsiniz.</li>
+                            <li>Formda istenmeyen değişiklikleri iptal etmek için Esc tuşunu kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu İşlemler İçin:</strong>
+                        <ul>
+                            <li>Birden fazla personel ekleyecekseniz, ortak bilgileri not alın ve sistematik ilerleyin.</li>
+                            <li>Belirli bir bölümdeki personeli listelemek için ünvan bilgisiyle arama yapabilirsiniz.</li>
+                            <li>Aynı ünvana sahip personel eklerken, ilk personel kaydından sonra unvan bilgisini not alın ve diğer kayıtlarda kullanın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra programdan güvenli çıkış yapın.</li>
+                    <li>Önemli personel bilgilerini değiştirmeden önce mevcut bilgileri not alın.</li>
+                    <li>Personel silme işlemi geri alınamaz, dikkatli olun.</li>
+                    <li>T.C. Kimlik Numarası gibi kişisel verileri doğru girdiğinizden emin olun.</li>
+                    <li>Başkalarının görebileceği ekranlarda çalışırken, kişisel verilerin görünür olmamasına dikkat edin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Programı düzenli olarak kullanacaksanız, personel listesini tanımanız işinizi kolaylaştıracaktır.</li>
+                    <li>Personel bilgilerini düzenli olarak güncelleyin, özellikle ünvan değişiklikleri için.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Yeni bir işlem yapmadan önce ilgili personeli tekrar kontrol edin, bu potansiyel hataları önler.</li>
+                    <li>Her gün programı açtığınızda, kısa bir süre harcayarak personel listesini gözden geçirin, bu şekilde güncel değişiklikleri takip edebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Personel Tanımları ekranı, kurumunuzun personel bilgilerini etkili bir şekilde yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kolayca kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Personel bilgilerini doğru ve eksiksiz girin.</li>
+                    <li>Silme işlemlerinde dikkatli olun.</li>
+                    <li>Düzenli olarak personel bilgilerini güncelleyin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
