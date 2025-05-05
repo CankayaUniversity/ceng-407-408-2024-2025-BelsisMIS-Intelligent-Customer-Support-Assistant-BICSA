@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genel Azaltan İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Genel Azaltan İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Genel Azaltan İşlemleri programı, vergi mükellefleri için çeşitli azaltan işlemlerini yönetmenize olanak sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Emeklilik Azaltan işlemleri</li>
+                <li>Tek Mesken Azaltan işlemleri</li>
+                <li>Şehit-Gazi Azaltan işlemleri</li>
+                <li>Ölüm Azaltan işlemleri</li>
+                <li>Engelli Azaltan işlemleri</li>
+            </ul>
+            <p>gibi işlemleri gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Program Kullanımı İçin Gerekli Bilgiler:</h4>
+                <ul>
+                    <li>GTT Sicil numarası</li>
+                    <li>İşlem yapılacak azaltan türü</li>
+                    <li>İşlem tarihi</li>
+                    <li>Varsa özel notlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde çelik mavisi (steelblue) renkli bir şeritte "Azaltan Bilgileri" başlığı yer alır</li>
+                            <li>Başlık beyaz renkte ve kalın yazı tipiyle görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Azaltan Tip Butonları:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yatay olarak sıralanmış 5 adet buton bulunur</li>
+                            <li>Her buton parlak gri renkte ve 3 boyutlu görünümdedir</li>
+                            <li>Seçili buton kırmızı kenarlıklı ve bordo renkli yazı ile vurgulanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Butonların altında form alanları başlar</li>
+                            <li>Her alan solda etiket, sağda giriş kutusu şeklinde düzenlenmiştir</li>
+                            <li>Giriş alanları gri tonlarında, 3 boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Varsayılan olarak "Emeklilik Azaltan" seçeneği aktif gelir</li>
+                    <li>GTT Sicil No alanı boş ve imleç bu alanda konumlanmış olur</li>
+                    <li>İşlem tarihi sistem tarihi ile otomatik doldurulur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="azaltan-turu" class="section">
+        <h2>Azaltan Türü Seçimi ve Özellikleri</h2>
+        <div class="info-box">
+            <h3>Azaltan Türleri ve Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Azaltan Tiplerini Seçme:</h4>
+                <ol>
+                    <li><strong>Butonların Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Başlık şeridinin hemen altında, ekranın üst kısmında yan yana sıralanmış 5 buton bulunur</li>
+                            <li>Butonlar soldan sağa doğru: Emeklilik, Tek Mesken, Şehit-Gazi, Ölüm ve Engelli Azaltan şeklinde sıralanır</li>
+                            <li>Her buton parlak gri zeminde, lacivert yazı rengi ile görüntülenir</li>
+                            <li>Aktif seçili buton kırmızı kenarlıklı, bordo renkli yazı ve kalın font ile vurgulanır</li>
+                        </ul>
+                    </li>
+                </ol>
+                <li><strong>Buton İsimlendirmesi:</strong>
+                    <ul>
+                        <li>İkinci buton (Tek Mesken Azaltan), belediye koduna göre farklı isimle görüntülenir:
+                            <ul>
+                                <li>100700 kodlu belediyede: "Hiçbir Geliri Olmayan"</li>
+                                <li>Diğer belediyelerde: "Tek Mesken Azaltan"</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            
+    
+            <div class="step">
+                <h4>Nasıl Azaltan Tipi Seçilir?</h4>
+                <ol>
+                    <li><strong>Fare ile Seçim:</strong>
+                        <ul>
+                            <li>İstediğiniz azaltan tipine ait butona tıklayın</li>
+                            <li>Seçilen buton kırmızı kenarlık ve bordo yazı ile vurgulanacaktır</li>
+                            <li>Diğer butonlar normal görünümlerine dönecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim Sonrası:</strong>
+                        <ul>
+                            <li>Seçilen azaltan tipine göre ilgili azaltan nedeni seçenekleri otomatik olarak güncellenir</li>
+                            <li>Azaltan nedeni seçim kutusu yeni tip için uygun seçeneklerle doldurulur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Azaltan Türlerine Özel Kurallar:</h4>
+                <ol>
+                    <li><strong>Emeklilik ve Tek Mesken Azaltanları için:</strong>
+                        <ul>
+                            <li>Sadece mesken beyanlarına uygulanabilir</li>
+                            <li>200 m² üzerindeki meskenlere uygulanamaz</li>
+                            <li>Birden fazla gayrimenkulü olan sicillere uygulanamaz</li>
+                            <li>Varis kaydı bulunan sicillere uygulanamaz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Şehit-Gazi Azaltanı için:</strong>
+                        <ul>
+                            <li>200 m² üzerindeki meskenlere uygulanamaz</li>
+                            <li>Birden fazla gayrimenkul kontrolü yapılmaz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program açıldığında varsayılan olarak "Emeklilik Azaltan" seçeneği aktif gelir</li>
+                    <li>Her azaltan tipi değişikliğinde, önceki girişler kontrol edilir</li>
+                    <li>Uygun olmayan durumlar için sistem otomatik uyarı verir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil bilgilerini girdikten sonra azaltan tipini değiştirirseniz, sistem otomatik kontroller yapar</li>
+                    <li>Seçili azaltan tipinin uygunluğundan emin değilseniz, önce sicil bilgilerini girin</li>
+                    <li>Uyarı mesajlarını dikkatlice okuyun, hangi kriterin sağlanmadığını belirtir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-bilgileri" class="section">
+        <h2>GTT Sicil Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil Bilgilerinin Girilmesi</h3>
+            
+            <div class="step">
+                <h4>GTT Sicil No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Görünüm:</strong>
+                        <ul>
+                            <li>Azaltan tip butonlarının hemen altında, formun ilk giriş alanı olarak yer alır</li>
+                            <li>Solda "GTT Sicil No" etiketi, sağında giriş kutusu ve yanında büyüteç simgeli bir arama butonu bulunur</li>
+                            <li>Giriş kutusu sağa dayalı rakam girişi formatındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Sicil No Girilir?</strong>
+                        <ol>
+                            <li>Doğrudan Giriş ile:
+                                <ul>
+                                    <li>GTT Sicil No kutusuna numarayı yazın</li>
+                                    <li>TAB tuşuna basın veya başka bir alana tıklayın</li>
+                                    <li>Sistem otomatik olarak sicil bilgilerini kontrol edecektir</li>
+                                </ul>
+                            </li>
+                            <li>Arama Butonu ile:
+                                <ul>
+                                    <li>GTT Sicil No alanının yanındaki büyüteç simgeli butona tıklayın</li>
+                                    <li>Açılan sicil arama penceresinden ilgili sicili seçin</li>
+                                    <li>Seçilen sicilin bilgileri otomatik olarak forma dolacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Adı ve Soyadı Alanları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Özellikler:</strong>
+                        <ul>
+                            <li>GTT Sicil No alanının hemen altında yer alır</li>
+                            <li>Solda "Adı Soyadı" etiketi, sağında yan yana iki metin kutusu bulunur</li>
+                            <li>Kutular ilk başta gri renkli ve devre dışıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Doldurulur?</strong>
+                        <ul>
+                            <li>Sicil no girilip doğrulandığında sistem otomatik olarak doldurur</li>
+                            <li>Bu alanlar kullanıcı tarafından düzenlenemez</li>
+                            <li>Bilgiler sicil kaydından otomatik gelir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Kontroller:</h4>
+                <ul>
+                    <li>Geçersiz sicil numarası girildiğinde sistem "GTT Sicil Bulunamadı!" uyarısı verir</li>
+                    <li>Varis kaydı olan sicillerde emeklilik ve tek mesken azaltanı uygulanamaz</li>
+                    <li>Sicil seçildiğinde gayrimenkul ve tahakkuk bilgileri otomatik yüklenir</li>
+                    <li>061900 kodlu belediyede varis kontrolü özel olarak yapılır:
+                        <ul>
+                            <li>Varis kaydı olan sicillerde Emeklilik ve Tek Mesken azaltanı seçildiğinde, ölen kişinin sicil bilgileri ve TC kimlik numarası gösterilerek işlem engellenir</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarasını bilmiyorsanız, arama butonunu kullanın</li>
+                    <li>ESC tuşu ile açık olan sicil arama penceresini kapatabilirsiniz</li>
+                    <li>Sicil bilgileri yüklendikten sonra, azaltan tipi değiştirilirse sistem otomatik kontroller yapar</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="tarih-not-bilgileri" class="section">
+        <h2>Tarih ve Not Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Tarih, Azaltan Nedeni ve Not Bilgilerinin Girilmesi</h3>
+            
+            <div class="step">
+                <h4>Tarih Bilgileri Girişi:</h4>
+                <ol>
+                    <li><strong>Tarih Alanları ve Konumları:</strong>
+                        <ul>
+                            <li>Adı Soyadı alanının altında iki tarih alanı yer alır:
+                                <ul>
+                                    <li>"Tarihi" alanı: Üstte yer alır</li>
+                                    <li>"İşlem Tarihi" alanı: Hemen altında bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Her tarih alanının sağında GG/AA/YYYY formatında giriş kutusu bulunur</li>
+                            <li>Tarih kutularında sağa dayalı giriş formatı kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Tarih Girilir?</strong>
+                        <ol>
+                            <li>Tarihi Alanı:
+                                <ul>
+                                    <li>Azaltan işleminin başlangıç tarihini girin</li>
+                                    <li>Gün, ay ve yıl arasına / veya . karakteri koyabilirsiniz</li>
+                                    <li>Bu alan boş bırakılamaz</li>
+                                </ul>
+                            </li>
+                            <li>İşlem Tarihi:
+                                <ul>
+                                    <li>Sistem otomatik olarak günün tarihini getirir</li>
+                                    <li>Bazı belediyelerde değiştirilebilir, bazılarında salt okunur gelir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Azaltan Nedeni Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Özellikleri:</strong>
+                        <ul>
+                            <li>İşlem Tarihi alanının hemen altında yer alır</li>
+                            <li>Solda "Azaltan Nedeni" etiketi, sağında açılır liste kutusu bulunur</li>
+                            <li>Liste seçilen azaltan tipine göre otomatik güncellenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Seçim Yapılır?</strong>
+                        <ul>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Listeden uygun nedeni seçin</li>
+                            <li>İlk seçenek her zaman "--Seçiniz--" şeklinde gelir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Açıklama Alanları:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Azaltan Nedeni seçiminin altında iki satır halinde yer alır</li>
+                            <li>Her satırda 30 karakterlik giriş alanı bulunur</li>
+                            <li>İlk satırın solunda "Açıklama" etiketi yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Not Girilir?</strong>
+                        <ul>
+                            <li>İlk satıra ana açıklamayı yazın</li>
+                            <li>İkinci satıra varsa ek açıklamaları ekleyin</li>
+                            <li>Her satır için maksimum 30 karakter girebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Tarih alanı boş bırakılamaz</li>
+                    <li>Tarihler gelecek tarih olamaz</li>
+                    <li>Azaltan nedeni seçimi zorunludur</li>
+                    <li>Açıklama alanları isteğe bağlıdır</li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tarihlerde yıl kısmını iki haneli girebilirsiniz (örn: 24)</li>
+                    <li>TAB tuşu ile alanlar arasında kolayca geçiş yapabilirsiniz</li>
+                    <li>ENTER tuşu TAB tuşu gibi çalışır</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="vergi-usulsuzluk" class="section">
+        <h2>Vergi ve Usulsüzlük Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Vergi Ziyaı ve Usulsüzlük Cezaları Seçimleri</h3>
+            
+            <div class="step">
+                <h4>Vergi Ziyaı Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Görünüm:</strong>
+                        <ul>
+                            <li>Açıklama alanlarının altında yer alır</li>
+                            <li>Solda "Vergi Ziyaı" etiketi, sağında açılır liste kutusu bulunur</li>
+                            <li>Liste kutusu varsayılan olarak "Azaltılmasın" seçili gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Seçim Yapılır?</strong>
+                        <ol>
+                            <li>Listeyi açmak için kutuya tıklayın</li>
+                            <li>İki seçenek görüntülenir:
+                                <ul>
+                                    <li>Azaltılmasın (varsayılan)</li>
+                                    <li>Azaltılsın</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz seçeneğe tıklayarak seçiminizi yapın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Usulsüzlük Cezaları Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu ve Görünüm:</strong>
+                        <ul>
+                            <li>Vergi Ziyaı seçiminin hemen altında, formun son seçim alanı olarak yer alır</li>
+                            <li>Solda "Usulsüzlük Cezaları" etiketi, sağında açılır liste kutusu bulunur</li>
+                            <li>Liste kutusu varsayılan olarak "Azaltılmasın" seçili gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Seçim Yapılır?</strong>
+                        <ol>
+                            <li>Listeyi açmak için kutuya tıklayın</li>
+                            <li>İki seçenek görüntülenir:
+                                <ul>
+                                    <li>Azaltılmasın (varsayılan)</li>
+                                    <li>Azaltılsın</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz seçeneğe tıklayarak seçiminizi yapın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Her iki seçim de azaltan işleminin nasıl uygulanacağını belirler</li>
+                    <li>Varsayılan olarak her iki alan da "Azaltılmasın" seçili gelir</li>
+                    <li>Seçimler yapıldıktan sonra değiştirilebilir</li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Açılır listelerde klavye ok tuşlarını kullanabilirsiniz</li>
+                    <li>Bu seçimler kayıt öncesi son seçimlerdir</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="gayrimenkul-bilgileri" class="section">
+        <h2>Gayrimenkul Bilgileri Tablosu</h2>
+        <div class="info-box">
+            <h3>Sicilin Gayrimenkul Bilgilerinin Görüntülenmesi</h3>
+            
+            <div class="step">
+                <h4>Tablo Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Tablo Başlığı ve Konumu:</strong>
+                        <ul>
+                            <li>Vergi ve usulsüzlük seçeneklerinin altında yer alır</li>
+                            <li>Çelik mavisi (steelblue) renkli başlık şeridinde "Sicilin Gayri Menkulleri" yazısı beyaz renkte görünür</li>
+                            <li>Başlığın altında sütun başlıkları aynı renk şeritte yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ul>
+                            <li>Soldan sağa doğru sırasıyla şu sütunlar bulunur:
+                                <ul>
+                                    <li>Mahalle</li>
+                                    <li>Cadde</li>
+                                    <li>Sokak</li>
+                                    <li>Pafta</li>
+                                    <li>Ada</li>
+                                    <li>Parsel</li>
+                                    <li>Kapı No</li>
+                                    <li>İç Kapı No</li>
+                                    <li>Daire No</li>
+                                    <li>Nitelik</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Tablo Bilgilerinin Kontrolü:</h4>
+                <ol>
+                    <li><strong>Nasıl Görüntülenir?</strong>
+                        <ul>
+                            <li>GTT Sicil No girilip doğrulandığında bilgiler otomatik yüklenir</li>
+                            <li>Tablo otomatik olarak sicile ait tüm gayrimenkulleri listeler</li>
+                            <li>Bilgiler salt okunurdur, değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Önemli Kontroller:</strong>
+                        <ul>
+                            <li>Sistem aşağıdaki kontrolleri otomatik yapar:
+                                <ul>
+                                    <li>Gayrimenkul sayısı kontrolü (birden fazla varsa uyarı verir)</li>
+                                    <li>Metrekare kontrolü (200 m² üzeri için uyarı verir)</li>
+                                    <li>Gayrimenkul nitelik kontrolü (mesken olup olmadığı)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Emeklilik ve Tek Mesken azaltanları için:
+                        <ul>
+                            <li>Birden fazla gayrimenkul varsa işlem yapılamaz</li>
+                            <li>200 m² üzeri meskenlere uygulanamaz</li>
+                            <li>Sadece mesken nitelikli gayrimenkullere uygulanabilir</li>
+                        </ul>
+                    </li>
+                    <li>Şehit-Gazi azaltanı için:
+                        <ul>
+                            <li>200 m² üzeri meskenlere uygulanamaz</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tablodaki bilgiler 1998 ve sonrası beyanları içerir</li>
+                    <li>Nitelik sütunu gayrimenkulün beyan veya varis kaydından geldiğini gösterir</li>
+                    <li>Sistem gerekli kontrolleri otomatik yapar, manuel kontrol gerekmez</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="tahakkuk-bilgileri" class="section">
+        <h2>Tahakkuk Bilgileri Tablosu</h2>
+        <div class="info-box">
+            <h3>Sicilin Tahakkuk Bilgilerinin Görüntülenmesi</h3>
+            
+            <div class="step">
+                <h4>Tablo Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Tablo Başlığı ve Konumu:</strong>
+                        <ul>
+                            <li>Gayrimenkul bilgileri tablosunun altında yer alır</li>
+                            <li>Çelik mavisi (steelblue) renkli başlık şeridinde "Sicilin Yıllık Moduller Bazında Bilgi Amaçlı Tahakkukları" yazısı beyaz renkte görünür</li>
+                            <li>Başlığın altında sütun başlıkları aynı renk şeritte yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ul>
+                            <li>Tablo üç ana sütundan oluşur:
+                                <ul>
+                                    <li>Modül (sol hizalı)</li>
+                                    <li>Yıl (orta hizalı)</li>
+                                    <li>Top.Tutar (sağ hizalı)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Tahakkuk Bilgilerinin Görüntülenmesi:</h4>
+                <ol>
+                    <li><strong>Bilgilerin Yüklenmesi:</strong>
+                        <ul>
+                            <li>GTT Sicil No girilip doğrulandığında tablo otomatik doldurulur</li>
+                            <li>Her modül için yıllık bazda tahakkuk toplamları listelenir</li>
+                            <li>Tutarlar otomatik olarak biçimlendirilmiş şekilde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo İçeriği:</strong>
+                        <ul>
+                            <li>Her satır farklı bir modül ve yıl kombinasyonunu gösterir</li>
+                            <li>Tutarlar o yıla ait toplam tahakkuku gösterir</li>
+                            <li>Bilgiler salt okunurdur, değiştirilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Tablo Düzeni:</h4>
+                <ol>
+                    <li><strong>Sıralama:</strong>
+                        <ul>
+                            <li>Kayıtlar modül ve yıla göre otomatik sıralanır</li>
+                            <li>Önce modül numarasına göre</li>
+                            <li>Sonra yıla göre artan sırada listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görünüm:</strong>
+                        <ul>
+                            <li>Her satır alternatif renklerde görüntülenir</li>
+                            <li>Tutarlar sağa dayalı ve binlik ayracı ile formatlanmış şekilde gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Tablo bilgi amaçlıdır, azaltan işleminden etkilenmez</li>
+                    <li>Tahakkuk bilgileri sicil kaydı seçildiğinde otomatik güncellenir</li>
+                    <li>Geçmiş yıllara ait tahakkuklar da görüntülenir</li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tablo, sicil hakkında genel bir finansal görünüm sağlar</li>
+                    <li>Yüksek tutarlı tahakkukları kolayca görebilirsiniz</li>
+                    <li>Modül bazında yıllık karşılaştırma yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kaydetme ve Çıkış İşlemleri</h3>
+            
+            <div class="step">
+                <h4>İşlem Butonlarının Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Butonların Yerleşimi:</strong>
+                        <ul>
+                            <li>Ekranın en altında, tahakkuk tablosunun altında yer alır</li>
+                            <li>İçe çökük gri bir şerit üzerinde yan yana iki buton bulunur</li>
+                            <li>Solda "Tamam" butonu, sağında "Vazgeç" butonu yer alır</li>
+                            <li>Her iki buton da üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Tamam Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Nasıl Kullanılır?</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra Tamam butonuna tıklayın</li>
+                            <li>Ya da ALT + T tuş kombinasyonunu kullanın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontroller ve Uyarılar:</strong>
+                        <ul>
+                            <li>Sistem aşağıdaki kontrolleri yapar:
+                                <ul>
+                                    <li>GTT Sicil No kontrolü</li>
+                                    <li>Tarih alanının dolu olup olmadığı</li>
+                                    <li>Gayrimenkul uygunluk kontrolleri</li>
+                                    <li>Varis kaydı kontrolü</li>
+                                </ul>
+                            </li>
+                            <li>Eksik veya hatalı durumlarda ilgili uyarı mesajı görüntülenir</li>
+                            <li>İşlem başarılı olduğunda "Azaltan kaydı girilmiştir!" mesajı görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Vazgeç Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Nasıl Kullanılır?</strong>
+                        <ul>
+                            <li>İşlemden vazgeçmek için Vazgeç butonuna tıklayın</li>
+                            <li>Ya da ESC tuşuna basın</li>
+                            <li>Program penceresi kapanır ve yapılan işlemler kaydedilmez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tamam butonuna basmadan önce tüm bilgileri kontrol edin</li>
+                    <li>Uyarı mesajlarını dikkatlice okuyun</li>
+                    <li>Vazgeç butonuna basıldığında girilen bilgiler kaybolur</li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Klavye kısayollarını kullanarak işlemlerinizi hızlandırabilirsiniz:</li>
+                    <ul>
+                        <li>ESC tuşu = Vazgeç butonu</li>
+                        <li>ALT + T = Tamam butonu</li>
+                    </ul>
+                    <li>İşlem başarılı olduğunda çıkan onay mesajını bekleyin</li>
+                    <li>Hata mesajı aldığınızda ilgili alanı düzeltip tekrar deneyin</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div id="pratik-ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Genel Kullanım İpuçları ve Sorun Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Klavye Kısayolları ve Hızlı Kullanım:</h4>
+                <ol>
+                    <li><strong>Genel Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>ESC tuşu: Programdan çıkış yapar</li>
+                            <li>TAB tuşu: Sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Önceki alana döner</li>
+                            <li>ENTER tuşu: TAB tuşu gibi çalışır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş İpuçları:</strong>
+                        <ul>
+                            <li>Tarih alanlarında nokta (.) veya taksim (/) kullanabilirsiniz</li>
+                            <li>Liste kutularında ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                            <li>Sicil arama penceresinde ESC tuşu ile çıkabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"GTT Sicil Bulunamadı!" Hatası:</strong>
+                        <ul>
+                            <li>Sicil numarasını kontrol edin</li>
+                            <li>Büyüteç simgeli arama butonunu kullanarak sicil seçimi yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sicilin Birden Fazla Gayri Menkulü Var" Uyarısı:</strong>
+                        <ul>
+                            <li>Emeklilik ve Tek Mesken azaltanları için geçerlidir</li>
+                            <li>Farklı bir azaltan tipi seçin</li>
+                            <li>Ya da başka bir sicil seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>"200 M2 Üzerindeki Meskenlere Muafiyet Uygulanamaz" Uyarısı:</strong>
+                        <ul>
+                            <li>Emeklilik, Tek Mesken ve Şehit-Gazi azaltanları için bu kontrol yapılır</li>
+                            <li>Farklı bir azaltan tipi seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu sicile ait Varis kaydı bulunmaktadır" Uyarısı:</strong>
+                        <ul>
+                            <li>Emeklilik ve Tek Mesken azaltanları için varis kaydı olan sicillere işlem yapılamaz</li>
+                            <li>Farklı bir azaltan tipi seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>İşlem Sırası:</strong>
+                        <ul>
+                            <li>Önce sicil seçimi yapın</li>
+                            <li>Sonra azaltan tipini belirleyin</li>
+                            <li>Tarihleri ve açıklamaları girin</li>
+                            <li>Son olarak vergi ve usulsüzlük seçimlerini yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontrol Listesi:</strong>
+                        <ul>
+                            <li>GTT Sicil No doğru girildi mi?</li>
+                            <li>Tarih alanları dolduruldu mu?</li>
+                            <li>Azaltan nedeni seçildi mi?</li>
+                            <li>Vergi ve usulsüzlük seçimleri yapıldı mı?</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+     
+            <div class="warning-box">
+                <h4>Kritik Hatırlatmalar:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce mutlaka sicil bilgilerini kontrol edin</li>
+                    <li>Uyarı mesajlarını dikkatlice okuyun</li>
+                    <li>İşlem tarihinin doğru olduğundan emin olun</li>
+                    <li>Azaltan tipinin sicil için uygun olduğunu kontrol edin</li>
+                </ul>
+            </div>
+     
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan siciller için numaraları not alın</li>
+                    <li>Her işlemden sonra tahakkuk tablosunu kontrol edin</li>
+                    <li>Şüpheli durumlarda farklı bir azaltan tipi seçmeyi deneyin</li>
+                    <li>İşlem öncesi tüm kriterleri gözden geçirin</li>
+                </ul>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

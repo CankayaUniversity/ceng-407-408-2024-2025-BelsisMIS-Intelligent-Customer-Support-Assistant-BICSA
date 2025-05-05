@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emlak Beyan Sistemi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Emlak Beyan Sistemi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri ve Veri Giriş</a></li>
+                <li><a href="#modul-tur">Modül ve Tür Seçimleri</a></li>
+                <li><a href="#siralama">Sıralama ve İndeks</a></li>
+                <li><a href="#gruplama">Gruplama Seçenekleri</a></li>
+                <li><a href="#rapor-sunucu">Rapor Sunucu</a></li>
+                <li><a href="#butonlar">İşlem Butonları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Emlak Beyan Sistemi, emlak beyanlarının kaydedilmesi ve yönetilmesi için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Arsa beyanlarının girişi ve güncellenmesi</li>
+                <li>Sicil bazlı sorgulama ve raporlama</li>
+                <li>Beyan tarihlerine göre listeler oluşturma</li>
+                <li>Tahakkuk işlemlerini gerçekleştirme</li>
+                <li>Detaylı beyan raporları alma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Beyan sahibinin GTT sicil numarası</li>
+                    <li>Beyan dönemi ve beyan türü</li>
+                    <li>Arsa/gayrimenkul bilgileri</li>
+                    <li>Beyan tarihi ve vergi tarihi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında çelik mavisi (steelBlue) arka planla ayrılmış şeritte "Arsa Beyan İşlemleri" başlığı yer alır</li>
+                            <li>Başlığın sağ kısmında son işlem yapan kullanıcı bilgisi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı içinde yer alır</li>
+                            <li>GTT Sicil No, Dönem, Sıra No, İştirakçi Sayısı gibi temel bilgileri içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                            <li>Kırmızı kenarlıklı alanlar zorunlu giriş alanlarıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gayrimenkul Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Sicil bilgilerinin altında iki sütunlu bir düzende yer alır</li>
+                            <li>Sol sütunda adres ve tapu bilgileri bulunur</li>
+                            <li>Sağ sütunda değer ve hesaplama bilgileri yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>İleri, Geri, Kaydet, Sil, Tahakkuk Fişi gibi temel işlem butonlarını içerir</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>GTT Sicil No alanına imleç konumlanır</li>
+                    <li>Beyan tarihi sistem tarihi olarak gelir</li>
+                    <li>Beyan şekli "Elden" olarak ayarlanır</li>
+                    <li>İştirakçi sayısı varsayılan olarak 1 gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="arama-kriterleri" class="section">
+        <h2>Arama Kriterleri ve Veri Giriş Alanları</h2>
+        <div class="info-box">
+            <h3>Temel Arama Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Sicil Numarası ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>En üst satırda, çelik mavisi başlık şeridinin hemen altında</li>
+                            <li>"GTT Sicil No" etiketi solda yer alır</li>
+                            <li>Kırmızı kenarlıklı, zorunlu bir alandır</li>
+                            <li>Etiketin yanında arama butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Doğrudan Sicil No Girişi:
+                                <ul>
+                                    <li>GTT Sicil numarasını yazın</li>
+                                    <li>TAB tuşuna basın veya başka bir alana geçin</li>
+                                    <li>Sistem otomatik olarak sicile ait bilgileri getirecektir</li>
+                                </ul>
+                            </li>
+                            <li>Arama Butonu ile Giriş:
+                                <ul>
+                                    <li>Sicil No alanının yanındaki mercek ikonlu butona tıklayın</li>
+                                    <li>Açılan sicil arama penceresinden sicil seçimi yapın</li>
+                                    <li>Seçilen sicilin bilgileri otomatik olarak forma aktarılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Dönem ve Sıra No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No alanının sağında "Dönem" ve "Sıra No" alanları yan yana yer alır</li>
+                            <li>Her iki alan da kırmızı kenarlıklı zorunlu alanlardır</li>
+                            <li>"İştirakçi Sayısı" alanı sıra no'nun sağında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Dönem Girişi:
+                                <ul>
+                                    <li>Dönem alanına beyan yılını girin (örn: 2025)</li>
+                                    <li>TAB tuşuna basarak bir sonraki alana geçin</li>
+                                    <li>Sistem dönem geçerliliğini kontrol edecektir</li>
+                                </ul>
+                            </li>
+                            <li>Sıra No Girişi:
+                                <ul>
+                                    <li>Yeni beyan için boş bırakın (sistem otomatik verecektir)</li>
+                                    <li>Mevcut beyan için sıra numarasını girin</li>
+                                    <li>TAB tuşuna basarak giriş tamamlanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Beyan Şekli ve Durumu:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil bilgilerinin alt satırında yer alır</li>
+                            <li>"Şekli" açılır listesi solda bulunur</li>
+                            <li>"Beyan Durumu" açılır listesi hemen sağında yer alır</li>
+                            <li>"Beyan Tarihi" alanı en sağda konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Beyan Şekli Seçimi:
+                                <ul>
+                                    <li>Açılır listeden beyan şeklini seçin:
+                                        - 0.Elden
+                                        - 1.Posta
+                                        - 2.İdare
+                                        - 3.Online</li>
+                                    <li>Seçiminize göre beyan tarihi kontrolü değişecektir</li>
+                                </ul>
+                            </li>
+                            <li>Beyan Durumu Seçimi:
+                                <ul>
+                                    <li>Açılır listeden beyan durumunu seçin:
+                                        - 0.Normal
+                                        - 1.Ek Süre
+                                        - 2.Ek Süre Dışı</li>
+                                    <li>Sistem otomatik olarak duruma göre kontroller yapacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası girilmeden diğer alanlara geçilemez</li>
+                    <li>Dönem ve sıra no alanları boş bırakılamaz</li>
+                    <li>Beyan şekli "Posta" seçildiğinde beyan tarihi manuel girilebilir</li>
+                    <li>Beyan durumu "Otomatik" ayarlandıysa kullanıcı değiştiremez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>F2 tuşu ile sicil arama penceresini açabilirsiniz</li>
+                    <li>ENTER tuşu TAB gibi çalışır ve sonraki alana geçer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tarih-bazli-kriterler" class="section">
+        <h2>Tarih ve Adres Bilgileri ile Arama</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Pafta/Ada/Parsel Bilgileri:</h4>
+                <ol>
+                    <li><strong>Pafta:</strong>
+                        <ul>
+                            <li>Ekranın sol sütununda, üst kısımda yer alır</li>
+                            <li>"Pafta" etiketi yanında kırmızı kenarlıklı metin kutusu bulunur</li>
+                            <li>Kutunun sağında mercek ikonlu arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Pafta arama ile:
+                                <ul>
+                                    <li>Arama butonuna tıklayın</li>
+                                    <li>Açılan pencereden pafta seçimi yapın</li>
+                                    <li>Seçilen pafta bilgisi otomatik olarak forma aktarılır</li>
+                                </ul>
+                            </li>
+                            <li>Manuel giriş ile:
+                                <ul>
+                                    <li>Doğrudan pafta numarasını yazın</li>
+                                    <li>TAB tuşu ile bir sonraki alana geçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Ada/Parsel:</strong>
+                        <ul>
+                            <li>Pafta alanının hemen altında yan yana konumlanır</li>
+                            <li>Her iki alan da kırmızı kenarlıklı zorunlu alanlardır</li>
+                            <li>Aralarında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Ada numarası girişi:
+                                <ul>
+                                    <li>Sol kutuya ada numarasını yazın</li>
+                                    <li>TAB tuşuna basarak parsel alanına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Parsel numarası girişi:
+                                <ul>
+                                    <li>Sağ kutuya parsel numarasını yazın</li>
+                                    <li>TAB tuşu ile bir sonraki alana geçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Mahalle ve Cadde/Sokak Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumları:</strong>
+                        <ul>
+                            <li>Ada/Parsel alanlarının altında sıralanır</li>
+                            <li>Mahalle alanı en üstte yer alır</li>
+                            <li>Cadde ve Sokak alanları alt alta konumlanır</li>
+                            <li>Her alanın yanında mercek ikonlu arama butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Mahalle seçimi:
+                                <ul>
+                                    <li>Mahalle arama butonuna tıklayın</li>
+                                    <li>Açılan pencereden mahalle seçin</li>
+                                    <li>Seçim yapıldığında cadde/sokak alanları otomatik doldurulur</li>
+                                </ul>
+                            </li>
+                            <li>Köy seçimi (varsa):
+                                <ul>
+                                    <li>Mahalle alanının sağında "KÖY" onay kutusu bulunur</li>
+                                    <li>Köy beyanı için kutuyu işaretleyin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tapu Bilgileri ve Arsa Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Adres bilgilerinin altında "Cilt / Sayfa No" etiketi ile yer alır</li>
+                            <li>İki metin kutusu "/" işareti ile ayrılmış şekilde yan yana bulunur</li>
+                            <li>Hemen altında "Arsa Alanı" metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tapu bilgileri girişi:
+                                <ul>
+                                    <li>Cilt numarasını ilk kutuya yazın</li>
+                                    <li>TAB tuşu ile sayfa no kutusuna geçin</li>
+                                    <li>Sayfa numarasını girin</li>
+                                </ul>
+                            </li>
+                            <li>Arsa alanı girişi:
+                                <ul>
+                                    <li>Metrekare cinsinden toplam alanı girin</li>
+                                    <li>Nokta (.) veya virgül (,) kullanarak ondalık değer girebilirsiniz</li>
+                                    <li>TAB tuşu ile hisse oranı alanına geçilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Site, Blok ve Kapı Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tapu bilgilerinin altında ayrı bir bölümde yer alır</li>
+                            <li>"Site/Blok Adı" yan yana giriş alanlarıyla başlar</li>
+                            <li>Altında kapı numarası alanları bulunur</li>
+                            <li>En altta daire numarası yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Site ve Blok bilgileri:
+                                <ul>
+                                    <li>Site adını ilk kutuya yazın (80 karaktere kadar)</li>
+                                    <li>Blok adını yanındaki kutuya girin</li>
+                                    <li>Mevki alanı otomatik olarak blok adıyla doldurulur</li>
+                                </ul>
+                            </li>
+                            <li>Kapı numaraları:
+                                <ul>
+                                    <li>Dış Kapı No 1: Ana giriş numarasını girin</li>
+                                    <li>Dış Kapı No 2: Varsa ikinci giriş numarasını girin</li>
+                                    <li>Bazı belediyelerde değiştir butonu ile güncellenebilir</li>
+                                </ul>
+                            </li>
+                            <li>Arsa Paylı Daire No:
+                                <ul>
+                                    <li>En alttaki kutuya daire numarasını girin</li>
+                                    <li>Tapu belgesiyle uyumlu olmalıdır</li>
+                                    <li>Hisse hesaplamalarında kullanılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Pafta, ada ve parsel bilgileri boş bırakılamaz</li>
+                    <li>Mahalle seçimi yapılmadan cadde/sokak bilgileri girilemez</li>
+                    <li>Arsa alanı sıfır veya boş olamaz</li>
+                    <li>Tapu bilgileri bazı belediyeler için zorunludur</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Arama butonları ile hızlı seçim yapabilirsiniz</li>
+                    <li>TAB tuşu ile alanlar arasında kolayca geçiş yapabilirsiniz</li>
+                    <li>Köy beyanlarında özel muafiyet hesaplamaları yapılır</li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+    <div id="hesaplama-alanlari" class="section">
+        <h2>Hisse ve Değer Bilgileri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Arsa Hisse Oranları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Arsa alanı bilgisinin altında yer alır</li>
+                            <li>"Arsa Hisse Oranı" etiketi ile başlar</li>
+                            <li>İki metin kutusu "/" işareti ile ayrılmış şekilde yan yana bulunur</li>
+                            <li>Hemen altında "Ek Arsa Hisse Oranı" alanları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Ana hisse oranı girişi:
+                                <ul>
+                                    <li>Sol kutuya pay değerini girin (örn: 1)</li>
+                                    <li>Sağ kutuya payda değerini girin (örn: 2)</li>
+                                    <li>Sistem otomatik olarak arsa hisse alanını hesaplar</li>
+                                </ul>
+                            </li>
+                            <li>Ek hisse oranı girişi (varsa):
+                                <ul>
+                                    <li>Alt sıradaki kutulara ek hisse pay/payda değerlerini girin</li>
+                                    <li>Sistem toplam hisse alanını otomatik günceller</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Arsa Hisse Alanı ve Tarihi Bilgiler:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hisse oranlarının altında "Arsa Hisse Alanı" metin kutusu bulunur</li>
+                            <li>Hemen altında İktisap Tarihi ve Vergi Tarihi alanları yer alır</li>
+                            <li>İktisap Nedeni açılır listesi tarihlerin yanında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İktisap tarihi girişi:
+                                <ul>
+                                    <li>Tarih formatında (GG.AA.YYYY) edinme tarihini girin</li>
+                                    <li>TAB tuşu ile vergi tarihi alanına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Vergi tarihi girişi:
+                                <ul>
+                                    <li>Vergilendirme başlangıç tarihini girin</li>
+                                    <li>Sistem otomatik olarak vergi yılını belirler</li>
+                                </ul>
+                            </li>
+                            <li>İktisap nedeni seçimi:
+                                <ul>
+                                    <li>Açılır listeden edinme sebebini seçin</li>
+                                    <li>Seçiminize göre muafiyet kontrolleri yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rayiç Bedel ve Değer Hesaplamaları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sağ sütunda üst kısımda "Arsa Birim Değeri" ile başlar</li>
+                            <li>Alt alta sıralı hesaplama alanları bulunur</li>
+                            <li>En altta "Rayiç Bedel" alanı yer alır</li>
+                            <li>376 dilekçesi onay kutusu rayiç bedel yanında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Arsa birim değeri:
+                                <ul>
+                                    <li>Vergi yılı girildiğinde sistem otomatik hesaplar</li>
+                                    <li>Bazı belediyelerde manuel giriş yapılamaz</li>
+                                </ul>
+                            </li>
+                            <li>Arsa değeri:
+                                <ul>
+                                    <li>Sistem birim değer ve hisse alanını çarparak hesaplar</li>
+                                    <li>Bu alan kullanıcı tarafından düzenlenemez</li>
+                                </ul>
+                            </li>
+                            <li>Rayiç bedel:
+                                <ul>
+                                    <li>Gerekli durumlarda manuel düzenleme yapılabilir</li>
+                                    <li>376 dilekçesi varsa ilgili kutuyu işaretleyin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+                <li>Yeniden hesaplama seçenekleri:
+                    <ul>
+                        <li>"Yeniden tahakkuk etsin" onay kutusu rayiç bedel alanının yanında bulunur</li>
+                        <li>İşaretlendiğinde beyan değişikliklerinde otomatik hesaplama yapılır</li>
+                        <li>İşaretlenmezse eski değerler korunur</li>
+                        <li>Beyanın ilk girişinde varsayılan olarak işaretlidir</li>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hisse pay değeri payda değerinden büyük olamaz</li>
+                    <li>İktisap tarihi vergi tarihinden sonra olamaz</li>
+                    <li>Rayiç bedel asgari beyan değerinden düşük olamaz</li>
+                    <li>Bazı belediyelerde değer alanları otomatik hesaplanır ve değiştirilemez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Hisse oranları girildiğinde alan hesaplaması otomatik yapılır</li>
+                    <li>Tarih alanlarında nokta (.) kullanarak giriş yapabilirsiniz</li>
+                    <li>Değer alanlarında virgül (,) kullanarak kuruş girebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="muafiyet-kisitlilik" class="section">
+        <h2>Muafiyet ve Kısıtlılık Bilgileri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Muafiyet Bilgileri Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sağ sütunda, rayiç bedel alanının altında yer alır</li>
+                            <li>"Muaf. Baş. /Süre" etiketi ile başlar</li>
+                            <li>Yanında muafiyet nedeni açılır listesi bulunur</li>
+                            <li>Kırsal mahalle muafiyeti butonu en altta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Muafiyet başlangıç yılı ve süresi:
+                                <ul>
+                                    <li>Sol kutuya muafiyet başlangıç yılını girin</li>
+                                    <li>Sağ kutuya muafiyet süresini (yıl olarak) girin</li>
+                                    <li>Sistem otomatik olarak muafiyet tutarını hesaplar</li>
+                                </ul>
+                            </li>
+                            <li>Muafiyet nedeni seçimi:
+                                <ul>
+                                    <li>Açılır listeden muafiyet nedenini seçin</li>
+                                    <li>"Seçiniz" varsayılan değer olarak gelir</li>
+                                    <li>Seçiminize göre muafiyet oranı belirlenir</li>
+                                </ul>
+                            </li>
+                            <li>Kırsal mahalle muafiyeti:
+                                <ul>
+                                    <li>"Kırsal Mahalle" butonuna tıklayın</li>
+                                    <li>Açılan pencerede indirim oranını girin</li>
+                                    <li>Muafiyet türünü seçin ve bitiş yılını belirtin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+                <div class="step">
+                    <h4>Varis İşlemleri:</h4>
+                    <ol>
+                        <li><strong>Alan Konumu:</strong>
+                            <ul>
+                                <li>Temel bilgiler bölümünde iştirakçi sayısı yanında "(VARİSLİ)" ibaresi görünür</li>
+                                <li>Varis girişi butonu alt menüde yer alır</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nasıl Kullanılır:</strong>
+                            <ol>
+                                <li>Varis girişi:
+                                    <ul>
+                                        <li>Varis butonu ile giriş penceresini açın</li>
+                                        <li>Varis sicil bilgilerini girin</li>
+                                        <li>Hisse oranlarını belirleyin</li>
+                                        <li>Sistem otomatik hesaplama yapar</li>
+                                    </ul>
+                                </li>
+                                <li>Özel durumlar:
+                                    <ul>
+                                        <li>Bazı belediyelerde iştirakçi sayısı 1'den büyükse otomatik varis kontrolü yapılır</li>
+                                        <li>Varis durumunda özel muafiyet hesaplamaları uygulanır</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Kısıtlılık Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Muafiyet bilgilerinin altında yer alır</li>
+                            <li>"Kısıtlılık Tarihi / Süre" etiketi ile başlar</li>
+                            <li>Kısıtlılık türü seçimi yanında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Kısıtlılık tarihi ve süresi:
+                                <ul>
+                                    <li>Tarihi GG.AA.YYYY formatında girin</li>
+                                    <li>Süreyi yıl olarak belirtin</li>
+                                    <li>TAB tuşu ile kısıtlılık oranlarına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Kısıtlılık oranı girişi:
+                                <ul>
+                                    <li>Pay değerini ilk kutuya yazın</li>
+                                    <li>Payda değerini ikinci kutuya yazın</li>
+                                    <li>Sistem otomatik olarak kısıtlılık tutarını hesaplar</li>
+                                </ul>
+                            </li>
+                            <li>Kısıtlılık türü seçimi:
+                                <ul>
+                                    <li>Açılır listeden uygun türü seçin</li>
+                                    <li>Her tür için farklı oran hesaplaması yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Satış ve Özel Durum Bilgileri:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>En alt bölümde "Diğer Bilgiler" başlığı altında yer alır</li>
+                            <li>Satış tarihi sol başta bulunur</li>
+                            <li>Ölüm ve emeklilik tarihleri yanında yer alır</li>
+                            <li>Mükellefiyet bitiş tarihi en sağda konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Satış bilgileri girişi:
+                                <ul>
+                                    <li>Satış tarihini GG.AA.YYYY formatında girin</li>
+                                    <li>Satın alan sicil numarasını yazın veya arama butonunu kullanın</li>
+                                    <li>Sistem otomatik olarak satın alan bilgilerini getirir</li>
+                                </ul>
+                            </li>
+                            <li>Özel tarihler:
+                                <ul>
+                                    <li>Ölüm tarihi: Mükellefin vefat tarihi</li>
+                                    <li>Emeklilik tarihi: Sistem otomatik getirir</li>
+                                    <li>Mükellefiyet bitiş: Beyan sonlanma tarihi</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+                
+            </div>
+            <div class="step">
+                <h4>Açıklama ve Bilgi Alanları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>En alt bölümde, ayrı bir çerçeve içinde yer alır</li>
+                            <li>Üç açıklama alanı yan yana bulunur</li>
+                            <li>Bilgi alanı geniş bir metin kutusu olarak altta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Açıklama alanları:
+                                <ul>
+                                    <li>Açıklama1, 2 ve 3: Her biri 40 karakter alır</li>
+                                    <li>Özel durumlar ve notlar için kullanılır</li>
+                                    <li>Bazı belediyeler için zorunlu olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Bilgi alanı:
+                                <ul>
+                                    <li>Alt kısımda geniş metin alanı</li>
+                                    <li>Detaylı açıklamalar girilebilir</li>
+                                    <li>Değiştir butonu ile güncelleme yapılabilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Muafiyet süresi başlangıç yılından küçük olamaz</li>
+                    <li>Kısıtlılık oranları geçerli değer aralığında olmalıdır</li>
+                    <li>Satış tarihi beyan tarihinden önce olamaz</li>
+                    <li>Mükellefiyet bitiş tarihi girildiğinde beyan pasif hale gelir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kırsal mahalle muafiyeti için mahallenin bu statüde olması gerekir</li>
+                    <li>Satış işlemlerinde yeni beyan otomatik oluşturulabilir</li>
+                    <li>Varis durumunda özel hesaplamalar yapılır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Raporlama</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Temel İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Konum ve Düzen:</strong>
+                        <ul>
+                            <li>Formun en alt kısmında yan yana sıralanmış şekilde bulunur</li>
+                            <li>Soldan sağa doğru İleri, Geri, Kayıtlar, Kaydet, Sil şeklinde dizilmiştir</li>
+                            <li>Her buton gri zeminde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İleri/Geri butonları:
+                                <ul>
+                                    <li>Aynı sicile ait beyanlar arasında gezinme sağlar</li>
+                                    <li>İleri: Sonraki beyanlara geçer</li>
+                                    <li>Geri: Önceki beyanlara döner</li>
+                                </ul>
+                            </li>
+                            <li>Kayıtlar butonu:
+                                <ul>
+                                    <li>Beyan arama penceresini açar</li>
+                                    <li>Filtreleme kriterleriyle beyan araması yapılabilir</li>
+                                    <li>Bulunan kayıtlar liste halinde gösterilir</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonu:
+                                <ul>
+                                    <li>Yapılan değişiklikleri kaydeder</li>
+                                    <li>Kayıt sonrası beyanname ve tahakkuk seçenekleri sunulur</li>
+                                    <li>Yeni beyan girişi seçeneği sorulur</li>
+                                </ul>
+                            </li>
+                            <li>Sil butonu:
+                                <ul>
+                                    <li>Aktif beyanı silme işlemi yapar</li>
+                                    <li>Silme öncesi onay sorar</li>
+                                    <li>Tahakkuku olan beyanlar silinemez</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Özel İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Tahakkuk ve Beyanname İşlemleri:</strong>
+                        <ul>
+                            <li>Temel butonların sağında yer alır</li>
+                            <li>"Tah.Fişi", "Beyanname" ve "Ceza İhbarnamesi" butonları bulunur</li>
+                            <li>GMK ve toplu kayıt butonları en sağda konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tahakkuk Fişi:
+                                <ul>
+                                    <li>Butona tıkladığınızda dönem seçim penceresi açılır</li>
+                                    <li>İlgili dönemi seçin</li>
+                                    <li>Tahakkuk fişi yeni pencerede görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Beyanname:
+                                <ul>
+                                    <li>Beyannameyi yazdırmak için tıklayın</li>
+                                    <li>Beyanname formatı seçimi yapın</li>
+                                    <li>Beyanname önizleme penceresi açılır</li>
+                                </ul>
+                            </li>
+                            <li>Ceza İhbarnamesi:
+                                <ul>
+                                    <li>Ceza hesaplama penceresini açar</li>
+                                    <li>Ceza türü ve tutarını belirleyin</li>
+                                    <li>İhbarnameyi yazdırabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>GMK ve Diğer İşlemler:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>En sağda "GMK Gir" ve "Bina GMK Gir" butonları bulunur</li>
+                            <li>Toplu kayıt ve dosya yükleme butonları yanlarında yer alır</li>
+                            <li>Çıkış butonu en sağda konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>GMK işlemleri:
+                                <ul>
+                                    <li>GMK Gir: Arsa bilgileri giriş formunu açar</li>
+                                    <li>Bina GMK Gir: Bina bilgileri giriş formunu açar</li>
+                                    <li>Gayrimenkul bilgilerini buradan güncelleyebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Toplu Kayıt:
+                                <ul>
+                                    <li>Değişiklikleri sonraki yıllara uygular</li>
+                                    <li>Onay sonrası otomatik işlem yapılır</li>
+                                </ul>
+                            </li>
+                            <li>Dosya İşlemleri:
+                                <ul>
+                                    <li>Dosya Yükle: Beyana ait belgeleri ekler</li>
+                                    <li>EBYS: Elektronik belge yönetim sistemine erişir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Belediye Özel Durumları:</h4>
+                <ol>
+                    <li>Altındağ Belediyesi:
+                        <ul>
+                            <li>Rayiç bedel alanı otomatik hesaplanır ve değiştirilemez</li>
+                            <li>Kısıtlılık türü seçimi zorunludur</li>
+                        </ul>
+                    </li>
+                    <li>Mamak Belediyesi:
+                        <ul>
+                            <li>Tahakkuk makbuzu otomatik sorulmaz</li>
+                            <li>Beyan kopyalamada yıl seçimi yapılabilir</li>
+                        </ul>
+                    </li>
+                    <li>Odunpazarı Belediyesi:
+                        <ul>
+                            <li>Vergi tarihi otomatik iktisap tarihinden gelir</li>
+                            <li>Tahakkuk fişinde özel format kullanılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tahakkuk fişi olmadan beyannameyi yazdıramazsınız</li>
+                    <li>Silme işlemi geri alınamaz</li>
+                    <li>Toplu kayıt işlemi tüm sonraki yılları etkiler</li>
+                    <li>GMK işlemleri için yetkiniz olması gerekir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan işlemler için klavye kısayollarını kullanın</li>
+                    <li>Beyanname önizleme yaparak kontrol edin</li>
+                    <li>İşlem öncesi değişiklikleri kaydetmeyi unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari-sorunlar" class="section">
+        <h2>Pratik İpuçları ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Gayrimenkul seçmelisiniz" Hatası:</strong>
+                        <ul>
+                            <li>GMK ID değeri boş geldiğinde ortaya çıkar</li>
+                            <li>Çözüm için sırasıyla:
+                                <ol>
+                                    <li>Pafta bilgisini kontrol edin</li>
+                                    <li>Ada/parsel bilgilerini doğrulayın</li>
+                                    <li>GMK sorgulama ile yeniden seçim yapın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Hisse Toplamı Hatası:</strong>
+                        <ul>
+                            <li>Hisse oranları toplamı 1'i geçtiğinde oluşur</li>
+                            <li>Çözüm adımları:
+                                <ol>
+                                    <li>Pay/payda değerlerini kontrol edin</li>
+                                    <li>Ek hisse oranlarını gözden geçirin</li>
+                                    <li>Toplam hissenin 1'i geçmemesini sağlayın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Rayiç Bedel Hesaplama Sorunları:</strong>
+                        <ul>
+                            <li>Asgari beyan değerinden düşük girildiğinde uyarı verir</li>
+                            <li>Çözüm için:
+                                <ol>
+                                    <li>Arsa birim değerini kontrol edin</li>
+                                    <li>Hisse alanı hesaplamasını gözden geçirin</li>
+                                    <li>Gerekirse manuel rayiç bedel girin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Klavye Kısayolları ve Hızlı İşlemler:</h4>
+                <ol>
+                    <li><strong>Temel Gezinme:</strong>
+                        <ul>
+                            <li>TAB: Sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Önceki alana döner</li>
+                            <li>ENTER: TAB gibi çalışır, sonraki alana geçer</li>
+                            <li>ESC: Açık listeleri kapatır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özel İşlemler:</strong>
+                        <ul>
+                            <li>F2: Sicil arama penceresini açar</li>
+                            <li>ALT + S: Kaydet işlemini başlatır</li>
+                            <li>ALT + T: Tahakkuk fişi yazdırır</li>
+                            <li>ALT + B: Beyanname yazdırır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İşlemleri:</strong>
+                        <ul>
+                            <li>İlk harf yazarak listede arama yapabilirsiniz</li>
+                            <li>CTRL + tıklama ile çoklu seçim yapılabilir</li>
+                            <li>SHIFT + tıklama ile aralık seçimi yapılabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ol>
+                    <li><strong>Beyan Girişi İçin:</strong>
+                        <ul>
+                            <li>Bütün evrakları önceden hazır bulundurun</li>
+                            <li>Sicil bilgilerini girişten önce kontrol edin</li>
+                            <li>Tarih formatlarına dikkat edin (GG.AA.YYYY)</li>
+                            <li>Zorunlu alanları atlamadan doldurun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama İşlemleri İçin:</strong>
+                        <ul>
+                            <li>Önce bütün hisse bilgilerini girin</li>
+                            <li>Arsa değerlerini kontrol edin</li>
+                            <li>Muafiyet/kısıtlılık varsa son olarak ekleyin</li>
+                            <li>Değişiklik yapmadan önce mutlaka kaydedin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporlama İşlemleri İçin:</strong>
+                        <ul>
+                            <li>Beyanname almadan önce tahakkuk kontrolü yapın</li>
+                            <li>Dökümleri önizleme yaparak kontrol edin</li>
+                            <li>Toplu işlemlerde mükellef seçimini dikkatli yapın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Son Kontrol Listesi:</h4>
+                <ul>
+                    <li>Beyan bilgileri eksiksiz girildi mi?</li>
+                    <li>Hisse oranları doğru hesaplandı mı?</li>
+                    <li>Muafiyet/kısıtlılık varsa doğru işlendi mi?</li>
+                    <li>Tahakkuk kontrolü yapıldı mı?</li>
+                    <li>Değişiklikler kaydedildi mi?</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Her işlem sonrası kaydetmeyi unutmayın</li>
+                    <li>Sık sık veri girişi kontrolü yapın</li>
+                    <li>Sorun yaşadığınızda sistem yöneticinize başvurun</li>
+                    <li>Önemli beyanların çıktılarını dosyalayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
