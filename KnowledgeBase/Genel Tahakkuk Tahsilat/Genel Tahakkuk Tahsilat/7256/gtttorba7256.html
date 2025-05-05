@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7256 Sayılı Borç Yapılandırma İşlemleri Kullanıcı Kılavuzu</title>
+
+<style>
+    .header {
+        display: flex;
+        align-items: center;
+        /* Dikey hizalama /
+        justify-content: space-between;
+        / Aralarına boşluk koy /
+        padding: 10px;
+        background-color: #f4f4f4;
+        / Arka plan rengi */
+    }
+
+    .header h1 {
+        margin: 0;
+        /* Varsayılan boşlukları kaldır */
+    }
+
+    .header img {
+        height: 50px;
+        /* Logo boyutunu ayarlayın */
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .bullet-heading::before {
+        content: "•";
+        /* Kalın madde işareti /
+        font-size: 1.5em;
+        / Boyut ayarı /
+        font-weight: bold;
+        / Kalınlık /
+        color: black;
+        / Renk /
+        margin-right: 10px;
+        / Başlıkla işaret arasındaki boşluk */
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+    <h1>7256 Sayılı Borç Yapılandırma İşlemleri Kullanıcı Kılavuzu</h1>
+
+    <div id="icindekiler" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#hizli-ozet">Hızlı Özet</a>
+                    <ul>
+                        <li>Temel İşlem Adımları</li>
+                        <li>Kişi Arama</li>
+                        <li>Borç Bilgilerini Görüntüleme</li>
+                        <li>Taksitlendirme İşlemi</li>
+                    </ul>
+                </li>
+                <li><a href="#sicil-arama">Kişi Arama İşlemleri</a>
+                    <ul>
+                        <li>GTT Sicil Numarası ile Arama</li>
+                        <li>T.C. Kimlik Numarası ile Arama</li>
+                        <li>Su Abone Numarası ile Arama</li>
+                    </ul>
+                </li>
+                <li><a href="#borc-goruntuleme">Borç Görüntüleme ve İşlem Seçenekleri</a>
+                    <ul>
+                        <li>İşlem Bilgileri Girişi</li>
+                        <li>Su Borçları Seçenekleri</li>
+                        <li>Borç Yılı Seçimi</li>
+                    </ul>
+                </li>
+                <li><a href="#borc-hesaplama">Borç Hesaplama ve Taksitlendirme</a>
+                    <ul>
+                        <li>Borç Hesaplama Adımları</li>
+                        <li>Taksitlendirme Seçenekleri</li>
+                        <li>Ödeme Planı Detayları</li>
+                    </ul>
+                </li>
+                <li><a href="#kaydetme-islemleri">Yapılandırma Kaydetme ve Belge İşlemleri</a></li>
+                <li><a href="#emanet-islemleri">Emanet ve Mahsup İşlemleri</a></li>
+                <li><a href="#sikca-sorunlar">Sıkça Karşılaşılan Sorunlar ve Çözümleri</a></li>
+                <li><a href="#klavye-kisayollari">Klavye Kısayolları</a></li>
+                <li><a href="#sistem-mesajlari">Sistem Mesajları ve Anlamları</a></li>
+                <li><a href="#guvenlik-onlemleri">Güvenlik ve Veri Doğrulama</a></li>
+                <li><a href="#son-notlar">Önemli Hatırlatmalar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="hizli-ozet" class="section">
+        <h2>Hızlı Özet</h2>
+        <div class="info-box">
+            <p>Bu program, borçluların yapılandırılmış borçlarının yönetimi için kullanılan bir sistemdir. Programı kullanarak borç yapılandırma, taksitlendirme ve ödeme planı oluşturma işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <h3>Temel İşlem Adımları</h3>
+            <h4>1. Kişi Arama</h4>
+            <ol>
+                <li>Ekranın sol üst kısmında bulunan arama bölümünden:
+                    <ul>
+                        <li>GTT Sicil Numarası</li>
+                        <li>T.C. Kimlik Numarası</li>
+                        <li>Su Abone Numarası</li>
+                    </ul>
+                    seçeneklerinden biriyle arama yapabilirsiniz
+                </li>
+                <li>Numarayı girdikten sonra Enter tuşuna basın veya yanındaki büyüteç ikonuna tıklayın</li>
+                <li>Kişi bilgileri otomatik olarak ekrana gelecektir</li>
+            </ol>
+
+            <h4>2. Borç Bilgilerini Görüntüleme</h4>
+            <ol>
+                <li>Kişi araması sonrası "BORÇ GETİR" butonuna tıklayın</li>
+                <li>Sol tarafta borç listesi görüntülenecektir</li>
+                <li>Her borç için:
+                    <ul>
+                        <li>Asıl borç tutarı</li>
+                        <li>Gecikme zammı</li>
+                        <li>Toplam borç</li>
+                        <li>İndirim tutarı</li>
+                    </ul>
+                    bilgileri listelenecektir
+                </li>
+            </ol>
+
+            <h4>3. Taksitlendirme İşlemi</h4>
+            <ol>
+                <li>Ekranın sağ tarafında taksit seçeneklerini göreceksiniz:
+                    <ul>
+                        <li>Peşin</li>
+                        <li>6 Taksit</li>
+                        <li>9 Taksit</li>
+                        <li>12 Taksit</li>
+                        <li>18 Taksit</li>
+                    </ul>
+                </li>
+                <li>İstediğiniz taksit sayısını seçin</li>
+                <li>Ödeme planı otomatik olarak oluşturulacaktır</li>
+                <li>İşlemi tamamlamak için "Kaydet" butonuna tıklayın</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="sicil-arama" class="section">
+        <h2>Kişi Arama İşlemleri</h2>
+        
+        <div class="step">
+            <h3>Kişi Arama Nasıl Yapılır?</h3>
+            <div class="info-box">
+                <p>Ekranın sol üst köşesinde bulunan "KİŞİ ARAMA" bölümünden üç farklı yöntemle arama yapabilirsiniz:</p>
+
+                <ul>
+                    <li>Ekranın sol üst köşesinde gri renkli bir "KİŞİ ARAMA" bölümü göreceksiniz</li>
+                    <li>Bu bölüm, diğer bölümlerden ince bir çizgi ile ayrılmıştır</li>
+                    <li>Arama bölümünün hemen altında üç adet buton bulunur</li>
+                    <li>En altta bir arama kutusu ve yanında mavi renkli büyüteç ikonu yer alır</li>
+                </ul>
+
+                <h4>Ekran Yerleşimi</h4>
+                <ul>
+                    <li>Arama bölümünün sağında "KİŞİ BİLGİLERİ" bölümü bulunur</li>
+                    <li>Altında "SU BORÇLARI" bölümü yer alır</li>
+                    <li>En sağda "İŞLEM BİLGİLERİ" bölümü vardır</li>
+                </ul>
+
+                
+                <h4>1. GTT Sicil Numarası ile Arama</h4>
+                <ol>
+                    <li>Sicil Numarasına Göre seçeneğini işaretleyin</li>
+                    <li>GTT Sicil numarasını girin (maksimum 9 haneli)</li>
+                    <li>Enter tuşuna basın veya yanındaki büyüteç ikonuna tıklayın</li>
+                </ol>
+
+                <h4>2. T.C. Kimlik Numarası ile Arama</h4>
+                <ol>
+                    <li>T.C. Kimlik Numarasına Göre seçeneğini işaretleyin</li>
+                    <li>11 haneli T.C. Kimlik numarasını girin</li>
+                    <li>Enter tuşuna basın veya yanındaki büyüteç ikonuna tıklayın</li>
+                </ol>
+
+                <h4>3. Su Abone Numarası ile Arama</h4>
+                <ol>
+                    <li>Su Abone Numarasına Göre seçeneğini işaretleyin</li>
+                    <li>Abone numarasını girin</li>
+                    <li>Enter tuşuna basın veya yanındaki büyüteç ikonuna tıklayın</li>
+                </ol>
+
+                <div class="tip-box">
+                    <p><strong>Arama Sonuçları:</strong></p>
+                    <ul>
+                        <li>Kişi bulunursa: Ekranın sağ üst kısmında "KİŞİ BİLGİLERİ" bölümünde kişinin;
+                            <ul>
+                                <li>GTT Sicil No</li>
+                                <li>Adı Soyadı</li>
+                                <li>Ünvanı</li>
+                                <li>T.C. Kimlik No</li>
+                                <li>Vergi No</li>
+                            </ul>
+                            bilgileri görüntülenecektir
+                        </li>
+                        <li>Kişi bulunamazsa: "Sicil Kaydı Bulunamadı!" uyarısı alacaksınız</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="borc-goruntuleme" class="section">
+        <h2>Borç Görüntüleme ve İşlem Seçenekleri</h2>
+        
+        <div class="info-box">
+            <h3>İşlem Bilgileri Girişi</h3>
+            <p>Kişi bilgileri geldikten sonra, ekranın sağ üst köşesinde "İŞLEM BİLGİLERİ" bölümünde:</p>
+            <ol>
+                <li>İşlem Tarihi: Otomatik olarak günün tarihi gelir, değiştirebilirsiniz</li>
+                <li>Evrak No: İsterseniz referans için evrak numarası girebilirsiniz</li>
+                <li>Sadece Kira Borçları: Kira borçlarını ayrı yapılandırmak için işaretleyebilirsiniz</li>
+            </ol>
+
+            <h3>Su Borçları Seçenekleri</h3>
+            <p>Ekranın orta kısmında "SU BORÇLARI" bölümünde:</p>
+            <ol>
+                <li>Su Borçları Dahil Edilsin: Su borçlarını yapılandırmaya dahil etmek için işaretleyin</li>
+                <li>Su Borçlarını Aboneye Göre Taksitlendir: Her abone için ayrı taksitlendirme yapmak isterseniz işaretleyin</li>
+                <li>Abone Listesi: İşaretlediğinizde aktif olur, istediğiniz aboneleri seçebilirsiniz</li>
+            </ol>
+
+            <h3>Borç Yılı Seçimi</h3>
+            <p>İki tarih kutusu bulunur:</p>
+            <ul>
+                <li>İlk kutu: Başlangıç yılı (varsayılan: 0)</li>
+                <li>İkinci kutu: Bitiş yılı (varsayılan: 9999)</li>
+                <li>Belirli yıllar arasındaki borçları filtrelemek için bu alanları kullanabilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Notlar</h3>
+            <ul>
+                <li>Borç getirmeden önce tüm seçenekleri kontrol edin</li>
+                <li>Su borçları seçeneğini işaretlemezseniz, su borçları listelenmeyecektir</li>
+                <li>Aboneye göre taksitlendirme seçeneğini işaretlerseniz, en az bir abone seçmelisiniz</li>
+                <li>Kira borçları seçeneğini işaretlediğinizde sadece kira borçları görüntülenecektir</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="borc-hesaplama" class="section">
+        <h2>Borç Hesaplama ve Taksitlendirme</h2>
+        
+        <div class="step">
+            <h3>Borç Hesaplama Adımları</h3>
+            <div class="info-box">
+                <ol>
+                    <li>Kişi bilgilerini getirdikten sonra ekranın sağ üst köşesindeki "BORÇ GETİR" butonuna tıklayın</li>
+                    <li>Sistem otomatik olarak borçları hesaplayacak ve ekranın sol tarafında "BORÇ DURUMU" bölümünde listeleyecektir</li>
+                    <li>Listede her borç için göreceğiniz bilgiler:
+                        <ul>
+                            <li>Asıl Borç Tutarı</li>
+                            <li>Gecikme Zammı Tutarı</li>
+                            <li>Asıl Toplam Tutar</li>
+                            <li>İndirim Tutarı</li>
+                            <li>Hesaplamaya Esas Tutar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Taksitlendirme Seçenekleri</h4>
+                <p>Ekranın sağ kısmında "BORÇ YAPILANDIRMA" bölümünde taksit seçeneklerini göreceksiniz:</p>
+                <ul>
+                    <li>Peşin Ödeme</li>
+                    <li>6 Taksit</li>
+                    <li>9 Taksit</li>
+                    <li>12 Taksit</li>
+                    <li>18 Taksit</li>
+                    <li>36 Taksit (Sadece kurumlar arası yapılandırma için)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Uyarılar</h3>
+            <ul>
+                <li>36 taksit seçeneği sadece kurumlar arası yapılandırma için geçerlidir</li>
+                <li>Son ödeme tarihi olmayan kayıtlar varsa sistem sizi uyaracaktır</li>
+                <li>Taksit seçimi yapmadan önce borç listesini dikkatle kontrol edin</li>
+                <li>Seçtiğiniz taksit sayısına göre katsayı tutarı otomatik hesaplanacaktır</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Ödeme Planı Detayları</h3>
+            <p>Taksit seçimi yaptığınızda, sistem otomatik olarak ödeme planını oluşturacak ve her taksit için:</p>
+            <ul>
+                <li>Taksit No</li>
+                <li>Son Ödeme Tarihi</li>
+                <li>Hesaplamaya Esas Tutar</li>
+                <li>Yİ-ÜFE Tutarı</li>
+                <li>Katsayı Tutarı</li>
+                <li>Taksit Tutarı</li>
+            </ul>
+            <p>bilgilerini gösterecektir.</p>
+        </div>
+    </div>
+
+    <div id="kaydetme-islemleri" class="section">
+        <h2>Yapılandırma Kaydetme ve Belge İşlemleri</h2>
+        
+        <div class="step">
+            <h3>Kaydetme İşlemi</h3>
+            <ol>
+                <li>Taksit seçimi ve plan oluştuktan sonra "Kaydet" butonuna tıklayın</li>
+                <li>Sistem onay soracaktır: "Kayıt İşlemini Onaylıyor musunuz?"</li>
+                <li>"Evet" cevabı verdiğinizde yapılandırma kaydedilecektir</li>
+                <li>İşlem başarılı olduğunda "Borç Yapılandırması Tamamlandı" mesajı görünecektir</li>
+            </ol>
+
+            <h3>Ödeme Planı ve Başvuru Formu</h3>
+            <p>Kayıt sonrası kullanabileceğiniz butonlar:</p>
+            <ul>
+                <li><strong>Ödeme Planı:</strong> Taksit detaylarını içeren belgeyi görüntüler ve yazdırabilirsiniz</li>
+                <li><strong>Başvuru Formu:</strong> Yapılandırma başvuru belgesini oluşturur</li>
+                <li><strong>Form Temizle:</strong> Tüm alanları temizleyerek yeni işlem başlatmanızı sağlar</li>
+                <li><strong>Çıkış:</strong> Programdan güvenli çıkış yapar</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="emanet-islemleri" class="section">
+        <h2>Emanet ve Mahsup İşlemleri</h2>
+        
+        <div class="info-box">
+            <h3>Emanet Kaydı Oluşması</h3>
+            <div class="step">
+                <h4>1. Emanet Bildirimi</h4>
+                <p>Yapılandırma işlemi tamamlandıktan sonra:</p>
+                <ul>
+                    <li>Ekranın ortasında mavi bir mesaj kutusu belirecektir</li>
+                    <li>Kutuda emanet tutarı TL cinsinden gösterilir</li>
+                    <li>Örnek: "7256 İptalinin Geri Almasından Dolayı 1.234,56 TL Emanet Kaydı Oluştu"</li>
+                </ul>
+
+                <h4>2. Mahsup İşlemi Seçimi</h4>
+                <p>Emanet bildirimi altında:</p>
+                <ol>
+                    <li>"Mahsup Yapacak mısınız?" sorusu görünecektir</li>
+                    <li>İki seçenek sunulur:
+                        <ul>
+                            <li>"Evet" - Mahsup işlemine devam eder</li>
+                            <li>"Hayır" - Emanet kaydını sistemde bırakır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar</h4>
+                <ul>
+                    <li>Emanet kaydı otomatik oluşur, manuel işlem gerektirmez</li>
+                    <li>Mahsup işlemini hemen yapmak zorunda değilsiniz</li>
+                    <li>Mahsup işlemini daha sonra da yapabilirsiniz</li>
+                    <li>Tüm tutar bilgilerini dikkatle kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sikca-sorunlar" class="section">
+        <h2>Sıkça Karşılaşılan Sorunlar ve Çözümleri</h2>
+        
+        <div class="warning-box">
+            <table>
+                <tr>
+                    <th>Sorun</th>
+                    <th>Nedeni</th>
+                    <th>Çözüm</th>
+                </tr>
+                <tr>
+                    <td>Sicil bulunamadı hatası</td>
+                    <td>Hatalı numara girişi veya kayıt eksikliği</td>
+                    <td>
+                        <ul>
+                            <li>Numarayı kontrol edin</li>
+                            <li>Doğru arama tipini seçtiğinizden emin olun</li>
+                            <li>Numarayı tekrar girin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>İptalden Geri Al butonu aktif değil</td>
+                    <td>Yapılandırma seçimi yapılmamış</td>
+                    <td>Listeden bir yapılandırma seçin</td>
+                </tr>
+                <tr>
+                    <td>Ödeme Planı butonu aktif değil</td>
+                    <td>Pasif kayıt seçilmemiş</td>
+                    <td>Pasif durumda olan bir kayıt seçin</td>
+                </tr>
+                <tr>
+                    <td>Taksit seçenekleri aktif değil</td>
+                    <td>Borç hesaplaması yapılmamış</td>
+                    <td>"BORÇ GETİR" butonuna tıklayın</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tip-box">
+            <h3>İşlem İpuçları</h3>
+            <ul>
+                <li>İşlem yapmadan önce tüm bilgileri kontrol edin</li>
+                <li>Sorun yaşarsanız formu temizleyip yeniden başlayın</li>
+                <li>Önemli tutarları not alın veya yazdırın</li>
+                <li>Şüpheli durumlarda yöneticinize danışın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları</h2>
+        
+        <div class="info-box">
+            <table>
+                <tr>
+                    <th>Tuş</th>
+                    <th>İşlev</th>
+                    <th>Kullanım Yeri</th>
+                </tr>
+                <tr>
+                    <td>Enter</td>
+                    <td>Sicil arama</td>
+                    <td>Sicil no girişinde</td>
+                </tr>
+                <tr>
+                    <td>Esc</td>
+                    <td>Pencere kapatma</td>
+                    <td>Tüm ekranlarda</td>
+                </tr>
+                <tr>
+                    <td>Tab</td>
+                    <td>Sonraki alana geçiş</td>
+                    <td>Tüm giriş alanlarında</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="sistem-mesajlari" class="section">
+        <h2>Sistem Mesajları ve Anlamları</h2>
+        
+        <div class="info-box">
+            <h3>Sık Görülen Mesajlar ve Yapılması Gerekenler</h3>
+            <table>
+                <tr>
+                    <th>Mesaj</th>
+                    <th>Anlamı</th>
+                    <th>Yapılması Gereken</th>
+                </tr>
+                <tr>
+                    <td>"Sicil Kaydı Bulunamadı!"</td>
+                    <td>Aradığınız kişi sistemde yok</td>
+                    <td>
+                        - Numarayı tekrar kontrol edin<br>
+                        - Doğru arama tipini seçtiğinizden emin olun<br>
+                        - Tekrar deneyin
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Öncelikle PASİF kaydı geri almalısınız!"</td>
+                    <td>Aktif kayıt seçilmiş durumda</td>
+                    <td>Listeden pasif durumda olan kaydı seçin</td>
+                </tr>
+                <tr>
+                    <td>"Geri Alma İşlemine Devam Edecek misiniz?"</td>
+                    <td>İşlem onayı bekleniyor</td>
+                    <td>Bilgileri kontrol edip emin olduktan sonra onaylayın</td>
+                </tr>
+                <tr>
+                    <td>"Emanet Kaydı Oluştu"</td>
+                    <td>Mahsup işlemi yapılabilir</td>
+                    <td>Mahsup yapmak istiyorsanız "Evet"i seçin</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Sistem Uyarıları</h3>
+            <ul>
+                <li>"Parametrelerden Kontrol Tarihi Bilgisi Girilmemiş"
+                    <ul>
+                        <li>Anlamı: Sistem ayarları eksik</li>
+                        <li>Çözüm: Yöneticinize başvurun</li>
+                    </ul>
+                </li>
+                <li>"Tahakkuk Türleri Düzenleme Menüsünden Taksitlendirme Türü Alanlarını Seçmelisiniz"
+                    <ul>
+                        <li>Anlamı: Taksit türü tanımları eksik</li>
+                        <li>Çözüm: İlgili menüden tanımlamaları yapın</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="guvenlik-onlemleri" class="section">
+        <h2>Güvenlik ve Veri Doğrulama</h2>
+        
+        <div class="warning-box">
+            <h3>İşlem Güvenliği Kuralları</h3>
+            <ul>
+                <li>Her önemli işlem için sistem onayı alınır</li>
+                <li>Kullanıcı bilgileri ve yapılan işlemler kaydedilir</li>
+                <li>Kritik işlemlerde çift onay gerekebilir</li>
+                <li>Tüm işlemler sistemde loglanır</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Güvenli İşlem İpuçları</h3>
+            <ol>
+                <li>Veri Kontrolü
+                    <ul>
+                        <li>Sicil bilgilerini iki kez kontrol edin</li>
+                        <li>Tutar bilgilerini teyit edin</li>
+                        <li>Son ödeme tarihlerini kontrol edin</li>
+                    </ul>
+                </li>
+                <li>İşlem Öncesi Hazırlık
+                    <ul>
+                        <li>Tüm gerekli belgeleri hazırlayın</li>
+                        <li>Borç tutarlarını doğrulayın</li>
+                        <li>Taksit sayısını kontrol edin</li>
+                    </ul>
+                </li>
+                <li>Onay ve Kayıt
+                    <ul>
+                        <li>İşlem öncesi tüm bilgileri gözden geçirin</li>
+                        <li>Onay mesajlarını dikkatle okuyun</li>
+                        <li>Gerekli belgeleri yazdırın ve saklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="son-notlar" class="section">
+        <h2>Önemli Hatırlatmalar</h2>
+        
+        <div class="info-box">
+            <h3>Yapılandırma İşlemi Öncesi Kontrol Listesi</h3>
+            <ul>
+                <li>Kişi bilgilerinin doğruluğunu kontrol edin</li>
+                <li>Borç tutarlarını ve tarihleri teyit edin</li>
+                <li>Taksit seçeneklerini borçlu ile görüşün</li>
+                <li>Gerekli tüm belgelerin hazır olduğundan emin olun</li>
+                <li>İşlem tarihinin doğru olduğunu kontrol edin</li>
+            </ul>
+
+            <h3>İşlem Sonrası Yapılacaklar</h3>
+            <ul>
+                <li>Ödeme planını yazdırın ve borçluya teslim edin</li>
+                <li>Başvuru formunu imzalatın</li>
+                <li>Emanet işlemlerini kontrol edin</li>
+                <li>Gerekli belgeleri dosyalayın</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

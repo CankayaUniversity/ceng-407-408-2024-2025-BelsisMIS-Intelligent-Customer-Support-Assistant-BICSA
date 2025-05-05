@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tecil İşlemleri Detaylı Kullanım Kılavuzu</title>
+    <meta charset="UTF-8">
+
+    <style>
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+    .header h1 {
+        margin: 0;
+    }
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+    h3 {
+        color: #333;
+        margin-top: 20px;
+    }
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+    .section {
+        margin-bottom: 40px;
+    }
+    .button-example {
+        background-color: #f5f5f5;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-family: monospace;
+    }
+    .field-description {
+        margin-left: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f5f5f5;
+    }
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Tecil İşlemleri Detaylı Kullanım Kılavuzu</h1>
+</div>
+
+<div class="info-box">
+    <h2>İçindekiler</h2>
+    <ol>
+        <li>Genel Bakış ve Sistem Özeti</li>
+        <li>Temel Kavramlar</li>
+        <li>Sistem Girişi ve Ana Ekran</li>
+        <li>Sicil İşlemleri
+            <ul>
+                <li>Sicil Arama</li>
+                <li>Sicil Bilgileri Görüntüleme</li>
+                <li>Sicil Detayları</li>
+            </ul>
+        </li>
+        <li>Tecil İşlemleri
+            <ul>
+                <li>Tecil Kayıtlarını Görüntüleme</li>
+                <li>Tecil Detayları</li>
+            </ul>
+        </li>
+        <li>Tecil İptal İşlemleri
+            <ul>
+                <li>Tekli İptal</li>
+                <li>Toplu İptal</li>
+                <li>İptal Onaylama</li>
+            </ul>
+        </li>
+        <li>Raporlar ve Çıktılar
+            <ul>
+                <li>Tecil Raporu</li>
+                <li>Başvuru Dilekçesi</li>
+                <li>Yazdırma İşlemleri</li>
+            </ul>
+        </li>
+        <li>Sık Karşılaşılan Durumlar</li>
+        <li>Hata Mesajları ve Çözümleri</li>
+    </ol>
+</div>
+
+<div class="section">
+    <h2>1. Genel Bakış ve Sistem Özeti</h2>
+    <p>Tecil İşlemleri sistemi, borçların taksitlendirilmesi ve tecil edilmesi süreçlerini yönetmek için tasarlanmış kapsamlı bir uygulamadır. Bu sistem aşağıdaki ana işlevleri sağlar:</p>
+    
+    <div class="info-box">
+        <h3>Ana İşlevler:</h3>
+        <ul>
+            <li>Sicil bilgilerinin hızlı ve detaylı görüntülenmesi</li>
+            <li>Tecil kayıtlarının yönetimi ve takibi</li>
+            <li>Tecil iptal işlemlerinin gerçekleştirilmesi</li>
+            <li>Başvuru dilekçelerinin oluşturulması</li>
+            <li>Detaylı raporların alınması</li>
+            <li>Tecil durumlarının anlık takibi</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>Sistem Amacı:</strong> Bu sistem, borç yapılandırma süreçlerini kolaylaştırmak ve tecil işlemlerini düzenli bir şekilde takip etmek için tasarlanmıştır. Kullanıcılar, mükelleflerin tecil taleplerini yönetebilir ve mevcut tecilleri izleyebilir.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>2. Temel Kavramlar</h2>
+    
+    <div class="info-box">
+        <h3>Önemli Terimler:</h3>
+        <table>
+            <tr>
+                <th>Terim</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Tecil</td>
+                <td>Borçların belirli bir ödeme planına bağlanarak taksitlendirilmesi işlemi</td>
+            </tr>
+            <tr>
+                <td>Sicil No</td>
+                <td>Her mükellefe özel atanmış benzersiz tanımlayıcı numara</td>
+            </tr>
+            <tr>
+                <td>Mernis No</td>
+                <td>Vatandaşlık numarası (T.C. Kimlik No)</td>
+            </tr>
+            <tr>
+                <td>Tecil İptali</td>
+                <td>Mevcut tecil işleminin sonlandırılması</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>3. Sistem Girişi ve Ana Ekran</h2>
+    
+    <h3>3.1 Ana Ekran Bileşenleri</h3>
+    <div class="field-description">
+        <p>Ana ekranda bulunan alanlar ve işlevleri:</p>
+        <table>
+            <tr>
+                <th>Alan/Buton</th>
+                <th>İşlev</th>
+                <th>Kullanım</th>
+            </tr>
+            <tr>
+                <td>Sicil No Alanı</td>
+                <td>Mükellef sicil numarası girişi</td>
+                <td>Klavyeden direkt giriş veya kopyala-yapıştır</td>
+            </tr>
+            <tr>
+                <td>Sicil Bul Butonu</td>
+                <td>Sicil arama işlemi başlatma</td>
+                <td>Tıklama ile veya Enter tuşu ile</td>
+            </tr>
+            <tr>
+                <td>Tecil Kayıtları Butonu</td>
+                <td>Mevcut tecilleri görüntüleme</td>
+                <td>Sicil seçiliyken tıklama ile</td>
+            </tr>
+            <tr>
+                <td>Form Temizle</td>
+                <td>Tüm form alanlarını sıfırlama</td>
+                <td>İstediğiniz zaman tıklayarak</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>Önemli:</strong> Sistem üzerinde işlem yapmadan önce:</p>
+        <ul>
+            <li>İnternet bağlantınızın aktif olduğundan</li>
+            <li>Sistemde oturumunuzun açık olduğundan</li>
+            <li>Tarayıcınızın güncel olduğundan</li>
+        </ul>
+        <p>emin olunuz.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>4. Sicil İşlemleri</h2>
+    
+    <h3>4.1 Sicil Arama</h3>
+    <div class="step">
+        <p><strong>Sicil aramanın iki yolu vardır:</strong></p>
+        <ol>
+            <li>Doğrudan Arama:
+                <ul>
+                    <li>Sicil numarasını girin</li>
+                    <li>Enter tuşuna basın veya "Sicil Seç" butonuna tıklayın</li>
+                </ul>
+            </li>
+            <li>Sicil Bul Penceresi ile Arama:
+                <ul>
+                    <li>"Sicil Bul" butonuna tıklayın</li>
+                    <li>Açılan pencerede arama kriterlerini girin</li>
+                    <li>Listeden sicil seçin</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h3>4.2 Sicil Bilgileri Görüntüleme</h3>
+    <p>Sicil bulunduğunda aşağıdaki bilgiler otomatik olarak görüntülenir:</p>
+    <div class="info-box">
+        <ul>
+            <li>Temel Bilgiler:
+                <ul>
+                    <li>Mernis No (T.C. Kimlik No)</li>
+                    <li>Adı Soyadı</li>
+                    <li>Baba Adı</li>
+                </ul>
+            </li>
+            <li>Kişisel Bilgiler:
+                <ul>
+                    <li>Doğum Yeri</li>
+                    <li>Doğum Tarihi</li>
+                </ul>
+            </li>
+            <li>İletişim Bilgileri:
+                <ul>
+                    <li>Ev Adresi (Detaylı)</li>
+                    <li>İş Adresi (Detaylı)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>5. Tecil İşlemleri</h2>
+    
+    <h3>5.1 Tecil Kayıtlarını Görüntüleme</h3>
+    <div class="step">
+        <ol>
+            <li>Sicil seçimini yapın</li>
+            <li>"Tecil Kayıtları" butonuna tıklayın</li>
+            <li>Sistem tüm tecil kayıtlarını liste halinde gösterir</li>
+        </ol>
+    </div>
+
+    <h3>5.2 Tecil Detayları</h3>
+    <p>Tecil listesinde her kayıt için gösterilen bilgiler:</p>
+    <div class="info-box">
+        <ul>
+            <li>Tecil Tarihi</li>
+            <li>Açıklama</li>
+            <li>Seçim Kutusu (İptal işlemi için)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>6. Tecil İptal İşlemleri</h2>
+    
+    <h3>6.1 Tekli İptal</h3>
+    <div class="step">
+        <ol>
+            <li>İptal edilecek tecil kaydının yanındaki kutuyu işaretleyin</li>
+            <li>"Kayıtları İptal Et" butonuna tıklayın</li>
+            <li>Onay mesajını kabul edin</li>
+        </ol>
+    </div>
+
+    <h3>6.2 Toplu İptal</h3>
+    <div class="step">
+        <ol>
+            <li>Listenin üst kısmındaki ana seçim kutusunu işaretleyin</li>
+            <li>Tüm kayıtlar otomatik olarak seçilecektir</li>
+            <li>"Kayıtları İptal Et" butonuna tıklayın</li>
+            <li>Onay mesajını kabul edin</li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>Önemli Uyarılar:</strong></p>
+        <ul>
+            <li>İptal işlemi geri alınamaz</li>
+            <li>İptal öncesi kayıtları dikkatle kontrol edin</li>
+            <li>Toplu iptal yaparken tüm kayıtların doğru olduğundan emin olun</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>7. Raporlar ve Çıktılar</h2>
+    
+    <h3>7.1 Rapor Türleri</h3>
+    <div class="info-box">
+        <p>Sistem üzerinden alabileceğiniz iki temel rapor türü vardır:</p>
+        <table>
+            <tr>
+                <th>Rapor Türü</th>
+                <th>İçerik</th>
+                <th>Kullanım Amacı</th>
+            </tr>
+            <tr>
+                <td>Tecil Raporu</td>
+                <td>Tüm tecil kayıtlarının detaylı dökümü</td>
+                <td>Genel takip ve arşivleme</td>
+            </tr>
+            <tr>
+                <td>Başvuru Dilekçesi</td>
+                <td>Tecil başvurusu için gerekli resmi belge</td>
+                <td>Resmi başvuru işlemleri</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>7.2 Yazdırma İşlemleri</h3>
+    <div class="step">
+        <p><strong>Tecil Raporu Yazdırma:</strong></p>
+        <ol>
+            <li>"Yazdır" butonuna tıklayın</li>
+            <li>Açılan pencerede rapor önizlemesi görüntülenir</li>
+            <li>Yazıcı simgesine tıklayarak yazdırma işlemini başlatın</li>
+        </ol>
+
+        <p><strong>Başvuru Dilekçesi Yazdırma:</strong></p>
+        <ol>
+            <li>Sicil numarasının girilmiş olduğundan emin olun</li>
+            <li>"Başvuru Dilekçesi" butonuna tıklayın</li>
+            <li>Açılan formda gerekli alanları kontrol edin</li>
+            <li>Yazdır butonuna tıklayın</li>
+        </ol>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>Yazdırma İpuçları:</strong></p>
+        <ul>
+            <li>Yazdırma öncesi yazıcı ayarlarını kontrol edin</li>
+            <li>Kağıt boyutunun A4 olduğundan emin olun</li>
+            <li>Önemli belgeler için yedek kopya almayı unutmayın</li>
+        </ul>
+    </div>
+
+    <h3>7.3 Rapor Saklama ve Arşivleme</h3>
+    <div class="info-box">
+        <p>Raporlarınızı düzenli olarak arşivlemeniz önerilir:</p>
+        <ul>
+            <li>Her tecil işlemi için bir kopya saklayın</li>
+            <li>Önemli belgeleri güvenli bir yerde muhafaza edin</li>
+            <li>Gerektiğinde kolayca ulaşabilmek için düzenli bir dosyalama sistemi kullanın</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>8. Sık Karşılaşılan Durumlar</h2>
+    
+    <h3>8.1 Genel Durumlar</h3>
+    <div class="info-box">
+        <table>
+            <tr>
+                <th>Durum</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>Sicil bulunamadı hatası</td>
+                <td>Sicil numarasını kontrol edin ve tekrar deneyin</td>
+            </tr>
+            <tr>
+                <td>Tecil kaydı görüntülenemiyor</td>
+                <td>Sicil seçiminin doğru yapıldığından emin olun</td>
+            </tr>
+            <tr>
+                <td>Yazdırma işlemi başarısız</td>
+                <td>Yazıcı bağlantısını kontrol edin</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>8.2 Özel Durumlar</h3>
+    <div class="warning-box">
+        <p><strong>Dikkat edilmesi gereken özel durumlar:</strong></p>
+        <ul>
+            <li>Tecil iptali sonrası yeni tecil başvurusu yapılması</li>
+            <li>Aynı sicil için birden fazla tecil kaydı olması</li>
+            <li>Eksik bilgi içeren sicil kayıtları</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>9. Hata Mesajları ve Çözümleri</h2>
+    
+    <h3>9.1 Sistem Hata Mesajları</h3>
+    <div class="info-box">
+        <table>
+            <tr>
+                <th>Hata Mesajı</th>
+                <th>Olası Neden</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>"Sicil Kaydı Bulunamadı"</td>
+                <td>Yanlış sicil numarası</td>
+                <td>Numarayı kontrol edip tekrar deneyin</td>
+            </tr>
+            <tr>
+                <td>"İşlem Başarısız"</td>
+                <td>Sistem yanıt vermiyor</td>
+                <td>Sayfayı yenileyip tekrar deneyin</td>
+            </tr>
+            <tr>
+                <td>"Bağlantı Hatası"</td>
+                <td>İnternet bağlantısı kopuk</td>
+                <td>Bağlantınızı kontrol edin</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>9.2 Kullanıcı Hataları</h3>
+    <div class="warning-box">
+        <p><strong>Sık yapılan kullanıcı hataları ve çözümleri:</strong></p>
+        <ul>
+            <li>Yanlış sicil numarası girişi
+                <ul>
+                    <li>Numarayı iki kez kontrol edin</li>
+                    <li>Sicil Bul penceresini kullanın</li>
+                </ul>
+            </li>
+            <li>İptal işlemi onayını yanlışlıkla verme
+                <ul>
+                    <li>İşlem öncesi tüm kayıtları kontrol edin</li>
+                    <li>Emin olmadan onay vermeyin</li>
+                </ul>
+            </li>
+            <li>Eksik bilgi ile form gönderimi
+                <ul>
+                    <li>Tüm zorunlu alanları doldurun</li>
+                    <li>Gönderim öncesi kontrol edin</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>10. Sistem Kısayolları ve İpuçları</h2>
+    
+    <h3>10.1 Klavye Kısayolları</h3>
+    <div class="info-box">
+        <table>
+            <tr>
+                <th>Kısayol</th>
+                <th>İşlev</th>
+            </tr>
+            <tr>
+                <td>Enter</td>
+                <td>Sicil numarası girişini onaylama</td>
+            </tr>
+            <tr>
+                <td>Tab</td>
+                <td>Alanlar arası geçiş</td>
+            </tr>
+            <tr>
+                <td>Ctrl + P</td>
+                <td>Rapor yazdırma</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>10.2 Verimlilik İpuçları</h3>
+    <div class="tip-box">
+        <p><strong>Sistem kullanımını daha verimli hale getirmek için:</strong></p>
+        <ul>
+            <li>Sık kullanılan sicil numaralarını not edin</li>
+            <li>Önemli raporları düzenli olarak yedekleyin</li>
+            <li>İşlem öncesi tüm bilgileri hazır bulundurun</li>
+            <li>Karmaşık işlemler için kontrol listesi kullanın</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tecil İşlemleri Dokümanı - Devam</title>
+    <meta charset="windows-1254">
+    <style>
+    /* Önceki stil tanımları */
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h2>10.3 İşlem Sıralama ve Kontroller</h2>
+    
+    <div class="info-box">
+        <h4>İşlem Sırası:</h4>
+        <ol>
+            <li>Sicil Arama
+                <ul>
+                    <li>Sicil numarası girin</li>
+                    <li>Enter tuşuna basın veya Sicil Bul'u kullanın</li>
+                    <li>Bilgilerin doğru geldiğini kontrol edin</li>
+                </ul>
+            </li>
+            <li>Tecil Kayıtlarını Görüntüleme
+                <ul>
+                    <li>Tecil Kayıtları butonuna tıklayın</li>
+                    <li>Listelenen kayıtları inceleyin</li>
+                </ul>
+            </li>
+            <li>İptal İşlemi
+                <ul>
+                    <li>İptal edilecek kayıtları seçin</li>
+                    <li>Kayıtları İptal Et butonuna basın</li>
+                    <li>Onay verin</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h3>10.4 Hata Kontrolleri</h3>
+    <div class="warning-box">
+        <table>
+            <tr>
+                <th>Hata Durumu</th>
+                <th>Kontrol Edilecek</th>
+            </tr>
+            <tr>
+                <td>Sicil Bulunamadı</td>
+                <td>
+                    <ul>
+                        <li>Sicil numarasını kontrol edin</li>
+                        <li>Rakamları eksiksiz girin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Tecil Kaydı Yok</td>
+                <td>
+                    <ul>
+                        <li>Sicil numarasını doğrulayın</li>
+                        <li>Farklı tarih aralığı deneyin</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>11. Özel Durumlar ve İstisnalar</h2>
+    
+    <div class="info-box">
+        <h3>11.1 Form Yükleme Sorunları</h3>
+        <ul>
+            <li>Sayfa yenileme gerektiğinde:
+                <ul>
+                    <li>Form Temizle butonunu kullanın</li>
+                    <li>Sayfayı yeniden yükleyin</li>
+                </ul>
+            </li>
+            <li>Veri görüntüleme sorunu:
+                <ul>
+                    <li>Sicil numarasını tekrar girin</li>
+                    <li>Sicil Seç butonunu kullanın</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="warning-box">
+        <h3>11.2 Kritik Uyarılar</h3>
+        <ul>
+            <li>İptal işlemi geri alınamaz</li>
+            <li>Toplu seçimlerde dikkatli olun</li>
+            <li>İşlem öncesi bilgileri kontrol edin</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

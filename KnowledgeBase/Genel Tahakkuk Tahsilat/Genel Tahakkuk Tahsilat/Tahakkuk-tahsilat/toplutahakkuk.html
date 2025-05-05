@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toplu Tahakkuk İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Toplu Tahakkuk İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#temel-bilgiler">Temel Bilgiler</a></li>
+                <li><a href="#tahakkuk-turu">Tahakkuk Türü Seçimi</a></li>
+                <li><a href="#kdv-islemleri">KDV İşlemleri</a></li>
+                <li><a href="#sicil-islemleri">Sicil İşlemleri</a></li>
+                <li><a href="#kaydetme">Kaydetme İşlemleri</a></li>
+                <li><a href="#sikca-karsilasilan">Sıkça Karşılaşılan Hatalar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, toplu tahakkuk işlemlerinin nasıl yapılacağını adım adım anlatmak için hazırlanmıştır.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu program ile yapabileceğiniz işlemler:</p>
+                <ul>
+                    <li>Toplu tahakkuk girişi</li>
+                    <li>KDV hesaplamaları</li>
+                    <li>Sicil bilgilerinin görüntülenmesi ve işlenmesi</li>
+                    <li>Tahsilat kayıtlarının oluşturulması</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <p>Program açıldığında karşınıza çıkacak ekran üç ana bölümden oluşur:</p>
+            
+            <div class="step">
+                <h4>1. Üst Bilgi Alanı</h4>
+                <ul>
+                    <li><strong>Yıl ve Dönem Alanı:</strong> Ekranın en üst kısmında, sol tarafta yer alır
+                        <ul>
+                            <li>Yıl: 4 haneli olarak girilir (örn: 2024)</li>
+                            <li>Dönem: Hemen yanında 2 haneli olarak girilir (örn: 01)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Türü Seçimi:</strong> Yıl/Dönem alanının hemen sağında geniş bir açılır liste olarak bulunur</li>
+                    <li><strong>Tarih Alanları:</strong> En sağda yer alan iki tarih giriş alanı
+                        <ul>
+                            <li>Tahakkuk Tarihi</li>
+                            <li>Son Ödeme Tarihi</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="step">
+                <h4>2. Orta Bilgi Alanı</h4>
+                <ul>
+                    <li><strong>Açıklama Alanı:</strong> Üst bilgi alanının hemen altında, geniş bir metin kutusu olarak yer alır</li>
+                    <li><strong>KDV Bilgileri:</strong> Açıklama alanının altında yan yana üç seçenek kutusu bulunur
+                        <ul>
+                            <li>KDV Hesabı seçimi</li>
+                            <li>KDV Türü seçimi</li>
+                            <li>KDV Oranı seçimi</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="step">
+                <h4>3. Alt Bilgi Alanı (Veri Giriş Tablosu)</h4>
+                <ul>
+                    <li><strong>Tablo Başlıkları:</strong> Soldan sağa sırasıyla
+                        <ul>
+                            <li>Sicil No</li>
+                            <li>Kişi/Kurum Adı</li>
+                            <li>Adres</li>
+                            <li>Açıklama</li>
+                            <li>Miktar</li>
+                            <li>Birim Fiyat</li>
+                            <li>KDV</li>
+                            <li>Tutar</li>
+                            <li>İşlem Butonları</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="temel-bilgiler" class="section">
+        <h2>Temel Bilgiler</h2>
+        <div class="info-box">
+            <h3>Program Kullanımı İçin Gerekli Bilgiler</h3>
+            
+            <div class="warning-box">
+                <h4>İşleme Başlamadan Önce Hazır Bulunması Gereken Bilgiler:</h4>
+                <ul>
+                    <li>İşlem yapılacak yıl ve dönem</li>
+                    <li>Tahakkuk türü</li>
+                    <li>Tahakkuk ve son ödeme tarihleri</li>
+                    <li>Sicil bilgileri</li>
+                    <li>KDV hesaplama yöntemi (dahil/hariç)</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Veri Giriş Sırası:</h4>
+                <ol>
+                    <li>Önce üst bölümdeki genel bilgileri girin (yıl, dönem, tahakkuk türü)</li>
+                    <li>Tarihleri belirleyin</li>
+                    <li>Açıklama bilgisini girin</li>
+                    <li>KDV ayarlarını yapın</li>
+                    <li>Sicil bilgilerini girmeye başlayın</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-islemleri" class="section">
+        <h2>Tahakkuk İşlemleri - Adım Adım Kullanım</h2>
+        <div class="info-box">
+            <h3>1. Başlangıç Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Yıl ve Dönem Girişi</h4>
+                <ol>
+                    <li>Ekranın üst kısmında sol tarafta bulunan "Yıl" kutucuğuna tıklayın
+                        <ul>
+                            <li>Bu alan otomatik olarak içinde bulunduğunuz yılı gösterecektir</li>
+                            <li>Gerekirse değiştirmek için üzerine tıklayıp yeni yılı yazabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Hemen yanındaki "Dönem" kutucuğuna tıklayın
+                        <ul>
+                            <li>Bu alan otomatik olarak içinde bulunduğunuz ayı gösterecektir</li>
+                            <li>1-12 arası bir sayı girmelisiniz</li>
+                            <li>Tek haneli aylar için başına 0 koymanıza gerek yoktur (örn: Ocak ayı için 1 yazabilirsiniz)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Tahakkuk Türü Seçimi</h4>
+                <ol>
+                    <li>Yıl/Dönem alanlarının hemen sağında bulunan geniş açılır listeye tıklayın
+                        <ul>
+                            <li>Liste otomatik olarak aşağı doğru açılacaktır</li>
+                            <li>İçinde tüm tahakkuk türlerini göreceksiniz</li>
+                        </ul>
+                    </li>
+                    <li>Listeden uygun tahakkuk türünü seçin
+                        <ul>
+                            <li>Mouse ile üzerine tıklayarak seçim yapabilirsiniz</li>
+                            <li>Klavye ile yazmaya başlayarak da arama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="warning-box">
+                    <p><strong>Önemli:</strong> Tahakkuk türü seçmeden diğer işlemlere geçemezsiniz. Bu alan zorunludur.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>Tarih Bilgilerinin Girilmesi</h4>
+                <ol>
+                    <li>Ekranın üst kısmında sağ tarafta "Tahakkuk Tarihi" alanını bulun
+                        <ul>
+                            <li>Bu alan otomatik olarak günün tarihini gösterecektir</li>
+                            <li>Tarihi değiştirmek için üzerine tıklayın</li>
+                            <li>Tarih formatı: GG.AA.YYYY şeklindedir (örn: 27.01.2024)</li>
+                        </ul>
+                    </li>
+                    <li>Hemen yanındaki "Son Ödeme Tarihi" alanını doldurun
+                        <ul>
+                            <li>Bu alan da otomatik olarak günün tarihini gösterecektir</li>
+                            <li>Son ödeme tarihi, tahakkuk tarihinden sonraki bir tarih olmalıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="tip-box">
+                    <p><strong>İpucu:</strong> Tarihleri klavyeden girerken nokta (.) tuşunu kullanarak gün, ay ve yıl arasında geçiş yapabilirsiniz.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>Açıklama Bilgisinin Girilmesi</h4>
+                <ol>
+                    <li>Tarih alanlarının altında bulunan geniş "Açıklama" metin kutusuna tıklayın</li>
+                    <li>Tahakkuk işlemi için açıklayıcı bir metin girin
+                        <ul>
+                            <li>Bu alan en fazla 200 karakter alabilir</li>
+                            <li>Girdiğiniz açıklama, her tahakkuk kaydı için varsayılan açıklama olarak kullanılacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="kdv-islemleri" class="section">
+        <h2>KDV İşlemleri</h2>
+        <div class="info-box">
+            <h3>KDV Ayarlarının Yapılması</h3>
+            
+            <div class="step">
+                <h4>KDV Hesaplama Yönteminin Seçilmesi</h4>
+                <ol>
+                    <li>Açıklama alanının hemen altında sol tarafta bulunan "KDV Hesabı" açılır listesine tıklayın
+                        <ul>
+                            <li>Üç seçenek göreceksiniz:
+                                <br>- Hesaplanmasın
+                                <br>- Dahil
+                                <br>- Hariç
+                            </li>
+                            <li>"Hesaplanmasın": KDV hesaplanmayacaksa bunu seçin</li>
+                            <li>"Dahil": Girilen tutarın içinde KDV varsa bunu seçin</li>
+                            <li>"Hariç": Girilen tutara KDV eklenecekse bunu seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+    
+                <div class="warning-box">
+                    <p><strong>Dikkat:</strong> KDV hesaplanacaksa, hem KDV türünü hem de KDV oranını seçmek zorunludur.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>KDV Türü ve Oranının Belirlenmesi</h4>
+                <ol>
+                    <li>KDV Hesabı seçiminin hemen sağındaki "KDV Türü" açılır listesine tıklayın
+                        <ul>
+                            <li>Liste açıldığında mevcut KDV türlerini göreceksiniz</li>
+                            <li>Uygun KDV türünü seçin</li>
+                        </ul>
+                    </li>
+                    <li>KDV türü seçiminin yanındaki "KDV Oranı" açılır listesine tıklayın
+                        <ul>
+                            <li>Standart KDV oranları listelenecektir</li>
+                            <li>Uygulanacak KDV oranını seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sicil-islemleri" class="section">
+        <h2>Sicil Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil Bilgilerinin Eklenmesi</h3>
+            
+            <div class="step">
+                <h4>Yeni Sicil Kaydı Ekleme</h4>
+                <ol>
+                    <li>Ekranın orta kısmında bulunan tablonun ilk sütunundaki "Sicil No" alanına tıklayın
+                        <ul>
+                            <li>Direkt olarak sicil numarasını yazabilirsiniz</li>
+                            <li>Ya da sağındaki küçük büyüteç ikonuna tıklayarak sicil arama penceresini açabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Sicil numarası girildiğinde:
+                        <ul>
+                            <li>Kişi/Kurum adı otomatik olarak doldurulacaktır</li>
+                            <li>Adres bilgisi otomatik olarak gelecektir</li>
+                            <li>Açıklama alanına üst bölümde girdiğiniz genel açıklama otomatik olarak gelecektir</li>
+                        </ul>
+                    </li>
+                    <li>Miktar alanına giriş yapın
+                        <ul>
+                            <li>Bu alan sayısal bir değer olmalıdır</li>
+                            <li>Ondalık haneler için virgül kullanın</li>
+                        </ul>
+                    </li>
+                    <li>Birim Fiyat alanına değeri girin
+                        <ul>
+                            <li>Tutar otomatik olarak hesaplanacaktır</li>
+                            <li>KDV seçili ise, KDV tutarı da otomatik hesaplanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+    
+                <div class="tip-box">
+                    <p><strong>İpucu:</strong> Bir satırın girişini tamamladığınızda, otomatik olarak yeni bir satır açılacaktır.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>Sicil Arama ve Seçme</h4>
+                <ol>
+                    <li>Sicil No alanının yanındaki büyüteç ikonuna tıklayın</li>
+                    <li>Açılan pencerede:
+                        <ul>
+                            <li>Sicil numarası ile arama yapabilirsiniz</li>
+                            <li>İsim ile arama yapabilirsiniz</li>
+                            <li>Listeden seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>İstediğiniz kaydı seçtikten sonra "Seç" butonuna tıklayın</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Satır İşlemleri</h4>
+                <ol>
+                    <li>Her satırın en sağında iki buton bulunur:
+                        <ul>
+                            <li>(-) butonu: Satırı silmek için</li>
+                            <li>(+) butonu: Yeni satır eklemek için</li>
+                        </ul>
+                    </li>
+                    <li>Satır silmek için:
+                        <ul>
+                            <li>(-) butonuna tıklayın</li>
+                            <li>Onay mesajında "Evet" seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="kaydetme-islemleri" class="section">
+        <h2>Kaydetme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Kayıtlarının Kaydedilmesi</h3>
+            
+            <div class="step">
+                <h4>Kaydetme Öncesi Kontrol</h4>
+                <ol>
+                    <li>Ekranın alt kısmında bulunan butonlardan "Kaydet" butonunu göreceksiniz
+                        <ul>
+                            <li>Kaydetmeden önce tüm bilgileri kontrol edin</li>
+                            <li>Zorunlu alanların dolu olduğundan emin olun:
+                                <br>- Yıl ve dönem bilgisi
+                                <br>- Tahakkuk türü seçimi
+                                <br>- Tahakkuk ve son ödeme tarihleri
+                                <br>- En az bir sicil kaydı
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+    
+                <div class="warning-box">
+                    <p><strong>Önemli:</strong> Zorunlu alanlar boş ise sistem sizi uyaracak ve kaydetme işlemini gerçekleştirmeyecektir.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>Kaydetme İşlemi</h4>
+                <ol>
+                    <li>Ekranın en altında bulunan "Kaydet" butonuna tıklayın</li>
+                    <li>Sistem otomatik kontrolleri yapacaktır:
+                        <ul>
+                            <li>Tarih kontrolü</li>
+                            <li>Sicil kontrolleri</li>
+                            <li>Tutar kontrolleri</li>
+                            <li>KDV hesaplama kontrolleri</li>
+                        </ul>
+                    </li>
+                    <li>İşlem başarılı ise:
+                        <ul>
+                            <li>Ekranda toplam kayıt sayısı ve tutar bilgisi görüntülenecektir</li>
+                            <li>"Kayıt işlemi başarı ile yapılmıştır" mesajı göreceksiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+    
+                <div class="tip-box">
+                    <p><strong>İpucu:</strong> Kayıt sonrası görüntülenen toplam tutarı ve kayıt sayısını not almanızı öneririz.</p>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h4>Form Temizleme ve Yeni Kayıt</h4>
+                <ol>
+                    <li>"Kaydet" butonunun yanında bulunan "Form Temizle" butonuna tıklayarak:
+                        <ul>
+                            <li>Tüm form alanları temizlenir</li>
+                            <li>Yeni bir kayıt için hazır hale gelirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sikca-karsilasilan" class="section">
+        <h2>Sıkça Karşılaşılan Hatalar ve Çözümleri</h2>
+        <div class="warning-box">
+            <table>
+                <tr>
+                    <th>Hata Mesajı</th>
+                    <th>Nedeni</th>
+                    <th>Çözümü</th>
+                </tr>
+                <tr>
+                    <td>"Yıl bilgisi giriniz"</td>
+                    <td>Yıl alanı boş bırakılmış</td>
+                    <td>
+                        <ul>
+                            <li>Ekranın üst kısmındaki yıl alanını kontrol edin</li>
+                            <li>4 haneli yılı girin (örn: 2024)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Dönem bilgisi giriniz"</td>
+                    <td>Dönem alanı boş bırakılmış</td>
+                    <td>
+                        <ul>
+                            <li>Yıl alanının yanındaki dönem alanını kontrol edin</li>
+                            <li>1-12 arası bir sayı girin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Tahakkuk türü seçiniz"</td>
+                    <td>Tahakkuk türü seçilmemiş</td>
+                    <td>
+                        <ul>
+                            <li>Üst kısımdaki tahakkuk türü açılır listesinden seçim yapın</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"KDV oranı seçmelisiniz"</td>
+                    <td>KDV hesabı seçili ama oran girilmemiş</td>
+                    <td>
+                        <ul>
+                            <li>KDV oranı açılır listesinden oran seçin</li>
+                            <li>Veya KDV hesabını "Hesaplanmasın" olarak değiştirin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Sicil no bulunamadı"</td>
+                    <td>Geçersiz sicil numarası girilmiş</td>
+                    <td>
+                        <ul>
+                            <li>Sicil numarasını kontrol edin</li>
+                            <li>Büyüteç ikonunu kullanarak sicil arama yapın</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="program-cikis" class="section">
+        <h2>Programdan Çıkış</h2>
+        <div class="info-box">
+            <h3>Güvenli Çıkış İşlemi</h3>
+            
+            <div class="step">
+                <h4>Programdan Çıkış Yapma</h4>
+                <ol>
+                    <li>Ekranın alt kısmında, en sağda bulunan "Çıkış" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton "Kaydet" ve "Form Temizle" butonlarının yanında yer alır</li>
+                            <li>Üzerine geldiğinizde rengi değişecektir</li>
+                        </ul>
+                    </li>
+                    <li>Sistem size "Çıkmak İstiyor musunuz?" şeklinde bir onay soracaktır
+                        <ul>
+                            <li>"Evet" seçeneğini tıklarsanız program kapanacaktır</li>
+                            <li>"Hayır" seçeneğini tıklarsanız program açık kalacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+    
+                <div class="warning-box">
+                    <p><strong>Önemli:</strong> Kaydedilmemiş işlemleriniz varsa, çıkmadan önce kaydetmeyi unutmayın.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="oneriler" class="section">
+        <h2>Öneriler ve En İyi Kullanım Pratikleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Günlük İşlemler İçin Öneriler</h4>
+                <ul>
+                    <li>İşlemlere başlamadan önce:
+                        <ul>
+                            <li>Sistem tarihinin doğru olduğunu kontrol edin</li>
+                            <li>Gerekli tüm bilgileri hazır bulundurun</li>
+                            <li>Önceki işlemlerin raporlarını alın</li>
+                        </ul>
+                    </li>
+                    <li>İşlemler sırasında:
+                        <ul>
+                            <li>Her sicil kaydı girişinden sonra bilgileri kontrol edin</li>
+                            <li>Özellikle tutar ve KDV hesaplamalarını gözden geçirin</li>
+                            <li>Açıklama alanlarını detaylı doldurun</li>
+                        </ul>
+                    </li>
+                    <li>İşlemler sonrasında:
+                        <ul>
+                            <li>Toplam tutarları not alın</li>
+                            <li>Kayıt sayılarını kontrol edin</li>
+                            <li>Gerekli raporlamaları yapın</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Klavye Kısayolları</h4>
+                <table>
+                    <tr>
+                        <th>Tuş</th>
+                        <th>İşlev</th>
+                    </tr>
+                    <tr>
+                        <td>Tab</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>Shift + Tab</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>Enter</td>
+                        <td>Seçili butonu çalıştırır</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkar</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Güvenlik Önerileri</h4>
+                <ul>
+                    <li>Program açıkken başka işlem yapmayın</li>
+                    <li>İşlem sırasında programı kapatmayın</li>
+                    <li>Şüpheli durumlarda yöneticinize danışın</li>
+                    <li>Her gün işlem sonunda yedekleme yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="yardim-destek" class="section">
+        <h2>Yardım ve Destek</h2>
+        <div class="info-box">
+            <h3>Teknik Destek Alma</h3>
+            
+            <div class="step">
+                <h4>Ne Zaman Teknik Destek Almalısınız?</h4>
+                <ul>
+                    <li>Program açılmıyorsa</li>
+                    <li>Sürekli hata mesajları alıyorsanız</li>
+                    <li>Hesaplamalar hatalı görünüyorsa</li>
+                    <li>Sistem yanıt vermiyorsa</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Destek İçin Hazırlık</h4>
+                <p>Teknik desteği aramadan önce şu bilgileri hazırlayın:</p>
+                <ul>
+                    <li>Karşılaştığınız hata mesajının tam metni</li>
+                    <li>Hatanın ne zaman ve hangi işlem sırasında oluştuğu</li>
+                    <li>Kullandığınız tahakkuk türü ve diğer seçimler</li>
+                    <li>Varsa ekran görüntüsü</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    </html>

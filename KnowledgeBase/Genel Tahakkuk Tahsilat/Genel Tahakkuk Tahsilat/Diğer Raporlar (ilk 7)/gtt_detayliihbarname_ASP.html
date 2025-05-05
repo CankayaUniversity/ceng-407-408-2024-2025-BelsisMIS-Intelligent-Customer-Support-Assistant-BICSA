@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.header h1 {
+    margin: 0;
+}
+.header img {
+    height: 50px;
+    width: auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    color: #333;
+}
+h1 {
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #1976D2;
+    margin-top: 30px;
+}
+.info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #4682b4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.warning-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.tip-box {
+    background-color: #e6ffe6;
+    border-left: 5px solid #33cc33;
+    padding: 15px;
+    margin: 20px 0;
+}
+.section {
+    margin-bottom: 40px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Detaylı İhbarname Sistemi</h1>
+</div>
+
+<h1>Sistem Genel Bakış</h1>
+
+<div class="info-box">
+    Bu sistem, belediye vergi ve harç tahsilatı için detaylı ihbarname oluşturma ve yönetme amacıyla tasarlanmıştır. Kullanıcıların farklı belediye gelirleri için belirli parametrelerle detaylı ihbarname oluşturmasına, görüntülemesine ve yazdırmasına olanak tanır.
+</div>
+
+<h2>1. Ana Fonksiyonlar</h2>
+<div class="section">
+    <p>Sistem aşağıdaki ana fonksiyonları sağlar:</p>
+    <ul>
+        <li>Borç yılı, ödeme tarihleri ve vergi sicil numaralarına göre detaylı ihbarname oluşturma</li>
+        <li>Gelir türleri ve modüllere göre ihbarnameleri filtreleme</li>
+        <li>Gecikme zamlarını hesaplama</li>
+        <li>Resmi imzalı detaylı ihbarnameleri yazdırma</li>
+        <li>Tebliğ ve tebellüğ tarihlerini takip etme</li>
+    </ul>
+</div>
+
+<h2>2. Sisteme Giriş</h2>
+<div class="section">
+    <p>Detaylı İhbarname Sistemine erişmek için:</p>
+    <ul>
+        <li>Yetkili belediye yazılım sisteminizi açın</li>
+        <li>Detaylı İhbarname modülüne gidin</li>
+        <li>Sistem otomatik olarak belediyenizin adı ve güncel tarihle yüklenecektir</li>
+    </ul>
+</div>
+
+<h2>3. Temel Arayüz Öğeleri</h2>
+<div class="section">
+    <p>Arayüz iki ana bölümden oluşur:</p>
+    
+    <h3>3.1 Filtreleme Bölümü</h3>
+    <ul>
+        <li>Sayfanın üst kısmında yer alır</li>
+        <li>Tüm arama ve filtreleme kriterlerini içerir</li>
+        <li>Tarih aralıkları, tutar aralıkları ve seçim listelerini içerir</li>
+    </ul>
+
+    <h3>3.2 Sonuçlar Bölümü</h3>
+    <ul>
+        <li>Filtreleme sonrası oluşturulan ihbarnameleri gösterir</li>
+        <li>Yazdırılabilir formatta görüntülenir</li>
+        <li>Gerekli tüm imzaları ve resmi bilgileri içerir</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <strong>Önemli Not:</strong> Resmi ihbarnameleri yazdırmadan önce mutlaka verileri doğrulayın. Yazdırıldıktan sonra, bu belgeler resmi tebligat için kullanılacak yasal dokümanlardır.
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.header h1 { margin: 0; }
+.header img { height: 50px; width: auto; }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    color: #333;
+}
+h1 {
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #1976D2;
+    margin-top: 30px;
+}
+.info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #4682b4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.warning-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.tip-box {
+    background-color: #e6ffe6;
+    border-left: 5px solid #33cc33;
+    padding: 15px;
+    margin: 20px 0;
+}
+.section { margin-bottom: 40px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+
+<h1>4. Veri Giriş Alanları</h1>
+
+<div class="section">
+    <h2>4.1 Tarih ve Borç Bilgileri</h2>
+    
+    <table>
+        <tr>
+            <th>Alan Adı</th>
+            <th>Açıklama</th>
+            <th>Örnek Değer</th>
+        </tr>
+        <tr>
+            <td>Borç Yılı</td>
+            <td>İhbarnameye konu olan borcun yılı. Başlangıç ve bitiş olarak girilebilir.</td>
+            <td>2024 - 2025</td>
+        </tr>
+        <tr>
+            <td>Son Ödeme Tarihi</td>
+            <td>Borcun son ödeme tarihi aralığı. GG.AA.YYYY formatında girilmelidir.</td>
+            <td>01.01.2024 - 31.12.2024</td>
+        </tr>
+        <tr>
+            <td>Tahakkuk Tarihi</td>
+            <td>Borcun tahakkuk ettirildiği tarih aralığı.</td>
+            <td>01.01.2024 - 31.12.2024</td>
+        </tr>
+    </table>
+
+    <h2>4.2 Sicil ve Kimlik Bilgileri</h2>
+    
+    <table>
+        <tr>
+            <th>Alan Adı</th>
+            <th>Açıklama</th>
+            <th>Örnek Değer</th>
+        </tr>
+        <tr>
+            <td>GTT Sicil No</td>
+            <td>Gelir tahakkuk takip sicil numarası. Aralık olarak girilebilir.</td>
+            <td>1 - 999999999</td>
+        </tr>
+        <tr>
+            <td>Modül</td>
+            <td>İhbarnameye konu olan işlemin modülü. Birden fazla seçilebilir.</td>
+            <td>Çevre Temizlik, İlan Reklam, vs.</td>
+        </tr>
+    </table>
+
+    <h2>4.3 Gelir ve Tutar Bilgileri</h2>
+    
+    <table>
+        <tr>
+            <th>Alan Adı</th>
+            <th>Açıklama</th>
+            <th>Örnek Değer</th>
+        </tr>
+        <tr>
+            <td>Gelir Türü</td>
+            <td>İhbarnameye konu olan gelir türü. Birden fazla seçilebilir.</td>
+            <td>Vergi, Harç, Ücret vs.</td>
+        </tr>
+        <tr>
+            <td>Terkin Tutarı</td>
+            <td>İhbarnamede görüntülenecek minimum borç tutarı.</td>
+            <td>100,00</td>
+        </tr>
+        <tr>
+            <td>Tahakkuk Tutarı</td>
+            <td>Tahakkuk tutarı aralığı. Başlangıç ve bitiş olarak girilebilir.</td>
+            <td>0,00 - 999999999,99</td>
+        </tr>
+    </table>
+
+    <div class="info-box">
+        <strong>İpucu:</strong> Tutar alanlarına nokta veya virgül kullanmadan sadece rakam girebilirsiniz. Sistem otomatik olarak formatlayacaktır.
+    </div>
+
+    <h2>4.4 İmza ve Onay Bilgileri</h2>
+    
+    <table>
+        <tr>
+            <th>Alan Adı</th>
+            <th>Açıklama</th>
+            <th>Örnek Değer</th>
+        </tr>
+        <tr>
+            <td>Tanzim Eden</td>
+            <td>İhbarnameyi hazırlayan personelin adı soyadı</td>
+            <td>Ahmet Yılmaz</td>
+        </tr>
+        <tr>
+            <td>Tebliğ Eden</td>
+            <td>İhbarnameyi tebliğ eden görevlinin adı soyadı</td>
+            <td>Mehmet Demir</td>
+        </tr>
+        <tr>
+            <td>Şef</td>
+            <td>İlgili birim şefinin adı soyadı</td>
+            <td>Ali Kaya</td>
+        </tr>
+        <tr>
+            <td>Müdür</td>
+            <td>İlgili birim müdürünün adı soyadı</td>
+            <td>Ayşe Yıldız</td>
+        </tr>
+    </table>
+
+    <div class="warning-box">
+        <strong>Önemli:</strong> İmza bilgileri yasal belgenin bir parçasıdır. Doğru ve eksiksiz girildiğinden emin olun.
+    </div>
+</div>
+
+<h1>5. İhbarname Oluşturma Adımları</h1>
+
+<div class="section">
+    <ol>
+        <li><strong>Filtreleme Kriterlerini Belirleyin</strong>
+            <ul>
+                <li>Borç yılı aralığını girin</li>
+                <li>Tarih aralıklarını belirleyin</li>
+                <li>Sicil numarası aralığını girin</li>
+                <li>İlgili modülleri seçin</li>
+                <li>Gelir türlerini seçin</li>
+            </ul>
+        </li>
+        <li><strong>Ek Seçenekleri İşaretleyin</strong>
+            <ul>
+                <li>"Terkin Tutarı Hesaplanan Gecikme Dahil Filtre Edilsin" seçeneğini gerekirse işaretleyin</li>
+                <li>"Borç Bakiyesi OLMAYANLAR da Listelensin" seçeneğini duruma göre seçin</li>
+                <li>"Döküme Bildirim mesajı çıksın" seçeneğini gerekirse işaretleyin</li>
+            </ul>
+        </li>
+        <li><strong>İmza Bilgilerini Girin</strong>
+            <ul>
+                <li>Tanzim eden personel bilgilerini girin</li>
+                <li>Tebliğ edecek görevli bilgilerini girin</li>
+                <li>Şef ve müdür bilgilerini ekleyin</li>
+            </ul>
+        </li>
+        <li><strong>Listele Butonuna Basın</strong></li>
+    </ol>
+
+    <div class="tip-box">
+        <strong>Öneri:</strong> İhbarname oluşturmadan önce tüm filtreleme kriterlerini dikkatlice kontrol edin. Özellikle tarih aralıklarının doğru girildiğinden emin olun.
+    </div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.header h1 { margin: 0; }
+.header img { height: 50px; width: auto; }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    color: #333;
+}
+h1 {
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #1976D2;
+    margin-top: 30px;
+}
+.info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #4682b4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.warning-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.tip-box {
+    background-color: #e6ffe6;
+    border-left: 5px solid #33cc33;
+    padding: 15px;
+    margin: 20px 0;
+}
+.section { margin-bottom: 40px; }
+.example-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>6. İhbarname Yazdırma ve İşlem Seçenekleri</h1>
+
+<div class="section">
+    <h2>6.1 Yazdırma Öncesi Kontroller</h2>
+    
+    <div class="info-box">
+        <p>İhbarnameyi yazdırmadan önce kontrol edilmesi gereken önemli noktalar:</p>
+        <ul>
+            <li>Mükellef bilgilerinin doğruluğu</li>
+            <li>Borç tutarlarının doğruluğu</li>
+            <li>Tebliğ ve tanzim tarihlerinin doğruluğu</li>
+            <li>İmza yetkililerinin doğru seçilmesi</li>
+            <li>Sayfa düzeninin kontrolü</li>
+        </ul>
+    </div>
+
+    <h2>6.2 Yazdırma İşlemi</h2>
+    
+    <ol>
+        <li>Listele butonuna bastıktan sonra, ekranda ihbarname ön izlemesi görüntülenecektir</li>
+        <li>Her ihbarname bir sayfa olacak şekilde otomatik olarak düzenlenecektir</li>
+        <li>Yazdırma araç çubuğu üzerinden aşağıdaki işlemler yapılabilir:
+            <ul>
+                <li>Yazıcı seçimi</li>
+                <li>Sayfa boyutu ayarları</li>
+                <li>Yazdırma önizleme</li>
+                <li>Doğrudan yazdırma</li>
+            </ul>
+        </li>
+    </ol>
+
+    <div class="tip-box">
+        <strong>Öneri:</strong> İlk yazdırma işlemini tek bir ihbarname için yaparak, düzen ve içeriği kontrol edin.
+    </div>
+</div>
+
+<h1>7. Yaygın Kullanım Senaryoları</h1>
+
+<div class="section">
+    <h2>7.1 Tek Mükellef İçin İhbarname Oluşturma</h2>
+    
+    <div class="example-box">
+        <p><strong>Senaryo:</strong> Belirli bir mükellef için ihbarname oluşturma</p>
+        <ol>
+            <li>GTT Sicil No başlangıç ve bitiş alanlarına aynı sicil numarasını girin</li>
+            <li>Gerekli diğer filtreleri seçin</li>
+            <li>Listele butonuna basın</li>
+        </ol>
+    </div>
+
+    <h2>7.2 Belirli Bir Gelir Türü İçin Toplu İhbarname</h2>
+    
+    <div class="example-box">
+        <p><strong>Senaryo:</strong> Çevre temizlik vergisi için toplu ihbarname oluşturma</p>
+        <ol>
+            <li>Gelir türü listesinden sadece "Çevre Temizlik Vergisi"ni seçin</li>
+            <li>Borç yılı ve tarih aralıklarını belirleyin</li>
+            <li>Terkin tutarını belirleyin (minimum borç tutarı)</li>
+            <li>Listele butonuna basın</li>
+        </ol>
+    </div>
+
+    <h2>7.3 Gecikme Zamları Dahil İhbarname</h2>
+    
+    <div class="example-box">
+        <p><strong>Senaryo:</strong> Gecikme zamları dahil edilmiş ihbarname oluşturma</p>
+        <ol>
+            <li>"Terkin Tutarı Hesaplanan Gecikme Dahil Filtre Edilsin" seçeneğini işaretleyin</li>
+            <li>Tarih olarak güncel tarihi girin</li>
+            <li>Diğer filtreleri belirleyin</li>
+            <li>Listele butonuna basın</li>
+        </ol>
+    </div>
+
+    <h2>7.4 Tüm Borçları Olan Mükelleflere İhbarname</h2>
+    
+    <div class="example-box">
+        <p><strong>Senaryo:</strong> Borç bakiyesi olan tüm mükellefler için ihbarname oluşturma</p>
+        <ol>
+            <li>"Borç Bakiyesi OLMAYANLAR da Listelensin" seçeneğini işaretlemeyin</li>
+            <li>Terkin tutarını minimum değer olarak girin</li>
+            <li>Tüm gelir türlerini seçin</li>
+            <li>Listele butonuna basın</li>
+        </ol>
+    </div>
+</div>
+
+<h1>8. Sık Karşılaşılan Hatalar ve Çözümleri</h1>
+
+<div class="section">
+    <div class="warning-box">
+        <h3>Yaygın Hatalar:</h3>
+        <ul>
+            <li><strong>Hata:</strong> İhbarname listesi boş geliyor
+                <br><strong>Çözüm:</strong> Filtreleme kriterlerinin çok kısıtlayıcı olmadığından emin olun</li>
+            
+            <li><strong>Hata:</strong> Gecikme zammı hesaplanmıyor
+                <br><strong>Çözüm:</strong> "Terkin Tutarı Hesaplanan Gecikme Dahil" seçeneğinin işaretli olduğundan emin olun</li>
+            
+            <li><strong>Hata:</strong> Yazdırma düzeni bozuk çıkıyor
+                <br><strong>Çözüm:</strong> Sayfa yapısı ayarlarını kontrol edin ve yazıcı ayarlarının doğru olduğundan emin olun</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+.header h1 { margin: 0; }
+.header img { height: 50px; width: auto; }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    color: #333;
+}
+h1 {
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #1976D2;
+    margin-top: 30px;
+}
+.info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #4682b4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.warning-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.critical-box {
+    background-color: #ffe6e6;
+    border: 2px solid #ff4444;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.tip-box {
+    background-color: #e6ffe6;
+    border-left: 5px solid #33cc33;
+    padding: 15px;
+    margin: 20px 0;
+}
+.section { margin-bottom: 40px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+
+<h1>9. Güvenlik ve Önemli Uyarılar</h1>
+
+<div class="section">
+    <h2>9.1 Sistem Güvenliği</h2>
+    
+    <div class="critical-box">
+        <h3>Kritik Güvenlik Uyarıları:</h3>
+        <ul>
+            <li>Sisteme giriş şifrenizi kimseyle paylaşmayın</li>
+            <li>İşlem yapmadığınız zamanlarda sistemden çıkış yapın</li>
+            <li>Başkasının kullanıcı hesabıyla işlem yapmayın</li>
+            <li>Şüpheli durumları sistem yöneticinize bildirin</li>
+        </ul>
+    </div>
+
+    <h2>9.2 Yasal Sorumluluklar</h2>
+    
+    <div class="warning-box">
+        <h3>İhbarname Sürecinde Dikkat Edilecek Yasal Noktalar:</h3>
+        <ul>
+            <li>İhbarnameler resmi tebligat niteliğindedir</li>
+            <li>Tebliğ tarihinden itibaren yasal süreler işlemeye başlar</li>
+            <li>İmza yetkisi olan kişilerin imzaları tam olmalıdır</li>
+            <li>Borç tutarları ve hesaplamalar doğru olmalıdır</li>
+            <li>Tebligat adresleri güncel olmalıdır</li>
+        </ul>
+    </div>
+</div>
+
+<h1>10. İhbarname İçeriği ve Formatı</h1>
+
+<div class="section">
+    <h2>10.1 İhbarname Bölümleri</h2>
+    
+    <table>
+        <tr>
+            <th>Bölüm</th>
+            <th>İçerik</th>
+            <th>Önemli Noktalar</th>
+        </tr>
+        <tr>
+            <td>Başlık</td>
+            <td>Belediye adı ve ihbarname başlığı</td>
+            <td>Resmi başlık tam ve doğru olmalı</td>
+        </tr>
+        <tr>
+            <td>Mükellef Bilgileri</td>
+            <td>Sicil no, ad-soyad, adres</td>
+            <td>Güncel bilgiler kullanılmalı</td>
+        </tr>
+        <tr>
+            <td>Borç Detayları</td>
+            <td>Borç türü, tutarı, dönem bilgileri</td>
+            <td>Hesaplamalar kontrol edilmeli</td>
+        </tr>
+        <tr>
+            <td>İmza Bölümü</td>
+            <td>Yetkili imzaları ve tarih</td>
+            <td>Tüm imzalar tam olmalı</td>
+        </tr>
+    </table>
+
+    <h2>10.2 Özel Durumlar</h2>
+    
+    <div class="info-box">
+        <h3>Özel Durum Yönetimi:</h3>
+        <ul>
+            <li><strong>Adres Değişikliği:</strong> Tebligat öncesi adres güncellemesi yapılmalı</li>
+            <li><strong>Vefat Durumu:</strong> Varisler adına düzenlenmeli</li>
+            <li><strong>Şirket Kapanışı:</strong> Yasal muhatabına tebliğ edilmeli</li>
+            <li><strong>Yapılandırma:</strong> Mevcut yapılandırma varsa dikkate alınmalı</li>
+        </ul>
+    </div>
+</div>
+
+<h1>11. Sistem Bakımı ve Güncellemeler</h1>
+
+<div class="section">
+    <div class="tip-box">
+        <h3>Sistem Performansı İçin Öneriler:</h3>
+        <ul>
+            <li>Çok sayıda ihbarname oluştururken sistem yükünü dikkate alın</li>
+            <li>Büyük miktarda veri işlerken işlemi parçalara bölün</li>
+            <li>Yazdırma işlemlerini mesai saatleri dışına planlayın</li>
+            <li>Düzenli olarak geçici dosyaları temizleyin</li>
+        </ul>
+    </div>
+
+    <h2>11.1 Yedekleme ve Arşivleme</h2>
+    
+    <div class="info-box">
+        <p>İhbarname kayıtları için önerilen yedekleme stratejisi:</p>
+        <ul>
+            <li>Günlük işlemlerin düzenli yedeklenmesi</li>
+            <li>İhbarnamelerin elektronik ortamda arşivlenmesi</li>
+            <li>Basılı kopyaların güvenli şekilde saklanması</li>
+            <li>Önemli ihbarnamelerin ayrıca yedeklenmesi</li>
+        </ul>
+    </div>
+</div>
+
+<h1>12. İletişim ve Destek</h1>
+
+<div class="section">
+    <div class="info-box">
+        <h3>Yardım ve Destek İçin:</h3>
+        <ul>
+            <li>Teknik sorunlar için sistem yöneticinizle iletişime geçin</li>
+            <li>Yasal konularda hukuk biriminden destek alın</li>
+            <li>İşlem hatalarında mali hizmetler müdürlüğüne başvurun</li>
+            <li>Eğitim ihtiyaçlarını birim amirinize bildirin</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

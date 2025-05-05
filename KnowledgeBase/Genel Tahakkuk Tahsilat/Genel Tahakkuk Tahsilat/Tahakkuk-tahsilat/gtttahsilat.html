@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahsilat İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tahsilat İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#temel-islemler">Temel İşlemler</a></li>
+                <li><a href="#sicil-islemleri">Sicil İşlemleri</a></li>
+                <li><a href="#odeme-islemleri">Ödeme İşlemleri</a></li>
+                <li><a href="#tahsilat-detaylari">Tahsilat Detayları</a></li>
+                <li><a href="#makbuz-islemleri">Makbuz İşlemleri</a></li>
+                <li><a href="#emanet-islemleri">Emanet İşlemleri</a></li>
+                <li><a href="#sikca-sorulan-sorular">Sıkça Sorulan Sorular</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, belediye tahsilat işlemlerinin nasıl yapılacağını adım adım anlatmaktadır. Program, vatandaşlardan tahsilat almak, makbuz düzenlemek ve ödeme kayıtlarını tutmak için kullanılır.</p>
+            
+            <h3>Temel Özellikler</h3>
+            <ul>
+                <li>Sicil numarası ile vatandaş sorgulama</li>
+                <li>Su abonesi işlemleri</li>
+                <li>Farklı ödeme şekilleri ile tahsilat alma</li>
+                <li>Makbuz basma</li>
+                <li>Emanet işlemleri</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Bölümler</h3>
+            <p>Program ekranı dört ana bölümden oluşur:</p>
+
+            <ol>
+                <li><strong>Üst Bilgi Alanı:</strong>
+                    <ul>
+                        <li>En üstte "TAHSILAT" başlığı ve kullanıcı bilgileri görünür</li>
+                        <li>Mevcut emanet tutarı (varsa) sarı renkle gösterilir</li>
+                    </ul>
+                </li>
+
+                <li><strong>Sicil Bilgileri Bölümü:</strong>
+                    <ul>
+                        <li>Sicil No, Ad/Soyad alanları</li>
+                        <li>TC Kimlik No ve Ünvan bilgileri</li>
+                        <li>Su abone numarası (varsa)</li>
+                    </ul>
+                </li>
+
+                <li><strong>Tahsilat İşlem Alanı:</strong>
+                    <ul>
+                        <li>Tarih ve makbuz bilgileri</li>
+                        <li>Ödeme şekli seçimi</li>
+                        <li>Borç detayları ve ödeme tablosu</li>
+                    </ul>
+                </li>
+
+                <li><strong>Alt Kontrol Bölümü:</strong>
+                    <ul>
+                        <li>Kaydet, İptal ve diğer işlem butonları</li>
+                        <li>Toplam tutar ve kalan borç bilgileri</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        <div class="info-box">
+            <h3>Program Açılışında Yapılacaklar</h3>
+            <div class="step">
+                <ol>
+                    <li><strong>Tarih Kontrolü:</strong>
+                        <ul>
+                            <li>Ekranın sağ üst köşesinde yer alan tarih alanını kontrol edin</li>
+                            <li>Tarih güncel değilse sistem yöneticinize başvurun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanıcı Bilgisi Kontrolü:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında "Tahsildar:" yazısının yanında kendi kullanıcı adınızı gördüğünüzden emin olun</li>
+                            <li>Format: "Tahsildar: [Kullanıcı No]-[Kullanıcı Adı]" şeklindedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Program açıkken başka işlem yapmayın</li>
+                    <li>Her sicil için yeni bir tahsilat başlatmadan önce ekranı temizleyin</li>
+                    <li>Özellikle makbuz numaralarına dikkat edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-islemleri" class="section">
+        <h2>Sicil İşlemleri</h2>
+        <div class="info-box">
+            <h3>Sicil Arama ve Sorgulama</h3>
+            <div class="step">
+                <h4>Sicil Numarası ile Arama</h4>
+                <ol>
+                    <li><strong>Sicil Numarası Girişi:</strong>
+                        <ul>
+                            <li>Ekranın sol üst köşesinde yer alan "Sicil No" alanına numarayı girin</li>
+                            <li>Alan gri renkli olup maksimum 11 haneli sayı girişine izin verir</li>
+                            <li>Sadece rakam girebilirsiniz, harf veya özel karakter giremezsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Bulma Butonu:</strong>
+                        <ul>
+                            <li>Sicil numarası alanının hemen yanında küçük bir büyüteç simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda sicil arama penceresi açılır</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4>TC Kimlik Numarası ile Arama</h4>
+                <ol>
+                    <li>11 haneli TC Kimlik numarasını Sicil No alanına girin</li>
+                    <li>Sistem otomatik olarak TC Kimlik numarasına ait sicili bulacaktır</li>
+                    <li>Eğer birden fazla sicil kaydı varsa, liste halinde gösterilecektir</li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sicil Bilgilerini Kontrol Etme:</h4>
+                <p>Sicil bulunduktan sonra:</p>
+                <ul>
+                    <li>Ad, soyad bilgilerinin doğruluğunu kontrol edin</li>
+                    <li>TC Kimlik numarasını kontrol edin</li>
+                    <li>Varsa su abone numarasını kontrol edin</li>
+                    <li>Sicile ait özel notlar varsa sistem sizi uyaracaktır</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar</h4>
+                <ul>
+                    <li>Vefat etmiş sicillerde sistem uyarı verecektir</li>
+                    <li>TC Kimlik numarası eksik sicillerde tahsilat yapılamayabilir</li>
+                    <li>Su abonesi kapalı olan sicillerde tahsilat yapılamaz</li>
+                    <li>2500'den fazla borç kaydı olan sicillerde sistem ek onay isteyecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="odeme-islemleri" class="section">
+        <h2>Ödeme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Ödeme Şekli Seçimi</h3>
+            <div class="step">
+                <p>Ödeme şekli seçimi ekranın alt orta kısmında yer alır ve şu seçenekleri içerir:</p>
+                <ol>
+                    <li><strong>Elden Tahsilat:</strong>
+                        <ul>
+                            <li>Nakit ödemeler için kullanılır</li>
+                            <li>Varsayılan ödeme şeklidir</li>
+                            <li>Seçildiğinde tarih otomatik olarak güncel tarihe ayarlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Tahsilatı:</strong>
+                        <ul>
+                            <li>Seçildiğinde ekranın orta kısmında banka hesap seçimi alanı açılır</li>
+                            <li>Dekont numarası girişi zorunludur</li>
+                            <li>Banka hesabı açılır listeden seçilmelidir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Posta Çeki:</strong>
+                        <ul>
+                            <li>Seçildiğinde dekont numarası girişi açılır</li>
+                            <li>Banka hesabı seçimi gerekmez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kredi Kartı:</strong>
+                        <ul>
+                            <li>Seçildiğinde POS hesap seçimi alanı açılır</li>
+                            <li>Ekranın orta kısmında kredi kartı hesap seçimi listesi görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="tip-box">
+                    <h4>Dikkat Edilmesi Gereken Noktalar:</h4>
+                    <ul>
+                        <li>Ödeme şekli değiştirildiğinde sistem borç hesaplamalarını yeniden yapar</li>
+                        <li>Bazı ödeme şekillerinde gecikme zammı farklı hesaplanabilir</li>
+                        <li>Kira borcu olan sicillerde sadece elden veya kredi kartı ödemesi yapılabilir</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-box">
+                <h4>Banka ve Kredi Kartı Hesap Tercihleri:</h4>
+                <ul>
+                    <li>Son kullanılan banka hesabı bir sonraki işlemde otomatik seçilir</li>
+                    <li>Son kullanılan kredi kartı hesabı bir sonraki işlemde otomatik seçilir</li>
+                    <li>Bu tercihler oturum boyunca saklanır</li>
+                    <li>Her kullanıcı için ayrı tercihler tutulur</li>
+                </ul>
+            </div>
+
+            <h3>Tarih İşlemleri</h3>
+            <div class="step">
+                <ol>
+                    <li><strong>Tahsilat Tarihi:</strong>
+                        <ul>
+                            <li>Ekranın sağ üst köşesinde yer alır</li>
+                            <li>Format: GG/AA/YYYY şeklindedir</li>
+                            <li>İleriki bir tarihe tahsilat yapılamaz</li>
+                            <li>Tatil günlerinde otomatik olarak bir sonraki iş gününe atar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gecikme Zammı Hesaplama Tarihi:</strong>
+                        <ul>
+                            <li>Ödeme şekline göre otomatik görünür/gizlenir</li>
+                            <li>Tahsilat tarihinin altında yer alır</li>
+                            <li>Bazı ödeme şekillerinde değiştirilebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tahsilat saati geçtikten sonra sistem otomatik olarak ertesi güne geçer</li>
+                    <li>Resmi tatillerde sistem otomatik olarak ilk iş gününe ayarlanır</li>
+                    <li>Cumartesi günleri için özel kurallar uygulanabilir</li>
+                    <li>Banka ödemelerinde mutlaka dekont tarihi kontrol edilmelidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahsilat-detaylari" class="section">
+        <h2>Tahsilat Detayları ve Borç Seçimi</h2>
+        <div class="info-box">
+            <h3>Borç Görüntüleme ve Seçme</h3>
+            <div class="step">
+                <h4>Borç Filtreleme Seçenekleri</h4>
+                <p>Ekranın orta kısmında yer alan filtreleme alanları:</p>
+                <ol>
+                    <li><strong>Ödemesi Geçenler:</strong>
+                        <ul>
+                            <li>Ekranın sol üst kısmında yer alan onay kutusu</li>
+                            <li>İşaretlendiğinde vadesi geçmiş borçları filtreler</li>
+                        </ul>
+                        <li><strong>Tecil Durumu Seçimi:</strong>
+                            <ul>
+                                <li>Ödemesi Geçenler kutusunun yanında yer alır</li>
+                                <li>Üç seçenek sunar:
+                                    <ul>
+                                        <li>"Hepsi": Tüm borçları gösterir</li>
+                                        <li>"Tecilli": Sadece tecil edilmiş borçları gösterir</li>
+                                        <li>"Tecilsiz": Tecil edilmemiş borçları gösterir</li>
+                                    </ul>
+                                </li>
+                                <li>Seçiminize göre borç listesi otomatik güncellenir</li>
+                            </ul>
+                        </li>
+                    </li>
+
+                    
+                    <li><strong>Borç Yılı / Taksit Seçimi:</strong>
+                        <ul>
+                            <li>Ödemesi Geçenler kutusunun altında yer alır</li>
+                            <li>İlk açılır listeden borç yılı seçilir</li>
+                            <li>İkinci listeden taksit seçilir</li>
+                            <li>Her iki alan da "Hepsi" seçeneğini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Modül Seçimi:</strong>
+                        <ul>
+                            <li>Borç yılı seçiminin altında bulunur</li>
+                            <li>Emlak, Su, Çevre Temizlik gibi modülleri içerir</li>
+                            <li>Seçilen modüle göre diğer alanlar değişebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+ 
+                <h4>Adres Bazlı Borç Seçimi</h4>
+                <p>Ekranın sağ kısmında bulunan adres listesi:</p>
+                <ul>
+                    <li>Modül seçiminin sağında geniş bir liste kutusu şeklinde görünür</li>
+                    <li>Sicile ait tüm adresleri gösterir</li>
+                    <li>Birden fazla adres seçilebilir</li>
+                    <li>Her adresin yanında borç tutarı görünür</li>
+                </ul>
+            </div>
+ 
+            <h3>Yapılandırma İşlemleri</h3>
+            <div class="step">
+                <p>Yapılandırma seçimi alanı aşağıdaki özelliklere sahiptir:</p>
+                <ul>
+                    <li>Ekranın sol alt kısmında yer alır</li>
+                    <li>6552, 6736, 7020, 7143, 7256, 7326, 7400 gibi yapılandırma seçeneklerini içerir</li>
+                    <li>Her yapılandırma türü için tarih ve açıklama bilgisi görünür</li>
+                    <li>Seçilen yapılandırmaya göre taksit bilgileri otomatik güncellenir</li>
+                </ul>
+ 
+                <div class="warning-box">
+                    <h4>Önemli Noktalar:</h4>
+                    <ul>
+                        <li>Yapılandırma seçildiğinde su abonesi seçimi otomatik temizlenir</li>
+                        <li>Vadesi geçmiş yapılandırma taksitleri için sistem uyarı verir</li>
+                        <li>Bir yapılandırma seçiliyken başka bir yapılandırma seçilemez</li>
+                    </ul>
+                </div>
+            </div>
+ 
+            <h3>Borç Detay Görüntüleme</h3>
+            <div class="step">
+                <p>Ekranın orta kısmında yer alan borç detay tablosu şunları içerir:</p>
+                <ol>
+                    <li><strong>Borç Listesi:</strong>
+                        <ul>
+                            <li>Seçilen kriterlere göre borçları listeler</li>
+                            <li>Her borç için tutar, gecikme zammı ve toplam görünür</li>
+                            <li>İstenilen borçlar seçilerek ödeme yapılabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Alanları:</strong>
+                        <ul>
+                            <li>Listenin altında toplam borç tutarı görünür</li>
+                            <li>Seçilen borçların toplamı anlık güncellenir</li>
+                            <li>Kalan borç tutarı kırmızı renkte gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="makbuz-islemleri" class="section">
+        <h2>Makbuz İşlemleri</h2>
+        <div class="info-box">
+            <h3>Makbuz Bilgileri Girişi</h3>
+            <div class="step">
+                <p>Makbuz bilgileri ekranın sağ üst köşesinde yer alır ve şu alanları içerir:</p>
+                
+                <ol>
+                    <li><strong>Tarih Alanı:</strong>
+                        <ul>
+                            <li>"Tarih" etiketi ile gösterilir</li>
+                            <li>Sağ üst köşede yer alır</li>
+                            <li>GG/AA/YYYY formatında gösterilir</li>
+                            <li>Çoğu durumda otomatik olarak güncel tarihi gösterir</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Makbuz Seri/No:</strong>
+                        <ul>
+                            <li>Tarih alanının hemen yanında yer alır</li>
+                            <li>Seri No: 3 karakterlik alan (örn: "A01")</li>
+                            <li>Makbuz No: 8 haneli sayısal alan</li>
+                            <li>"Makbuz Seri/No" başlığına tıklandığında makbuz ayarları penceresi açılır</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Makbuz Ayarları Penceresi:</strong>
+                        <p>Makbuz Seri/No'ya tıklandığında açılan pencerede:</p>
+                        <ul>
+                            <li>Tahsilat Bitiş Saati</li>
+                            <li>Tahsilat Şekli</li>
+                            <li>Seri No</li>
+                            <li>Makbuz No</li>
+                            <li>Makbuz Bitiş No</li>
+                            <li>Vezne No alanları bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="warning-box">
+                    <h4>Önemli Uyarılar:</h4>
+                    <ul>
+                        <li>Sistem makbuz numaralarını otomatik olarak artırır</li>
+                        <li>Kalan makbuz sayısı 10'un altına düştüğünde sistem uyarı verir</li>
+                        <li>Makbuz bitiş numarasını geçemezsiniz</li>
+                        <li>Mükerrer makbuz numarası kullanılamaz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Makbuz Yazdırma</h3>
+            <div class="step">
+                <p>Tahsilat kaydedildikten sonra makbuz yazdırma işlemi otomatik olarak başlar:</p>
+                    
+                <ol>
+                    <li><strong>Yazdırma Seçenekleri:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında grup kodu seçimi bulunur</li>
+                            <li>Detay Döküm</li>
+                            <li>Gelir Kodu Gruplanmış</li>
+                            <li>Gelir Kodu+Borç Yılı Gruplanmış</li>
+                            <li>Gelir Kodu+Borç Yılı+Taksit Gruplanmış</li>
+                            <li>Detay+Gecikme Zammı Grubu</li>
+                            <li>Gelir Kodu+Borç Yılı+Taksit+Gecikme Zammı Gruplanmış</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Mobil Makbuz:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Mobil döküm" onay kutusu bulunur</li>
+                            <li>İşaretlendiğinde mobil yazıcı formatında çıktı alınır</li>
+                            <li>Küçük boyutlu makbuz formatı kullanılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <h3>Toplu Makbuz İşlemleri</h3>
+<div class="step">
+    <p>Toplu makbuz kontrolü özelliği şu işlemleri içerir:</p>
+    <ol>
+        <li><strong>Toplu Makbuz Limiti:</strong>
+            <ul>
+                <li>Her kullanıcı için belirlenen maksimum satır sayısı vardır</li>
+                <li>Limit aşıldığında sistem uyarı verir</li>
+                <li>El makbuzu alma seçeneği sunulur</li>
+            </ul>
+        </li>
+        <li><strong>Toplu Makbuz Onayı:</strong>
+            <ul>
+                <li>"El Makbuzu Almak istiyor musunuz?" onay penceresi açılır</li>
+                <li>Onay verilirse özel makbuz formatı kullanılır</li>
+                <li>Onay verilmezse işlem iptal edilir</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+    </div>
+
+    <div id="emanet-islemleri" class="section">
+        <h2>Emanet ve Para Üstü İşlemleri</h2>
+        <div class="info-box">
+            <h3>Emanet Tutarları ve Kontrol</h3>
+            <div class="step">
+                <p>Emanet bilgileri ekranın en üst kısmında sarı renkle gösterilir:</p>
+                
+                <ol>
+                    <li><strong>Emanet Tutarı Görüntüleme:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında "Mahsup Edilebilir Emanet:" yazısı yanında tutar görünür</li>
+                            <li>Tutar varsa parantez içinde gösterilir</li>
+                            <li>Sıfır emanet tutarı gösterilmez</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Emanet Mahsup İşlemleri:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Avans/Kişi Borcu İade" butonu bulunur</li>
+                            <li>Buton üzerinde hesap kapatma simgesi vardır</li>
+                            <li>Tıklandığında emanet mahsup penceresi açılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+ 
+            <h3>Para Üstü Hesaplama</h3>
+            <div class="step">
+                <p>Para üstü hesaplama ekranının alt kısmında "Para Üstü" butonu ile açılır:</p>
+ 
+                <ol>
+                    <li><strong>Para Üstü Hesaplama Penceresi:</strong>
+                        <ul>
+                            <li>Alınan Para: Müşteriden alınan tutarın girildiği alan</li>
+                            <li>Tutar: Tahsilat toplam tutarı (otomatik gösterilir)</li>
+                            <li>Para Üstü: Otomatik hesaplanır</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Hesaplama İşlemi:</strong>
+                        <ul>
+                            <li>Alınan para girildiğinde para üstü otomatik hesaplanır</li>
+                            <li>Alınan para toplam tutardan az olamaz</li>
+                            <li>Para üstü kırmızı renkte gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+ 
+                <div class="tip-box">
+                    <h4>Kullanım İpuçları:</h4>
+                    <ul>
+                        <li>Para üstü hesaplayıcıyı her tahsilat sonrası kullanabilirsiniz</li>
+                        <li>Hesaplama penceresi açıkken başka işlem yapamazsınız</li>
+                        <li>Çıkış butonuna basarak hesaplayıcıyı kapatabilirsiniz</li>
+                    </ul>
+                </div>
+            </div>
+ 
+            <h3>Tahsilat Durum Kontrolü</h3>
+            <div class="step">
+                <p>Tahsilat durumunu kontrol etmek için ekranın alt kısmında "Durum" butonu bulunur:</p>
+ 
+                <ol>
+                    <li><strong>Durum Penceresi İçeriği:</strong>
+                        <ul>
+                            <li>Gün içinde yapılan tüm tahsilatların özeti</li>
+                            <li>Ödeme şekillerine göre ayrılmış tutarlar</li>
+                            <li>Toplam tahsilat tutarı</li>
+                            <li>Vezne bazında tahsilat toplamları</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Detaylı Bilgiler:</strong>
+                        <ul>
+                            <li>Elden Tahsilat Tutarı</li>
+                            <li>Banka Tahsilat Tutarı</li>
+                            <li>Kredi Kartı Tahsilat Tutarı</li>
+                            <li>Posta Çeki Tahsilat Tutarı</li>
+                            <li>İcra Tutarı</li>
+                            <li>Mahsup Tutarı</li>
+                            <li>eBelediye Tutarı</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="ozel-durum-islemleri" class="section">
+        <h2>Özel Durum İşlemleri</h2>
+        <div class="info-box">
+            <h3>Sicil Özel Durumları</h3>
+            <div class="step">
+                <p>Sistem aşağıdaki özel durumları otomatik kontrol eder ve uyarı verir:</p>
+ 
+                <ol>
+                    <li><strong>Vefat Etmiş Siciller:</strong>
+                        <ul>
+                            <li>Sicil sorgulandığında ekranın üst kısmında "SİCİL VEFAT ETMİŞTİR" uyarısı çıkar</li>
+                            <li>Vefat tarihi bilgisi gösterilir</li>
+                            <li>Mirasçı sicil kontrolü yapılır</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Uzlaşma Durumu:</strong>
+                        <ul>
+                            <li>Sicilde uzlaşma varsa "Dikkat!! Sicilin Uzlaşmaya Uğramış Tahakkuku Vardır" uyarısı gösterilir</li>
+                            <li>Uyarı penceresi tahsilat işleminden önce çıkar</li>
+                            <li>Uzlaşma tutarları özel olarak işaretlenir</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>İcra Kontrolü:</strong>
+                        <ul>
+                            <li>İcradaki borçlar için özel ödeme seçenekleri sunulur</li>
+                            <li>İcra dosya numarası gösterilir</li>
+                            <li>İcra tahsilatları ayrı raporlanır</li>
+                        </ul>
+                    </li>
+                </ol>
+ 
+                <div class="warning-box">
+                    <h4>Önemli Kontroller:</h4>
+                    <ul>
+                        <li>TC Kimlik kontrolü (11 hane zorunluluğu)</li>
+                        <li>Telefon numarası kontrolü</li>
+                        <li>Adres bilgilerinin güncelliği</li>
+                        <li>Mirasçı borç kontrolü</li>
+                    </ul>
+                </div>
+            </div>
+ 
+            <h3>Tahsilat Limitleri ve Kısıtlamalar</h3>
+            <div class="step">
+                <ol>
+                    <li><strong>Tahsilat Saati Kontrolü:</strong>
+                        <ul>
+                            <li>Kullanıcıya özel tahsilat bitiş saati kontrolü yapılır</li>
+                            <li>Bitiş saati geçtikten sonra sistem otomatik olarak ertesi güne geçer</li>
+                            <li>Tatil günlerinde otomatik olarak ilk iş gününe atar</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Makbuz Limitleri:</strong>
+                        <ul>
+                            <li>Makbuz numarası bitiş kontrolü yapılır</li>
+                            <li>Son 10 makbuz kaldığında uyarı verilir</li>
+                            <li>Bitiş numarasını geçemezsiniz</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Otomatik Ödeme Kontrolleri:</strong>
+                        <ul>
+                            <li>Otomatik ödeme talimatı olan aboneler için uyarı verilir</li>
+                            <li>Sicil tahsilat kilidi kontrolü yapılır</li>
+                            <li>Kira borcu kontrolü yapılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+ 
+            <h3>Yapılandırma ve Vade Kontrolleri</h3>
+            <div class="step">
+                <ol>
+                    <li><strong>Yapılandırma Taksit Kontrolü:</strong>
+                        <ul>
+                            <li>Vadesi geçmiş yapılandırma taksitleri için uyarı verilir</li>
+                            <li>Taksit sayısı gösterilir</li>
+                            <li>Peşin ödeme indirimi otomatik hesaplanır</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Vade Kontrolü:</strong>
+                        <ul>
+                            <li>Son ödeme tarihi geçmiş borçlar işaretlenir</li>
+                            <li>Gecikme zammı otomatik hesaplanır</li>
+                            <li>Yapılandırma bozulma riski olan ödemeler için uyarı verilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="para-ustu-hesaplama" class="section">
+        <h2>Para Üstü ve Hesaplama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Para Üstü İşlemleri</h3>
+            <div class="step">
+                <h4>Para Üstü Hesaplama Özelliğine Erişim:</h4>
+                <ol>
+                    <li><strong>Para Üstü Butonuna Erişim:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, tahsilat tablosunun altında yer alır</li>
+                            <li>120 piksel genişliğinde, gri renkli bir butondur</li>
+                            <li>Üzerinde "Para Üstü" yazısı bulunur</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Hesaplama Penceresi:</strong>
+                        <ul>
+                            <li>Buton tıklandığında ekranın ortasında açılır</li>
+                            <li>Açık mavi renkli bir başlık çubuğu bulunur</li>
+                            <li>Pencere başlığında "Para Üstü Hesaplama" yazar</li>
+                        </ul>
+                    </li>
+                </ol>
+ 
+                <h4>Para Üstü Hesaplama Adımları:</h4>
+                <ol>
+                    <li><strong>Alınan Para Girişi:</strong>
+                        <ul>
+                            <li>İlk alan "Alınan Para" başlığı ile gösterilir</li>
+                            <li>Sadece sayısal değer girilebilir</li>
+                            <li>Kuruş hassasiyetinde giriş yapılabilir</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Tutar Alanı:</strong>
+                        <ul>
+                            <li>Tahsilat toplam tutarı otomatik gösterilir</li>
+                            <li>Bu alan değiştirilemez</li>
+                            <li>Tutar TL cinsinden gösterilir</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Para Üstü Sonucu:</strong>
+                        <ul>
+                            <li>Son satırda otomatik hesaplanır</li>
+                            <li>Alınan para - Toplam tutar formülü ile hesaplanır</li>
+                            <li>Eksik ödeme durumunda uyarı verir</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="warning-box">
+                    <h4>Para Üstü Hesaplama Sırasında Dikkat:</h4>
+                    <ul>
+                        <li>Para üstü hesaplama penceresi açıkken diğer tüm butonlar devre dışı kalır</li>
+                        <li>Önce para üstü işlemini tamamlamanız veya iptal etmeniz gerekir</li>
+                        <li>İşlem sırasında ödeme şekli değiştirilemez</li>
+                        <li>Hesaplama penceresini kapatmadan başka işlem yapılamaz</li>
+                    </ul>
+                </div>
+            </div>
+ 
+            <h3>Makbuz Toplam İşlemleri</h3>
+            <div class="step">
+                <h4>Makbuz Toplamı Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Makbuz Toplamı Butonu:</strong>
+                        <ul>
+                            <li>Para Üstü butonunun yanında yer alır</li>
+                            <li>Aynı genişlikte gri renkli bir butondur</li>
+                            <li>Üzerinde "Makbuz Toplamı" yazısı bulunur</li>
+                        </ul>
+                    </li>
+ 
+                    <li><strong>Toplam Görüntüleme Penceresi:</strong>
+                        <ul>
+                            <li>İlk makbuz ve son makbuz numarası girişi</li>
+                            <li>Seçilen aralıktaki makbuzların toplamını gösterir</li>
+                            <li>Makbuz listesi detaylı olarak görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="tahsilat-rapor" class="section">
+        <h2>Tahsilat Durumu ve Raporlama</h2>
+        <div class="info-box">
+            <h3>Tahsilat Durumu Görüntüleme</h3>
+            <div class="step">
+                <p>Ekranın alt kısmında yer alan "Durum" butonu ile erişilir ve şu bilgileri içerir:</p>
+                <ul>
+                    <li>Günlük toplam tahsilat tutarı</li>
+                    <li>Ödeme şekline göre dağılımlar:
+                        <ul>
+                            <li>Elden tahsilat toplamı</li>
+                            <li>Banka tahsilat toplamı</li>
+                            <li>Kredi kartı tahsilat toplamı</li>
+                            <li>Posta çeki tahsilat toplamı</li>
+                            <li>Emanet tahsilat toplamı</li>
+                            <li>İcra tahsilat toplamı</li>
+                        </ul>
+                    </li>
+                    <li>e-Belediye tahsilat tutarı</li>
+                    <li>Vezne bazında tahsilat toplamları</li>
+                    <li>Genel tahsilat tutarı</li>
+                    <li>Mahsup tutarı</li>
+                    <li>Yapılan makbuz sayısı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sikca-sorulan-sorular" class="section">
+        <h2>Sıkça Sorulan Sorular ve Hata Çözümleri</h2>
+        <div class="info-box">
+            <h3>Genel Sorunlar ve Çözümleri</h3>
+            <div class="warning-box">
+                <table>
+                    <tr>
+                        <th>Sorun</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>"Bu makbuz daha önce kaydedilmiş" hatası</td>
+                        <td>
+                            <ul>
+                                <li>Makbuz numarasını kontrol edin</li>
+                                <li>Yeni bir makbuz numarası alın</li>
+                                <li>Gerekirse önceki makbuzu sorgulayın</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"Tahsilat saati geçmiştir" uyarısı</td>
+                        <td>
+                            <ul>
+                                <li>Sistem otomatik olarak ertesi güne geçecektir</li>
+                                <li>Borçları tekrar okutun</li>
+                                <li>Yeni tarihle işleme devam edin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>"Sicil tahsilatı yapılamaz" uyarısı</td>
+                        <td>
+                            <ul>
+                                <li>TC Kimlik numarasını kontrol edin</li>
+                                <li>Sicil kilit durumunu kontrol edin</li>
+                                <li>Yöneticinize başvurun</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dekont numarası hatası</td>
+                        <td>
+                            <ul>
+                                <li>Dekont numarasının doğruluğunu kontrol edin</li>
+                                <li>Mükerrer kayıt olup olmadığını kontrol edin</li>
+                                <li>Banka hesap seçimini kontrol edin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Makbuz İşlem Soruları</h3>
+            <div class="tip-box">
+                <ol>
+                    <li><strong>Soru:</strong> Makbuz yazdırma sırasında yazıcı hatası alırsam ne yapmalıyım?
+                        <br><strong>Cevap:</strong> Makbuz penceresi açıkken çıkış yapmayın. Yazıcı ayarlarını kontrol edip tekrar deneyin. Sorun devam ederse yöneticinize başvurun.</li>
+
+                    <li><strong>Soru:</strong> Yanlış tutarda tahsilat yapıldığında ne yapmalıyım?
+                        <br><strong>Cevap:</strong> Makbuz kaydedildikten sonra düzeltme yapılamaz. Muhasebe birimine başvurmanız gerekir.</li>
+
+                    <li><strong>Soru:</strong> Son makbuz numarasına geldiğimde ne yapmalıyım?
+                        <br><strong>Cevap:</strong> Yeni makbuz serisi tanımlaması için yöneticinize başvurun.</li>
+                </ol>
+            </div>
+
+            <h3>Sistem Kullanım Önerileri</h3>
+            <div class="info-box">
+                <ul>
+                    <li>Her gün işe başlarken tarih kontrolü yapın</li>
+                    <li>Düzenli olarak gün sonu raporu alın</li>
+                    <li>Şüpheli durumlarda mutlaka yöneticinize danışın</li>
+                    <li>Her tahsilat sonrası makbuz çıktısını kontrol edin</li>
+                    <li>Kalan makbuz sayısını düzenli takip edin</li>
+                </ul>
+            </div>
+
+            <h3>Teknik Destek İçin</h3>
+            <div class="warning-box">
+                <p>Aşağıdaki durumlarda mutlaka teknik destek alın:</p>
+                <ul>
+                    <li>Sistemin açılmaması veya sürekli hata vermesi</li>
+                    <li>Makbuz yazdırma sorunları</li>
+                    <li>Veri kaybı şüphesi</li>
+                    <li>Hesap tutarsızlıkları</li>
+                    <li>Sistem kilitleri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

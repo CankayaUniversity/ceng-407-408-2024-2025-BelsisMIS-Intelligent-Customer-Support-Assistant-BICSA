@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>6111 Borç Yapılandırma Kayıtları Toplu İptal - Kullanım Kılavuzu</title>
+    <style>
+        .header { 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 { margin: 0; }
+        .header img { height: 50px; width: auto; }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .section { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>6111 Borç Yapılandırma Kayıtları Toplu İptal Kullanım Kılavuzu</h1>
+</div>
+
+<div class="section">
+    <h2>0. Sistem İşleyişi - Genel Özet</h2>
+    
+    <div class="info-box">
+        <h3>Sistemin Amacı</h3>
+        <p>Bu sistem, 6111 sayılı Kanun kapsamında yapılandırılmış borçların, belirli koşullar altında toplu olarak iptal edilmesini sağlar. Sistem özellikle şu durumlarda kullanılır:</p>
+        <ul>
+            <li>Son ödeme tarihi geçmiş yapılandırma kayıtlarının iptali</li>
+            <li>Taksitli ödemelerde ödenmemiş taksitlerin iptali</li>
+            <li>Yapılandırma şartlarının bozulduğu durumların yönetimi</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h3>İş Akışı Özeti</h3>
+        <p>Sistem genel olarak aşağıdaki adımlarla çalışır:</p>
+        <ol>
+            <li><strong>Kayıt Arama:</strong> 
+                <ul>
+                    <li>GTT Sicil No aralığı girilerek ilgili kayıtlar listelenir</li>
+                    <li>Sistem otomatik olarak şu kayıtları filtreler:
+                        <ul>
+                            <li>Son ödeme tarihi geçmiş kayıtlar</li>
+                            <li>Bakiyesi olan kayıtlar</li>
+                            <li>Aktif durumda olan yapılandırmalar</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Kayıt İnceleme:</strong>
+                <ul>
+                    <li>Her kayıt için detaylı ödeme planı görüntülenebilir</li>
+                    <li>Kişi bilgileri, taksit sayısı ve tutarlar incelenebilir</li>
+                </ul>
+            </li>
+            <li><strong>İptal İşlemi:</strong>
+                <ul>
+                    <li>İstenilen kayıtlar seçilir</li>
+                    <li>Toplu iptal işlemi gerçekleştirilir</li>
+                    <li>İşlem sonucu sistem tarafından onaylanır</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <h3>Önemli Kriterler</h3>
+        <p>Sistem yalnızca aşağıdaki kriterlere uyan kayıtları listeler:</p>
+        <ul>
+            <li>Son ödeme tarihi geçmiş olan kayıtlar</li>
+            <li>Bakiyesi olan kayıtlar</li>
+            <li>Aktif durumda olan yapılandırmalar</li>
+            <li>Mahsup işlemi yapılmamış kayıtlar</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="section">
+    <h2>1. Sistem Genel Bakış</h2>
+    <p>6111 Borç Yapılandırma Kayıtları Toplu İptal sistemi, birden fazla borç yapılandırma kaydını aynı anda yönetmenize ve iptal etmenize olanak sağlar. Bu sistem, 6111 sayılı Kanun kapsamındaki borç yapılandırma kayıtlarının işlenmesi için tasarlanmıştır.</p>
+    
+    <div class="info-box">
+        <h3>Temel Özellikler:</h3>
+        <ul>
+            <li>GTT Sicil Numarası aralığına göre borç yapılandırma kayıtlarını arama ve görüntüleme</li>
+            <li>Her kayıt için detaylı ödeme planlarını görüntüleme</li>
+            <li>Seçilen yapılandırma kayıtlarını toplu olarak iptal etme</li>
+            <li>Ödeme durumu ve taksit detaylarını inceleme</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>2. Başlarken</h2>
+    <p>Uygulamayı açtığınızda, aşağıdaki ana öğeleri içeren basit bir arayüz göreceksiniz:</p>
+    
+    <div class="info-box">
+        <ul>
+            <li>İki adet GTT Sicil Numarası giriş alanı (başlangıç ve bitiş numaralarını girmek için)</li>
+            <li>Üç ana buton:
+                <ul>
+                    <li>"Kayıtları Çağır" butonu</li>
+                    <li>"İptal Et" butonu</li>
+                    <li>"Çıkış" butonu</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>İpucu:</strong> İlk sicil numarasını girdiğinizde, ikinci alan otomatik olarak aynı numara ile doldurulur.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>3. Temel İşlemler</h2>
+    <div class="info-box">
+        <h3>3.1. Kayıt Arama:</h3>
+        <ol>
+            <li>İlk giriş alanına başlangıç GTT Sicil Numarasını girin</li>
+            <li>İkinci giriş alanına bitiş GTT Sicil Numarasını girin</li>
+            <li>"Kayıtları Çağır" butonuna tıklayarak eşleşen kayıtları görüntüleyin</li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>Önemli:</strong> Bitiş sicil numarası, başlangıç numarasından küçük olamaz.</p>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div class="section">
+    <h2>4. Kayıtlarla Çalışma</h2>
+    
+    <div class="info-box">
+        <h3>4.1. Kayıt Görüntüleme</h3>
+        <p>Arama yaptıktan sonra, aşağıdaki sütunları içeren bir tablo göreceksiniz:</p>
+        <ul>
+            <li>Seçim kutusu</li>
+            <li>Ödeme Planı bağlantısı</li>
+            <li>Sicil Numarası</li>
+            <li>Adı Soyadı</li>
+            <li>İşlem Tarihi</li>
+            <li>Taksit Sayısı</li>
+            <li>Toplam Taksit Tutarı</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <p><strong>İpucu:</strong> Tablonun başlığındaki seçim kutusunu kullanarak tüm kayıtları bir kerede seçebilir veya seçimi kaldırabilirsiniz.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>5. Ödeme Planlarını Görüntüleme</h2>
+    
+    <div class="info-box">
+        <h3>5.1. Bireysel Ödeme Planları</h3>
+        <p>Herhangi bir kaydın ödeme planını görüntülemek için:</p>
+        <ol>
+            <li>Tabloda ilgili kaydı bulun</li>
+            <li>"Ödeme Planı" bağlantısına tıklayın</li>
+            <li>Detaylı ödeme planını gösteren yeni bir pencere açılacaktır</li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <p>Ödeme planı şunları içerir:</p>
+        <ul>
+            <li>Asıl borç tutarı</li>
+            <li>Faiz tutarları</li>
+            <li>Yapılan toplam ödemeler</li>
+            <li>Kalan bakiye</li>
+            <li>Taksit detayları</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>6. Kayıtları İptal Etme</h2>
+    
+    <div class="info-box">
+        <h3>6.1. Toplu İptal İşlemi</h3>
+        <ol>
+            <li>İptal etmek istediğiniz kayıtları seçim kutularını kullanarak seçin</li>
+            <li>"İptal Et" butonuna tıklayın</li>
+            <li>Gelen onay mesajında iptal işlemini onaylayın</li>
+            <li>İşlem tamamlandı mesajını bekleyin</li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>Uyarı:</strong> İptal işlemi geri alınamaz. İşlem yapmadan önce seçtiğiniz kayıtları dikkatle kontrol edin.</p>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div class="section">
+    <h2>7. Hata Durumları ve Çözümleri</h2>
+    
+    <div class="info-box">
+        <h3>7.1. Sık Karşılaşılan Hatalar</h3>
+        <ul>
+            <li><strong>İlk Sicil No Boş Geçilemez:</strong> Başlangıç sicil numarası alanını boş bırakamazsınız.</li>
+            <li><strong>Son Sicil No Boş Geçilemez:</strong> Bitiş sicil numarası alanını boş bırakamazsınız.</li>
+            <li><strong>İlk Sicil No Son Sicil No'dan Büyük Olamaz:</strong> Başlangıç numarası, bitiş numarasından büyük olamaz.</li>
+            <li><strong>İptal Etmek İstediğiniz Kayıtları Seçiniz:</strong> İptal işlemi yapmak için en az bir kayıt seçmelisiniz.</li>
+        </ul>
+    </div>
+
+    <div class="warning-box">
+        <p><strong>Önemli Not:</strong> Sistemde yapılan tüm işlemler kaydedilmektedir. İptal işlemlerini dikkatli yapınız.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>8. Sistem Çıkış İşlemi</h2>
+    
+    <div class="info-box">
+        <h3>8.1. Güvenli Çıkış</h3>
+        <ol>
+            <li>"Çıkış" butonuna tıklayın</li>
+            <li>Gelen onay mesajında "Çıkmak İstiyor musunuz?" sorusuna yanıt verin</li>
+            <li>Onaylamanız durumunda sistem güvenli bir şekilde kapanacaktır</li>
+        </ol>
+    </div>
+</div>
+
+<div class="section">
+    <h2>9. Önemli Hatırlatmalar</h2>
+    
+    <div class="tip-box">
+        <ul>
+            <li>İşlem yapmadan önce sicil numaralarını doğru girdiğinizden emin olun</li>
+            <li>Ödeme planlarını kontrol etmeden iptal işlemi yapmayın</li>
+            <li>Birden fazla kaydı iptal ederken dikkatli seçim yapın</li>
+            <li>İşlemlerinizi tamamladıktan sonra mutlaka "Çıkış" butonunu kullanarak sistemden çıkın</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

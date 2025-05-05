@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6736 Sayılı Borç Yapılandırma İptal İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .bullet-heading::before {
+            content: "•";
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+            margin-right: 10px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>6736 Sayılı Borç Yapılandırma İptal İşlemleri</h1>
+
+    <div id="hizli-ozet" class="section">
+        <h2>Hızlı Özet</h2>
+        <div class="info-box">
+            <p>Bu program, daha önce yapılandırılmış borçların görüntülenmesi, iptal edilmesi ve yeniden yapılandırılması işlemlerini yapmak için kullanılır.</p>
+            
+            <h3>Temel İşlem Adımları</h3>
+            <h4>1. ARAMA İŞLEMİ</h4>
+            <ol>
+                <li>Ekranın üst kısmında bulunan "GTT Sicil No" alanına sicil numarasını girin</li>
+                <li>Sicil numarasını bilmiyorsanız, yanındaki büyüteç ikonuna tıklayarak arama yapabilirsiniz</li>
+                <li>Enter tuşuna basın veya büyüteç ikonuna tıklayın</li>
+                <li>Kişi bilgileri otomatik olarak ekrana gelecektir</li>
+            </ol>
+
+            <h4>2. YAPILANDIRMA KAYITLARINI GÖRÜNTÜLEME</h4>
+            <ol>
+                <li>Arama sonrası ekranın alt kısmında yapılandırma kayıtları listelenecektir</li>
+                <li>Her kayıt için:
+                    <ul>
+                        <li>İşlem tarihi</li>
+                        <li>Taksit bilgileri</li>
+                        <li>Aktif/Pasif durumu</li>
+                        <li>Ödeme tutarları görüntülenecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>İşlem Butonları</h2>
+        <div class="info-box">
+            <h3>Ana Butonlar ve İşlevleri</h3>
+            <ul>
+                <li><strong>İptal Et:</strong> Seçili yapılandırmayı iptal eder (mavi renkli, ekranın ortasında)</li>
+                <li><strong>Ödeme Planı:</strong> Seçili yapılandırmanın ödeme planını görüntüler</li>
+                <li><strong>Tekrar Yapılandır:</strong> Seçili yapılandırmayı yeniden yapılandırır</li>
+                <li><strong>TEFE/ÜFE İndirimi Uygula:</strong> Seçili yapılandırmaya indirim uygular</li>
+                <li><strong>Çıkış:</strong> Programdan çıkış yapar</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Uyarılar</h3>
+            <ul>
+                <li>İptal işlemi geri alınamaz</li>
+                <li>Pasif kayıtlar yeniden yapılandırılamaz</li>
+                <li>İşlem yapmadan önce doğru kaydı seçtiğinizden emin olun</li>
+                <li>Yeniden yapılandırılmış kayıtlar tekrar yapılandırılamaz</li>
+            </ul>
+        </div>
+    </div>
+    <div id="yapılandirma-goruntuleme" class="section">
+        <h2>Yapılandırma Kayıtlarını Görüntüleme</h2>
+        
+        <div class="info-box">
+            <h3>Kayıt Listesi Ekranı</h3>
+            <p>Ekranın alt bölümünde listelenen yapılandırma kayıtlarında şu bilgiler görüntülenir:</p>
+            
+            <table>
+                <tr>
+                    <th>Alan</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>İşlem Tarihi/Taksit</td>
+                    <td>Yapılandırmanın yapıldığı tarih ve taksit numarası</td>
+                </tr>
+                <tr>
+                    <td>Taksit Tutarı</td>
+                    <td>Ödenecek taksit miktarı</td>
+                </tr>
+                <tr>
+                    <td>Ödeme Tutarı</td>
+                    <td>Yapılan ödeme miktarı</td>
+                </tr>
+                <tr>
+                    <td>Mahsup Tutarı</td>
+                    <td>Mahsuplaşma yoluyla ödenen miktar</td>
+                </tr>
+                <tr>
+                    <td>Aktif/Pasif</td>
+                    <td>Yapılandırmanın güncel durumu</td>
+                </tr>
+            </table>
+        </div>
+     
+        <div class="warning-box">
+            <h3>Görüntüleme İpuçları</h3>
+            <ul>
+                <li>Aktif kayıtlar normal yazı tipi ile görüntülenir</li>
+                <li>İptal edilmiş kayıtlar "PASİF" olarak işaretlenir</li>
+                <li>Yeniden yapılandırılmış kayıtlar "YENİDEN YAPILANDIRILMIŞ" olarak işaretlenir</li>
+                <li>Taksit detaylarını görmek için ilgili satıra tıklayın</li>
+            </ul>
+        </div>
+     </div>
+     
+     <div id="iptal-islemleri" class="section">
+        <h2>İptal İşlemleri</h2>
+        
+        <div class="step">
+            <h3>İptal İşlemi Nasıl Yapılır?</h3>
+            <ol>
+                <li>İptal etmek istediğiniz yapılandırma kaydını listeden seçin</li>
+                <li>Ekranın üst kısmındaki "İptal Et" butonuna tıklayın</li>
+                <li>"İptal Etmek İstiyormusunuz?" onay mesajına "Evet" yanıtını verin</li>
+                <li>İşlem tamamlandığında kayıt "PASİF" durumuna geçecektir</li>
+            </ol>
+        </div>
+     
+        <div class="warning-box">
+            <h3>İptal İşlemi Uyarıları</h3>
+            <ul>
+                <li>İptal işlemi geri alınamaz</li>
+                <li>İptal edilen yapılandırma için yeni ödeme alınamaz</li>
+                <li>İptal öncesi tüm bilgileri kontrol edin</li>
+                <li>Yanlış kayıt seçmemeye dikkat edin</li>
+            </ul>
+        </div>
+     </div>
+     
+     <div id="odeme-plani-islemleri" class="section">
+        <h2>Ödeme Planı İşlemleri</h2>
+        
+        <div class="info-box">
+            <h3>Ödeme Planı Görüntüleme</h3>
+            <ol>
+                <li>Görüntülemek istediğiniz yapılandırma kaydını listeden seçin</li>
+                <li>"Ödeme Planı" butonuna tıklayın</li>
+                <li>Yeni pencerede ödeme planı açılacaktır</li>
+            </ol>
+     
+            <h4>Ödeme Planında Görünen Bilgiler:</h4>
+            <ul>
+                <li>Borçlu bilgileri</li>
+                <li>Her taksit için:
+                    <ul>
+                        <li>Son ödeme tarihi</li>
+                        <li>Asıl borç tutarı</li>
+                        <li>TEFE/ÜFE faiz tutarı</li>
+                        <li>Katsayı faiz tutarı</li>
+                        <li>Toplam ödenecek tutar</li>
+                    </ul>
+                </li>
+                <li>Genel toplam tutarlar</li>
+            </ul>
+        </div>
+     
+        <div class="tip-box">
+            <h3>Ödeme Planı İpuçları</h3>
+            <ul>
+                <li>Ödeme planını yazdırmak için tarayıcının yazdır özelliğini kullanın</li>
+                <li>Ödeme tarihlerini takip etmek için planı saklayın</li>
+                <li>Tutarları ve tarihleri dikkatle kontrol edin</li>
+            </ul>
+        </div>
+     </div>
+     
+     <div id="tefe-ufe-indirimi" class="section">
+        <h2>TEFE/ÜFE İndirimi İşlemleri</h2>
+        
+        <div class="step">
+            <h3>İndirim Uygulama Adımları</h3>
+            <ol>
+                <li>İndirim uygulanacak yapılandırma kaydını listeden seçin</li>
+                <li>"TEFE/ÜFE İndirimi Uygula" butonuna tıklayın</li>
+                <li>Onay mesajına "Evet" yanıtını verin</li>
+                <li>İndirim otomatik uygulanacak ve tutarlar güncellenecektir</li>
+            </ol>
+        </div>
+     
+        <div class="warning-box">
+            <h3>İndirim Uyarıları</h3>
+            <ul>
+                <li>İndirim işlemi geri alınamaz</li>
+                <li>Sadece aktif yapılandırmalara indirim uygulanabilir</li>
+                <li>İşlem öncesi kayıt seçimini kontrol edin</li>
+            </ul>
+        </div>
+     </div>
+     
+     <div id="tekrar-yapilandirma" class="section">
+        <h2>Tekrar Yapılandırma İşlemleri</h2>
+        
+        <div class="info-box">
+            <h3>Yeniden Yapılandırma Koşulları</h3>
+            <ul>
+                <li>Sadece aktif yapılandırmalar yeniden yapılandırılabilir</li>
+                <li>Daha önce yeniden yapılandırılmış kayıtlar tekrar yapılandırılamaz</li>
+                <li>Pasif kayıtlar yeniden yapılandırılamaz</li>
+            </ul>
+        </div>
+     
+        <div class="step">
+            <h3>Yeniden Yapılandırma Adımları</h3>
+            <ol>
+                <li>Yapılandırılacak kaydı listeden seçin</li>
+                <li>"Tekrar Yapılandır" butonuna tıklayın</li>
+                <li>Yeni pencerede yapılandırma ekranı açılacaktır</li>
+                <li>Yeni yapılandırma koşullarını belirleyin</li>
+            </ol>
+        </div>
+     </div>
+     
+     <div id="dikkat-edilecekler" class="section">
+        <h2>Dikkat Edilmesi Gerekenler</h2>
+        
+        <div class="warning-box">
+            <h3>Önemli Hatırlatmalar</h3>
+            <ul>
+                <li>Tüm işlemler kayıt altına alınır ve geri alınamaz</li>
+                <li>İşlem öncesi borçlu bilgilerini kontrol edin</li>
+                <li>Doğru kaydı seçtiğinizden emin olun</li>
+                <li>İptal işlemi öncesi ödeme durumunu kontrol edin</li>
+                <li>Yeniden yapılandırma öncesi mevcut yapılandırmayı inceleyin</li>
+            </ul>
+        </div>
+     
+        <div class="tip-box">
+            <h3>Pratik İpuçları</h3>
+            <ul>
+                <li>Sicil numarası ile hızlı arama yapabilirsiniz</li>
+                <li>Liste üzerinde tıklayarak kayıt seçebilirsiniz</li>
+                <li>İşlem sonrası yeni kayıt için "Form Temizle" kullanın</li>
+                <li>Çıkış yapmadan önce işlemlerinizi kaydettiğinizden emin olun</li>
+            </ul>
+        </div>
+     </div>
+
+<div id="arama-islemleri" class="section">
+    <h2>Arama İşlemleri Detayları</h2>
+    
+    <div class="step">
+        <h3>Sicil Arama Seçenekleri</h3>
+        <ol>
+            <li>Doğrudan Sicil No Girişi:
+                <ul>
+                    <li>Ekranın üst kısmındaki "GTT Sicil No" kutusuna numarayı yazın</li>
+                    <li>Enter tuşuna basın veya büyüteç ikonuna tıklayın</li>
+                </ul>
+            </li>
+            <li>Sicil Arama Penceresi ile:
+                <ul>
+                    <li>Büyüteç ikonunun yanındaki "Sicil Ara" butonuna tıklayın</li>
+                    <li>Açılan pencereden kişi araması yapın</li>
+                    <li>İlgili kişiyi seçin</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="info-box">
+        <h3>Arama Sonuçları</h3>
+        <p>Arama sonucunda görüntülenen bilgiler:</p>
+        <ul>
+            <li>Kişinin adı soyadı (orta üst bölümde görüntülenir)</li>
+            <li>Ünvanı (varsa parantez içinde gösterilir)</li>
+            <li>Yapılandırma kayıtları (alt bölümde liste halinde gösterilir)</li>
+        </ul>
+    </div>
+</div>
+
+<div id="liste-ozellikleri" class="section">
+    <h2>Liste Özellikleri ve Kullanımı</h2>
+    
+    <div class="info-box">
+        <h3>Liste Sütunları ve Anlamları</h3>
+        <table>
+            <tr>
+                <th>Sütun</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>İşlem Tarihi/Taksit</td>
+                <td>
+                    - İşlem tarihi<br>
+                    - İşlem saati<br>
+                    - İşlem yapan kullanıcı<br>
+                    - Taksit numarası
+                </td>
+            </tr>
+            <tr>
+                <td>Taksit Tutarı</td>
+                <td>Belirlenen taksit miktarı</td>
+            </tr>
+            <tr>
+                <td>Ödeme Tutarı</td>
+                <td>Yapılan ödeme miktarı</td>
+            </tr>
+            <tr>
+                <td>Mahsup Tutarı</td>
+                <td>Mahsup edilen miktar</td>
+            </tr>
+            <tr>
+                <td>Aktif/Pasif</td>
+                <td>Yapılandırmanın durumu ve yeniden yapılandırma bilgisi</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="tip-box">
+        <h3>Liste Kullanım İpuçları</h3>
+        <ul>
+            <li>Kayıtlar işlem tarihine göre sıralanır</li>
+            <li>Her ana kayıt altında taksit detayları görüntülenir</li>
+            <li>İşlem yapmak için önce ilgili kaydı seçmelisiniz</li>
+            <li>Renk kodları durumu belirtir:
+                <ul>
+                    <li>Aktif kayıtlar: Normal renk</li>
+                    <li>Pasif kayıtlar: Özel renk ile belirtilir</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="sistem-mesajlari" class="section">
+    <h2>Sistem Mesajları ve Anlamları</h2>
+    
+    <div class="warning-box">
+        <h3>Sık Karşılaşılan Mesajlar</h3>
+        <table>
+            <tr>
+                <th>Mesaj</th>
+                <th>Anlamı ve Yapılması Gerekenler</th>
+            </tr>
+            <tr>
+                <td>"Sicil Kaydı Bulunamadı!"</td>
+                <td>
+                    - Girilen sicil numarası sistemde yok<br>
+                    - Numarayı kontrol edin<br>
+                    - Sicil arama penceresini kullanın
+                </td>
+            </tr>
+            <tr>
+                <td>"İptal Etmek İstiyormusunuz?"</td>
+                <td>
+                    - İptal işlemi onayı<br>
+                    - Dikkatle kontrol edin<br>
+                    - Emin değilseniz "Hayır" seçin
+                </td>
+            </tr>
+            <tr>
+                <td>"Yapılandırma Seçmelisiniz"</td>
+                <td>
+                    - Listeden kayıt seçilmedi<br>
+                    - İşlem yapmak istediğiniz kaydı seçin
+                </td>
+            </tr>
+            <tr>
+                <td>"Pasif Kaydı Yapılandıramazsınız!"</td>
+                <td>
+                    - İptal edilmiş kayıt seçildi<br>
+                    - Aktif bir kayıt seçin
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="cikis-islemleri" class="section">
+    <h2>Çıkış İşlemleri</h2>
+    
+    <div class="info-box">
+        <h3>Programdan Çıkış</h3>
+        <ol>
+            <li>Ekranın üst kısmındaki "Çıkış" butonuna tıklayın</li>
+            <li>"Çıkmak İstiyormusunuz?" mesajına yanıt verin:
+                <ul>
+                    <li>"Evet" - Program kapanır</li>
+                    <li>"Hayır" - İşleme devam edilir</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="warning-box">
+        <h3>Çıkış Öncesi Kontrol Listesi</h3>
+        <ul>
+            <li>Tüm işlemlerin tamamlandığından emin olun</li>
+            <li>Gerekli çıktıları aldığınızı kontrol edin</li>
+            <li>Kaydetmediğiniz işlem olmadığından emin olun</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

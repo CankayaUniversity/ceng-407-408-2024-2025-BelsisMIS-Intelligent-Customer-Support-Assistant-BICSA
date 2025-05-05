@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahakkuk Görüntüleme ve İptal İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tahakkuk Görüntüleme ve İptal İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, tahakkuk kayıtlarının görüntülenmesi ve gerektiğinde iptal edilmesi işlemlerinin nasıl yapılacağını adım adım anlatmaktadır.</p>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <p>Program açıldığında karşınıza çıkacak ekran üç ana bölümden oluşur:</p>
+            <ul>
+                <li><strong>Üst Bölüm:</strong> Ekranın en üstünde "Tahakkuk Görüntüleme / İptal" başlığını ve kullanıcı bilgilerinizi göreceksiniz.</li>
+                <li><strong>Orta Bölüm:</strong> Sicil bilgileri, tahakkuk tarihi, borç bakiye kriterleri ve tahakkuk türü seçimlerini yapacağınız ana çalışma alanıdır.</li>
+                <li><strong>Alt Bölüm:</strong> Tahakkuk kayıtlarının listelendiği ve toplam tutarların gösterildiği bölümdür.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        <div class="info-box">
+            <h3>Programı Kullanmaya Başlamadan Önce</h3>
+            <p>Programı kullanmaya başlamadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>Mükellefin sicil numarası</li>
+                <li>Hangi tahakkuk türü için işlem yapacağınız</li>
+                <li>İşlem yapmak istediğiniz tarih aralığı</li>
+                <li>Mükellefin borç durumu (borcu olan/olmayan/tümü)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="sicil-islemleri" class="section">
+        <h2>Sicil İşlemleri</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Girişi ve Mükellef Seçimi</h3>
+            <div class="step">
+                <h4>Sicil Numarası Nasıl Girilir?</h4>
+                <ol>
+                    <li><strong>Sicil No Alanının Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, ilk satırda "Sicil No" etiketi ile başlayan bir alan göreceksiniz</li>
+                            <li>Bu alan yanında küçük bir büyüteç (arama) ikonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Numarası Giriş Yöntemleri:</strong>
+                        <ul>
+                            <li><strong>Direkt Giriş:</strong> Sicil numarasını biliyorsanız doğrudan alana yazabilirsiniz</li>
+                            <li><strong>Arama ile Giriş:</strong> Sicil numarasını bilmiyorsanız, sicil alanının yanındaki büyüteç ikonuna tıklayarak arama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası girilmeden diğer işlemlere geçilemez</li>
+                    <li>Yanlış sicil numarası girildiğinde sistem "Sicil Kaydı Bulunamadı" uyarısı verecektir</li>
+                    <li>Sicil numarası girildikten sonra mükellefin adı ve soyadı otomatik olarak gelecektir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Mükellef Detay Bilgileri:</h4>
+                <p>Ad/Soyad alanının yanında yer alan "1" simgeli butona tıklayarak mükellife ait detaylı bilgileri görebilirsiniz. Bu bilgiler arasında:</p>
+                <ul>
+                    <li>Ana adı ve baba adı</li>
+                    <li>Doğum yeri ve tarihi</li>
+                    <li>Ev adresi</li>
+                    <li>İcra durumu</li>
+                    <li>Emeklilik durumu</li>
+                    <li>Taksitlendirme bilgileri</li>
+                    <li>İştirakçi sayısı</li>
+                    <li>Özel notlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-kriterleri" class="section">
+        <h2>Tahakkuk Kriterleri</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Tarihi ve Borç Durumu Seçimi</h3>
+            <div class="step">
+                <h4>Tahakkuk Kriterleri Nasıl Belirlenir?</h4>
+                <ol>
+                    <li><strong>Tahakkuk Tarihi Seçimi:</strong>
+                        <ul>
+                            <li>Sicil bilgilerinin hemen altında yer alan "Tahakkuk Tarihi" alanına istediğiniz tarihi GG.AA.YYYY formatında girebilirsiniz</li>
+                            <li>Bu alan boş bırakılırsa tüm tarihlerdeki tahakkuklar listelenecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borç Bakiye Seçimi:</strong>
+                        <ul>
+                            <li>Tahakkuk tarihi alanının yanında yer alan açılır listeden şu seçeneklerden birini seçebilirsiniz:
+                                <ul>
+                                    <li>"Borcu Olanlar" - Sadece borcu bulunan tahakkukları gösterir</li>
+                                    <li>"Borcu Olmayanlar" - Borcu kapanmış tahakkukları gösterir</li>
+                                    <li>"Tümü" - Tüm tahakkukları gösterir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Makbuz Nüsha ve Modül Seçimi:</h4>
+                <p>Borç bakiye seçiminin hemen yanında:</p>
+                <ul>
+                    <li><strong>Makbuz Nüsha Sayısı:</strong> Çıktı alınacak makbuz sayısını belirleyebilirsiniz (Varsayılan değer: 2)</li>
+                    <li><strong>Modül Seçimi:</strong> İşlem yapılacak modülü seçebileceğiniz bir açılır liste bulunur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-turu" class="section">
+        <h2>Tahakkuk Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Türlerinin Seçilmesi</h3>
+            <div class="step">
+                <h4>Tahakkuk Türü Nasıl Seçilir?</h4>
+                <ol>
+                    <li><strong>Tahakkuk Türü Seçim Alanının Konumu:</strong>
+                        <ul>
+                            <li>Modül seçiminin altında geniş bir liste kutusu göreceksiniz</li>
+                            <li>Bu alan "Tahakkuk Türü" başlığı ile belirtilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Seçim Yapma:</strong>
+                        <ul>
+                            <li>Listeden birden fazla tahakkuk türü seçebilirsiniz</li>
+                            <li>Ctrl tuşuna basılı tutarak istediğiniz türleri tek tek seçebilirsiniz</li>
+                            <li>Shift tuşuna basılı tutarak aralıklı seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Noktalar:</h4>
+                <ul>
+                    <li>En az bir tahakkuk türü seçilmelidir</li>
+                    <li>Seçilen türlere ait tahakkuk kaydı yoksa sistem sizi uyaracaktır</li>
+                    <li>Yanlış seçim yaparsanız tekrar seçim yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-listeleme" class="section">
+        <h2>Tahakkuk Kayıtlarının Listelenmesi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Kayıtlarını Getirme</h3>
+            <div class="step">
+                <h4>Kayıtlar Nasıl Listelenir?</h4>
+                <ol>
+                    <li><strong>Tahakkuk Getir Butonu:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında bulunan buton çubuğunda "Tahakkuk Kayıtlarını Getir" butonunu göreceksiniz</li>
+                            <li>Bu buton, bir yenileme ikonu ve "Tahakkuk Kayıtlarını Getir" yazısı ile belirtilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listelenen Bilgiler:</strong>
+                        <ul>
+                            <li>Tür: Tahakkukun hangi türde olduğunu gösterir</li>
+                            <li>Borç Yılı: Tahakkukun ait olduğu yıl</li>
+                            <li>Tahakkuk Tarihi: İşlemin yapıldığı tarih</li>
+                            <li>Son Ödeme Tarihi: Ödemenin yapılması gereken son tarih</li>
+                            <li>Açıklama: Tahakkuk ile ilgili açıklamalar</li>
+                            <li>Kullanıcı: İşlemi yapan kullanıcı bilgisi</li>
+                            <li>Tahakkuk Tutarı: Toplam borç tutarı</li>
+                            <li>Ödeme: Yapılan ödeme tutarı</li>
+                            <li>Azaltan: İndirim vb. nedenlerle azalan tutar</li>
+                            <li>Bakiye: Kalan borç tutarı</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Listeleme Sırasında Dikkat Edilecek Noktalar:</h4>
+                <ul>
+                    <li>Mükellefin icra durumu varsa sistem sizi uyaracaktır</li>
+                    <li>Emeklilik durumu varsa bilgilendirme yapılacaktır</li>
+                    <li>Taksitlendirme yapılmışsa bu bilgi gösterilecektir</li>
+                    <li>Liste yüklendikten sonra toplam tutarlar otomatik hesaplanacaktır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-islemleri" class="section">
+        <h2>Tahakkuk İşlemleri</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Kayıtları Üzerinde İşlem Yapma</h3>
+            
+            <div class="step">
+                <h4>Tahakkuk Seçimi ve İşaretleme:</h4>
+                <ol>
+                    <li><strong>Kayıt Seçme:</strong>
+                        <ul>
+                            <li>Her tahakkuk kaydının en solunda yeşil renkli bir seçim butonu bulunur</li>
+                            <li>Bu butona tıkladığınızda buton kırmızıya döner ve kayıt seçilmiş olur</li>
+                            <li>Tekrar tıkladığınızda seçim kaldırılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu Seçim:</strong>
+                        <ul>
+                            <li>Listenin en üstünde bulunan seçim butonuna tıklayarak tüm kayıtları seçebilirsiniz</li>
+                            <li>Tekrar tıklayarak tüm seçimleri kaldırabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Son Ödeme Tarihi Değiştirme:</h4>
+                <ol>
+                    <li>Değiştirmek istediğiniz kaydın "Son Ödeme Tarihi" sütunundaki tarihe tıklayın</li>
+                    <li>Yeni tarihi GG.AA.YYYY formatında girin</li>
+                    <li>Tarih değişikliği yapıldığında, kaydetme butonu aktif hale gelecektir</li>
+                </ol>
+
+                <div class="warning-box">
+                    <h4>Önemli:</h4>
+                    <ul>
+                        <li>Son ödeme tarihi, tahakkuk tarihinden önce olamaz</li>
+                        <li>Geçersiz tarih formatı girildiğinde sistem uyarı verecektir</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Açıklama Ekleme/Değiştirme:</h4>
+                <ol>
+                    <li>Değiştirmek istediğiniz kaydın "Açıklama" sütunundaki metin alanına tıklayın</li>
+                    <li>İstediğiniz açıklamayı yazın</li>
+                    <li>Açıklama değişikliği yapıldığında, kaydetme butonu aktif hale gelecektir</li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>İşlem Kolaylıkları:</h4>
+                <ul>
+                    <li>Tab tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Enter tuşu ile değişiklikleri onaylayabilirsiniz</li>
+                    <li>ESC tuşu ile programdan çıkabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Yazdırma</h2>
+        <div class="info-box">
+            <h3>Butonların Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Yazdırma İşlemleri:</h4>
+                <ol>
+                    <li><strong>Yazdır Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alan yazıcı ikonu ile belirtilmiş butondur</li>
+                            <li>Tüm tahakkuk kayıtlarını yazdırmanızı sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçilileri Yazdır:</strong>
+                        <ul>
+                            <li>Yazdır butonunun yanında yer alır</li>
+                            <li>Sadece seçtiğiniz tahakkuk kayıtlarını yazdırır</li>
+                            <li>En az bir kayıt seçili olmalıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="tip-box">
+                    <h4>Yazdırma Seçenekleri:</h4>
+                    <ul>
+                        <li>Makbuz nüsha sayısını yazdırmadan önce belirleyebilirsiniz</li>
+                        <li>Yazıcı önizleme ekranında düzen ayarlarını yapabilirsiniz</li>
+                        <li>Çıktı almadan önce görüntüleme yapabilirsiniz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Kaydetme ve İptal İşlemleri:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Son ödeme tarihi veya açıklama değişikliği yaptığınızda aktif olur</li>
+                            <li>Yeşil renkli disketi simgeleyen bir ikona sahiptir</li>
+                            <li>Tüm değişiklikleri kaydeder</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal (Sil) Butonu:</strong>
+                        <ul>
+                            <li>Kırmızı çarpı işareti ile gösterilir</li>
+                            <li>Seçili tahakkukları iptal etmenizi sağlar</li>
+                            <li>İptal işlemi geri alınamaz</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="warning-box">
+                    <h4>İptal İşlemi Uyarıları:</h4>
+                    <ul>
+                        <li>İptal işlemi öncesi sistem onay soracaktır</li>
+                        <li>İptal nedeni en az 5 karakter olmalıdır</li>
+                        <li>İptal edilen tahakkuklar için otomatik iptal dökümü alınabilir</li>
+                        <li>Bazı modüllerin tahakkukları bu ekrandan iptal edilemez</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Özet Bilgiler:</h4>
+                <p>Ekranın alt kısmında yer alan toplam tutarlar:</p>
+                <ul>
+                    <li><strong>Bakiye Toplamı:</strong> Kalan borç tutarlarının toplamı</li>
+                    <li><strong>Tahakkuk Toplamı:</strong> Seçili kayıtların toplam tutarı</li>
+                    <li><strong>Azaltan Toplamı:</strong> İndirim vb. işlemlerle azalan tutarların toplamı</li>
+                    <li><strong>İptal Edilecekler Toplamı:</strong> İptal için seçilen kayıtların toplamı</li>
+                    <li><strong>Ödeme Toplamı:</strong> Yapılan ödemelerin toplamı</li>
+                    <li><strong>Kalan Toplam:</strong> İptal sonrası kalan tutar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hata-cozumleri" class="section">
+        <h2>Sık Karşılaşılan Hatalar ve Çözümleri</h2>
+        <div class="warning-box">
+            <table>
+                <tr>
+                    <th>Hata Mesajı</th>
+                    <th>Çözüm</th>
+                </tr>
+                <tr>
+                    <td>"Sicil Kaydı Bulunamadı"</td>
+                    <td>
+                        <ul>
+                            <li>Sicil numarasını doğru girdiğinizden emin olun</li>
+                            <li>Modül seçiminizi kontrol edin</li>
+                            <li>Sicil numarasını büyüteç ikonuyla aramayı deneyin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Sicilin Seçili Tahakkuk Türlerine Ait Tahakkuk Kaydı Bulunamadı"</td>
+                    <td>
+                        <ul>
+                            <li>Tahakkuk türü seçimlerinizi kontrol edin</li>
+                            <li>Farklı tarih aralığı deneyin</li>
+                            <li>Borç durumu filtresini "Tümü" olarak değiştirin</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"Sadece GTT Tahakkukları İptal Edilebilir"</td>
+                    <td>
+                        <ul>
+                            <li>Seçili modülün iptal yetkisini kontrol edin</li>
+                            <li>Yöneticinize danışın</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

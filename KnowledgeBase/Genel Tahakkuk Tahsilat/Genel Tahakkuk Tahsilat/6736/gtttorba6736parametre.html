@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6736 Sayılı Borç Yapılandırma Parametreleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>6736 Sayılı Borç Yapılandırma Parametreleri</h1>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, 6736 Sayılı Kanun kapsamındaki borç yapılandırma parametrelerinin nasıl ayarlanacağını adım adım anlatmaktadır. Bu program, borç yapılandırma sürecinde kullanılacak temel parametreleri belirlemenizi sağlar.</p>
+        </div>
+    </div>
+
+    <div id="parametre-aciklamalari" class="section">
+        <h2>Parametre Açıklamaları ve Ayarlama Rehberi</h2>
+        <div class="info-box">
+            <h3>Temel Tarih Parametreleri</h3>
+            <h4>1. Borç (Vade) Kontrol Tarihi</h4>
+            <p>Bu parametre, hangi tarihe kadar olan borçların yapılandırmaya dahil edileceğini belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>Genellikle kanunun yayınlandığı tarihten önceki bir tarih seçilir</li>
+                        <li>GG.AA.YYYY formatında girilmelidir (Örnek: 31.12.2023)</li>
+                        <li>Bu tarihten sonraki borçlar yapılandırmaya dahil edilmez</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>2. Son Başvuru Tarihi</h4>
+            <p>Vatandaşların yapılandırma başvurusu yapabileceği son tarihi belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>Kanunda belirtilen son başvuru tarihi girilmelidir</li>
+                        <li>Bu tarihten sonra başvuru alınmaz</li>
+                        <li>Genellikle kanunun yayın tarihinden birkaç ay sonrası için belirlenir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>3. İlk Taksit Son Ödeme Tarihi</h4>
+            <p>Yapılandırma sonrası ilk taksit ödemesinin yapılması gereken son tarihi belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>Son başvuru tarihinden sonraki bir tarih olmalıdır</li>
+                        <li>Genellikle son başvuru tarihinden 1-2 ay sonrası seçilir</li>
+                        <li>Bu tarih, diğer taksitlerin ödeme tarihlerinin belirlenmesinde baz alınır</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>4. İptal İçin Son Başvuru Tarihi</h4>
+            <p>Yapılandırmanın iptal edilebileceği son tarihi belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>İlk taksit son ödeme tarihinden sonraki bir tarih seçilmelidir</li>
+                        <li>Vatandaşlara yeterli süre tanınmalıdır</li>
+                        <li>Bu tarihten sonra iptal başvurusu kabul edilmez</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Tahakkuk Türü Parametreleri</h3>
+            <h4>1. TEFE/ÜFE Faizi Tahakkuk Türü</h4>
+            <p>Yapılandırma kapsamında uygulanacak TEFE/ÜFE faizinin hangi tahakkuk türü üzerinden işleneceğini belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>Büyüteç simgeli butona tıklayın</li>
+                        <li>Açılan pencereden uygun tahakkuk türünü seçin</li>
+                        <li>Bu seçim, sistemin faiz hesaplamalarını nasıl yapacağını belirler</li>
+                        <li>Seçilen tür, raporlama ve muhasebeleştirmede kullanılır</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>2. Katsayı Faizi Tahakkuk Türü</h4>
+            <p>Taksitlendirme durumunda uygulanacak katsayı faizinin hangi tahakkuk türü üzerinden işleneceğini belirler.</p>
+            <ul>
+                <li><strong>Nasıl Ayarlanır:</strong>
+                    <ul>
+                        <li>Büyüteç simgeli butona tıklayın</li>
+                        <li>Açılan pencereden uygun tahakkuk türünü seçin</li>
+                        <li>Bu seçim, taksitlendirme durumunda uygulanacak katsayıların hesaplanmasını etkiler</li>
+                        <li>Seçilen tür, taksit ödemelerinin muhasebeleştirilmesinde kullanılır</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Ayarlama Notları</h3>
+            <ul>
+                <li>Tüm tarihlerin birbiriyle tutarlı olması gerekir:
+                    <ul>
+                        <li>Kontrol Tarihi < Son Başvuru Tarihi < İlk Taksit Tarihi < İptal Son Tarihi</li>
+                    </ul>
+                </li>
+                <li>Tahakkuk türleri bir kez ayarlandıktan sonra değiştirilmemelidir</li>
+                <li>Yapılan her değişiklik sonrası mutlaka "Kaydet" butonuna basılmalıdir</li>
+            </ul>
+        </div>
+
+        <div id="ana-ekran" class="section">
+        <h2>Ana Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Tarih Alanları</h3>
+            <ul>
+                <li><strong>Borç (Vade) Kontrol Tarihi:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında yer alır</li>
+                        <li>Borçların vade kontrolünün yapılacağı tarihi belirler</li>
+                        <li>GG.AA.YYYY formatında girilmelidir</li>
+                    </ul>
+                </li>
+                <li><strong>Son Başvuru Tarihi:</strong>
+                    <ul>
+                        <li>Borç yapılandırması için son başvuru tarihini belirler</li>
+                        <li>GG.AA.YYYY formatında girilmelidir</li>
+                    </ul>
+                </li>
+                <li><strong>İlk Taksit Son Ödeme Tarihi:</strong>
+                    <ul>
+                        <li>İlk taksit ödemesi için son tarihi belirler</li>
+                        <li>GG.AA.YYYY formatında girilmelidir</li>
+                    </ul>
+                </li>
+                <li><strong>İptal İçin Son Başvuru Tarihi:</strong>
+                    <ul>
+                        <li>Yapılandırma iptal başvuruları için son tarihi belirler</li>
+                        <li>GG.AA.YYYY formatında girilmelidir</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Tahakkuk Türü Alanları</h3>
+            <ul>
+                <li><strong>TEFE/ÜFE Faizi Tahakkuk Türü:</strong>
+                    <ul>
+                        <li>Faiz hesaplamalarında kullanılacak TEFE/ÜFE tahakkuk türünü seçmenizi sağlar</li>
+                        <li>Yanındaki büyüteç simgeli butona tıklayarak seçim yapabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Katsayı Faizi Tahakkuk Türü:</strong>
+                    <ul>
+                        <li>Katsayı hesaplamalarında kullanılacak tahakkuk türünü seçmenizi sağlar</li>
+                        <li>Yanındaki büyüteç simgeli butona tıklayarak seçim yapabilirsiniz</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Program Butonları</h2>
+        <div class="info-box">
+            <h3>Ana Butonlar ve İşlevleri</h3>
+            <ul>
+                <li><strong>Kaydet Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, orta bölümde</li>
+                        <li>Görünüm: Parlak gri renkli buton</li>
+                        <li>İşlev: Girilen tüm parametreleri kaydeder</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış Butonu:</strong>
+                    <ul>
+                        <li>Konum: Kaydet butonunun yanında</li>
+                        <li>Görünüm: Parlak gri renkli buton</li>
+                        <li>İşlev: Programdan çıkış yapar (onay sorar)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="uyarilar" class="section">
+        <h2>Önemli Uyarılar</h2>
+        <div class="warning-box">
+            <ul>
+                <li>Tüm tarih alanları GG.AA.YYYY formatında girilmelidir</li>
+                <li>Tarih alanları boş bırakılamaz</li>
+                <li>Tahakkuk türü seçimleri mutlaka yapılmalıdır</li>
+                <li>Değişiklik yaptıktan sonra mutlaka Kaydet butonuna basılmalıdır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Faydalı İpuçları</h2>
+        <div class="tip-box">
+            <ul>
+                <li>Tarih alanları arasında Tab tuşu ile geçiş yapabilirsiniz</li>
+                <li>Büyüteç simgeli butonlara tıklayarak tahakkuk türlerini kolayca seçebilirsiniz</li>
+                <li>Yapılan tüm değişiklikler kaydedilmeden önce kontrol edilmelidir</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

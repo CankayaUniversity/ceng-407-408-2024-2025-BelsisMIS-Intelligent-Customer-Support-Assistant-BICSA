@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahakkuk Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tahakkuk Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bakış</h2>
+        <div class="info-box">
+            <p>Tahakkuk Listesi programı, belediye tahsilat sisteminde vatandaşların borç ve ödeme kayıtlarını listelemek için kullanılan bir uygulamadır. Bu program ile:</p>
+            <ul>
+                <li>Vatandaşların GTT (Genel Tahakkuk Tahsilat) sicil numaralarına göre tahakkuk kayıtlarını görüntüleyebilir</li>
+                <li>Belirli tarih aralıklarında oluşturulan tahakkukları listeleyebilir</li>
+                <li>Farklı modüllere ait tahakkukları filtreleyebilir</li>
+                <li>Detaylı veya özet raporlar alabilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Programı Kullanmadan Önce Hazır Olmanız Gerekenler:</h4>
+            <ul>
+                <li>Sorgulamak istediğiniz vatandaşın GTT sicil numarası (eğer belirli bir vatandaş için sorgulama yapacaksanız)</li>
+                <li>Hangi tarih aralığında sorgulama yapacağınız</li>
+                <li>Hangi modüle ait tahakkukları görüntülemek istediğiniz</li>
+                <li>Rapor türü tercihiniz (geniş veya dar format)</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Program ilk açıldığında hiçbir filtreleme seçili olmayacaktır</li>
+                <li>En az bir arama kriteri belirlemeniz önerilir</li>
+                <li>Çok geniş tarih aralıkları veya çok sayıda kayıt içeren sorgularda sistem yavaş çalışabilir</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        
+        <div class="info-box">
+            <h3>Genel Yerleşim</h3>
+            <p>Program penceresi üç temel bölümden oluşmaktadır:</p>
+
+            <div class="step">
+                <h4>1. Başlık Bölümü</h4>
+                <ul>
+                    <li>Ekranın en üst kısmında turkuaz renkli bir şeritte "TAHAKKUK LİSTESİ" başlığı bulunur</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>2. Sorgulama Kriterleri Bölümü</h4>
+                <ul>
+                    <li>Başlık bölümünün hemen altında yer alan ana çalışma alanıdır</li>
+                    <li>Merkezi bir tablo şeklinde düzenlenmiştir</li>
+                    <li>Solda kriterler, sağda giriş alanları bulunur</li>
+                    <li>Her satır farklı bir sorgulama kriterini içerir</li>
+                </ul>
+
+                <h5>Sorgulama Bölümündeki Alanların Yerleşimi (Yukarıdan Aşağıya):</h5>
+                <ol>
+                    <li>En üstte "Sıralama" seçeneği</li>
+                    <li>Hemen altında "Rapor Başlığı" giriş alanı</li>
+                    <li>Sonrasında sırasıyla:
+                        <ul>
+                            <li>GTT Sicil No alanları (başlangıç-bitiş)</li>
+                            <li>Yıl alanları (başlangıç-bitiş)</li>
+                            <li>Tahakkuk Tarihi alanları (başlangıç-bitiş)</li>
+                            <li>Bakiye alanları (başlangıç-bitiş)</li>
+                        </ul>
+                    </li>
+                    <li>Alt kısımda:
+                        <ul>
+                            <li>Modül seçim alanı</li>
+                            <li>Rapor Türü seçim alanı</li>
+                            <li>Tür seçim listesi (çoklu seçim yapılabilen)</li>
+                            <li>Index Kullanımı seçeneği</li>
+                            <li>Gruplama seçenekleri</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>3. İşlem Butonları Bölümü</h4>
+                <ul>
+                    <li>Ekranın alt kısmında yer alır</li>
+                    <li>Gri arka planlı bir şerit içinde bulunur</li>
+                    <li>Soldan sağa doğru sırasıyla şu butonları içerir:
+                        <ul>
+                            <li>"Listele" butonu - raporları oluşturmak için</li>
+                            <li>"Çıkış" butonu - programdan çıkmak için</li>
+                        </ul>
+                    </li>
+                    <li>Butonlar üç boyutlu görünüme sahiptir</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Her alan kendi başlığının altında açıkça belirtilmiştir</li>
+                <li>Başlangıç ve bitiş değerleri olan alanlarda, soldaki kutu başlangıç, sağdaki kutu bitiş değeri içindir</li>
+                <li>Alanlar arasında TAB tuşu ile geçiş yapılabilir</li>
+                <li>Zorunlu alanlar doldurulmadan rapor oluşturulamaz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Kullanım İpuçları:</h4>
+            <ul>
+                <li>Fare tekerleği ile ekranda yukarı-aşağı hareket edebilirsiniz</li>
+                <li>ENTER tuşu, bir sonraki alana geçmek için TAB tuşu gibi kullanılabilir</li>
+                <li>ESC tuşu, açık olan herhangi bir pencereyi kapatır</li>
+                <li>Çift tıklama ile bazı alanların içeriği otomatik seçilir</li>
+            </ul>
+        </div>
+    </div>
+    <div id="sorgulama-kriterleri" class="section">
+        <h2>Sorgulama Kriterleri</h2>
+
+        <div class="info-box">
+            <h3>GTT Sicil No ile Sorgulama</h3>
+            
+            <div class="step">
+                <h4>Sicil Numarası Nasıl Girilir?</h4>
+                <ol>
+                    <li><strong>Manuel Giriş:</strong>
+                        <ol>
+                            <li>Ekranın üst kısmında, sıralama seçeneğinin hemen altında "GTT Sicil No" etiketli iki kutu göreceksiniz
+                                <ul>
+                                    <li>Soldaki kutu başlangıç sicil numarası için</li>
+                                    <li>Sağdaki kutu bitiş sicil numarası için</li>
+                                </ul>
+                            </li>
+                            <li>Başlangıç kutusuna sicil numarasını yazın
+                                <ul>
+                                    <li>Sadece rakam girebilirsiniz</li>
+                                    <li>En fazla 15 karakter uzunluğunda olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Enter tuşuna bastığınızda:
+                                <ul>
+                                    <li>Bitiş kutusu otomatik olarak aynı numara ile doldurulur</li>
+                                    <li>İmleç bir sonraki alana geçer</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Kişi Bilgileri ile Sorgulama</h4>
+                <ol>
+                    <li><strong>Adı ve Soyadı ile Sorgulama:</strong>
+                        <ol>
+                            <li>"Adı" alanına:
+                                <ul>
+                                    <li>Aramak istediğiniz kişinin adını girebilirsiniz</li>
+                                    <li>En fazla 20 karakter uzunluğunda olabilir</li>
+                                    <li>Kısmi ad araması yapılabilir (örn: "AH" yazarak "AHMET" gibi kayıtları bulabilirsiniz)</li>
+                                </ul>
+                            </li>
+                            <li>"Soyadı" alanına:
+                                <ul>
+                                    <li>Aramak istediğiniz kişinin soyadını girebilirsiniz</li>
+                                    <li>En fazla 20 karakter uzunluğunda olabilir</li>
+                                    <li>Kısmi soyad araması yapılabilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Taksit Bilgileri ile Sorgulama</h4>
+                <ol>
+                    <li><strong>Taksit Aralığı Belirleme:</strong>
+                        <ol>
+                            <li>İki adet taksit kutusu bulunur:
+                                <ul>
+                                    <li>Sol kutu başlangıç taksit numarası için (varsayılan: 1)</li>
+                                    <li>Sağ kutu bitiş taksit numarası için (varsayılan: 99)</li>
+                                    <li>1-99 arasında değer girebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tarih Bilgileri ile Sorgulama</h4>
+                <ol>
+                    <li><strong>Yıl Bilgisi:</strong>
+                        <ol>
+                            <li>GTT Sicil No alanlarının hemen altında "Yıl" etiketli iki kutu bulunur
+                                <ul>
+                                    <li>Soldaki kutucuğa başlangıç yılını girin (örn: 2024)</li>
+                                    <li>Sağdaki kutucuğa bitiş yılını girin</li>
+                                    <li>Her iki kutu da 4 karakter ile sınırlıdır</li>
+                                </ul>
+                            </li>
+                            <li>Başlangıç yılını girip Enter'a bastığınızda:
+                                <ul>
+                                    <li>Bitiş yılı otomatik olarak aynı değerle doldurulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li><strong>Ödeme Tarihi:</strong>
+                        <ol>
+                            <li>Tahakkuk tarihi alanlarının altında "Ödeme Tarihi" etiketli iki kutu bulunur
+                                <ul>
+                                    <li>Soldaki kutuya başlangıç ödeme tarihini girin</li>
+                                    <li>Sağdaki kutuya bitiş ödeme tarihini girin</li>
+                                    <li>Tarih formatı: GG.AA.YYYY şeklinde olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>Ödeme tarihine göre filtreleme yapmak için her iki tarihin de girilmesi gerekir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tahakkuk Tarihi:</strong>
+                        <ol>
+                            <li>Yıl alanlarının hemen altında "Tahakkuk Tar" etiketli iki kutu yer alır
+                                <ul>
+                                    <li>Soldaki kutuya başlangıç tarihini girin</li>
+                                    <li>Sağdaki kutuya bitiş tarihini girin</li>
+                                    <li>Tarih formatı: GG.AA.YYYY şeklinde olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>Başlangıç tarihini girdiğinizde:
+                                <ul>
+                                    <li>Sistem otomatik olarak o ayın son gününü bitiş tarihine yazar</li>
+                                    <li>Örnek: 01.01.2024 yazdığınızda, bitiş tarihi 31.01.2024 olarak doldurulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Bakiye Bilgileri ile Sorgulama</h4>
+                <ol>
+                    <li><strong>Bakiye Aralığı Belirleme:</strong>
+                        <ol>
+                            <li>Tahakkuk tarihi alanlarının altında "Bakiye" etiketli iki kutu bulunur:
+                                <ul>
+                                    <li>Sol kutu minimum bakiye değeri için (varsayılan: 0.01)</li>
+                                    <li>Sağ kutu maksimum bakiye değeri için (varsayılan: 9.999.999)</li>
+                                </ul>
+                            </li>
+                            <li>Bakiye değerlerini girerken:
+                                <ul>
+                                    <li>Nokta (.) veya virgül (,) kullanabilirsiniz</li>
+                                    <li>Binlik ayracı olarak nokta kullanılır</li>
+                                    <li>Kuruş kısmı için virgül kullanılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Bakiye ile Sorgulama Yapma:</strong>
+                        <ol>
+                            <li>Belirli bir bakiye aralığında sorgulama yapmak için:
+                                <ul>
+                                    <li>Sol kutuda aramanın başlayacağı minimum bakiye değerini girin (örn: 1.000,00)</li>
+                                    <li>Sağ kutuda aramanın biteceği maksimum bakiye değerini girin (örn: 5.000,00)</li>
+                                    <li>Her iki kutu da doldurulmalıdır, boş bırakılamaz</li>
+                                </ul>
+                            </li>
+                            <li>Örnek sorgulama senaryoları:
+                                <ul>
+                                    <li>1.000 TL üzeri borçları görmek için: Sol kutu: 1.000,00 - Sağ kutu: 9.999.999,00</li>
+                                    <li>100 TL altı borçları görmek için: Sol kutu: 0,01 - Sağ kutu: 100,00</li>
+                                    <li>Belirli bir aralıktaki borçları görmek için: Sol kutu: 500,00 - Sağ kutu: 1.500,00</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat edilmesi gerekenler:
+                                <ul>
+                                    <li>Sol kutudaki değer sağ kutudaki değerden büyük olamaz</li>
+                                    <li>Negatif değer girişi yapılamaz</li>
+                                    <li>Sayısal olmayan karakterler kullanılamaz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Tarih formatına dikkat edin (GG.AA.YYYY)</li>
+                <li>Bakiye alanlarına sadece sayısal değerler girilebilir</li>
+                <li>Başlangıç değeri, bitiş değerinden büyük olamaz</li>
+                <li>Çok geniş aralıklar sistem performansını etkileyebilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>ENTER tuşu da TAB gibi bir sonraki alana geçiş sağlar</li>
+                <li>Tarih alanlarında ay sonunu manuel yazmak zorunda değilsiniz, sistem otomatik hesaplar</li>
+                <li>Bakiye alanlarında varsayılan değerler çoğu sorgu için uygundur</li>
+            </ul>
+        </div>
+    </div>
+    <div id="rapor-ayarlari" class="section">
+        <h2>Rapor Ayarları</h2>
+
+        <div class="info-box">
+            <h3>Sıralama ve Rapor Başlığı</h3>
+            
+            <div class="step">
+                <h4>Sıralama Seçenekleri</h4>
+                <ol>
+                    <li><strong>Sıralama Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Ekranın en üst kısmında, başlığın hemen altında "Sıralama" etiketli bir açılır liste kutusu bulunur</li>
+                            <li>Açılır listede dört seçenek mevcuttur:
+                                <ul>
+                                    <li>"Yıl+Sicil No" - Önce yıla göre, sonra sicil numarasına göre sıralar</li>
+                                    <li>"Sicil+Tahakkuk Tarihi" - Önce sicil numarasına, sonra tahakkuk tarihine göre sıralar</li>
+                                    <li>"GTT Sicil No" - Sadece sicil numarasına göre sıralar (varsayılan)</li>
+                                    <li>"Tahakkuk Tarihi" - Sadece tahakkuk tarihine göre sıralar</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Rapor Başlığı:</strong>
+                        <ol>
+                            <li>Sıralama seçeneğinin altında "Rapor Başlığı" etiketli bir metin kutusu bulunur</li>
+                            <li>Varsayılan olarak "TAHAKKUK LİSTESİ" yazılıdır</li>
+                            <li>En fazla 50 karakter uzunluğunda başlık girebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Modül ve Tür Seçimleri</h4>
+                <ol>
+                    <li><strong>Modül Seçimi:</strong>
+                        <ol>
+                            <li>Bakiye alanlarının altında "Modül" etiketli bir açılır liste kutusu yer alır</li>
+                            <li>İlk seçenek her zaman "Genel Tahakkuk Tahsilat Takip Sistemi"dir</li>
+                            <li>Diğer modüller alfabetik sırada listelenir</li>
+                            <li>En az bir modül seçilmelidir, aksi halde sistem uyarı verecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Rapor Türü Seçimi:</strong>
+                        <ol>
+                            <li>Modül seçiminin hemen altında "Rapor Türü" açılır listesi bulunur</li>
+                            <li>İki seçenek vardır:
+                                <ul>
+                                    <li>"DAR ÇIKTI" - Temel bilgileri içeren özet rapor</li>
+                                    <li>"GENİŞ ÇIKTI" - Tüm detayları içeren kapsamlı rapor</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Tür Seçimi:</strong>
+                        <ol>
+                            <li>Rapor türünün altında çoklu seçim yapılabilen bir liste kutusu bulunur</li>
+                            <li>Liste içinde tüm tahakkuk türleri alfabetik sırada yer alır</li>
+                            <li>Birden fazla tür seçmek için:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak tek tek seçim yapabilirsiniz</li>
+                                    <li>Veya SHIFT tuşunu basılı tutarak aralık seçebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Gruplama Seçenekleri</h4>
+                <ol>
+                    <li><strong>Gruplama Seviyesi Seçimi:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmında "Gruplama" etiketli bir açılır liste kutusu bulunur</li>
+                            <li>Beş farklı gruplama seçeneği mevcuttur:
+                                <ul>
+                                    <li>"Sicil No + Modül + Borç Yılı + Gelir Türü + Taksit" - En detaylı gruplama</li>
+                                    <li>"Sicil No + Modül + Borç Yılı + Gelir Türü"</li>
+                                    <li>"Sicil No + Modül + Borç Yılı"</li>
+                                    <li>"Sicil No + Modül"</li>
+                                    <li>"Sicil No" - En özet gruplama</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Modül seçimi yapmadan rapor oluşturmak sistem performansını olumsuz etkileyebilir</li>
+                <li>Çok detaylı gruplama seçenekleri raporun daha uzun olmasına neden olur</li>
+                <li>Tür seçimi yapmadığınızda sistem tüm türleri listeleyecektir</li>
+                <li>Gruplama seçeneği rapordaki ara toplamları etkiler</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Sık kullandığınız modülleri not alın, bu size zaman kazandıracaktır</li>
+                <li>Genel bir bakış için önce özet gruplamayı tercih edin</li>
+                <li>Detaylı inceleme gerektiğinde geniş çıktı seçeneğini kullanın</li>
+                <li>Çoklu tür seçiminde fare tekerleği ile listede hızlıca gezinebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+    <div id="rapor-olusturma" class="section">
+        <h2>Rapor Oluşturma ve Çıktı Alma</h2>
+
+        <div class="info-box">
+            <h3>Rapor Oluşturma Adımları</h3>
+            
+            <div class="step">
+                <h4>Rapor Oluşturmadan Önce Kontrol Listesi</h4>
+                <ol>
+                    <li><strong>Temel Kriterlerin Kontrolü:</strong>
+                        <ol>
+                            <li>GTT Sicil No aralığının doğru girildiğinden emin olun
+                                <ul>
+                                    <li>Başlangıç ve bitiş değerlerini kontrol edin</li>
+                                    <li>Tek bir sicil için aynı numarayı her iki kutuya da yazın</li>
+                                </ul>
+                            </li>
+                            <li>Tarih aralıklarını kontrol edin
+                                <ul>
+                                    <li>Yıl aralığının mantıklı olduğundan emin olun</li>
+                                    <li>Tahakkuk tarih aralığının doğru formatta olduğunu kontrol edin</li>
+                                </ul>
+                            </li>
+                            <li>Modül seçimini kontrol edin
+                                <ul>
+                                    <li>En az bir modül seçili olmalıdır</li>
+                                    <li>Modül seçmeden devam etmek istediğinizde sistem uyarı verecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor Oluşturma İşlemi</h4>
+                <ol>
+                    <li><strong>Listele Butonunu Kullanma:</strong>
+                        <ol>
+                            <li>Tüm kriterleri girdikten sonra:
+                                <ul>
+                                    <li>Ekranın alt kısmında bulunan gri şeritte "Listele" butonunu bulun</li>
+                                    <li>Bu buton sol tarafta yer alır</li>
+                                    <li>Butona tıkladığınızda sistem raporu hazırlamaya başlayacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Rapor oluşturma sırasında:
+                                <ul>
+                                    <li>Sistem verileri işlerken kısa bir bekleme süresi olabilir</li>
+                                    <li>İşlem bitene kadar bekleyin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Rapor Görüntüleme:</strong>
+                        <ol>
+                            <li>Rapor yeni bir pencerede açılacaktır:
+                                <ul>
+                                    <li>Pencereyi yeniden boyutlandırabilirsiniz</li>
+                                    <li>Kaydırma çubukları ile rapor içinde gezinebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor İçeriği ve Düzeni</h4>
+                <ol>
+                    <li><strong>Rapor Başlığı Bölümü:</strong>
+                        <ul>
+                            <li>En üstte girdiğiniz rapor başlığı görünür</li>
+                            <li>Altında rapor kriterleri özeti yer alır</li>
+                            <li>Tarih ve saat bilgisi gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Bölümü:</strong>
+                        <ul>
+                            <li>Seçtiğiniz gruplama düzeninde veriler listelenir</li>
+                            <li>Her grup için ara toplamlar gösterilir</li>
+                            <li>En sonda genel toplam bilgisi yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Olası Sorunlar ve Çözümleri:</h4>
+            <ul>
+                <li>Eğer rapor açılmazsa:
+                    <ul>
+                        <li>Tüm kriterlerin doğru girildiğinden emin olun</li>
+                        <li>Modül seçimini kontrol edin</li>
+                        <li>Tarih formatlarını kontrol edin</li>
+                    </ul>
+                </li>
+                <li>Rapor çok yavaş oluşuyorsa:
+                    <ul>
+                        <li>Tarih aralığını daraltın</li>
+                        <li>Daha spesifik kriterler belirleyin</li>
+                        <li>Tek bir modül seçmeyi deneyin</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Çalışma İpuçları:</h4>
+            <ul>
+                <li>Önce dar tarih aralığında test raporu alın</li>
+                <li>Gerekirse kriterleri daraltarak yeniden deneyin</li>
+                <li>Çıktı almadan önce ekranda görüntüleyerek kontrol edin</li>
+                <li>Sık kullandığınız kriter kombinasyonlarını not alın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="butonlar-sorunlar" class="section">
+        <h2>Butonlar, Kısayollar ve Sorun Giderme</h2>
+
+        <div class="info-box">
+            <h3>Butonlar ve Kısayollar</h3>
+            
+            <div class="step">
+                <h4>İşlem Butonları</h4>
+                <ol>
+                    <li><strong>Listele Butonu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında gri şeritte en solda yer alır</li>
+                            <li>Üç boyutlu görünüme sahiptir</li>
+                            <li>Raporu oluşturmak için kullanılır</li>
+                            <li>Alternatif kısayol: F8 tuşu</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li>Listele butonunun sağında bulunur</li>
+                            <li>Programdan çıkmak için kullanılır</li>
+                            <li>Alternatif kısayol: ESC tuşu</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Klavye Kısayolları</h4>
+                <ol>
+                    <li><strong>Gezinme Kısayolları:</strong>
+                        <ul>
+                            <li>TAB tuşu: Bir sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Bir önceki alana döner</li>
+                            <li>ENTER: TAB tuşu gibi davranır, sonraki alana geçer</li>
+                            <li>ESC: Açık pencereleri kapatır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Kutusu Kısayolları:</strong>
+                        <ul>
+                            <li>CTRL + Tıklama: Çoklu seçim yapar</li>
+                            <li>SHIFT + Tıklama: Aralık seçimi yapar</li>
+                            <li>İlk harf: O harfle başlayan ilk seçeneğe atlar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>1. Veri Giriş Sorunları</h4>
+                <table>
+                    <tr>
+                        <th>Sorun</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>Tarih formatı hatası</td>
+                        <td>
+                            <ul>
+                                <li>GG.AA.YYYY formatını kullanın</li>
+                                <li>Nokta (.) işaretini unutmayın</li>
+                                <li>Ay ve gün için iki haneli sayı kullanın (01-31)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sicil numarası kabul edilmiyor</td>
+                        <td>
+                            <ul>
+                                <li>Sadece rakam kullanın</li>
+                                <li>15 karakteri geçmeyin</li>
+                                <li>Boşluk bırakmayın</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bakiye değeri girilemiyor</td>
+                        <td>
+                            <ul>
+                                <li>Binlik ayracı için nokta kullanın</li>
+                                <li>Kuruş için virgül kullanın</li>
+                                <li>Negatif değer girmeyin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="step">
+                <h4>2. Rapor Oluşturma Sorunları</h4>
+                <table>
+                    <tr>
+                        <th>Sorun</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>Rapor çok yavaş oluşuyor</td>
+                        <td>
+                            <ul>
+                                <li>Tarih aralığını daraltın</li>
+                                <li>Tek modül seçin</li>
+                                <li>Daha spesifik kriterler kullanın</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rapor penceresi açılmıyor</td>
+                        <td>
+                            <ul>
+                                <li>Popup engelleyiciyi kontrol edin</li>
+                                <li>Tarayıcı ayarlarını kontrol edin</li>
+                                <li>Sayfayı yenileyin ve tekrar deneyin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Veri görünmüyor</td>
+                        <td>
+                            <ul>
+                                <li>Kriterleri genişletin</li>
+                                <li>Tarih aralığını kontrol edin</li>
+                                <li>Modül seçimini kontrol edin</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Sistem Mesajları ve Anlamları:</h4>
+            <ul>
+                <li>"Modül seçmediniz" - En az bir modül seçmelisiniz</li>
+                <li>"Geçersiz tarih formatı" - Tarih formatını kontrol edin</li>
+                <li>"Başlangıç değeri bitiş değerinden büyük olamaz" - Değer aralıklarını kontrol edin</li>
+                <li>"Hiçbir kriter belirlemediniz" - En az bir arama kriteri belirleyin</li>
+            </ul>
+        </div>
+
+</body>
+</html>

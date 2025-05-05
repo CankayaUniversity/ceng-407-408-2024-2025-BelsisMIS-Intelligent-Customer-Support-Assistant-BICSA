@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7256 Sayılı Borç Yapılandırma İptal İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>7256 Sayılı Borç Yapılandırma İptal İşlemleri Kullanıcı Kılavuzu</h1>
+
+    <div id="icindekiler" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#genel-bakis">Genel Bakış</a></li>
+                <li><a href="#ana-ekran">Ana Ekran Düzeni</a></li>
+                <li><a href="#sicil-arama">Sicil Arama İşlemleri</a></li>
+                <li><a href="#taksit-goruntuleme">Taksit Görüntüleme</a></li>
+                <li><a href="#iptal-islemleri">İptal İşlemleri</a></li>
+                <li><a href="#odeme-plani">Ödeme Planı İşlemleri</a></li>
+                <li><a href="#yeniden-yapilandirma">Yeniden Yapılandırma İşlemleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="genel-bakis" class="section">
+        <h2>Genel Bakış</h2>
+        <div class="info-box">
+            <p>Bu program, 7256 sayılı yasa kapsamında yapılandırılmış borçların görüntülenmesi, iptal edilmesi ve yeniden yapılandırılması işlemlerini yapmanızı sağlar. Program ile:</p>
+            <ul>
+                <li>Yapılandırma kayıtlarını görüntüleme</li>
+                <li>Taksit detaylarını inceleme</li>
+                <li>Yapılandırmaları iptal etme</li>
+                <li>Ödeme planı alma</li>
+                <li>Yeniden yapılandırma işlemleri yapma</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+        </div>
+    </div>
+
+    <div id="ana-ekran" class="section">
+        <h2>Ana Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ekran Bölümleri</h3>
+            <ol>
+                <li>Üst Kısım:
+                    <ul>
+                        <li>GTT Sicil No arama kutusu (ortada)</li>
+                        <li>Sicil arama butonu (sağda, büyüteç simgeli)</li>
+                    </ul>
+                </li>
+                <li>Orta Kısım:
+                    <ul>
+                        <li>Mükellef adı soyadı/unvan bilgisi (otomatik görüntülenir)</li>
+                        <li>Taksit listesi (tablo şeklinde)</li>
+                    </ul>
+                </li>
+                <li>Alt Kısım (İşlem Butonları):
+                    <ul>
+                        <li>İptal Et (kırmızı)</li>
+                        <li>Ödeme Planı (mavi)</li>
+                        <li>Tekrar Yapılandır (yeşil)</li>
+                        <li>Çıkış (gri)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="sicil-arama" class="section">
+        <h2>Sicil Arama İşlemleri</h2>
+        <div class="step">
+            <h3>Sicil Numarası ile Arama</h3>
+            <ol>
+                <li>Ekranın üst kısmındaki "GTT Sicil No" kutusuna sicil numarasını yazın
+                    <ul>
+                        <li>Sicil numarası en fazla 9 haneli olabilir</li>
+                        <li>Sadece rakam girebilirsiniz</li>
+                    </ul>
+                </li>
+                <li>Enter tuşuna basın veya yanındaki büyüteç simgeli butona tıklayın</li>
+                <li>Sicil numarası geçerli ise mükellefin bilgileri ve yapılandırma kayıtları otomatik olarak görüntülenecektir</li>
+            </ol>
+
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Sicil numarasını bilmiyorsanız, büyüteç simgeli butona tıklayarak sicil arama penceresini açabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="taksit-goruntuleme" class="section">
+        <h2>Taksit Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Taksit Listesi Görünümü</h3>
+            <p>Sicil numarası girildikten sonra ekranın orta kısmında taksit listesi görüntülenir. Bu listede şu bilgileri göreceksiniz:</p>
+            
+            <ul>
+                <li>İşlem Tarihi/Taksit
+                    <ul>
+                        <li>İşlem Tarihi: Yapılandırmanın yapıldığı tarih</li>
+                        <li>İşlem Saati: İşlemin gerçekleştiği saat</li>
+                        <li>İşlem Yapan: İşlemi gerçekleştiren kullanıcı</li>
+                    </ul>
+                </li>
+                <li>Taksit Tutarı
+                    <ul>
+                        <li>Her taksitin ödenecek toplam tutarı</li>
+                        <li>Sağ tarafta rakamsal olarak görüntülenir</li>
+                    </ul>
+                </li>
+                <li>Ödeme Tutarı
+                    <ul>
+                        <li>Taksit için yapılan ödeme miktarı</li>
+                        <li>Ödemesi yapılmamış taksitlerde 0 (sıfır) görünür</li>
+                    </ul>
+                </li>
+                <li>Mahsup Tutarı
+                    <ul>
+                        <li>Taksit için yapılan mahsup işlemi tutarı</li>
+                        <li>Mahsup yapılmamış taksitlerde 0 (sıfır) görünür</li>
+                    </ul>
+                </li>
+                <li>Aktif/Pasif Durumu
+                    <ul>
+                        <li>AKTİF: Yapılandırmanın geçerli olduğunu gösterir</li>
+                        <li>PASİF: Yapılandırmanın iptal edildiğini gösterir</li>
+                        <li>YENİDEN YAPILANDIRILMIŞ: Yapılandırmanın yenilendiğini gösterir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Listede bir yapılandırma kaydını seçmek için üzerine tıklamanız yeterlidir. Seçilen kayıt mavi renkte vurgulanır.</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Bilgiler</h4>
+            <ul>
+                <li>Pasif durumdaki yapılandırmalar üzerinde işlem yapamazsınız</li>
+                <li>Yeniden yapılandırılmış kayıtlar tekrar yapılandırılamaz</li>
+                <li>İşlem yapmak için mutlaka bir kayıt seçmelisiniz</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="iptal-islemleri" class="section">
+        <h2>İptal İşlemleri</h2>
+        <div class="step">
+            <h3>Yapılandırma İptal Etme Adımları</h3>
+            <ol>
+                <li>Listeden iptal etmek istediğiniz yapılandırma kaydını seçin
+                    <ul>
+                        <li>Kayıt AKTİF durumda olmalıdır</li>
+                        <li>Seçilen kayıt mavi renkte vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li>Alt kısımdaki "İptal Et" butonuna tıklayın
+                    <ul>
+                        <li>Buton kırmızı renktedir</li>
+                        <li>Seçili kayıt yoksa uyarı mesajı alırsınız</li>
+                    </ul>
+                </li>
+                <li>Onay penceresi açılacaktır
+                    <ul>
+                        <li>"İptal Etmek İstiyor musunuz?" mesajını göreceksiniz</li>
+                        <li>"Evet" veya "Hayır" seçeneklerinden birini tıklayın</li>
+                    </ul>
+                </li>
+                <li>İşlem tamamlandığında:
+                    <ul>
+                        <li>Yapılandırma durumu PASİF olarak değişir</li>
+                        <li>Liste otomatik olarak güncellenir</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="warning-box">
+                <h4>Uyarılar</h4>
+                <ul>
+                    <li>İptal işlemi geri alınamaz</li>
+                    <li>Pasif kayıtlar tekrar aktif yapılamaz</li>
+                    <li>İptal etmeden önce doğru kaydı seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="odeme-plani" class="section">
+        <h2>Ödeme Planı İşlemleri</h2>
+        <div class="step">
+            <h3>Ödeme Planı Alma Adımları</h3>
+            <div class="info-box">
+                <ol>
+                    <li>Listeden bir yapılandırma kaydı seçin
+                        <ul>
+                            <li>Seçtiğiniz kayıt AKTİF durumda olmalıdır</li>
+                            <li>Yapılandırma kaydına tıkladığınızda mavi renkte vurgulanacaktır</li>
+                        </ul>
+                    </li>
+                    <li>Alt kısımdaki "Ödeme Planı" butonuna tıklayın
+                        <ul>
+                            <li>Buton mavi renktedir</li>
+                            <li>Kayıt seçilmemişse "Ödeme Planı Almak İstediğiniz Kaydı Seçmelisiniz" uyarısı alırsınız</li>
+                        </ul>
+                    </li>
+                    <li>Ödeme planı yeni bir pencerede açılacaktır, bu planda:
+                        <ul>
+                            <li>Taksit numaraları</li>
+                            <li>Son ödeme tarihleri</li>
+                            <li>Asıl borç tutarları</li>
+                            <li>TEFE/ÜFE faiz tutarları</li>
+                            <li>Katsayı faiz tutarları</li>
+                            <li>Toplam ödenecek tutarlar</li>
+                            <li>Yapılan ödemeler</li>
+                            <li>Mahsup tutarları</li>
+                        </ul>
+                        görüntülenir
+                    </li>
+                </ol>
+
+                <div class="tip-box">
+                    <p><strong>İpucu:</strong> Ödeme planını yazdırmak için tarayıcınızın yazdırma özelliğini kullanabilirsiniz (genellikle Ctrl+P).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="yeniden-yapilandirma" class="section">
+        <h2>Yeniden Yapılandırma İşlemleri</h2>
+        <div class="step">
+            <h3>Tekrar Yapılandırma Adımları</h3>
+            <div class="info-box">
+                <ol>
+                    <li>Listeden yapılandırmak istediğiniz kaydı seçin
+                        <ul>
+                            <li>Kayıt AKTİF durumda olmalıdır</li>
+                            <li>Daha önce yeniden yapılandırılmamış olmalıdır</li>
+                        </ul>
+                    </li>
+                    <li>Alt kısımdaki "Tekrar Yapılandır" butonuna tıklayın
+                        <ul>
+                            <li>Buton yeşil renktedir</li>
+                            <li>KAPAT ve ÖDEME PLANI butonlarının yanında yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="warning-box">
+                    <h4>Önemli Uyarılar</h4>
+                    <ul>
+                        <li>PASİF durumdaki kayıtlar yapılandırılamaz</li>
+                        <li>Daha önce yeniden yapılandırılmış kayıtlar tekrar yapılandırılamaz</li>
+                        <li>Yapılandırma işlemi başlatıldığında yeni bir pencere açılacaktır</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h3>Sık Karşılaşılan Durumlar ve Çözümleri</h3>
+            <table>
+                <tr>
+                    <th>Durum</th>
+                    <th>Çözüm</th>
+                </tr>
+                <tr>
+                    <td>Yapılandırma butonu tıklanamıyor</td>
+                    <td>Seçili kaydın AKTİF olduğundan emin olun</td>
+                </tr>
+                <tr>
+                    <td>"Seçtiğiniz Kayıt Zaten Yeniden Yapılandırılmış" uyarısı</td>
+                    <td>Başka bir yapılandırma kaydı seçin</td>
+                </tr>
+                <tr>
+                    <td>"Pasif Kaydı Yapılandıramazsınız" uyarısı</td>
+                    <td>AKTİF durumda bir kayıt seçin</td>
+                </tr>
+                <tr>
+                    <td>"Yapılandırma Seçmelisiniz" uyarısı</td>
+                    <td>Listeden bir kayıt seçin</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="programdan-cikis" class="section">
+        <h2>Programdan Çıkış</h2>
+        <div class="info-box">
+            <h3>Çıkış İşlemi</h3>
+            <ol>
+                <li>Alt kısımdaki "Çıkış" butonuna tıklayın
+                    <ul>
+                        <li>Buton gri renktedir</li>
+                        <li>En sağda yer alır</li>
+                    </ul>
+                </li>
+                <li>Çıkış onay penceresi açılacaktır
+                    <ul>
+                        <li>"Çıkmak İstiyor musunuz?" mesajı görüntülenir</li>
+                        <li>"Evet" veya "Hayır" seçeneklerinden birini seçin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="sikca-sorulan-sorular" class="section">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="info-box">
+            <div class="tip-box">
+                <h3>Genel Sorunlar ve Çözümleri</h3>
+                <table>
+                    <tr>
+                        <th>Sorun</th>
+                        <th>Çözüm</th>
+                    </tr>
+                    <tr>
+                        <td>Sicil numarası girince kayıt gelmiyor</td>
+                        <td>Sicil numarasının doğru olduğundan emin olun ve tekrar deneyin</td>
+                    </tr>
+                    <tr>
+                        <td>İptal butonu aktif değil</td>
+                        <td>Listeden AKTİF durumda bir kayıt seçtiğinizden emin olun</td>
+                    </tr>
+                    <tr>
+                        <td>Ödeme planı açılmıyor</td>
+                        <td>Seçili kaydın PASİF olmadığından emin olun</td>
+                    </tr>
+                    <tr>
+                        <td>Yeniden yapılandırma yapılamıyor</td>
+                        <td>Kaydın daha önce yapılandırılmamış ve AKTİF durumda olduğunu kontrol edin</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar</h4>
+                <ul>
+                    <li>Yapılandırma işlemlerinde kullanılan butonlar:
+                        <ul>
+                            <li>İptal Et (kırmızı) - Yapılandırmayı iptal eder</li>
+                            <li>Ödeme Planı (mavi) - Ödeme planını görüntüler</li>
+                            <li>Tekrar Yapılandır (yeşil) - Yeni yapılandırma başlatır</li>
+                            <li>Çıkış (gri) - Programdan çıkış yapar</li>
+                        </ul>
+                    </li>
+                    <li>İşlem yapmadan önce:
+                        <ul>
+                            <li>Doğru kaydı seçtiğinizden emin olun</li>
+                            <li>Kaydın durumunu (AKTİF/PASİF) kontrol edin</li>
+                            <li>İptal gibi geri alınamaz işlemlerde dikkatli olun</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="iletisim" class="section">
+        <h2>Teknik Destek</h2>
+        <div class="info-box">
+            <p>Programla ilgili sorun yaşadığınızda:</p>
+            <ul>
+                <li>Önce bu kullanım kılavuzundaki çözüm önerilerini kontrol edin</li>
+                <li>Sorun devam ederse sistem yöneticinizle iletişime geçin</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+    

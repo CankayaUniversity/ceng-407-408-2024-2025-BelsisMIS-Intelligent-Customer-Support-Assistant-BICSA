@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genel Tahakkuk İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Genel Tahakkuk İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş</h2>
+        <div class="info-box">
+            <p>Bu kılavuz, Genel Tahakkuk İşlemleri ekranının nasıl kullanılacağını adım adım anlatmaktadır. Bu ekran, tahakkuk girişi, makbuz oluşturma ve tahakkuk yönetimi işlemlerini gerçekleştirmenizi sağlar.</p>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Üst Bölüm Alanları</h3>
+            <ul>
+                <li><strong>Sicil No:</strong> 
+                    <ul>
+                        <li>Ekranın sol üst köşesinde yer alır</li>
+                        <li>11 haneli numerik değer girişi yapılabilir</li>
+                        <li>TC Kimlik numarası girilebilir</li>
+                        <li>Yanında büyüteç simgeli arama butonu bulunur</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Ad/Soyad/Unvan Bilgisi:</strong>
+                    <ul>
+                        <li>Sicil No alanının hemen sağında yer alır</li>
+                        <li>Sicil no girildiğinde otomatik olarak doldurulur</li>
+                        <li>Bu alanlar salt okunurdur, değiştirilemez</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Borç Bakiye Filtresi:</strong>
+                    <ul>
+                        <li>Ad/Soyad alanının sağında yer alan açılır liste</li>
+                        <li>Üç seçenek içerir:
+                            <ul>
+                                <li>Borcu Olanlar</li>
+                                <li>Borcu Olmayanlar</li>
+                                <li>Tümü</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Tarih:</strong>
+                    <ul>
+                        <li>Borç Bakiye filtresinin sağında bulunur</li>
+                        <li>GG.AA.YYYY formatında tarih girişi yapılır</li>
+                        <li>Sistem tarihi otomatik olarak gelir</li>
+                    </ul>
+                </li>
+
+                <li><strong>Nüsha:</strong>
+                    <ul>
+                        <li>Tarih alanının hemen sağında yer alır</li>
+                        <li>1-99 arası sayı girilebilir</li>
+                        <li>Varsayılan değeri 1'dir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Mükellef Detay Bilgileri</h3>
+            <ul>
+                <li><strong>Detay Bilgiler Butonu:</strong>
+                    <ul>
+                        <li>Üst bölümün sağ tarafında yer alan wingdings karakterli "1" butonu</li>
+                        <li>Tıklandığında mükellefin detaylı bilgilerini gösterir/gizler</li>
+                        <li>Gösterilen bilgiler:
+                            <ul>
+                                <li>Ana Adı</li>
+                                <li>Baba Adı</li>
+                                <li>Doğum Yeri/Tarihi</li>
+                                <li>Ev Adresi</li>
+                                <li>İcra Durumu</li>
+                                <li>Emeklilik Durumu</li>
+                                <li>Taksitlendirme Durumu</li>
+                                <li>İştirakçi Sayısı</li>
+                                <li>Emlak Arazi İstisnası</li>
+                                <li>Özel Notlar</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Uyarılar</h3>
+            <ul>
+                <li>Vefat etmiş sicillere tahakkuk girişi yapılamaz</li>
+                <li>İcra, emeklilik veya taksitlendirme durumu olan mükellefler için sistem otomatik uyarı verir</li>
+                <li>TC Kimlik No ile arama yapıldığında birden fazla sicil kaydı varsa liste ekranı açılır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="temel-islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        <div class="info-box">
+            <h3>Sicil Arama ve Seçme</h3>
+            <ol>
+                <li><strong>Sicil Numarası ile Arama:</strong>
+                    <ul>
+                        <li>Sol üst köşedeki Sicil No alanına numarayı girin</li>
+                        <li>Enter tuşuna basın veya "Oku" butonuna tıklayın</li>
+                        <li>Sicil bilgileri otomatik olarak yüklenecektir</li>
+                    </ul>
+                </li>
+                
+                <li><strong>TC Kimlik No ile Arama:</strong>
+                    <ul>
+                        <li>Sicil No alanına 11 haneli TC Kimlik No girin</li>
+                        <li>Sistem otomatik olarak ilgili sicili bulacaktır</li>
+                        <li>Eğer birden fazla sicil kaydı varsa, seçim yapmanız için liste açılır</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Büyüteç ile Arama:</strong>
+                    <ul>
+                        <li>Sicil No alanının yanındaki büyüteç simgesine tıklayın</li>
+                        <li>Açılan pencerede arama kriterlerini seçin</li>
+                        <li>Listeden ilgili sicili seçin</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Tahakkuk Girişi</h3>
+            <ol>
+                <li><strong>Yeni Tahakkuk Ekleme:</strong>
+                    <ul>
+                        <li>Alt bölümdeki "Yeni" butonuna tıklayın</li>
+                        <li>Açılan pencerede:
+                            <ul>
+                                <li>Tahakkuk türünü seçin</li>
+                                <li>Borç yılını girin</li>
+                                <li>Borç dönemini seçin</li>
+                                <li>Taksit bilgisini girin (varsa)</li>
+                                <li>Tutarı girin</li>
+                                <li>KDV varsa KDV bilgilerini doldurun</li>
+                                <li>Açıklama ekleyin</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Tahakkuk Silme:</strong>
+                    <ul>
+                        <li>Silinecek tahakkuk satırının başındaki çarpı (×) butonuna tıklayın</li>
+                        <li>Onay mesajında "Evet" seçeneğini tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Beyan Bilgileri Girişi</h3>
+            <ol>
+                <li><strong>Beyan Bilgilerini Açma:</strong>
+                    <ul>
+                        <li>"BEYAN BİLGİLERİ GİRİŞİ" butonuna tıklayın (ekranın orta kısmında)</li>
+                        <li>Beyan bilgileri formu açılacaktır</li>
+                    </ul>
+                </li>
+
+                <li><strong>Beyan Bilgilerini Doldurma:</strong>
+                    <ul>
+                        <li>Beyan türünü seçin</li>
+                        <li>Taşınmaz türünü belirleyin (Bina/Arazi/Arsa)</li>
+                        <li>Açıklama girin</li>
+                        <li>Adres bilgilerini doldurun (Mahalle/Cadde/Sokak)</li>
+                        <li>Tapu bilgilerini girin (Pafta/Ada/Parsel)</li>
+                        <li>Diğer gerekli alanları doldurun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h3>Dikkat Edilmesi Gereken Noktalar</h3>
+            <ul>
+                <li>Tapu tahsisi işlemlerinde açıklama alanı boş geçilemez</li>
+                <li>Mahalle/Cadde/Sokak bilgileri zorunludur</li>
+                <li>Kapı No, Ada, Parsel ve Daire No alanları boş bırakılamaz</li>
+                <li>Bağımsız adedi girilmelidir</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="butonlar-ve-islevleri" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <h3>Üst Bölüm Butonları</h3>
+            <ul>
+                <li><strong>Yazdır Butonu (Printer İkonu):</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, sol tarafta yer alır</li>
+                        <li>Mevcut tahakkukların dökümünü almak için kullanılır</li>
+                        <li>Tıklandığında yazdırma seçenekleri penceresi açılır</li>
+                        <li>Yazdırmadan önce tahakkuk kaydının olması gerekir</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Oku Butonu:</strong>
+                    <ul>
+                        <li>Yazdır butonunun yanında yer alır</li>
+                        <li>Girilen sicil numarasına ait bilgileri getirir</li>
+                        <li>Sicil no girilmeden çalışmaz</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Kaydet Butonu:</strong>
+                    <ul>
+                        <li>Oku butonunun yanında bulunur</li>
+                        <li>Girilen tahakkuk bilgilerini kaydeder</li>
+                        <li>Kayıt sonrası makbuz alma seçeneği sunar</li>
+                    </ul>
+                </li>
+
+                <li><strong>Çıkış Butonu:</strong>
+                    <ul>
+                        <li>En sağda yer alır</li>
+                        <li>Programdan çıkış yapar</li>
+                        <li>Kaydedilmemiş bilgiler varsa uyarı verir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Tahakkuk İşlem Butonları</h3>
+            <ul>
+                <li><strong>Yeni Butonu:</strong>
+                    <ul>
+                        <li>Tahakkuk listesinin alt kısmında, sol tarafta bulunur</li>
+                        <li>Yeni tahakkuk girişi penceresini açar</li>
+                        <li>Sicil seçili olmadan çalışmaz</li>
+                    </ul>
+                </li>
+
+                <li><strong>Sil Butonu (× İşareti):</strong>
+                    <ul>
+                        <li>Her tahakkuk satırının başında bulunur</li>
+                        <li>İlgili tahakkuk kaydını siler</li>
+                        <li>Silme işlemi geri alınamaz</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Adres ve Tapu Bilgileri Butonları</h3>
+            <ul>
+                <li><strong>Mahalle Seçim Butonu:</strong>
+                    <ul>
+                        <li>Mahalle/Cadde/Sokak alanlarının yanında yer alır</li>
+                        <li>Mahalle listesini açar</li>
+                        <li>Seçim yapıldığında cadde ve sokak bilgileri otomatik gelir</li>
+                    </ul>
+                </li>
+
+                <li><strong>Pafta Seçim Butonu:</strong>
+                    <ul>
+                        <li>Pafta alanının yanında bulunur</li>
+                        <li>Pafta listesini açar</li>
+                        <li>Seçilen paftaya göre ada/parsel bilgileri filtrelenir</li>
+                    </ul>
+                </li>
+
+                <li><strong>GMK Sorgula Butonu:</strong>
+                    <ul>
+                        <li>Adres bilgileri alanının sonunda yer alır</li>
+                        <li>Gayrimenkul bilgilerini sorgular</li>
+                        <li>MAKS entegrasyonu gerektirir</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Kullanım İpuçları</h3>
+            <ul>
+                <li>Kaydet butonuna basmadan önce tüm bilgilerin doğruluğunu kontrol edin</li>
+                <li>Makbuz almak için kayıt işleminden hemen sonra "Evet" seçeneğini tıklayın</li>
+                <li>Tahakkuk listesinde birden fazla kayıt varsa toplam tutarı alt kısımda görebilirsiniz</li>
+                <li>Adres girişlerinde mahalle seçim butonunu kullanmak daha hızlı ve hatasız veri girişi sağlar</li>
+            </ul>
+        </div>
+    </div>
+    <div id="tahakkuk-giris" class="section">
+        <h2>Tahakkuk Giriş Alanları</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Listesi Bölümü</h3>
+            <ul>
+                <li><strong>Tahakkuk Bilgi Sütunları:</strong>
+                    <ul>
+                        <li>Türü: Tahakkukun türünü gösterir (en solda)</li>
+                        <li>Son Ödeme Tarihi: İlgili tahakkukun son ödeme tarihini gösterir</li>
+                        <li>Borç Yılı: Tahakkukun ait olduğu yıl</li>
+                        <li>Borç Dönemi: Tahakkukun ait olduğu dönem</li>
+                        <li>Taksit: Taksit numarası (varsa)</li>
+                        <li>Açıklama: Tahakkuk ile ilgili açıklama alanı</li>
+                        <li>KDV Hesabı: KDV hesaplama detayları</li>
+                        <li>Tutar: Ana tutar bilgisi</li>
+                        <li>KDV: KDV tutarı</li>
+                        <li>Toplam: Toplam tahakkuk tutarı (en sağda)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Beyan Bilgileri Formu Alanları</h3>
+            <ul>
+                <li><strong>Üst Bölüm:</strong>
+                    <ul>
+                        <li>Beyan Türü: Açılır listeden seçim yapılır</li>
+                        <li>Taşınmaz Türü: Bina/Arazi/Arsa seçenekleri</li>
+                        <li>Açıklama: İşlem ile ilgili detaylı açıklama</li>
+                    </ul>
+                </li>
+
+                <li><strong>Adres Bilgileri:</strong>
+                    <ul>
+                        <li>Mahalle/Cadde/Sokak: Arama butonu ile seçim yapılır</li>
+                        <li>Kapı No: Bina kapı numarası</li>
+                        <li>İç Kapı No: Daire iç kapı numarası</li>
+                        <li>Daire No: Bağımsız bölüm numarası</li>
+                    </ul>
+                </li>
+
+                <li><strong>Tapu Bilgileri:</strong>
+                    <ul>
+                        <li>Pafta: Tapu pafta bilgisi</li>
+                        <li>Ada: Tapu ada numarası</li>
+                        <li>Parsel: Tapu parsel numarası</li>
+                    </ul>
+                </li>
+
+                <li><strong>Diğer Bilgiler:</strong>
+                    <ul>
+                        <li>Alan (m²): Taşınmazın metrekare bilgisi</li>
+                        <li>Mevki: Taşınmazın bulunduğu mevki</li>
+                        <li>Bina Tipi: Bina kullanım tipi</li>
+                        <li>Faaliyet Türü: Taşınmazın kullanım amacı</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Alt Toplam Alanları</h3>
+            <ul>
+                <li>Tahakkuk Toplamı: Tüm tahakkukların ana tutar toplamı</li>
+                <li>KDV Toplamı: Tüm tahakkukların KDV toplamı</li>
+                <li>Genel Toplam: Tahakkuk ve KDV toplamlarının genel toplamı</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Önemli Uyarılar ve Kontroller</h3>
+            <ul>
+                <li><strong>Sistem Kontrolleri:</strong>
+                    <ul>
+                        <li>Mükellef vefat etmişse tahakkuk girişi yapılamaz</li>
+                        <li>İcra durumu varsa sistem otomatik uyarı verir</li>
+                        <li>Emeklilik durumu varsa bilgilendirme yapılır</li>
+                        <li>Taksitlendirme yapılmışsa uyarı gösterilir</li>
+                    </ul>
+                </li>
+
+                <li><strong>Tapu Tahsisi İşlemlerinde:</strong>
+                    <ul>
+                        <li>Açıklama alanı zorunludur</li>
+                        <li>Mahalle/Cadde/Sokak bilgileri girilmelidir</li>
+                        <li>Kapı no boş geçilemez</li>
+                        <li>Ada/Parsel bilgileri zorunludur</li>
+                        <li>Daire no girilmelidir</li>
+                        <li>Bağımsız bölüm adedi belirtilmelidir</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="islem-adimlari" class="section">
+        <h2>Örnek İşlem Adımları</h2>
+        <div class="info-box">
+            <h3>1. Yeni Tahakkuk Girişi</h3>
+            <ol>
+                <li><strong>Sicil Seçimi:</strong>
+                    <ul>
+                        <li>Ekranın sol üst köşesindeki Sicil No alanına numarayı girin</li>
+                        <li>Veya büyüteç simgesine tıklayıp arama yapın</li>
+                        <li>Sicil bilgileri otomatik yüklenecektir</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Yeni Tahakkuk Ekleme:</strong>
+                    <ul>
+                        <li>Alt bölümdeki "Yeni" butonuna tıklayın</li>
+                        <li>Tahakkuk türünü seçin</li>
+                        <li>Borç yılı ve dönemini girin</li>
+                        <li>Tutarı belirtin</li>
+                        <li>Gerekiyorsa KDV hesaplama bilgilerini doldurun</li>
+                        <li>Açıklama ekleyin</li>
+                    </ul>
+                </li>
+
+                <li><strong>Kaydetme ve Makbuz:</strong>
+                    <ul>
+                        <li>Üst menüdeki "Kaydet" butonuna tıklayın</li>
+                        <li>Makbuz almak isteyip istemediğinizi soran ekranda "Evet" seçin</li>
+                        <li>Makbuz yazdırma ekranı açılacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>2. Taksitli Tahakkuk Girişi</h3>
+            <ol>
+                <li><strong>Tahakkuk Oluşturma:</strong>
+                    <ul>
+                        <li>Normal tahakkuk girişindeki adımları takip edin</li>
+                        <li>Taksit alanına taksit sayısını girin</li>
+                        <li>Sistem otomatik olarak taksitleri hesaplayacaktır</li>
+                    </ul>
+                </li>
+
+                <li><strong>KDV'li Taksitlendirme:</strong>
+                    <ul>
+                        <li>KDV tutarı olan tahakkuklarda, KDV de otomatik taksitlendirilir</li>
+                        <li>Her taksit için KDV ayrı hesaplanır</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>3. Beyan Bilgisi Girişi</h3>
+            <ol>
+                <li><strong>Beyan Formunu Açma:</strong>
+                    <ul>
+                        <li>"BEYAN BİLGİLERİ GİRİŞİ" butonuna tıklayın</li>
+                        <li>Beyan türünü ve taşınmaz türünü seçin</li>
+                    </ul>
+                </li>
+
+                <li><strong>Adres Bilgileri:</strong>
+                    <ul>
+                        <li>Mahalle seçim butonunu kullanarak mahalle seçin</li>
+                        <li>Cadde ve sokak bilgileri otomatik gelecektir</li>
+                        <li>Kapı no, iç kapı no ve diğer bilgileri girin</li>
+                    </ul>
+                </li>
+
+                <li><strong>Tapu Bilgileri:</strong>
+                    <ul>
+                        <li>Pafta seçim butonunu kullanarak pafta seçin</li>
+                        <li>Ada ve parsel bilgilerini girin</li>
+                        <li>Diğer zorunlu alanları doldurun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div id="hata-mesajlari" class="section">
+        <h2>Hata Mesajları ve Çözümleri</h2>
+        <div class="warning-box">
+            <h3>Sık Karşılaşılan Hata Mesajları</h3>
+            
+            <h4>Sicil İşlemleri Hataları</h4>
+            <ul>
+                <li><strong>"Böyle Bir Sicil Bulunamadı"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Sicil numarasını doğru girdiğinizden emin olun</li>
+                                <li>Büyüteç simgesini kullanarak sicil araması yapın</li>
+                                <li>11 haneli TC Kimlik No ile arama yapıyorsanız, tüm rakamları doğru girdiğinizden emin olun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>"Vefat Eden Sicile Tahakkuk Girilemez"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Vefat kaydı olan sicillere tahakkuk girişi yapılamaz</li>
+                                <li>Sicil bilgilerini kontrol edin</li>
+                                <li>Farklı bir sicil numarası kullanmanız gerekebilir</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Beyan Bilgileri Hataları</h4>
+            <ul>
+                <li><strong>"Açıklama(İşlem Tesisi)Tam/Kısmi Boş Geçilemez"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Beyan bilgilerinde açıklama alanını doldurun</li>
+                                <li>Özellikle tapu tahsisi işlemlerinde bu alan zorunludur</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>"Mahalle/Cadde/Sokak Boş Geçilemez"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Mahalle seçim butonunu kullanarak mahalle seçin</li>
+                                <li>Mahalle seçildiğinde cadde ve sokak bilgileri otomatik gelecektir</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>"Kapı No/Ada/Parsel/Daire No Boş Geçilemez"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Tüm adres ve tapu bilgilerini eksiksiz doldurun</li>
+                                <li>Sayısal alanlara sadece rakam girin</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>KDV ve Hesaplama Hataları</h4>
+            <ul>
+                <li><strong>KDV Hesaplama Hataları</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>KDV oranının doğru seçildiğinden emin olun</li>
+                                <li>Tutar alanına sadece sayısal değer girin</li>
+                                <li>Ondalık ayraç olarak virgül (,) kullanın</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Kaydetme Hataları</h4>
+            <ul>
+                <li><strong>"Lütfen sicil numarası giriniz"</strong>
+                    <ul>
+                        <li>Çözüm:
+                            <ul>
+                                <li>Kaydetmeden önce geçerli bir sicil seçildiğinden emin olun</li>
+                                <li>Sicil numarasını girdikten sonra "Oku" butonuna basın</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="makbuz-islemleri" class="section">
+        <h2>Makbuz İşlemleri Detayları</h2>
+        <div class="info-box">
+            <h3>Makbuz Alma İşlemleri</h3>
+            <ol>
+                <li><strong>Kayıt Sonrası Otomatik Makbuz:</strong>
+                    <ul>
+                        <li>Tahakkuk kaydı yapıldıktan hemen sonra sistem "Makbuz almak istiyor musunuz?" diye sorar</li>
+                        <li>"Evet" seçeneğini tıkladığınızda makbuz yazdırma ekranı açılır</li>
+                        <li>Makbuz önizleme ekranında makbuzu kontrol edebilirsiniz</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Manuel Makbuz Alma:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmındaki "Yazdır" butonunu kullanın</li>
+                        <li>Tarih aralığı belirtebilirsiniz</li>
+                        <li>Borç bakiye filtresini kullanabilirsiniz</li>
+                    </ul>
+                </li>
+
+                <li><strong>Nüsha Ayarları:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında "Nüsha" alanı bulunur</li>
+                        <li>Varsayılan değeri 1'dir</li>
+                        <li>1-99 arası değer girilebilir</li>
+                        <li>Girilen sayı kadar makbuz nüshası alınır</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Makbuz Yazdırma Seçenekleri</h3>
+            <ul>
+                <li><strong>Yazdırma Kriterleri:</strong>
+                    <ul>
+                        <li>Belirli bir tarihe ait tahakkuklar için tarih girin</li>
+                        <li>Borç durumuna göre filtreleme yapın:
+                            <ul>
+                                <li>Borcu Olanlar</li>
+                                <li>Borcu Olmayanlar</li>
+                                <li>Tümü</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><strong>Yazdırma Ekranı Özellikleri:</strong>
+                    <ul>
+                        <li>Ekran üzerinde yakınlaştırma/uzaklaştırma yapabilirsiniz</li>
+                        <li>Sayfa düzenini ayarlayabilirsiniz</li>
+                        <li>Yazıcı seçimi yapabilirsiniz</li>
+                        <li>PDF olarak kaydetme seçeneği mevcuttur</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Önemli Makbuz Bilgileri</h3>
+            <ul>
+                <li>KDV'li işlemlerde makbuzda KDV detayları ayrıca gösterilir</li>
+                <li>Taksitli ödemelerde her taksit için ayrı makbuz oluşturulur</li>
+                <li>Makbuzda mükellef bilgileri otomatik olarak yer alır</li>
+                <li>Makbuz üzerinde tahakkuk detayları ve toplam tutar gösterilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Makbuz İşlemleri İpuçları</h3>
+            <ul>
+                <li>Makbuz almadan önce tahakkuk bilgilerini mutlaka kontrol edin</li>
+                <li>Önemli makbuzların yedek kopyasını saklayın</li>
+                <li>Yazdırma sorunlarında yazıcı ayarlarını kontrol edin</li>
+                <li>Birden fazla nüsha gerekiyorsa, baştan nüsha sayısını belirleyin</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="kdv-islemleri" class="section">
+        <h2>KDV İşlemleri ve Hesaplama Detayları</h2>
+        <div class="info-box">
+            <h3>KDV Hesaplama Temel Bilgiler</h3>
+            <ul>
+                <li><strong>KDV Giriş Alanları:</strong>
+                    <ul>
+                        <li>Tahakkuk listesinde "KDV Hesabı" sütunu bulunur</li>
+                        <li>KDV tutarı otomatik hesaplanır</li>
+                        <li>KDV oranı seçilebilir</li>
+                        <li>KDV tutarı ayrı bir satırda gösterilir</li>
+                    </ul>
+                </li>
+                
+                <li><strong>KDV Hesaplama Yöntemi:</strong>
+                    <ul>
+                        <li>Ana tutar üzerinden belirlenen oranda hesaplanır</li>
+                        <li>Virgülden sonra 2 hane hassasiyetle gösterilir</li>
+                        <li>Toplam tutara otomatik eklenir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>KDV'li Tahakkuk Girişi</h3>
+            <ol>
+                <li><strong>Yeni Tahakkuk Ekleme:</strong>
+                    <ul>
+                        <li>"Yeni" butonuna tıklayın</li>
+                        <li>Tahakkuk türünü seçin</li>
+                        <li>Ana tutarı girin</li>
+                        <li>KDV hesabı alanını doldurun</li>
+                        <li>Sistem KDV tutarını otomatik hesaplar</li>
+                    </ul>
+                </li>
+
+                <li><strong>KDV'li Taksitlendirme:</strong>
+                    <ul>
+                        <li>Taksit sayısını girin</li>
+                        <li>KDV tutarı taksitlere otomatik dağıtılır</li>
+                        <li>Her taksit için KDV ayrı hesaplanır</li>
+                        <li>Taksit tutarları yuvarlanır</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>KDV Toplam Görüntüleme</h3>
+            <ul>
+                <li><strong>Alt Toplam Alanları:</strong>
+                    <ul>
+                        <li>Tahakkuk Toplamı: KDV hariç toplam tutar</li>
+                        <li>KDV Toplamı: Tüm KDV tutarlarının toplamı</li>
+                        <li>Genel Toplam: KDV dahil genel toplam</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>KDV Makbuz Bilgileri</h3>
+            <ul>
+                <li>Makbuzda KDV tutarı ayrı satırda gösterilir</li>
+                <li>KDV oranı belirtilir</li>
+                <li>KDV matrahı gösterilir</li>
+                <li>Toplam tutar KDV dahil olarak yazılır</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>KDV İşlemlerinde Dikkat Edilecek Noktalar</h3>
+            <ul>
+                <li>KDV oranını doğru seçtiğinizden emin olun</li>
+                <li>Taksitlendirmede KDV tutarlarının doğru dağıtıldığını kontrol edin</li>
+                <li>KDV'li işlemlerde makbuzu dikkatle kontrol edin</li>
+                <li>KDV hesaplamalarında yuvarlamayı kontrol edin</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="taksitlendirme-islemleri" class="section">
+        <h2>Taksitlendirme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Taksitlendirme Temel Bilgiler</h3>
+            <ul>
+                <li><strong>Taksit Alanı:</strong>
+                    <ul>
+                        <li>Tahakkuk listesinde "Taksit" sütununda yer alır</li>
+                        <li>Her tahakkuk için ayrı taksit sayısı belirlenebilir</li>
+                        <li>Taksit numarası otomatik olarak atanır</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Taksitlendirme Özellikleri:</strong>
+                    <ul>
+                        <li>Ana tutar eşit taksitlere bölünür</li>
+                        <li>KDV tutarı da taksitlendirilir</li>
+                        <li>Her taksit için ayrı vade tarihi belirlenir</li>
+                        <li>Her taksite özel makbuz alınabilir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Taksit Oluşturma Adımları</h3>
+            <ol>
+                <li><strong>Yeni Tahakkuk Girişi:</strong>
+                    <ul>
+                        <li>"Yeni" butonuna tıklayın</li>
+                        <li>Tahakkuk bilgilerini girin</li>
+                        <li>Ana tutarı belirleyin</li>
+                        <li>Varsa KDV bilgilerini girin</li>
+                    </ul>
+                </li>
+
+                <li><strong>Taksit Sayısı Belirleme:</strong>
+                    <ul>
+                        <li>Taksit alanına istenen taksit sayısını girin</li>
+                        <li>Sistem otomatik olarak taksitleri oluşturur</li>
+                        <li>Her taksit için vade tarihi otomatik hesaplanır</li>
+                    </ul>
+                </li>
+
+                <li><strong>Taksit Kontrol:</strong>
+                    <ul>
+                        <li>Taksit tutarlarını kontrol edin</li>
+                        <li>KDV dağılımını kontrol edin</li>
+                        <li>Vade tarihlerini kontrol edin</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Özel Taksitlendirme Durumları</h3>
+            <ul>
+                <li><strong>KDV'li Taksitlendirme:</strong>
+                    <ul>
+                        <li>KDV tutarı taksitlere otomatik dağıtılır</li>
+                        <li>Her taksitte KDV ayrı gösterilir</li>
+                        <li>Toplam KDV tutarı korunur</li>
+                    </ul>
+                </li>
+
+                <li><strong>Taksit İptali:</strong>
+                    <ul>
+                        <li>Taksit alanını boş bırakarak taksitlendirme iptal edilebilir</li>
+                        <li>İptal sonrası tek seferde ödeme haline döner</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>Taksitlendirmede Dikkat Edilecek Noktalar</h3>
+            <ul>
+                <li>Taksit sayısını girmeden önce ana tutarın doğruluğunu kontrol edin</li>
+                <li>KDV'li işlemlerde KDV dağılımını kontrol edin</li>
+                <li>Her taksit için vade tarihini not edin</li>
+                <li>Taksit toplamının ana tutara eşit olduğunu kontrol edin</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Taksitlendirme İpuçları</h3>
+            <ul>
+                <li>Taksit tutarlarını yuvarlanan rakamlar olacak şekilde belirleyin</li>
+                <li>Her taksit için ayrı makbuz almayı unutmayın</li>
+                <li>Taksit vadelerini takvimde işaretleyin</li>
+                <li>Önemli taksit bilgilerini not alın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ozel-durumlar" class="section">
+        <h2>Özel Durumlar</h2>
+        <div class="info-box">
+            <h3>Ölüm Durumu</h3>
+            <ul>
+                <li><strong>Sistem Kontrolü:</strong>
+                    <ul>
+                        <li>Vefat kaydı olan sicillere tahakkuk girişi yapılamaz</li>
+                        <li>Vefat tarihi sicil bilgilerinde görüntülenir</li>
+                        <li>Sistem otomatik olarak "Vefat Eden Sicile Tahakkuk Girilemez" uyarısı verir</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Yapılması Gerekenler:</strong>
+                    <ul>
+                        <li>Vefat durumunda varisler üzerine yeni sicil açılmalıdır</li>
+                        <li>Eski sicil üzerindeki işlemler tamamlanmalıdır</li>
+                        <li>Yeni tahakkuklar varis sicili üzerine yapılmalıdır</li>
+                    </ul>
+                </li>
+            </ul>
+ 
+            <h3>İcra Durumu</h3>
+            <ul>
+                <li><strong>Sistem Uyarısı:</strong>
+                    <ul>
+                        <li>İcra kaydı olan mükellef seçildiğinde sistem "Mükellef İcraya Verilmiş" uyarısı verir</li>
+                        <li>Bu uyarı bilgilendirme amaçlıdır, işleme devam edilebilir</li>
+                    </ul>
+                </li>
+ 
+                <li><strong>İcra Durumunda İşlemler:</strong>
+                    <ul>
+                        <li>Tahakkuk girişi yapılabilir</li>
+                        <li>Makbuz alınabilir</li>
+                        <li>Tüm işlemler kayıt altına alınır</li>
+                    </ul>
+                </li>
+            </ul>
+ 
+            <h3>Emeklilik Durumu</h3>
+            <ul>
+                <li><strong>Sistem Bildirimi:</strong>
+                    <ul>
+                        <li>Emekli kaydı olan mükellef seçildiğinde "Mükellef Emekli" bilgisi gösterilir</li>
+                        <li>Bu bilgi tahakkuk işlemlerini etkilemez</li>
+                    </ul>
+                </li>
+ 
+                <li><strong>Emeklilik Durumunda İşlemler:</strong>
+                    <ul>
+                        <li>Normal tahakkuk işlemleri yapılabilir</li>
+                        <li>Varsa özel indirim ve muafiyetler uygulanır</li>
+                    </ul>
+                </li>
+            </ul>
+ 
+            <h3>Taksitlendirme Durumu</h3>
+            <ul>
+                <li><strong>Sistem Kontrolü:</strong>
+                    <ul>
+                        <li>Taksitlendirme kaydı varsa "Mükellef Ceza Borçlarını Taksitlendirmiş" uyarısı gösterilir</li>
+                        <li>Mevcut taksitlendirme bilgileri kontrol edilmelidir</li>
+                    </ul>
+                </li>
+ 
+                <li><strong>Taksitlendirme Durumunda İşlemler:</strong>
+                    <ul>
+                        <li>Yeni tahakkuk girişi yapılabilir</li>
+                        <li>Mevcut taksitlendirme etkilenmez</li>
+                        <li>Yeni taksitlendirme yapılabilir</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+ 
+        <div class="warning-box">
+            <h3>Özel Durumlarda Dikkat Edilecek Noktalar</h3>
+            <ul>
+                <li>Vefat durumunda yeni sicil açılana kadar işlem yapmayın</li>
+                <li>İcra durumunda tüm işlemleri kayıt altına alın</li>
+                <li>Emeklilik durumunda özel indirimleri kontrol edin</li>
+                <li>Taksitlendirme durumunda mevcut taksitleri kontrol edin</li>
+            </ul>
+        </div>
+ 
+        <div class="tip-box">
+            <h3>Özel Durumlarda İşlem İpuçları</h3>
+            <ul>
+                <li>Özel durum uyarılarını dikkatlice okuyun</li>
+                <li>Gerekli notları alın ve belgeleri saklayın</li>
+                <li>Şüpheli durumlarda yöneticinize danışın</li>
+                <li>İşlem öncesi sicil detaylarını kontrol edin</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="gtt-sorgulama" class="section">
+        <h2>GTT Mükellef Sorgulama Detayları</h2>
+        <div class="info-box">
+            <h3>TC Kimlik No ile Sorgulama</h3>
+            <ol>
+                <li><strong>11 Haneli TC Kimlik No Girişi:</strong>
+                    <ul>
+                        <li>Sicil No alanına 11 haneli TC Kimlik No yazın</li>
+                        <li>Sistem otomatik olarak TC Kimlik No formatını tanır</li>
+                        <li>Enter tuşuna basın veya "Oku" butonunu kullanın</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Sistem Davranışları:</strong>
+                    <ul>
+                        <li><u>Tek Kayıt Bulunması Durumunda:</u>
+                            <ul>
+                                <li>Sicil bilgileri otomatik olarak yüklenir</li>
+                                <li>Ekran bilgileri direkt doldurulur</li>
+                            </ul>
+                        </li>
+                        <li><u>Birden Fazla Kayıt Bulunması Durumunda:</u>
+                            <ul>
+                                <li>Sicil seçim listesi otomatik açılır</li>
+                                <li>Listede gösterilen bilgiler:
+                                    <ul>
+                                        <li>GTT Sicil No</li>
+                                        <li>Ticari Sicil No</li>
+                                        <li>Su Abone No</li>
+                                        <li>TC Kimlik No</li>
+                                        <li>Vergi No</li>
+                                        <li>Ad Soyad/Unvan</li>
+                                        <li>Adres bilgileri</li>
+                                    </ul>
+                                </li>
+                                <li>Listeden doğru sicili seçerek işleme devam edilir</li>
+                            </ul>
+                        </li>
+                        <li><u>Kayıt Bulunamama Durumunda:</u>
+                            <ul>
+                                <li>"Böyle Bir Sicil Bulunamadı" uyarısı gösterilir</li>
+                                <li>Sicil No alanı temizlenir</li>
+                                <li>Yeni arama yapmanız gerekir</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div id="maks-entegrasyon" class="section">
+            <h2>MAKS Entegrasyonu ve GMK Sorgulama</h2>
+            <div class="info-box">
+                <h3>GMK Sorgulama İşlemleri</h3>
+                <ol>
+                    <li><strong>GMK Sorgula Butonu:</strong>
+                        <ul>
+                            <li>Mahalle/Cadde/Sokak alanlarının yanında yer alır</li>
+                            <li>Tıklandığında MAKS entegrasyon kontrolü yapılır</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>MAKS Entegrasyon Kontrolü:</strong>
+                        <ul>
+                            <li><u>Entegrasyon Varsa:</u>
+                                <ul>
+                                    <li>GMK sorgulama penceresi açılır</li>
+                                    <li>Detaylı bilgiler görüntülenir:
+                                        <ul>
+                                            <li>Bina Kimlik No</li>
+                                            <li>Bağımsız Bölüm Kimlik No</li>
+                                            <li>Yol Kimlik No</li>
+                                            <li>Yapı Bilgileri</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><u>Entegrasyon Yoksa:</u>
+                                <ul>
+                                    <li>"MAKS Entegrasyonunuz Bulunmamaktadır" uyarısı gösterilir</li>
+                                    <li>Manuel giriş yapmanız gerekir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Sorgu Sonuçları:</strong>
+                        <ul>
+                            <li>Sonuçlar liste halinde gösterilir</li>
+                            <li>Görüntülenen bilgiler:
+                                <ul>
+                                    <li>Tipi</li>
+                                    <li>İnşaat Türü</li>
+                                    <li>Pafta/Ada/Parsel</li>
+                                    <li>Kapı ve İç Kapı No</li>
+                                    <li>Daire Bilgileri</li>
+                                    <li>Mahalle/Cadde/Sokak</li>
+                                    <li>Site/Blok/Apartman bilgileri</li>
+                                </ul>
+                            </li>
+                            <li>Seçilen kayıt bilgileri otomatik olarak forma aktarılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h3>GMK Sorgulama İpuçları</h3>
+                <ul>
+                    <li>Sorgu sonuçlarında doğru adresi seçtiğinizden emin olun</li>
+                    <li>MAKS olmayan durumlarda manuel giriş yaparken tüm zorunlu alanları doldurun</li>
+                    <li>Adres bilgilerini kontrol ederek doğruluğundan emin olun</li>
+                    <li>Şüpheli durumlarda birden fazla kriter ile sorgulama yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
