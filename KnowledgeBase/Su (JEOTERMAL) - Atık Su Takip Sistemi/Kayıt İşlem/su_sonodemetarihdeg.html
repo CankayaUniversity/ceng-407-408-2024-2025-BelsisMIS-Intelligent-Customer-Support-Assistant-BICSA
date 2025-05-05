@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Son Ödeme Tarihi Değişiklik (Dönem Bazında) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Su Son Ödeme Tarihi Değişiklik (Dönem Bazında) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Temel Öğeler</a></li>
+            <li><a href="#veri-giris">Veri Giriş Alanları</a></li>
+            <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+            <li><a href="#adim-adim">Adım Adım Nasıl Yapılır Rehberi</a></li>
+            <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>"Su Son Ödeme Tarihi Değişiklik (Dönem Bazında)" programı, su abonelerinin son ödeme tarihlerini belirli kriterlere göre toplu olarak değiştirmenizi sağlayan bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>Belirli bir dönem için toplu son ödeme tarihi değişikliği yapabilirsiniz</li>
+            <li>Abone numarası aralığına göre filtreleme yapabilirsiniz</li>
+            <li>Mahalle (defter) bazında filtreleme yapabilirsiniz</li>
+            <li>Abone tipine göre filtreleme yapabilirsiniz</li>
+            <li>Tahakkuk tipine göre filtreleme yapabilirsiniz</li>
+            <li>Gelir türüne göre filtreleme yapabilirsiniz</li>
+        </ul>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>İşlem yapılacak yıl ve dönem bilgisi</li>
+                <li>Değiştirilecek son ödeme tarihi</li>
+                <li>Hangi abone ve tahakkuk tipleri için değişiklik yapılacağı</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Temel Öğeler</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "SON ÖDEME TARİHİ DEĞİŞİKLİK" başlığı yer alır</li>
+                        <li>Bu başlık sabit olup değiştirilemez</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                        <li>Yıl ve dönem bilgileri en üstte yer alır</li>
+                        <li>Abone no ve mahalle bilgileri onların altında yer alır</li>
+                        <li>Abone tipi, tahakkuk tipi ve gelir türü seçim alanları bunları takip eder</li>
+                        <li>Son ödeme tarihi en altta yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında yer alır</li>
+                        <li>Değiştir ve Çıkış butonlarını içerir</li>
+                        <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Yıl alanı içinde bulunduğunuz yılı gösterir</li>
+                <li>Dönem alanı içinde bulunduğunuz ayı gösterir</li>
+                <li>Son ödeme tarihi alanı içinde bulunduğunuz günü gösterir</li>
+                <li>İmleç Yıl alanında konumlanır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="veri-giris" class="section">
+    <h2>Veri Giriş Alanları</h2>
+    <div class="info-box">
+        <h3>Temel Veri Giriş Alanları</h3>
+        <div class="step">
+            <h4>Yıl ve Dönem Bilgileri:</h4>
+            <ol>
+                <li><strong>Yıl Alanı:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, başlığın hemen altında sol tarafta "Yıl" etiketi yer alır</li>
+                        <li>Etiketin sağında 5 karakter genişliğinde bir metin kutusu bulunur</li>
+                        <li>Bu alana 4 basamaklı yıl bilgisi girilir (örn: 2025)</li>
+                        <li>Program açıldığında içinde bulunduğunuz yıl varsayılan olarak görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Dönem Alanı:</strong>
+                    <ul>
+                        <li>Yıl alanının bir alt satırında "Dönem" etiketi yer alır</li>
+                        <li>Etiketin sağında 5 karakter genişliğinde bir metin kutusu bulunur</li>
+                        <li>Bu alana dönem bilgisi (genellikle 1-12 arası ay numarası) girilir</li>
+                        <li>Program açıldığında içinde bulunduğunuz ay varsayılan olarak görünür</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Abone Numarası Alanları:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Dönem alanının altında boş bir satır, onun altında "Başlangıç" ve "Bitiş" etiketleri yer alır</li>
+                        <li>Etiketlerin bir alt satırında "Abone No" etiketi solda bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                    </ul>
+                </li>
+                <li><strong>Başlangıç Abone No:</strong>
+                    <ul>
+                        <li>"Başlangıç" sütununun altında bulunan ilk metin kutusudur</li>
+                        <li>10 karakter genişliğindedir</li>
+                        <li>Sadece sayısal değer girilebilir</li>
+                        <li>Varsayılan değeri "0" olarak gelir</li>
+                    </ul>
+                </li>
+                <li><strong>Bitiş Abone No:</strong>
+                    <ul>
+                        <li>"Bitiş" sütununun altında bulunan metin kutusudur</li>
+                        <li>10 karakter genişliğindedir</li>
+                        <li>Sadece sayısal değer girilebilir</li>
+                        <li>Varsayılan değeri "999999999" olarak gelir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Mahalle (Defter) Alanları:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Abone No alanlarının hemen altında yer alır</li>
+                        <li>Solda "Mahalle (Defter)" etiketi bulunur</li>
+                        <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                    </ul>
+                </li>
+                <li><strong>Başlangıç Mahalle:</strong>
+                    <ul>
+                        <li>"Başlangıç" sütununun altındaki metin kutusudur</li>
+                        <li>5 karakter genişliğindedir</li>
+                        <li>Sadece sayısal değer girilebilir</li>
+                        <li>Varsayılan değeri "0" olarak gelir</li>
+                    </ul>
+                </li>
+                <li><strong>Bitiş Mahalle:</strong>
+                    <ul>
+                        <li>"Bitiş" sütununun altındaki metin kutusudur</li>
+                        <li>5 karakter genişliğindedir</li>
+                        <li>Sadece sayısal değer girilebilir</li>
+                        <li>Varsayılan değeri "9999" olarak gelir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Abone Tipi Seçim Alanı:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Mahalle alanlarının hemen altında yer alır</li>
+                        <li>Solda "Abone Tipi" etiketi bulunur</li>
+                        <li>Etiketin sağında geniş bir liste kutusu yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Kutusu Özellikleri:</strong>
+                    <ul>
+                        <li>8 cm genişliğinde, 3 satır yüksekliğinde bir liste kutusudur</li>
+                        <li>İçinde tüm abone tiplerini gösterir</li>
+                        <li>Çoklu seçim yapılabilir (CTRL tuşu ile birden fazla seçim yapılabilir)</li>
+                        <li>Programda tanımlı tüm abone tiplerini içerir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Yıl ve dönem alanları boş bırakılamaz</li>
+                <li>Abone tipi seçilmeden işlem yapılamaz</li>
+                <li>Sayısal alanlara sadece rakam girilebilir</li>
+                <li>Aralık belirtirken başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="veri-giris-2" class="section">
+    <h2>Veri Giriş Alanları (Devam)</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Tahakkuk Tipi Seçim Alanı:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Abone Tipi alanının hemen altında yer alır</li>
+                        <li>Solda "Tahakkuk Tipi" etiketi bulunur</li>
+                        <li>Etiketin sağında geniş bir liste kutusu yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Kutusu Özellikleri:</strong>
+                    <ul>
+                        <li>8 cm genişliğinde, 3 satır yüksekliğinde bir liste kutusudur</li>
+                        <li>İçinde tüm tahakkuk tiplerini gösterir</li>
+                        <li>Çoklu seçim yapılabilir (CTRL tuşu ile birden fazla seçim yapılabilir)</li>
+                        <li>Programda tanımlı tüm tahakkuk tiplerini içerir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Gelir Türü Seçim Alanı:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Tahakkuk Tipi alanının hemen altında yer alır</li>
+                        <li>Solda "Gelir Türü" etiketi bulunur</li>
+                        <li>Etiketin sağında geniş bir liste kutusu yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Kutusu Özellikleri:</strong>
+                    <ul>
+                    
+                        <li>İçinde tüm gelir türlerini gösterir</li>
+                        <li>Gelir türleri kod ve açıklama şeklinde listelenir (örn: "101 - Su Geliri")</li>
+                        <li>Çoklu seçim yapılabilir (CTRL tuşu ile birden fazla seçim yapılabilir)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Son Ödeme Tarihi Alanı:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Gelir Türü alanının hemen altında yer alır</li>
+                        <li>Solda "Son Ödeme Tarihi" etiketi bulunur</li>
+                        <li>Etiketin sağında tarih giriş kutusu yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Tarih Kutusu Özellikleri:</strong>
+                    <ul>
+                        <li>10 karakter genişliğinde bir metin kutusudur</li>
+                        <li>Kırmızı kenarlıkla vurgulanmıştır</li>
+                        <li>GG.AA.YYYY formatında tarih girilir</li>
+                        <li>Program açıldığında içinde bulunduğunuz günün tarihi varsayılan olarak görünür</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>Abone No alanına bir değer girip TAB tuşuna bastığınızda, Bitiş Abone No otomatik olarak aynı değeri alır</li>
+                <li>Liste kutularında CTRL tuşunu basılı tutarak birden fazla seçim yapabilirsiniz</li>
+                <li>Tarih alanlarında nokta (.) kullanarak günü, ayı ve yılı ayırabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="butonlar" class="section">
+    <h2>Butonlar ve İşlevleri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Değiştir Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, ortada yer alır</li>
+                        <li>Gri zeminde, 3 boyutlu görünümlü bir butondur</li>
+                        <li>Butonun üzerinde "Değiştir" yazısı ve sol tarafında yeşil bir onay işareti simgesi bulunur</li>
+                        <li>Çıkış butonunun solunda konumlanmıştır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Girilen kriterlere göre son ödeme tarihi değişikliğini gerçekleştirir</li>
+                        <li>Tıklandığında, belirlenen yıl ve dönemdeki, seçilen abone tipleri, tahakkuk tipleri ve gelir türleri için, belirtilen son ödeme tarihini günceller</li>
+                        <li>İşlem tamamlandığında, sonuç hakkında bir bilgi mesajı görüntülenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Değiştir butonunun sağında yer alır</li>
+                        <li>Gri zeminde, 3 boyutlu görünümlü bir butondur</li>
+                        <li>Butonun üzerinde "Çıkış" yazısı ve sol tarafında kırmızı bir çıkış simgesi bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Programdan çıkmanızı sağlar</li>
+                        <li>Tıklandığında, program penceresi kapanır ve ana menüye dönülür</li>
+                        <li>ESC tuşu da aynı işlevi görür</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Değiştir butonuna tıklamadan önce tüm gerekli alanların doldurulduğundan emin olun</li>
+                <li>İşlemler sistem veritabanında kalıcı değişiklikler yapar, bu nedenle dikkatli olun</li>
+                <li>Çıkış butonuna basmadan önce kaydetmek istediğiniz değişiklikleri kaydettiğinizden emin olun</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Klavye Kısayolları:</h4>
+            <ul>
+                <li>ENTER tuşu: TAB gibi bir sonraki alana geçer</li>
+                <li>ESC tuşu: Programdan çıkış yapar</li>
+                <li>TAB tuşu: Bir sonraki alana geçiş yapar</li>
+                <li>SHIFT + TAB: Bir önceki alana geri döner</li>
+                <li>ALT + D: Değiştir butonunu çalıştırır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="adim-adim" class="section">
+    <h2>Adım Adım Nasıl Yapılır Rehberi</h2>
+    <div class="info-box">
+        <h3>Son Ödeme Tarihi Nasıl Değiştirilir</h3>
+        <div class="step">
+            <h4>Temel Son Ödeme Tarihi Değişikliği:</h4>
+            <ol>
+                <li><strong>Programı Açın:</strong>
+                    <ul>
+                        <li>Ana menüden "Su Son Ödeme Tarihi Değişiklik (Dönem Bazında)" programını seçin</li>
+                        <li>Program açıldığında, ekranın üst kısmında turkuaz renkli şeritte "SON ÖDEME TARİHİ DEĞİŞİKLİK" başlığını göreceksiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Yıl ve Dönem Bilgilerini Girin:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmındaki "Yıl" alanına değişiklik yapmak istediğiniz yılı girin (örn: 2025)</li>
+                        <li>Hemen altındaki "Dönem" alanına ilgili dönemi girin (örn: ocak ayı için 1, şubat için 2)</li>
+                        <li>Her girişten sonra TAB tuşuna basarak bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Abone Numarası Aralığını Belirleyin (İsteğe Bağlı):</strong>
+                    <ul>
+                        <li>"Abone No" etiketinin sağındaki ilk kutuya başlangıç abone numarasını girin</li>
+                        <li>TAB tuşuna basarak sağdaki kutuya geçin, bu kutu otomatik olarak aynı değeri alacaktır</li>
+                        <li>Eğer bir aralık belirlemek istiyorsanız, sağdaki kutudaki değeri değiştirin</li>
+                        <li>Tüm aboneler için boş bırakın veya varsayılan değerleri (0-999999999) kullanın</li>
+                    </ul>
+                </li>
+                <li><strong>Mahalle (Defter) Aralığını Belirleyin (İsteğe Bağlı):</strong>
+                    <ul>
+                        <li>"Mahalle (Defter)" etiketinin sağındaki ilk kutuya başlangıç mahalle kodunu girin</li>
+                        <li>TAB tuşuna basarak sağdaki kutuya geçin</li>
+                        <li>Sağdaki kutuya bitiş mahalle kodunu girin</li>
+                        <li>Tüm mahalleler için boş bırakın veya varsayılan değerleri (0-9999) kullanın</li>
+                    </ul>
+                </li>
+                <li><strong>Abone Tiplerini Seçin:</strong>
+                    <ul>
+                        <li>"Abone Tipi" etiketinin sağındaki liste kutusundan ilgili abone tiplerini seçin</li>
+                        <li>Birden fazla abone tipi seçmek için CTRL tuşunu basılı tutarak tıklayın</li>
+                        <li>Tüm abone tipleri için tümünü seçin (CTRL+A)</li>
+                    </ul>
+                </li>
+                <li><strong>Tahakkuk Tiplerini Seçin:</strong>
+                    <ul>
+                        <li>"Tahakkuk Tipi" etiketinin sağındaki liste kutusundan ilgili tahakkuk tiplerini seçin</li>
+                        <li>Birden fazla tahakkuk tipi seçmek için CTRL tuşunu basılı tutarak tıklayın</li>
+                        <li>Tüm tahakkuk tipleri için tümünü seçin (CTRL+A)</li>
+                    </ul>
+                </li>
+                <li><strong>Gelir Türlerini Seçin:</strong>
+                    <ul>
+                        <li>"Gelir Türü" etiketinin sağındaki liste kutusundan ilgili gelir türlerini seçin</li>
+                        <li>Birden fazla gelir türü seçmek için CTRL tuşunu basılı tutarak tıklayın</li>
+                        <li>Tüm gelir türleri için tümünü seçin (CTRL+A)</li>
+                    </ul>
+                </li>
+                <li><strong>Yeni Son Ödeme Tarihini Girin:</strong>
+                    <ul>
+                        <li>"Son Ödeme Tarihi" etiketinin sağındaki kırmızı kenarlıklı kutuya yeni tarihi GG.AA.YYYY formatında girin</li>
+                        <li>Örneğin, 15 Mart 2025 için 15.03.2025 yazın</li>
+                    </ul>
+                </li>
+                <li><strong>Değişikliği Uygulayın:</strong>
+                    <ul>
+                        <li>Alt kısımdaki "Değiştir" butonuna tıklayın</li>
+                        <li>Sistem, belirlenen kriterlere uygun kayıtların son ödeme tarihlerini günceller</li>
+                        <li>İşlem tamamlandığında bir bilgi mesajı görüntülenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id="adim-adim" class="section">
+    <div class="info-box">
+        <h3>Filtreleme Nasıl Yapılır</h3>
+        <div class="step">
+            <h4>Abone Numarasına Göre Filtreleme:</h4>
+            <ol>
+                <li><strong>Abone Numarası Alanlarını Bulun:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında Yıl ve Dönem alanlarının altında</li>
+                        <li>"Abone No" etiketi yanında başlangıç ve bitiş metin kutuları bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Tekil Abone İçin Filtreleme:</strong>
+                    <ul>
+                        <li>Sol metin kutusuna (başlangıç) filtrelemek istediğiniz abone numarasını yazın</li>
+                        <li>TAB tuşuna basın, sağdaki kutu (bitiş) otomatik olarak aynı değeri alacaktır</li>
+                        <li>Örneğin: Yalnızca 12345 numaralı abone için her iki kutuya da 12345 yazın veya sadece sol kutuya yazıp TAB tuşuna basın</li>
+                    </ul>
+                </li>
+                <li><strong>Abone Numarası Aralığı İçin Filtreleme:</strong>
+                    <ul>
+                        <li>Sol metin kutusuna (başlangıç) aralığın başlangıç abone numarasını yazın</li>
+                        <li>Sağ metin kutusuna (bitiş) aralığın bitiş abone numarasını yazın</li>
+                        <li>Örneğin: 10000-20000 arasındaki aboneler için sol kutuya 10000, sağ kutuya 20000 yazın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Mahalle (Defter) Numarasına Göre Filtreleme:</h4>
+            <ol>
+                <li><strong>Mahalle Alanlarını Bulun:</strong>
+                    <ul>
+                        <li>Abone No alanlarının hemen altında yer alır</li>
+                        <li>"Mahalle (Defter)" etiketi yanında başlangıç ve bitiş metin kutuları bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Tekil Mahalle İçin Filtreleme:</strong>
+                    <ul>
+                        <li>Sol metin kutusuna (başlangıç) filtrelemek istediğiniz mahalle kodunu yazın</li>
+                        <li>TAB tuşuna basın, sağdaki kutu (bitiş) otomatik olarak aynı değeri alacaktır</li>
+                        <li>Örneğin: Yalnızca 101 numaralı mahalle için her iki kutuya da 101 yazın veya sadece sol kutuya yazıp TAB tuşuna basın</li>
+                    </ul>
+                </li>
+                <li><strong>Mahalle Aralığı İçin Filtreleme:</strong>
+                    <ul>
+                        <li>Sol metin kutusuna (başlangıç) aralığın başlangıç mahalle kodunu yazın</li>
+                        <li>Sağ metin kutusuna (bitiş) aralığın bitiş mahalle kodunu yazın</li>
+                        <li>Örneğin: 100-200 arasındaki mahalleler için sol kutuya 100, sağ kutuya 200 yazın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik Filtreleme İpuçları:</h4>
+            <ul>
+                <li>Tüm aboneler için Abone No alanlarını boş bırakın veya sol kutuya 0, sağ kutuya 999999999 yazın</li>
+                <li>Tüm mahalleler için Mahalle alanlarını boş bırakın veya sol kutuya 0, sağ kutuya 9999 yazın</li>
+                <li>Daha hedefli işlem yapmak için abone numarası ve mahalle filtrelerini birlikte kullanın</li>
+                <li>Bir aralık belirlerken, başlangıç değerinin bitiş değerinden küçük olmasına dikkat edin</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h3>Abone Tipi Nasıl Seçilir</h3>
+        
+        <div class="step">
+            <h4>Abone Tipi Seçim Adımları:</h4>
+            <ol>
+                <li><strong>Abone Tipi Seçim Alanını Bulun:</strong>
+                    <ul>
+                        <li>Mahalle alanlarının hemen altında yer alır</li>
+                        <li>Solda "Abone Tipi" etiketi, sağında çoklu seçim yapılabilen geniş bir liste kutusu bulunur</li>
+                        <li>Liste, sistemde tanımlı tüm abone tiplerini gösterir</li>
+                    </ul>
+                </li>
+                <li><strong>Tek Bir Abone Tipi Seçmek İçin:</strong>
+                    <ul>
+                        <li>Liste kutusundan direkt olarak ilgili abone tipine tıklayın</li>
+                        <li>Seçilen abone tipi mavi renkle vurgulanacaktır</li>
+                        <li>Örneğin: "Mesken", "İşyeri", "Resmi Daire" gibi abone tiplerinden birini seçebilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Birden Fazla Abone Tipi Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL tuşunu basılı tutarak birden fazla abone tipine tıklayın</li>
+                        <li>Seçtiğiniz her abone tipi mavi renkle vurgulanacaktır</li>
+                        <li>Örneğin: CTRL tuşu basılıyken "Mesken"e tıklayın, ardından tuşu bırakmadan "İşyeri"ne tıklayın</li>
+                    </ul>
+                </li>
+                <li><strong>Tüm Abone Tiplerini Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL+A tuş kombinasyonunu kullanın veya</li>
+                        <li>Fare ile ilk abone tipine tıklayın, SHIFT tuşunu basılı tutarak son abone tipine tıklayın</li>
+                        <li>Tüm abone tipleri mavi renkle vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Seçimi Kaldırmak veya Değiştirmek İçin:</strong>
+                    <ul>
+                        <li>Yeni bir seçim yapmak için önce liste kutusundaki boş bir alana tıklayın (seçimi temizler)</li>
+                        <li>Tek bir seçimi kaldırmak için, CTRL tuşu basılıyken seçili olan abone tipine tekrar tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarı:</h4>
+            <p>Abone tipi seçilmeden "Değiştir" butonuna basarsanız sistem "Abone Tipi Seçmelisiniz" şeklinde bir hata mesajı gösterecektir. En az bir abone tipi seçilmelidir.</p>
+        </div>
+    </div>
+</div>
+<div id="adim-adim" class="section">
+    <div class="info-box">
+        <h3>Tahakkuk Tipi Nasıl Seçilir</h3>
+        <div class="step">
+            <h4>Tahakkuk Tipi Seçim Adımları:</h4>
+            <ol>
+                <li><strong>Tahakkuk Tipi Seçim Alanını Bulun:</strong>
+                    <ul>
+                        <li>Abone Tipi seçim alanının hemen altında yer alır</li>
+                        <li>Solda "Tahakkuk Tipi" etiketi, sağında çoklu seçim yapılabilen geniş bir liste kutusu bulunur</li>
+                        <li>Liste, sistemde tanımlı tüm tahakkuk tiplerini gösterir</li>
+                    </ul>
+                </li>
+                <li><strong>Tek Bir Tahakkuk Tipi Seçmek İçin:</strong>
+                    <ul>
+                        <li>Liste kutusundan direkt olarak ilgili tahakkuk tipine tıklayın</li>
+                        <li>Seçilen tahakkuk tipi mavi renkle vurgulanacaktır</li>
+                        <li>Örneğin: "Normal", "Kaçak", "Taksitli" gibi tahakkuk tiplerinden birini seçebilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Birden Fazla Tahakkuk Tipi Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL tuşunu basılı tutarak birden fazla tahakkuk tipine tıklayın</li>
+                        <li>Seçtiğiniz her tahakkuk tipi mavi renkle vurgulanacaktır</li>
+                        <li>Örneğin: CTRL tuşu basılıyken "Normal"e tıklayın, ardından tuşu bırakmadan "Taksitli"ye tıklayın</li>
+                    </ul>
+                </li>
+                <li><strong>Tüm Tahakkuk Tiplerini Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL+A tuş kombinasyonunu kullanın veya</li>
+                        <li>Fare ile ilk tahakkuk tipine tıklayın, SHIFT tuşunu basılı tutarak son tahakkuk tipine tıklayın</li>
+                        <li>Tüm tahakkuk tipleri mavi renkle vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Seçimi Kaldırmak veya Değiştirmek İçin:</strong>
+                    <ul>
+                        <li>Yeni bir seçim yapmak için önce liste kutusundaki boş bir alana tıklayın (seçimi temizler)</li>
+                        <li>Tek bir seçimi kaldırmak için, CTRL tuşu basılıyken seçili olan tahakkuk tipine tekrar tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarı:</h4>
+            <p>Tahakkuk tipi seçilmeden "Değiştir" butonuna basarsanız sistem "Tahakkuk Tipi Seçmelisiniz" şeklinde bir hata mesajı gösterecektir. En az bir tahakkuk tipi seçilmelidir.</p>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h3>Gelir Türü Nasıl Seçilir</h3>
+        
+        <div class="step">
+            <h4>Gelir Türü Seçim Adımları:</h4>
+            <ol>
+                <li><strong>Gelir Türü Seçim Alanını Bulun:</strong>
+                    <ul>
+                        <li>Tahakkuk Tipi seçim alanının hemen altında yer alır</li>
+                        <li>Solda "Gelir Türü" etiketi, sağında çoklu seçim yapılabilen geniş bir liste kutusu bulunur</li>
+                        <li>Liste, sistemde tanımlı tüm gelir türlerini kod ve açıklama formatında gösterir (örn. "101 - Su Geliri")</li>
+                    </ul>
+                </li>
+                <li><strong>Tek Bir Gelir Türü Seçmek İçin:</strong>
+                    <ul>
+                        <li>Liste kutusundan direkt olarak ilgili gelir türüne tıklayın</li>
+                        <li>Seçilen gelir türü mavi renkle vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Birden Fazla Gelir Türü Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL tuşunu basılı tutarak birden fazla gelir türüne tıklayın</li>
+                        <li>Seçtiğiniz her gelir türü mavi renkle vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Tüm Gelir Türlerini Seçmek İçin:</strong>
+                    <ul>
+                        <li>CTRL+A tuş kombinasyonunu kullanın veya</li>
+                        <li>Fare ile ilk gelir türüne tıklayın, SHIFT tuşunu basılı tutarak son gelir türüne tıklayın</li>
+                        <li>Tüm gelir türleri mavi renkle vurgulanacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Seçimi Kaldırmak veya Değiştirmek İçin:</strong>
+                    <ul>
+                        <li>Yeni bir seçim yapmak için önce liste kutusundaki boş bir alana tıklayın (seçimi temizler)</li>
+                        <li>Tek bir seçimi kaldırmak için, CTRL tuşu basılıyken seçili olan gelir türüne tekrar tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarı:</h4>
+            <p>Gelir türü seçilmeden "Değiştir" butonuna basarsanız sistem "En az bir gelir türü seçmelisiniz" şeklinde bir hata mesajı gösterecektir. En az bir gelir türü seçilmelidir.</p>
+        </div>
+    </div>
+</div>
+<div id="sorun-giderme" class="section">
+    <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Yıl ve Dönem Hatası:</h4>
+            <ol>
+                <li><strong>Sorun:</strong> "Yıl Boş Olamaz" veya "Dönem Bilgisini Girmelisiniz" hata mesajları</li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Yıl alanına 4 basamaklı bir yıl (örn. 2025) girdiğinizden emin olun</li>
+                        <li>Dönem alanına 1-12 arasında bir sayı girdiğinizden emin olun</li>
+                        <li>Her iki alanın da boş bırakılmadığından emin olun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Son Ödeme Tarihi Hatası:</h4>
+            <ol>
+                <li><strong>Sorun:</strong> "Yeni Son Ödeme Tarihi Boş Olamaz" hata mesajı</li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Son Ödeme Tarihi alanını GG.AA.YYYY formatında doldurduğunuzdan emin olun</li>
+                        <li>Örneğin: 15.03.2025 formatında yazın</li>
+                        <li>Geçerli bir tarih girdiğinizden emin olun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Seçim Hataları:</h4>
+            <ol>
+                <li><strong>Sorun:</strong> "Abone Tipi Seçmelisiniz", "Tahakkuk Tipi Seçmelisiniz" veya "En az bir gelir türü seçmelisiniz" hata mesajları</li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>İlgili liste kutusundan en az bir seçim yaptığınızdan emin olun</li>
+                        <li>Seçim yaparken, seçilen öğelerin mavi renkle vurgulandığını kontrol edin</li>
+                        <li>Liste kutusuna tıklayıp CTRL+A yaparak tüm öğeleri seçebilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Program Yanıt Vermiyor:</h4>
+            <ol>
+                <li><strong>Sorun:</strong> "Değiştir" butonuna bastıktan sonra program uzun süre yanıt vermiyor</li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Çok sayıda kayıt üzerinde işlem yapıyorsanız, bu durum normal olabilir, lütfen bekleyin</li>
+                        <li>İşlemi daha az sayıda kayıt üzerinde yapmak için filtreleme kriterlerini daraltın</li>
+                        <li>Uzun süre yanıt alınamıyorsa, programı kapatıp yeniden açmayı deneyin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Veri Giriş Hataları:</h4>
+            <ul>
+                <li>Sayısal alanlara sadece rakam girmeye dikkat edin</li>
+                <li>Tarih alanlarını GG.AA.YYYY formatında doldurun</li>
+                <li>Aralık belirtirken başlangıç değerinin bitiş değerinden küçük olmasına dikkat edin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Hızlı Veri Girişi İpuçları:</h4>
+            <ol>
+                <li><strong>Klavye Kısayolları:</strong>
+                    <ul>
+                        <li>TAB tuşu: Bir sonraki alana geçiş yapın</li>
+                        <li>SHIFT+TAB: Bir önceki alana dönün</li>
+                        <li>ENTER: TAB gibi bir sonraki alana geçiş yapar</li>
+                        <li>ESC: Programdan çıkış yapar</li>
+                        <li>CTRL+A: Liste kutularında tüm öğeleri seçer</li>
+                    </ul>
+                </li>
+                <li><strong>Abone No ve Mahalle Alanları:</strong>
+                    <ul>
+                        <li>Başlangıç kutusuna değer girip TAB'a basarsanız, bitiş kutusu otomatik olarak aynı değeri alır</li>
+                        <li>Tüm kayıtları dahil etmek için bu alanları boş bırakın</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Kutuları:</strong>
+                    <ul>
+                        <li>CTRL tuşu basılıyken tıklayarak çoklu seçim yapabilirsiniz</li>
+                        <li>SHIFT tuşu basılıyken tıklayarak aralık seçimi yapabilirsiniz</li>
+                        <li>Liste kutularında ilk harfi yazarak hızlı arama yapabilirsiniz</li>
+                        <li>CTRL+A ile tüm listeyi seçebilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Verimli Çalışma İpuçları:</h4>
+            <ol>
+                <li><strong>Test Etme:</strong>
+                    <ul>
+                        <li>Geniş bir abone kitlesi için değişiklik yapmadan önce, az sayıda abone üzerinde test edin</li>
+                        <li>Test için dar bir abone numarası aralığı belirleyin</li>
+                        <li>Değişikliğin başarılı olduğundan emin olunca daha geniş uygulamaya geçin</li>
+                    </ul>
+                </li>
+                <li><strong>İş Planlaması:</strong>
+                    <ul>
+                        <li>Çok sayıda kayıt üzerinde çalışırken sistem yoğunluğunun az olduğu saatleri tercih edin</li>
+                        <li>Büyük değişiklikler için işlem öncesi ilgili birimleri bilgilendirin</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Sağlama:</strong>
+                    <ul>
+                        <li>İşlem öncesi mevcut son ödeme tarihlerinin bir listesini alın</li>
+                        <li>İşlem sonrası değişiklikleri kontrol edin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li>Sık kullandığınız abone grubu, tahakkuk tipi ve gelir türü kombinasyonlarını not alın</li>
+                <li>Yoğun dönemlerde işlemleri sabah erken saatlerde veya öğle arası gibi sakin zamanlarda yapın</li>
+                <li>Ekranın alışık olmadığınız alanlarını öğrenmek için bu kılavuzu düzenli olarak gözden geçirin</li>
+                <li>Aynı tarih değişikliklerini aylık rutin olarak yapıyorsanız, her ay aynı prosedürü takip edin</li>
+            </ul>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Son ödeme tarihi değişiklikleri abonelerin ödeme alışkanlıklarını doğrudan etkiler</li>
+                <li>Değişiklik sonrası abonelere bilgilendirme yapılması faydalı olabilir</li>
+                <li>Tatil günleri gibi özel durumlarda son ödeme tarihlerinin hafta içine denk gelmesine dikkat edin</li>
+                <li>Sistem yoğunluğu nedeniyle büyük işlemlerin mesai saatleri dışında yapılması daha uygun olabilir</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h3>Sık Kullanılan Senaryolar</h3>
+        
+        <div class="step">
+            <h4>Tüm Mesken Aboneleri İçin Son Ödeme Tarihi Değişikliği:</h4>
+            <ol>
+                <li>Yıl ve dönem alanlarını doldurun</li>
+                <li>Abone No ve Mahalle alanlarını varsayılan değerlerinde bırakın (tüm aboneler için)</li>
+                <li>Abone Tipi listesinden sadece "Mesken" seçeneğini tıklayın</li>
+                <li>Tahakkuk Tipi listesinden tüm tipleri seçin (CTRL+A)</li>
+                <li>Gelir Türü listesinden tüm türleri seçin (CTRL+A)</li>
+                <li>Son Ödeme Tarihi alanına yeni tarihi girin</li>
+                <li>Değiştir butonuna tıklayın</li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Belirli Bir Mahalledeki İşyeri Aboneleri İçin Son Ödeme Tarihi Değişikliği:</h4>
+            <ol>
+                <li>Yıl ve dönem alanlarını doldurun</li>
+                <li>Mahalle alanlarına hedef mahalle kodunu girin (örn. her iki kutuya da 150)</li>
+                <li>Abone Tipi listesinden sadece "İşyeri" seçeneğini tıklayın</li>
+                <li>Tahakkuk Tipi listesinden tüm tipleri seçin (CTRL+A)</li>
+                <li>Gelir Türü listesinden tüm türleri seçin (CTRL+A)</li>
+                <li>Son Ödeme Tarihi alanına yeni tarihi girin</li>
+                <li>Değiştir butonuna tıklayın</li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Belirli Abone Numarası Aralığı İçin Son Ödeme Tarihi Değişikliği:</h4>
+            <ol>
+                <li>Yıl ve dönem alanlarını doldurun</li>
+                <li>Abone No alanlarına hedef aralığı girin (örn. sol kutuya 10000, sağ kutuya 20000)</li>
+                <li>Abone Tipi listesinden tüm tipleri seçin (CTRL+A)</li>
+                <li>Tahakkuk Tipi listesinden tüm tipleri seçin (CTRL+A)</li>
+                <li>Gelir Türü listesinden tüm türleri seçin (CTRL+A)</li>
+                <li>Son Ödeme Tarihi alanına yeni tarihi girin</li>
+                <li>Değiştir butonuna tıklayın</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id="sonuc" class="section">
+    <h2>Sonuç</h2>
+    <div class="info-box">
+        <p>Bu kullanıcı kılavuzu, "Su Son Ödeme Tarihi Değişiklik (Dönem Bazında)" programını etkin bir şekilde kullanmanız için gerekli tüm bilgileri içermektedir. Programı kullanırken karşılaştığınız sorunlar veya ek bilgi gerektiren durumlar için lütfen sistem yöneticinizle iletişime geçin.</p>
+        <div class="tip-box">
+            <h4>Önemli Bilgiler:</h4>
+            <ul>
+                <li>Program, su abonelerinin son ödeme tarihlerini dönem bazında toplu olarak değiştirmenizi sağlar</li>
+                <li>Çeşitli filtreleme seçenekleriyle hedef abone gruplarını belirleyebilirsiniz</li>
+                <li>Tüm değişiklikler, "Değiştir" butonuna basılana kadar uygulanmaz</li>
+                <li>İşlemleriniz sistem veritabanında kalıcı değişiklikler yaptığından dikkatli olunmalıdır</li>
+            </ul>
+        </div>
+        
+        <p>Bu dokümanı düzenli olarak gözden geçirerek, programı kullanma becerilerinizi geliştirebilirsiniz. Herhangi bir geri bildirim veya iyileştirme öneriniz varsa, lütfen bunu ilgili birimlerle paylaşın.</p>
+    </div>
+</div>
+
+</body>
+</html>

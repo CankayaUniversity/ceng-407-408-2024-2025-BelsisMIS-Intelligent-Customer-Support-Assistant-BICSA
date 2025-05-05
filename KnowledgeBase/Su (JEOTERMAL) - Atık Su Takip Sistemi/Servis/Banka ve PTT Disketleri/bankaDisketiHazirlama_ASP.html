@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banka Disketi Hazırlama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Banka Disketi Hazırlama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#banka-secimi">Banka Seçimi</a></li>
+                        <li><a href="#abone-bilgileri">Abone Numarası Aralıkları</a></li>
+                        <li><a href="#donem-bilgisi">Ödeme Yılı ve Dönemi</a></li>
+                        <li><a href="#son-odeme-tarihi">Son Ödeme Tarihi</a></li>
+                        <li><a href="#mahalle-cadde">Mahalle ve Cadde Bilgileri</a></li>
+                        <li><a href="#yukleme-grubu">Yükleme Grubu</a></li>
+                        <li><a href="#dosya-bilgisi">Dosya Adresi ve Adı</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Banka Disketi Hazırlama İşlemleri</a>
+                    <ul>
+                        <li><a href="#bilgi-girisi">Bilgi Girişi</a></li>
+                        <li><a href="#kayit-hazirlama">Kayıtları Hazırlama</a></li>
+                        <li><a href="#dosya-kaydetme">Dosya Kaydetme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ornek-senaryo">Örnek Senaryo: Adım Adım Banka Disketi Hazırlama</a></li>
+                <li><a href="#banka-ozellikleri">Desteklenen Bankalar ve Özellikleri</a></li>
+                <li><a href="#klavye-kisayollari">Klavye Kısayolları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme ve Pratik İpuçları</a></li>
+                <li><a href="#sss">Sık Sorulan Sorular</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Banka Disketi Hazırlama" ekranı, su faturalarının tahsilatı için bankalara elektronik ortamda bilgi aktarımı sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir dönem için fatura bilgilerini içeren banka dosyaları oluşturabilirsiniz</li>
+                <li>Farklı bankalar için özel formatlarda dosya hazırlayabilirsiniz</li>
+                <li>Belirli abone grupları için dosya hazırlayabilirsiniz</li>
+                <li>Belirli mahalle veya caddelere göre filtreler uygulayabilirsiniz</li>
+                <li>Oluşturduğunuz dosyaları bankaya teslim ederek otomatik ödeme sistemini çalıştırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Hangi banka için dosya hazırlayacağınız</li>
+                    <li>Hangi dönem için işlem yapacağınız (yıl ve ay bilgisi)</li>
+                    <li>Son ödeme tarihi bilgisi</li>
+                    <li>İşlem yapılacak abone numarası aralıkları (varsa)</li>
+                    <li>Varsa mahalle veya cadde kısıtlamaları</li>
+                    <li>Dosyanın bilgisayarınızda nereye kaydedileceği</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Banka Disketi Oluşturma" başlığı bulunur.</li>
+                            <li>Başlığın yanında oluşturulacak dosyanın adı görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Alanları:</strong>
+                        <ul>
+                            <li>Başlığın altında ana çalışma alanı yer alır.</li>
+                            <li>Bu bölümde banka seçimi, abone numarası aralıkları, yıl/dönem bilgileri gibi kriterleri belirleyeceğiniz alanlar bulunur.</li>
+                            <li>Alanlar etiketleriyle birlikte, sola hizalı şekilde yerleştirilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında butonlar yer alır.</li>
+                            <li>Tamam, Kaydet, Çıkış ve Yardım butonları bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Logoları:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında desteklenen bankaların logoları gösterilir.</li>
+                            <li>Bu logolar sadece bilgi amaçlıdır, herhangi bir işlevi yoktur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Durum Bilgisi Alanı:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, işlem durumunu gösteren sarı renkli bir bilgi satırı bulunur.</li>
+                            <li>Bu alan, Tamam butonuna basıldıktan sonra görünür hale gelir ve "XML Oluşturuldu. Kaydedebilirsiniz...!" gibi bilgiler içerir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Varsayılan değerler yüklenir (genellikle günün tarihi ve en son kullanılan bilgiler).</li>
+                    <li>Banka seçimi yapılmamış durumdadır (:: Banka Seçiniz :: seçeneği seçilidir).</li>
+                    <li>Kaydet butonu devre dışıdır, önce Tamam butonuna basılıp kayıtların hazırlanması gerekir.</li>
+                    <li>Dosya adı alanı devre dışıdır, Tamam butonuna bastıktan sonra aktif hale gelir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="banka-secimi" class="info-box">
+            <h3>Banka Seçimi</h3>
+            
+            <div class="step">
+                <h4>Banka Seçimi Alanı:</h4>
+                <ol>
+                    <li><strong>Banka Açılır Listesi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, ilk veri giriş alanıdır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Listeden dosya oluşturmak istediğiniz bankayı seçin.</li>
+                            <li><strong>Varsayılan Değer:</strong> ":: Banka Seçiniz ::" (herhangi bir banka seçili değil).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Versiyon Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka açılır listesinin hemen sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Bazı bankalar için (İş Bankası ve Oyakbank/ING Bank gibi) farklı format versiyonları seçebilirsiniz.</li>
+                            <li><strong>Varsayılan Değer:</strong> "Versiyon-1"</li>
+                            <li><strong>Not:</strong> Bu alan sadece İş Bankası veya ING Bank seçildiğinde aktif olur, diğer bankalar için devre dışıdır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Banka Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Listede görünmeyen bir banka için dosya hazırlamanız gerekiyorsa, teknik destek ekibiyle iletişime geçin.</li>
+                    <li>Bankanızın hangi formatta dosya istediğini önceden öğrenin.</li>
+                    <li>ING Bank ve İş Bankası için versiyon seçimini, bankanızın size sağladığı bilgilere göre yapın.</li>
+                    <li>Banka seçiminizi yaptığınızda, sistem otomatik olarak o banka için uygun dosya adı formatını belirler.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone Numarası Aralıkları</h3>
+            
+            <div class="step">
+                <h4>Abone Aralığı Alanları:</h4>
+                <ol>
+                    <li><strong>İlk Abone No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka seçiminin hemen altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en küçük abone numarasını girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "0" (tüm aboneleri kapsar)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Abone No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> İlk Abone No alanının hemen sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en büyük abone numarasını girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "999999999" (tüm aboneleri kapsar)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Aralığı İpuçları:</h4>
+                <ul>
+                    <li>Belli bir abone grubunu seçmek için uygun aralık değerlerini girin.</li>
+                    <li>Tek bir abone için, hem başlangıç hem bitiş alanına aynı abone numarasını yazın.</li>
+                    <li>Tüm aboneleri seçmek için varsayılan değerleri (0-999999999) kullanabilirsiniz.</li>
+                    <li>Özel abone numarası aralıkları belirlemek, büyük veri setleriyle çalışırken işlemi hızlandırabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="donem-bilgisi" class="info-box">
+            <h3>Ödeme Yılı ve Dönemi</h3>
+            
+            <div class="step">
+                <h4>Dönem Bilgisi Alanları:</h4>
+                <ol>
+                    <li><strong>Ödeme Yılı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Abone numarası alanlarının altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> İşlem yapılacak fatura döneminin yılını girin (örn. "2023").</li>
+                            <li><strong>Varsayılan Değer:</strong> Sistem tarihinin yılı.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ödeme Dönemi (Ay):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ödeme Yılı alanının hemen sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> İşlem yapılacak fatura döneminin ayını girin (1-12 arası).</li>
+                            <li><strong>Varsayılan Değer:</strong> Sistem tarihinin ayı.</li>
+                            <li><strong>Not:</strong> Tek haneli aylar için başına 0 eklenir (örn. "01", "02"). Alan kaybedildiğinde bu otomatik olarak yapılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve dönem bilgileri zorunludur, boş bırakılamaz.</li>
+                    <li>Yıl 4 haneli olmalıdır (örn. "2023").</li>
+                    <li>Ay değeri 1-12 arasında olmalıdır.</li>
+                    <li>Tek haneli ay girseniz bile sistem otomatik olarak başına 0 ekleyecektir.</li>
+                    <li>Dosya oluşturma işlemi, belirtilen yıl ve dönem için borcu olan aboneleri içerecektir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="son-odeme-tarihi" class="info-box">
+            <h3>Son Ödeme Tarihi</h3>
+            
+            <div class="step">
+                <h4>Son Ödeme Tarihi Alanı:</h4>
+                <ol>
+                    <li><strong>Tarih Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Dönem bilgilerinin altında veya yanında yer alır (program versiyonuna göre değişebilir).</li>
+                            <li><strong>Özellik:</strong> Tarih formatında veri giriş alanıdır (GG/AA/YYYY).</li>
+                            <li><strong>Kullanım:</strong> Oluşturulacak banka dosyasındaki faturaların son ödeme tarihini belirler.</li>
+                            <li><strong>Varsayılan Değer:</strong> Genellikle sistem tarihidir, ancak dönem bilgilerine göre değişebilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Son ödeme tarihi alanı zorunludur, boş bırakılamaz.</li>
+                    <li>Tarih formatı GG/AA/YYYY şeklinde olmalıdır (örn. "15/04/2023").</li>
+                    <li>Son ödeme tarihi, sistemdeki faturaların son ödeme tarihi ile uyumlu olmalıdır.</li>
+                    <li>Geçmiş bir tarih girilmesi durumunda, bankalar ödeme kabul etmeyebilir.</li>
+                    <li>Bu tarih, banka dosyasına yazılacak ve abonelerin son ödeme tarihi olarak kullanılacaktır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Son Ödeme Tarihi İpuçları:</h4>
+                <ul>
+                    <li>Son ödeme tarihini genellikle ay sonuna veya o dönem için belirlenmiş tarihe göre ayarlayın.</li>
+                    <li>Bankaların otomatik tahsilat için genellikle 1-2 günlük işleme süresi olduğunu unutmayın.</li>
+                    <li>Hafta sonları ve resmi tatil günlerini son ödeme tarihi olarak belirlemekten kaçının.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mahalle-cadde" class="info-box">
+            <h3>Mahalle ve Cadde Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Mahalle ve Cadde Aralık Alanları:</h4>
+                <ol>
+                    <li><strong>İlk Mahalle:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Dönem ve tarih bilgilerinin altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en küçük mahalle kodunu girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "0" (tüm mahalleleri kapsar)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Mahalle:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> İlk Mahalle alanının hemen sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en büyük mahalle kodunu girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "999999999" (tüm mahalleleri kapsar)</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlk Cadde:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mahalle alanlarının altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en küçük cadde kodunu girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "0" (tüm caddeleri kapsar)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Cadde:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> İlk Cadde alanının hemen sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal veri giriş alanıdır.</li>
+                            <li><strong>Kullanım:</strong> Dosyaya dahil edilecek en büyük cadde kodunu girin.</li>
+                            <li><strong>Varsayılan Değer:</strong> "999999" (tüm caddeleri kapsar)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Mahalle ve Cadde Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Belirli mahalle veya caddelere ait aboneleri seçmek için bu alanları kullanın.</li>
+                    <li>Mahalle ve cadde kodlarını önceden tespit edin, doğru kodları bilmiyorsanız sistem yöneticinize danışın.</li>
+                    <li>Tek bir mahalle veya cadde için, başlangıç ve bitiş alanlarına aynı kodu yazın.</li>
+                    <li>Tüm mahalle ve caddeleri seçmek için varsayılan değerleri kullanabilirsiniz.</li>
+                    <li>Büyük veri setlerini mahalle bazında gruplandırarak parça parça işlemek daha verimli olabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="yukleme-grubu" class="info-box">
+            <h3>Yükleme Grubu</h3>
+            
+            <div class="step">
+                <h4>Yükleme Grubu Alanı:</h4>
+                <ol>
+                    <li><strong>Yükleme Grubu Açılır Listesi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Cadde bilgilerinin altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Önceden tanımlanmış özel abone grupları varsa, bunlardan birini seçebilirsiniz.</li>
+                            <li><strong>Varsayılan Değer:</strong> Boş (herhangi bir grup seçili değil)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yükleme Grubu İpuçları:</h4>
+                <ul>
+                    <li>Yükleme grubu seçildiğinde, diğer filtreleme kriterleri (abone no aralığı, mahalle, cadde) göz ardı edilir.</li>
+                    <li>Yükleme grupları önceden tanımlanmış özel abone gruplarıdır.</li>
+                    <li>Yeni bir yükleme grubu oluşturmak için sistem yöneticinize başvurun.</li>
+                    <li>Düzenli olarak aynı abone grupları için işlem yapıyorsanız, bir yükleme grubu oluşturmak işinizi kolaylaştırabilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dosya-bilgisi" class="info-box">
+            <h3>Dosya Adresi ve Adı</h3>
+            
+            <div class="step">
+                <h4>Dosya Bilgisi Alanı:</h4>
+                <ol>
+                    <li><strong>Dosya Adresi ve Adı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Yükleme grubu alanının altında, ekranın alt kısmında yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin kutusudur, başlangıçta devre dışıdır.</li>
+                            <li><strong>Kullanım:</strong> Tamam butonuna basıldıktan sonra aktif olur, oluşturulacak dosyanın tam yolunu ve adını gösterir.</li>
+                            <li><strong>Varsayılan Değer:</strong> Sistem tarafından otomatik oluşturulan, seçilen bankaya göre değişen bir dosya adı.</li>
+                            <li><strong>Format:</strong> Genellikle "C:\BANKA\ATB5018705GGAAYYSSDKYS.TXT" gibi bir format kullanılır, burada GG/AA/YY gün/ay/yıl, SS saat, DK dakika bilgilerini içerir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dosya adı ve yolu sistem tarafından otomatik belirlenir, genellikle değiştirmeniz gerekmez.</li>
+                    <li>Dosya adında banka kodu ve tarih bilgileri yer alır.</li>
+                    <li>Dosya yolu genellikle bankanın istediği bir klasör yapısında olur (örn. "C:\BANKA\" veya "C:\BANKA\AKBANK\").</li>
+                    <li>Belirtilen klasörlerin bilgisayarınızda mevcut olduğundan emin olun, yoksa dosya oluşturulamaz.</li>
+                    <li>Eğer değiştirirseniz, bankanın kabul edeceği format ve klasör yapısına uygun olduğundan emin olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Tamam (OK) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Veri giriş alanlarının altında, butonlar bölümünde en solda yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart düğme, üzerinde "Tamam" yazar.</li>
+                            <li><strong>İşlev:</strong> Girilen kriterlere göre banka dosyası için gerekli kayıtları hazırlar.</li>
+                            <li><strong>Kullanım:</strong> Tüm veri giriş alanlarını doldurduktan sonra bu butona tıklayın.</li>
+                            <li><strong>Not:</strong> Bu butona basıldığında, veritabanından ilgili kayıtlar sorgulanır, ancak henüz dosya oluşturulmaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tamam butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart düğme, üzerinde "Kaydet" yazar.</li>
+                            <li><strong>İşlev:</strong> Tamam butonuna basıldıktan sonra hazırlanan kayıtları dosyaya kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Tamam butonuna bastıktan sonra, bu butona tıklayarak banka dosyasını oluşturun.</li>
+                            <li><strong>Not:</strong> Başlangıçta devre dışıdır, Tamam butonuna basıldıktan sonra aktif olur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kaydet butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart düğme, üzerinde "Çıkış" yazar.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkış yapar, işlemi sonlandırır.</li>
+                            <li><strong>Kullanım:</strong> İşleminizi tamamladıktan veya iptal etmek istediğinizde bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım (Help) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Çıkış butonunun hemen sağında, butonlar bölümünün en sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart düğme, üzerinde "Yardım" yazar.</li>
+                            <li><strong>İşlev:</strong> Program ile ilgili yardım bilgilerini gösterir.</li>
+                            <li><strong>Kullanım:</strong> Programın kullanımı hakkında yardıma ihtiyaç duyduğunuzda bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşlem sırası şöyledir: İlk önce veri girişi → Tamam butonuna tıklama → Kaydet butonuna tıklama → Banka dosyasının oluşturulması.</li>
+                    <li>Kaydet butonuna basmadan programdan çıkarsanız, hazırlanan dosya kaydedilmez.</li>
+                    <li>Çıkış yapmadan önce işleminizin tamamlandığından emin olun.</li>
+                    <li>Yardım butonu size işlemlerle ilgili kısa ipuçları sağlar ancak bu kullanıcı kılavuzu kadar detaylı değildir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Banka Disketi Hazırlama İşlemleri</h2>
+        
+        <div id="bilgi-girisi" class="info-box">
+            <h3>Bilgi Girişi</h3>
+            
+            <div class="step">
+                <h4>Veri Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Banka Seçimi:</strong>
+                        <ul>
+                            <li>Açılır listeden dosya oluşturmak istediğiniz bankayı seçin.</li>
+                            <li>Eğer İş Bankası veya ING Bank seçtiyseniz, versiyon seçimini de yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Numarası Aralığı:</strong>
+                        <ul>
+                            <li>İlk Abone No alanına başlangıç değerini girin.</li>
+                            <li>Son Abone No alanına bitiş değerini girin.</li>
+                            <li>Tüm aboneler için varsayılan değerleri kullanabilirsiniz (0-999999999).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ödeme Dönemi Bilgileri:</strong>
+                        <ul>
+                            <li>Ödeme Yılı alanına ilgili yılı girin (örn. "2023").</li>
+                            <li>Ödeme Dönemi (Ay) alanına ilgili ayı girin (1-12 arası).</li>
+                            <li>Tek haneli ay değerlerinin başına otomatik olarak 0 eklenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi:</strong>
+                        <ul>
+                            <li>Tarih alanına faturalar için son ödeme tarihini girin (GG/AA/YYYY formatında).</li>
+                            <li>Tarih, sistem tarihinden sonraki bir gün olmalıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle ve Cadde Bilgileri (İsteğe Bağlı):</strong>
+                        <ul>
+                            <li>Belirli mahalleler için ilk ve son mahalle kodlarını girin.</li>
+                            <li>Belirli caddeler için ilk ve son cadde kodlarını girin.</li>
+                            <li>Tüm mahalle ve caddeler için varsayılan değerleri bırakabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yükleme Grubu (İsteğe Bağlı):</strong>
+                        <ul>
+                            <li>Eğer özel bir yükleme grubu kullanacaksanız açılır listeden seçin.</li>
+                            <li>Yükleme grubu seçildiğinde diğer filtreler (abone no, mahalle, cadde) göz ardı edilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Banka, yıl, dönem ve son ödeme tarihi bilgileri zorunludur, boş bırakılamaz.</li>
+                    <li>Abone numarası aralığı belirtmezseniz, tüm aboneler işleme dahil edilir.</li>
+                    <li>Mahalle ve cadde filtresi belirtmezseniz, tüm mahalle ve caddeler işleme dahil edilir.</li>
+                    <li>Yükleme grubu seçerseniz, diğer filtreleme kriterleri dikkate alınmaz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kayit-hazirlama" class="info-box">
+            <h3>Kayıtları Hazırlama</h3>
+            
+            <div class="step">
+                <h4>Tamam Butonuna Basma ve Kayıt Hazırlama:</h4>
+                <ol>
+                    <li><strong>Bilgi Girişlerini Kontrol Etme:</strong>
+                        <ul>
+                            <li>Banka seçiminin doğru olduğundan emin olun.</li>
+                            <li>Yıl ve dönem bilgilerinin doğru olduğundan emin olun.</li>
+                            <li>Son ödeme tarihinin doğru ve geçerli olduğunu kontrol edin.</li>
+                            <li>Diğer filtrelerin (abone aralığı, mahalle, cadde) istenildiği şekilde ayarlandığından emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tamam Butonuna Basma:</strong>
+                        <ul>
+                            <li>Tüm veri girişleri tamamlandıktan sonra Tamam butonuna tıklayın.</li>
+                            <li>Bu işlem, kriterlere uyan kayıtların veritabanından sorgulanmasını sağlar.</li>
+                            <li>İşlemin tamamlanması sistemin yoğunluğuna ve kayıt sayısına bağlı olarak biraz zaman alabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucunun Kontrolü:</strong>
+                        <ul>
+                            <li>İşlem tamamlandığında, ekranın üst kısmında "XML Oluşturuldu. Kaydedebilirsiniz...!" mesajı görünür.</li>
+                            <li>Eğer kayıt bulunamamışsa, "Abone Kaydı Bulunamadı" şeklinde bir hata mesajı görüntülenir.</li>
+                            <li>Tamam butonuna basıldıktan sonra, Kaydet butonu aktif hale gelir.</li>
+                            <li>Dosya adı alanı da aktif hale gelir ve otomatik oluşturulan dosya adını gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kayıt Hazırlama İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda kayıt için işlem yaparken, sistemin yanıt vermesi biraz zaman alabilir, sabırlı olun.</li>
+                    <li>İşlem sırasında başka bir işlem yapmayın, program yanıt verene kadar bekleyin.</li>
+                    <li>Eğer sonuç beklenenden farklıysa, filtreleme kriterlerinizi kontrol edin ve tekrar deneyin.</li>
+                    <li>Çok büyük veri setleri için, işlemi daha küçük parçalara bölerek çalışmak daha verimlidir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dosya-kaydetme" class="info-box">
+            <h3>Dosya Kaydetme</h3>
+            
+            <div class="step">
+                <h4>Banka Disketi Oluşturma Adımları:</h4>
+                <ol>
+                    <li><strong>Dosya Bilgilerini Kontrol Etme:</strong>
+                        <ul>
+                            <li>Tamam butonuna basıldıktan sonra, "Dosya Adresi ve Adı" alanı aktif hale gelir.</li>
+                            <li>Oluşturulacak dosyanın yolunu ve adını kontrol edin.</li>
+                            <li>Gerekirse, dosya yolunu veya adını düzenleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonuna Basma:</strong>
+                        <ul>
+                            <li>Kaydet butonuna tıklayarak banka dosyasını oluşturun.</li>
+                            <li>Sistem, belirtilen konumda dosyayı oluşturur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>İşlem başarılı olduğunda, bir bilgi mesajı görüntülenir.</li>
+                            <li>Mesajda, oluşturulan kayıt sayısı ve toplam tutar bilgisi yer alır.</li>
+                            <li>Örnek: "125 Adet Kayıttan Oluşan Dosya Hazırlandı. Toplam Tutar = 12.345,67 TL"</li>
+                            <li>Bu mesaj, hangi bankanın dosyasının oluşturulduğunu da belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası:</strong>
+                        <ul>
+                            <li>Dosya kaydedildikten sonra, program otomatik olarak ilk duruma döner.</li>
+                            <li>Kaydet butonu devre dışı kalır, Tamam butonu tekrar aktif olur.</li>
+                            <li>Yeni bir işlem yapmak istiyorsanız, bilgileri yeniden girip aynı adımları tekrarlayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Dosya Kaydetme Uyarıları:</h4>
+                <ul>
+                    <li>Dosya kaydedildikten sonra, program otomatik olarak ilk duruma döner.</li>
+                    <li>Kaydet butonuna bastıktan sonra, oluşturulan dosyanın belirtilen yerde oluşturulup oluşturulmadığını kontrol edin.</li>
+                    <li>Bazı bankaların dosya yolu özel gereksinimler içerebilir. Örneğin "C:\BANKA\" klasörü önceden oluşturulmuş olmalıdır.</li>
+                    <li>Dosya oluşturulamadıysa, klasör yapısının doğru olduğundan ve yazma izinlerinizin bulunduğundan emin olun.</li>
+                    <li>Oluşturulan dosyaları düzenli olarak arşivleyin ve yedekleyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ornek-senaryo" class="section">
+        <h2>Örnek Senaryo: Adım Adım Banka Disketi Hazırlama</h2>
+        <div class="info-box">
+            <p>Aşağıda, Akbank için 2023 yılı Ekim ayı faturalarını içeren bir banka disketi hazırlama senaryosu adım adım anlatılmıştır:</p>
+            
+            <div class="step">
+                <h4>Örnek Senaryo - Akbank Dosyası Hazırlama:</h4>
+                <ol>
+                    <li><strong>Programı Açma:</strong>
+                        <ul>
+                            <li>Banka Disketi Hazırlama programını açın.</li>
+                            <li>Başlangıç ekranında tüm alanların varsayılan değerlerle dolu olduğunu görün.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Seçimi:</strong>
+                        <ul>
+                            <li>Banka açılır listesinden "0046 - Akbank" seçeneğini seçin.</li>
+                            <li>Versiyon alanının devre dışı olduğunu fark edin (Akbank için tek versiyon vardır).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Numarası Aralığı Girişi:</strong>
+                        <ul>
+                            <li>İlk Abone No alanına "0" yazın (tüm aboneleri kapsamak için).</li>
+                            <li>Son Abone No alanına "999999999" yazın (tüm aboneleri kapsamak için).</li>
+                            <li>Alternatif olarak, belirli bir abone grubu için örneğin "10000" ile "20000" arasını seçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Bilgileri Girişi:</strong>
+                        <ul>
+                            <li>Ödeme Yılı alanına "2023" yazın.</li>
+                            <li>Ödeme Dönemi (Ay) alanına "10" yazın (Ekim ayı için).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi Girişi:</strong>
+                        <ul>
+                            <li>Son Ödeme Tarihi alanına "31/10/2023" yazın (Ekim ayının son günü).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle ve Cadde Filtreleri (İsteğe Bağlı):</strong>
+                        <ul>
+                            <li>Tüm mahalleleri kapsamak için "0" - "999999999" değerlerini kullanın.</li>
+                            <li>Tüm caddeleri kapsamak için "0" - "999999" değerlerini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yükleme Grubu (İsteğe Bağlı):</strong>
+                        <ul>
+                            <li>Özel bir yükleme grubu kullanmayacaksanız bu alanı boş bırakın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tamam Butonuna Basma:</strong>
+                        <ul>
+                            <li>Tüm bilgileri kontrol ettikten sonra Tamam butonuna tıklayın.</li>
+                            <li>Sistem veritabanını sorgulayarak kayıtları hazırlar.</li>
+                            <li>Ekranın üst kısmında "XML Oluşturuldu. Kaydedebilirsiniz...!" mesajı görünür.</li>
+                            <li>Dosya adı alanı aktif hale gelir ve "C:\BANKA\ATB50187053110230921.TXT" gibi bir dosya adı görüntülenir.</li>
+                            <li>Kaydet butonu aktif hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Bilgilerini Kontrol Etme:</strong>
+                        <ul>
+                            <li>Dosya adı ve yolunu kontrol edin.</li>
+                            <li>Gerekirse, klasör yapısının mevcut olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonuna Basma:</strong>
+                        <ul>
+                            <li>Kaydet butonuna tıklayın.</li>
+                            <li>Sistem dosyayı belirtilen konuma kaydeder.</li>
+                            <li>İşlem tamamlandığında "157 Adet Kayıttan Oluşan Dosya Hazırlandı. Toplam Tutar = 34.567,89 TL" gibi bir mesaj görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası:</strong>
+                        <ul>
+                            <li>Program varsayılan durumuna döner.</li>
+                            <li>Oluşturulan dosyayı bankaya teslim etmek üzere hazırsınız.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Önemli İpuçları:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce tüm veri giriş alanlarını dikkatle kontrol edin.</li>
+                    <li>Dosya adı ve yolunu not alın, dosyayı bankaya göndermeden önce bulmanıza yardımcı olacaktır.</li>
+                    <li>Oluşturulan dosyanın toplam tutar bilgisini not edin, banka ile mutabakat için gerekli olacaktır.</li>
+                    <li>Birden fazla banka için dosya hazırlıyorsanız, her işlem sonrası hangi banka için dosya oluşturduğunuzu not edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="banka-ozellikleri" class="section">
+        <h2>Desteklenen Bankalar ve Özellikleri</h2>
+        <div class="info-box">
+            <p>Bu program, aşağıdaki bankaları desteklemektedir. Her bankanın kendine özgü dosya formatı ve gereksinimleri vardır:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Banka Kodu</th>
+                        <th>Banka Adı</th>
+                        <th>Versiyon</th>
+                        <th>Dosya Formatı</th>
+                        <th>Dosya Yolu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0046</td>
+                        <td>Akbank</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\BANKA\</td>
+                    </tr>
+                    <tr>
+                        <td>0062</td>
+                        <td>Garanti Bankası</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0064</td>
+                        <td>İş Bankası</td>
+                        <td>2 versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0010</td>
+                        <td>Ziraat Bankası</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0012</td>
+                        <td>Halk Bankası</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\BANKA\</td>
+                    </tr>
+                    <tr>
+                        <td>0015</td>
+                        <td>Vakıfbank</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\BANKA\</td>
+                    </tr>
+                    <tr>
+                        <td>0032</td>
+                        <td>TEB</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0059</td>
+                        <td>Şekerbank</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0067</td>
+                        <td>Yapı Kredi Bankası</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0071</td>
+                        <td>Fortis Bank</td>
+                        <td>Tek versiyon</td>
+                        <td>FORTIS*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0099</td>
+                        <td>ING Bank (Eski Oyakbank)</td>
+                        <td>2 versiyon</td>
+                        <td>ING*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0111</td>
+                        <td>Finans Bank</td>
+                        <td>Tek versiyon</td>
+                        <td>FINANS*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0134</td>
+                        <td>Deniz Bank</td>
+                        <td>Tek versiyon</td>
+                        <td>FAT134*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0205</td>
+                        <td>Kuveyt Türk</td>
+                        <td>Tek versiyon</td>
+                        <td>KUVEYT*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0206</td>
+                        <td>Türkiye Finans (Anadolu Finans)</td>
+                        <td>Tek versiyon</td>
+                        <td>ATB*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0208</td>
+                        <td>Asya Katılım Bankası</td>
+                        <td>Tek versiyon</td>
+                        <td>ASYA*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>0209</td>
+                        <td>Aktif Bank</td>
+                        <td>Tek versiyon</td>
+                        <td>AKTIF*.TXT</td>
+                        <td>C:\</td>
+                    </tr>
+                    <tr>
+                        <td>9999</td>
+                        <td>PTT</td>
+                        <td>Tek versiyon</td>
+                        <td>B***.TXT</td>
+                        <td>C:\BANKA\</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>Banka Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Her banka için dosya isimlendirmesi otomatik olarak yapılır (tarih ve saat bilgilerini içerir).</li>
+                    <li>Bazı bankalar için dosya yolu ve adı özelleştirilmiştir (örn. C:\BANKA\AKBANK\).</li>
+                    <li>İş Bankası ve ING Bank için iki farklı versiyon bulunur:
+                        <ul>
+                            <li><strong>Versiyon-1:</strong> Genellikle başlık satırı içeren, özel formatta dosya oluşturur.</li>
+                            <li><strong>Versiyon-2:</strong> Daha basit satır yapısında, standart formatta dosya oluşturur.</li>
+                        </ul>
+                    </li>
+                    <li>Banka disketi oluşturmadan önce, bankanızın kabul ettiği format hakkında bilgi alın.</li>
+                    <li>Listede bulunmayan bir banka için işlem yapmanız gerekiyorsa, teknik destek ekibinizle iletişime geçin.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Banka Dosya Formatları Hakkında Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Her bankanın dosya formatı farklıdır ve genellikle şu bilgileri içerir:
+                        <ul>
+                            <li>Başlık satırı (bankanın kodu, tarih bilgisi vb.)</li>
+                            <li>Detay satırları (her bir fatura için abone no, fatura no, tutar vb.)</li>
+                            <li>Özet satırı (toplam kayıt sayısı, toplam tutar vb.)</li>
+                        </ul>
+                    </li>
+                    <li>Bazı bankalar için dosya yolları ve klasör yapıları önemlidir, bunları değiştirmemeye çalışın.</li>
+                    <li>Banka dosyalarınızı periyodik olarak (örn. aylık) organize edin, böylece hangi dosyanın hangi döneme ait olduğunu kolayca takip edebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <p>Program içinde kullanabileceğiniz klavye kısayolları, işlemlerinizi hızlandırmak için yardımcı olabilir:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kısayol</th>
+                        <th>İşlev</th>
+                        <th>Açıklama</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Sonraki alana geçiş</td>
+                        <td>Bir sonraki veri giriş alanına geçmenizi sağlar</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT+TAB</td>
+                        <td>Önceki alana geçiş</td>
+                        <td>Bir önceki veri giriş alanına dönmenizi sağlar</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>Sonraki alana geçiş veya buton etkinleştirme</td>
+                        <td>Bir sonraki alana geçer veya odaklanmış butonu etkinleştirir</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış</td>
+                        <td>Programı kapatır, çıkış yapar</td>
+                    </tr>
+                    <tr>
+                        <td>ALT+S</td>
+                        <td>Kaydet</td>
+                        <td>Kaydet butonuna basar</td>
+                    </tr>
+                    <tr>
+                        <td>ALT+X</td>
+                        <td>Çıkış</td>
+                        <td>Çıkış butonuna basar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>Klavye Kısayolları İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak formda hızlıca gezinebilirsiniz.</li>
+                    <li>Metin kutularında hareket etmek için ok tuşlarını kullanabilirsiniz.</li>
+                    <li>Bir metin kutusundaki tüm metni seçmek için CTRL+A kullanabilirsiniz.</li>
+                    <li>Bir alanın içeriğini tamamen silmek için, önce CTRL+A ile tüm metni seçin, sonra DELETE tuşuna basın.</li>
+                    <li>Programı hızlı bir şekilde kapatmak için ESC tuşunu kullanabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kayıt Bulunamadı Mesajı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Abone Kaydı Bulunamadı" mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Yıl ve dönem bilgilerinin doğru olduğunu kontrol edin.</li>
+                                    <li>Abone numarası aralığının doğru olduğunu kontrol edin.</li>
+                                    <li>Mahalle ve cadde filtrelerinin doğru olduğunu kontrol edin.</li>
+                                    <li>İlgili dönemde borcu olan abone olup olmadığını kontrol edin.</li>
+                                    <li>Tahakkuk işlemlerinin tamamlanıp tamamlanmadığını kontrol edin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Oluşturulamıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna bastığınızda dosya oluşturulmuyor veya hata mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Belirtilen klasörün (örn. C:\BANKA\) mevcut olduğunu kontrol edin.</li>
+                                    <li>Klasörde yazma izninizin olduğundan emin olun.</li>
+                                    <li>Dosya adını ve yolunu manuel olarak değiştirmeyi deneyin.</li>
+                                    <li>Bilgisayarınızı yönetici olarak çalıştırın.</li>
+                                    <li>Antivirüs programınızın dosya oluşumunu engellemediğinden emin olun.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Tamam butonuna bastıktan sonra program uzun süre yanıt vermiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Büyük veri setleri için işlem süresi uzun olabilir, sabırla bekleyin.</li>
+                                    <li>Daha küçük abone aralıkları veya mahalle/cadde filtreleri kullanarak işlemi bölün.</li>
+                                    <li>Sistemin yoğun olmadığı saatlerde işlem yapmayı deneyin.</li>
+                                    <li>Program yanıt vermemeye devam ederse, programı kapatıp tekrar açın.</li>
+                                    <li>Probleminizi sistem yöneticinize bildirin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Dosyası Kabul Edilmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Oluşturduğunuz dosya banka tarafından kabul edilmiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Doğru bankayı seçtiğinizden emin olun.</li>
+                                    <li>İş Bankası veya ING Bank için doğru versiyonu kullandığınızdan emin olun.</li>
+                                    <li>Bankanın dosya formatı gereksinimlerinin değişip değişmediğini kontrol edin.</li>
+                                    <li>Dosya adını bankanın istediği formata göre değiştirmeyi deneyin.</li>
+                                    <li>Bankanızla iletişime geçerek formatla ilgili güncel bilgileri alın.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yanlış Tutar veya Kayıt Sayısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Oluşturulan dosyadaki tutar veya kayıt sayısı beklediğinizden farklı.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Filtreleme kriterlerinizi kontrol edin, eksik veya fazla kayıtlar olabilir.</li>
+                                    <li>Yıl ve dönem bilgilerinin doğru olduğundan emin olun.</li>
+                                    <li>Tahakkuk işlemlerinin tamamlanıp tamamlanmadığını kontrol edin.</li>
+                                    <li>Sistem raporlarındaki toplam tutar ve kayıt sayısıyla karşılaştırın.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li><strong>Verimli Çalışma:</strong>
+                        <ul>
+                            <li>Banka disketi hazırlamadan önce ilgili dönem için tahakkuk ve borçlandırma işlemlerinin tamamlandığından emin olun.</li>
+                            <li>Büyük veri setleri için işlemi daha küçük parçalara bölerek (mahalle bazında veya abone aralıkları kullanarak) çalışın.</li>
+                            <li>Oluşturduğunuz dosyaları düzenli bir şekilde arşivleyin, dosya adlarına tarih ekleyin.</li>
+                            <li>Her banka için ayrı klasörler oluşturun, böylece dosyaları daha kolay organize edebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontroller:</strong>
+                        <ul>
+                            <li>Banka disketi oluşturmadan önce, ilgili dönemin toplam borç tutarını sistemden kontrol edin.</li>
+                            <li>Oluşturulan dosyadaki toplam tutarı, sistem raporlarındaki toplam tutarla karşılaştırın.</li>
+                            <li>Düzenli olarak, bankanın tahsilat raporlarıyla sistem kayıtlarını mutabakat için karşılaştırın.</li>
+                            <li>Dosya oluşturmadan önce, önceki dönemlerin tahsilatlarının sisteme işlendiğinden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zaman Yönetimi:</strong>
+                        <ul>
+                            <li>Banka disketi hazırlama işlemlerini sistemin yoğun olmadığı saatlerde yapın.</li>
+                            <li>Her ay için düzenli bir zaman belirleyin (örn. ayın ilk haftası) ve bu takvime uyun.</li>
+                            <li>Dosya oluşturma ve bankaya teslim etme arasında yeterli zaman bırakın.</li>
+                            <li>Bankalara disketi teslim etme son tarihlerini not edin ve bu tarihlere uyun.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Banka disketi hazırlamadan önce veritabanının yedeğini almanız önerilir.</li>
+                    <li>Oluşturduğunuz dosyaların içeriğini ve toplam tutarını her zaman sistem kayıtlarıyla karşılaştırın.</li>
+                    <li>Sorunlar yaşamaya devam ederseniz teknik destek ekibinizle iletişime geçin.</li>
+                    <li>Yeni bir banka ile çalışmaya başlayacaksanız, önce test dosyaları oluşturarak bankanın kabul edip etmediğini kontrol edin.</li>
+                    <li>Bankalarla mutabakat işlemlerini düzenli olarak yapın, böylece olası sorunları erken tespit edebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sss" class="section">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Genel Sorular:</h4>
+                <ol>
+                    <li><strong>Soru:</strong> Banka disketi ne sıklıkla hazırlanmalıdır?
+                        <p><strong>Cevap:</strong> Genellikle ayda bir kez, tahakkuk işlemleri tamamlandıktan sonra hazırlanır. Ancak kurumunuzun özel gereksinimleri veya bankayla olan anlaşmaya göre bu süre değişebilir.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Birden fazla banka için aynı anda dosya hazırlayabilir miyim?
+                        <p><strong>Cevap:</strong> Hayır, her banka için ayrı ayrı işlem yapmanız gerekir. Her bankayı seçip ayrı bir dosya oluşturmalısınız.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Versiyon seçimi hangi bankalar için gereklidir?
+                        <p><strong>Cevap:</strong> İş Bankası (0064) ve ING Bank (0099) için versiyon seçimi gereklidir. Diğer bankalar için tek versiyon bulunur ve seçim yapamazsınız.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Yükleme grubu nedir ve ne zaman kullanılmalıdır?
+                        <p><strong>Cevap:</strong> Yükleme grubu, önceden tanımlanmış özel abone gruplarıdır. Belirli bir abone grubu için düzenli olarak işlem yapıyorsanız, yükleme grupları kullanmak işinizi kolaylaştırabilir.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Dosya adını değiştirmem gerekirse ne yapmalıyım?
+                        <p><strong>Cevap:</strong> Tamam butonuna bastıktan sonra, dosya adı alanı aktif hale gelir ve değişiklik yapabilirsiniz. Ancak bankanın kabul ettiği format dışında değişiklik yapmanız önerilmez.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Teknik Sorular:</h4>
+                <ol>
+                    <li><strong>Soru:</strong> "Abone Kaydı Bulunamadı" hatası alıyorum, ne yapmalıyım?
+                        <p><strong>Cevap:</strong> Yıl, dönem ve filtre kriterlerinizi kontrol edin. İlgili dönem için tahakkuk işlemlerinin tamamlandığından emin olun. Abone numarası aralığının doğru olduğunu kontrol edin.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Dosya kaydetme sırasında hata alıyorum, nasıl çözebilirim?
+                        <p><strong>Cevap:</strong> Dosya yolunun mevcut olduğundan, yazma izninizin olduğundan ve antivirüs programınızın engelleme yapmadığından emin olun. Gerekirse dosya yolunu daha basit bir konum olarak değiştirin (örn. C:\Temp\).</p>
+                    </li>
+                    <li><strong>Soru:</strong> Çok büyük bir abone grubum var ve program yavaş çalışıyor, ne yapabilirim?
+                        <p><strong>Cevap:</strong> İşlemi daha küçük parçalara bölerek (örn. mahalle bazında veya abone numarası aralıklarını küçülterek) çalışın. Sistemin yoğun olmadığı saatlerde işlem yapmayı deneyin.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Oluşturduğum dosya banka tarafından reddediliyor, neden olabilir?
+                        <p><strong>Cevap:</strong> Doğru bankayı ve versiyonu seçtiğinizden emin olun. Dosya adının doğru formatta olduğunu kontrol edin. Bankanın dosya formatı gereksinimlerinde bir değişiklik olup olmadığını kontrol edin. Gerekirse banka ile iletişime geçin.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Ay ve yıl bilgilerini ters girdim, dosyayı oluşturdum. Ne yapmalıyım?
+                        <p><strong>Cevap:</strong> Oluşturulan dosyayı silin veya yedekleyin. Doğru bilgilerle yeni bir dosya oluşturun. Eğer banka yanlış dosyayı aldıysa, hemen banka ile iletişime geçerek durumu bildirin.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Süreç Soruları:</h4>
+                <ol>
+                    <li><strong>Soru:</strong> Banka disketi oluşturduktan sonraki adımlar nelerdir?
+                        <p><strong>Cevap:</strong> Dosyayı oluşturduktan sonra, bankanın belirlediği yöntemle (e-posta, fiziksel teslimat, online portal vb.) bankaya iletmeniz gerekir. Teslim sonrası banka tarafından bir onay almanız önerilir.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Yeni bir banka ile çalışmaya başlıyoruz, ne yapmalıyız?
+                        <p><strong>Cevap:</strong> Yeni banka ile protokol imzalandıktan sonra, bankanın dosya formatı gereksinimlerini öğrenin. Sistemde bu bankanın tanımlı olup olmadığını kontrol edin. Gerekirse teknik destek ekibinizle iletişime geçin.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Önceki dönemlere ait dosya oluşturabilir miyim?
+                        <p><strong>Cevap:</strong> Evet, istediğiniz dönem için dosya oluşturabilirsiniz. Ancak önceki dönemlere ait tahakkuk ve borç bilgilerinin sistemde mevcut olması gerekir.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Dosyayı bankaya gönderdikten sonra tahsilat ne zaman gerçekleşir?
+                        <p><strong>Cevap:</strong> Bu bankanın işlem süreçlerine bağlıdır. Genellikle dosyanın bankaya ulaşmasından sonraki 1-3 iş günü içinde tahsilat gerçekleşir. Kesin bilgi için bankanızla iletişime geçin.</p>
+                    </li>
+                    <li><strong>Soru:</strong> Aynı dönem için birden fazla dosya gönderebilir miyim?
+                        <p><strong>Cevap:</strong> Genellikle mümkündür, ancak bankanızın politikalarına bağlıdır. Ek dosya gönderirken, önceki dosyalarda olmayan kayıtları içermesine dikkat edin ve banka ile koordineli çalışın.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Banka Disketi Hazırlama ekranı, su faturalarının tahsilatını otomatikleştirmek için bankalarla elektronik veri paylaşımı sağlayan önemli bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru bankayı ve doğru dönemi seçtiğinizden emin olun.</li>
+                    <li>Son ödeme tarihinin doğru olduğunu kontrol edin.</li>
+                    <li>Oluşturulan dosyaların içeriğini kontrol edin.</li>
+                    <li>İşlem sonuçlarını sistem kayıtlarıyla karşılaştırın.</li>
+                    <li>Dosyaları düzenli olarak arşivleyin ve yedekleyin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

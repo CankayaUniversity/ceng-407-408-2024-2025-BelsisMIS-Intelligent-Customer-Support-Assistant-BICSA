@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminale Veri Aktarma (Casio Modeli) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Terminale Veri Aktarma (Casio Modeli) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#temel-bilgiler">Temel Bilgiler (Yıl/Dönem, Terminal No, Kayıt Sayısı)</a></li>
+                        <li><a href="#abone-bilgileri">Abone ve Sicil Bilgileri</a></li>
+                        <li><a href="#sayac-bilgileri">Sayaç ve Konum Bilgileri</a></li>
+                        <li><a href="#secim-alanlari">Seçim Alanları (Abone Tipi ve Bölge)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Temel İşlemler</a>
+                    <ul>
+                        <li><a href="#veri-aktarma">Veri Aktarma İşlemi</a></li>
+                        <li><a href="#dosya-olusturma">Dosya Oluşturma İşlemi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Sistemden Terminale Veri Aktarma (Casio Modeli İçin)" ekranı, su abone bilgilerini sistem veritabanından Casio marka el terminallerine aktarmak için kullanılan bir araçtır. Bu uygulama ile:</p>
+            <ul>
+                <li>Belirli bir dönem için seçilen su abonelerinin bilgilerini görüntüleme</li>
+                <li>Çeşitli kriterlere göre abone filtreleme (abone no, sicil no, sayaç no vb.)</li>
+                <li>Filtrelenmiş abone bilgilerini el terminaline aktarılacak şekilde hazırlama</li>
+                <li>Aktarım dosyalarını oluşturma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>İşlem yapılacak yıl ve dönem bilgisi</li>
+                    <li>Veri aktarılacak terminal numarası</li>
+                    <li>Aktarılacak kayıt sayısı (biliniyorsa)</li>
+                    <li>Filtreleme yapılacaksa, filtre değerleri (abone no aralığı, sayaç no aralığı vb.)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Aktarım Durumları:</h4>
+            <p>Sistem, aboneleri aktarım durumlarına göre aşağıdaki şekilde sınıflandırır:</p>
+            <ol>
+                <li><strong>YÜKLENDI:</strong> Abone bilgileri ilk defa terminale yüklenen aboneler</li>
+                <li><strong>TEKRAR YÜKLENDI:</strong> Daha önce yüklenmiş olan ve tekrar yüklenen aboneler</li>
+                <li><strong>YÜKLENMIS TEKRAR YÜKLENMEDI:</strong> Daha önce yüklenmiş ve bu aktarımda yüklenmemiş aboneler</li>
+                <li><strong>BOŞ ABONE:</strong> Bilgileri yeterli olmayan aboneler</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde deniz mavisi (teal) renkli bir şeritte "Sistemden Terminale Veri Aktarma (Casio Modeli İçin)" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Durum Mesajı Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında turuncu renk geçişli bir şeritte işlem durumunu gösteren mesaj yer alır.</li>
+                            <li>İşlem tamamlandığında buraya "Kayıtlar Oluşturuldu" veya "Dosyalar Oluşturuldu" gibi mesajlar gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Durum şeridinin altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, sol tarafta alan etiketleri ve sağ tarafta veri giriş kutuları içerir.</li>
+                            <li>Giriş alanları yukarıdan aşağıya doğru sıralanmıştır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında butonlar yer alır.</li>
+                            <li>Soldan sağa doğru "Tamam", "Kaydet" ve "Çıkış" butonları bulunur.</li>
+                            <li>Butonlar 3D görünümlü ve gri tonlardadır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak gösterilir.</li>
+                    <li>İmleç "Yıl" alanında konumlanır.</li>
+                    <li>"Abone Tipi" ve "Bölge Adı" listelerinde tüm seçenekler otomatik olarak seçili gelir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="temel-bilgiler" class="info-box">
+            <h3>Temel Bilgiler</h3>
+            
+            <div class="step">
+                <h4>Temel Bilgi Alanları:</h4>
+                <ol>
+                    <li><strong>Yıl/Dönem:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, ilk satırdaki veri giriş alanları.</li>
+                            <li><strong>Özellik:</strong> Yıl için 4 haneli, dönem için 2 haneli rakam girişi alanları ve yanında arama butonu.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> İşlem yapılacak fatura döneminin yılını ve dönem numarasını girin.</li>
+                            <li><strong>Örnek:</strong> 2024 (yıl) ve 3 (dönem) - yılın 3. fatura dönemi için.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminal No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl/Dönem" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 haneli rakam girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Verilerin aktarılacağı el terminalinin numarasını girin.</li>
+                            <li><strong>Örnek:</strong> 01, 02 vb.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Sayısı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Terminal No" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 5 haneli rakam girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> El terminaline aktarılacak maksimum kayıt sayısını girin.</li>
+                            <li><strong>Örnek:</strong> 500 (en fazla 500 abone kaydı aktarılır).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dönem Seçimi İçin İpuçları:</h4>
+                <ul>
+                    <li>Yıl ve dönem alanlarından sonra yer alan büyüteç simgeli butona tıkladığınızda, dönem seçim penceresi açılır.</li>
+                    <li>Bu pencereden istediğiniz dönem kaydını seçerek bilgilerinizi hızlıca doldurabilirsiniz.</li>
+                    <li>Doğrudan elle giriş yaptığınızda, sistemde var olmayan bir dönem girilirse hata mesajı alırsınız.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone ve Sicil Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Abone ve Sicil Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Abone No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kayıt Sayısı" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet yan yana 8 haneli rakam girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Sol kutuya başlangıç abone numarasını, sağ kutuya bitiş abone numarasını girin.</li>
+                            <li><strong>Örnek:</strong> Sol: 1000, Sağ: 2000 (1000 ile 2000 arasındaki abone numaraları seçilir).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gtt Sicil No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanlarının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet yan yana 8 haneli rakam girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Sol kutuya başlangıç Gtt sicil numarasını, sağ kutuya bitiş sicil numarasını girin.</li>
+                            <li><strong>Örnek:</strong> Sol: 5000, Sağ: 6000 (5000 ile 6000 arasındaki sicil numaraları seçilir).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone ve Sicil Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Bu alanları boş bırakırsanız, sistem otomatik olarak tüm abone ve sicil numaralarını kapsar.</li>
+                    <li>Yalnızca belirli bir abone veya sicil numarası için işlem yapmak istiyorsanız, başlangıç ve bitiş kutularına aynı değeri girin.</li>
+                    <li>Abone ve sicil filtreleri birlikte çalışır, her ikisine de uygun kayıtlar seçilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sayac-bilgileri" class="info-box">
+            <h3>Sayaç ve Konum Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Sayaç ve Konum Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Sayaç No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Gtt Sicil No" alanlarının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet yan yana 20 karakterli metin girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Harf ve rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Sol kutuya başlangıç sayaç numarasını, sağ kutuya bitiş sayaç numarasını girin.</li>
+                            <li><strong>Örnek:</strong> Sol: A1000, Sağ: B5000 (A1000 ile B5000 arasındaki sayaç numaraları seçilir).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle/Cadde/Hane/Sıra No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sayaç No" alanlarının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> İki satır halinde, her satırda dört adet 4 haneli rakam girişi alanı.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Üst satıra başlangıç değerlerini (soldan sağa: mahalle, cadde, hane, sıra), alt satıra bitiş değerlerini girin.</li>
+                            <li><strong>Örnek:</strong> Üst satır: 10, 5, 1, 1 - Alt satır: 20, 15, 999, 999 (10-20 arası mahalleler, 5-15 arası caddeler, 1-999 arası haneler, 1-999 arası sıra numaraları).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sayaç numarası alanları için alfabetik sıralama kullanılır, yani "A100" her zaman "B100"den öncedir.</li>
+                    <li>Mahalle/Cadde/Hane/Sıra alanlarını boş bırakırsanız, sistem otomatik olarak geniş bir aralık kullanır.</li>
+                    <li>Konum bilgileri birlikte değerlendirilir, tüm koşullara uyan aboneler seçilir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="secim-alanlari" class="info-box">
+            <h3>Seçim Alanları (Abone Tipi ve Bölge)</h3>
+            
+            <div class="step">
+                <h4>Seçim Alanları:</h4>
+                <ol>
+                    <li><strong>Abone Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle/Cadde/Hane/Sıra No" alanlarının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen liste kutusu.</li>
+                            <li><strong>Veri Türü:</strong> Önceden tanımlanmış abone tipi değerleri.</li>
+                            <li><strong>Kullanım:</strong> Filtrelemek istediğiniz abone tiplerini seçin. Birden fazla seçim için CTRL tuşuna basılı tutarak tıklayın.</li>
+                            <li><strong>Not:</strong> Program açıldığında tüm abone tipleri seçili gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölge Adı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone Tipi" alanının hemen altında, formun alt kısmında yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen liste kutusu.</li>
+                            <li><strong>Veri Türü:</strong> Önceden tanımlanmış bölge değerleri.</li>
+                            <li><strong>Kullanım:</strong> Filtrelemek istediğiniz bölgeleri seçin. Birden fazla seçim için CTRL tuşuna basılı tutarak tıklayın.</li>
+                            <li><strong>Not:</strong> Program açıldığında tüm bölgeler seçili gelir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Seçim Alanları İpuçları:</h4>
+                <ul>
+                    <li>Tüm abone tiplerini veya tüm bölgeleri seçmek için, listede herhangi bir yere tıklayıp CTRL+A tuş kombinasyonunu kullanabilirsiniz.</li>
+                    <li>Belirli bir abone tipini veya bölgeyi seçimden çıkarmak için, CTRL tuşuna basılı tutarak üzerine tıklayın.</li>
+                    <li>Yalnızca belirli abone tiplerini veya bölgeleri seçmek için, önce tüm seçimleri kaldırın (hiçbir öğe seçili değilken listeye tıklayın), sonra CTRL tuşuna basılı tutarak istediğiniz öğeleri seçin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yardımcı Butonlar:</h4>
+                <ol>
+                    <li><strong>Dönem Arama Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl/Dönem" alanlarının hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde büyüteç simgesi bulunan küçük buton.</li>
+                            <li><strong>İşlev:</strong> Dönem seçim penceresini açar.</li>
+                            <li><strong>Kullanım:</strong> Tıkladığınızda açılan pencereden istediğiniz yıl ve dönem kaydını seçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Tamam (OK) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Tamam" yazar.</li>
+                            <li><strong>İşlev:</strong> Girilen kriterlere göre terminal aktarımı için kayıtları hazırlar.</li>
+                            <li><strong>Kullanım:</strong> Tüm filtre alanlarını doldurduktan sonra, kayıtları hazırlamak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Tamam" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Kaydet" yazar.</li>
+                            <li><strong>İşlev:</strong> Hazırlanan kayıtları terminale aktarılacak dosyalar halinde kaydeder.</li>
+                            <li><strong>Kullanım:</strong> "Tamam" butonuyla kayıtlar hazırlandıktan sonra, dosyaları oluşturmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kaydet" butonunun hemen sağında, en sağdaki butondur.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Çıkış" yazar.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkış yapar.</li>
+                            <li><strong>Kullanım:</strong> İşleminiz bittiğinde programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşleminizi kaydetmeden Çıkış butonuna basarsanız, yaptığınız değişiklikler kaybedilir.</li>
+                    <li>İşlem sırası önemlidir: Önce "Tamam" butonuyla kayıtları hazırlayın, sonra "Kaydet" butonuyla dosyaları oluşturun.</li>
+                    <li>Dönem Arama butonu kullanıldığında, seçilen dönem otomatik olarak alanlara doldurulur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Temel İşlemler</h2>
+        
+        <div id="veri-aktarma" class="info-box">
+            <h3>Veri Aktarma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Veri Aktarma İşlemi:</h4>
+                <ol>
+                    <li><strong>Dönem Bilgilerini Girme:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmındaki "Yıl" alanına işlem yapacağınız yılı girin (örnek: 2024).</li>
+                            <li>"Dönem" alanına dönem numarasını girin (örnek: 3).</li>
+                            <li>Veya dönem arama butonuna tıklayarak açılan pencereden istediğiniz dönem kaydını seçin.</li>
+                            <li>TAB tuşuna basarak sonraki alana geçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminal Bilgilerini Girme:</strong>
+                        <ul>
+                            <li>"Terminal No" alanına veri aktaracağınız el terminalinin numarasını girin (örnek: 1).</li>
+                            <li>"Kayıt Sayısı" alanına terminale aktarılacak maksimum kayıt sayısını girin (örnek: 500).</li>
+                            <li>TAB tuşuna basarak sonraki alana geçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>Abone numarası aralığını belirlemek için ilk kutuya başlangıç, ikinci kutuya bitiş numarasını girin.</li>
+                            <li>Sicil numarası aralığını belirlemek için ilk kutuya başlangıç, ikinci kutuya bitiş numarasını girin.</li>
+                            <li>Sayaç numarası aralığını belirlemek için ilk kutuya başlangıç, ikinci kutuya bitiş numarasını girin.</li>
+                            <li>Mahalle/Cadde/Hane/Sıra numarası aralıklarını belirlemek için ilgili alanlara değerler girin.</li>
+                            <li>Abone Tipi listesinden filtrelemek istediğiniz abone tiplerini seçin. Birden fazla seçim için CTRL tuşuna basılı tutarken tıklayın.</li>
+                            <li>Bölge Adı listesinden filtrelemek istediğiniz bölgeleri seçin. Birden fazla seçim için CTRL tuşuna basılı tutarken tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıtları Hazırlama:</strong>
+                        <ul>
+                            <li>Tüm filtre kriterlerini girdikten sonra ekranın alt kısmındaki "Tamam" butonuna tıklayın.</li>
+                            <li>Sistem, belirlediğiniz kriterlere uygun aboneleri seçer ve terminal aktarımı için hazırlar.</li>
+                            <li>Bu işlem, abone sayısına bağlı olarak biraz zaman alabilir. Lütfen bekleyin.</li>
+                            <li>İşlem tamamlandığında ekranın üst kısmındaki durum mesajı bölümünde "Kayıtlar Oluşturuldu" mesajı görünecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Filtre alanlarını boş bıraktığınızda, sistem otomatik olarak geniş bir aralık kabul eder:
+                        <ul>
+                            <li>Abone No: 0 - 99999999</li>
+                            <li>Gtt Sicil No: 0 - 99999999</li>
+                            <li>Sayaç No: Boş - ZZZZZZZZZZZZZZZZZZZZ</li>
+                            <li>Mahalle/Cadde/Hane/Sıra: 0 - 9999</li>
+                        </ul>
+                    </li>
+                    <li>Çok geniş filtreler kullanırsanız, çok sayıda kayıt seçilebilir ve bu durumda "Kayıt Sayısı" alanına girdiğiniz sayı kadar kayıt işlenecektir.</li>
+                    <li>Yanlış dönem girişi yaparsanız, sistem "Dönem Bulunamadı" uyarısı verecektir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda abone arasından belirli bir grubu aktarmak istiyorsanız, mümkün olduğunca spesifik filtreler kullanın.</li>
+                    <li>Tek bir abone için aktarım yapmak istiyorsanız, abone numarasının başlangıç ve bitiş değerlerini aynı girin.</li>
+                    <li>Abone tipleri ve bölgeler için açılır listeleri kullanmak, işleminizi daha hızlı yapmanızı sağlar.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dosya-olusturma" class="info-box">
+            <h3>Dosya Oluşturma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Terminale Aktarım Dosyalarını Oluşturma:</h4>
+                <ol>
+                    <li><strong>Kayıtların Hazır Olduğundan Emin Olma:</strong>
+                        <ul>
+                            <li>Önceki bölümde anlatıldığı gibi "Tamam" butonuna basarak kayıtları hazırlamış olmalısınız.</li>
+                            <li>Ekranın üst kısmındaki durum mesajı bölümünde "Kayıtlar Oluşturuldu" mesajını gördüğünüzden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosyaları Oluşturma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem, hazırlanan kayıtları Casio el terminali formatında dosyalara dönüştürecektir.</li>
+                            <li>Bu işlem, kayıt sayısına bağlı olarak biraz zaman alabilir. Lütfen bekleyin.</li>
+                            <li>İşlem tamamlandığında ekranın üst kısmındaki durum mesajı bölümünde "Dosyalar Oluşturuldu" mesajı görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası:</strong>
+                        <ul>
+                            <li>Dosyalar oluşturulduktan sonra, Casio el terminaline aktarım yapmanız için hazır hale gelir.</li>
+                            <li>Terminale aktarım için gerekli donanım bağlantılarını yapın ve terminal yazılımını kullanarak dosyaları aktarın.</li>
+                            <li>İhtiyaç duyulursa, "Çıkış" butonuna tıklayarak programdan çıkabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Dosya oluşturma işlemi sırasında programı kapatmayın veya bilgisayarı yeniden başlatmayın.</li>
+                    <li>"Kaydet" butonuna basmadan önce mutlaka "Tamam" butonuna basarak kayıtları hazırlamış olmalısınız.</li>
+                    <li>Oluşturulan dosyalar, sistem tarafından belirlenen bir konuma kaydedilir ve direkt olarak gösterilmez.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Terminal Aktarım İpuçları:</h4>
+                <ul>
+                    <li>Casio el terminaline aktarım yapmadan önce, terminalin şarj durumunu kontrol edin.</li>
+                    <li>Terminal bağlantı kablosunun doğru şekilde bağlandığından emin olun.</li>
+                    <li>Aktarım işlemi sırasında terminal ve bilgisayar arasındaki bağlantıyı kesmeyin.</li>
+                    <li>Aktarımdan sonra terminalde verilerin doğru görüntülendiğini kontrol edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Dönem Bulunamadı Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Yıl ve dönem alanlarını doldurduktan sonra "Dönem Bulunamadı" hatası alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Doğru yıl ve dönem numarası girdiğinizden emin olun. Emin değilseniz, dönem arama butonunu kullanarak mevcut dönemleri görüntüleyin ve listeden seçim yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Sayısı Yetersiz:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Filtreleme sonucunda beklediğinizden az sayıda kayıt oluşturuldu.</li>
+                            <li><strong>Çözüm:</strong> Filtre kriterlerinizi kontrol edin ve genişletin. Özellikle abone tipi ve bölge seçimlerinizi genişletin. Tüm alanları boş bırakıp tüm kayıtları görüntülemeyi deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Uzun Sürüyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Tamam veya Kaydet butonuna bastıktan sonra işlem çok uzun sürüyor.</li>
+                            <li><strong>Çözüm:</strong> Çok sayıda kayıt işleniyor olabilir. Daha spesifik filtreler kullanarak kayıt sayısını azaltın veya işlemin tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosyalar Oluşturulmuyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna basmanıza rağmen "Dosyalar Oluşturuldu" mesajı gelmiyor.</li>
+                            <li><strong>Çözüm:</strong> Önce "Tamam" butonuna basarak kayıtların hazırlandığından emin olun. Hala sorun yaşıyorsanız, sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Filtre Seçimlerinin İşlem Sonuçlarına Etkisi:</h4>
+                <ol>
+                    <li><strong>Filtre Kombinasyonları ve Sonuçları:</strong>
+                        <ul>
+                            <li><strong>Sadece Abone Tipi Seçildiğinde:</strong> Seçilen abone tipine sahip tüm aboneler (konut, işyeri vb.) işleme alınır. Örneğin, sadece "Konut" abone tipini seçerseniz, konutlara ait tüm aboneler listelenecektir.</li>
+                            <li><strong>Sadece Bölge Seçildiğinde:</strong> Seçilen bölgelerdeki tüm aboneler, abone tipinden bağımsız olarak işleme alınır. Örneğin, sadece "Merkez" bölgesini seçerseniz, merkezdeki tüm abone tipleri listelenecektir.</li>
+                            <li><strong>Abone Tipi ve Bölge Birlikte Seçildiğinde:</strong> Her iki kritere de uyan aboneler listenir. Örneğin, "Konut" abone tipi ve "Merkez" bölgesini seçerseniz, sadece merkezdeki konut aboneleri listelenecektir.</li>
+                            <li><strong>Abone No veya Sicil No Aralığı Belirtildiğinde:</strong> Sadece bu numara aralığındaki aboneler, diğer kriterlere bakılmaksızın filtrelenir. Örneğin, Abone No aralığını 1000-2000 olarak belirlerseniz, sadece bu aralıktaki numaralara sahip aboneler işleme alınır.</li>
+                            <li><strong>Sayaç No Aralığı Belirtildiğinde:</strong> Alfabetik sıralama esas alınır. Örneğin, A100-B200 aralığını seçerseniz, A100 ile başlayıp B200 ile biten sayaç numaraları işleme alınır.</li>
+                            <li><strong>Mahalle/Cadde/Hane/Sıra Kombinasyonu Kullanıldığında:</strong> Tüm bu kriterlerin kesişiminde kalan aboneler seçilir. Örneğin, 10-20 mahalle aralığı ve 5-10 cadde aralığı seçildiğinde, sadece 10-20 arası mahallelerdeki 5-10 arası caddelerde bulunan aboneler işleme alınır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Seçiminin Optimizasyonu:</strong>
+                        <ul>
+                            <li><strong>Az Sayıda Abone İçin:</strong> Spesifik filtreler kullanın (kesin abone no aralığı veya sayaç no aralığı).</li>
+                            <li><strong>Belirli Bir Bölge İçin:</strong> Önce bölge seçimi yapın, sonra ihtiyaca göre abone tipi ekleyin.</li>
+                            <li><strong>Okuma Rotası İçin:</strong> Mahalle ve cadde filtrelerini kullanarak bir okuma rotası oluşturun.</li>
+                            <li><strong>Tüm Aboneler İçin:</strong> Tüm filtreleri boş bırakın ve sadece "Kayıt Sayısı" ile sınırlandırın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Sonucu Etkileyen Faktörler:</strong>
+                        <ul>
+                            <li><strong>Abone Durumu:</strong> Sistemde pasif olarak işaretlenmiş aboneler filtrelere dahil edilmeyebilir.</li>
+                            <li><strong>Sayaç Durumu:</strong> Değiştirilmiş veya sökülmüş sayaçlar filtreleme sonuçlarını etkileyebilir.</li>
+                            <li><strong>Dönem Bilgisi:</strong> Seçilen dönemde işlem görmemiş aboneler filtreleme sonuçlarında görünmeyebilir.</li>
+                            <li><strong>Terminal Kapasitesi:</strong> "Kayıt Sayısı" alanına girilen değer, terminal kapasitesini aşmamalıdır. Casio terminalleri genellikle 500-1000 abone kapasitesine sahiptir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Veri Giriş Hızı:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca gezinmek için TAB tuşunu kullanın.</li>
+                            <li>Dönem bilgilerini hızlıca girmek için dönem arama butonunu kullanın.</li>
+                            <li>Çoklu seçim yapmak için CTRL tuşuna basılı tutarak istediğiniz öğelere tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Stratejileri:</strong>
+                        <ul>
+                            <li>Belirli bir bölge için aktarım yapacaksanız, önce diğer filtre alanlarını boş bırakıp sadece ilgili bölgeyi seçin.</li>
+                            <li>Belirli bir abone tipi için aktarım yapacaksanız, önce diğer filtre alanlarını boş bırakıp sadece ilgili abone tipini seçin.</li>
+                            <li>Mahalle/cadde bazında aktarım yapmak istiyorsanız, mahalle ve cadde alanlarına odaklanın, diğer filtreleri geniş tutun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zaman Tasarrufu:</strong>
+                        <ul>
+                            <li>Rutin olarak aynı filtreleri kullanıyorsanız, bu değerleri not alın ve her seferinde aynı şekilde girin.</li>
+                            <li>Yıl ve dönem seçimi için dönem arama butonunu kullanmak, elle giriş yapmanızı engeller ve hatayı azaltır.</li>
+                            <li>Abone tipi ve bölge seçimlerinde, tüm listeyi seçmek yerine sadece ihtiyaç duyduğunuz öğeleri seçin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Terminale aktarılan verilerin gizliliğini korumak için gerekli önlemleri alın.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Terminal aktarımlarını düzenli programlama: Haftalık veya aylık olarak belirli günlerde terminal aktarımlarını planlayın.</li>
+                    <li>Filtreleme stratejinizi optimize edin: Hangi filtrelerin en etkili sonuçları verdiğini not edin ve gelecekte kullanın.</li>
+                    <li>Abone tipi ve bölge bilgilerinizi güncel tutun: Sistemdeki abone tipi ve bölge bilgilerinin güncel olduğundan emin olun.</li>
+                    <li>Aktarım kayıtlarını tutun: Hangi tarihte, hangi dönem için, hangi terminale aktarım yaptığınızı not edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Sistemden Terminale Veri Aktarma (Casio Modeli İçin)" ekranı, su abonelerinin bilgilerini Casio el terminallerine kolayca aktarmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru dönem ve filtre bilgilerini girin.</li>
+                    <li>Önce "Tamam" sonra "Kaydet" butonunu kullanın.</li>
+                    <li>Terminale aktarım yapmadan önce dosyaların oluşturulduğundan emin olun.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

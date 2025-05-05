@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İş Emri Yönetimi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İş Emri Yönetimi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Arayüz Tanıtımı</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri ve Veri Giriş</a></li>
+                <li><a href="#sorgulama">Sorgulama İşlemleri</a></li>
+                <li><a href="#is-emri-yonetimi">İş Emri Oluşturma ve Yönetimi</a></li>
+                <li><a href="#rapor-cikti">Rapor ve Çıktı Alma</a></li>
+                <li><a href="#ipuclari-sorunlar">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>İş Emri Yönetimi programı, su abonelerine ait iş emirlerinin oluşturulması, takibi ve kapatılması işlemlerinin yapıldığı kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli kriterlere göre aboneleri sorgulama</li>
+                <li>Borç durumuna göre aboneleri filtreleme</li>
+                <li>Seçilen abonelere iş emri oluşturma</li>
+                <li>Açık iş emirlerini kapatma</li>
+                <li>İş emirlerini yazdırma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Sorgulamak istediğiniz abone numarası aralığı</li>
+                    <li>Abone tipleri ve mahalle bilgileri</li>
+                    <li>İşlem yapılacak borç aralığı ve dönem sayısı</li>
+                    <li>İşlem pozları ve yapılacak işlemler</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Arayüz Tanıtımı</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli şeritte "İş Emri" başlığı yer alır</li>
+                            <li>Başlık sabit olup, program adını belirtir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorgulama Kriterleri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında gri renkli başlık ile "Sorgulama Kriterleri" alanı bulunur</li>
+                            <li>Bu bölüm, abone bilgilerini aramak için çeşitli filtre alanlarını içerir</li>
+                            <li>Abone No, Abone Tipi, Mahalle, Mah.Kodu, Cad.Kodu, Sayaç Durumu, İcra Durumu, Toplam Borç ve Borçlu dönem sayısı alanlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü (Üst):</strong>
+                        <ul>
+                            <li>Sorgulama kriterleri bölümünün altında, ortada konumlanmıştır</li>
+                            <li>"Aboneleri Getir", "Formu Temizle" ve "Çıkış" butonlarını içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Listesi Bölümü:</strong>
+                        <ul>
+                            <li>İşlem butonlarının altında "Kriterlere Uygun Aboneler" başlıklı gri şerit bulunur</li>
+                            <li>Bu şeridin yanında parantez içinde bulunan abone sayısı göstergesi yer alır</li>
+                            <li>Şeridin altında tablo halinde abone listesi görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü (Alt):</strong>
+                        <ul>
+                            <li>Abone listesinin altında, ekranın en alt kısmında yer alır</li>
+                            <li>"Yeni İş Emri Oluştur", "İş Emri Kapatma" ve "Yazdır" butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Abone No alanı varsayılan olarak 0-99999999 aralığında gelir</li>
+                    <li>Mah.Kodu ve Cad.Kodu alanları varsayılan olarak 0-32767 aralığında gelir</li>
+                    <li>Toplam Borç alanı varsayılan olarak 0-999.999,00 aralığında gelir</li>
+                    <li>Borçlu dönem sayısı alanı varsayılan olarak 0-999 aralığında gelir</li>
+                    <li>Çoklu seçim listelerinde (Abone Tipi, Mahalle, Sayaç Durumu, İşlem Pozu) tüm seçenekler otomatik olarak seçili gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="arama-kriterleri" class="section">
+        <h2>Arama Kriterleri ve Veri Giriş</h2>
+        <div class="info-box">
+            <h3>Temel Arama Kriterleri</h3>
+            <div class="step">
+                <h4>Abone Numarası ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sorgulama Kriterleri başlığının hemen altında, en üstte yer alır</li>
+                            <li>Solda "Abone No" etiketi bulunur</li>
+                            <li>Etiketin sağında iki giriş kutusu yan yana dizilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli bir abone numarası için:
+                                <ul>
+                                    <li>Soldaki kutuya aradığınız abone numarasını yazın</li>
+                                    <li>Sağdaki kutuya da aynı abone numarasını yazın</li>
+                                </ul>
+                            </li>
+                            <li>Abone numarası aralığı için:
+                                <ul>
+                                    <li>Soldaki kutuya aralığın başlangıç değerini yazın</li>
+                                    <li>Sağdaki kutuya aralığın bitiş değerini yazın</li>
+                                    <li>Varsayılan değerler 0-99999999 aralığındadır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Abone Tipi ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone No alanının hemen altında yer alır</li>
+                            <li>Solda "Abone Tipi" etiketi bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi (multiple selection box) bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli abone tiplerini seçmek için:
+                                <ul>
+                                    <li>Listeden istediğiniz abone tiplerini CTRL tuşuna basılı tutarak seçin</li>
+                                    <li>Listede abone tip kodları ve açıklamaları görüntülenir</li>
+                                    <li>Seçilen değerler mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Tüm abone tiplerini seçmek için:
+                                <ul>
+                                    <li>Varsayılan olarak tüm tipler seçilidir</li>
+                                    <li>Tüm tipleri yeniden seçmek için CTRL+A tuşlarını kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Mahalle ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone Tipi alanının hemen altında yer alır</li>
+                            <li>Solda "Mahalle" etiketi bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli mahalleleri seçmek için:
+                                <ul>
+                                    <li>Listeden istediğiniz mahalleleri CTRL tuşuna basılı tutarak seçin</li>
+                                    <li>Listede mahalle kodları ve mahalle adları görüntülenir</li>
+                                    <li>Seçilen mahalleler mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Tüm mahalleleri seçmek için:
+                                <ul>
+                                    <li>Varsayılan olarak tüm mahalleler seçilidir</li>
+                                    <li>Tüm mahalleleri yeniden seçmek için CTRL+A tuşlarını kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Mahalle ve Cadde Kodları ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle alanının hemen altında "Mah.Kodu" etiketi ve giriş kutuları yer alır</li>
+                            <li>Mah.Kodu alanının altında "Cad.Kodu" etiketi ve giriş kutuları bulunur</li>
+                            <li>Her biri için iki adet yan yana konumlanmış giriş kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli bir kod için:
+                                <ul>
+                                    <li>Soldaki kutuya aramak istediğiniz kodu yazın</li>
+                                    <li>Sağdaki kutuya da aynı kodu yazın</li>
+                                </ul>
+                            </li>
+                            <li>Kod aralığı için:
+                                <ul>
+                                    <li>Soldaki kutuya aralığın başlangıç değerini yazın</li>
+                                    <li>Sağdaki kutuya aralığın bitiş değerini yazın</li>
+                                    <li>Varsayılan değerler 0-32767 aralığındadır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Abone numarası ve kod alanlarına sadece rakam girilebilir</li>
+                    <li>Aralık belirtirken başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                    <li>Çoklu seçim listelerinde en az bir seçenek işaretli olmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>SHIFT + TAB kombinasyonu ile bir önceki alana dönebilirsiniz</li>
+                    <li>ENTER tuşuna bastığınızda TAB tuşu gibi bir sonraki alana geçer</li>
+                    <li>Çoklu seçim listelerinde hızlı arama için ilk harfi yazabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="arama-kriterleri-devam" class="section">
+        <h2>Arama Kriterleri ve Veri Giriş (Devam)</h2>
+        <div class="info-box">
+            <h3>Diğer Arama Kriterleri</h3>
+            <div class="step">
+                <h4>Sayaç Durumu ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Cad.Kodu alanının hemen altında yer alır</li>
+                            <li>Solda "Sayaç Durumu" etiketi bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli sayaç durumlarını seçmek için:
+                                <ul>
+                                    <li>Listeden istediğiniz sayaç durumlarını CTRL tuşuna basılı tutarak seçin</li>
+                                    <li>Listede sayaç kodları ve açıklamaları görüntülenir</li>
+                                    <li>Seçilen durumlar mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Tüm sayaç durumlarını seçmek için:
+                                <ul>
+                                    <li>Varsayılan olarak tüm durumlar seçilidir</li>
+                                    <li>Tüm durumları yeniden seçmek için CTRL+A tuşlarını kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>İcra Durumu ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sayaç Durumu alanının hemen altında yer alır</li>
+                            <li>Solda "İcra Durumu" etiketi bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İcra durumunu seçmek için:
+                                <ul>
+                                    <li>Listeyi tıklayarak açın</li>
+                                    <li>Üç seçenek arasından birini seçin:
+                                        <ol>
+                                            <li>"Hepsi" - Tüm aboneleri listeler (varsayılan seçim)</li>
+                                            <li>"İcralı" - Sadece icra takibinde olan aboneleri listeler</li>
+                                            <li>"İcrası Olmayan" - İcra takibinde olmayan aboneleri listeler</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Toplam Borç ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İcra Durumu alanının hemen altında yer alır</li>
+                            <li>Solda "Toplam Borç" etiketi bulunur</li>
+                            <li>Etiketin yanında küçük kırmızı bir not parantez içinde "Gecikme hariç" ifadesi yer alır</li>
+                            <li>Etiketin sağında yan yana iki adet metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli bir borç miktarı için:
+                                <ul>
+                                    <li>Soldaki kutuya aramak istediğiniz borç miktarını yazın</li>
+                                    <li>Sağdaki kutuya da aynı miktarı yazın</li>
+                                    <li>Borç değerleri TL cinsinden ve nokta/virgül kullanılarak yazılır (örn: 150,50)</li>
+                                </ul>
+                            </li>
+                            <li>Borç aralığı için:
+                                <ul>
+                                    <li>Soldaki kutuya aralığın alt sınırını yazın</li>
+                                    <li>Sağdaki kutuya aralığın üst sınırını yazın</li>
+                                    <li>Varsayılan değerler 0-999.999,00 aralığındadır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Borçlu Dönem Sayısı ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Toplam Borç alanının hemen altında yer alır</li>
+                            <li>Solda "Borçlu dönem sayısı" etiketi bulunur</li>
+                            <li>Etiketin sağında yan yana iki adet metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli bir dönem sayısı için:
+                                <ul>
+                                    <li>Soldaki kutuya aramak istediğiniz dönem sayısını yazın</li>
+                                    <li>Sağdaki kutuya da aynı değeri yazın</li>
+                                </ul>
+                            </li>
+                            <li>Dönem sayısı aralığı için:
+                                <ul>
+                                    <li>Soldaki kutuya aralığın alt sınırını yazın</li>
+                                    <li>Sağdaki kutuya aralığın üst sınırını yazın</li>
+                                    <li>Varsayılan değerler 0-999 aralığındadır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Açık İşlem Pozu ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Borçlu dönem sayısı alanının hemen altında yer alır</li>
+                            <li>Solda "Açık İşlem Pozu" etiketi bulunur</li>
+                            <li>Etiketin sağında çoklu seçim listesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Belirli işlem pozlarını seçmek için:
+                                <ul>
+                                    <li>Listeden istediğiniz işlem pozlarını CTRL tuşuna basılı tutarak seçin</li>
+                                    <li>Listede ilk seçenek "<<<<Açık İş Emri Bulunmayanlar>>>>" seçeneğidir</li>
+                                    <li>Diğer seçenekler sistemde tanımlı işlem pozlarıdır (örn: "1 - Endeks Tespiti", "2 - Kesme" vb.)</li>
+                                    <li>Seçilen işlem pozları mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Açık iş emri olmayan aboneleri aramak için:
+                                <ul>
+                                    <li>Listeden sadece "<<<<Açık İş Emri Bulunmayanlar>>>>" seçeneğini seçin</li>
+                                    <li>Bu seçenek, henüz açık iş emri atanmamış aboneleri listeler</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Toplam Borç alanına para birimi değerlerini yazarken nokta veya virgül kullanabilirsiniz</li>
+                    <li>Borçlu dönem sayısı alanına sadece rakam girilebilir</li>
+                    <li>Açık İşlem Pozu listesinden "<<<<Açık İş Emri Bulunmayanlar>>>>" seçeneği ile diğer işlem pozlarını birlikte seçmek genellikle mantıklı değildir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sorgulama" class="section">
+        <h2>Sorgulama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Abone Bilgilerini Sorgulama (Adım Adım)</h3>
+            <div class="step">
+                <h4>Abone Sorgulama İşlemi:</h4>
+                <ol>
+                    <li><strong>Arama Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>Abone No aralığını belirleyin (örn: 0-99999999 tüm aboneler için)</li>
+                            <li>İlgilendiğiniz Abone Tiplerini seçin (birden fazla seçim için CTRL tuşunu kullanın)</li>
+                            <li>İlgilendiğiniz Mahalleleri seçin (birden fazla seçim için CTRL tuşunu kullanın)</li>
+                            <li>Gerekirse Mah.Kodu ve Cad.Kodu değerlerini girin</li>
+                            <li>İlgilendiğiniz Sayaç Durumlarını seçin</li>
+                            <li>İcra Durumunu belirleyin (Hepsi, İcralı veya İcrası Olmayan)</li>
+                            <li>Toplam Borç aralığını belirleyin (örn: 100,00-500,00 belirli bir borç aralığı için)</li>
+                            <li>Borçlu dönem sayısı aralığını belirleyin (örn: 2-10 belirli bir dönem sayısı için)</li>
+                            <li>Açık İşlem Pozu seçiminizi yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorgulamayı Başlatma:</strong>
+                        <ul>
+                            <li>Tüm arama kriterlerini girdikten sonra "Aboneleri Getir" butonuna tıklayın</li>
+                            <li>Bu buton kriterlere uygun abonelere göre kolayca açık gri renkte üç boyutlu bir görünümdedir ve sorgulama bölümü altında ortada yer alır</li>
+                            <li>Butonda "Aboneleri Getir" ifadesi ve yanında bir yenileme simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuçları Görüntüleme:</strong>
+                        <ul>
+                            <li>Sorgulama tamamlandığında sonuçlar ekranın alt kısmındaki liste bölümünde görüntülenir</li>
+                            <li>Sonuç sayısı "Kriterlere Uygun Aboneler" başlığının yanında parantez içinde gösterilir (örn: (25 abone))</li>
+                            <li>Liste, aşağıdaki sütunlardan oluşur:
+                                <ol>
+                                    <li>En solda seçim kutusu (checkbox)</li>
+                                    <li>Abone No - Abonenin numarası</li>
+                                    <li>Adı Soyadı - Abonenin adı ve soyadı</li>
+                                    <li>Açık İşlem Pozu - Varsa mevcut açık iş emri</li>
+                                    <li>Borç - Abonenin toplam borç miktarı</li>
+                                    <li>Borç.Dön.Say. - Borçlu olduğu dönem sayısı</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuçları İşleme:</strong>
+                        <ul>
+                            <li>Listeden işlem yapmak istediğiniz aboneleri seçmek için sol taraftaki onay kutularını işaretleyin</li>
+                            <li>Birden fazla aboneyi aynı anda seçebilirsiniz</li>
+                            <li>Seçilen abonelere iş emri oluşturmak veya mevcut iş emirlerini kapatmak için alt kısımdaki ilgili butonları kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sorgu sonuçlarını daraltmak için birden fazla kriter bir arada kullanabilirsiniz</li>
+                    <li>Önce geniş bir arama yapıp, sonuçları görüntüledikten sonra kriterleri daraltarak yeni bir arama yapabilirsiniz</li>
+                    <li>Arama kriterlerini temizlemek için "Formu Temizle" butonunu kullanabilirsiniz</li>
+                    <li>Boş bırakılan alanlar veya varsayılan seçimlerle bırakılan listeler, tüm değerleri içerecek şekilde aramaya dahil edilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="is-emri-yonetimi" class="section">
+        <h2>İş Emri Oluşturma ve Yönetimi</h2>
+        <div class="info-box">
+            <h3>Yeni İş Emri Oluşturma (Adım Adım)</h3>
+            <div class="step">
+                <h4>Yeni İş Emri Oluşturma İşlemi:</h4>
+                <ol>
+                    <li><strong>Aboneleri Listeleme:</strong>
+                        <ul>
+                            <li>Öncelikle "Arama Kriterleri" bölümündeki filtreleri kullanarak aboneleri listeleyin</li>
+                            <li>Arama kriterlerini doldurduktan sonra "Aboneleri Getir" butonuna tıklayın</li>
+                            <li>Buton, sorgulama kriterleri bölümünün altında, ortada yer alır ve gri renkli, üç boyutlu bir görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aboneleri Seçme:</strong>
+                        <ul>
+                            <li>Listelenen aboneler arasından iş emri oluşturmak istediğiniz aboneleri seçin</li>
+                            <li>Seçim yapmak için abone listesinin en solundaki onay kutularını işaretleyin</li>
+                            <li>Birden fazla abone seçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İş Emri Oluşturma:</strong>
+                        <ul>
+                            <li>"Yeni İş Emri Oluştur" butonuna tıklayın</li>
+                            <li>Bu buton, ekranın alt kısmında, ortalanmış şekilde konumlanmıştır</li>
+                            <li>Butonun üzerinde bir disket ikonu ve "Yeni İş Emri Oluştur" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Pozu Seçme:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda karşınıza bir pencere açılacaktır</li>
+                            <li>Bu pencerede "İşlem Pozu" seçimi yapmanız gerekir</li>
+                            <li>Açılan listeden istediğiniz işlem pozunu seçin (örn: "Endeks Tespiti", "Kesme", vb.)</li>
+                            <li>İşlem pozu, yapılacak işlemin türünü belirtir</li>
+                            <li>Seçimi yaptıktan sonra "Tamam" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onaylama:</strong>
+                        <ul>
+                            <li>Karşınıza bir onay mesajı gelecektir: "Seçili kayıtlara, belirtilen pozda iş emri açılacak, devam etmek istiyor musunuz?"</li>
+                            <li>Onaylamak için "Evet" butonuna tıklayın</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>İşlem başarıyla tamamlandığında seçili abonelere iş emri oluşturulmuş olur</li>
+                            <li>Liste otomatik olarak yenilenir ve seçtiğiniz abonelerin "Açık İşlem Pozu" sütununda yeni atanan iş emri görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İş emri oluşturabilmek için en az bir abone seçmeniz gerekir</li>
+                    <li>Hiçbir abone seçmeden "Yeni İş Emri Oluştur" butonuna tıklarsanız "Seçili kayıt yok" uyarısı alırsınız</li>
+                    <li>Zaten açık iş emri olan abonelere yeni iş emri açamazsınız, önce mevcut iş emrini kapatmanız gerekir</li>
+                    <li>Aynı anda seçtiğiniz tüm abonelere aynı işlem pozunda iş emri oluşturulur</li>
+                </ul>
+            </div>
+        
+            <h3>İş Emri Kapatma (Adım Adım)</h3>
+            
+            <div class="step">
+                <h4>İş Emri Kapatma İşlemi:</h4>
+                <ol>
+                    <li><strong>Aboneleri Listeleme:</strong>
+                        <ul>
+                            <li>"Arama Kriterleri" bölümündeki filtreleri kullanarak açık iş emri olan aboneleri listeleyin</li>
+                            <li>Açık İşlem Pozu listesinden ilgilendiğiniz işlem pozlarını seçerek filtreleme yapabilirsiniz</li>
+                            <li>Ardından "Aboneleri Getir" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aboneleri Seçme:</strong>
+                        <ul>
+                            <li>Listelenen aboneler arasından iş emrini kapatmak istediğiniz aboneleri seçin</li>
+                            <li>Seçim yapmak için abone listesinin en solundaki onay kutularını işaretleyin</li>
+                            <li>Yalnızca açık iş emri olan aboneleri seçmelisiniz (Açık İşlem Pozu sütununda değer olan aboneler)</li>
+                        </ul>
+                    </li>
+                    <li><strong>İş Emri Kapatma:</strong>
+                        <ul>
+                            <li>"İş Emri Kapatma" butonuna tıklayın</li>
+                            <li>Bu buton, ekranın alt kısmında, "Yeni İş Emri Oluştur" butonunun sağında yer alır</li>
+                            <li>Butonun üzerinde bir simge ve "İş Emri Kapatma" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kapatma Bilgilerini Girme:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda karşınıza bir pencere açılacaktır</li>
+                            <li>Bu pencerede iş emrinin kapanış bilgilerini girmeniz istenir</li>
+                            <li>Gerekli bilgileri doldurun ve "Tamam" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onaylama:</strong>
+                        <ul>
+                            <li>Karşınıza bir onay mesajı gelecektir: "Seçili kayıtlara ait, açık iş emirleri kapatılacak, devam etmek istiyor musunuz?"</li>
+                            <li>Onaylamak için "Evet" butonuna tıklayın</li>
+                            <li>İptal etmek için "Hayır" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>İşlem başarıyla tamamlandığında seçili abonelerin iş emirleri kapatılmış olur</li>
+                            <li>Liste otomatik olarak yenilenir ve kapatılan iş emirlerine sahip abonelerin "Açık İşlem Pozu" sütunundaki değerler boşalır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İş emri kapatabilmek için en az bir açık iş emri olan abone seçmeniz gerekir</li>
+                    <li>Açık iş emri olmayan aboneleri seçip "İş Emri Kapatma" butonuna tıklarsanız "Seçili ve açık iş emri olan kayıt yok" uyarısı alırsınız</li>
+                    <li>Kapatılan iş emirleri geri alınamaz, gerekirse yeniden oluşturulması gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rapor-cikti" class="section">
+        <h2>Rapor ve Çıktı Alma</h2>
+        <div class="info-box">
+            <h3>İş Emri Yazdırma (Adım Adım)</h3>
+            <div class="step">
+                <h4>İş Emri Yazdırma İşlemi:</h4>
+                <ol>
+                    <li><strong>Aboneleri Listeleme:</strong>
+                        <ul>
+                            <li>"Arama Kriterleri" bölümündeki filtreleri kullanarak açık iş emri olan aboneleri listeleyin</li>
+                            <li>Açık İşlem Pozu listesinden ilgilendiğiniz işlem pozlarını seçerek filtreleme yapabilirsiniz</li>
+                            <li>Ardından "Aboneleri Getir" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aboneleri Seçme:</strong>
+                        <ul>
+                            <li>Listelenen aboneler arasından iş emrini yazdırmak istediğiniz aboneleri seçin</li>
+                            <li>Seçim yapmak için abone listesinin en solundaki onay kutularını işaretleyin</li>
+                            <li>Yalnızca açık iş emri olan aboneleri seçmelisiniz (Açık İşlem Pozu sütununda değer olan aboneler)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>"Yazdır" butonuna tıklayın</li>
+                            <li>Bu buton, ekranın alt kısmında, "İş Emri Kapatma" butonunun sağında yer alır</li>
+                            <li>Butonun üzerinde bir yazıcı simgesi vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Görüntüleme:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda yeni bir pencerede seçilen abonelere ait iş emri raporu açılır</li>
+                            <li>Rapor, standart form formatında görüntülenir</li>
+                            <li>Raporda abone bilgileri, iş emri detayları ve diğer ilgili bilgiler yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma:</strong>
+                        <ul>
+                            <li>Rapor penceresindeki "Yazdır" butonuna tıklayarak raporu yazıcıya gönderebilirsiniz</li>
+                            <li>Alternatif olarak, tarayıcınızın yazdırma özelliğini kullanabilirsiniz (genellikle CTRL+P tuş kombinasyonu)</li>
+                            <li>Yazdırma ayarlarını yapıp "Yazdır" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pencereyi Kapatma:</strong>
+                        <ul>
+                            <li>Yazdırma işlemi tamamlandıktan sonra rapor penceresini "Kapat" butonuna tıklayarak veya pencerenin sağ üst köşesindeki çarpı işaretine tıklayarak kapatabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İş emri yazdırabilmek için en az bir açık iş emri olan abone seçmeniz gerekir</li>
+                    <li>Açık iş emri olmayan aboneleri seçip "Yazdır" butonuna tıklarsanız "Seçili ve açık iş emri olan kayıt yok" uyarısı alırsınız</li>
+                    <li>Çok fazla abone seçildiğinde rapor oluşturma süresi uzayabilir</li>
+                    <li>Rapor penceresi, ana programdan bağımsız çalışır ve program kapatılana kadar açık kalabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İş emri raporlarını arşivlemek için yazdırmak yerine PDF olarak kaydedebilirsiniz</li>
+                    <li>Bunu yapmak için yazıcı seçim ekranında "Microsoft Print to PDF" veya benzeri bir sanal yazıcı seçerek PDF dosyası oluşturabilirsiniz</li>
+                    <li>Rapor penceresini büyütmek için pencerenin sağ alt köşesinden tutup sürükleyin veya maksimize düğmesine tıklayın</li>
+                    <li>Birden fazla iş emrini aynı anda yazdırmak, iş emri formlarını sahada kullanmadan önce toplu şekilde hazırlamanızı sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari-sorunlar" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Kullanılan Kısayollar ve İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB: Bir sonraki alana geçer</li>
+                            <li>SHIFT+TAB: Bir önceki alana döner</li>
+                            <li>ENTER: TAB tuşu gibi bir sonraki alana geçer</li>
+                            <li>ESC: Açık listeleri kapatır veya programı kapatır</li>
+                            <li>CTRL: Çoklu seçim listelerinde birden fazla öğe seçmek için kullanılır</li>
+                            <li>CTRL+A: Listede tüm öğeleri seçer</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama İşlemleri İçin İpuçları:</strong>
+                        <ul>
+                            <li>Çok genel kriterler yerine, daha özel arama kriterleri kullanın</li>
+                            <li>Çok sayıda abone listelemek yerine, mahalleleri veya borç aralığını daraltarak aramayı sınırlandırın</li>
+                            <li>Abone tipi veya sayaç durumu gibi kategori seçimlerini kullanarak arama sonuçlarını filtreleyebilirsiniz</li>
+                            <li>İcra Durumu kullanarak icralı veya icrasız aboneleri ayrı ayrı listeleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Seçim İpuçları:</strong>
+                        <ul>
+                            <li>Listede tek bir öğe seçmek için öğeye tıklayın</li>
+                            <li>Ardışık öğeleri seçmek için, ilk öğeyi seçin, SHIFT tuşunu basılı tutun ve son öğeye tıklayın</li>
+                            <li>Ardışık olmayan öğeleri seçmek için, CTRL tuşunu basılı tutarak her bir öğeye ayrı ayrı tıklayın</li>
+                            <li>Seçili bir öğeyi seçimden çıkarmak için CTRL tuşunu basılı tutarak öğeye tekrar tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verimli Çalışma İpuçları:</strong>
+                        <ul>
+                            <li>Sık kullandığınız arama kriterlerini not alın</li>
+                            <li>Önce az sayıda sonuç veren bir test araması yapın, sonra gerekirse kriterleri genişletin</li>
+                            <li>İş emirlerini bölge veya mahalle bazında gruplandırarak oluşturun</li>
+                            <li>İş emri kapatma işlemlerini günün sonunda toplu olarak yapın</li>
+                            <li>Yazdırma işlemlerini optimum sayıda abone için yapın (çok az veya çok fazla değil)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Seçili kayıt yok" Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> İş emri oluşturmak, kapatmak veya yazdırmak istediğinizde bu hatayı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Listeden en az bir abone seçtiğinizden emin olun. Aboneleri seçmek için sol taraftaki onay kutularını işaretlemeniz gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Seçili ve açık iş emri olan kayıt yok" Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> İş emri kapatma veya yazdırma işlemi yapmak istediğinizde bu hatayı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Seçtiğiniz abonelerin açık iş emri olduğundan emin olun. Açık iş emri olan abonelerin "Açık İşlem Pozu" sütununda bir değer görünür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Sonuçları Beklenenden Farklı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Arama yaptığınızda beklediğiniz sonuçları alamıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ol>
+                                    <li>Tüm arama kriterlerini kontrol edin</li>
+                                    <li>Çoklu seçim kutularında doğru seçimleri yaptığınızdan emin olun</li>
+                                    <li>Aralık değerlerini doğru girdiğinizden emin olun (başlangıç değeri bitiş değerinden küçük olmalı)</li>
+                                    <li>Formu temizleyip yeniden kriterleri girin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Aboneleri Getir" butonuna tıkladıktan sonra program uzun süre yanıt vermiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Çok geniş arama kriterleri kullanıyorsanız, sonuç sayısı fazla olabilir ve işlem uzun sürebilir</li>
+                                    <li>Arama kriterlerini daraltın (örn: sadece belirli mahalleleri seçin veya abone no aralığını sınırlandırın)</li>
+                                    <li>Sistemin yoğun olduğu saatlerde çalışmamaya dikkat edin</li>
+                                    <li>Programı kapatıp yeniden açmayı deneyin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> İş emri yazdırma işlemi başarısız oluyor veya yazdırma penceresi açılmıyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Tarayıcınızın açılır pencere engelleyicisinin kapalı olduğundan emin olun</li>
+                                    <li>Daha az sayıda abone seçerek yazdırma işlemini tekrar deneyin</li>
+                                    <li>Yazıcı ayarlarınızı kontrol edin</li>
+                                    <li>Programı yeniden başlatıp işlemi tekrar deneyin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gereken Hususlar:</h4>
+                <ul>
+                    <li>İş emri oluşturduktan sonra aboneye yazılı bildirim de yapmanız gerekebilir</li>
+                    <li>İş emirlerini kapatmadan önce ilgili işlemin tamamlandığından emin olun</li>
+                    <li>Çok sayıda aboneyi listelerken sistem performansı düşebilir, kriterleri daraltmayı deneyin</li>
+                    <li>Programdan çıkmadan önce kaydedilmemiş işleminiz olmadığından emin olun</li>
+                    <li>Açık iş emri olan abonelere yeni iş emri oluşturamazsınız</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Ek İpuçları:</h4>
+                <ul>
+                    <li><strong>Etkin Arama İçin:</strong> Önce mahalle ve abone tipi gibi temel kriterleri belirleyin, sonra diğer filtreleri ekleyin</li>
+                    <li><strong>Hızlı İşlem İçin:</strong> Benzer işlemleri toplu halde yapın (örn: aynı mahalledeki tüm abonelere aynı türde iş emri açın)</li>
+                    <li><strong>Veri Girişi Kolaylığı:</strong> TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapın</li>
+                    <li><strong>Belirli Müşterileri Bulma:</strong> Önce geniş bir arama yapın, ardından sonuçlar içinde tarayıcınızın "Sayfada Bul" özelliğini (CTRL+F) kullanın</li>
+                    <li><strong>Pratik Borç Sorgulaması:</strong> Belirli bir borç miktarı üzerindeki aboneleri listelemek için borç aralığının alt sınırını belirleyin, üst sınırı varsayılan değerde bırakın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sistem-gereksinimleri" class="section">
+        <h2>Sistem Gereksinimleri ve Teknik Notlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Minimum Sistem Gereksinimleri:</h4>
+                <ul>
+                    <li>Internet Explorer 6.0 veya üzeri</li>
+                    <li>1024x768 veya daha yüksek ekran çözünürlüğü</li>
+                    <li>Yerel ağ bağlantısı (program sunucu üzerinden çalışır)</li>
+                    <li>Yazıcı çıktısı almak için yapılandırılmış yazıcı</li>
+                </ul>
+            </div>
+            <div class="step">
+                <h4>Performans İpuçları:</h4>
+                <ul>
+                    <li>Sistem yoğun olduğunda arama işlemleri daha uzun sürebilir</li>
+                    <li>Çok fazla sonuç döndüren aramalar yerine, daha spesifik kriterlerle arama yapın</li>
+                    <li>Özellikle mesai saatleri içinde geniş aralıklı aramalardan kaçının</li>
+                    <li>Düzenli olarak kullanılmayan sekmeler ve pencereleri kapatın</li>
+                    <li>Çok fazla rapor penceresini aynı anda açık tutmayın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Güvenlik Uyarıları:</h4>
+                <ul>
+                    <li>İşiniz bittiğinde programdan çıkış yapın, oturumu açık bırakmayın</li>
+                    <li>Kullanıcı bilgilerinizi başkalarıyla paylaşmayın</li>
+                    <li>Abone verilerini sadece görev tanımınıza uygun şekilde kullanın</li>
+                    <li>Hassas verileri ekranda başkalarının görebileceği şekilde bırakmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ozet" class="section">
+        <h2>Özet ve Hatırlatmalar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İş Emri Yönetimi Programının Temel İşlevleri:</h4>
+                <ol>
+                    <li><strong>Abone Sorgulama:</strong> Çeşitli kriterlere göre aboneleri filtreleme ve listeleme</li>
+                    <li><strong>İş Emri Oluşturma:</strong> Seçili abonelere belirli işlem pozlarında iş emri oluşturma</li>
+                    <li><strong>İş Emri Kapatma:</strong> Tamamlanan iş emirlerini kapatma</li>
+                    <li><strong>Raporlama:</strong> İş emirlerini yazdırma ve dokümantasyon oluşturma</li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Günlük İş Akışı İçin Öneriler:</h4>
+                <ul>
+                    <li>Sabah işe başlarken açık iş emirlerini listeleyin ve durumlarını kontrol edin</li>
+                    <li>Yeni iş emirlerini planlanmış şekilde bölge veya mahalle bazında oluşturun</li>
+                    <li>Tamamlanan iş emirlerini günlük olarak kapatmayı alışkanlık haline getirin</li>
+                    <li>Haftalık veya aylık raporlar alarak iş emri durumlarını takip edin</li>
+                    <li>Tekrarlayan işlemler için standart arama kriterlerini kullanın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Hatırlatmalar:</h4>
+                <ul>
+                    <li>İş emri oluşturmadan önce abonenin durumunu iyice kontrol edin</li>
+                    <li>Açık iş emri olmadan kapatma işlemi yapılamaz</li>
+                    <li>İş emrini yazdırmak için en az bir açık iş emri olan abone seçilmelidir</li>
+                    <li>Programdan çıkmadan önce açık pencereleri kapatın</li>
+                    <li>Sorun yaşadığınızda sistem yöneticinizle iletişime geçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sonuc" class="section">
+        <h2>Yardım ve Destek</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, İş Emri Yönetimi programının temel işlevlerini ve kullanımını açıklamak amacıyla hazırlanmıştır. Programın kullanımı hakkında daha fazla bilgiye ihtiyaç duyarsanız veya teknik sorunlarla karşılaşırsanız, lütfen aşağıdaki kaynaklara başvurun:</p>
+
+            <ul>
+                <li>Sistem Yöneticisi</li>
+                <li>Bilgi İşlem Departmanı</li>
+                <li>Program Destek Hattı</li>
+            </ul>
+            
+            <p>İş Emri Yönetimi programını verimli bir şekilde kullanmanız ve işlerinizi kolaylaştırması dileğiyle!</p>
+        </div>
+        </div>
+</body>
+</html>

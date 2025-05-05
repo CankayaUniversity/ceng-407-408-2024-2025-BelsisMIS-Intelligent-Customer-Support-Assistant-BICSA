@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banka Disketi Okuma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Banka Disketi Okuma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#banka-bilgileri">Banka Bilgileri</a></li>
+                        <li><a href="#dosya-bilgileri">Dosya Bilgileri</a></li>
+                        <li><a href="#emanet-hesap">Emanet Hesap Kodu</a></li>
+                        <li><a href="#banka-hesap">Banka Hesap Kodu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Uygulama İşlemleri</a>
+                    <ul>
+                        <li><a href="#dosya-yukleme">Dosya Yükleme</a></li>
+                        <li><a href="#veri-aktarma">Veri Aktarma İşlemi</a></li>
+                        <li><a href="#banka-hesap-duzenleme">Banka Hesapları Düzenleme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Banka Disketi Okuma" ekranı, bankalardan gelen ödeme verilerini sisteme aktarmak için kullanılan bir araçtır. Bu programla:</p>
+            <ul>
+                <li>Bankaların sunduğu ödeme (tahsilat) dosyalarını sisteme yükleme</li>
+                <li>Dosyalardaki tahsilat bilgilerini kurum sistemine aktarma</li>
+                <li>Banka ödemelerini muhasebe sistemine kaydetme</li>
+                <li>Ödeme verilerini otomatik olarak abone hesaplarına işleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Bankadan alınmış ödeme dosyası</li>
+                    <li>Dosyayı aldığınız bankanın kodu</li>
+                    <li>Dosyada kullanılan banka versiyonu (bazı bankalar için)</li>
+                    <li>Emanet hesap kodu bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Banka Disketinden Sisteme Veri Aktarma" başlığı bulunur.</li>
+                            <li>Mavi renkli bir şerit içinde yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, banka seçimi, dosya yolu, emanet hesap kodu gibi alanları içerir.</li>
+                            <li>Her alan etiketiyle birlikte sola hizalı şekilde yerleştirilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Durum Mesajı Bölümü:</strong>
+                        <ul>
+                            <li>İşlemlerden sonra, ekranın üst kısmında altın renkli bir şerit olarak görülür.</li>
+                            <li>Bu alanda "Kayıtlar Alındı Lütfen Sisteme Aktarın" veya "Kayıtlar Sisteme Aktarıldı" gibi mesajlar görüntülenir.</li>
+                            <li>Başlangıçta bu alan gizlidir, işlemler sonrasında görünür hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bekleme/Yükleniyor Mesaj Ekranı:</strong>
+                        <ul>
+                            <li>Dosya yüklenirken ekranın ortasında büyük bir bekleme mesajı görüntülenir.</li>
+                            <li>Bej renkli zemin üzerinde turkuaz yazı ile "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı görünür.</li>
+                            <li>Mesajın yanında dönen dişli çarkları animasyonu bulunur.</li>
+                            <li>Bu ekran, dosya işleminin tamamlanmasını beklerken görünür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında OK, Çıkış, Kaydet gibi butonlar yer alır.</li>
+                            <li>Butonlar yatay olarak sıralanmıştır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Kaydet butonu devre dışı (gri) olarak görünür.</li>
+                    <li>Önce dosya yüklemeniz gerekir, ardından Kaydet butonu aktif hale gelecektir.</li>
+                    <li>Bazı banka seçimlerinde versiyon seçimi devre dışı kalır, bu normal bir durumdur.</li>
+                    <li>Durum mesajı bölümü ilk açılışta gizli durumdadır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="banka-bilgileri" class="info-box">
+            <h3>Banka Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Banka Seçimi:</h4>
+                <ol>
+                    <li><strong>Banka:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, solda yer alan ilk alandır.</li>
+                            <li><strong>Veri Türü:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Ödeme dosyasının alındığı bankayı seçmeniz gerekir.</li>
+                            <li><strong>İçerik:</strong> Sistem tarafından tanımlanan banka listesini içerir (Ziraat, İş Bankası, Akbank, vb.).</li>
+                            <li><strong>Banka Kodları:</strong> Her banka için sistem tarafından tanımlanmış benzersiz kodlar kullanılır (örn: Ziraat Bankası için "0010", İş Bankası için "0064", Akbank için "0046", PTT için "9999").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Versiyon:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka seçim kutusunun hemen sağında yer alır.</li>
+                            <li><strong>Veri Türü:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Bazı bankalar için farklı versiyon formatları vardır; doğru versiyonu seçmeniz gerekir.</li>
+                            <li><strong>Aktif Durumu:</strong> Sadece Oyak (ING) Bankası (0099) ve İş Bankası (0064) için aktiftir, diğer bankalar için devre dışıdır (gri renkte görünür).</li>
+                            <li><strong>Versiyon Farkları:</strong>
+                                <ul>
+                                    <li>Versiyon-1: Genellikle eski format dosyalar için kullanılır</li>
+                                    <li>Versiyon-2: Yeni format dosyalar için kullanılır, daha fazla bilgi içerebilir veya farklı bir yerleşimde olabilir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Banka Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Doğru bankayı seçmek çok önemlidir, yanlış seçim durumunda dosya düzgün okunamayabilir.</li>
+                    <li>Her banka farklı bir dosya formatı kullandığından, mutlaka doğru bankanın seçildiğinden emin olun.</li>
+                    <li>Bankayı değiştirdiğinizde, versiyon seçimi bazı bankalar için otomatik olarak devre dışı kalır.</li>
+                    <li>İş Bankası veya Oyak (ING) Bankası seçtiğinizde, bankanın size verdiği dosya versiyonunu (Versiyon-1 veya Versiyon-2) doğru şekilde seçin.</li>
+                    <li>Emin olmadığınız durumlarda, banka yetkililerine hangi formatı kullandıklarını sorabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dosya-bilgileri" class="info-box">
+            <h3>Dosya Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Dosya Yolu ve Yükleme:</h4>
+                <ol>
+                    <li><strong>Path:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Banka" alanının hemen altında yer alır.</li>
+                            <li><strong>Veri Türü:</strong> Metin kutusu şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Ödeme dosyasının yolunu gösterir. Bu alana doğrudan yazamazsınız, dosya seçimi yapmalısınız.</li>
+                            <li><strong>Örnek Dosya Yolu:</strong> "C:\...\PTTdoc\odeme.txt" şeklinde görünür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Upload Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Path" alanının sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, üzerinde "Upload" yazan butondur.</li>
+                            <li><strong>Kullanım:</strong> Bankadan alınan dosyayı sisteme yüklemek için kullanılır.</li>
+                            <li><strong>İşlev:</strong> Tıkladığınızda dosya seçme penceresi açılır ve seçilen dosya otomatik olarak path alanına yazılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dosya Seçimi Uyarıları:</h4>
+                <ul>
+                    <li>Yalnızca TXT uzantılı dosyaları yükleyebilirsiniz.</li>
+                    <li>Dosya yolu otomatik olarak sistem tarafından doldurulur, elle yazmanız gerekmez.</li>
+                    <li>Daha önce sisteme taşınmış bir dosyayı tekrar seçerseniz, sistem "Ödeme Dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!" mesajıyla sizi uyaracaktır.</li>
+                    <li>Seçtiğiniz dosya formatı uygun değilse (TXT değilse), sistem "Seçtiğiniz Dosya Formatı Uygun Değil Lütfen Kontrol Ediniz!" mesajı verecektir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="emanet-hesap" class="info-box">
+            <h3>Emanet Hesap Kodu</h3>
+            
+            <div class="step">
+                <h4>Emanet Hesap Kodu Seçimi:</h4>
+                <ol>
+                    <li><strong>Emanet Hesap Kodu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Path" alanının altında yer alır.</li>
+                            <li><strong>Veri Türü:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Kullanım:</strong> Banka ödemelerinin hangi emanet hesaba aktarılacağını seçersiniz.</li>
+                            <li><strong>İçerik:</strong> Sistemde tanımlı emanet hesap kodlarını listeler.</li>
+                            <li><strong>Örnek Hesap Kodları:</strong> Liste içinde hesap kodu ve adı birlikte görünür (örn. "320-01-Banka Emanet Hesabı").</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Emanet Hesap Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Doğru emanet hesap kodunu seçmeniz çok önemlidir; yanlış seçim muhasebe kayıtlarını etkileyebilir.</li>
+                    <li>Emin olmadığınız durumlarda muhasebe birimi veya yöneticinizle görüşün.</li>
+                    <li>Emanet hesap kodları genellikle kurum tarafından önceden tanımlanmıştır.</li>
+                    <li>Bu alanda genellikle sistemin varsayılan emanet hesabı seçili gelir, özel bir durum olmadıkça değiştirmeniz gerekmez.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="banka-hesap" class="info-box">
+            <h3>Banka Hesap Kodu</h3>
+            
+            <div class="step">
+                <h4>Banka Hesap Kodu Bilgisi:</h4>
+                <ol>
+                    <li><strong>Banka Hesap Kodu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Emanet Hesap Kodu" alanının altında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Bu başlık altında sadece etiket bulunur; kullanıcı tarafından doğrudan bir alan doldurulmaz.</li>
+                            <li><strong>Kullanım:</strong> Banka hesapları "Banka Hesapları" butonu ile düzenlenir.</li>
+                            <li><strong>Bağlantısı:</strong> Bu alan, "Banka Hesapları" butonuyla açılan ekrandaki muhasebe hesap eşleştirmeleriyle ilişkilidir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Banka Hesap Kodu Uyarısı:</h4>
+                <ul>
+                    <li>Banka hesap kodu doğrudan girilmez; "Banka Hesapları" butonu ile açılan ekrandan düzenleme yapılır.</li>
+                    <li>Banka hesaplarının muhasebe hesaplarıyla eşleştirilmesi için ayrı bir arayüz bulunmaktadır.</li>
+                    <li>Hatalı eşleştirmeler muhasebe kayıtlarında sorunlara yol açabilir, dikkatli olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>OK Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, en solda yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "OK" yazısı vardır.</li>
+                            <li><strong>İşlev:</strong> Seçilen banka dosyasını sisteme yükler ve veri aktarımı için hazırlar.</li>
+                            <li><strong>Kullanım:</strong> Banka ve dosya seçildikten sonra tıklayarak dosya içeriğini sisteme aktarabilirsiniz.</li>
+                            <li><strong>Durum Değişimi:</strong> Dosya yüklendikten sonra bu buton devre dışı kalır (gri renkli olur) ve artık tıklanamaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "OK" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Exit" yazısı vardır.</li>
+                            <li><strong>İşlev:</strong> Banka Disketi Okuma ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> İşleminizi tamamladıktan sonra programdan çıkmak için tıklayın.</li>
+                            <li><strong>Kısayol:</strong> ESC tuşuna basarak da programdan çıkabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Çıkış" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, diskete kaydetme simgeli.</li>
+                            <li><strong>İşlev:</strong> Yüklenmiş olan banka dosyasındaki verileri sisteme kaydeder.</li>
+                            <li><strong>Kullanım:</strong> "OK" butonuyla dosya yüklendikten sonra aktif hale gelir. Verileri sisteme kaydetmek için tıklayın.</li>
+                            <li><strong>Durum Değişimi:</strong> Program ilk açıldığında devre dışıdır, dosya yüklendikten sonra aktif hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Hesapları Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kaydet" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, "Banka Hesapları" yazılı.</li>
+                            <li><strong>İşlev:</strong> Banka kodları ile muhasebe hesaplarını eşleştirme ekranını açar.</li>
+                            <li><strong>Kullanım:</strong> Banka hesaplarının muhasebe kodlarını düzenlemek için tıklayın.</li>
+                            <li><strong>Açılan Pencere:</strong> Bu butona tıkladığınızda yeni bir pencere açılır, bu pencerede banka ve muhasebe hesaplarını eşleştirebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım (Help) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Banka Hesapları" butonunun hemen sağında, en sağda yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, yardım simgeli.</li>
+                            <li><strong>İşlev:</strong> Programla ilgili yardım ekranını açar.</li>
+                            <li><strong>Kullanım:</strong> Program hakkında bilgi almak için tıklayın.</li>
+                            <li><strong>Açılan Ekran:</strong> Banka yardım ekranını açar, bu ekranda program kullanımı ile ilgili kısa bilgiler bulunur.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dosya yüklenmeden önce "Kaydet" butonu devre dışıdır, gri renkte görünür.</li>
+                    <li>Dosya yüklendikten sonra "OK" butonu devre dışı kalır, "Kaydet" butonu aktif hale gelir.</li>
+                    <li>İşlemi tamamlamadan "Çıkış" butonuna basarsanız, yaptığınız işlemler kaydedilmez.</li>
+                    <li>Butonların durumları işlem akışına göre otomatik olarak değişir, bu normal bir durumdur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Uygulama İşlemleri</h2>
+        
+        <div id="dosya-yukleme" class="info-box">
+            <h3>Dosya Yükleme</h3>
+            
+            <div class="step">
+                <h4>Bankadan Alınan Dosyayı Yükleme Adımları:</h4>
+                <ol>
+                    <li><strong>Dosya Hazırlığı:</strong>
+                        <ul>
+                            <li>Bankadan aldığınız TXT formatındaki ödeme dosyasını bilgisayarınıza kaydedin.</li>
+                            <li>Dosyanın TXT uzantılı olduğundan emin olun (örn. "odemelr.txt").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Seçimi:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmındaki "Banka" açılır listesinden ilgili bankayı seçin.</li>
+                            <li>Eğer Oyak (ING) veya İş Bankası seçtiyseniz, yanındaki "Versiyon" açılır listesinden uygun versiyonu seçin.</li>
+                            <li>Diğer bankalar için versiyon seçeneği otomatik olarak devre dışı kalacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Yükleme:</strong>
+                        <ul>
+                            <li>"Path" alanının yanındaki "Upload" butonuna tıklayın.</li>
+                            <li>Açılan pencereden bankadan aldığınız TXT dosyasını seçin.</li>
+                            <li>Dosya yolu otomatik olarak "Path" alanına yazılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Emanet Hesap Kodu Seçimi:</strong>
+                        <ul>
+                            <li>Açılır listeden uygun emanet hesap kodunu seçin.</li>
+                            <li>Genellikle varsayılan seçenek kurumunuz için ayarlanmıştır, özel bir durum olmadıkça değiştirmeniz gerekmez.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosyayı Sisteme Taşıma:</strong>
+                        <ul>
+                            <li>Alttaki "OK" butonuna tıklayın.</li>
+                            <li>Sistem dosyayı işlemeye başlayacak ve ekranın ortasında "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ile birlikte dönen dişli çark animasyonu görünecektir.</li>
+                            <li>İşlem sırasında ekranda bekleyin, bu süre dosya boyutuna göre değişebilir.</li>
+                            <li>Dosya başarıyla işlendiğinde, durum mesajı bölümünde "Kayıtlar Alındı Lütfen Sisteme Aktarın" mesajı görünecektir.</li>
+                            <li>Aynı zamanda, "Kaydet" butonu aktif hale gelecek, "OK" butonu devre dışı kalacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Dosya formatı TXT olmalıdır, diğer formatlar (DOC, XLS, PDF vb.) kabul edilmez.</li>
+                    <li>Daha önce sisteme aktarılmış bir dosya seçildiğinde sistem uyarı verecektir.</li>
+                    <li>Dosya içeriği banka seçimiyle uyumlu olmalıdır; yanlış banka seçimi veri okuma hatasına neden olabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Dosya adını bankadan aldığınız şekilde değiştirmeden kullanmanız önerilir.</li>
+                    <li>Dosyayı kolay erişebileceğiniz bir klasöre (örn. Masaüstü) kaydedin.</li>
+                    <li>Bankalardan genellikle alınan dosyaların standart isimleri vardır, bunları notlarınıza kaydedin.</li>
+                    <li>Dosyanın doğru formatta olduğundan emin değilseniz, banka yetkilisiyle iletişime geçin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="veri-aktarma" class="info-box">
+            <h3>Veri Aktarma İşlemi</h3>
+            
+            <div class="step">
+                <h4>Verileri Sisteme Aktarma Adımları:</h4>
+                <ol>
+                    <li><strong>Dosya Kontrolü:</strong>
+                        <ul>
+                            <li>Dosya başarıyla yüklendikten sonra sistem, içeriği işleyerek kayıtları hazırlar.</li>
+                            <li>Bu aşamada ekranın alt kısmında "Banka Disketinden Yüklenen Bilgiler Tekrar Yazılsın" seçeneği görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tekrar Yazma Seçeneği:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Bu onay kutusu, dosya yüklendikten sonra ekranın orta kısmında görünür.</li>
+                            <li><strong>Görünüm:</strong> Standart onay kutusu (checkbox) olarak görünür, yanında açıklama metni bulunur.</li>
+                            <li><strong>İşlev:</strong> Bu onay kutusunu işaretlerseniz, daha önce sisteme yazılmış beyan ve tahakkukların üzerine yeniden yazılacaktır.</li>
+                            <li><strong>Uyarı:</strong> İşaretlediğinizde, sistem mevcut verileri silip yerine yeni verileri yazacaktır, bu nedenle dikkatli kullanın!</li>
+                            <li>İşaretlemezseniz, sadece yeni kayıtlar eklenecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verileri Kaydetme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem, verileri işleyerek ilgili kayıtları oluşturacaktır.</li>
+                            <li>İşlem sırasında butonlar devre dışı kalabilir, bu normal bir durumdur.</li>
+                            <li>İşlem tamamlandığında durum mesajı bölümünde "Kayıtlar Sisteme Aktarıldı" mesajı görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özet Bilgileri Görüntüleme:</strong>
+                        <ul>
+                            <li>Sistem, işlem sonunda bir özet penceresi gösterecektir.</li>
+                            <li>Bu pencerede "Okunan Kayıt Tutarı" ve "Yazılan Kayıt Toplamı" bilgileri gösterilir.</li>
+                            <li>Örnek: "Okunan Kayıt Tutarı: 5,250.00 / Yazılan Kayıt Toplamı: 5,250.00"</li>
+                            <li>Bu değerlerin birbirine eşit olması beklenir. Eşit değilse, işlemi kontrol etmeniz gerekebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası:</strong>
+                        <ul>
+                            <li>Özet penceresini kapattıktan sonra, form temizlenir ve yeni bir işlem yapabilir duruma gelir.</li>
+                            <li>Bu aşamada "Kaydet" butonu tekrar devre dışı kalır, "OK" butonu aktif olur.</li>
+                            <li>Yeni bir işlem yapmak istiyorsanız, süreci baştan tekrarlayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Banka Disketinden Yüklenen Bilgiler Tekrar Yazılsın" seçeneğini işaretlerseniz, önceki kayıtların üzerine yazılacağından dikkatli olun!</li>
+                    <li>Bu seçenek, onay kutusuna tıklandığında değerini (1 veya 0) sistem kayıtlarına iletir.</li>
+                    <li>Kaydetme işlemi sırasında program açık kalmalı ve işlem tamamlanana kadar beklenmelidir.</li>
+                    <li>İşlem tamamlandıktan sonra özet ekranında gösterilen tutarları kontrol edin; farklılık varsa muhasebe birimine haber verin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Veri Aktarma İpuçları:</h4>
+                <ul>
+                    <li>Büyük dosyaların işlenmesi biraz zaman alabilir, sabırlı olun.</li>
+                    <li>Özet ekranında görüntülenen tutarları not alın, daha sonra rapor oluşturmanız gerekebilir.</li>
+                    <li>İşlem öncesi verilerin yedeklendiğinden emin olun, özellikle "Tekrar Yazılsın" seçeneğini kullanıyorsanız.</li>
+                    <li>Düzenli olarak yedekleme yapılmasını sağlayın, böylece sorun olursa verileri kurtarabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="banka-hesap-duzenleme" class="info-box">
+            <h3>Banka Hesapları Düzenleme</h3>
+            
+            <div class="step">
+                <h4>Banka Hesaplarını Düzenleme Adımları:</h4>
+                <ol>
+                    <li><strong>Düzenleme Ekranını Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Banka Hesapları" butonuna tıklayın.</li>
+                            <li>Açılan pencerede "Banka kodları ile muhasebe hesaplarını eşleştirme menüsü" başlığını göreceksiniz.</li>
+                            <li>Bu pencere, mevcut banka ve muhasebe hesaplarını içeren bir ağaç yapısı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Seçimi:</strong>
+                        <ul>
+                            <li>Sol taraftaki ağaç yapısında bankalar listelenir.</li>
+                            <li>Düzenlemek istediğiniz bankaya tıklayın.</li>
+                            <li>Seçilen banka mavi renkle vurgulanacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Muhasebe Hesabı Seçimi:</strong>
+                        <ul>
+                            <li>Seçili banka için sağ tarafta "Muhasebe Hesap No" alanı görünecektir.</li>
+                            <li>Açılır listeden uygun muhasebe hesap kodunu seçin.</li>
+                            <li>Muhasebe hesap kodları, işletmenin hesap planına göre listelenir.</li>
+                            <li>Hesap kodu ve adı birlikte görünür (örn. "109-01-01 - Banka Vadesiz Mevduat").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm bankalar için eşleştirmeleri tamamladıktan sonra alttaki "KAYDET" butonuna tıklayın.</li>
+                            <li>Sistem değişiklikleri kaydedecek ve pencere kapanacaktır.</li>
+                            <li>İşlemi iptal etmek için "VAZGEÇ" butonuna tıklayabilirsiniz, bu durumda değişiklikler kaydedilmeyecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Muhasebe hesap eşleştirmeleri kritik finansal işlemleri etkiler, dikkatli seçim yapın!</li>
+                    <li>Emin olmadığınız durumlarda muhasebe biriminden yardım isteyin.</li>
+                    <li>Değişiklikler yapıldıktan sonra muhakkak KAYDET butonuna basın, aksi halde bilgiler kaydedilmez.</li>
+                    <li>Banka hesapları ile muhasebe hesapları arasındaki eşleştirmeler kurum politikalarına uygun olmalıdır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Banka Hesapları Eşleştirme İpuçları:</h4>
+                <ul>
+                    <li>Aynı banka için farklı işlem türlerinde farklı muhasebe hesapları kullanılabilir.</li>
+                    <li>Bankaları alfabetik sırayla kontrol ederek hiçbirini atlamadığınızdan emin olun.</li>
+                    <li>Muhasebe hesap kodları hakkında kesin bilgiye sahip değilseniz, muhasebe departmanı ile görüşün.</li>
+                    <li>Eşleştirme yaparken, her bankanın hangi muhasebe hesabıyla eşleştirildiğini not almanız faydalı olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Dosya Okunamıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Sistem dosyayı okumuyor veya hata veriyor.</li>
+                            <li><strong>Çözüm:</strong> Dosya formatının TXT olduğunu kontrol edin. Diğer formatlar (DOC, XLS, PDF vb.) kabul edilmez.</li>
+                            <li><strong>Çözüm:</strong> Doğru banka seçildiğinden emin olun. Her banka farklı bir formatta veri gönderir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Taşındı Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Ödeme Dosyası Daha Önce Taşınmış" uyarısı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Aynı dosyayı daha önce sisteme aktarmış olabilirsiniz. Farklı bir dosya seçin veya bu işlemin gerekli olduğundan eminseniz devam edin.</li>
+                            <li><strong>Çözüm:</strong> Yeni bir dosya oluşturun veya farklı bir isimle kaydedin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu Aktif Değil:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonu gri renkte ve tıklanamıyor.</li>
+                            <li><strong>Çözüm:</strong> Önce dosya yüklemelisiniz. OK butonuna basarak dosyayı yükleyin, ardından Kaydet butonu aktif hale gelecektir.</li>
+                            <li><strong>Çözüm:</strong> Banka ve dosya seçiminin doğru yapıldığından emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tutar Uyuşmazlığı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Okunan ve yazılan kayıt tutarları arasında fark var.</li>
+                            <li><strong>Çözüm:</strong> Dosyanın tam olarak okunduğundan emin olun. Sorun devam ederse, dosyayı kontrol edip tekrar deneyin.</li>
+                            <li><strong>Çözüm:</strong> Muhasebe birimine haber verin, manuel düzeltme gerekebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Dosyası Taşınmamış Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Banka Dosyası Taşınmamış" uyarısı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Önce "OK" butonuna basarak dosyayı sisteme taşımanız gerekir. Ardından "Kaydet" butonunu kullanabilirsiniz.</li>
+                            <li><strong>Çözüm:</strong> Dosya seçiminin doğru yapıldığını kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Versiyon Seçimi Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Versiyon seçimi yapamıyorsunuz, gri renkli görünüyor.</li>
+                            <li><strong>Çözüm:</strong> Versiyon seçimi yalnızca İş Bankası (0064) ve Oyak/ING Bankası (0099) için aktiftir. Diğer bankalar için versiyon seçimi yapılamaz.</li>
+                            <li><strong>Çözüm:</strong> İş Bankası veya Oyak/ING Bankası seçtikten sonra versiyon seçimi aktif hale gelecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Dosya Yönetimi:</strong>
+                        <ul>
+                            <li>Banka dosyalarını düzenli bir klasör yapısında saklayın (örn. Banka/Tarih/Dosya).</li>
+                            <li>Dosya adlarında tarih kullanın (örn. Akbank_20231005.txt) - bu, daha sonra arama yapmanızı kolaylaştırır.</li>
+                            <li>İşlemden sonra dosyaları "İşlenmiş" adlı bir klasöre taşıyın, böylece hangi dosyaların işlendiğini takip edebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka İşlemleri:</strong>
+                        <ul>
+                            <li>Her bankadan veri almadan önce doğru format konusunda bankayla iletişime geçin.</li>
+                            <li>Farklı bankalar için işlem notları tutun; her bankanın kendine özgü özellikleri olabilir.</li>
+                            <li>Sık kullanılan bankaların kodlarını ve formatlarını not edin, bu şekilde işlemlerinizi hızlandırabilirsiniz.</li>
+                            <li>Her bankanın ödeme dosyası formatını ve ne sıklıkta geldiğini kaydedin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım:</strong>
+                        <ul>
+                            <li>Büyük dosyaları işlerken diğer programları kapatın, bu performansı artırabilir.</li>
+                            <li>Karşılaştığınız sorunları ve çözümlerini not edin, benzer durumlarla karşılaşıldığında zaman kazandırır.</li>
+                            <li>Düzenli olarak yedekleme yapın veya yapıldığından emin olun.</li>
+                            <li>TAB tuşunu kullanarak alanlar arasında hızlı geçiş yapabilirsiniz.</li>
+                            <li>ESC tuşu ile programdan hızlıca çıkabilirsiniz (onay sorulacaktır).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                    <li>Finansal verileri içeren dosyaları güvenli bir şekilde saklayın ve gereksiz olanları silin.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, veriler kritik öneme sahip olabilir.</li>
+                    <li>"Banka Disketinden Yüklenen Bilgiler Tekrar Yazılsın" seçeneğini sadece gerekli olduğunda kullanın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, iş akışınızı standartlaştırın ve basit adımlar halinde yazın.</li>
+                    <li>Tüm işlemlerinizi günlük bir log defterinde kaydedin, böylece hangi dosyaların ne zaman işlendiğini takip edebilirsiniz.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Bankalarla iyi iletişim kurun ve değişen formatlara karşı hazırlıklı olun.</li>
+                    <li>Farklı bankalar için kullandığınız her banka kodunu ve versiyon bilgisini not edin, böylece gelecekte doğru seçimleri hızlıca yapabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Banka Disketi Okuma ekranı, bankalardan alınan ödeme verilerini sisteme kolay ve güvenli bir şekilde aktarmanızı sağlayan önemli bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru bankayı ve dosya formatını seçin.</li>
+                    <li>Verilerinizi düzenli olarak yedekleyin.</li>
+                    <li>Muhasebe kayıtları için doğru hesap kodlarını kullanın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

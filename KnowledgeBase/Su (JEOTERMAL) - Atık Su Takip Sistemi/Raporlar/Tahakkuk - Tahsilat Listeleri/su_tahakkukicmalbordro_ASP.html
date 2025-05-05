@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Tahakkuk İcmal Bordrosu Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Tahakkuk İcmal Bordrosu Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#filtre-alanlari">Filtre Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#sicil-abone">GTT Sicil No ve Abone No</a></li>
+                        <li><a href="#adres-bilgileri">Adres Bilgileri (Mahalle, Cadde, Hane, Sıra No)</a></li>
+                        <li><a href="#donem-bilgileri">Yıl/Dönem Bilgileri</a></li>
+                        <li><a href="#bakiye">Bakiye</a></li>
+                        <li><a href="#tah-bilgileri">Tahakkuk Tipi ve GTT Tahakkuk Türü</a></li>
+                        <li><a href="#tah-tarihi">Tahakkuk Tarihi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#rapor-alma">Rapor Alma İşlemi</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Tahakkuk İcmal Bordrosu" ekranı, su abonelerine ait tahakkuk bilgilerini listelemek ve raporlamak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Abone bazında tahakkuk bilgilerini görüntüleme</li>
+                <li>Farklı kriterlere göre (abone no, sicil no, mahalle, cadde vb.) tahakkuk listelerini oluşturma</li>
+                <li>Belirli bir dönem veya tarih aralığına göre tahakkuk raporları alma</li>
+                <li>Tahakkuk tipi veya türüne göre filtrelenmiş raporlar oluşturma</li>
+                <li>Bakiye miktarına göre tahakkukları listeleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanırken şu bilgilere sahip olmanız faydalı olacaktır:</p>
+                <ul>
+                    <li>Abone numarası veya GTT sicil numarası (biliyorsanız)</li>
+                    <li>Rapor almak istediğiniz abonelerin adres bilgileri (mahalle, cadde, hane no vb.)</li>
+                    <li>Raporlamak istediğiniz yıl ve dönem bilgileri</li>
+                    <li>Tahakkuk tipi ve türü bilgileri (biliyorsanız)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bileşenleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Su/Atık Su Takip Sistemi - Su Tahakkuk İcmal Bordrosu" başlığı yer alır.</li>
+                            <li>Bu başlık, ekranın hangi işlem için kullanıldığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında filtreleme alanları bulunur.</li>
+                            <li>Filtreler üç sütun halinde düzenlenmiştir: Sol sütunda filtre adı, orta sütunda başlangıç değeri, sağ sütunda bitiş değeri yer alır.</li>
+                            <li>Filtre bölümü, farklı kriterlere göre raporları daraltmanızı sağlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Listele" ve "Çıkış" butonları yer alır.</li>
+                            <li>Bu butonlar, rapor alma ve programdan çıkış işlemlerini gerçekleştirmenizi sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Filtre alanları varsayılan değerlerle doldurulur.</li>
+                    <li>En az bir GTT tahakkuk türü ve tahakkuk tipi seçmeniz gerekir, aksi halde rapor alamazsınız.</li>
+                    <li>Tahakkuk tarihi alanı için sistem tarihi otomatik olarak "Bitiş" alanına getirilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtre-alanlari" class="section">
+        <h2>Filtre Alanları ve Kullanımları</h2>
+        
+        <div id="sicil-abone" class="info-box">
+            <h3>GTT Sicil No ve Abone No</h3>
+            
+            <div class="step">
+                <h4>GTT Sicil No ve Abone No Alanları:</h4>
+                <ol>
+                    <li><strong>GTT Sicil No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Filtreleme tablosunun üst kısmında yer alan ilk filtre alanıdır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 10 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir sicil numarası aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "GTT Sicil No" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 10 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir abone numarası aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sicil ve Abone No Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Tek bir abone için rapor almak istiyorsanız, başlangıç ve bitiş alanlarına aynı numarayı yazın.</li>
+                    <li>Belirli bir aralıktaki aboneler için, başlangıç ve bitiş değerlerini uygun şekilde doldurun.</li>
+                    <li>Tüm aboneler için bu alanları boş bırakabilirsiniz (sistem otomatik olarak 0-3000000000 aralığını kullanacaktır).</li>
+                    <li>Abone no veya sicil no bilmiyorsanız, diğer filtreleri (adres, dönem vb.) kullanarak raporunuzu daraltabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="adres-bilgileri" class="info-box">
+            <h3>Adres Bilgileri (Mahalle, Cadde, Hane, Sıra No)</h3>
+            
+            <div class="step">
+                <h4>Adres Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Mahalle:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 5 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli mahalle kodları aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 5 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli cadde kodları aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hane:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Cadde" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 5 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli hane numarası aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıra No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Hane" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 5 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli sıra numarası aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Adres Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Mahalle, cadde, hane ve sıra no alanları kod numaralarıyla çalışır, isim bilgisi değil kod numarası girmeniz gerekir.</li>
+                    <li>Tek bir mahalle veya cadde için rapor almak istiyorsanız, başlangıç ve bitiş alanlarına aynı kodu yazın.</li>
+                    <li>Tüm mahalle veya caddeler için bu alanları boş bırakabilirsiniz (sistem otomatik olarak 0-33000 aralığını kullanacaktır).</li>
+                    <li>Adres bilgilerini birlikte kullanarak daha spesifik raporlar alabilirsiniz (örn. belirli bir mahalle ve caddedeki tüm haneler).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="donem-bilgileri" class="info-box">
+            <h3>Yıl/Dönem Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Yıl/Dönem Alanları:</h4>
+                <ol>
+                    <li><strong>Yıl/Dönem:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sıra No" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 
+                                <ul>
+                                    <li>Başlangıç sütununda: Yıl için 4 karakterlik metin kutusu, yanında Dönem için 2 karakterlik metin kutusu</li>
+                                    <li>Bitiş sütununda: Yıl için 4 karakterlik metin kutusu, yanında Dönem için 2 karakterlik metin kutusu</li>
+                                </ul>
+                            </li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir. Yıl için maksimum 4, dönem için maksimum 2 karakter.</li>
+                            <li><strong>Kullanım:</strong> Belirli yıl ve dönem aralığındaki tahakkukları filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yıl/Dönem Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Yıl alanına 4 haneli yıl bilgisini girin (örn. 2023).</li>
+                    <li>Dönem alanına dönem numarasını girin (genellikle 1-12 arası).</li>
+                    <li>Tek bir yıl veya dönem için rapor almak istiyorsanız, başlangıç ve bitiş alanlarına aynı değerleri yazın.</li>
+                    <li>Tüm yıllar için bu alanları boş bırakabilirsiniz (sistem otomatik olarak 0-9999 aralığını kullanacaktır).</li>
+                    <li>Tüm dönemler için dönem alanlarını boş bırakabilirsiniz (sistem otomatik olarak 0-99 aralığını kullanacaktır).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bakiye" class="info-box">
+            <h3>Bakiye</h3>
+            
+            <div class="step">
+                <h4>Bakiye Alanı:</h4>
+                <ol>
+                    <li><strong>Bakiye:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl/Dönem" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Para birimi formatında giriş yapılır (örn. 100,50 veya 100.50).</li>
+                            <li><strong>Kullanım:</strong> Belirli bir bakiye aralığındaki tahakkukları filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Bakiye Bilgisi Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Bakiye değerini yazarken virgül (,) veya nokta (.) kullanabilirsiniz (örn. 1250,75 veya 1250.75).</li>
+                    <li>Belirli bir bakiye miktarından yüksek tahakkukları görmek için başlangıç alanına o değeri, bitiş alanına yüksek bir değer girin.</li>
+                    <li>Belirli bir bakiye miktarından düşük tahakkukları görmek için başlangıç alanına 0, bitiş alanına o değeri girin.</li>
+                    <li>Tüm bakiye değerleri için bu alanları boş bırakabilirsiniz (sistem otomatik olarak 0-9999999999 aralığını kullanacaktır).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tah-bilgileri" class="info-box">
+            <h3>Tahakkuk Tipi ve GTT Tahakkuk Türü</h3>
+            
+            <div class="step">
+                <h4>Tahakkuk Bilgisi Alanları:</h4>
+                <ol>
+                    <li><strong>Tahakkuk Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Bakiye" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown menu) şeklindedir.</li>
+                            <li><strong>Veri Türü:</strong> Listeden seçim yapılır.</li>
+                            <li><strong>Kullanım:</strong> Tahakkuk tipine göre filtreleme yapmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>GTT Tahakkuk Türü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Tahakkuk Tipi" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown menu) şeklindedir.</li>
+                            <li><strong>Veri Türü:</strong> Listeden seçim yapılır.</li>
+                            <li><strong>Kullanım:</strong> GTT tahakkuk türüne göre filtreleme yapmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>En az bir GTT tahakkuk türü ve tahakkuk tipi seçmeniz gerekir. Bu alanlar boş bırakıldığında sistem rapor oluşturmanıza izin vermeyecektir.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tahakkuk Bilgileri Seçme İpuçları:</h4>
+                <ul>
+                    <li>Tüm tahakkuk tipleri için listeden "Tümü" seçeneğini seçin.</li>
+                    <li>Tüm GTT tahakkuk türleri için listeden "Tümü" seçeneğini seçin.</li>
+                    <li>Belirli bir tahakkuk tipi veya türü için ilgili seçeneği listeden bulup tıklayın.</li>
+                    <li>İki alanı birlikte kullanarak daha spesifik raporlar alabilirsiniz (örn. belirli bir tahakkuk tipi ve belirli bir tahakkuk türü).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tah-tarihi" class="info-box">
+            <h3>Tahakkuk Tarihi</h3>
+            
+            <div class="step">
+                <h4>Tahakkuk Tarihi Alanı:</h4>
+                <ol>
+                    <li><strong>Tahakkuk Tarihi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "GTT Tahakkuk Türü" alanının hemen altında, filtreleme tablosunun alt kısmında yer alır.</li>
+                            <li><strong>Özellik:</strong> Başlangıç ve bitiş değerleri için iki metin kutusu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Tarih formatında giriş yapılır (GG.AA.YYYY).</li>
+                            <li><strong>Kullanım:</strong> Belirli bir tarih aralığındaki tahakkukları filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tahakkuk Tarihi Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Tarih formatı: GG.AA.YYYY şeklindedir (örn. 15.03.2023).</li>
+                    <li>Sistem otomatik olarak bitiş tarihini güncel tarih olarak getirir.</li>
+                    <li>Belirli bir gün için rapor almak istiyorsanız, başlangıç ve bitiş alanlarına aynı tarihi yazın.</li>
+                    <li>Belirli bir tarihten itibaren tüm tahakkukları görmek için başlangıç alanına o tarihi yazın, bitiş alanını güncel tarih olarak bırakın.</li>
+                    <li>Belirli bir yılın tamamı için 01.01.YYYY - 31.12.YYYY şeklinde giriş yapabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Listele Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Filtreleme tablosunun alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde "Listele" yazısı bulunan standart buton.</li>
+                            <li><strong>İşlev:</strong> Belirtilen filtreleme kriterlerine göre su tahakkuk icmal bordrosu raporu oluşturur.</li>
+                            <li><strong>Kullanım:</strong> Filtre alanlarını doldurduktan sonra rapor almak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Listele" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde "Çıkış" yazısı bulunan standart buton.</li>
+                            <li><strong>İşlev:</strong> Su Tahakkuk İcmal Bordrosu ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> Programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Listele butonuna tıklamadan önce en az bir GTT tahakkuk türü ve tahakkuk tipi seçtiğinizden emin olun.</li>
+                    <li>Filtre alanlarını boş bıraktığınızda, sistem varsayılan değerleri kullanarak tüm kayıtları listeleyecektir.</li>
+                    <li>Çok geniş aralıklarla filtreleme yaptığınızda, rapor oluşturma süresi uzayabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-alma" class="section">
+        <h2>Rapor Alma İşlemi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Su Tahakkuk İcmal Bordrosu Nasıl Alınır:</h4>
+                <ol>
+                    <li><strong>Filtreleri Ayarlama:</strong>
+                        <ul>
+                            <li>İlgili filtre alanlarını ihtiyacınıza göre doldurun.</li>
+                            <li>GTT sicil no, abone no, adres bilgileri, yıl/dönem, bakiye gibi alanları kullanarak raporunuzu daraltabilirsiniz.</li>
+                            <li>Tahakkuk tipi ve GTT tahakkuk türü alanlarından en az bir seçim yapmanız gerektiğini unutmayın.</li>
+                            <li>Tahakkuk tarihi aralığını belirleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Oluşturma:</strong>
+                        <ul>
+                            <li>Tüm filtre ayarlarını yaptıktan sonra "Listele" butonuna tıklayın.</li>
+                            <li>Sistem, belirttiğiniz kriterlere göre filtrelenmiş raporu yeni bir pencerede açacaktır.</li>
+                            <li>Rapor, filtreleme kriterlerinize uyan tüm tahakkuk kayıtlarını içerecektir.</li>
+                            <li>Raporda abone bilgileri, tahakkuk detayları ve toplam değerler yer alacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu İnceleme ve Yazdırma:</strong>
+                        <ul>
+                            <li>Açılan rapor penceresinde bilgileri inceleyebilirsiniz.</li>
+                            <li>Raporu yazdırmak için tarayıcınızın yazdırma özelliğini kullanabilirsiniz.</li>
+                            <li>Raporu kapatmak için pencereyi kapatabilirsiniz, bu işlem ana ekranı etkilemez.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok geniş kapsamlı raporlar sistem performansını etkileyebilir.</li>
+                    <li>Filtreleme kriterlerini mümkün olduğunca daraltarak daha hızlı sonuçlar alabilirsiniz.</li>
+                    <li>Rapor açılmıyorsa tarayıcınızın açılır pencere engelleyicisini kontrol edin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Rapor Alma İpuçları:</h4>
+                <ul>
+                    <li>Önce geniş filtrelerle bir rapor alıp, sonra daha spesifik filtrelerle detaylı raporlar alabilirsiniz.</li>
+                    <li>Sık kullandığınız filtre değerlerini not alın, böylece aynı raporu sonraki seferlerde hızlıca oluşturabilirsiniz.</li>
+                    <li>Mahalle ve cadde kodlarını öğrenmek için ilgili birimlerden yardım alabilirsiniz.</li>
+                    <li>Tek bir aboneye ait tahakkukları görmek için abone numarasını başlangıç ve bitiş alanlarına aynı şekilde yazın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturulmuyor:</strong>
+                        <ul>
+                            <li>En az bir GTT tahakkuk türü ve tahakkuk tipi seçtiğinizden emin olun.</li>
+                            <li>Filtre alanlarına geçerli değerler girdiğinizden emin olun (örn. rakam yerine harf girmeyin).</li>
+                            <li>Bakiye alanlarına nokta veya virgülle ayırarak para değeri girdiğinizden emin olun.</li>
+                            <li>Tarih alanlarına doğru formatta (GG.AA.YYYY) giriş yaptığınızdan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Rapor Alınıyor:</strong>
+                        <ul>
+                            <li>Filtreleme kriterlerinizi kontrol edin, çok spesifik kriterler sonuç getirmeyebilir.</li>
+                            <li>Tarih aralığının doğru olduğundan emin olun.</li>
+                            <li>Mahalle, cadde, hane, sıra no gibi kodların doğru olduğundan emin olun.</li>
+                            <li>Yıl ve dönem bilgilerinin doğru olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Çok Yavaş Oluşuyor:</strong>
+                        <ul>
+                            <li>Filtreleme kriterlerinizi daraltarak daha az kayıt içeren raporlar oluşturun.</li>
+                            <li>Sistem yoğunluğuna bağlı olarak rapor oluşturma süresi değişebilir, biraz bekleyin.</li>
+                            <li>Özellikle geniş tarih aralıkları veya tüm aboneler için rapor almak zaman alabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>Alanlar arasında geçiş için TAB tuşunu kullanabilirsiniz.</li>
+                            <li>Bir önceki alana dönmek için SHIFT+TAB tuşlarını kullanabilirsiniz.</li>
+                            <li>Programdan çıkmak için ESC tuşunu kullanabilirsiniz.</li>
+                            <li>Rapor oluşturmak için ENTER tuşunu kullanabilirsiniz (Listele butonu seçiliyken).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Ayarları:</strong>
+                        <ul>
+                            <li>Önce genel bir rapor alıp, sonra filtreleri daraltarak detaylı raporlar alın.</li>
+                            <li>Sık kullanılan filtre değerlerini not alın veya bir kenara yazın.</li>
+                            <li>Mahalle, cadde kodlarını ve tahakkuk türlerini öğrenerek daha hızlı rapor alabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı İşlemler:</strong>
+                        <ul>
+                            <li>Tek bir abone için hızlı rapor almak istiyorsanız, sadece abone numarasını girin, diğer filtreleri varsayılan değerlerinde bırakın.</li>
+                            <li>Belirli bir mahalledeki tüm aboneler için hızlı rapor almak istiyorsanız, sadece mahalle kodunu girin.</li>
+                            <li>Sadece belirli bir tarih aralığındaki tahakkuklar için hızlı rapor almak istiyorsanız, sadece tahakkuk tarihi alanlarını doldurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Düzenli olarak alınan raporlar için filtre ayarlarını not edin.</li>
+                    <li>Mahalle ve cadde kodlarını içeren bir referans listesi oluşturun.</li>
+                    <li>Belirli bir işlem için hangi tahakkuk tipi ve türünün kullanıldığını öğrenin.</li>
+                    <li>Çalışma arkadaşlarınızdan sık kullanılan filtre kombinasyonları hakkında bilgi alın.</li>
+                    <li>Raporu yazdırmadan önce her zaman ekranda kontrol edin, böylece kağıt israfını önlersiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Su Tahakkuk İcmal Bordrosu ekranı, su abonelerine ait tahakkuk bilgilerini çeşitli kriterlere göre raporlamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kolayca kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Her zaman en az bir GTT tahakkuk türü ve tahakkuk tipi seçin.</li>
+                    <li>Filtre alanlarına doğru formatta veri girin.</li>
+                    <li>Çok geniş kapsamlı raporlar için sistem yoğunluğuna göre biraz beklemeniz gerekebilir.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

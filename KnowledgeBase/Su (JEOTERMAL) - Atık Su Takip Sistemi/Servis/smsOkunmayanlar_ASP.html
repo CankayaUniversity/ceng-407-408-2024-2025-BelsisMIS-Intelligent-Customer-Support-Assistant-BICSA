@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Okunmayanlar Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SMS Okunmayanlar Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#giris-ekrani">Giriş Ekranı</a></li>
+                <li><a href="#sms-ekrani">SMS Gönderme Ekranı</a></li>
+                <li><a href="#mesaj-yazma">Mesaj Yazma ve Şablonlar</a></li>
+                <li><a href="#kriterler">SMS Gönderim Kriterleri</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#rapor">Raporlar ve Durum Takibi</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"SMS Okunmayanlar" ekranı, su abonelerine SMS gönderilmesi için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Su beyanı olup endeksleri aynı olan abonelere SMS gönderme</li>
+                <li>Su beyanı olmayan veya beyanı olup tahakkuku olmayan kayıtlara SMS gönderme</li>
+                <li>Mahalle, sokak, cadde bazında filtreleme ile SMS gönderme</li>
+                <li>Borç yılı ve dönemine göre filtreleme yaparak SMS gönderme</li>
+                <li>Abone tipine göre filtreleme yaparak SMS gönderme</li>
+                <li>Şablon mesajlar oluşturma ve kullanma</li>
+                <li>Gönderim raporlarını görüntüleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunlara sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>SMS Modül Lisansı (lisansınız yoksa program çalışmayacaktır)</li>
+                    <li>SMS servisi için geçerli kullanıcı adı ve şifre</li>
+                    <li>SMS göndermek istediğiniz abonelerin hangi kriterlerde olduğuna dair bilgi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Program Açıldığında Karşılaşacağınız Ekranlar:</h4>
+                <ol>
+                    <li><strong>Lisans Kontrol Ekranı:</strong>
+                        <ul>
+                            <li>Eğer SMS Modül Lisansınız yoksa, karşınıza bir uyarı ekranı gelecektir.</li>
+                            <li>Bu ekranda "Bu modülü kullanabilmek için SMS Modul Lisansınız olması gerekmektedir" şeklinde bir mesaj görürsünüz.</li>
+                            <li>Lisans almanız durumunda bu ekran görünmeyecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Giriş Ekranı:</strong>
+                        <ul>
+                            <li>Lisansınız varsa, ilk olarak Giriş ekranı görüntülenecektir.</li>
+                            <li>Bu ekranda kullanıcı adı ve şifrenizi girmeniz gerekmektedir.</li>
+                            <li>Giriş başarılı olduğunda, SMS gönderme ekranına yönlendirileceksiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>SMS Gönderme Ekranı:</strong>
+                        <ul>
+                            <li>Başarılı girişten sonra, ana SMS gönderme ekranını göreceksiniz.</li>
+                            <li>Bu ekranda SMS mesajı yazabileceğiniz, şablon seçebileceğiniz ve gönderim kriterleri belirleyebileceğiniz bölümler bulunur.</li>
+                            <li>Ayrıca gönderim, rapor görüntüleme ve kredi sorgulama gibi işlem butonları yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Önce lisans kontrolü yapılır. Eğer lisansınız yoksa, program kullanılamaz.</li>
+                    <li>Lisans varsa, giriş ekranı görüntülenir.</li>
+                    <li>Giriş işlemi tamamlandıktan sonra, SMS gönderme ekranı görüntülenir.</li>
+                    <li>Mesaj numarası otomatik olarak sistem tarafından atanır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="giris-ekrani" class="section">
+        <h2>Giriş Ekranı</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Giriş Ekranı ve Kullanımı:</h4>
+                <ol>
+                    <li><strong>Giriş Ekranının Görünümü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Program açıldığında ilk görünen ekrandır (lisans kontrolünden sonra).</li>
+                            <li><strong>Görünüm:</strong> Gri kenarlı, "Giriş:" başlıklı bir tablo şeklindedir.</li>
+                            <li><strong>İçerik:</strong> Kullanıcı adı ve şifre giriş alanları ile Giriş ve Çıkış butonları içerir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Giriş Yapma:</strong>
+                        <ul>
+                            <li>Ekranın ortasında yer alan "Kullanıcı Adı" alanına SMS servis kullanıcı adınızı girin.</li>
+                            <li>Hemen altında bulunan "Şifre" alanına SMS servis şifrenizi girin.</li>
+                            <li>Bilgileri girdikten sonra, alt kısımda bulunan "Giriş" butonuna tıklayın.</li>
+                            <li>Sistem SMS servis sağlayıcısına bağlanacak ve bilgilerinizi kontrol edecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Giriş Sonrası:</strong>
+                        <ul>
+                            <li>Kullanıcı adı ve şifre doğruysa, SMS gönderme ekranına yönlendirileceksiniz.</li>
+                            <li>Eğer bilgileriniz hatalıysa, "Giriş işlemi başarısız, lütfen tekrar deneyiniz." şeklinde bir uyarı mesajı görüntülenecektir.</li>
+                            <li>Çıkış yapmak için "Çıkış" butonuna tıklayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Giriş Yaparken Dikkat Edilecek Hususlar:</h4>
+                <ul>
+                    <li>Kullanıcı adı ve şifre bilgilerinizi SMS servis sağlayıcınızdan almanız gerekir.</li>
+                    <li>Büyük-küçük harflere dikkat ederek giriş yapınız.</li>
+                    <li>Giriş işlemi sırasında internet bağlantınızın aktif olduğundan emin olun.</li>
+                    <li>Giriş yapamıyorsanız, SMS servis sağlayıcınız ile iletişime geçerek kullanıcı bilgilerinizi kontrol edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sms-ekrani" class="section">
+        <h2>SMS Gönderme Ekranı</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>SMS Gönderme Ekranının Bölümleri:</h4>
+                <ol>
+                    <li><strong>Üst Bölüm (SMS Gönder):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, mavi renkte bir başlık ile ayrılmış bölüm.</li>
+                            <li><strong>İçerik:</strong> Mesaj No, Gönderen, Şablon, Dinamik Alan, Tarih-Saat ve Mesaj alanlarını içerir.</li>
+                            <li><strong>Kullanım:</strong> Bu bölümden SMS mesajını oluşturabilir, şablon seçebilir ve gönderi zamanı belirleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Orta Bölüm (Kriterler):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Üst bölümün hemen altında, ayrı bir mavi başlık ile ayrılmış bölüm.</li>
+                            <li><strong>İçerik:</strong> Grup, Mahalle, Mahalle/Cadde/Sokak, Borç Yılı/Dönemi ve Abone Tipi alanlarını içerir.</li>
+                            <li><strong>Kullanım:</strong> Bu bölümden SMS göndermek istediğiniz aboneleri filtreleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Bölüm (İşlem Butonları):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın en alt kısmında bulunan bölüm.</li>
+                            <li><strong>İçerik:</strong> Gönder, Raporlar, Temizle, Kontor Sorgula, Çıkış butonları ve navigasyon butonları bulunur.</li>
+                            <li><strong>Kullanım:</strong> Bu butonlar ile SMS gönderme, rapor alma, kredi sorgulama gibi işlemleri gerçekleştirebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Ekran Özellikleri ve Detaylar:</h4>
+                <ul>
+                    <li><strong>Mesaj No:</strong> Sistem tarafından otomatik atanan, her mesaj için benzersiz bir numaradır.</li>
+                    <li><strong>Gönderen:</strong> SMS'lerin kimden gönderildiğini belirtir. Genellikle "Alphanumeric" olarak adlandırılan, kurumunuzun adı ya da kodu görünür.</li>
+                    <li><strong>Mesaj Alanı:</strong> En fazla 160 karakter uzunluğunda SMS yazabileceğiniz alandır. Karakter sayısı, sağ tarafta görüntülenir.</li>
+                    <li>Ekranın sağ üst kısmında, endeks değerlerine göre SMS gönderimi hakkında bir bilgi notu bulunur.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>SMS Gönderme Ekranı Hakkında Önemli Bilgiler:</h4>
+                <ul>
+                    <li>SMS mesajlarınız maksimum 160 karakter olabilir. Karakter sayısı aşıldığında, kalan karakter sayısı kırmızı renkte görünecektir.</li>
+                    <li>Kriterleri doğru belirlediğinizden emin olun. Yanlış kriterler, SMS'lerin yanlış abonelere gitmesine yol açabilir.</li>
+                    <li>Mesaj içeriğinin resmi ve anlaşılır olmasına dikkat edin. Abonelere gönderilen mesajlar kurumunuzu temsil etmektedir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="mesaj-yazma" class="section">
+        <h2>Mesaj Yazma ve Şablonlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Mesaj Yazma ve Şablon Kullanma:</h4>
+                <ol>
+                    <li><strong>Mesaj Yazma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında "Mesaj" etiketinin yanında bulunan geniş metin kutusu.</li>
+                            <li><strong>Kullanım:</strong> Bu alana doğrudan SMS metninizi yazabilirsiniz.</li>
+                            <li><strong>Sınırlama:</strong> Maksimum 160 karakter yazabilirsiniz. Sağ tarafta kalan karakter sayısı görüntülenir.</li>
+                            <li><strong>Dikkat:</strong> Karakter sayısı aşıldığında, kalan karakter sayısı kırmızı renkte görünecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Şablon Kullanma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Şablon" etiketinin yanında bulunan açılır liste (dropdown).</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden daha önce kaydedilmiş mesaj şablonlarından birini seçebilirsiniz.</li>
+                            <li><strong>Etki:</strong> Seçtiğiniz şablon, mesaj alanına otomatik olarak kopyalanacaktır.</li>
+                            <li><strong>Düzenleme:</strong> Şablonu seçtikten sonra mesaj alanında düzenlemeler yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Şablon Kaydetme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mesaj alanının sağında bulunan "Kaydet" butonu.</li>
+                            <li><strong>Kullanım:</strong> Yazdığınız mesajı şablon olarak kaydetmek için bu butona tıklayın.</li>
+                            <li><strong>İşlem:</strong> Butona tıkladığınızda, bir popup açılacak ve şablon için kısa bir açıklama girmeniz istenecektir.</li>
+                            <li><strong>Tamamlama:</strong> Açıklamayı girdikten sonra "Tamam" butonuna tıklayarak şablonu kaydedebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dinamik Alan Ekleme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Dinamik Alan" etiketinin yanında bulunan açılır liste.</li>
+                            <li><strong>Kullanım:</strong> Mesaj içerisine, abonenin bilgilerini otomatik eklemek için kullanılır.</li>
+                            <li><strong>Seçenekler:</strong> Sicil Numarası, Ad, Soyad, Abone No gibi seçenekler bulunur.</li>
+                            <li><strong>Etki:</strong> Seçtiğiniz dinamik alan, mesaj metnine eklenir ve gönderim sırasında her abone için kendi bilgisiyle değiştirilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih ve Saat Belirleme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Tarih - Saat" etiketinin yanında bulunan gün, ay, yıl, saat ve dakika giriş alanları.</li>
+                            <li><strong>Kullanım:</strong> SMS'lerin ileri bir tarih ve saatte gönderilmesini istiyorsanız bu alanları doldurabilirsiniz.</li>
+                            <li><strong>Not:</strong> Bu alanları boş bırakırsanız, SMS'ler hemen gönderilecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Etkili Mesaj Yazma İpuçları:</h4>
+                <ul>
+                    <li>Mesajlarınızı kısa ve öz tutun. 160 karakter sınırını aşmamaya çalışın.</li>
+                    <li>Önemli bilgileri (örn. son ödeme tarihi) mesajın başında belirtin.</li>
+                    <li>Türkçe karakter kullanımına dikkat edin. Bazı sistemlerde Türkçe karakterler sorun çıkarabilir.</li>
+                    <li>Sık kullandığınız mesajları şablon olarak kaydedin, bu size zaman kazandıracaktır.</li>
+                    <li>Dinamik alanları kullanarak mesajlarınızı kişiselleştirin. Örneğin: "Sayın $ad $soyad, su faturanız..."</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Mesaj İçeriği Hakkında Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Resmi ve anlaşılır bir dil kullanın, abonelerin anlayacağı şekilde mesajınızı iletin.</li>
+                    <li>Yazım ve dilbilgisi hatalarına dikkat edin, bu hatalar kurumunuzun imajını zedeleyebilir.</li>
+                    <li>Dinamik alan eklerken boşluk bırakmayı unutmayın (örn. "$ad" yerine "$ad ").</li>
+                    <li>Mesaj içeriği, yasal zorunluluklar ve bilgilendirme amaçlarına uygun olmalıdır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kriterler" class="section">
+        <h2>SMS Gönderim Kriterleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Gönderim Kriterleri ve Filtreleme:</h4>
+                <ol>
+                    <li><strong>Grup Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kriterler bölümünün en üstünde, "Grup" etiketinin yanındaki açılır liste.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir gruba SMS göndermek istiyorsanız bu listeden grup seçimi yapabilirsiniz.</li>
+                            <li><strong>Varsayılan:</strong> Eğer seçim yapmazsanız, diğer kriterlere uyan tüm abonelere SMS gönderilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" etiketinin yanında bulunan metin kutusu ve arama butonu.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir mahalledeki abonelere SMS göndermek için kullanılır.</li>
+                            <li><strong>İşlem:</strong> Arama butonuna tıklayarak açılan pencereden mahalle seçimi yapabilirsiniz.</li>
+                            <li><strong>Not:</strong> Mahalle adı manuel olarak yazılamaz, mutlaka arama butonu kullanılmalıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle/Cadde/Sokak Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mah./Cad./Sk." etiketinin yanında bulunan alanlar ve arama butonu.</li>
+                            <li><strong>Kullanım:</strong> Daha spesifik bir bölgedeki abonelere SMS göndermek için kullanılır.</li>
+                            <li><strong>İşlem:</strong> Arama butonuna tıklayarak açılan pencereden önce mahalle, ardından cadde ve sokak seçimi yapabilirsiniz.</li>
+                            <li><strong>Görünüm:</strong> Seçim yaptıktan sonra, mahalle, cadde ve sokak adları ayrı satırlarda görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borç Yılı ve Dönemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Borç Yılı / Dönemi" etiketinin yanında bulunan iki giriş alanı.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir yıl ve dönemdeki borç durumuna göre filtreleme yapar.</li>
+                            <li><strong>Format:</strong> Yıl alanına 4 haneli yıl (örn. 2023), dönem alanına dönem numarası (örn. 1, 2, 3...) yazılır.</li>
+                            <li><strong>Önemli Not:</strong> Yıl ve dönem bilgileri birlikte girilmelidir. Birini doldurup diğerini boş bırakamazsınız.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone Tipi" etiketinin yanında bulunan çoklu seçim listesi.</li>
+                            <li><strong>Kullanım:</strong> Belirli abone tiplerine sahip kişilere SMS göndermek için kullanılır.</li>
+                            <li><strong>Seçim:</strong> Birden fazla abone tipi seçebilirsiniz. Ctrl tuşunu basılı tutarak çoklu seçim yapabilirsiniz.</li>
+                            <li><strong>Varsayılan:</strong> Program açıldığında tüm abone tipleri seçili olarak gelir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Daha spesifik sonuçlar için birden fazla kriter birlikte kullanılabilir (örn. hem mahalle hem de borç yılı).</li>
+                    <li>Eğer çok geniş bir kitleye SMS göndermek istiyorsanız, kriterleri minimum düzeyde tutun.</li>
+                    <li>Yalnızca belirli bir mahalledeki belirli abone tipine sahip kişilere SMS göndermek gibi kombinasyonlar yapabilirsiniz.</li>
+                    <li>Borç yılı ve dönemini doğru girdiğinizden emin olun, yanlış bilgiler hedef kitlenizi etkileyecektir.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok genel kriterler kullanırsanız, çok sayıda aboneye SMS gönderebilirsiniz. Bu durumda SMS maliyetiniz yüksek olabilir.</li>
+                    <li>Borç yılı ve dönemini kullanırken, her ikisini de doldurmanız gerekir. Biri dolu, diğeri boş olursa sistem uyarı verecektir.</li>
+                    <li>Abone tipi seçimini kaldırırsanız, hiçbir aboneye SMS gönderilmeyecektir. Varsayılan olarak tümü seçilidir.</li>
+                    <li>Mahalle ve Mahalle/Cadde/Sokak alanları ayrı kriterlerdir. İkisini birden doldurmanız gerekli değildir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Gönder Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, ortada bulunan "Gönder" yazan buton.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton.</li>
+                            <li><strong>İşlev:</strong> Belirlediğiniz kriterlere göre SMS'leri göndermeye başlar.</li>
+                            <li><strong>Kullanım:</strong> Tüm mesaj içeriğini ve kriterleri belirledikten sonra bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporlar Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Gönder" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde "Raporlar" yazar.</li>
+                            <li><strong>İşlev:</strong> Gönderilen SMS'lerin durumlarını gösteren rapor penceresini açar.</li>
+                            <li><strong>Kullanım:</strong> SMS'lerin teslim durumunu kontrol etmek için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temizle Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Raporlar" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde "Temizle" yazar.</li>
+                            <li><strong>İşlev:</strong> Formdaki tüm alanları temizler ve yeni bir SMS gönderimi için formu hazırlar.</li>
+                            <li><strong>Kullanım:</strong> Yeni bir SMS oluşturmaya başlamak istediğinizde bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontor Sorgula Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Temizle" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde "Kontor Sorgula" yazar.</li>
+                            <li><strong>İşlev:</strong> SMS servisindeki kalan kontor (kredi) miktarını sorgular.</li>
+                            <li><strong>Kullanım:</strong> Kalan SMS hakkınızı öğrenmek için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kontor Sorgula" butonunun hemen sağında, en sağdaki buton.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde "Çıkış" yazar.</li>
+                            <li><strong>İşlev:</strong> Programdan güvenli çıkış yapar.</li>
+                            <li><strong>Kullanım:</strong> İşlemleriniz bittiğinde bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Navigasyon ve Yardımcı Butonlar:</h4>
+                <ol>
+                    <li><strong>Önceki (<<) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, en sol tarafta bulunan buton.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde "<<" işareti bulunur.</li>
+                            <li><strong>İşlev:</strong> Daha önce gönderilmiş SMS kayıtları arasında geriye doğru gezinmeyi sağlar.</li>
+                            <li><strong>Kullanım:</strong> Önceki SMS kaydını görüntülemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki (>>) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, en sağ tarafta bulunan buton.</li>
+                            <li><strong>Görünüm:</strong> Gri 3D görünümlü buton, üzerinde ">>" işareti bulunur.</li>
+                            <li><strong>İşlev:</strong> Daha önce gönderilmiş SMS kayıtları arasında ileriye doğru gezinmeyi sağlar.</li>
+                            <li><strong>Kullanım:</strong> Sonraki SMS kaydını görüntülemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Arama Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" alanının yanında bulunan küçük buton.</li>
+                            <li><strong>Görünüm:</strong> Küçük, içinde büyüteç ikonu olan buton.</li>
+                            <li><strong>İşlev:</strong> Mahalle listesini açar ve seçim yapmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> Mahalle seçimi yapmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle/Cadde/Sokak Arama Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mah./Cad./Sk." alanının yanında bulunan küçük buton.</li>
+                            <li><strong>Görünüm:</strong> Küçük, içinde büyüteç ikonu olan buton.</li>
+                            <li><strong>İşlev:</strong> Mahalle/Cadde/Sokak seçim ekranını açar.</li>
+                            <li><strong>Kullanım:</strong> Detaylı adres seçimi yapmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Şablon Kaydetme Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mesaj alanının sağında bulunan "Kaydet" yazılı küçük buton.</li>
+                            <li><strong>Görünüm:</strong> Küçük, gri renkli buton.</li>
+                            <li><strong>İşlev:</strong> Yazılan mesajı şablon olarak kaydetmek için bir popup açar.</li>
+                            <li><strong>Kullanım:</strong> Mesajınızı şablon olarak kaydetmek istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Butonlar Hakkında Önemli Bilgiler:</h4>
+                <ul>
+                    <li>SMS gönderimi başladığında, işlem tamamlanana kadar bekleyin. Arada başka butonlara tıklamayın.</li>
+                    <li>Büyük miktarda SMS gönderirken, kontor sorgulaması yaparak yeterli krediniz olduğundan emin olun.</li>
+                    <li>Çıkış butonunu kullanarak programdan güvenli bir şekilde çıkış yapın. Doğrudan pencereyi kapatmak sorunlara neden olabilir.</li>
+                    <li>Önceki ve Sonraki butonları sadece daha önce gönderilmiş SMS kayıtları varsa çalışır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor" class="section">
+        <h2>Raporlar ve Durum Takibi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Rapor Oluşturma ve Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında bulunan "Raporlar" butonu.</li>
+                            <li><strong>İşlem:</strong> Bu butona tıkladığınızda, mevcut SMS kaydı için durum raporu oluşturulur.</li>
+                            <li><strong>Gereklilik:</strong> Rapor oluşturabilmek için, mesaj numarası (recid) alanının dolu olması gerekir.</li>
+                            <li><strong>Not:</strong> Eğer mesaj içeriği boşsa, "Rapor Bulunmamaktadır" uyarısı görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Görüntüleme Ekranı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Raporlar" butonuna tıkladıktan sonra açılan popup pencere.</li>
+                            <li><strong>Görünüm:</strong> Beyaz arka planlı, ağaç yapısında bir liste şeklindedir.</li>
+                            <li><strong>İçerik:</strong> Telefon numaraları ve ilgili SMS'lerin durumları (iletildi, bekliyor, hata vb.) listelenir.</li>
+                            <li><strong>Kapatma:</strong> Pencereyi kapatmak için sağ üst köşedeki çarpı (X) işaretine tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Bilgileri:</strong>
+                        <ul>
+                            <li><strong>Telefon:</strong> SMS gönderilen numara.</li>
+                            <li><strong>Durum:</strong> SMS'in durumu (İletildi, İletilmedi, Beklemede, Hata vb.).</li>
+                            <li><strong>Detay:</strong> Varsa hata mesajı veya ek bilgiler.</li>
+                            <li><strong>Not:</strong> Durumlar gerçek zamanlı olarak güncellenmez, güncel durumu görmek için raporu yeniden oluşturmanız gerekebilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Rapor Takibi İpuçları:</h4>
+                <ul>
+                    <li>Büyük miktarda SMS gönderimi yaptıysanız, SMS'lerin teslim durumunu kontrol etmek için belirli aralıklarla rapor oluşturun.</li>
+                    <li>Hata alan numaralar için, numara formatını kontrol edin veya servis sağlayıcınızla iletişime geçin.</li>
+                    <li>Önceki SMS gönderimlerinin raporlarını görüntülemek için, önce "<" butonu ile ilgili kayda gidin, sonra "Raporlar" butonuna tıklayın.</li>
+                    <li>Rapordaki hata kodlarını anlamak için SMS servis sağlayıcınızın dokümantasyonuna başvurun.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Raporlar Hakkında Önemli Bilgiler:</h4>
+                <ul>
+                    <li>SMS'lerin operatörlere teslim edilmesi ve abonelere ulaşması arasında zaman farkı olabilir.</li>
+                    <li>Bazı SMS'ler çeşitli nedenlerle (hatalı numara, hizmet dışı telefon vb.) iletilemeyebilir.</li>
+                    <li>Rapor penceresi açıkken başka işlem yapamazsınız, önce rapor penceresini kapatmanız gerekir.</li>
+                    <li>Çok sayıda SMS gönderildiğinde rapor görüntüleme birkaç saniye sürebilir, lütfen bekleyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Giriş Yapılamıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kullanıcı adı ve şifre doğru olmasına rağmen giriş yapılamıyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>İnternet bağlantınızı kontrol edin.</li>
+                                    <li>Büyük-küçük harf uyumuna dikkat ederek kullanıcı adı ve şifrenizi yeniden girin.</li>
+                                    <li>SMS servis sağlayıcınızla iletişime geçerek hesabınızın aktif olup olmadığını kontrol edin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>SMS Gönderilemedi Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> SMS gönderimine başladıktan sonra hata alınıyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Kontor sorgulaması yaparak yeterli krediniz olduğundan emin olun.</li>
+                                    <li>Kriterleri daha daraltarak daha az sayıda aboneye SMS gönderin.</li>
+                                    <li>İnternet bağlantınızı kontrol edin.</li>
+                                    <li>SMS servis sağlayıcısı ile iletişime geçerek servis durumunu kontrol edin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Kriterler Çalışmıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Belirlenen kriterlere uymayan abonelere de SMS gidiyor veya hiç SMS gitmiyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Borç yılı ve döneminin ikisini birden doğru girdiğinizden emin olun.</li>
+                                    <li>Abone tipinin doğru seçildiğinden emin olun. Hiçbir abone tipi seçilmediyse SMS gitmeyecektir.</li>
+                                    <li>Mahalle seçimini doğru yaptığınızdan emin olun.</li>
+                                    <li>Temizle butonuna basıp, kriterleri yeniden belirleyin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Görüntülenemiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Rapor Bulunmamaktadır" uyarısı alınıyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Mesaj içeriğinin boş olmadığından emin olun.</li>
+                                    <li>SMS gönderimi yapıldıktan sonra rapor oluşturun, gönderim yapmadan önce rapor oluşturulamaz.</li>
+                                    <li>Önceki/Sonraki butonları ile doğru kayıt üzerinde olduğunuzdan emin olun.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>SMS İçeriği Hazırlama:</strong>
+                        <ul>
+                            <li>Sık kullandığınız mesajları şablon olarak kaydedin.</li>
+                            <li>Mesajlarınızı 160 karakterden kısa tutun.</li>
+                            <li>Dinamik alanları kullanarak mesajları kişiselleştirin.</li>
+                            <li>Önemli bilgiyi (son ödeme tarihi vb.) mesajın başında belirtin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kriter Belirleme:</strong>
+                        <ul>
+                            <li>Toplu SMS göndermeden önce kriterleri dar tutarak test amaçlı birkaç SMS gönderin.</li>
+                            <li>Mahalle, cadde ve sokak bilgilerini kullanarak hedef kitlenizi daraltın.</li>
+                            <li>Abone tiplerini ihtiyacınıza göre seçin, gereksiz kitlelere SMS göndermeyin.</li>
+                            <li>Doğru borç yılı ve dönemini seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gönderim Zamanlaması:</strong>
+                        <ul>
+                            <li>Abonelerin aktif olduğu saatlerde SMS gönderin (örn. sabah 9 - akşam 8 arası).</li>
+                            <li>İleri tarihli gönderim özelliğini kullanarak mesai saatleri içinde SMS'lerin iletilmesini sağlayın.</li>
+                            <li>Çok sayıda SMS gönderecekseniz, sistemi yüklememek için birkaç gruba bölerek gönderin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Takip ve Raporlama:</strong>
+                        <ul>
+                            <li>SMS gönderdikten sonra raporları kontrol ederek iletim durumunu izleyin.</li>
+                            <li>Başarısız gönderimler için nedenini araştırın ve gerekirse tekrar gönderin.</li>
+                            <li>Düzenli olarak kontor sorgulaması yaparak bakiyenizi takip edin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Her SMS gönderimi kontör (kredi) kullanır. İşlemlerinizi planlarken bunu göz önünde bulundurun.</li>
+                    <li>Çok sayıda gereksiz SMS göndermek, abonelerin şikayetlerine ve kurumun imajının zedelenmesine yol açabilir.</li>
+                    <li>Mesai saatleri dışında acil durumlar haricinde SMS göndermekten kaçının.</li>
+                    <li>Şablon mesajlarınızı düzenli olarak güncelleyin ve gereksiz bilgilerden arındırın.</li>
+                    <li>İşlemlerinizi tamamladıktan sonra mutlaka "Çıkış" butonunu kullanarak programdan çıkın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Önemli bilgilendirmeler için (örn. su kesintisi) gün içinde ikinci bir hatırlatma SMS'i göndermek etkili olabilir.</li>
+                    <li>Abonelere düzenli aralıklarla bilgilendirme SMS'leri göndererek kurumsal iletişimi güçlendirin.</li>
+                    <li>SMS içeriklerini periyodik olarak gözden geçirin ve gerekirse güncelleyin.</li>
+                    <li>Sistem yöneticinizden, sık kullanılan SMS şablonlarının standart olarak eklenmesini talep edin.</li>
+                    <li>Düzenli olarak SMS raporlarını analiz ederek, iletilmeyen numaraları sistemden güncelleyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"SMS Okunmayanlar" ekranı, su abonelerine bilgilendirme mesajları göndermek için kullanabileceğiniz kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kolayca kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Mesaj içeriklerinin anlaşılır ve doğru olduğundan emin olun.</li>
+                    <li>Kriterleri doğru belirleyerek hedef kitlenizi doğru seçin.</li>
+                    <li>Raporları takip ederek SMS iletim durumlarını kontrol edin.</li>
+                    <li>Kontor bakiyenizi düzenli olarak kontrol edin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

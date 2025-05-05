@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Tahmini Bilanço Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Tahmini Bilanço Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#yil-girisi">Yıl Bilgisi</a></li>
+                        <li><a href="#donem-girisi">Dönem Bilgileri</a></li>
+                        <li><a href="#abone-tipi">Abone Tipi Seçimi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Rapor İşlemleri</a>
+                    <ul>
+                        <li><a href="#rapor-olusturma">Rapor Oluşturma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Tahmini Bilanço Listesi" ekranı, Su/Atık Su Takip Sistemi içerisinde, belirli dönemlere ait tahmini bilanço listelerinin oluşturulmasını sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir yıla ait tahmini bilanço raporlarını alabilir</li>
+                <li>İstediğiniz dönem aralıklarını belirleyebilir</li>
+                <li>Seçtiğiniz abone tiplerine göre raporlar oluşturabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Raporlamak istediğiniz yıl</li>
+                    <li>Hangi dönem aralıklarını görmek istediğiniz (örn: 1-6 ve 7-12)</li>
+                    <li>Raporlamak istediğiniz abone tipleri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Su/Atık Su Takip Sistemi - Tahmini Bilanço Listesi" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, alanlara ait etiketler ve veri giriş kutuları içerir.</li>
+                            <li>Veri giriş alanları, iki sütunlu bir tablo içinde düzenlenmiştir.</li>
+                            <li>Sol sütunda alan adı, sağ sütunda ise giriş yapacağınız kutular bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Listele" ve "Çıkış" butonları yer alır.</li>
+                            <li>Bu butonlar, raporu oluşturmak veya programdan çıkmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm abone tipleri seçili olarak gelir.</li>
+                    <li>Yıl alanına sistemde tanımlı olan mevcut yıl otomatik olarak gelir.</li>
+                    <li>Dönem alanları varsayılan değerler ile doldurulur (1.Kolon: 0-6, 2.Kolon: 7-12).</li>
+                    <li>Program açıldığında, otomatik olarak Yıl alanı seçili (odaklanmış) durumda gelir.</li>
+                    <li>Programı kullanırken farklı ekranlara gidip geri döndüğünüzde, abone tipi seçim alanı otomatik olarak temizlenir, diğer alanlar son değerlerini korur.</li>
+                    <li>Sistemin güncel tarih bilgisi otomatik olarak kullanılır ve raporlarda bu tarih bilgisi referans alınır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="yil-girisi" class="info-box">
+            <h3>Yıl Bilgisi</h3>
+            
+            <div class="step">
+                <h4>Yıl Alanı:</h4>
+                <ol>
+                    <li><strong>Yıl:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, ilk veri giriş alanıdır.</li>
+                            <li><strong>Özellik:</strong> 4 rakam girebileceğiniz bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Raporlamak istediğiniz yılı girin (örn. "2025").</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yıl Bilgisi Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Yıl alanı açılışta otomatik olarak mevcut yılı gösterir.</li>
+                    <li>Önceki yıllara ait rapor almak için, bu alanı değiştirerek istediğiniz yılı yazabilirsiniz.</li>
+                    <li>Sadece 4 rakam girilebilir ve harfler kabul edilmez.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="donem-girisi" class="info-box">
+            <h3>Dönem Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Dönem Alanları:</h4>
+                <ol>
+                    <li><strong>1.Kolon Başlangıç Dönemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 rakam girebileceğiniz bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Raporda görmek istediğiniz ilk kolon için başlangıç dönemini girin (varsayılan "0").</li>
+                        </ul>
+                    </li>
+                    <li><strong>1.Kolon Bitiş Dönemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "1.Kolon Başlangıç Dönemi" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 rakam girebileceğiniz bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Raporda görmek istediğiniz ilk kolon için bitiş dönemini girin (varsayılan "6").</li>
+                        </ul>
+                    </li>
+                    <li><strong>2.Kolon Başlangıç Dönemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "1.Kolon Bitiş Dönemi" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 rakam girebileceğiniz bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Raporda görmek istediğiniz ikinci kolon için başlangıç dönemini girin (varsayılan "7").</li>
+                        </ul>
+                    </li>
+                    <li><strong>2.Kolon Bitiş Dönemi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "2.Kolon Başlangıç Dönemi" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 rakam girebileceğiniz bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Raporda görmek istediğiniz ikinci kolon için bitiş dönemini girin (varsayılan "12").</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dönem Bilgileri Açıklaması:</h4>
+                <p>Dönem, su tahakkuklarının yapıldığı periyotları ifade eder. Tipik olarak:</p>
+                <ul>
+                    <li>Dönemler 1'den 12'ye kadar numaralandırılır.</li>
+                    <li>Varsayılan olarak, ilk kolon 0-6 dönemlerini, ikinci kolon 7-12 dönemlerini kapsar.</li>
+                    <li>Bu alanları değiştirerek, istediğiniz dönem gruplarını oluşturabilirsiniz.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dönem Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>İlk yarıyıl raporları için 1.Kolon'u 1-6 olarak, ikinci yarıyıl için 2.Kolon'u 7-12 olarak ayarlayabilirsiniz.</li>
+                    <li>Çeyreklik raporlar için 1.Kolon'u 1-3, 2.Kolon'u 4-6 olarak ayarlayabilirsiniz.</li>
+                    <li>Başlangıç dönemi, bitiş döneminden daha küçük olmalıdır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-tipi" class="info-box">
+            <h3>Abone Tipi Seçimi</h3>
+            
+            <div class="step">
+                <h4>Abone Tipi Alanı:</h4>
+                <ol>
+                    <li><strong>Abone Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "2.Kolon Bitiş Dönemi" alanının hemen altında, tablo içinde en altta yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen bir liste kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Listeden bir veya birden fazla seçim yapılabilir.</li>
+                            <li><strong>Kullanım:</strong> Raporda görmek istediğiniz abone tiplerini seçin (Mesken, İşyeri, Resmi Daire vb.).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Abone Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li>Listeden tek bir abone tipi seçmek için üzerine tıklayın.</li>
+                    <li>Birden fazla abone tipi seçmek için:
+                        <ul>
+                            <li>Windows: Ctrl tuşunu basılı tutarak istediğiniz seçeneklere tıklayın.</li>
+                            <li>Mac: Command tuşunu basılı tutarak istediğiniz seçeneklere tıklayın.</li>
+                            <li>Veya fare ile tıklayıp sürükleyerek birden fazla seçenek işaretleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li>Tüm abone tiplerini seçmek için liste içinde herhangi bir yere tıklayıp Ctrl+A tuşlarına basın (program açıldığında varsayılan olarak tümü seçilidir).</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>En az bir abone tipi seçilmelidir, aksi halde program "En az bir tane abone tipi seçin." uyarısı verecektir.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Tipi Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Program açıldığında tüm abone tipleri otomatik olarak seçilidir.</li>
+                    <li>Sadece belirli abone tiplerine odaklanmak istiyorsanız, önce Ctrl+A ile tüm seçimi kaldırın, sonra istediğiniz tipleri seçin.</li>
+                    <li>Birbiriyle ilişkili abone tiplerini (örn. tüm konut tipleri veya tüm işyeri tipleri) birlikte seçerek daha anlamlı raporlar oluşturabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Listele Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, soldaki butondur.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Listele" yazmaktadır.</li>
+                            <li><strong>İşlev:</strong> Belirtilen kriterlere göre tahmini bilanço raporunu hazırlar ve yeni bir pencerede gösterir.</li>
+                            <li><strong>Kullanım:</strong> Tüm giriş alanlarını doldurduktan sonra raporunuzu görmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Listele" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Çıkış" yazmaktadır.</li>
+                            <li><strong>İşlev:</strong> Su Tahmini Bilanço Listesi ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> Programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Listele" butonuna basmadan önce en az bir abone tipi seçtiğinizden emin olun.</li>
+                    <li>"Çıkış" butonuna basarsanız, mevcut ekran kapanır ve girdiğiniz bilgiler kaydedilmez.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Rapor İşlemleri</h2>
+        
+        <div id="rapor-olusturma" class="info-box">
+            <h3>Rapor Oluşturma</h3>
+            
+            <div class="step">
+                <h4>Tahmini Bilanço Raporu Nasıl Oluşturulur:</h4>
+                <ol>
+                    <li><strong>Parametreleri Ayarlama:</strong>
+                        <ul>
+                            <li>Raporlamak istediğiniz yılı "Yıl" alanına girin (varsayılan olarak içinde bulunduğunuz yıl gelir).</li>
+                            <li>İlk kolon için dönem aralığını belirleyin (varsayılan: 0-6).</li>
+                            <li>İkinci kolon için dönem aralığını belirleyin (varsayılan: 7-12).</li>
+                            <li>Raporlamak istediğiniz abone tiplerini listeden seçin (varsayılan: tümü seçili).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Oluşturma:</strong>
+                        <ul>
+                            <li>Tüm parametreleri ayarladıktan sonra "Listele" butonuna tıklayın.</li>
+                            <li>Program, girdiğiniz kriterlere göre bir rapor hazırlayacaktır.</li>
+                            <li>Rapor, yeni bir pencerede açılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu İnceleme:</strong>
+                        <ul>
+                            <li>Açılan rapor penceresinde, seçtiğiniz dönem aralıklarına göre iki kolonda bilgiler yer alacaktır.</li>
+                            <li>Raporda seçtiğiniz abone tiplerine göre tahmini bilanço değerleri gösterilecektir.</li>
+                            <li>Bu pencerede raporu inceleyebilir, yazdırabilir veya kapatabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Rapor Penceresi Özellikleri:</h4>
+                <ul>
+                    <li>Oluşturulan rapor, yaklaşık 792x525 pixel boyutunda yeni bir pencerede açılır.</li>
+                    <li>Bu pencerede kaydırma çubukları bulunur, böylece tüm rapor içeriğini görebilirsiniz.</li>
+                    <li>Rapor penceresi araç çubuğu ve menü çubuğu içermez, sadece rapor içeriğine odaklanmıştır.</li>
+                    <li>Rapor penceresi boyutu değiştirilebilir, böylece içeriği daha rahat görüntüleyebilirsiniz.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Eğer hiçbir abone tipi seçmezseniz, sistem "En az bir tane abone tipi seçin." uyarısı verecektir.</li>
+                    <li>Seçtiğiniz dönem aralığında veri bulunmuyorsa, rapor boş görünebilir.</li>
+                    <li>Çok geniş kapsamlı raporlar oluşturmak (tüm abone tipleri, geniş dönem aralıkları), raporun oluşturulma süresini uzatabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Raporlama İpuçları:</h4>
+                <ul>
+                    <li>Karşılaştırma yapmak istiyorsanız, birinci ve ikinci kolon dönem aralıklarını anlamlı şekilde ayarlayın (örn. Ocak-Haziran ve Temmuz-Aralık).</li>
+                    <li>Daha odaklanmış raporlar için sadece ilgili abone tiplerini seçin.</li>
+                    <li>Rapor oluşturma işlemi bilgisayarınızın hızına göre biraz zaman alabilir, lütfen sabırlı olun.</li>
+                    <li>Açılan rapor penceresini kapatmak, ana programı kapatmaz. Dilediğiniz kadar farklı kriterlerde rapor oluşturabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar</td>
+                    </tr>
+                    <tr>
+                        <td>CTRL + A</td>
+                        <td>Abone tipi listesindeki tüm seçenekleri seçer</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Kısayol Tuşlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için TAB veya ENTER tuşunu kullanın.</li>
+                            <li>Bir önceki alana dönmek için SHIFT + TAB tuş kombinasyonunu kullanın.</li>
+                            <li>Programdan çıkmak için herhangi bir anda ESC tuşuna basabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi Seçimi:</strong>
+                        <ul>
+                            <li>Abone tipi listesine geldiğinizde, tek bir seçenek için üzerine tıklayın.</li>
+                            <li>Birden çok seçenek için CTRL tuşunu basılı tutarak istediğiniz seçeneklere tıklayın.</li>
+                            <li>Tüm seçenekleri işaretlemek için CTRL + A tuş kombinasyonunu kullanın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan tüm işlemleri klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>TAB tuşu ile tüm alanları hızlıca gezebilir ve doldurabilirsiniz.</li>
+                    <li>ESC tuşu, herhangi bir anda programdan çıkmanızı sağlar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturulmuyor:</strong>
+                        <ul>
+                            <li>En az bir abone tipi seçtiğinizden emin olun, aksi halde sistem uyarı verecektir.</li>
+                            <li>Dönem aralıklarının doğru girildiğinden emin olun (başlangıç dönemi bitiş döneminden küçük olmalıdır).</li>
+                            <li>Yıl alanına geçerli bir yıl girdiğinizden emin olun (sadece rakam olmalıdır).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Rapor Açılıyor:</strong>
+                        <ul>
+                            <li>Seçtiğiniz dönem aralığında veri bulunmayabilir.</li>
+                            <li>Seçtiğiniz abone tiplerinde kayıt olmayabilir.</li>
+                            <li>Farklı dönem aralıkları veya abone tipleri seçerek tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sistem Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li>Rapor oluşturma sırasında sistem yoğunluğuna bağlı olarak kısa bir gecikme olabilir, biraz bekleyin.</li>
+                            <li>İşlem çok uzun sürüyorsa, ESC tuşuna basarak programı kapatıp tekrar açmayı deneyin.</li>
+                            <li>Sorun devam ederse, sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Alanlarına Sayı Dışında Değer Girilemiyor:</strong>
+                        <ul>
+                            <li>Dönem alanları sadece sayı girişine izin verir, harf veya özel karakter kabul etmez.</li>
+                            <li>Sadece 0-12 arasında değerler girmeye çalışın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturma İçin:</strong>
+                        <ul>
+                            <li>Sık kullandığınız dönem aralıklarını not edin, bu şekilde her seferinde tekrar girmek zorunda kalmazsınız.</li>
+                            <li>Karşılaştırmalı raporlar için birinci ve ikinci kolon dönem aralıklarını anlamlı şekilde belirleyin.</li>
+                            <li>TAB tuşunu kullanarak alanlar arasında hızlıca gezinin, bu fare kullanımından daha hızlıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi Seçimi İçin:</strong>
+                        <ul>
+                            <li>Belirli abone gruplarını incelemek için, önce tüm seçimi kaldırın (hiçbir yere tıklayın), sonra sadece istediğiniz tipleri seçin.</li>
+                            <li>Birbirine benzer abone tiplerini birlikte analiz etmek, karşılaştırma yapmanızı kolaylaştırır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>Önceden hangi parametreleri kullanacağınızı planlayın, bu şekilde rapor oluşturma sürecini hızlandırabilirsiniz.</li>
+                            <li>Farklı dönem aralıkları deneyerek hangi görünümün sizin için en yararlı olduğunu keşfedin.</li>
+                            <li>Düzenli olarak aynı raporları alıyorsanız, kullandığınız parametreleri not alın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Doğruluğu Uyarıları:</h4>
+                <ul>
+                    <li>Tahmini bilanço verileri gerçek sonuçlardan farklı olabilir, bu normal bir durumdur.</li>
+                    <li>Farklı dönemleri karşılaştırırken mevsimsel değişimleri göz önünde bulundurun.</li>
+                    <li>Rapor sonuçlarını kullanmadan önce gerekirse sistem yöneticinize danışın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Farklı raporlar oluşturup karşılaştırarak daha kapsamlı analizler yapabilirsiniz.</li>
+                    <li>Rapor sonuçlarını yorumlarken, dönemsel faktörleri (mevsimsel değişimler, özel günler vb.) dikkate alın.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Su Tahmini Bilanço Listesi ekranı, su ve atık su tahakkuk bilgilerini dönemsel olarak incelemenize ve tahmini bilanço raporları oluşturmanıza olanak sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, adım adım ve buradaki yönergeleri takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>En az bir abone tipi seçtiğinizden emin olun.</li>
+                    <li>Dönem aralıklarını doğru şekilde belirleyin.</li>
+                    <li>Rapor sonuçlarını dikkatle yorumlayın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

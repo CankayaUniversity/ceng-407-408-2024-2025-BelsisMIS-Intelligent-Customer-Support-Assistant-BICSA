@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Talimatı Sisteme Veri Aktarma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Talimatı Sisteme Veri Aktarma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-aktarma">Su Talimatı Veri Aktarma İşlemleri</a>
+                    <ul>
+                        <li><a href="#dosya-secme">Dosya Seçme ve Yükleme</a></li>
+                        <li><a href="#veri-aktarma-islemi">Verileri Sisteme Aktarma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#alanlar">Alanların Açıklamaları</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islem-mesajlari">İşlem Durum Mesajları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+                <li><a href="#yardim-ozelligi">Yardım Özelliği</a></li>
+                <li><a href="#klavye-kisayollari">Klavye Kısayolları</a></li>
+                <li><a href="#sss">Sık Sorulan Sorular</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Talimatı Sisteme Veri Aktarma" ekranı, su abonelerinin banka talimatlarının sisteme aktarılması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Banka sisteminden alınan talimat verilerini (yeni eklenen veya iptal edilen) kurumunuzun sistemine aktarabilirsiniz</li>
+                <li>Talimat vermiş olan aboneleri sisteme kaydedebilirsiniz</li>
+                <li>Talimatını iptal etmiş olan aboneleri sisteme kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Banka tarafından size verilmiş talimat listesi dosyası (.TXT formatında olmalıdır)</li>
+                    <li>Aktarılacak talimatların hangi bankaya ait olduğu bilgisi (şu anda sadece Garanti Bankası desteklenmektedir)</li>
+                    <li>Dosyanın talimat veren abonelere mi yoksa talimatı iptal eden abonelere mi ait olduğu bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Su Talimatı Sisteme Veri Aktarma" başlığı yer alır.</li>
+                            <li>Bu başlık turkuaz (deniz mavisi) renkli bir şeritte görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, veri aktarma işlemi için gerekli alanlar ve seçenekler içerir.</li>
+                            <li>Veri giriş alanları, ekranın solundan sağına doğru sıralı şekilde düzenlenmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Durum Mesajı Bölümü:</strong>
+                        <ul>
+                            <li>Başlık bölümünün hemen altında, duruma göre görüntülenen altın (gold) renkli bir mesaj alanı vardır.</li>
+                            <li>Bu alan, işlemlerin durumunu (örneğin "Kayıtlar Alındı Lütfen Sisteme Aktarın" veya "Kayıtlar Sisteme Aktarıldı") gösterir.</li>
+                            <li>Normal durumda bu alan gizlidir, işlem gerçekleştirildikçe görünür hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında butonlar yer alır.</li>
+                            <li>Bu butonlar Tamam (OK), Çıkış (Exit), Kaydet (Save) ve Yardım (Help) işlemlerini gerçekleştirmenizi sağlar.</li>
+                            <li>Butonlar gri renkte ve 3D görünümlüdür.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tamam (OK) butonu aktif, Kaydet butonu pasif durumdadır.</li>
+                    <li>Dosya seçildikten ve Tamam butonuna basıldıktan sonra, Kaydet butonu aktif hale gelir ve Tamam butonu pasif olur.</li>
+                    <li>İşlemler sırasında ekranda "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ve dönen dişli çarkları gösteren bir animasyon görüntülenebilir. Bu normal bir durumdur ve işlemin sürdüğünü gösterir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-aktarma" class="section">
+        <h2>Su Talimatı Veri Aktarma İşlemleri</h2>
+        
+        <div id="dosya-secme" class="info-box">
+            <h3>Dosya Seçme ve Yükleme</h3>
+            
+            <div class="step">
+                <h4>Dosya Yükleme Adımları:</h4>
+                <ol>
+                    <li><strong>Banka Seçimi:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında yer alan "Banka" açılır listesinden işlem yapacağınız bankayı seçin.</li>
+                            <li>Bu liste ekranın sol üst kısmında yer alır ve "Banka" etiketinin hemen sağındadır.</li>
+                            <li>Şu anda sadece Garanti Bankası (0010) aktiftir ve listede görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Seçimi:</strong>
+                        <ul>
+                            <li>"Path" yazısının sağındaki metin kutusunun yanında bulunan "Upload" butonuna tıklayın.</li>
+                            <li>Bu buton, "Path" alanının hemen sağında yer alır.</li>
+                            <li>Tıkladığınızda küçük bir pencere açılır (100x390 pixel boyutunda).</li>
+                            <li>Bu pencereden yüklemek istediğiniz talimat dosyasını seçin.</li>
+                            <li>Dosya uzantısının .TXT olması gerekmektedir, diğer uzantılar kabul edilmez.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Talimat Durumu Seçimi:</strong>
+                        <ul>
+                            <li>"Talimat Durumu" etiketinin sağında yer alan açılır listeden uygun seçeneği seçin.</li>
+                            <li>Bu açılır liste, "Path" alanının altında yer almaktadır.</li>
+                            <li>"Talimat Verenler" seçeneği (değer 0), bankada yeni talimat veren aboneler için kullanılır.</li>
+                            <li>"Talimatı İptal Edilenler" seçeneği (değer 1), bankadaki talimatını iptal eden aboneler için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yalnızca .TXT uzantılı dosyaları yükleyebilirsiniz, başka formattaki dosyalar kabul edilmez.</li>
+                    <li>Talimat durumunu (yeni talimatlar veya iptal talimatları) doğru seçtiğinizden emin olun, bu seçim işleminizin doğru sonuçlanması için çok önemlidir.</li>
+                    <li>Talimat durumunun altında kırmızı renkte bir uyarı metni bulunur: "Talimat Durumunu Lütfen Dikkatli bir şekilde seçiniz..!"</li>
+                    <li>Aynı dosyayı ikinci kez yüklemeye çalıştığınızda sistem "Talimat dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!" mesajıyla sizi uyaracaktır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dosya Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Dosyayı yüklemeden önce bankadan gelen dosyanın formatının doğru olduğundan emin olun.</li>
+                    <li>Dosya adının benzersiz olması önerilir, bu şekilde daha önce yüklenip yüklenmediğini sistem kolaylıkla kontrol edebilir.</li>
+                    <li>Talimat Durumu seçeneğini, bankadan gelen dosyanın içeriğine uygun şekilde seçmeye dikkat edin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="veri-aktarma-islemi" class="info-box">
+            <h3>Verileri Sisteme Aktarma</h3>
+            
+            <div class="step">
+                <h4>Veri Aktarma Adımları:</h4>
+                <ol>
+                    <li><strong>Dosyayı Sisteme Yükleme:</strong>
+                        <ul>
+                            <li>Tüm seçimleri yaptıktan sonra, ekranın alt kısmında yer alan "Tamam" (OK) butonuna tıklayın.</li>
+                            <li>Bu buton, buton bölümünün sol tarafında yer alır.</li>
+                            <li>Sistem dosyayı yüklerken, "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ve dönen dişli çarkları gösteren bir animasyon görüntülenebilir.</li>
+                            <li>Eğer dosya daha önce yüklenmiş ise "Talimat dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!" mesajı ile uyarılırsınız.</li>
+                            <li>Eğer seçilen dosya .TXT uzantılı değilse "Seçtiğiniz Dosya Formatı Uygun Değil Lütfen Kontrol Ediniz!" mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verileri Kontrol Etme:</strong>
+                        <ul>
+                            <li>Sistem dosya içeriğini başarıyla yüklediğinde, ekranın üst kısmında altın (gold) renkli bir şeritte "Kayıtlar Alındı Lütfen Sisteme Aktarın" mesajı görüntülenir.</li>
+                            <li>Bu mesaj, başarılı bir şekilde dosya içeriğinin okunduğunu ve aktarım için hazır olduğunu gösterir.</li>
+                            <li>Bu aşamada, "Tamam" butonu pasif hale gelir ve "Kaydet" butonu aktif olur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verileri Sisteme Aktarma:</strong>
+                        <ul>
+                            <li>Verileri sisteme aktarmak için ekranın alt kısmında yer alan "Kaydet" butonuna tıklayın.</li>
+                            <li>Bu buton, buton bölümünün sağ tarafında yer alır.</li>
+                            <li>Sistem verileri veritabanına kaydederken kısa bir bekleme süresi olabilir.</li>
+                            <li>İşlem tamamlandığında, ekranın üst kısmındaki altın renkli şeritte "Kayıtlar Sisteme Aktarıldı" mesajı görüntülenir.</li>
+                            <li>Ayrıca bir pencere açılarak "Yazılan Kayıt Toplamı: X" şeklinde bir bilgi mesajı gösterilir. Burada X, aktarılan kayıt sayısını belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Veri aktarma işlemi başlatıldıktan sonra işlemi iptal edemezsiniz, bu nedenle işleme başlamadan önce tüm seçimlerin doğru olduğundan emin olun.</li>
+                    <li>Veri aktarma işlemi tamamlandığında, işlenen kayıt sayısını gösteren bir mesaj penceresi görüntülenir, bu bilgiyi not almanız faydalı olabilir.</li>
+                    <li>İşlem tamamlandıktan sonra form temizlenir ve yeni bir işlem için hazır hale gelir.</li>
+                    <li>Dosya seçilmeden "Kaydet" butonuna basarsanız, "Banka Dosyası Taşınmamış" hata mesajı görüntülenir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Veri Aktarma İpuçları:</h4>
+                <ul>
+                    <li>Veri aktarma işleminin tamamlanması, dosya büyüklüğüne göre biraz zaman alabilir, lütfen sabırlı olun.</li>
+                    <li>İşlem sırasında görüntülenen "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ve dönen dişli çarkları, işlemin sürdüğünü gösterir, endişelenmeyin.</li>
+                    <li>İşlem tamamlandığında gösterilen kayıt sayısını, dosyanızda olması gereken kayıt sayısı ile karşılaştırarak doğrulayın.</li>
+                    <li>Herhangi bir hata durumunda ekranda görüntülenen hata mesajını not alın ve sistem yöneticinize bildirin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="alanlar" class="section">
+        <h2>Alanların Açıklamaları</h2>
+        <div class="info-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Alan</th>
+                        <th>Açıklama</th>
+                        <th>Konum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Banka</td>
+                        <td>İşlem yapılacak bankanın seçildiği açılır liste. Şu anda sadece Garanti Bankası (0010) aktiftir.</td>
+                        <td>Ekranın üst kısmında, sol tarafta, "Banka" etiketinin hemen sağında yer alır.</td>
+                    </tr>
+                    <tr>
+                        <td>Path</td>
+                        <td>Yüklenecek dosyanın yolunu gösteren metin kutusu. Maksimum 75 karakter uzunluğunda olabilir. Sistem tarafından otomatik olarak doldurulur.</td>
+                        <td>"Banka" alanının hemen altında, "Path" etiketinin sağında yer alır.</td>
+                    </tr>
+                    <tr>
+                        <td>Upload Butonu</td>
+                        <td>Dosya seçme penceresini açan buton.</td>
+                        <td>"Path" metin kutusunun hemen sağında yer alır.</td>
+                    </tr>
+                    <tr>
+                        <td>Talimat Durumu</td>
+                        <td>Dosyanın talimat veren abonelere mi yoksa talimatı iptal eden abonelere mi ait olduğunu belirten açılır liste.</td>
+                        <td>"Path" alanının altında, "Talimat Durumu" etiketinin sağında yer alır.</td>
+                    </tr>
+                    <tr>
+                        <td>Uyarı Metni</td>
+                        <td>Talimat durumunun dikkatli seçilmesi gerektiğini hatırlatan kırmızı renkli metin. "Talimat Durumunu Lütfen Dikkatli bir şekilde seçiniz..!" yazısını içerir.</td>
+                        <td>Talimat Durumu alanının hemen altında, tüm satırı kaplayacak şekilde yer alır.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Talimat Durumu Seçenekleri:</h4>
+                <ol>
+                    <li><strong>Talimat Verenler (değer 0):</strong>
+                        <ul>
+                            <li>Bu seçenek, bankada yeni otomatik ödeme talimatı veren aboneler için kullanılır.</li>
+                            <li>Bu seçenek seçildiğinde, sistem dosyadaki aboneleri otomatik ödeme talimatı veren kişiler olarak işaretler.</li>
+                            <li>XML oluşturma sürecinde "otomatik='1'" şeklinde işaretlenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Talimatı İptal Edilenler (değer 1):</strong>
+                        <ul>
+                            <li>Bu seçenek, bankadaki otomatik ödeme talimatını iptal eden aboneler için kullanılır.</li>
+                            <li>Bu seçenek seçildiğinde, sistem dosyadaki aboneleri otomatik ödeme talimatını iptal eden kişiler olarak işaretler.</li>
+                            <li>XML oluşturma sürecinde "otomatik='0'" şeklinde işaretlenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>Talimat durumu seçeneğini doğru seçmek çok önemlidir. Yanlış seçim yapılması, abonelerin ödeme durumlarının sistemde hatalı işlenmesine neden olabilir. Bu nedenle kırmızı uyarı metni ile vurgulanmıştır.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana Butonlar:</h4>
+                <ol>
+                    <li><strong>Upload Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Path" metin kutusunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart gri buton, üzerinde "Upload" yazısı bulunur.</li>
+                            <li><strong>İşlev:</strong> Dosya seçme penceresini açar (100x390 pixel boyutunda küçük bir pencere).</li>
+                            <li><strong>Kullanım:</strong> Bu butona tıklayarak bilgisayarınızdan yüklemek istediğiniz dosyayı seçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tamam (OK) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "OK" yazısı bulunur.</li>
+                            <li><strong>İşlev:</strong> Seçilen dosyayı sisteme yükler ve içeriğini kontrol eder.</li>
+                            <li><strong>Kullanım:</strong> Dosya seçildikten ve talimat durumu belirlendikten sonra bu butona tıklayın.</li>
+                            <li><strong>Not:</strong> Bu buton, dosya yüklendikten sonra pasif hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, "Tamam" butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde "Exit" yazısı bulunur.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkış yapar.</li>
+                            <li><strong>Kullanım:</strong> İşlemi iptal etmek veya programdan çıkmak için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet (Save) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, "Çıkış" butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, diskete kaydetme simgeli.</li>
+                            <li><strong>İşlev:</strong> Yüklenen dosyadaki verileri sisteme kaydeder.</li>
+                            <li><strong>Kullanım:</strong> Dosya yüklendikten ve içeriği kontrol edildikten sonra verileri sisteme kaydetmek için bu butona tıklayın.</li>
+                            <li><strong>Not:</strong> Bu buton, program ilk açıldığında ve dosya yüklenmeden önce pasif durumdadır. Dosya yüklendikten sonra aktif hale gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım (Help) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kaydet butonunun yakınında bulunabilir (arayüze göre değişebilir).</li>
+                            <li><strong>Görünüm:</strong> Üzerinde yardım simgesi bulunan buton.</li>
+                            <li><strong>İşlev:</strong> Bankalarla ilgili yardım bilgilerini içeren bir pencere açar.</li>
+                            <li><strong>Kullanım:</strong> Bankalarla ilgili bilgi almak istediğinizde bu butona tıklayın.</li>
+                            <li><strong>Not:</strong> Bu buton tıklandığında "bankaHelp.asp" adlı bir pencere açılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna basmadan verileri sisteme kaydetmiş olmazsınız.</li>
+                    <li>İşlem tamamlandığında, ekranda işlenen kayıt sayısını gösteren bir mesaj görüntülenir.</li>
+                    <li>Çıkış butonuna basarak programdan çıkmadan önce, işleminizin tamamlandığından emin olun.</li>
+                    <li>Butonlar duruma göre aktif veya pasif hale gelir: Dosya yüklendikten sonra Tamam butonu pasif, Kaydet butonu aktif olur.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Buton Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Butonlara tıklarken işlemlerin tamamlanmasını bekleyin, özellikle büyük dosyalarda işlemler biraz zaman alabilir.</li>
+                    <li>Tamam butonuna bastıktan sonra, ekranın üst kısmında "Kayıtlar Alındı Lütfen Sisteme Aktarın" mesajını görmelisiniz. Bu mesajı görmüyorsanız, işlemde bir sorun olabilir.</li>
+                    <li>Kaydet butonuna bastıktan sonra, işlem tamamlandığında gösterilen kayıt sayısını not almak faydalı olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-mesajlari" class="section">
+        <h2>İşlem Durum Mesajları</h2>
+        <div class="info-box">
+            <h3>Ekranda Görüntülenen Mesajlar</h3>
+            
+            <div class="step">
+                <h4>Durum Mesajları ve Anlamları:</h4>
+                <ol>
+                    <li><strong>"Kayıtlar Alındı Lütfen Sisteme Aktarın":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Altın (gold) renkli bir şeritte kalın (bold) yazı stilinde görüntülenir.</li>
+                            <li><strong>Konum:</strong> Başlık bölümünün hemen altında yer alır.</li>
+                            <li><strong>Anlam:</strong> Dosya başarıyla okunmuş ve içeriği sisteme aktarılmaya hazırdır.</li>
+                            <li><strong>Ne Yapmalısınız:</strong> Kaydet butonuna tıklayarak işlemi tamamlayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Kayıtlar Sisteme Aktarıldı":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Altın (gold) renkli bir şeritte kalın (bold) yazı stilinde görüntülenir.</li>
+                            <li><strong>Konum:</strong> Başlık bölümünün hemen altında yer alır.</li>
+                            <li><strong>Anlam:</strong> Dosyadaki veriler başarıyla veritabanına kaydedilmiştir.</li>
+                            <li><strong>Ne Yapmalısınız:</strong> Kayıt sayısını kontrol ettikten sonra yeni bir işlem yapabilir veya programdan çıkabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Yazılan Kayıt Toplamı: X":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bir mesaj penceresinde görüntülenir.</li>
+                            <li><strong>Konum:</strong> Ekranın ortasında açılan bir pencerede yer alır.</li>
+                            <li><strong>Anlam:</strong> Sisteme aktarılan toplam kayıt sayısını gösterir (X yerine sayı görüntülenir).</li>
+                            <li><strong>Ne Yapmalısınız:</strong> Sayıyı not alın ve "Tamam" tıklayarak mesaj penceresini kapatın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Lütfen Aşağıdaki Yönergeleri İzleyin...":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bej rengi zemin üzerinde turkuaz rengi yazı, yanında dönen dişli çarkları animasyonu.</li>
+                            <li><strong>Konum:</strong> İşlem sırasında ekranın ortasında görüntülenir.</li>
+                            <li><strong>Anlam:</strong> Sistem dosyayı işliyor, lütfen bekleyin.</li>
+                            <li><strong>Ne Yapmalısınız:</strong> İşlemin tamamlanmasını bekleyin, herhangi bir şey yapmanız gerekmez.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Hata Mesajları ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Seçtiğiniz Dosya Formatı Uygun Değil Lütfen Kontrol Ediniz!":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bir mesaj penceresinde görüntülenir.</li>
+                            <li><strong>Sebep:</strong> Yüklemeye çalıştığınız dosya .TXT uzantılı değil.</li>
+                            <li><strong>Çözüm:</strong> .TXT uzantılı bir dosya seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Talimat dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bir mesaj penceresinde görüntülenir.</li>
+                            <li><strong>Sebep:</strong> Seçtiğiniz dosya daha önce sisteme yüklenmiş.</li>
+                            <li><strong>Çözüm:</strong> Farklı bir dosya seçin veya dosya adını değiştirip tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Banka Dosyası Taşınmamış":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bir mesaj penceresinde görüntülenir.</li>
+                            <li><strong>Sebep:</strong> Kaydet butonuna, dosya yüklenmeden önce bastınız.</li>
+                            <li><strong>Çözüm:</strong> Önce dosyayı seçin ve Tamam butonuna basarak yükleyin, sonra Kaydet butonuna basın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Abone Dosyası Taşınmış Devam Etmek İstiyor musunuz?":</strong>
+                        <ul>
+                            <li><strong>Görünüm:</strong> Bir onay penceresinde görüntülenir.</li>
+                            <li><strong>Sebep:</strong> Dosya daha önce taşınmış olabilir.</li>
+                            <li><strong>Çözüm:</strong> Devam etmek istiyorsanız "Evet", istemiyorsanız "Hayır" seçeneğini tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Mesajlarla İlgili İpuçları:</h4>
+                <ul>
+                    <li>Hata mesajlarını dikkatlice okuyun, genellikle sorunun çözümü için ipuçları içerirler.</li>
+                    <li>İşlem sırasında görüntülenen "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı normal bir durumdur, endişelenmeyin.</li>
+                    <li>"Yazılan Kayıt Toplamı" mesajında görünen sayı, dosyanızdaki kayıt sayısı ile aynı olmalıdır. Farklılık varsa, sistem yöneticinize danışın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Dosya Formatı Uygun Değil Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Seçtiğiniz Dosya Formatı Uygun Değil Lütfen Kontrol Ediniz!" mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Sadece .TXT uzantılı dosyaları yükleyebilirsiniz. Dosya uzantısının doğru olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Daha Önce Taşınmış Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Talimat dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!" mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Aynı dosyayı daha önce sisteme yüklemişsiniz. Farklı bir dosya seçin veya dosya adını değiştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Dosyası Taşınmamış Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Banka Dosyası Taşınmamış" mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Önce Tamam butonuna basarak dosyayı yüklemeniz gerekmektedir. Dosya yüklendikten sonra Kaydet butonuna basın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bekleyen İşlem Göstergesi Uzun Süre Kalıyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ve dönen dişli çarkları uzun süre ekranda kalıyor.</li>
+                            <li><strong>Çözüm:</strong> Büyük dosyalarda bu durum normal olabilir. Biraz daha bekleyin. Çok uzun sürerse (5 dakikadan fazla), sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Dosya Hatası:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Dosya yükleniyor ancak işlem tamamlanmıyor veya sıfır kayıt aktarıldı mesajı alıyorsunuz.</li>
+                            <li><strong>Çözüm:</strong> Dosyanın içeriğini kontrol edin, boş olabilir veya yanlış formatta olabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Dosya Hazırlığı:</strong>
+                        <ul>
+                            <li>Bankanın sağladığı dosyaların standart formatta olduğundan emin olun.</li>
+                            <li>Dosya adlarını tarih ve banka bilgisini içerecek şekilde adlandırmak, daha sonra takip etmeyi kolaylaştırabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Takibi:</strong>
+                        <ul>
+                            <li>Her işlem sonrası, işlenen kayıt sayısını ve tarihini not alın.</li>
+                            <li>Bu bilgiler, daha sonra herhangi bir sorun olduğunda referans olarak kullanılabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Talimat Durumu Seçimi:</strong>
+                        <ul>
+                            <li>Talimat durumunu seçerken, banka tarafından sağlanan dosya açıklamasına dikkat edin.</li>
+                            <li>Emin olmadığınız durumlarda, banka yetkilisi veya sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri İşleme Süreci:</strong>
+                        <ul>
+                            <li>Sistem, dosyayı okuduktan sonra içeriğini uygun formata dönüştürür.</li>
+                            <li>Bu işlem otomatik olarak gerçekleşir ve sizin herhangi bir işlem yapmanızı gerektirmez.</li>
+                            <li>Veri işleme süreci, büyük dosyalarda biraz zaman alabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra programdan güvenli çıkış yapın.</li>
+                    <li>Abone bilgilerini içeren dosyaları güvenli bir şekilde saklayın ve gereksiz olduğunda silin.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, veriler kritik öneme sahip olabilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, işlem adımlarını bir kontrol listesi haline getirmek işinizi kolaylaştırabilir.</li>
+                    <li>Her ayın belirli bir gününde talimat verilerini aktarmak için bir takvim oluşturun.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Sistem yöneticinizin iletişim bilgilerini her zaman elinizin altında bulundurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yardim-ozelligi" class="section">
+        <h2>Yardım Özelliği</h2>
+        <div class="info-box">
+            <h3>Banka Yardım Penceresi</h3>
+            
+            <div class="step">
+                <h4>Yardım Özelliğini Kullanma:</h4>
+                <ol>
+                    <li><strong>Yardım Penceresine Erişim:</strong>
+                        <ul>
+                            <li>Ekrandaki "Yardım" butonuna tıklayarak banka yardım penceresine erişebilirsiniz.</li>
+                            <li>Bu pencere, "bankaHelp.asp" adlı bir sayfayı açar ve bankalarla ilgili yardım bilgilerini gösterir.</li>
+                            <li>Yardım penceresi 5.2cm x 13.42cm boyutundadır ve ekranın ortasında görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım İçeriği:</strong>
+                        <ul>
+                            <li>Yardım penceresi, bankaların dosya formatları ve uyumluluk bilgileri gibi konularda bilgiler içerir.</li>
+                            <li>Bankalarla ilgili özel durumlar veya dikkat edilmesi gereken noktalar burada açıklanır.</li>
+                            <li>Güncel banka bilgileri ve kodları için bu pencereyi kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yardım Penceresini Kapatma:</strong>
+                        <ul>
+                            <li>Yardım penceresini kapatmak için pencerenin sağ üst köşesindeki "X" butonuna tıklayın.</li>
+                            <li>Alternatif olarak, pencere dışındaki herhangi bir yere tıklayarak da yardım penceresini kapatabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yardım Özelliği İpuçları:</h4>
+                <ul>
+                    <li>Sistemde yeni bir banka eklendikçe yardım içeriği güncellenebilir, bu nedenle düzenli olarak kontrol edin.</li>
+                    <li>Bir banka ile ilgili işlem yapmadan önce, o bankanın dosya formatı hakkında bilgi almak için yardım özelliğini kullanabilirsiniz.</li>
+                    <li>Yardım penceresinde belirtilen banka kodlarını not almanız, ileride hızlı işlem yapmanıza yardımcı olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Klavye Kısayolları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Enter</td>
+                        <td>Bir sonraki alana geçer (Tab tuşu ile aynı işlevi görür)</td>
+                    </tr>
+                    <tr>
+                        <td>Esc</td>
+                        <td>Programdan çıkmak için kullanılır (onay sorar)</td>
+                    </tr>
+                    <tr>
+                        <td>Tab</td>
+                        <td>Bir sonraki alana geçmek için kullanılır</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + S</td>
+                        <td>Kaydet (Save) butonuna basmak için kullanılabilir</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + X</td>
+                        <td>Çıkış (Exit) butonuna basmak için kullanılabilir</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Klavye Kısayollarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için Enter veya Tab tuşunu kullanabilirsiniz.</li>
+                            <li>Programdan çıkmak için Esc tuşuna basabilirsiniz.</li>
+                            <li>Hızlı işlem yapmak için ALT + S kombinasyonu ile Kaydet işlemini gerçekleştirebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Klavye Kısayolları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan da birçok işlemi klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>Enter tuşu, bir alandan diğerine geçmek için Tab tuşu gibi kullanılabilir.</li>
+                    <li>Sık kullandığınız işlemlerin kısayollarını ezberlemek size zaman kazandıracaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sss" class="section">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="info-box">
+            <h3>Genel Sorular</h3>
+            
+            <div class="step">
+                <h4>Sık Sorulan Sorular ve Yanıtları:</h4>
+                <ol>
+                    <li><strong>Soru: Sisteme aktardığım talimatlar ne zaman işleme alınır?</strong>
+                        <ul>
+                            <li>Yanıt: Sisteme aktarılan talimatlar, bir sonraki fatura döneminden itibaren geçerli olur. Yani bu ay aktardığınız talimatlar, bir sonraki ay kesilen faturalarda dikkate alınır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: Aynı dosyayı yanlışlıkla iki kez yükleyebilir miyim?</strong>
+                        <ul>
+                            <li>Yanıt: Hayır, sistem aynı dosya adıyla daha önce yükleme yapılıp yapılmadığını kontrol eder ve eğer yapılmışsa "Talimat dosyası Daha Önce Taşınmış Lütfen Kontrol Ediniz!" uyarısı verir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: Talimat türünü (veren/iptal) yanlış seçersem ne olur?</strong>
+                        <ul>
+                            <li>Yanıt: Talimat türünü yanlış seçmeniz, verilerin sistemde hatalı işlenmesine neden olur. Örneğin, talimat iptal eden aboneleri "Talimat Verenler" olarak işaretlerseniz, bu aboneler için yanlış işlemler yapılabilir. Bu durumda hemen sistem yöneticinizle iletişime geçmelisiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: Hangi bankalarla çalışabilirim?</strong>
+                        <ul>
+                            <li>Yanıt: Şu anda sistem yalnızca Garanti Bankası ile çalışmaktadır. Diğer bankalarla çalışma durumu için sistem yöneticinize danışabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: İşlem sonunda gösterilen kayıt sayısı, dosyamdaki abone sayısından farklı çıkarsa ne yapmalıyım?</strong>
+                        <ul>
+                            <li>Yanıt: Bu durumda, bankadan gelen dosyada bazı kayıtların hatalı veya eksik olma ihtimali yüksektir. İlk olarak dosya içeriğini kontrol etmeli, sonra sistem yöneticinize danışmalısınız.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: "Lütfen Aşağıdaki Yönergeleri İzleyin..." mesajı ne anlama geliyor?</strong>
+                        <ul>
+                            <li>Yanıt: Bu mesaj, sistemin dosyayı işlediğini ve verileri hazırladığını gösterir. Mesajın yanında dönen dişli çarkları animasyonu da işlemin devam ettiğini belirtir. Bu normal bir durumdur ve işlem bitene kadar beklemeniz gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Soru: Sistem dosyaları nasıl işliyor?</strong>
+                        <ul>
+                            <li>Yanıt: Sistem, yüklediğiniz dosyayı okuduktan sonra içeriğini uygun formata dönüştürür. Bu işlem otomatik olarak gerçekleşir ve sizin herhangi bir işlem yapmanızı gerektirmez. Dönüştürme işlemi, verilerin sistem tarafından daha kolay işlenmesini sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Talimat dosyalarını güvenli bir yerde yedeklemeniz, ileride kontrol amaçlı kullanmak için faydalı olabilir.</li>
+                    <li>Yüklediğiniz dosyalara ait kayıt sayılarını bir yerde not tutmanız, daha sonra karşılaştırma yapmak için yararlı olacaktır.</li>
+                    <li>Şüphelendiğiniz herhangi bir durumda, sisteme veri aktarmadan önce sistem yöneticinize danışmanız önerilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Su Talimatı Sisteme Veri Aktarma ekranı, banka talimatlarını kurumunuzun sistemine aktarmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Bilgilerinizi düzenli olarak kaydedin.</li>
+                    <li>Talimat durumunu doğru seçtiğinizden emin olun.</li>
+                    <li>İşlem sonuçlarını kontrol edin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

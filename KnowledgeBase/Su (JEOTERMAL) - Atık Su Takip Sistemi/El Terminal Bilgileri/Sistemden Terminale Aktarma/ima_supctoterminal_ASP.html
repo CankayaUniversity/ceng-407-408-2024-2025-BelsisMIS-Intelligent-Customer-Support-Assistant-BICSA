@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemden Terminale Veri Aktarma (IMA) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sistemden Terminale Veri Aktarma (IMA) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları</a>
+                    <ul>
+                        <li><a href="#donem-bilgileri">Yıl ve Dönem Bilgileri</a></li>
+                        <li><a href="#abone-bilgileri">Abone Bilgileri</a></li>
+                        <li><a href="#konum-bilgileri">Konum ve Sayaç Bilgileri</a></li>
+                        <li><a href="#defter-terminal">Defter ve Terminal Bilgileri</a></li>
+                        <li><a href="#abone-tipi">Abone Tipi Seçimi</a></li>
+                        <li><a href="#ek-secenekler">Ek Seçenekler</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Veri Aktarma İşlemi</a>
+                    <ul>
+                        <li><a href="#dosya-adlari">Oluşturulan Dosya Bilgileri</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sorun Giderme</a></li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Sistemden Terminale Veri Aktarma (IMA)" ekranı, su sayaç okuma işlemleri için gerekli bilgilerin el terminallerine aktarılmasını sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir dönem için abone bilgilerini el terminallerine aktarabilirsiniz</li>
+                <li>Fatura dönemine ait tarife bilgilerini terminale gönderebilirsiniz</li>
+                <li>Sayaç okuma işlemi için gerekli tüm bilgileri hazırlayabilirsiniz</li>
+                <li>Çeşitli kriterlere göre abone seçimi yapabilirsiniz (sicil numarası, mahalle, cadde, hane, vb.)</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Aktarım yapılacak dönemin yıl ve dönem bilgisi</li>
+                    <li>İlk ödeme tarihi</li>
+                    <li>Hangi abonelere ait verilerin aktarılacağı (sicil numarası aralığı, vb.)</li>
+                    <li>Hangi defterlere/terminallere veri aktarımı yapılacağı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Yardımcı Butonlar:</h4>
+                <ol>
+                    <li><strong>Dönem Seçim Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Dönem" alanının yanında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Büyüteç simgeli küçük bir butondur.</li>
+                            <li><strong>İşlev:</strong> Dönem listesini açar.</li>
+                            <li><strong>Kullanım:</strong> Dönemi listeden seçmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçim Butonları:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç ve bitiş mahalle/cadde alanlarının yanında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Büyüteç simgeli küçük butonlardır.</li>
+                            <li><strong>İşlev:</strong> Mahalle ve cadde listesini açar.</li>
+                            <li><strong>Kullanım:</strong> Mahalle ve cadde bilgilerini listeden seçmek için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tamam butonuna basmadan önce tüm gerekli alanların doldurulduğundan emin olun.</li>
+                    <li>Çıkış butonuna basıldığında, girilen bilgiler kaydedilmeden program kapatılır.</li>
+                    <li>Dönem ve mahalle seçim butonları ilgili alanların daha kolay doldurulması için yardımcı olur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Veri Aktarma İşlemi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Veri Aktarma İşlemi Adımları:</h4>
+                <ol>
+                    <li><strong>Bilgileri Giriş:</strong>
+                        <ul>
+                            <li>Yıl ve dönem bilgilerini girin veya dönem seçim butonunu kullanarak seçin.</li>
+                            <li>İlk ödeme tarihini girin.</li>
+                            <li>Abone numarası, sayaç numarası, mahalle, cadde gibi filtreleme bilgilerini girin.</li>
+                            <li>Defter (mahalle) ve terminal seçimlerini yapın (program açıldığında tümü seçilidir).</li>
+                            <li>Abone tiplerini seçin (program açıldığında tümü seçilidir).</li>
+                            <li>Varsa ek seçenekleri (Eski Borç Gecikme, Tekrar Yazılsın) işaretleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aktarım Başlatma:</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra ekranın altındaki "Tamam" butonuna tıklayın.</li>
+                            <li>Sistem, girilen kriterlere göre aboneleri ve tarife bilgilerini hazırlamaya başlayacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aktarım Sonuçları:</strong>
+                        <ul>
+                            <li>İşlem tamamlandığında iki yeni pencere açılır:</li>
+                            <li>İlk pencere: Abone bilgilerinin aktarım sonuçları gösterilir.</li>
+                            <li>İkinci pencere: Tarife bilgilerinin aktarım sonuçları gösterilir.</li>
+                            <li>Her iki pencerede de aktarılan kayıt sayısı ve işlem sonucu bilgileri yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+           
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Aktarım işlemi sırasında sistemi kapatmayın veya başka bir programa geçmeyin.</li>
+                    <li>Aktarılan veri sayısı çok fazla ise işlem biraz zaman alabilir, lütfen sabırla bekleyin.</li>
+                    <li>Aktarım sonuçları penceresinde herhangi bir hata mesajı varsa not alın ve sistem yöneticinize bildirin.</li>
+                    <li>Oluşturulan dosya, daha sonra el terminaline aktarılmak üzere sisteminizde saklanır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Aktarım İpuçları:</h4>
+                <ul>
+                    <li>Çok büyük veri grupları yerine, daha küçük gruplar halinde aktarım yapmak daha hızlı ve güvenlidir.</li>
+                    <li>Aktarım sonrası oluşan dosyaları yedeklemeniz önerilir.</li>
+                    <li>İşlem tamamlandıktan sonra, sonuç pencerelerini kapatmadan önce bilgileri kontrol edin.</li>
+                    <li>Oluşturulan dosya adlarını not alın, daha sonra el terminaline aktarım yaparken bu bilgilere ihtiyacınız olacaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Aktarım Başlatılamıyor:</strong>
+                        <ul>
+                            <li>Yıl, dönem ve ilk ödeme tarihi alanlarının doldurulduğundan emin olun.</li>
+                            <li>En az bir defter/terminal ve abone tipi seçilmiş olmalıdır.</li>
+                            <li>Dönem bilgisinin sistemde tanımlı olduğunu kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hiç Kayıt Aktarılmıyor:</strong>
+                        <ul>
+                            <li>Girilen abone no, sayaç no veya mahalle/cadde aralığında kayıt bulunup bulunmadığını kontrol edin.</li>
+                            <li>Seçilen abone tiplerinin doğru olduğundan emin olun.</li>
+                            <li>Çok kısıtlayıcı filtreler kullanıyorsanız, filtreleri genişletin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aktarım Uzun Sürüyor:</strong>
+                        <ul>
+                            <li>Çok geniş abone aralıkları seçmek yerine, daha küçük gruplar halinde aktarım yapın.</li>
+                            <li>Sistem yoğunluğu nedeniyle işlemler yavaşlayabilir, sabırla bekleyin.</li>
+                            <li>İşlem sırasında başka programları kapatmak performansı artırabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hata Mesajları:</strong>
+                        <ul>
+                            <li>"Dönem Bulunamadı": Yıl ve dönem bilgilerinin doğru olduğundan emin olun.</li>
+                            <li>"Lütfen İlk Ödeme Tarihini Yazınız": İlk ödeme tarihi alanını doldurun.</li>
+                            <li>Diğer hata mesajları için sistem yöneticinize başvurun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Veri Girişi İçin:</strong>
+                        <ul>
+                            <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz.</li>
+                            <li>ENTER tuşu da bir sonraki alana geçmek için kullanılabilir.</li>
+                            <li>Dönem ve mahalle seçim butonları ile liste açarak kolay seçim yapabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defter/Terminal ve Abone Tipi Seçimi İçin:</strong>
+                        <ul>
+                            <li>CTRL+tıklama ile ardışık olmayan birden fazla öğe seçebilirsiniz.</li>
+                            <li>SHIFT+tıklama ile belirli bir aralıktaki tüm öğeleri seçebilirsiniz.</li>
+                            <li>Liste içinde bir harfe basarak o harfle başlayan ilk öğeye hızlıca gidebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>Daha önce kullandığınız kriterleri not alın, benzer işlemlerde tekrar kullanabilirsiniz.</li>
+                            <li>Aktarım öncesi kullanacağınız tüm parametreleri hazırlayın.</li>
+                            <li>İşlemleri yoğun olmayan saatlerde yapmak daha hızlı sonuç almanızı sağlar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Kullanım Uyarıları:</h4>
+                <ul>
+                    <li>Aktarım işlemi tamamlanmadan programı kapatmayın.</li>
+                    <li>Aynı terminal veya defter için tekrar aktarım yapmak önceki verilerin üzerine yazabilir.</li>
+                    <li>Veri aktarımı yapmadan önce el terminalindeki eski verilerin yedeklendiğinden emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Veri aktarımını sayaç okuma işleminden yeterince önce yapın, böylece olası sorunları çözmeye zaman kalır.</li>
+                    <li>Periyodik olarak küçük test aktarımları yaparak sistemin düzgün çalıştığını kontrol edin.</li>
+                    <li>Aktarım işlemlerini belirli bir düzende (örn. her hafta aynı gün) yapmak işlerinizi organize etmenize yardımcı olur.</li>
+                    <li>Bu kullanıcı kılavuzunu yazdırıp el altında bulundurmak, işlemleri daha hızlı yapmanızı sağlar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar</td>
+                    </tr>
+                    <tr>
+                        <td>CTRL + tıklama</td>
+                        <td>Liste kutularında birden fazla öğe seçmek için kullanılır</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + tıklama</td>
+                        <td>Liste kutularında ardışık öğeleri seçmek için kullanılır</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fareyi minimum düzeyde kullanarak, klavye kısayolları ile daha hızlı veri girişi yapabilirsiniz.</li>
+                    <li>ENTER tuşunu kullanarak onay işlemlerini hızlıca yapabilirsiniz.</li>
+                    <li>ESC tuşu ile programdan çıkmadan önce kaydetmeniz gereken bilgiler olup olmadığını kontrol edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Sistemden Terminale Veri Aktarma (IMA) ekranı, su sayaç okuma işlemleri için gerekli bilgilerin el terminallerine aktarılmasını sağlayan önemli bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru dönem ve abone bilgilerini girdiğinizden emin olun.</li>
+                    <li>Aktarım işleminin tamamlandığından emin olmadan programı kapatmayın.</li>
+                    <li>Aktarım sonuçlarını kontrol edin ve gerekirse not alın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Sistemden Terminale Veri Aktarma (IMA)" başlığı yer alır.</li>
+                            <li>Başlık turkuaz renkli şeritte beyaz yazı ile gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Durum Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında turuncu renkli bir şeritte işlem durumu gösterilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında veri giriş alanları bulunur.</li>
+                            <li>Bu alanlar, çift sütun halinde düzenlenmiştir.</li>
+                            <li>Sol tarafta veri adı, sağ tarafta giriş kutuları yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında tamam ve çıkış butonları yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak gösterilir.</li>
+                    <li>İmleç "Yıl" alanında konumlanır.</li>
+                    <li>Defter ve terminal listeleri çoklu seçim için hazır halde bulunur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları</h2>
+        
+        <div id="donem-bilgileri" class="info-box">
+            <h3>Yıl ve Dönem Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Dönem Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Yıl:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 rakam girilebilen bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir (örn. "2023").</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak yılı belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl" alanının hemen yanında (sağında) yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 rakam girilebilen bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir (örn. "01", "02").</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak dönemi belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Seçim Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Dönem" alanının hemen yanında (sağında) yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde büyüteç simgesi olan bir butondur.</li>
+                            <li><strong>Kullanım:</strong> Tıklandığında dönem bilgilerini listeleyen bir pencere açar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlk Ödeme Tarihi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl/Dönem" satırının sağ tarafında yer alır.</li>
+                            <li><strong>Özellik:</strong> Tarih formatında bir metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> GG.AA.YYYY formatında tarih girişi yapılır (örn. "15.05.2023").</li>
+                            <li><strong>Kullanım:</strong> Faturanın ilk ödeme tarihini belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dönem Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Yıl ve dönem bilgilerini doğrudan yazabilir veya dönem seçim butonunu kullanarak mevcut dönemlerden seçebilirsiniz.</li>
+                    <li>Dönem bilgisi genellikle 01, 02, 03 gibi sayısal değerlerdir ve yılın hangi dönemine ait olduğunu gösterir.</li>
+                    <li>İlk ödeme tarihi faturanın son ödeme tarihinden farklıdır, sistem tarafından fatura üzerinde gösterilecek tarih olarak kullanılır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Abone Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Abone No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl/Dönem" satırının altında, iki ayrı alan olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet 8 rakam girilebilen metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak abone numarası aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gtt Sicil No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" satırının altında, iki ayrı alan olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet 8 rakam girilebilen metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Genel Tahsilat Takip sicil numarası aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Abone numarası aralığı belirlenerek hangi abonelerin el terminaline aktarılacağı seçilir.</li>
+                    <li>Başlangıç alanı boş bırakılırsa sistem otomatik olarak "0" değerini atar.</li>
+                    <li>Bitiş alanı boş bırakılırsa sistem otomatik olarak "99999999" değerini atar (tüm aboneler).</li>
+                    <li>Belirli bir abone için veri aktarımı yapmak istiyorsanız, başlangıç ve bitiş alanlarına aynı abone numarasını yazın.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="konum-bilgileri" class="info-box">
+            <h3>Konum ve Sayaç Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Sayaç ve Konum Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Sayaç No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Gtt Sicil No" satırının altında, iki ayrı alan olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet 20 karakter girilebilen metin kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Metin ve rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak sayaç numarası aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle/Cadde/Hane/SıraNo (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sayaç No" satırının altında, sekiz ayrı alan (dört başlangıç, dört bitiş) olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Her biri 4 rakam girilebilen metin kutularıdır.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Mahalle, cadde, hane ve sıra numarası aralıklarını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçim Butonları:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç ve bitiş mahalle/cadde alanlarının sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Üzerinde büyüteç simgesi olan butonlardır.</li>
+                            <li><strong>Kullanım:</strong> Tıklandığında mahalle ve cadde seçimi yapabileceğiniz pencereler açar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Konum Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Sayaç numarası alanlarını boş bırakırsanız sistem tüm sayaçları dahil eder.</li>
+                    <li>Mahalle ve cadde kodlarını büyüteç simgeli butonlar yardımıyla listeden seçebilirsiniz.</li>
+                    <li>Mahalle, cadde, hane ve sıra numarası alanlarını kullanarak coğrafi olarak veri aktarımı yapabilirsiniz.</li>
+                    <li>Bütün alanları boş bırakırsanız, sistem belirtilen diğer kriterlere göre tüm aboneleri dahil eder.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="defter-terminal" class="section">
+        <h3>Defter ve Terminal Bilgileri</h3>
+        <div class="info-box">
+            <div class="step">
+                <h4>Defter ve Terminal Seçim Alanları:</h4>
+                <ol>
+                    <li><strong>Defter:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mahalle/Cadde satırının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen bir liste kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Mahalle listesinden oluşan seçenekler.</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak defterleri (mahalleleri) seçmek için kullanılır.</li>
+                            <li><strong>Not:</strong> Bu alan bazı belediyeler için görüntülenmeyebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminal:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Defter alanının altında veya (defter yoksa) Mahalle/Cadde satırının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen bir liste kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Terminal numaralarından oluşan seçenekler.</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak terminalleri seçmek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çoklu Seçim Yapma:</h4>
+                <ol>
+                    <li>Listede tek bir öğe seçmek için, ilgili öğeye tıklayın.</li>
+                    <li>Ardışık birden fazla öğe seçmek için:
+                        <ul>
+                            <li>İlk öğeye tıklayın.</li>
+                            <li>SHIFT tuşunu basılı tutarak son öğeye tıklayın.</li>
+                            <li>İlk ve son öğe arasındaki tüm öğeler seçilecektir.</li>
+                        </ul>
+                    </li>
+                    <li>Ardışık olmayan birden fazla öğe seçmek için:
+                        <ul>
+                            <li>CTRL tuşunu basılı tutarak istediğiniz öğelere tek tek tıklayın.</li>
+                            <li>Her tıklama ilgili öğeyi seçime ekler veya çıkarır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Defter ve Terminal Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Program açıldığında tüm defter ve terminal seçenekleri otomatik olarak seçilidir.</li>
+                    <li>Sadece belirli defterlere veya terminallere veri aktarmak için seçimi değiştirin.</li>
+                    <li>Defter ve terminal seçimi boş bırakılamaz, en az bir seçenek işaretli olmalıdır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="abone-tipi" class="section">
+        <h3>Abone Tipi Seçimi</h3>
+        <div class="info-box">
+            <div class="step">
+                <h4>Abone Tipi Seçim Alanı:</h4>
+                <ol>
+                    <li><strong>Abone Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Terminal seçim alanının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Çoklu seçim yapılabilen bir liste kutusudur.</li>
+                            <li><strong>Veri Türü:</strong> Abone tiplerinden oluşan seçenekler.</li>
+                            <li><strong>Kullanım:</strong> Veri aktarımı yapılacak abone tiplerini seçmek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Tipi Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Program açıldığında tüm abone tipleri otomatik olarak seçilidir.</li>
+                    <li>Sadece belirli abone tiplerine veri aktarmak için seçimi değiştirin.</li>
+                    <li>Abone tipi seçimi, konut, işyeri, resmi daire gibi farklı tarife gruplarını belirler.</li>
+                    <li>Abone tipi seçiminde birden fazla tip seçilebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ek-secenekler" class="section">
+        <h3>Ek Seçenekler</h3>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ek İşlem Seçenekleri:</h4>
+                <ol>
+                    <li><strong>Eski Borç Gecikme Dahil Hesaplansın:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, Abone Tipi seçim alanının altında yer alabilir (Sistem yapılandırmanıza göre görünür veya gizli olabilir).</li>
+                            <li><strong>Özellik:</strong> İşaretlenebilir bir kutucuk (checkbox).</li>
+                            <li><strong>Kullanım:</strong> İşaretlendiğinde, abonelerin eski borçları için gecikme faizi hesaplanarak terminale aktarılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>El Terminaline Yüklenen Bilgiler Tekrar Yazılsın:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Eski Borç Gecikme Dahil Hesaplansın" kutucuğunun hemen altında yer alabilir (Sistem yapılandırmanıza göre görünür veya gizli olabilir).</li>
+                            <li><strong>Özellik:</strong> İşaretlenebilir bir kutucuk (checkbox).</li>
+                            <li><strong>Kullanım:</strong> İşaretlendiğinde, el terminalinde zaten var olan bilgilerin üzerine yazılmasına izin verilir. İşaretlenmediğinde, sadece yeni bilgiler terminale aktarılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Ek Seçenekler İpuçları:</h4>
+                <ul>
+                    <li>Bu seçenekler sistem yapılandırmanıza bağlı olarak görünür olmayabilir.</li>
+                    <li>"Eski Borç Gecikme Dahil Hesaplansın" seçeneği, gecikme faizlerinin hesaplanması gereken durumlarda işaretlenmelidir.</li>
+                    <li>"El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" seçeneği, terminal üzerindeki mevcut verilerin korunması veya güncellenmesi arasında seçim yapmanızı sağlar.</li>
+                    <li>İşlem yapmadan önce bu seçeneklerin anlamını ve etkilerini anlayarak, ihtiyacınıza uygun olanı seçmelisiniz.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>"El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" seçeneği işaretlenmediğinde, terminalde daha önce yüklenmiş olan ve henüz okuma yapılmamış kayıtların korunması sağlanır.</li>
+                    <li>Bu seçeneği işaretlemeden önce, terminaldeki mevcut bilgilerin ne olduğunu ve bu işlemin etkilerini iyi anlamalısınız.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana Butonlar:</h4>
+                <ol>
+                    <li><strong>Tamam (OK) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, "Tamam" yazılı bir butondur.</li>
+                            <li><strong>İşlev:</strong> Veri aktarma işlemini başlatır.</li>
+                            <li><strong>Kullanım:</strong> Tüm gerekli bilgileri girdikten sonra tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Tamam" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, "Çıkış" yazılı bir butondur.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkış yapar.</li>
+                            <li><strong>Kullanım:</strong> İşlemi iptal etmek ve programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">

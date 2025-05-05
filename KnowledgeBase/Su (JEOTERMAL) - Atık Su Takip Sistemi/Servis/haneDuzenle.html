@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hane Numarası Düzenleme Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hane Numarası Düzenleme Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#mahalle-cadde">Mahalle ve Cadde Seçimi</a></li>
+                <li><a href="#siralama">Abone Sıralama Seçenekleri</a></li>
+                <li><a href="#hane-duzenleme">Hane Numarası Düzenleme İşlemleri</a></li>
+                <li><a href="#kaydet-cikis">Kaydetme ve Çıkış İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Hane Numarası Düzenleme programı, su abonelerinin hane numaralarını düzenlemek ve yeniden sıralamak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir mahalle ve cadde için abone hane numaralarını görüntüleyebilirsiniz</li>
+                <li>Abonelerin hane numaralarını yukarı veya aşağı taşıyarak sıralamayı değiştirebilirsiniz</li>
+                <li>Yeni hane numaraları atayabilirsiniz</li>
+                <li>Değişiklikleri kaydedebilirsiniz</li>
+                <li>Mahalle ve cadde kodlarını listeden seçebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz mahalle ve cadde bilgisi</li>
+                    <li>Abonelerin mevcut hane numaraları</li>
+                    <li>İstediğiniz hane numarası sıralaması</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde çelik mavisi renkli bir şeritte "Hane No Düzenle" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında gri arka planlı bir bölüm bulunur</li>
+                            <li>Bu bölümde Mahalle, Cadde ve Sıralama seçenekleri yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Filtre bölümünün altında, ekranın orta kısmında yer alır</li>
+                            <li>Bir tablo şeklinde düzenlenmiştir ve abonelere ait bilgileri gösterir</li>
+                            <li>Her satırın en solunda yukarı/aşağı butonları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında gri arka planlı bir bölümde yer alır</li>
+                            <li>Kaydet ve İptal butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Mahalle alanına konumlanır</li>
+                    <li>Kaydet butonu, abone listesi yüklenmeden aktif olmaz</li>
+                    <li>Herhangi bir değişiklik yapmadan çıkmak için İptal butonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mahalle-cadde" class="section">
+        <h2>Mahalle ve Cadde Seçimi</h2>
+        <div class="info-box">
+            <h3>Mahalle ve Cadde Bilgisi Seçimi</h3>
+            <div class="step">
+                <h4>Mahalle Seçim Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, gri arka planlı filtre bölümünün en üstünde yer alır</li>
+                            <li>"Mahalle" etiketi sol tarafta, açılır liste (dropdown) kutusu sağ tarafta bulunur</li>
+                            <li>Açılır liste kutusu dikdörtgen şeklinde ve genişliği filtre bölümü kadar uzar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçimi Nasıl Yapılır:</strong>
+                        <ol>
+                            <li>Mahalle açılır listesine tıklayın</li>
+                            <li>Listede "Seçiniz" seçeneği ile başlayan mahallelerin listesi görünecektir</li>
+                            <li>Her mahalle "mahalle kodu - mahalle adı" formatında listelenir</li>
+                            <li>İşlem yapmak istediğiniz mahalleyi seçin</li>
+                            <li>Liste otomatik olarak kapanacak ve seçtiğiniz mahalle görüntülenecektir</li>
+                            <li>Mahalle seçimi yapıldığında, sistem otomatik olarak bu mahalleye ait caddeleri Cadde listesine yükler</li>
+                            <li>Eğer daha önce bir mahalle seçilmişse, bu alanı değiştirdiğinizde mevcut cadde seçimi sıfırlanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Cadde Seçim Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle alanının hemen altında, aynı filtre bölümünde yer alır</li>
+                            <li>"Cadde" etiketi sol tarafta, açılır liste kutusu sağ tarafta bulunur</li>
+                            <li>Açılır liste kutusu Mahalle listesi ile aynı genişliktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde Seçimi Nasıl Yapılır:</strong>
+                        <ol>
+                            <li>Öncelikle bir Mahalle seçimi yapmanız gerekir</li>
+                            <li>Mahalle seçimi yapıldıktan sonra Cadde açılır listesine tıklayın</li>
+                            <li>Listede "Seçiniz" seçeneği ve "Tüm Caddeler" seçeneği ile başlayan caddelerin listesi görünecektir</li>
+                            <li>Her cadde "cadde kodu - cadde adı" formatında listelenir</li>
+                            <li>İşlem yapmak istediğiniz caddeyi seçin veya tüm caddeler için işlem yapmak istiyorsanız "Tüm Caddeler" seçeneğini seçin</li>
+                            <li>Liste otomatik olarak kapanacak ve seçtiğiniz cadde görüntülenecektir</li>
+                            <li>Cadde seçimi tamamlandığında, sistem otomatik olarak form verilerini gönderir ve seçilen mahalle ve caddeye ait abone listesini yükler</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mahalle seçimi yapılmadan Cadde seçimi yapılamaz</li>
+                    <li>Mahalle değiştirildiğinde Cadde listesi güncellenecektir</li>
+                    <li>Hem Mahalle hem de Cadde seçimi yapılmadan abone listesi görüntülenmez</li>
+                    <li>Abone listesi görüntülenmeden Kaydet butonu aktif olmaz</li>
+                    <li>"Tüm Caddeler" seçeneği, seçilen mahalleye ait tüm caddelerdeki aboneleri listeler</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Mahalle ve cadde listelerinde klavyeden ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>TAB tuşunu kullanarak Mahalle alanından Cadde alanına hızlıca geçiş yapabilirsiniz</li>
+                    <li>Çok sayıda abone olan caddelerde işlem yaparken, liste daha yavaş yüklenebilir, lütfen sabırlı olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="siralama" class="section">
+        <h2>Abone Sıralama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Abone Listesi Sıralama Tercihi</h3>
+            <div class="step">
+                <h4>Sıralama Seçeneği Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle ve Cadde seçim alanlarının hemen altında, aynı gri filtre bölümünde yer alır</li>
+                            <li>"Sıralama" etiketi sol tarafta, açılır liste kutusu sağ tarafta bulunur</li>
+                            <li>Açılır liste kutusu diğerlerine göre daha kısadır ve sadece sıralama seçeneklerini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçimi Nasıl Yapılır:</strong>
+                        <ol>
+                            <li>Sıralama açılır listesine tıklayın</li>
+                            <li>Listede iki seçenek görüntülenecektir:
+                                <ul>
+                                    <li>"Hane No" - Aboneleri hane numarasına göre sıralar (varsayılan seçenek)</li>
+                                    <li>"Abone No" - Aboneleri abone numarasına göre sıralar</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğini tıklayın</li>
+                            <li>Seçiminizi yaptıktan sonra, sistem otomatik olarak form verilerini gönderir ve abone listesini seçilen sıralama kriterine göre yeniden yükler</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sıralama seçeneğini değiştirdiğinizde sayfa otomatik olarak yenilenir</li>
+                    <li>Eğer herhangi bir değişiklik yapıp kaydetmediyseniz, sıralama değiştirildiğinde bu değişiklikler kaybolacaktır</li>
+                    <li>Program ilk açıldığında varsayılan sıralama "Hane No" olarak gelir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Hane numaralarını düzenlemeden önce, hangi sıralamada çalışmak istediğinize karar verin</li>
+                    <li>Abone numarasına göre sıralama, belirli bir aboneyi bulmak için daha kullanışlı olabilir</li>
+                    <li>Hane numarasına göre sıralama, adreslerin fiziksel sırasını görmek için daha uygundur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hane-duzenleme" class="section">
+        <h2>Hane Numarası Düzenleme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Abone Listesi ve Yukarı/Aşağı Butonları Kullanımı</h3>
+            <div class="step">
+                <h4>Abone Listesi Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtre bölümünün hemen altında, ekranın orta kısmında yer alır</li>
+                            <li>Beyaz arka planlı bir tablo şeklinde düzenlenmiştir</li>
+                            <li>Tablonun üst kısmında mavi renkli bir başlık satırı bulunur</li>
+                            <li>Liste, ekranın boyutuna bağlı olarak kaydırma çubuğu ile aşağıya doğru uzanabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunları:</strong>
+                        <ul>
+                            <li>En solda yukarı/aşağı butonları sütunu</li>
+                            <li>Abone No - Abonenin numarasını gösterir</li>
+                            <li>Adı - Abone sahibinin adı ve soyadı</li>
+                            <li>Tip - Abone tipi (Konut, İşyeri vb.)</li>
+                            <li>Site Adı - Abonenin bağlı olduğu site adı (varsa)</li>
+                            <li>Blok - Blok bilgisi (varsa)</li>
+                            <li>Apartman - Apartman adı (varsa)</li>
+                            <li>Kapı No - Dış kapı numarası</li>
+                            <li>İç Kapı No - İç kapı numarası (veya beledi yeye bağlı olarak Kat)</li>
+                            <li>Daire No - Daire numarası</li>
+                            <li>Hane - Mevcut hane numarası</li>
+                            <li>Yeni Hane - Atanacak yeni hane numarası</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Yukarı/Aşağı Butonları Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Her abone satırının en solunda, yan yana iki küçük buton bulunur</li>
+                            <li>Sol taraftaki buton yukarı (Webdings 5 karakteri ile gösterilir) taşıma işlevi görür</li>
+                            <li>Sağ taraftaki buton aşağı (Webdings 6 karakteri ile gösterilir) taşıma işlevi görür</li>
+                            <li>Butonlar gri kenarlı, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bir Aboneyi Yukarı Taşıma Adımları:</strong>
+                        <ol>
+                            <li>Taşımak istediğiniz abonenin satırını bulun</li>
+                            <li>Satırın en solundaki yukarı (5) butonuna tıklayın</li>
+                            <li>Abone, bir üstteki abone ile yer değiştirecektir</li>
+                            <li>Değişiklik anında görsel olarak yansıtılacak ve abone yukarı taşınacaktır</li>
+                            <li>Buton odaklandığında ilgili satır açık sarı renkle vurgulanır</li>
+                            <li>En üstteki abone için yukarı butonu işlev görmez</li>
+                        </ol>
+                    </li>
+                    <li><strong>Bir Aboneyi Aşağı Taşıma Adımları:</strong>
+                        <ol>
+                            <li>Taşımak istediğiniz abonenin satırını bulun</li>
+                            <li>Satırın en solundaki aşağı (6) butonuna tıklayın</li>
+                            <li>Abone, bir alttaki abone ile yer değiştirecektir</li>
+                            <li>Değişiklik anında görsel olarak yansıtılacak ve abone aşağı taşınacaktır</li>
+                            <li>Buton odaklandığında ilgili satır açık sarı renkle vurgulanır</li>
+                            <li>En alttaki abone için aşağı butonu işlev görmez</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Yeni Hane Numarası Atama İşlemi:</h4>
+                <ol>
+                    <li><strong>Çalışma Prensibi:</strong>
+                        <ul>
+                            <li>Aboneler yukarı/aşağı taşıma butonları ile istenen sıraya getirilir</li>
+                            <li>Yeni sıralama oluşturulduğunda, her aboneye otomatik olarak yeni bir hane numarası atanır</li>
+                            <li>Yeni hane numaraları tablonun en sağındaki "Yeni Hane" sütununda görüntülenir</li>
+                            <li>Yeni hane numaraları 1'den başlayarak ardışık olarak artar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aboneyi Taşıma Sonrası Yeni Hane Numarasının Görüntülenmesi:</strong>
+                        <ol>
+                            <li>Bir aboneyi yukarı veya aşağı taşıdığınızda, yeni hane sıralaması otomatik olarak güncellenir</li>
+                            <li>Her abonenin yeni konumuna göre "Yeni Hane" sütunundaki değer değişir</li>
+                            <li>İlk sıradaki abone 1 numaralı haneyi, ikinci sıradaki abone 2 numaralı haneyi alır ve bu şekilde devam eder</li>
+                            <li>Mevcut hane numarası ile yeni hane numarası aynı olan aboneler için bir değişiklik yapılmaz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Abone Taşıma Kontrolü:</strong>
+                        <ol>
+                            <li>Aboneleri taşırken, fiziksel adres sıralamasını göz önünde bulundurun</li>
+                            <li>Kapı numarası, iç kapı numarası ve daire numarası bilgilerini kontrol ederek mantıklı bir sıralama oluşturun</li>
+                            <li>Bir aboneyi birden fazla sıra yukarı veya aşağı taşımak için, butona birden fazla kez tıklamanız gerekir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En üstteki abone için yukarı butonu, en alttaki abone için aşağı butonu işlev görmez</li>
+                    <li>Aboneleri taşırken dikkatli olun, yanlış bir taşıma yaparsanız karşı yöndeki butonla düzeltebilirsiniz</li>
+                    <li>Sıralama değiştirildiğinde veya sayfa yenilendiğinde, kaydedilmemiş değişiklikler kaybolacaktır</li>
+                    <li>Kaydetme işlemi yapılmadıkça, hane numaraları değişmez, sadece ekranda görüntülenir</li>
+                    <li>Büyük listelerde, taşıma işleminden sonra odaklanılan buton görünür alandan çıkabilir, ekranı kaydırmanız gerekebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla aboneyi sıralamak için önce en üstte olması gereken aboneyi en üste taşıyın, sonra sırayla diğerlerini düzenleyin</li>
+                    <li>Taşıma işleminde butonlar üzerinde klavye ile de gezinebilirsiniz (Tab tuşu ile)</li>
+                    <li>Bir satıra tıkladığınızda renk değişimi olursa, hangi abone üzerinde çalıştığınızı daha kolay görebilirsiniz</li>
+                    <li>Tek abonenin yerini değiştirirken, abone numarasına göre sıralama yaparak aboneyi daha kolay bulabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kaydet-cikis" class="section">
+        <h2>Kaydetme ve Çıkış İşlemleri</h2>
+        <div class="info-box">
+            <h3>Değişiklikleri Kaydetme ve Programdan Çıkış</h3>
+            <div class="step">
+                <h4>Kaydet Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, gri arka planlı bölümün ortasında yer alır</li>
+                            <li>Sol tarafta, İptal butonunun yanında bulunur</li>
+                            <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                            <li>Gri kenarlı, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm değişiklikleri (aboneleri yukarı/aşağı taşıma) yapın</li>
+                            <li>Yeni hane sıralamasını kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Sistem, bir onay mesajı gösterecektir: "Abonelerin hane numarasına 'Yeni Hane' değeri atanacaktır. Onaylıyor musunuz?"</li>
+                            <li>Eğer değişiklikleri kaydetmek istiyorsanız "Evet" seçeneğini tıklayın</li>
+                            <li>İşlemi iptal etmek istiyorsanız "Hayır" seçeneğini tıklayın</li>
+                            <li>"Evet" seçeneğini tıkladığınızda, sistem değişiklikleri kaydedecek ve işlem tamamlanacaktır</li>
+                            <li>Eğer tek bir abonenin hane numarasını düzenlemek için bu ekranı açtıysanız, işlem tamamlandıktan sonra pencere otomatik olarak kapanır ve ana ekrana dönersiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>İptal Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, gri arka planlı bölümün ortasında yer alır</li>
+                            <li>Sağ tarafta, Kaydet butonunun yanında bulunur</li>
+                            <li>Üzerinde bir çarpı ikonu ve "İptal" yazısı bulunur</li>
+                            <li>Gri kenarlı, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Herhangi bir noktada işlemi iptal etmek istediğinizde İptal butonuna tıklayın</li>
+                            <li>Pencere anında kapanacak ve değişiklikler kaydedilmeden ana ekrana döneceksiniz</li>
+                            <li>İptal butonuna basıldığında herhangi bir onay mesajı gösterilmez, işlem doğrudan iptal edilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tek Bir Abone için Hane Düzenleme İşlemi:</h4>
+                <ol>
+                    <li><strong>İşlem Prensibi:</strong>
+                        <ul>
+                            <li>Bazen ana programdan belirli bir abonenin hane numarasını düzenlemek için bu ekran açılabilir</li>
+                            <li>Bu durumda, ekranda sadece ilgili abone ve aynı mahalle/caddedeki diğer aboneler görüntülenir</li>
+                            <li>Ancak, yukarı/aşağı butonları sadece düzenlenmek istenen abone için aktif olur</li>
+                            <li>Diğer abonelerin yukarı/aşağı butonları gizlenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tek Abone Düzenleme Adımları:</strong>
+                        <ol>
+                            <li>İlgili abonenin satırını bulun (bu satır otomatik olarak vurgulanabilir)</li>
+                            <li>Yukarı veya aşağı butonlarını kullanarak aboneyi istediğiniz konuma taşıyın</li>
+                            <li>İstediğiniz konumu ayarladıktan sonra Kaydet butonuna tıklayın</li>
+                            <li>Onay mesajında "Evet" seçeneğini tıklayın</li>
+                            <li>İşlem tamamlandıktan sonra pencere otomatik olarak kapanacak ve ana ekrana döneceksiniz</li>
+                            <li>Ana ekranda, seçilen abonenin yeni hane numarası ve sıra numarası görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna tıkladıktan ve onay verdikten sonra işlem geri alınamaz</li>
+                    <li>Kaydetme işlemi tamamlanmadan pencereyi kapatırsanız değişiklikler kaydedilmez</li>
+                    <li>Kaydet butonu, abone listesi yüklenmeden aktif olmaz</li>
+                    <li>Tek bir abone için düzenleme yaparken, diğer abonelerin yukarı/aşağı butonları gizlendiği için bu aboneleri taşıyamazsınız</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + K tuş kombinasyonu ile Kaydet butonunu aktif edebilirsiniz</li>
+                    <li>ESC tuşuna basarak İptal işlemini gerçekleştirebilirsiniz</li>
+                    <li>Değişikliklerinizi kaydetmeden önce son bir kez kontrol edin</li>
+                    <li>Tek bir aboneyi düzenlediğinizde, işlem bitince otomatik olarak ana ekrana döneceğinizi unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana veya düğmeye geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana veya düğmeye geçmek için</li>
+                    <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                    <li><strong>ESC:</strong> Pencereyi kapatmak için (İptal butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Abone Listesi Yüklenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Mahalle ve Cadde seçiminizi yaptığınız halde liste görüntülenmiyor.</li>
+                            <li>Çözüm: Seçilen mahalle ve caddede abone kaydı olmayabilir. Başka bir mahalle/cadde seçin veya "Tüm Caddeler" seçeneğini kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu Aktif Değil:</strong>
+                        <ul>
+                            <li>Sorun: Değişiklik yaptığınız halde Kaydet butonu tıklanamıyor.</li>
+                            <li>Çözüm: Abone listesinin düzgün şekilde yüklendiğinden emin olun. Mahalle ve Cadde seçimini yeniden yapın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Taşıma Butonları Çalışmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Yukarı veya aşağı butonlarına tıkladığınızda hiçbir şey olmuyor.</li>
+                            <li>Çözüm: En üstteki abone için yukarı butonu, en alttaki abone için aşağı butonu çalışmaz. Ayrıca, tek abone düzenleme modunda sadece ilgili abonenin butonları aktiftir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Türkçe Karakterler Düzgün Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Abone adlarında veya adres bilgilerinde Türkçe karakterler yerine farklı semboller görünüyor.</li>
+                            <li>Çözüm: Bu bir görüntüleme sorunudur, veri kaybı yaşanmaz. İşleminizi normal şekilde tamamlayabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Uzun Sürüyor:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladıktan sonra işlem uzun sürüyor.</li>
+                            <li>Çözüm: Çok sayıda abone içeren listelerde kaydetme işlemi biraz zaman alabilir. İşlem tamamlanana kadar bekleyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Büyük değişiklikler yapmadan önce, değiştirmek istediğiniz abonelerin bir listesini hazırlayın</li>
+                    <li>Sıralama tercihinizi (Hane No / Abone No) işleme başlamadan önce yapın</li>
+                    <li>Aboneleri taşırken, fiziksel adres sırası mantığını göz önünde bulundurun (Kapı No, İç Kapı No, Daire No)</li>
+                    <li>Tek bir aboneyi çok fazla taşımanız gerekiyorsa, önce doğru sıralama tipini seçerek aboneyi bulmayı kolaylaştırın</li>
+                    <li>Büyük miktarda değişiklik yapıyorsanız, yaptıkça kaydetmeyi unutmayın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Hane numarası değişikliği diğer sistemleri ve tahakkuk işlemlerini etkileyebilir</li>
+                    <li>Değişiklik yapmadan önce, yapacağınız değişikliklerin etkilerini anlayın</li>
+                    <li>Büyük değişiklikler yapmadan önce sistem yöneticinize danışın</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Hane Numarası Düzenleme programı, su abonelerinin hane numaralarını düzenlemenizi ve yeniden sıralamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Mahalle ve cadde seçimi yapma</li>
+                <li>Abone listesini hane numarası veya abone numarasına göre sıralama</li>
+                <li>Aboneleri yukarı/aşağı taşıyarak yeni bir sıralama oluşturma</li>
+                <li>Yeni hane numaralarını atama ve kaydetme</li>
+                <li>Tek bir abone için hane numarası düzenleme</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

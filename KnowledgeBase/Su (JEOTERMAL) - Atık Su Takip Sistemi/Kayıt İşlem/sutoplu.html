@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Toplu Tahakkuk Hesaplama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Toplu Tahakkuk Hesaplama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-donem">Yıl/Dönem Belirtme</a></li>
+                <li><a href="#tahakkuk-tipi">Tahakkuk Tipi Seçimi</a></li>
+                <li><a href="#abone-kriterleri">Abone Seçim Kriterleri</a></li>
+                <li><a href="#hesaplama-secenekleri">Hesaplama Seçenekleri</a></li>
+                <li><a href="#sayac-markasi">Sayaç Markası Seçimi</a></li>
+                <li><a href="#abone-ek-ucret">Abone Tipleri ve Ek Ücret Tipleri Seçimi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Su Toplu Tahakkuk Hesaplama programı, su abonelerinin toplu olarak tahakkuk hesaplamalarını yapmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli dönemlere ait tahakkuk hesaplamalarını toplu olarak yapabilirsiniz</li>
+                <li>Abone gruplarına göre filtreleme yapabilirsiniz</li>
+                <li>Okuma yapılmış ve yapılmamış aboneler için farklı işlemler gerçekleştirebilirsiniz</li>
+                <li>Ek ücret hesaplamaları yapabilirsiniz</li>
+                <li>Tahakkuk tipine göre işlem yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve dönem bilgisi</li>
+                    <li>Hangi tahakkuk tipinde işlem yapacağınız</li>
+                    <li>İşlem yapacağınız abone aralığı veya kriterleri</li>
+                    <li>Hesaplama türü (yeniden hesaplama, ek ücret hesaplama vb.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde gri-mavi (çelik mavisi) renkli bir şeritte "Su Toplu Tahakkuk Hesaplama" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Yıl/Dönem seçimiyle başlar</li>
+                            <li>Tahakkuk tipi, abone kriterleri, hesaplama seçenekleri ve diğer seçim alanlarını içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone ve Ek Ücret Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta alt kısmında yer alır</li>
+                            <li>İki sütunlu bir liste şeklindedir: Sol sütunda Abone Tipleri, sağ sütunda Ek Ücret Tipleri</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Kaydet, Mahalle Kayıtları ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Yıl/Dönem alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-donem" class="section">
+        <h2>Yıl/Dönem Belirtme</h2>
+        <div class="info-box">
+            <h3>Yıl ve Dönem Bilgisi Girişi</h3>
+            <div class="step">
+                <h4>Yıl/Dönem Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Program ekranının üst kısmında, başlık çizgisinin hemen altında yer alır</li>
+                            <li>"Yıl/Dönem" etiketi yanında iki adet metin kutusu bulunur</li>
+                            <li>Sol taraftaki kutu Yıl, sağdaki kutu Dönem içindir</li>
+                            <li>Kutular arasında küçük bir boşluk vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına işlem yapmak istediğiniz yılı girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Dönem alanına geçin</li>
+                            <li>Dönem alanına ilgili dönem numarasını girin (örn. 1, 2, 3)
+                                <ul>
+                                    <li>Bu alan 2 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Dönem Seçim Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Yıl/Dönem alanının hemen sağında, metin kutularının yanında bir buton bulunur (üzerinde küçük bir büyüteç ikonu vardır)</li>
+                            <li>Bu butona tıkladığınızda "Su Dönem" penceresi açılır</li>
+                            <li>Açılan pencerede kayıtlı dönemlerin listesi görüntülenir</li>
+                            <li>Listeden istediğiniz dönemi seçin ve onaylayın</li>
+                            <li>Seçtiğiniz dönem bilgileri otomatik olarak Yıl ve Dönem alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Dönem alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Dönem alanına en fazla 2 rakamdan oluşan geçerli bir dönem numarası girilmelidir</li>
+                    <li>Yıl ve Dönem değiştiğinde, Ek Ücret Tipleri listesi otomatik olarak güncellenir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Dönem bilgilerini manuel girmek yerine buton ile açılan pencereden seçim yapmak daha hatasız ve hızlıdır</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yıl ve Dönem değişikliği yapıldığında, sistem Ek Ücret listesini ilgili döneme göre yeniler</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tahakkuk-tipi" class="section">
+        <h2>Tahakkuk Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Tipi Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Tahakkuk Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Dönem alanının hemen altında yer alır</li>
+                            <li>"Tahakkuk Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Liste kutusu yüksekliği yaklaşık 100 piksel, genişliği 150 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut tahakkuk tipleri listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz tahakkuk tipini seçin
+                                <ul>
+                                    <li>Liste içinde tahakkuk tipi kodu ve açıklaması birlikte görünür</li>
+                                    <li>Açıklamalar en fazla 25 karaktere kısaltılmış olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz tahakkuk tipi görüntülenecektir</li>
+                            <li>Seçim yaptıktan sonra, eğer Yıl ve Dönem bilgileri de girilmişse, sistem otomatik olarak Ek Ücret Tipleri listesini güncelleyecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tahakkuk tipi seçilmeden işlem yapılamaz</li>
+                    <li>Tahakkuk tipi değiştikçe Ek Ücret Tipleri listesi içeriği değişebilir</li>
+                    <li>Yıl, Dönem ve Tahakkuk Tipi seçimleri birlikte Ek Ücret Tipleri listesini belirler</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tahakkuk tiplerinin kodlarını ve anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili tahakkuk tipinin ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Yıl ve Dönem girdikten hemen sonra Tahakkuk Tipini seçerseniz, Ek Ücret Tipleri listesi daha hızlı güncellenecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="abone-kriterleri" class="section">
+        <h2>Abone Seçim Kriterleri</h2>
+        <div class="info-box">
+            <h3>Mahalle, Cadde, Hane, Sıra No ve Abone No ile Filtreleme</h3>
+            <div class="step">
+                <h4>Mahalle Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tipi alanının hemen altında yer alır</li>
+                            <li>"Mahalle" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç mahalle kodu, sağ kutu bitiş mahalle kodu içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç mahalle kodunu girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 4 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş mahalle kodunu girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 4 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç kodundan büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Cadde Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle alanının hemen altında yer alır</li>
+                            <li>"Cadde" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç cadde kodu, sağ kutu bitiş cadde kodu içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç cadde kodunu girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 4 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş cadde kodunu girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 4 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç kodundan büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Hane Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Cadde alanının hemen altında yer alır</li>
+                            <li>"Hane" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç hane numarası, sağ kutu bitiş hane numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç hane numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 9 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş hane numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 9 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Sıra No Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hane alanının hemen altında yer alır</li>
+                            <li>"Sıra No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sıra numarası, sağ kutu bitiş sıra numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç sıra numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 9 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş sıra numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 9 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Abone No Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sıra No alanının hemen altında yer alır</li>
+                            <li>"Abone No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç abone numarası, sağ kutu bitiş abone numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutuya başlangıç abone numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutuya geçin</li>
+                            <li>Sağ kutuya bitiş abone numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı olabilir</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Mahalle Kayıtları Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet ve Çıkış butonlarının arasında yer alır</li>
+                            <li>Üzerinde "Mahalle Kayıtları" yazar ve bir pencere ikonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda yeni bir pencere açılır</li>
+                            <li>Bu pencerede mahalle ve cadde kodlarının listesi görüntülenir</li>
+                            <li>Listeden istediğiniz mahalle ve cadde bilgilerini seçebilirsiniz</li>
+                            <li>Seçtiğiniz bilgiler otomatik olarak mahalle ve cadde alanlarına aktarılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tüm bu alanlar boş bırakılabilir. Boş bırakıldığında sistem otomatik olarak varsayılan değerleri kullanır:
+                        <ul>
+                            <li>İlk Mahalle: 0, Son Mahalle: 9999</li>
+                            <li>İlk Cadde: 0, Son Cadde: 9999</li>
+                            <li>İlk Hane: 0, Son Hane: 999999</li>
+                            <li>İlk Sıra: 0, Son Sıra: 999999</li>
+                            <li>İlk Abone: 0, Son Abone: 99999999</li>
+                        </ul>
+                    </li>
+                    <li>Başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                    <li>Mahalle ve cadde kodlarını bilmiyorsanız, Mahalle Kayıtları butonunu kullanarak listeden seçim yapabilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir mahalle, cadde, hane, sıra veya abone numarası için filtreleme yapmak istiyorsanız, aynı değeri hem başlangıç hem de bitiş kutularına girin</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Mahalle ve cadde kodlarını ezberlemek yerine, Mahalle Kayıtları butonunu kullanarak seçim yapmak daha kolaydır</li>
+                    <li>Tüm aboneler için işlem yapmak istiyorsanız bu alanları boş bırakabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hesaplama-secenekleri" class="section">
+        <h2>Hesaplama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Farklı Abone Durumları için Hesaplama Seçimleri</h3>
+            <div class="step">
+                <h4>Okuma Yapılmış Aboneleri Yeniden Hesaplama Seçeneği:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone No alanının hemen altında yer alır</li>
+                            <li>"Okuma Yapılmış Aboneleri Yeniden Hesapla" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir onay kutusu (checkbox) vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Onay kutusuna tıklayarak seçeneği aktif hale getirin (işaretleyin)</li>
+                            <li>İşaretlendiğinde, okuma işlemi yapılmış aboneler için tahakkuk yeniden hesaplanacaktır</li>
+                            <li>Bu seçenek işaretlendiğinde diğer hesaplama seçenekleri otomatik olarak işaretsiz hale gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Okuma Yapılmamış Abonelere Ek Ücret Hesaplama Seçeneği:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yeniden Hesaplama seçeneğinin hemen altında yer alır</li>
+                            <li>"Okuma Yapılmamış Abonelere Ek Ücret Hesapla" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir onay kutusu (checkbox) vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Onay kutusuna tıklayarak seçeneği aktif hale getirin (işaretleyin)</li>
+                            <li>İşaretlendiğinde, sadece okuma işlemi yapılmamış aboneler için ek ücret hesaplanacaktır</li>
+                            <li>Bu seçenek işaretlendiğinde diğer hesaplama seçenekleri otomatik olarak işaretsiz hale gelir</li>
+                            <li>Bu seçenek işaretlendiğinde mutlaka "Ek Ücret Tipleri" listesinden en az bir tane ek ücret seçilmelidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Okuma Yapılmış Abonelere İlave Ek Ücret Hesaplama Seçeneği:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ek Ücret Hesaplama seçeneğinin hemen altında yer alır</li>
+                            <li>"Okuma Yapılmış Abonelere İlave Ek Ücret Hesapla" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir onay kutusu (checkbox) vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Onay kutusuna tıklayarak seçeneği aktif hale getirin (işaretleyin)</li>
+                            <li>İşaretlendiğinde, sadece okuma işlemi yapılmış aboneler için ilave ek ücret hesaplanacaktır</li>
+                            <li>Bu seçenek işaretlendiğinde diğer hesaplama seçenekleri otomatik olarak işaretsiz hale gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu üç seçenekten yalnızca birini seçebilirsiniz, aynı anda birden fazla seçenek işaretlenemez</li>
+                    <li>Bir seçenek işaretlendiğinde, diğer seçenekler otomatik olarak işaretsiz hale gelir</li>
+                    <li>"Okuma Yapılmamış Abonelere Ek Ücret Hesapla" seçeneği işaretlendiğinde, mutlaka "Ek Ücret Tipleri" listesinden en az bir tane ek ücret seçilmelidir</li>
+                    <li>Hiçbir seçenek işaretlenmezse, sistem normal tahakkuk hesaplaması yapacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Okuması yapılmış abonelerin tahakkuklarını güncellemek istiyorsanız "Okuma Yapılmış Aboneleri Yeniden Hesapla" seçeneğini kullanın</li>
+                    <li>Henüz okuma yapılmamış abonelere sadece ek ücret tahakkuku yapmak istiyorsanız "Okuma Yapılmamış Abonelere Ek Ücret Hesapla" seçeneğini kullanın</li>
+                    <li>Okuma yapılmış abonelere yeni ek ücretler eklemek istiyorsanız "Okuma Yapılmış Abonelere İlave Ek Ücret Hesapla" seçeneğini kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sayac-markasi" class="section">
+        <h2>Sayaç Markası Seçimi</h2>
+        <div class="info-box">
+            <h3>Sayaç Markasına Göre Filtreleme</h3>
+            <div class="step">
+                <h4>Sayaç Markası Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hesaplama seçeneklerinin altında, Abone Tipleri ve Ek Ücret Tipleri listelerinin üstünde yer alır</li>
+                            <li>"Sayaç Markası" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu vardır</li>
+                            <li>Liste kutusu açık pembe renkte görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut sayaç markalarının listesi açılacaktır</li>
+                            <li>Liste en üstte "Hepsi" seçeneği ile başlar</li>
+                            <li>Listeden işlem yapmak istediğiniz sayaç markasını seçin
+                                <ul>
+                                    <li>Tüm sayaç markaları için işlem yapmak istiyorsanız "Hepsi" seçeneğini seçin</li>
+                                    <li>Sadece belirli bir marka için işlem yapmak istiyorsanız o markayı seçin</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz sayaç markası görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program ilk açıldığında sayaç markası seçimi "Hepsi" olarak gelir</li>
+                    <li>Sayaç markası seçimi yapıldığında, hesaplama sadece seçilen marka sayaca sahip aboneler için yapılacaktır</li>
+                    <li>"Hepsi" seçeneği işaretlendiğinde, sayaç markasından bağımsız olarak tüm aboneler için işlem yapılacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir marka sayaç için sorun tespit ettiyseniz, sadece o markayı seçerek toplu güncelleme yapabilirsiniz</li>
+                    <li>Emin değilseniz "Hepsi" seçeneğini kullanarak tüm aboneler için işlem yapın</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili markanın ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="abone-ek-ucret" class="section">
+        <h2>Abone Tipleri ve Ek Ücret Tipleri Seçimi</h2>
+        <div class="info-box">
+            <h3>Abone Tipleri ve Ek Ücret Tipleri Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Abone Tipleri Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın orta alt kısmında, sol tarafta yer alır</li>
+                            <li>"Abone Tipleri" başlığı altında bir çoklu seçim listesi (multiple select list) bulunur</li>
+                            <li>Liste kutusu yüksekliği yaklaşık 100 piksel, genişliği 150 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Listeden seçim yapmak için fare ile tıklayın</li>
+                            <li>Birden fazla abone tipi seçmek için:
+                                <ul>
+                                    <li>Ctrl tuşunu basılı tutarak seçmek istediğiniz her bir abone tipine tıklayın</li>
+                                    <li>Seçilen abone tipleri mavi renkte vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık abone tipleri seçmek için:
+                                <ul>
+                                    <li>İlk abone tipine tıklayın</li>
+                                    <li>Shift tuşunu basılı tutarak son abone tipine tıklayın</li>
+                                    <li>Arada kalan tüm abone tipleri otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Ek Ücret Tipleri Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın orta alt kısmında, Abone Tipleri listesinin sağında yer alır</li>
+                            <li>"Ek Ücret Tipleri" başlığı altında bir çoklu seçim listesi (multiple select list) bulunur</li>
+                            <li>Liste kutusu yüksekliği yaklaşık 100 piksel, genişliği 300 piksel civarındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Listeden seçim yapmak için fare ile tıklayın</li>
+                            <li>Birden fazla ek ücret tipi seçmek için:
+                                <ul>
+                                    <li>Ctrl tuşunu basılı tutarak seçmek istediğiniz her bir ek ücret tipine tıklayın</li>
+                                    <li>Seçilen ek ücret tipleri mavi renkte vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Ardışık ek ücret tipleri seçmek için:
+                                <ul>
+                                    <li>İlk ek ücret tipine tıklayın</li>
+                                    <li>Shift tuşunu basılı tutarak son ek ücret tipine tıklayın</li>
+                                    <li>Arada kalan tüm ek ücret tipleri otomatik olarak seçilecektir</li>
+                                </ul>
+                            </li>
+                            <li>Her ek ücret tipi "Ücret: [açıklama] - Tutar: #[tutar]#" formatında görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir Abone Tipi seçilmelidir, aksi halde program "Abone Tipi Seçilmemiş" uyarısı verecektir</li>
+                    <li>"Okuma Yapılmamış Abonelere Ek Ücret Hesapla" seçeneği işaretlendiğinde, mutlaka en az bir Ek Ücret Tipi seçilmelidir</li>
+                    <li>Ek Ücret Tipleri listesi, seçilen Yıl, Dönem ve Tahakkuk Tipine göre otomatik olarak güncellenir</li>
+                    <li>Listelerde Ctrl tuşu ile birden fazla seçim yapılabileceği unutulmamalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listeler arasında TAB tuşu ile geçiş yapabilirsiniz</li>
+                    <li>Klavyeden ilgili tipin ilk harfini yazarak listeyi hızlıca o harfle başlayan tiplere kaydırabilirsiniz</li>
+                    <li>Tüm abone tipleri için işlem yapmak istiyorsanız, tüm abone tiplerini seçin (Ctrl+A tuş kombinasyonu ile)</li>
+                    <li>Seçilmiş bir öğeyi listeden çıkarmak için, Ctrl tuşunu basılı tutarak o öğeye tekrar tıklayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kaydet, Mahalle Kayıtları ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Kaydet Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                            <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>Yıl/Dönem bilgilerini girin</li>
+                                    <li>Tahakkuk Tipini seçin</li>
+                                    <li>İstediğiniz filtreleme kriterlerini girin (Mahalle, Cadde, Hane, Sıra No, Abone No)</li>
+                                    <li>Hesaplama seçeneklerinden uygun olanı işaretleyin</li>
+                                    <li>Sayaç Markasını seçin (istiyorsanız)</li>
+                                    <li>Abone Tiplerini seçin</li>
+                                    <li>Ek Ücret Hesaplama seçiliyse Ek Ücret Tiplerini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Sistem işlemi başlatacak ve sonuç hakkında bir mesaj gösterecektir</li>
+                            <li>İşlem tamamlandığında "Toplam (X) Kayıt Güncellendi" şeklinde bir bilgi mesajı alacaksınız</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Mahalle Kayıtları Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Üzerinde bir pencere ikonu ve "Mahalle Kayıtları" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Kayıtlarını Görüntüleme Adımları:</strong>
+                        <ol>
+                            <li>Butona tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır</li>
+                            <li>Bu pencerede mahalle ve cadde kayıtlarının listesi görüntülenecektir</li>
+                            <li>Listeden istediğiniz mahalle ve cadde bilgilerini seçebilirsiniz</li>
+                            <li>Seçilen kayıtlar otomatik olarak ana ekrandaki Mahalle ve Cadde alanlarına aktarılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Mahalle Kayıtları butonunun sağında yer alır</li>
+                            <li>Üzerinde bir çıkış/kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna tıklamadan önce tüm gerekli alanları doldurduğunuzdan emin olun</li>
+                    <li>Yıl ve Dönem alanları boş bırakılamaz</li>
+                    <li>En az bir Abone Tipi seçilmelidir</li>
+                    <li>Ek Ücret Hesaplama seçeneği işaretlendiyse, en az bir Ek Ücret Tipi seçilmelidir</li>
+                    <li>İşlem başlatıldıktan sonra, sistem yanıt verene kadar bekleyin</li>
+                    <li>İşlem tamamlandığında bilgi mesajını okuyarak kaç kayıt güncellendiğini kontrol edin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + K tuş kombinasyonu ile Kaydet butonunu aktif edebilirsiniz</li>
+                    <li>Mahalle ve cadde kodlarını bilmiyorsanız, Mahalle Kayıtları butonunu kullanarak seçim yapın</li>
+                    <li>İşlem başlatmadan önce seçimlerinizi kontrol edin</li>
+                    <li>Toplu tahakkuk hesaplama işlemleri yoğun veri işleme gerektirebilir, büyük abone grupları için işlemin tamamlanması biraz zaman alabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+                    <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                    <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Abone Tipi Seçilmemiş" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Abone Tipleri listesinden en az bir abone tipi seçtiğinizden emin olun. Seçim yapmak için, listedeki bir öğeye tıklayın veya birden fazla öğe seçmek için CTRL tuşunu basılı tutarak tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Ek Ücret Seçilmemiş" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: "Okuma Yapılmamış Abonelere Ek Ücret Hesapla" seçeneğini işaretlemiş fakat Ek Ücret Tipleri listesinden seçim yapmamışsınız.</li>
+                            <li>Çözüm: Ek Ücret Tipleri listesinden en az bir ek ücret tipi seçin veya hesaplama seçeneğinizi değiştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ek Ücret Tipleri Listesi Boş:</strong>
+                        <ul>
+                            <li>Sorun: Ek Ücret Tipleri listesi hiçbir öğe içermiyor.</li>
+                            <li>Çözüm: Doğru Yıl, Dönem ve Tahakkuk Tipi seçtiğinizden emin olun. Ek Ücret Tipleri listesi bu seçimlere göre güncellenir. Seçilen dönem için ek ücret tanımı yapılmamış olabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Uzun Sürüyor:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladıktan sonra işlem çok uzun sürüyor.</li>
+                            <li>Çözüm: Çok geniş bir abone aralığı seçmiş olabilirsiniz. Daha dar bir aralık belirleyin veya daha spesifik abone tipleri seçin. Ayrıca sistem yoğunluğuna bağlı olarak işlem süresi değişebilir, sabırla bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yanlış Hesaplama:</strong>
+                        <ul>
+                            <li>Sorun: Tahakkuk hesaplaması beklediğiniz gibi yapılmıyor.</li>
+                            <li>Çözüm: Doğru hesaplama seçeneğini işaretlediğinizden emin olun. "Okuma Yapılmış Aboneleri Yeniden Hesapla", "Okuma Yapılmamış Abonelere Ek Ücret Hesapla" ve "Okuma Yapılmış Abonelere İlave Ek Ücret Hesapla" seçeneklerinden sadece birini işaretleyebilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                    <li>Yıl, Dönem ve Tahakkuk Tipi bilgilerini doğru girdiğinizden emin olun</li>
+                    <li>Büyük abone grupları için işlem yapmadan önce, küçük bir grup üzerinde test yapın</li>
+                    <li>Mahalle ve cadde kodlarını ezberlemeye çalışmak yerine, Mahalle Kayıtları butonunu kullanarak listeden seçim yapın</li>
+                    <li>Sık kullandığınız kriterleri ve değerleri not edin</li>
+                    <li>İşlem sonucunda gösterilen "Toplam (X) Kayıt Güncellendi" mesajını kontrol ederek, beklediğiniz sayıda kayıt işlendiğinden emin olun</li>
+                    <li>Ek ücret hesaplamaları için öncelikle doğru abone tiplerini seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Toplu tahakkuk hesaplama işlemi geri alınamaz, bu nedenle işlem başlatmadan önce tüm seçimlerinizi kontrol edin</li>
+                    <li>Yoğun kullanım saatlerinde büyük abone grupları için işlem yapmaktan kaçının</li>
+                    <li>İşlem sırasında program penceresini kapatmayın veya başka işlemlere geçmeyin</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Su Toplu Tahakkuk Hesaplama programı, su abonelerinin tahakkuk işlemlerini toplu olarak gerçekleştirmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Yıl ve dönem bilgisi girişi</li>
+                <li>Tahakkuk tipi seçimi</li>
+                <li>Abone seçim kriterleri (Mahalle, Cadde, Hane, Sıra No, Abone No)</li>
+                <li>Farklı hesaplama seçenekleri (Yeniden hesaplama, Ek ücret hesaplama, İlave ek ücret hesaplama)</li>
+                <li>Sayaç markasına göre filtreleme</li>
+                <li>Abone tipleri ve ek ücret tipleri seçimi</li>
+                <li>İşlem butonlarının kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

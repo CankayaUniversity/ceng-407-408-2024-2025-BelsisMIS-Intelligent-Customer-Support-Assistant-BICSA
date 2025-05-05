@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Abone Kesme Mühür Belgesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Abone Kesme Mühür Belgesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#abone-bilgileri">Abone Bilgileri</a></li>
+                        <li><a href="#adres-bilgileri">Adres Bilgileri</a></li>
+                        <li><a href="#abone-tipi">Abone Tipi ve Sayaç Durumu</a></li>
+                        <li><a href="#dokum-secenekleri">Döküm Seçenekleri</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Form İşlemleri</a>
+                    <ul>
+                        <li><a href="#rapor-olusturma">Rapor Oluşturma</a></li>
+                        <li><a href="#cikis-yapma">Çıkış Yapma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kisayollar">Klavye Kısayolları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Abone Kesme Mühür Belgesi" ekranı, su abonelerinin kesme işlemleri ve son çağrı bildirimleri için belgeler oluşturmanızı sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli kriterlere göre (abone no, bakiye, dönem vb.) abone listesi oluşturma</li>
+                <li>Su kesme belgesi oluşturma</li>
+                <li>Son çağrı belgesi oluşturma</li>
+                <li>Mahalle ve sokak bazlı filtreleme yapma</li>
+                <li>Abone tipi ve sayaç durumuna göre filtreleme yapma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Listelemek istediğiniz abonelerin abone numarası aralığı (isteğe bağlı)</li>
+                    <li>Listelemek istediğiniz abonelerin bakiye aralığı (isteğe bağlı)</li>
+                    <li>Listelemek istediğiniz dönem bilgisi (isteğe bağlı)</li>
+                    <li>Mahalle ve sokak bilgileri (isteğe bağlı)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Su Abone Kesme Mühür Belgesi" başlığı yer alır.</li>
+                            <li>Bu başlık, yapacağınız işlemi tanımlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sokak Arama Butonu (btnsok):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sokak" metin kutusunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Küçük, büyüteç simgeli butondur.</li>
+                            <li><strong>İşlev:</strong> Seçilen mahalleye ait sokak listesini açar ve seçim yapmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> Butona tıkladığınızda önce küçük bir arama penceresi açılır, sonra bu kriterlere göre sokak listesi görüntülenir. Listeden seçtiğiniz sokak, "Sokak" alanına aktarılır.</li>
+                            <li><strong>Not:</strong> Bu butonu kullanmadan önce mutlaka bir mahalle seçmiş olmalısınız.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listele Butonu (btnList):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Formun alt kısmında, orta bölümde yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri buton, üzerinde liste simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Belirtilen filtreleme kriterlerine göre raporu oluşturur ve görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Tüm filtreleme kriterlerinizi belirledikten sonra bu butona tıklayarak raporu oluşturabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu (btnExit):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Formun alt kısmında, "Listele" butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri buton, üzerinde çıkış simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Programdan çıkmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> İşiniz bittiğinde bu butona tıklayarak programı kapatabilirsiniz.</li>
+                            <li><strong>Alternatif:</strong> ESC tuşu da aynı işlevi görür.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mahalle veya sokak listesinde çok fazla kayıt varsa, arama penceresini kullanarak filtreleme yapabilirsiniz.</li>
+                    <li>Sokak araması yapmadan önce mutlaka bir mahalle seçmelisiniz, aksi halde sokak listesi boş gelecektir.</li>
+                    <li>Çok geniş filtrelerle "Listele" butonuna basarsanız, çok büyük bir rapor oluşabilir ve işlem uzun sürebilir.</li>
+                    <li>Çıkış yapmadan önce oluşturduğunuz raporları kaydettiğinizden veya yazdırdığınızdan emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Buton Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Mahalle ve sokak seçimlerinde, listeden hızlıca bulmak için ilk birkaç harfi yazabilirsiniz.</li>
+                    <li>Arama yaparken, geniş filtreler yerine, daha spesifik kriterler kullanarak daha hızlı sonuçlar alabilirsiniz.</li>
+                    <li>Çıkış butonuna alternatif olarak, ESC tuşunu kullanabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Form İşlemleri</h2>
+        
+        <div id="rapor-olusturma" class="info-box">
+            <h3>Rapor Oluşturma</h3>
+            
+            <div class="step">
+                <h4>Rapor Nasıl Oluşturulur:</h4>
+                <ol>
+                    <li><strong>Filtreleme Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>Önceki bölümlerde anlatıldığı gibi filtreleme kriterlerini girin (Abone No, Bakiye, Dönem vb.).</li>
+                            <li>Tüm aboneleri listelemek istiyorsanız, filtreleme alanlarını boş bırakabilirsiniz.</li>
+                            <li>Belirli kriterlere göre filtreleme yapmak istiyorsanız, ilgili alanları doldurun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Döküm Tipini Seçme:</strong>
+                        <ul>
+                            <li>Açılır listeden "Su-Kesme" veya "Son-Çağrı" seçeneklerinden birini seçin.</li>
+                            <li>Seçiminiz, oluşturulacak belgenin tipini belirleyecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Oluşturma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki "Listele" butonuna tıklayın.</li>
+                            <li>Sistem belirttiğiniz kriterlere göre aboneleri filtreleyecek ve seçtiğiniz belge tipine uygun bir rapor oluşturacaktır.</li>
+                            <li>Oluşturulan rapor yeni bir pencerede açılacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor Kriterlerinin İşleyişi:</h4>
+                <ol>
+                    <li><strong>Abone No Filtreleme:</strong>
+                        <ul>
+                            <li>İki abone numarası arasındaki tüm aboneler listelenir.</li>
+                            <li>Boş bırakıldığında sistem "0" ile "99999999" arasındaki tüm aboneleri listeler.</li>
+                            <li>Tek bir abone için, aynı numarayı hem başlangıç hem de bitiş alanına girin (veya sadece başlangıç alanına girin, sistem otomatik kopyalayacaktır).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bakiye Filtreleme:</strong>
+                        <ul>
+                            <li>İki bakiye değeri arasındaki tüm aboneler listelenir.</li>
+                            <li>Boş bırakıldığında sistem "0" ile "9999999999" arasındaki tüm bakiyeleri listeler.</li>
+                            <li>Belirli bir bakiye üzerindeki aboneleri listelemek için, başlangıç alanına o değeri, bitiş alanına çok yüksek bir değer girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl ve Dönem Filtreleme:</strong>
+                        <ul>
+                            <li>İki yıl ve dönem aralığındaki tüm kayıtlar listelenir.</li>
+                            <li>Boş bırakıldığında sistem tüm yıl ve dönem kayıtlarını listeler.</li>
+                            <li>Belirli bir dönemi listelemek için, başlangıç ve bitiş alanlarına aynı değerleri girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle ve Sokak Filtreleme:</strong>
+                        <ul>
+                            <li>Seçilen mahalle ve sokaktaki tüm aboneler listelenir.</li>
+                            <li>Sadece mahalle seçildiğinde, o mahalledeki tüm sokaklar dahil edilir.</li>
+                            <li>Hem mahalle hem sokak seçildiğinde, sadece o sokaktaki aboneler listelenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi ve Sayaç Durumu Filtreleme:</strong>
+                        <ul>
+                            <li>Seçilen abone tipleri ve sayaç durumları dahil edilir.</li>
+                            <li>Varsayılan olarak tüm tipler ve durumlar seçili gelir.</li>
+                            <li>Özel filtreleme için, istediğiniz öğeleri seçin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Oluşturulan Rapor ile Çalışma:</h4>
+                <ol>
+                    <li><strong>Raporu İnceleme:</strong>
+                        <ul>
+                            <li>Rapor yeni bir pencerede açılır.</li>
+                            <li>Raporda filtreleme kriterlerine uyan tüm abonelerin bilgileri listelenir.</li>
+                            <li>Rapor penceresi üzerinde kaydırma çubukları kullanarak tüm içeriği görebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Yazdırma:</strong>
+                        <ul>
+                            <li>Rapor penceresinin üst kısmında bulunan yazdırma butonuna tıklayarak raporu yazdırabilirsiniz.</li>
+                            <li>Yazdırma işlemi, raporu olduğu gibi yazıcıya gönderecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Penceresini Kapatma:</strong>
+                        <ul>
+                            <li>Rapor ile işiniz bittiğinde, pencerenin sağ üst köşesindeki X butonuna tıklayarak kapatabilirsiniz.</li>
+                            <li>Rapor penceresini kapattığınızda, ana form ekranına geri döneceksiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok geniş filtreleme kriterleri kullanırsanız (örneğin hiçbir filtre uygulamazsanız), rapor çok sayıda abone içerebilir ve oluşturulması uzun sürebilir.</li>
+                    <li>Raporda hiç kayıt görünmüyorsa, filtreleme kriterlerinizi gözden geçirin, çok kısıtlayıcı olabilir.</li>
+                    <li>Yazdırma işleminden önce yazıcı ayarlarınızı kontrol edin, özellikle büyük raporlar için sayfa düzeni önemlidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Raporlama İpuçları:</h4>
+                <ul>
+                    <li>Daha küçük gruplar halinde raporlar oluşturmak, yönetimi kolaylaştırır (örneğin mahalle bazlı veya belirli bakiye aralıklarına göre).</li>
+                    <li>Raporu yazdırmadan önce ekranda kontrol edin, böylece gereksiz çıktı almaktan kaçınabilirsiniz.</li>
+                    <li>Düzenli olarak oluşturduğunuz raporlar için filtreleme kriterlerinizi not alın, böylece her seferinde aynı değerleri kolayca girebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="cikis-yapma" class="info-box">
+            <h3>Çıkış Yapma</h3>
+            
+            <div class="step">
+                <h4>Programdan Çıkış Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Programdan çıkmak için, ekranın alt kısmında bulunan "Çıkış" butonuna tıklayın.</li>
+                            <li>Bu buton, "Listele" butonunun hemen sağında yer alır.</li>
+                            <li>Butona tıkladığınızda program doğrudan kapanacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alternatif Çıkış Yöntemi:</strong>
+                        <ul>
+                            <li>Alternatif olarak, klavyeden ESC tuşuna basarak da programdan çıkabilirsiniz.</li>
+                            <li>ESC tuşuna bastığınızda program doğrudan kapanacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <ul>
+                    <li>Programdan çıkmadan önce, oluşturduğunuz raporları kaydettiğinizden veya yazdırdığınızdan emin olun.</li>
+                    <li>Çıkış yaptığınızda, form üzerinde yaptığınız filtre ayarları kaydedilmez, program tekrar açıldığında varsayılan değerlerle başlar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Klavye Kısayolları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar</td>
+                    </tr>
+                    <tr>
+                        <td>Ctrl + A</td>
+                        <td>Çoklu seçim listelerinde tüm öğeleri seçer</td>
+                    </tr>
+                    <tr>
+                        <td>Ctrl + [tıklama]</td>
+                        <td>Çoklu seçim listelerinde birden fazla öğe seçimi yapar</td>
+                    </tr>
+                    <tr>
+                        <td>Shift + [tıklama]</td>
+                        <td>Çoklu seçim listelerinde ardışık öğe seçimi yapar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Klavye Kısayolları Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için TAB veya ENTER tuşunu kullanın.</li>
+                            <li>Bir önceki alana dönmek için SHIFT + TAB tuş kombinasyonunu kullanın.</li>
+                            <li>Programdan çıkmak için herhangi bir anda ESC tuşuna basabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Seçim Listelerinde:</strong>
+                        <ul>
+                            <li>Tüm öğeleri seçmek için Ctrl+A tuş kombinasyonunu kullanın.</li>
+                            <li>Birden fazla öğe seçmek için Ctrl tuşuna basılı tutarak öğelere tıklayın.</li>
+                            <li>Ardışık öğeleri seçmek için ilk öğeye tıklayın, sonra Shift tuşuna basılı tutarak son öğeye tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Klavye Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan tüm işlemleri klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>Enteriniz klavyede üst üste ise, yanlışlıkla çift basarak bir alanı atlamamaya dikkat edin.</li>
+                    <li>Yeni başlayanlar önce bir süre fare ile kullanıp, zamanla klavye kısayollarına geçebilirler.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturulmuyor:</strong>
+                        <ul>
+                            <li>Filtreleme kriterlerinizi kontrol edin, çok kısıtlayıcı olabilir ve hiçbir kayıt bu kriterlere uymayabilir.</li>
+                            <li>Tarih formatını doğru girdiğinizden emin olun (Yıl: 4 haneli, Dönem: uygun aralıkta).</li>
+                            <li>Abone No ve Bakiye alanlarına geçerli değerler girdiğinizden emin olun.</li>
+                            <li>Seçtiğiniz Abone Tipi ve Sayaç Durumu listelerinde en az bir öğe seçili olduğundan emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle veya Sokak Seçilemiyor:</strong>
+                        <ul>
+                            <li>Mahalle arama penceresinin doğru açıldığından emin olun.</li>
+                            <li>Sokak seçimi yapmadan önce mutlaka mahalle seçimi yaptığınızdan emin olun.</li>
+                            <li>Arama pencerelerinde kriterleri doğru girdiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Çok Büyük veya Çok Küçük:</strong>
+                        <ul>
+                            <li>Çok fazla kayıt listelenmişse, filtreleme kriterlerinizi daraltın.</li>
+                            <li>Hiç kayıt listelenmiyorsa, filtreleme kriterlerinizi genişletin veya bazı filtreleri kaldırın.</li>
+                            <li>Mahalle veya abone tipi gibi belirli filtreler kullanarak raporu yönetilebilir boyuta getirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayı Formatları Hatalı:</strong>
+                        <ul>
+                            <li>Bakiye alanına para birimi formatında değerler girdiğinizden emin olun.</li>
+                            <li>Abone No, Yıl ve Dönem alanlarına sadece sayısal değerler girdiğinizden emin olun.</li>
+                            <li>Ondalık ayraç olarak nokta (.) kullanın, virgül kullanmayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Filtreleme İçin:</strong>
+                        <ul>
+                            <li>Belirli bir bölge için rapor almak istiyorsanız, önce mahalle seçimi yapın.</li>
+                            <li>Bakiye kriterini kullanarak yüksek borçlu aboneleri önceliklendirin.</li>
+                            <li>Abone tiplerini filtreleyerek (örneğin sadece konut veya iş yeri aboneleri) daha odaklı raporlar alın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>Alanlar arasında gezinmek için TAB tuşunu kullanın.</li>
+                            <li>Çoklu seçim listelerinde Ctrl ve Shift tuşlarını kullanarak daha hızlı seçim yapın.</li>
+                            <li>Programdan hızlıca çıkmak için ESC tuşunu kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>Sık kullandığınız filtreleme kriterlerini not alın veya hatırlayın.</li>
+                            <li>Büyük raporlar yerine, daha küçük ve odaklanmış raporlar oluşturun.</li>
+                            <li>Rapor oluşturduktan sonra kaydedip daha sonra yazdırabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>Oluşturduğunuz raporlar abonelerin kişisel bilgilerini içerebilir, bu nedenle bu bilgileri koruyun.</li>
+                    <li>Su kesme işlemi ciddi bir işlemdir, raporu oluşturmadan önce kriterleri dikkatlice kontrol edin.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın, yanlış işlem yapılmaması önemlidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayolları ve filtreleme yöntemlerini öğrenmek size zaman kazandıracaktır.</li>
+                    <li>Farklı döküm tipleri (Su-Kesme ve Son-Çağrı) farklı amaçlar için kullanılır, duruma göre doğru seçeneği tercih edin.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Yeni bir rapor oluşturmadan önce filtreleme kriterlerinizi tekrar kontrol edin, bu potansiyel hataları önler.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Su Abone Kesme Mühür Belgesi" ekranı, su abonelerinin kesme ve son çağrı işlemlerini yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru filtreleme kriterleri kullanın.</li>
+                    <li>İhtiyacınıza göre doğru döküm tipini seçin.</li>
+                    <li>Oluşturduğunuz raporları zamanında işleme alın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölüm, filtreleme için gerekli veri giriş alanlarını içerir.</li>
+                            <li>Alanlar, ekranın solundan sağına doğru düzenlenmiştir.</li>
+                            <li>Her alan etiketiyle birlikte, sola hizalı şekilde yerleştirilmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında Listele ve Çıkış butonları yer alır.</li>
+                            <li>Bu butonlar formun alt orta kısmında yan yana bulunur.</li>
+                            <li>Butonlar 3D görünümlü ve gri tonlardadır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm abone tipleri ve sayaç durumları seçili olarak gelir.</li>
+                    <li>Diğer filtreleme alanları boş olarak gösterilir.</li>
+                    <li>İlk olarak "Abone No" alanına odaklanır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Temel Abone Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Abone No:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, ilk satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet metin kutusu yan yana bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 15 karakter.</li>
+                            <li><strong>Kullanım:</strong> Abone numarası aralığını belirlemek için kullanılır. Sol kutucuğa başlangıç, sağ kutucuğa bitiş numarası yazılır.</li>
+                            <li><strong>Özel İşlev:</strong> Sol kutucuğa bir değer girildiğinde, otomatik olarak sağ kutucuğa da aynı değer kopyalanır. Bu sayede tek bir abone için rapor oluşturmak istediğinizde sadece sol kutucuğu doldurmanız yeterlidir.</li>
+                            <li><strong>Varsayılan Değerler:</strong> Boş bırakıldığında, sol kutucuk "0", sağ kutucuk "99999999" değerlerini alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bakiye:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanının hemen altında, ikinci satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet metin kutusu yan yana bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Para birimi formatında sayısal değer girişine izin verir, maksimum 25 karakter.</li>
+                            <li><strong>Kullanım:</strong> Borç bakiye aralığını belirlemek için kullanılır. Sol kutucuğa minimum, sağ kutucuğa maksimum bakiye değeri yazılır.</li>
+                            <li><strong>Varsayılan Değerler:</strong> Boş bırakıldığında, sol kutucuk "0", sağ kutucuk "9999999999" değerlerini alır.</li>
+                            <li><strong>Format:</strong> Ondalık ayracı olarak nokta (.) kullanılır. Sistem otomatik olarak girdiğiniz değeri para birimi formatına dönüştürür.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Bakiye" alanının hemen altında, üçüncü satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet metin kutusu yan yana bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 4 karakter.</li>
+                            <li><strong>Kullanım:</strong> Dönem yılı aralığını belirlemek için kullanılır. Sol kutucuğa başlangıç, sağ kutucuğa bitiş yılı yazılır.</li>
+                            <li><strong>Varsayılan Değerler:</strong> Boş bırakıldığında, sol kutucuk "0", sağ kutucuk "9999" değerlerini alır.</li>
+                            <li><strong>Not:</strong> Yıl ve Dönem filtreleri birlikte çalışır. İki alanın da doldurulması gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl" alanının hemen altında, dördüncü satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> İki adet metin kutusu yan yana bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Sadece rakam girişine izin verir, maksimum 4 karakter.</li>
+                            <li><strong>Kullanım:</strong> Dönem aralığını belirlemek için kullanılır. Sol kutucuğa başlangıç, sağ kutucuğa bitiş dönemi yazılır.</li>
+                            <li><strong>Varsayılan Değerler:</strong> Boş bırakıldığında, sol kutucuk "0", sağ kutucuk "9999" değerlerini alır.</li>
+                            <li><strong>Not:</strong> Yıl filtresi ile birlikte kullanılmalıdır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Abone No alanında sadece belirli bir aboneyi listelemek istiyorsanız, her iki kutucuğa da aynı abone numarasını yazın veya sadece sol kutucuğu doldurun (sistem otomatik olarak sağ kutucuğa aynı değeri kopyalayacaktır).</li>
+                    <li>Bakiye alanı boş bırakılırsa, bakiyesi ne olursa olsun tüm aboneler listelenir.</li>
+                    <li>Yıl ve Dönem alanları birlikte çalışır, ikisini de doldurmanız gerekir.</li>
+                    <li>Hiçbir filtreleme yapmak istemiyorsanız, tüm alanları boş bırakabilirsiniz. Sistem varsayılan değerleri kullanarak tüm aboneleri listeleyecektir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="adres-bilgileri" class="info-box">
+            <h3>Adres Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Adres Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Mahalle:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Dönem" alanının hemen altında, beşinci satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Bir metin kutusu ve yanında büyüteç simgeli arama butonu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir, maksimum 35 karakter.</li>
+                            <li><strong>Kullanım:</strong> Mahalle adını doğrudan yazabilir veya arama butonunu kullanarak listeden seçebilirsiniz.</li>
+                            <li><strong>Gizli Alan:</strong> Metin kutusunun yanında görünmeyen bir alan (txtmah_id) mahalle kodunu saklar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sokak:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" alanının hemen altında, altıncı satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Bir metin kutusu ve yanında büyüteç simgeli arama butonu bulunur.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir, maksimum 35 karakter.</li>
+                            <li><strong>Kullanım:</strong> Sokak adını doğrudan yazabilir veya arama butonunu kullanarak listeden seçebilirsiniz.</li>
+                            <li><strong>Gizli Alan:</strong> Metin kutusunun yanında görünmeyen bir alan (txtsok_id) sokak kodunu saklar.</li>
+                            <li><strong>Not:</strong> Sokak araması yapmadan önce mutlaka mahalle seçimi yapmalısınız.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Mahalle ve Sokak Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Mahalle Seçimi:</strong>
+                        <ul>
+                            <li>Mahalle alanının yanındaki arama butonuna tıklayın (büyüteç simgeli buton).</li>
+                            <li>Açılan pencerede "Rapor Mahalle" seçim ekranı belirir.</li>
+                            <li>Buradan mahalle arama kriterlerini belirleyebilirsiniz.</li>
+                            <li>Kriterleri belirledikten sonra "Tamam" butonuna tıklayın.</li>
+                            <li>Açılan mahalle listesinden istediğiniz mahalleyi seçin.</li>
+                            <li>Seçtiğiniz mahalle, Mahalle alanına otomatik olarak aktarılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sokak Seçimi:</strong>
+                        <ul>
+                            <li>Önce bir mahalle seçtiğinizden emin olun.</li>
+                            <li>Sokak alanının yanındaki arama butonuna tıklayın (büyüteç simgeli buton).</li>
+                            <li>Açılan pencerede "Rapor Sokak" seçim ekranı belirir.</li>
+                            <li>Seçilen mahalleye ait sokaklar listelenir.</li>
+                            <li>İstediğiniz sokağı listeden seçin.</li>
+                            <li>Seçtiğiniz sokak, Sokak alanına otomatik olarak aktarılacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Adres Bilgileri Doldurma İpuçları:</h4>
+                <ul>
+                    <li>Mahalle seçmeden sokak seçimi yapamazsınız. Sokak araması için önce mutlaka bir mahalle seçmelisiniz.</li>
+                    <li>Tüm mahalleler için arama yapmak istiyorsanız, Mahalle alanını boş bırakın.</li>
+                    <li>Bir mahallede tüm sokaklar için arama yapmak istiyorsanız, sadece Mahalle seçimi yapıp Sokak alanını boş bırakın.</li>
+                    <li>Mahalle ve sokak seçimi yaptığınızda, sadece o bölgedeki aboneler listelenecektir. Bu, büyük raporları daha yönetilebilir parçalara bölmek için kullanışlıdır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-tipi" class="info-box">
+            <h3>Abone Tipi ve Sayaç Durumu</h3>
+            
+            <div class="step">
+                <h4>Abone Tipi ve Sayaç Durumu Alanları:</h4>
+                <ol>
+                    <li><strong>Abone Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sokak" alanının hemen altında, yedinci satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Çok seçimli liste kutusu (multiple select).</li>
+                            <li><strong>Veri Türü:</strong> Liste içinden birden fazla seçim yapılabilir.</li>
+                            <li><strong>Kullanım:</strong> Listelemek istediğiniz abone tiplerini seçmek için kullanılır. Birden fazla abone tipini Ctrl tuşuna basılı tutarak veya fare ile tıklayarak seçebilirsiniz.</li>
+                            <li><strong>Not:</strong> Program açıldığında varsayılan olarak tüm abone tipleri seçili gelir. Bu seçim, program açılışında otomatik olarak yapılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Durumu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone Tipi" alanının hemen altında, sekizinci satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Çok seçimli liste kutusu (multiple select).</li>
+                            <li><strong>Veri Türü:</strong> Liste içinden birden fazla seçim yapılabilir.</li>
+                            <li><strong>Kullanım:</strong> Listelemek istediğiniz sayaç durumlarını seçmek için kullanılır. Birden fazla sayaç durumunu Ctrl tuşuna basılı tutarak veya fare ile tıklayarak seçebilirsiniz.</li>
+                            <li><strong>Not:</strong> Program açıldığında varsayılan olarak tüm sayaç durumları seçili gelir. Bu seçim, program açılışında otomatik olarak yapılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çoklu Seçim Nasıl Yapılır:</h4>
+                <ol>
+                    <li>Listenin içindeki bir öğeye tıklayarak seçim yapın.</li>
+                    <li>Birden fazla ardışık öğe seçmek için, ilk öğeyi tıkladıktan sonra Shift tuşuna basılı tutarak son öğeyi tıklayın.</li>
+                    <li>Birbirinden bağımsız öğeler seçmek için, Ctrl tuşuna basılı tutarak istediğiniz öğeleri tıklayın.</li>
+                    <li>Bir öğeyi seçimden çıkarmak için, Ctrl tuşuna basılı tutarak seçili öğeye tekrar tıklayın.</li>
+                    <li>Tüm öğeleri seçmek için Ctrl+A tuş kombinasyonunu kullanabilirsiniz.</li>
+                    <li>Tüm seçimi kaldırmak için, önce Ctrl+A ile tüm öğeleri seçin, sonra herhangi bir öğeye Ctrl tuşu ile tıklayarak tüm seçimi kaldırın.</li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Tipi ve Sayaç Durumu Seçme İpuçları:</h4>
+                <ul>
+                    <li>Varsayılan olarak tüm tipler ve durumlar seçili geldiği için, genellikle bu alanları değiştirmeniz gerekmez.</li>
+                    <li>Belirli bir abone tipine veya sayaç durumuna göre filtreleme yapmak istiyorsanız, öncelikle tüm seçimi kaldırıp (Ctrl+A yapıp sonra tıklayarak) sadece istediğiniz öğeleri seçin.</li>
+                    <li>Hiçbir öğe seçili değilse, sistem otomatik olarak tüm öğeleri dahil edecektir.</li>
+                    <li>Abone tipi örneğin "Konut", "İşyeri", "Resmi Daire" gibi kategorileri içerebilir.</li>
+                    <li>Sayaç durumu örneğin "Normal", "Arızalı", "Değiştirilecek" gibi durumları içerebilir.</li>
+                    <li>Seçimler "VE" mantığıyla çalışır, yani seçtiğiniz tüm abone tipleri ve sayaç durumları raporda yer alacaktır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="dokum-secenekleri" class="info-box">
+            <h3>Döküm Seçenekleri</h3>
+            
+            <div class="step">
+                <h4>Döküm Seçeneği Alanı:</h4>
+                <ol>
+                    <li><strong>Döküm:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sayaç Durumu" alanının hemen altında, dokuzuncu satırda yer alır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste kutusu (dropdown).</li>
+                            <li><strong>Veri Türü:</strong> Liste içinden tek seçim yapılabilir.</li>
+                            <li><strong>Kullanım:</strong> Oluşturulacak belge tipini seçmek için kullanılır.</li>
+                            <li><strong>Seçenekler:</strong>
+                                <ul>
+                                    <li>"Su-Kesme": Su aboneliği kesme belgesi oluşturur. Bu seçenek varsayılan olarak gelir.</li>
+                                    <li>"Son-Çağrı": Son ödeme çağrı belgesi oluşturur.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>Dokümantasyon tipi, oluşturacağınız belgenin içeriğini ve formatını belirler:</p>
+                <ul>
+                    <li>"Su-Kesme" seçeneği, aboneye suyunun kesileceğini bildiren resmi bir belge üretir. Bu belge, yasal olarak su kesme işlemini belgelemek için kullanılır.</li>
+                    <li>"Son-Çağrı" seçeneği, aboneye borcunu ödemesi için son bir hatırlatma belgesi üretir. Bu belge, kesme işlemi öncesinde son bir uyarı niteliğindedir.</li>
+                    <li>İhtiyacınıza göre doğru belge tipini seçtiğinizden emin olun. Yanlış belge tipi seçimi, yasal süreçlerde sorunlara neden olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Form Üzerindeki Butonlar:</h4>
+                <ol>
+                    <li><strong>Mahalle Arama Butonu (btnmah):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" metin kutusunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Küçük, büyüteç simgeli butondur.</li>
+                            <li><strong>İşlev:</strong> Mahalle listesini açar ve seçim yapmanızı sağlar.</li>
+                            <li><strong>Kullanım:</strong> Butona tıkladığınızda önce küçük bir arama penceresi açılır, sonra bu kriterlere göre mahalle listesi görüntülenir. Listeden seçtiğiniz mahalle, "Mahalle" alanına aktarılır.</li>
+                        </ul

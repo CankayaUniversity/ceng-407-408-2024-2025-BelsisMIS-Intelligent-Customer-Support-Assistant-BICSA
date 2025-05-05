@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartlı Abone Avans İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kartlı Abone Avans İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+            <li><a href="#abone-islemleri">Abone Kartı İşlemleri</a></li>
+            <li><a href="#form-alanlari">Alan Açıklamaları ve Veri Giriş Formları</a></li>
+            <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+            <li><a href="#hata-mesajlari">Hata Mesajları ve Çözümleri</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Kartlı Abone Avans İşlemleri programı, su abonelerine ait kartlı sayaçlar için avans kontör yükleme işlemlerinin yapıldığı bir uygulamadır. Bu program ile:</p>
+        <ul>
+            <li>Karta takılı abone kartını okuma</li>
+            <li>Abone bilgilerini görüntüleme</li>
+            <li>Aboneye avans kontör yükleme</li>
+            <li>Fatura bilgilerini hesaplama ve görüntüleme</li>
+            <li>Sayaç arızalarını tespit etme</li>
+        </ul>
+        <p>gibi işlemleri gerçekleştirebilirsiniz.</p>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu hazırlıkları yapmanız gerekir:</p>
+            <ul>
+                <li>POS cihazının bilgisayara doğru şekilde bağlanmış olduğundan emin olun</li>
+                <li>Abonenin kartını temin edin</li>
+                <li>Yüklenecek kontör miktarını belirleyin</li>
+                <li>Programı yönetici olarak çalıştırdığınızdan emin olun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Genel Görünüm</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde "Kartlı Abone Avans İşlemleri" başlığı yer alır</li>
+                        <li>Bu başlık mavi renkli bir şerit içinde görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında yer alır</li>
+                        <li>Abone bilgilerinin görüntülendiği alanları içerir</li>
+                        <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        <li>Veri giriş formları, ekranın orta kısmını kaplar</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın orta kısmında yer alır</li>
+                        <li>Abone Oku, Kontör Yükle, Kartı Çıkar ve Form Temizle butonlarını içerir</li>
+                        <li>Butonlar yan yana sıralanmış şekildedir</li>
+                    </ul>
+                </li>
+                <li><strong>Fatura Bilgileri Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında yer alır</li>
+                        <li>"Fatura Bilgileri" başlıklı bir tablo şeklindedir</li>
+                        <li>Su tutarı, atık su tutarı, KDV tutarı gibi bilgileri içerir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Yüklenecek kontör miktarı "5" olarak ayarlanır</li>
+                <li>Tüm veri alanları boş olarak gelir</li>
+                <li>Fatura bilgileri bölümü başlangıçta gizlidir</li>
+            </ul>
+            <p>Herhangi bir işlem yapmadan önce aboneye ait kartın doğru şekilde POS cihazına takıldığından emin olun.</p>
+        </div>
+    </div>
+</div>
+<div id="abone-islemleri" class="section">
+    <h2>Abone Kartı İşlemleri</h2>
+    <div class="info-box">
+        <p>Bu bölümde abone kartı ile ilgili temel işlemlerin nasıl yapılacağını adım adım öğreneceksiniz.</p>
+        <div class="step">
+            <h4>Abone Kartı Okuma İşlemi</h4>
+            <p>Abone kartını okutarak abonenin bilgilerini görüntülemek için aşağıdaki adımları takip edin:</p>
+            <ol>
+                <li><strong>Hazırlık:</strong>
+                    <ul>
+                        <li>Abone kartını POS cihazına takın</li>
+                        <li>Kartın tam olarak yerine oturduğundan emin olun</li>
+                    </ul>
+                </li>
+                <li><strong>Kartı Okutma:</strong>
+                    <ul>
+                        <li>"Abone Oku" butonuna tıklayın. Bu buton, işlem butonları bölümünde en solda yer alır</li>
+                        <li>Sistem kart üzerindeki bilgileri okumaya başlayacak ve bu işlem birkaç saniye sürebilir</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Kontrolü:</strong>
+                    <ul>
+                        <li>Kart başarıyla okunduğunda, ekrandaki tüm alanlar otomatik olarak doldurulacaktır</li>
+                        <li>Abone No, Sicil No, Adı, Soyadı, Yıl/Dönem ve Son Endeks gibi bilgileri kontrol edin</li>
+                        <li>Eğer herhangi bir hata mesajı görüntülenirse, ilgili sorun giderme adımlarını uygulayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Uyarılar:</h4>
+            <ul>
+                <li>Kart okutulamazsa "POS Cihazında Kart Yok Ya da Tanımsız Kart!" uyarısı görüntülenir</li>
+                <li>Kartta hata varsa "Kartta hata oluştu tekrar deneyiniz yada kartı servise gönderiniz!" uyarısı görüntülenir</li>
+                <li>Abonenin bakiyesi varsa, kontör yükleme işlemi yapılamaz ve "Abonenin X TL bakiyesi vardır. Yükleme yapılamaz." uyarısı görüntülenir</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Kontör Yükleme İşlemi</h4>
+            <p>Abone kartına kontör yüklemek için aşağıdaki adımları takip edin:</p>
+            <ol>
+                <li><strong>Abone Bilgilerini Kontrol Etme:</strong>
+                    <ul>
+                        <li>Öncelikle "Abone Oku" butonuna basarak abone bilgilerini getirin</li>
+                        <li>Abonenin adı, soyadı, sicil numarası gibi bilgilerin doğru olduğundan emin olun</li>
+                        <li>Abonenin bakiyesinin 0 olduğundan emin olun (bakiye varsa yükleme yapılamaz)</li>
+                    </ul>
+                </li>
+                <li><strong>Yüklenecek Kontör Miktarını Ayarlama:</strong>
+                    <ul>
+                        <li>"Son Endeks / Yüklenecek Kredi" alanında yüklenecek kontör miktarını kontrol edin</li>
+                        <li>Varsayılan değer 5'tir, değiştirmek isterseniz yeni değeri girin</li>
+                        <li>Sistem otomatik olarak atık su miktarını hesaplayacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Kontör Yükleme:</strong>
+                    <ul>
+                        <li>"Kontör Yükle" butonuna tıklayın. Bu buton, işlem butonları bölümünde "Abone Oku" butonunun sağında yer alır</li>
+                        <li>Sistem karta kontör yükleme işlemine başlayacak ve bu işlem birkaç saniye sürebilir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Sonucu:</strong>
+                    <ul>
+                        <li>Yükleme başarılı olduğunda "İşlem Tamamlandı" mesajı görüntülenir</li>
+                        <li>Hatalar veya uyarılar görüntülenirse, ilgili sorun giderme adımlarını uygulayın</li>
+                    </ul>
+                </li>
+                <li><strong>Kartı Çıkarma:</strong>
+                    <ul>
+                        <li>İşlem tamamlandıktan sonra "Kartı Çıkar" butonuna tıklayarak kartı güvenle çıkarın</li>
+                        <li>Bu buton, işlem butonları bölümünde "Kontör Yükle" butonunun sağında yer alır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Yeni bir işleme başlamadan önce "Form Temizle" butonuna basarak tüm alanları temizleyebilirsiniz</li>
+                <li>Kart okuma işlemi sırasında kartın doğru yerleştirildiğinden emin olun</li>
+                <li>Sayaç arızası uyarısı alırsanız, aboneyi teknik servise yönlendirin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="form-alanlari" class="section">
+    <h2>Alan Açıklamaları ve Veri Giriş Formları</h2>
+    <div class="info-box">
+        <h3>Temel Abone Bilgileri</h3>
+        <div class="step">
+            <h4>Abone ve Sicil Numarası Alanları:</h4>
+            <ol>
+                <li><strong>Abone No:</strong>
+                    <ul>
+                        <li>Konumu: Başlık bölümünün hemen altında, ekranın sol üst kısmında yer alır</li>
+                        <li>İçerik: Abonenin sistem numarasını gösterir</li>
+                        <li>Özellik: Salt okunur alandır, manuel olarak değiştirilemez</li>
+                        <li>Bu alan kart okunduktan sonra otomatik olarak doldurulur</li>
+                    </ul>
+                </li>
+                <li><strong>Sicil No:</strong>
+                    <ul>
+                        <li>Konumu: Abone No alanının hemen altında yer alır</li>
+                        <li>İçerik: Abonenin genel sicil numarasını gösterir</li>
+                        <li>Özellik: Salt okunur alandır, manuel olarak değiştirilemez</li>
+                        <li>Bu alan kart okunduktan sonra otomatik olarak doldurulur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Kişisel Bilgi Alanları:</h4>
+            <ol>
+                <li><strong>Adı Soyadı:</strong>
+                    <ul>
+                        <li>Konumu: Sicil No alanının hemen altında yer alır</li>
+                        <li>İçerik: Abonenin adı ve soyadı bilgilerini içerir</li>
+                        <li>Özellik: İki ayrı metin kutusu yan yana şeklindedir (Adı ve Soyadı)</li>
+                        <li>Her ikisi de salt okunur alandır, manuel olarak değiştirilemez</li>
+                    </ul>
+                </li>
+                <li><strong>Yıl/Dönem:</strong>
+                    <ul>
+                        <li>Konumu: Adı Soyadı alanının hemen altında yer alır</li>
+                        <li>İçerik: İşlemin yapıldığı yıl ve dönem bilgisini gösterir</li>
+                        <li>Özellik: İki ayrı metin kutusu şeklindedir (Yıl ve Dönem)</li>
+                        <li>Yıl alanı, sistem tarafından otomatik olarak güncel yıl ile doldurulur</li>
+                        <li>Dönem alanı, kart okunduktan sonra otomatik olarak doldurulur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Kontör ve Kredi Bilgileri:</h4>
+            <ol>
+                <li><strong>Son Endeks / Yüklenecek Kredi:</strong>
+                    <ul>
+                        <li>Konumu: Yıl/Dönem alanının altında, ekranın orta kısmında yer alır</li>
+                        <li>İçerik: Son endeks değeri ve yüklenecek kontör miktarını gösterir</li>
+                        <li>Özellik: İki ayrı metin kutusu yan yana şeklindedir</li>
+                        <li>Son Endeks alanı salt okunur, Yüklenecek Kredi alanı düzenlenebilir</li>
+                        <li>Varsayılan olarak Yüklenecek Kredi değeri 5'tir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Dikkat Edilecek Hususlar:</h4>
+            <ul>
+                <li>Tüm bilgiler, kart okutulduktan sonra otomatik olarak doldurulur</li>
+                <li>Sadece Yüklenecek Kredi alanı kullanıcı tarafından değiştirilebilir</li>
+                <li>Yıl alanı otomatik olarak sistem tarihinden alınır</li>
+                <li>Ekranda gizli alanlar vardır, bunlar sistem tarafından yönetilir</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="info-box">
+        <h3>Fatura Bilgileri</h3>
+        
+        <div class="step">
+            <h4>Fatura Tutarları:</h4>
+            <p>Fatura bilgileri bölümü, kontör yükleme işlemi sırasında hesaplanır ve ekranın alt kısmında görüntülenir. Bu bölüm başlangıçta gizli olup, kontör yükleme işlemi yapıldığında görünür hale gelir.</p>
+            
+            <ol>
+                <li><strong>Su Tutarı:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun ilk satırında, sol tarafta yer alır</li>
+                        <li>İçerik: Yüklenen kontöre karşılık gelen su tutarını gösterir</li>
+                        <li>Özellik: Salt okunur alandır, otomatik hesaplanır</li>
+                    </ul>
+                </li>
+                <li><strong>Atık Su Tutarı:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun ikinci satırında, sol tarafta yer alır</li>
+                        <li>İçerik: Atık su için hesaplanan tutarı gösterir</li>
+                        <li>Özellik: Salt okunur alandır, su tutarının belirli bir oranı olarak hesaplanır</li>
+                    </ul>
+                </li>
+                <li><strong>Diğer Ücretler:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun üçüncü satırında, sol tarafta yer alır</li>
+                        <li>İçerik: Varsa ek ücretleri gösterir</li>
+                        <li>Özellik: Salt okunur alandır, sistem tarafından hesaplanır</li>
+                    </ul>
+                </li>
+                <li><strong>Ara Toplam:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun ilk satırında, sağ tarafta yer alır</li>
+                        <li>İçerik: KDV hariç toplam tutarı gösterir</li>
+                        <li>Özellik: Salt okunur alandır, otomatik hesaplanır</li>
+                    </ul>
+                </li>
+                <li><strong>KDV Tutarı:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun ikinci satırında, sağ tarafta yer alır</li>
+                        <li>İçerik: Hesaplanan KDV tutarını gösterir</li>
+                        <li>Özellik: Salt okunur alandır, ara toplamın belirli bir oranı olarak hesaplanır</li>
+                    </ul>
+                </li>
+                <li><strong>Fatura Tutarı:</strong>
+                    <ul>
+                        <li>Konumu: Fatura bilgileri tablosunun üçüncü satırında, sağ tarafta yer alır</li>
+                        <li>İçerik: KDV dahil toplam fatura tutarını gösterir</li>
+                        <li>Özellik: Salt okunur alandır, kırmızı renkli olarak vurgulanır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id="butonlar" class="section">
+    <h2>Butonlar ve İşlevleri</h2>
+    <div class="info-box">
+        <p>Bu bölümde ekranda bulunan butonların nasıl kullanılacağını ve işlevlerini detaylı olarak öğreneceksiniz.</p>
+        <div class="step">
+            <h4>İşlem Butonlarının Konumu ve Kullanımı</h4>
+            <p>İşlem butonları, ekranın orta kısmında yer alan yatay bir şerit üzerinde yan yana dizilmiş durumdadır. Bu butonlar üç boyutlu görünümdedir ve üzerlerine geldiğinizde renkleri değişir.</p>
+            
+            <ol>
+                <li><strong>Abone Oku Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> İşlem butonları şeridinde en solda bulunur</li>
+                        <li><strong>Görünüm:</strong> Gri zemin üzerinde "Abone Oku" yazısı bulunur</li>
+                        <li><strong>İşlev:</strong> POS cihazına takılı abone kartını okur ve bilgileri ekrana getirir</li>
+                        <li><strong>Kullanım:</strong> 
+                            <ol>
+                                <li>Abone kartını POS cihazına takın</li>
+                                <li>Butona tıklayın ve sistem kartı okuyana kadar bekleyin</li>
+                                <li>Kart başarıyla okunduğunda tüm alanlar otomatik olarak doldurulacaktır</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>Kontör Yükle Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> İşlem butonları şeridinde, "Abone Oku" butonunun sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri zemin üzerinde "Kontör Yükle" yazısı bulunur</li>
+                        <li><strong>İşlev:</strong> Abone kartına belirlenen miktarda kontör yükler</li>
+                        <li><strong>Kullanım:</strong> 
+                            <ol>
+                                <li>Önce "Abone Oku" butonuyla kartı okutun</li>
+                                <li>"Son Endeks / Yüklenecek Kredi" alanından yüklenecek kontör miktarını kontrol edin</li>
+                                <li>Butona tıklayın ve işlem tamamlanana kadar bekleyin</li>
+                                <li>İşlem başarılı olduğunda "İşlem Tamamlandı" mesajı görüntülenecektir</li>
+                            </ol>
+                        </li>
+                        <li><strong>Önemli Not:</strong> Abonenin bakiyesi varsa buton devre dışı kalır ve kontör yükleme işlemi yapılamaz</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Kartı Çıkar Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> İşlem butonları şeridinde, "Kontör Yükle" butonunun sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri zemin üzerinde "Kartı Çıkar" yazısı bulunur</li>
+                        <li><strong>İşlev:</strong> POS cihazındaki kartı güvenli bir şekilde çıkarmayı sağlar</li>
+                        <li><strong>Kullanım:</strong> 
+                            <ol>
+                                <li>İşlemler tamamlandıktan sonra butona tıklayın</li>
+                                <li>Sistem kartı çıkarma işlemini başlatacaktır</li>
+                                <li>Kart güvenli bir şekilde çıkarıldığında kartı alabilirsiniz</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>Form Temizle Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> İşlem butonları şeridinde en sağda yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri zemin üzerinde "Form Temizle" yazısı bulunur</li>
+                        <li><strong>İşlev:</strong> Ekrandaki tüm alanları temizler ve formu başlangıç durumuna getirir</li>
+                        <li><strong>Kullanım:</strong> 
+                            <ol>
+                                <li>Yeni bir işleme başlamadan önce butona tıklayın</li>
+                                <li>Tüm alanlar temizlenecek ve Yüklenecek Kredi alanı 5 olarak ayarlanacaktır</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Buton Kullanım İpuçları:</h4>
+            <ul>
+                <li>İşlemleri her zaman sırasıyla yapın: Önce Abone Oku → Kontör Yükle → Kartı Çıkar</li>
+                <li>Bir işleme başlamadan önce Form Temizle butonuna basarak tüm alanları temizleyin</li>
+                <li>Butonların üzerine geldiğinizde renkleri değişir, bu butonun aktif olduğunu gösterir</li>
+                <li>Kontör Yükle butonu, bazı durumlarda (örneğin bakiye varsa) devre dışı kalabilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="hata-mesajlari" class="section">
+    <h2>Hata Mesajları ve Çözümleri</h2>
+    <div class="info-box">
+        <p>Program kullanımı sırasında karşılaşabileceğiniz hata mesajları ve bu hataların çözümleri aşağıda açıklanmıştır.</p>
+        <div class="step">
+            <h4>Kart Okuma ile İlgili Hatalar:</h4>
+            <ol>
+                <li><strong>"POS Cihazında Kart Yok Ya da Tanımsız Kart!"</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> POS cihazına kart takılmamış veya tanımlanmamış bir kart takılmış</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Kartın doğru şekilde takıldığından emin olun</li>
+                                <li>Kartın temiz olduğunu kontrol edin</li>
+                                <li>Doğru abone kartını kullandığınızdan emin olun</li>
+                                <li>Kartı tekrar takıp "Abone Oku" butonuna basın</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>"Kartta hata oluştu tekrar deneyiniz yada kartı servise gönderiniz!"</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Kart okuma sırasında bir hata oluştu</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Kartı çıkarıp tekrar takın</li>
+                                <li>Abone Oku butonuna tekrar basın</li>
+                                <li>Sorun devam ederse kartı teknik servise gönderin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>"Abonenin X TL bakiyesi vardır. Yükleme yapılamaz."</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Abonenin sistem üzerinde bakiyesi bulunmaktadır</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Abonenin önce mevcut bakiyesini ödemesi gerekir</li>
+                                <li>Bakiye ödendikten sonra kontör yükleme işlemi yapılabilir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Sayaç Arızaları ile İlgili Hatalar:</h4>
+            <ol>
+                <li><strong>"Sayaç Arızası: Aboneyi teknik servise yollayınız!"</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Sayaçta bir arıza tespit edildi</li>
+                        <li><strong>Olası Arıza Türleri:</strong>
+                            <ul>
+                                <li>Magnetik Müdahale</li>
+                                <li>Vana - Motor Arızası</li>
+                                <li>Yetki İptal Kartı ile Sayaç İptal Edilmiş</li>
+                                <li>Pil Zayıflamış</li>
+                                <li>Pil Bitmiş</li>
+                                <li>Rakor Kapağı Açılmış</li>
+                                <li>Pil Kapağı Açılmış</li>
+                                <li>Pulse Alamıyor</li>
+                            </ul>
+                        </li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Aboneye sayacının arızalı olduğunu bildirin</li>
+                                <li>Aboneyi ve sayacı teknik servise yönlendirin</li>
+                                <li>Arıza giderilmeden kontör yükleme işlemi yapılamaz</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Kontör Yükleme ile İlgili Hatalar:</h4>
+            <ol>
+                <li><strong>"Abone kartı okunmamış. Kartı takıp Abone Oku işlemi yapınız."</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Kontör yükleme işlemi yapmadan önce kart okutulmamış</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Kartı POS cihazına takın</li>
+                                <li>"Abone Oku" butonuna basın</li>
+                                <li>Kart başarıyla okunduktan sonra kontör yükleme işlemine geçin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>"Kart Numarası Hatalıdır. Servise yönlendiriniz."</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Kart numarası ile kayıtlı kart numarası eşleşmiyor</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Kartı teknik servise gönderin</li>
+                                <li>Kart numarası güncellenmeden işlem yapılamaz</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>"Yıl dönem bilgisi bulunamadı."</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Sistemde tanımlı yıl ve dönem bilgisi bulunamadı</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Yöneticinize başvurun</li>
+                                <li>İlgili yıl ve dönem için tarife tanımlanması gerekiyor</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>"Kontör yazımı gerçekleştirilemedi. Tekrar Abonene Okumayı seçiniz"</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Kontör yazma işlemi sırasında bir hata oluştu</li>
+                        <li><strong>Çözüm:</strong> 
+                            <ol>
+                                <li>Form Temizle butonuna basın</li>
+                                <li>Kartı çıkarıp tekrar takın</li>
+                                <li>Abone Oku butonuna basarak işlemi yeniden başlatın</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Herhangi bir hata mesajı aldığınızda ekran görüntüsünü alarak yöneticinize bildirin</li>
+                <li>Sayaç arızaları otomatik olarak sistem tarafından kaydedilir</li>
+                <li>Tekrarlayan hatalarda teknik desteğe başvurun</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Kısayollar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>ENTER tuşu: TAB tuşu gibi çalışır, bir sonraki alana geçer</li>
+                            <li>ESC tuşu: Açılan listeleri kapatır</li>
+                            <li>TAB tuşu: Bir sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Bir önceki alana döner</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>İşlem Sıralaması:</strong>
+                        <ul>
+                            <li>Her zaman düzenli bir sıra takip edin: Form Temizle → Abone Oku → Kontör Yükle → Kartı Çıkar</li>
+                            <li>Bir aboneyle işlem bittikten sonra mutlaka "Form Temizle" butonuna basın</li>
+                            <li>Kontör yüklemeden önce abone bilgilerini dikkatlice kontrol edin</li>
+                        </ul>
+                    </li>
+                    
+                    <li><strong>Hata Önleme:</strong>
+                        <ul>
+                            <li>İşlemleri acele etmeden, adım adım yapın</li>
+                            <li>Kart okuma işlemi sırasında kartın yerinden çıkmamasına dikkat edin</li>
+                            <li>Yüklenecek kontör miktarını değiştirdiğinizde, hesaplanan tutarları kontrol edin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Sık Kullanılan Senaryolar:</h4>
+                <ul>
+                    <li><strong>Standart Kontör Yükleme:</strong> Varsayılan 5 birim kontör yüklemek genellikle en çok kullanılan işlemdir</li>
+                    <li><strong>Farklı Miktar Yükleme:</strong> Abone daha fazla kontör talep ederse, Yüklenecek Kredi alanını değiştirebilirsiniz</li>
+                    <li><strong>Arızalı Sayaç Tespiti:</strong> Sayaç arızası uyarısı aldığınızda, aboneyi derhal teknik servise yönlendirin</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gereken Durumlar:</h4>
+                <ul>
+                    <li>Aboneye ait olmayan kartlarla işlem yapmayın</li>
+                    <li>Sistem çalışırken POS cihazını bilgisayardan ayırmayın</li>
+                    <li>İşlem tamamlanmadan kartı çıkarmayın</li>
+                    <li>Abonenin bakiyesi varsa kontör yüklemeyin, önce bakiyenin ödenmesini sağlayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>Kartlı Abone Avans İşlemleri programı, su abonelerine ait kartlı sayaçlara kontör yükleme işlemlerini kolayca yapmanızı sağlar. Bu kılavuzda öğrendiğiniz bilgilerle:</p>
+            <ul>
+                <li>Abone kartını nasıl okutacağınızı</li>
+                <li>Kontör yükleme işlemini nasıl gerçekleştireceğinizi</li>
+                <li>Fatura bilgilerini nasıl görüntüleyeceğinizi</li>
+                <li>Karşılaşılan hataları nasıl çözeceğinizi</li>
+                <li>Programı daha verimli kullanmanın ipuçlarını</li>
+            </ul>
+            
+            <p>öğrenmiş oldunuz. Herhangi bir sorunla karşılaştığınızda bu kılavuzu referans olarak kullanabilirsiniz.</p>
+        </div>
+    </div>
+</body>
+</html>

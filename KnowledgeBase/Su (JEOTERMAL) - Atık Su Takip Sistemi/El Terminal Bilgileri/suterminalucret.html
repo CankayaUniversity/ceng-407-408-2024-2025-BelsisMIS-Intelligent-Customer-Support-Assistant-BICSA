@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Ücret Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Terminal Ücret Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#arama-islemleri">Temel Arama ve Görüntüleme İşlemleri</a></li>
+                <li><a href="#ucret-bilgileri">Ücret Bilgilerini Görüntüleme ve Düzenleme</a></li>
+                <li><a href="#yeni-kayit">Yeni Kayıt Ekleme ve Güncelleme</a></li>
+                <li><a href="#toplu-islemler">Toplu İşlemler</a></li>
+                <li><a href="#navigasyon">Navigasyon ve Kayıt Arama</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Terminal Ücret Tanımları programı, su abonelerine ait terminal ücretlerinin tanımlanması, görüntülenmesi ve düzenlenmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Abone bazlı terminal ücret bilgilerini görüntüleme</li>
+                <li>Yeni ücret kayıtları ekleme</li>
+                <li>Mevcut ücret kayıtlarını güncelleme</li>
+                <li>Abonelere özel ücret tanımlamaları yapma</li>
+                <li>Dönem ve yıl bazında ücretleri yönetme</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Ücret tanımlamak istediğiniz abonenin abone numarası</li>
+                    <li>İlgili yıl ve dönem bilgisi</li>
+                    <li>Tanımlanacak ücret tutarı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde koyu turkuaz renkli bir şeritte "Terminal Ücret Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu alanda Abone No, Adı Soyadı, Yıl ve Dönem gibi alanlar yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ücretler Tablosu:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün altında yer alır</li>
+                            <li>Ücret Adı ve Tutar sütunlarını içeren bir tablo şeklindedir</li>
+                            <li>Tablonun başlığında "Ücretler" yazar</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Gezinme butonlarını (İlk, Önceki, Sonraki, Son) ve işlem butonlarını içerir</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak gelir</li>
+                    <li>İmleç "Abone No" alanında konumlanır</li>
+                    <li>Ücretler tablosu boş olarak görüntülenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="arama-islemleri" class="section">
+        <h2>Temel Arama ve Görüntüleme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Abone Bilgilerini Arama</h3>
+            
+            <div class="step">
+                <h4>Abone Numarası ile Arama:</h4>
+                <ol>
+                    <li><strong>Abone No Alanı:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlığın hemen altında sol tarafta "Abone No" etiketi bulunur</li>
+                            <li>Etiketin yanında bir metin kutusu ve küçük bir büyüteç simgeli düğme yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Abone No metin kutusuna abone numarasını yazın</li>
+                            <li>TAB tuşuna bastığınızda sistem abone bilgilerini otomatik olarak arar:
+                                <ul>
+                                    <li>Abone bulunursa, Adı ve Soyadı alanları otomatik doldurulur</li>
+                                    <li>Abone bulunamazsa, "Abone Bulunmadı" uyarısı görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Alternatif olarak, abone numarasını yazdıktan sonra yanındaki büyüteç simgeli düğmeye tıklayabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Abone Listesinden Seçim Yapma:</h4>
+                <ol>
+                    <li><strong>Abone Arama Penceresi:</strong>
+                        <ul>
+                            <li>Abone No alanının yanındaki büyüteç simgeli düğmeye tıkladığınızda abone arama penceresi açılır</li>
+                            <li>Bu pencere ekranın ortasında açılır ve "Abone No", "Adı", "Soyadı" gibi sütunları içeren bir liste görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeden Abone Seçme Adımları:</strong>
+                        <ol>
+                            <li>Açılan pencerede, abone listesi görüntülenir</li>
+                            <li>Listede istediğiniz aboneyi bulmak için kaydırma çubuğunu kullanabilirsiniz</li>
+                            <li>Seçmek istediğiniz abonenin satırına çift tıklayın</li>
+                            <li>Seçilen abonenin bilgileri ana ekrana aktarılır ve abone arama penceresi otomatik kapanır</li>
+                            <li>Ana ekranda Abone No, Adı ve Soyadı alanları seçilen abonenin bilgileriyle doldurulur</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yıl ve Dönem Bilgilerini Girme:</h4>
+                <ol>
+                    <li><strong>Yıl ve Dönem Alanları:</strong>
+                        <ul>
+                            <li>Adı Soyadı alanının altında "Yıl" etiketi ve yanında bir metin kutusu bulunur</li>
+                            <li>Yıl metin kutusunun hemen yanında "Dönem" için bir metin kutusu yer alır</li>
+                            <li>Bu metin kutularının sağında küçük bir büyüteç simgeli düğme bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Girme Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına dört haneli yıl değerini girin (örn. 2023)</li>
+                            <li>TAB tuşuna basarak Dönem alanına geçin</li>
+                            <li>Dönem alanına dönem numarasını girin (örn. 1, 2, 3 veya 4)</li>
+                            <li>TAB tuşuna bastığınızda veya ENTER tuşuna bastığınızda:
+                                <ul>
+                                    <li>Sistem girilen yıl ve dönem bilgilerini kontrol eder</li>
+                                    <li>Eğer geçerli bir dönem ise, abonenin bu dönemdeki ücret bilgileri görüntülenir</li>
+                                    <li>Geçerli bir dönem değilse, "Dönem Bulunamadı" mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Dönem Listesinden Seçim Yapma:</h4>
+                <ol>
+                    <li><strong>Dönem Arama Penceresi:</strong>
+                        <ul>
+                            <li>Yıl ve Dönem alanlarının yanındaki büyüteç simgeli düğmeye tıkladığınızda dönem arama penceresi açılır</li>
+                            <li>Bu pencere ekranın ortasında açılır ve "Kayıt No", "Yıl", "Dönem", "Son Öd. Tar." gibi sütunları içeren bir liste görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeden Dönem Seçme Adımları:</strong>
+                        <ol>
+                            <li>Açılan pencerede, mevcut dönemler listesi görüntülenir</li>
+                            <li>Listede istediğiniz dönemi bulmak için kaydırma çubuğunu kullanabilirsiniz</li>
+                            <li>Seçmek istediğiniz dönemin satırına çift tıklayın</li>
+                            <li>Seçilen dönemin bilgileri ana ekrana aktarılır ve dönem arama penceresi otomatik kapanır</li>
+                            <li>Ana ekranda Yıl ve Dönem alanları seçilen dönemin bilgileriyle doldurulur</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Abone No alanına sadece rakam girilebilir</li>
+                    <li>Yıl alanına dört haneli bir sayı girmelisiniz (örn. 2023)</li>
+                    <li>Dönem alanına 1-4 arasında bir sayı girmelisiniz (dönem sayısına göre değişebilir)</li>
+                    <li>Geçersiz bir abone numarası girildiğinde sistem uyarı verecektir</li>
+                    <li>Geçersiz bir yıl veya dönem girildiğinde sistem uyarı verecektir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Abone no yerine abonenin adını veya soyadını biliyorsanız, büyüteç simgesi ile abone listesini açarak arama yapabilirsiniz</li>
+                    <li>Dönem seçiminde hangi dönemlerin mevcut olduğunu görmek için büyüteç simgesine tıklayarak dönem listesini görüntüleyebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ucret-bilgileri" class="section">
+        <h2>Ücret Bilgilerini Görüntüleme ve Düzenleme</h2>
+        <div class="info-box">
+            <h3>Ücret Tablosu</h3>
+            
+            <div class="step">
+                <h4>Ücret Tablosunu Anlama:</h4>
+                <ol>
+                    <li><strong>Tablo Yerleşimi:</strong>
+                        <ul>
+                            <li>Abone bilgileri alanının altında "Ücretler" başlığı ile bir tablo bulunur</li>
+                            <li>Tabloda üç sütun bulunur: ilk sütun satır işaretleyicisi (*), ikinci sütun "Ücret Adı", üçüncü sütun "Tutar"</li>
+                            <li>Her satır bir ücret kalemini temsil eder</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo İçeriği:</strong>
+                        <ul>
+                            <li>Ücret Adı sütunu: İlgili ücretin tanımını gösterir (salt okunur)</li>
+                            <li>Tutar sütunu: Ücretin parasal değerini gösterir (düzenlenebilir)</li>
+                            <li>Satır işaretleyicisi (*): Aktif olan satırı gösterir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ücret Bilgilerini Görüntüleme Adımları:</h4>
+                <ol>
+                    <li>Bir abone numarası girin ve TAB tuşuna basın</li>
+                    <li>Yıl ve dönem bilgilerini girin ve TAB tuşuna basın</li>
+                    <li>Sistem otomatik olarak ilgili ücret bilgilerini ücretler tablosunda görüntüler:
+                        <ul>
+                            <li>Eğer abonenin belirtilen yıl ve dönemde ücret kayıtları varsa, bu kayıtlar tabloda listelenir</li>
+                            <li>Eğer ücret kaydı yoksa, tablo boş görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="step">
+        <h4>Ücret Bilgilerini Düzenleme Adımları:</h4>
+        <ol>
+            <li><strong>Düzenlenecek Satırı Seçme:</strong>
+                <ul>
+                    <li>Düzenlemek istediğiniz ücret satırına tıklayın</li>
+                    <li>Tıkladığınız satır aktif hale gelir ve sol tarafındaki işaretleyici (*) ile vurgulanır</li>
+                </ul>
+            </li>
+            <li><strong>Tutar Düzenleme:</strong>
+                <ol>
+                    <li>Aktif satırdaki "Tutar" hücresine tıklayın</li>
+                    <li>Mevcut değer seçili duruma gelir</li>
+                    <li>Yeni tutar değerini girin</li>
+                    <li>TAB tuşuna basarak veya başka bir alana tıklayarak değişikliği onaylayın</li>
+                </ol>
+            </li>
+            <li><strong>Değişiklikleri Kaydetme:</strong>
+                <ol>
+                    <li>Tüm gerekli değişiklikleri yaptıktan sonra, ekranın alt kısmındaki "Kaydet" düğmesine tıklayın</li>
+                    <li>Sistem değişiklikleri veritabanına kaydeder</li>
+                    <li>İşlem başarılı ise ücret bilgileri güncellenmiş şekilde görüntülenir</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <div id="yeni-kayit" class="section">
+        <h2>Yeni Kayıt Ekleme ve Güncelleme</h2>
+        <div class="info-box">
+            <h3>Yeni Ücret Kaydı Ekleme</h3>
+            
+            <div class="step">
+                <h4>Yeni Ücret Kaydı Ekleme Adımları:</h4>
+                <ol>
+                    <li><strong>Abone ve Dönem Bilgilerini Girme:</strong>
+                        <ol>
+                            <li>Abone No alanına ücret eklemek istediğiniz abonenin numarasını girin</li>
+                            <li>TAB tuşuna basın (abone bilgileri otomatik doldurulur)</li>
+                            <li>Yıl alanına ilgili yılı girin (örn. 2023)</li>
+                            <li>Dönem alanına ilgili dönemi girin (örn. 2)</li>
+                            <li>TAB tuşuna basın veya dönemi girdikten sonra ENTER tuşuna basın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Yeni Ücret Kaydı Oluşturma:</strong>
+                        <ol>
+                            <li>Ücretler tablosu boş görünüyorsa, sistem otomatik olarak yeni bir kayıt oluşturma moduna geçer</li>
+                            <li>Eğer tablo boş değilse, tablonun altındaki "Satır Sil" düğmesinin yanındaki "Toplu Giriş" düğmesine tıklayın</li>
+                            <li>Açılan pencerede gerekli bilgileri girin ve onaylayın</li>
+                            <li>Ana ekrana döndüğünüzde, ücretler tablosunda yeni bir satır görünür</li>
+                        </ol>
+                    </li>
+                    <li><strong>Ücret Bilgilerini Girme:</strong>
+                        <ol>
+                            <li>Ücret Adı alanı sistem tarafından otomatik doldurulur (salt okunur)</li>
+                            <li>Tutar alanına ücret tutarını girin</li>
+                            <li>Tutar girerken nokta (.) işareti ondalık ayracı olarak kullanılır</li>
+                            <li>TAB tuşuna basarak veya başka bir alana tıklayarak girişi tamamlayın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ol>
+                            <li>Tüm bilgileri girdikten sonra, ekranın alt kısmındaki "Kaydet" düğmesine tıklayın</li>
+                            <li>Sistem yeni ücret kaydını veritabanına kaydeder</li>
+                            <li>İşlem başarılı ise yeni ücret bilgileri tabloda görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Mevcut Ücret Kaydını Güncelleme Adımları:</h4>
+                <ol>
+                    <li><strong>Güncellenecek Kaydı Bulma:</strong>
+                        <ol>
+                            <li>Abone No alanına güncelleme yapmak istediğiniz abonenin numarasını girin</li>
+                            <li>Yıl ve dönem bilgilerini girin</li>
+                            <li>TAB tuşuna basın veya ENTER tuşuna basın</li>
+                            <li>Sistem ilgili ücret kayıtlarını ücretler tablosunda görüntüler</li>
+                        </ol>
+                    </li>
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ol>
+                            <li>Güncellemek istediğiniz ücret satırına tıklayın (satır aktif hale gelir)</li>
+                            <li>Tutar alanına yeni değeri girin</li>
+                            <li>TAB tuşuna basarak veya başka bir alana tıklayarak değişikliği onaylayın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ol>
+                            <li>Tüm gerekli değişiklikleri yaptıktan sonra, ekranın alt kısmındaki "Kaydet" düğmesine tıklayın</li>
+                            <li>Sistem değişiklikleri veritabanına kaydeder</li>
+                            <li>İşlem başarılı ise güncellenmiş ücret bilgileri tabloda görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tutar alanına sadece sayısal değerler girilebilir</li>
+                    <li>Ondalık ayırıcı olarak nokta (.) kullanılır, virgül (,) değil</li>
+                    <li>Değişiklikleri kaydetmeden önce bilgileri kontrol edin</li>
+                    <li>Kaydet düğmesine basmadan programı kapatırsanız, yaptığınız değişiklikler kaydedilmez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla ücret kaydını aynı anda güncellemek için, her satırı tek tek güncelleyip en son Kaydet düğmesine tıklayın</li>
+                    <li>Tutar değerlerini girerken, sistem otomatik olarak para birimi formatına dönüştürecektir</li>
+                    <li>Yanlışlıkla bir değeri değiştirdiyseniz ve kaydetmediyseniz, ESC tuşuna basarak programı kapatıp tekrar açabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="toplu-islemler" class="section">
+        <h2>Toplu İşlemler</h2>
+        <div class="info-box">
+            <h3>Toplu Ücret Girişi</h3>
+            
+            <div class="step">
+                <h4>Toplu Ücret Girişi Yapma Adımları:</h4>
+                <ol>
+                    <li><strong>Toplu Giriş Penceresini Açma:</strong>
+                        <ol>
+                            <li>Ücretler tablosunun altında bulunan "Toplu Giriş" düğmesine tıklayın</li>
+                            <li>Bu düğme, "Satır Sil" düğmesinin sağında yer alır ve üzerinde kopyalama simgesi bulunur</li>
+                            <li>Tıkladığınızda, "Toplu Giriş" başlıklı yeni bir pencere açılır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Toplu Giriş Bilgilerini Doldurma:</strong>
+                        <ol>
+                            <li>Açılan pencerede, toplu ücret girişi için gerekli alanları doldurun:
+                                <ul>
+                                    <li>Abone No veya abone aralığı</li>
+                                    <li>Yıl ve dönem bilgileri</li>
+                                    <li>Ücret türü</li>
+                                    <li>Ücret tutarı</li>
+                                </ul>
+                            </li>
+                            <li>Abone aralığı seçmek için, başlangıç ve bitiş abone numaralarını ilgili alanlara girin</li>
+                            <li>Tüm bilgileri doldurduktan sonra "Uygula" veya "Tamam" düğmesine tıklayın</li>
+                        </ol>
+                    </li>
+                    <li><strong>İşlemi Onaylama:</strong>
+                        <ol>
+                            <li>Sistem, belirtilen abone aralığına toplu ücret girişi yapmak istediğinizi onaylamanızı ister</li>
+                            <li>Onay penceresinde "Evet" düğmesine tıklayın</li>
+                            <li>Sistem, belirtilen tüm abonelere aynı ücret kaydını ekler</li>
+                            <li>İşlem tamamlandığında ana ekrana dönersiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Toplu giriş işlemi, çok sayıda aboneyi etkileyebilir, bu nedenle abone aralığını dikkatle belirleyin</li>
+                    <li>İşlem başladıktan sonra iptal edilemez, bu nedenle onaylamadan önce bilgileri kontrol edin</li>
+                    <li>Toplu giriş, önceden var olan ücret kayıtları üzerine yazabilir, dikkatli olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Benzer ücretlere sahip çok sayıda abone için toplu giriş kullanarak zaman kazanabilirsiniz</li>
+                    <li>Küçük bir abone grubuyla test ederek toplu girişin doğru çalıştığından emin olun</li>
+                    <li>İşlem sonrası birkaç abonenin bilgilerini kontrol ederek toplu girişin başarılı olduğunu doğrulayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="navigasyon" class="section">
+        <h2>Navigasyon ve Kayıt Arama</h2>
+        <div class="info-box">
+            <h3>Kayıtlar Arasında Gezinme</h3>
+            
+            <div class="step">
+                <h4>Gezinme Butonlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Gezinme Butonlarının Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ortalanmış şekilde bir dizi gezinme butonu bulunur</li>
+                            <li>Bu butonlar soldan sağa doğru "İlk", "Önceki", "Sonraki" ve "Son" şeklinde sıralanır</li>
+                            <li>Her butonun üzerinde ilgili yöne işaret eden ok simgesi vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonların İşlevleri:</strong>
+                        <ol>
+                            <li>İlk Butonu (|◀):
+                                <ul>
+                                    <li>En soldaki butondur</li>
+                                    <li>Kayıt setindeki ilk kayda gitmenizi sağlar</li>
+                                    <li>Tıkladığınızda, sistemdeki ilk abonenin ilk dönem ücret bilgilerini görüntüler</li>
+                                </ul>
+                            </li>
+                            <li>Önceki Butonu (◀):
+                                <ul>
+                                    <li>İlk butonunun sağında yer alır</li>
+                                    <li>Mevcut kayıttan bir önceki kayda gitmenizi sağlar</li>
+                                    <li>Tıkladığınızda, sıralamada bir önceki abonenin ücret bilgilerini görüntüler</li>
+                                </ul>
+                            </li>
+                            <li>Sonraki Butonu (▶):
+                                <ul>
+                                    <li>Önceki butonunun sağında yer alır</li>
+                                    <li>Mevcut kayıttan bir sonraki kayda gitmenizi sağlar</li>
+                                    <li>Tıkladığınızda, sıralamada bir sonraki abonenin ücret bilgilerini görüntüler</li>
+                                </ul>
+                            </li>
+                            <li>Son Butonu (▶|):
+                                <ul>
+                                    <li>En sağdaki butondur</li>
+                                    <li>Kayıt setindeki son kayda gitmenizi sağlar</li>
+                                    <li>Tıkladığınızda, sistemdeki son abonenin son dönem ücret bilgilerini görüntüler</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Gezinme Butonlarını Kullanma Adımları:</h4>
+                <ol>
+                    <li><strong>Önceki Kayda Gitme:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmındaki "Önceki" butonuna (◀) tıklayın</li>
+                            <li>Sistem, sıralamada bir önceki abonenin ücret bilgilerini yükler</li>
+                            <li>Abone No, Adı Soyadı, Yıl ve Dönem alanları otomatik olarak güncellenir</li>
+                            <li>Ücretler tablosu, yüklenen abonenin ücret bilgileriyle doldurulur</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sonraki Kayda Gitme:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmındaki "Sonraki" butonuna (▶) tıklayın</li>
+                            <li>Sistem, sıralamada bir sonraki abonenin ücret bilgilerini yükler</li>
+                            <li>Abone No, Adı Soyadı, Yıl ve Dönem alanları otomatik olarak güncellenir</li>
+                            <li>Ücretler tablosu, yüklenen abonenin ücret bilgileriyle doldurulur</li>
+                        </ol>
+                    </li>
+                    <li><strong>İlk veya Son Kayda Gitme:</strong>
+                        <ol>
+                            <li>İlk kayda gitmek için "İlk" butonuna (|◀) tıklayın</li>
+                            <li>Son kayda gitmek için "Son" butonuna (▶|) tıklayın</li>
+                            <li>Sistem, seçiminize göre ilk veya son kaydı yükler</li>
+                            <li>Tüm alanlar ve ücretler tablosu otomatik olarak güncellenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kayıtlara Hızlı Erişim:</h4>
+                <ol>
+                    <li><strong>Kayıtlar Butonu ile Hızlı Erişim:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmında yer alan "Kayıtlar" düğmesine tıklayın</li>
+                            <li>Bu düğme, gezinme butonlarının üstünde yer alır</li>
+                            <li>Tıkladığınızda, tüm kayıtların listelendiği bir pencere açılır</li>
+                            <li>Listede "Abone No", "Adı", "Soyadı", "Yıl", "Dönem" sütunları bulunur</li>
+                            <li>İstediğiniz kaydın satırına çift tıklayın</li>
+                            <li>Seçilen kayıt ana ekrana yüklenir ve kayıtlar penceresi kapanır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Eğer kaydetmediğiniz değişiklikler varsa, başka bir kayda geçmeden önce "Kaydet" düğmesine tıklayın</li>
+                    <li>Kaydetmeden gezinme butonlarına tıklarsanız, değişiklikleriniz kaybolacaktır</li>
+                    <li>İlk kayıttayken "Önceki" butonuna veya son kayıttayken "Sonraki" butonuna tıklarsanız, sistem uyarı vermez ancak işlem yapmaz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir aboneyi hızlıca bulmak için "Kayıtlar" düğmesini kullanın</li>
+                    <li>Sık kullandığınız abone numaralarını not alın, böylece doğrudan Abone No alanına yazabilirsiniz</li>
+                    <li>Birden fazla aboneyi karşılaştırmak istiyorsanız, "Önceki" ve "Sonraki" butonlarını kullanarak hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-silme" class="section">
+        <h2>Veri Silme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Ücret Kaydı Silme</h3>
+            
+            <div class="step">
+                <h4>Tek Bir Ücret Satırını Silme Adımları:</h4>
+                <ol>
+                    <li><strong>Silinecek Satırı Seçme:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz ücret satırına tıklayın</li>
+                            <li>Tıkladığınız satır aktif hale gelir ve sol tarafındaki işaretleyici (*) ile vurgulanır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Satır Silme:</strong>
+                        <ol>
+                            <li>Ücretler tablosunun altında bulunan "Satır Sil" düğmesine tıklayın</li>
+                            <li>Bu düğme, tablonun sol altında yer alır ve üzerinde çarpı (X) işareti bulunur</li>
+                            <li>Sistem silme işlemini onaylamanızı isteyen bir mesaj gösterir</li>
+                            <li>Onay mesajında "Evet" düğmesine tıklayın</li>
+                            <li>Sistem seçilen satırı tablodan kaldırır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tüm Ücret Kaydını Silme Adımları:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Yükleme:</strong>
+                        <ol>
+                            <li>Abone No alanına silmek istediğiniz kaydın abone numarasını girin</li>
+                            <li>Yıl ve dönem bilgilerini girin</li>
+                            <li>TAB tuşuna basın veya ENTER tuşuna basın</li>
+                            <li>Sistem ilgili ücret kayıtlarını ücretler tablosunda görüntüler</li>
+                        </ol>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmında bulunan "Sil" düğmesine tıklayın</li>
+                            <li>Bu düğme, gezinme butonlarının yanında yer alır</li>
+                            <li>Sistem silme işlemini onaylamanızı isteyen bir mesaj gösterir</li>
+                            <li>Onay mesajında "Evet" düğmesine tıklayın</li>
+                            <li>Sistem abonenin belirtilen yıl ve dönemdeki tüm ücret kayıtlarını siler</li>
+                            <li>İşlem tamamlandığında, sistem ekranı temizler ve yeni kayıt ekleme moduna geçer</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, bu nedenle silmeden önce doğru kaydı seçtiğinizden emin olun</li>
+                    <li>Tüm kayıt silme işlemi, abonenin belirtilen yıl ve dönemdeki tüm ücret kayıtlarını siler</li>
+                    <li>Silme işleminden önce kaydın gerçekten silinmesi gerektiğinden emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir ücret satırını silmek için "Satır Sil" düğmesini kullanın</li>
+                    <li>Tüm kayıtları silmek için "Sil" düğmesini kullanın</li>
+                    <li>Silme işleminden önce kaydın detaylarını kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Kısayollar</h2>
+        <div class="info-box">
+            <h3>Klavye Kısayolları</h3>
+            
+            <div class="step">
+                <h4>Sık Kullanılan Klavye Kısayolları:</h4>
+                <table>
+                    <tr>
+                        <th>Kısayol</th>
+                        <th>İşlev</th>
+                        <th>Kullanım Yeri</th>
+                    </tr>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçiş</td>
+                        <td>Tüm form alanları</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçiş</td>
+                        <td>Tüm form alanları</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi sonraki alana geçiş</td>
+                        <td>Tüm form alanları</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Açık pencereleri kapatma veya programdan çıkış</td>
+                        <td>Tüm program</td>
+                    </tr>
+                    <tr>
+                        <td>ALT + İlk Harf</td>
+                        <td>Butonların kısayolu (örn. ALT + K: Kaydet)</td>
+                        <td>Butonlar</td>
+                    </tr>
+                    <tr>
+                        <td>F2</td>
+                        <td>Seçili alanı düzenleme moduna geçirme</td>
+                        <td>Ücretler tablosu</td>
+                    </tr>
+                    <tr>
+                        <td>CTRL + TAB</td>
+                        <td>Açık pencereler arasında geçiş</td>
+                        <td>Tüm program</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="step">
+                <h4>Veri Giriş İpuçları:</h4>
+                <ol>
+                    <li><strong>Hızlı Veri Girişi:</strong>
+                        <ul>
+                            <li>Abone No alanına direkt abone numarası yazıp TAB tuşuna basarak abone bilgilerini otomatik getirebilirsiniz</li>
+                            <li>Yıl ve dönem alanlarını doldurduktan sonra TAB tuşuna basarak ücret kayıtlarını otomatik getirebilirsiniz</li>
+                            <li>Tutar alanlarında ondalık ayracı olarak nokta (.) kullanın, sistem otomatik olarak para birimi formatına dönüştürecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tabloda Gezinme:</strong>
+                        <ul>
+                            <li>Tablodaki satırlar arasında ok tuşları (↑ ve ↓) ile hızlıca geçiş yapabilirsiniz</li>
+                            <li>Bir satırdaki hücreler arasında ok tuşları (← ve →) ile geçiş yapabilirsiniz</li>
+                            <li>TAB tuşu ile bir sonraki hücreye, SHIFT + TAB ile bir önceki hücreye geçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu İşlemler:</strong>
+                        <ul>
+                            <li>Birden fazla ücret kaydını aynı anda güncellemek için, her satırı tek tek güncelleyip en son Kaydet düğmesine tıklayın</li>
+                            <li>Toplu işlemler için "Toplu Giriş" düğmesini kullanın</li>
+                            <li>Aynı tip işlemleri tekrarlarken, ilk işlemi dikkatlice yapın ve ardından kopyalama özelliğini kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Sık kullandığınız abone numaralarını bir yere not edin</li>
+                    <li>Ücret girişlerinde benzer tutarları kopyala-yapıştır kullanarak daha hızlı girebilirsiniz</li>
+                    <li>Görevleri gruplandırarak benzer işlemleri toplu halde yapın (örn. tüm güncellemeleri, sonra tüm yeni girişleri)</li>
+                    <li>Programdan çıkmadan önce tüm değişiklikleri kaydettiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Veri Görüntüleme Sorunları:</h4>
+                <ol>
+                    <li><strong>Abone Bilgileri Görüntülenmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Abone numarası girdiniz ancak abone bilgileri görüntülenmiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Abone numarasını doğru girdiğinizden emin olun</li>
+                                    <li>Abone sistemde kayıtlı olmayabilir, abone listesinden kontrol edin</li>
+                                    <li>TAB tuşuna bastığınızdan emin olun, bazen otomatik sorgulama yapılmaz</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Ücret Kayıtları Görüntülenmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Abone bilgileri görüntüleniyor ancak ücret kayıtları tabloda gösterilmiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Yıl ve dönem bilgilerini doğru girdiğinizden emin olun</li>
+                                    <li>İlgili abone için belirtilen yıl ve dönemde ücret kaydı olmayabilir</li>
+                                    <li>Bu durumda yeni kayıt ekleyebilirsiniz</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Veri Giriş Sorunları:</h4>
+                <ol>
+                    <li><strong>Tutar Değeri Kabul Edilmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Tutar alanına değer giriyorsunuz ancak sistem kabul etmiyor veya hata veriyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Ondalık ayracı olarak nokta (.) kullandığınızdan emin olun, virgül (,) değil</li>
+                                    <li>Sadece sayısal değerler girdiğinizden emin olun</li>
+                                    <li>Çok büyük değerler sistem tarafından kabul edilmeyebilir, değerin makul olduğundan emin olun</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Değişiklikleri yaptınız, ancak Kaydet düğmesine tıkladığınızda değişiklikler kaydedilmiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Değişiklik yaparken ilgili alanın düzenleme modunda olduğundan emin olun</li>
+                                    <li>Değişiklik yaptıktan sonra TAB tuşuna basarak veya başka bir alana tıklayarak değişikliği onayladığınızdan emin olun</li>
+                                    <li>Sistemin kilitlenmiş olma ihtimaline karşı programı kapatıp yeniden açın</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Genel Sistem Sorunları:</h4>
+                <ol>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Program donuyor veya yanıt vermiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>ESC tuşuna basarak programı kapatmayı deneyin</li>
+                                    <li>Beklediğiniz komutun tamamlanması için biraz bekleyin, bazı işlemler zaman alabilir</li>
+                                    <li>Programı kapatıp yeniden açın</li>
+                                    <li>Sorunun devam etmesi durumunda sistem yöneticinize başvurun</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Hata Mesajları:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Program hata mesajları gösteriyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ol>
+                                    <li>Hata mesajının içeriğini not alın</li>
+                                    <li>Programı kapatıp yeniden açın</li>
+                                    <li>Aynı işlemi tekrar denediğinizde hata devam ediyorsa, sistem yöneticinize başvurun</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>İletişim Bilgileri:</h4>
+                <p>Program ile ilgili sorunlarınızda aşağıdaki iletişim bilgilerini kullanabilirsiniz:</p>
+                <ul>
+                    <li>Sistem Yönetici Dahili No: xxxx</li>
+                    <li>Yazılım Destek E-posta: destek@xxxx.com</li>
+                    <li>Yazılım Destek Hattı: (0xxx) xxx xx xx</li>
+                </ul>
+                <p>Lütfen sorununuzu bildirirken şu bilgileri hazır bulundurun:</p>
+                <ul>
+                    <li>Karşılaştığınız hata mesajının tam içeriği</li>
+                    <li>Hatanın oluştuğu andaki işlem (ne yapmaya çalışıyordunuz)</li>
+                    <li>İlgili abone numarası, yıl ve dönem bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

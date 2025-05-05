@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Terminalinden Sisteme Veri Aktarma (IMA) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>El Terminalinden Sisteme Veri Aktarma (IMA) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#dosya-yukleme">Dosya Yükleme ve Seçimi</a></li>
+                <li><a href="#yil-donem">Yıl ve Dönem Seçimi</a></li>
+                <li><a href="#veri-aktarma">Verilerin Sisteme Aktarılması</a></li>
+                <li><a href="#uyarilar">Uyarılar ve Dikkat Edilmesi Gerekenler</a></li>
+                <li><a href="#sorun-giderme">Sık Sorulan Sorular ve Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>El Terminalinden Sisteme Veri Aktarma (IMA) programı, el terminali cihazlarında toplanan verilerin belediye sisteminize kolayca aktarılmasını sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Su sayaç okuma verilerini sisteme aktarabilir</li>
+                <li>El terminalinde hazırlanan TXT formatındaki dosyaları işleyebilir</li>
+                <li>Abone bilgilerini hızlıca sisteme kaydedebilir</li>
+                <li>Veri aktarım durumunu anlık olarak takip edebilir</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>El terminalinden alınan veri dosyası (TXT formatında)</li>
+                    <li>İşlem yapılacak yıl ve dönem bilgisi</li>
+                    <li>Dosya yükleme için ağ yolu erişim yetkiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "EL TERMİNALİNDEN SİSTEME VERİ AKTARMA (IMA)" başlığı yer alır</li>
+                            <li>Başlığın hemen altında, turuncu renkli şeritte işlem durumunu gösteren bir alan bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlık bölümünün altında ana çalışma alanı bulunur</li>
+                            <li>İlk satırda "Path" etiketi ve dosya seçimi için alan yer alır</li>
+                            <li>İkinci satırda "Yıl/Dönem" etiketi ve ilgili giriş alanları bulunur</li>
+                            <li>Üçüncü satırda tekrar yazma seçeneği için bir onay kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında gri zeminde yer alır</li>
+                            <li>Tamam, Çıkış ve Kaydet butonlarını içerir</li>
+                            <li>Butonlar yatay olarak yan yana sıralanmıştır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>Durum alanında herhangi bir mesaj görünmez</li>
+                    <li>İlk olarak dosya seçimi yapmanız beklenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="dosya-yukleme" class="section">
+        <h2>Dosya Yükleme ve Seçimi</h2>
+        <div class="info-box">
+            <h3>Dosya Seçimi ve Yükleme</h3>
+            
+            <div class="step">
+                <h4>Dosyanın Yüklenmesi:</h4>
+                <ol>
+                    <li><strong>Dosya Yükleme Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, "Path" etiketinin sağında büyük bir metin kutusu yer alır</li>
+                            <li>Bu metin kutusunun sağında "Upload" yazılı buton bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Nasıl Yüklenir:</strong>
+                        <ol>
+                            <li>Upload butonuna tıklayın:
+                                <ul>
+                                    <li>Buton ekranın üst kısmında, Path alanının sağındadır</li>
+                                    <li>Tıkladığınızda küçük bir yükleme penceresi açılacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Açılan dosya yükleme penceresinde:
+                                <ul>
+                                    <li>El terminalinden alınan TXT formatındaki dosyayı seçin</li>
+                                    <li>Dosya seçildikten sonra "Aç" veya "Open" butonuna tıklayın</li>
+                                    <li>Dosya yüklendiğinde, dosya adı Path alanındaki metin kutusuna otomatik olarak yazılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Dosya Formatı ve Kontrolleri:</h4>
+                <ol>
+                    <li><strong>Desteklenen Dosya Formatı:</strong>
+                        <ul>
+                            <li>Program yalnızca TXT uzantılı dosyaları kabul eder</li>
+                            <li>Farklı formattaki dosyalar (örn. DOC, XLS, PDF) sistem tarafından kabul edilmez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya İçeriği Kontrolü:</strong>
+                        <ul>
+                            <li>Dosya içeriğinin ilk karakterleri sayısal değerler olmalıdır</li>
+                            <li>Dosya her bir kayıt için "@" işaretleriyle ayrılmış alanlar içermelidir</li>
+                            <li>Dosya formatı uygun değilse sistem uyarı verecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sadece TXT uzantılı dosyalar kabul edilir. Farklı formattaki dosyalar seçildiğinde "Seçtiğiniz Dosya Formatı Uygun Değil Lütfen Kontrol Ediniz!" uyarısı alırsınız</li>
+                    <li>El terminali veri dosyasının içeriği belirli bir formatta olmalıdır</li>
+                    <li>Dosya zarar görmüş veya eksik ise veri aktarımı başarısız olabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Dosyanızın el terminali tarafından doğru şekilde oluşturulduğundan emin olun</li>
+                    <li>Dosya adını değiştirmeden, el terminalinden alındığı haliyle kullanın</li>
+                    <li>Sorun yaşarsanız, önce dosyanın doğru formatta olup olmadığını kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-donem" class="section">
+        <h2>Yıl ve Dönem Seçimi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yıl ve Dönem Bilgilerinin Girilmesi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dosya yükleme alanının hemen altında, ekranın ortalarında "Yıl/Dönem" etiketi bulunur</li>
+                            <li>Etiketin sağında yan yana iki giriş kutusu yer alır</li>
+                            <li>Birinci kutu Yıl, ikinci kutu Dönem için kullanılır</li>
+                            <li>Bu kutuların sağında bir arama butonu (küçük büyüteç simgeli) bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Manuel giriş için:
+                                <ul>
+                                    <li>Yıl kutusuna 4 haneli yıl bilgisini yazın (örn. 2023)</li>
+                                    <li>Dönem kutusuna 1 veya 2 haneli dönem numarasını yazın (örn. 1, 6, 12)</li>
+                                    <li>TAB tuşuna basarak diğer alana geçebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Arama butonu ile seçim için:
+                                <ul>
+                                    <li>Büyüteç simgeli butona tıklayın</li>
+                                    <li>Açılan pencerede kayıtlı dönemler listelenecektir</li>
+                                    <li>İstediğiniz döneme çift tıklayın veya seçip OK butonuna basın</li>
+                                    <li>Seçtiğiniz dönemin bilgileri otomatik olarak ilgili kutulara yazılacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanına sadece 4 haneli sayısal değer girilebilir</li>
+                    <li>Dönem alanına sadece sayısal değer girilebilir (en fazla 2 hane)</li>
+                    <li>Yıl ve dönem bilgilerini eksik girdiğinizde "Dönem Bulunamadı" uyarısı alırsınız</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Arama butonunu kullanarak kayıtlı dönemlerden seçim yapmak hata riskini azaltır</li>
+                    <li>Yıl ve dönem bilgilerini her zaman kontrol edin, yanlış dönem seçimi veri aktarımında sorunlara yol açabilir</li>
+                    <li>Dönem bilgisi su tahakkuk dönemi ile eşleşmelidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="veri-aktarma" class="section">
+        <h2>Verilerin Sisteme Aktarılması</h2>
+        <div class="info-box">
+            <h3>Abone Dosyasının İşlenmesi ve Aktarım</h3>
+            
+            <div class="step">
+                <h4>Abone Dosyasının Sisteme Taşınması:</h4>
+                <ol>
+                    <li><strong>Tamam Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Dosya seçimi ve yıl/dönem bilgileri girdikten sonra, ekranın alt kısmında bulunan "Tamam" butonuna tıklayın</li>
+                            <li>Tamam butonu, ekranın alt kısmında, sol tarafta yer alan ilk butondur</li>
+                            <li>Butona tıklandığında, seçilen dosya okunarak hafızaya alınacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya İşleme Aşamaları:</strong>
+                        <ol>
+                            <li>Dosya kontrolü:
+                                <ul>
+                                    <li>Sistem önce dosyanın TXT uzantılı olup olmadığını kontrol eder</li>
+                                    <li>Dosya formatı uygun değilse, uyarı mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Veri okuma:
+                                <ul>
+                                    <li>Dosya formatı uygunsa, sistem dosya içeriğini okumaya başlar</li>
+                                    <li>Bu işlem sırasında ekranın ortasında "Lütfen Aşağıdaki Yönergeleri İzleyin..." yazısı ve yükleme animasyonu görüntülenir</li>
+                                    <li>İşlem bitene kadar bekleyin, bu süre dosya boyutuna göre değişebilir</li>
+                                </ul>
+                            </li>
+                            <li>Okuma tamamlandığında:
+                                <ul>
+                                    <li>Dosya içeriği başarıyla okunduğunda, ekranda "Kayıtlar Alındı Lütfen Sisteme Aktarın" mesajı görüntülenir</li>
+                                    <li>Bu aşamada, veriler henüz veritabanına kaydedilmemiştir, sadece hafızaya alınmıştır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tekrar Yazma Seçeneği:</h4>
+                <ol>
+                    <li><strong>Onay Kutusu Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Dönem alanlarının altında "El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" yazısının yanında bir onay kutusu bulunur</li>
+                            <li>Bu onay kutusu, veri okuma işlemi tamamlandıktan sonra görünür hale gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Onay kutusunu işaretlerseniz: Daha önce sisteme kaydedilmiş aynı döneme ait veriler silinip, yeni veriler yazılacaktır</li>
+                            <li>Onay kutusunu işaretlemezseniz: Sadece yeni kayıtlar eklenecek, mevcut kayıtlar korunacaktır</li>
+                            <li>Seçiminizi yaparken dikkatli olun, yanlış seçim veri kaybına neden olabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verilerin Veritabanına Kaydedilmesi:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Verilerin okunması ve Tekrar Yazma seçeneğinin belirlenmesinden sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu, ekranın alt kısmında gri zemin üzerinde, sağ tarafta bulunan butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Aşamaları:</strong>
+                        <ol>
+                            <li>Veri doğrulama:
+                                <ul>
+                                    <li>Sistem önce abone dosyasının hafızaya alınıp alınmadığını kontrol eder</li>
+                                    <li>Eğer dosya hafızaya alınmamışsa "Abone Dosyası Taşınmamış" uyarısı görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Veri kaydetme:
+                                <ul>
+                                    <li>Veri doğrulaması başarılı ise, sistem verileri veritabanına kaydetmeye başlar</li>
+                                    <li>Bu işlem sırasında ekran yanıt vermeyebilir, işlem bitene kadar bekleyin</li>
+                                    <li>Kaydetme işlemi dosya boyutuna ve kayıt sayısına göre değişken sürede tamamlanır</li>
+                                </ul>
+                            </li>
+                            <li>İşlem sonucu:
+                                <ul>
+                                    <li>Kaydetme işlemi başarıyla tamamlandığında, ekranın üst kısmındaki turuncu şeritte "Kayıtlar Sisteme Aktarıldı" mesajı görüntülenir</li>
+                                    <li>Herhangi bir hata durumunda, ilgili hata mesajı aynı alanda gösterilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetme işlemi sırasında programı kapatmayın veya başka bir işlem yapmayın</li>
+                    <li>Tekrar Yazma seçeneğini kullanırken, eski verilerin üzerine yazılacağını unutmayın</li>
+                    <li>Büyük dosyalarda kaydetme işlemi uzun sürebilir, sabırlı olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İşleminiz tamamlandıktan sonra "Kayıtlar Sisteme Aktarıldı" mesajını gördüğünüzden emin olun</li>
+                    <li>Yoğun çalışma saatlerinde büyük veri aktarımları yapmamaya özen gösterin</li>
+                    <li>Herhangi bir sorun yaşarsanız, işlemi tekrarlamadan önce BT desteği alın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Program Butonları ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Tamam Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, gri arkaplan üzerinde yer alır</li>
+                            <li>Üç butondan en solda olanıdır</li>
+                            <li>Üzerinde "Tamam" yazısı veya onay işareti simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi:</strong>
+                        <ul>
+                            <li>Seçilen dosyayı okuyarak içeriğini hafızaya alır</li>
+                            <li>Dosya formatının uygun olup olmadığını kontrol eder</li>
+                            <li>Yıl ve dönem bilgilerinin doğruluğunu kontrol eder</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Zamanı:</strong>
+                        <ul>
+                            <li>Dosya seçimi yaptıktan ve yıl/dönem bilgilerini girdikten sonra kullanılır</li>
+                            <li>Verileri kaydetmeden önce bu butona basılması gerekir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, gri arkaplan üzerinde yer alır</li>
+                            <li>Tamam butonunun hemen sağında, ortada bulunur</li>
+                            <li>Üzerinde "Çıkış" yazısı veya çıkış simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi:</strong>
+                        <ul>
+                            <li>Programdan çıkış yapar, pencereyi kapatır</li>
+                            <li>Herhangi bir değişikliği kaydetmeden çıkış yapar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Zamanı:</strong>
+                        <ul>
+                            <li>İşleminiz tamamlandığında veya programı kullanmayı bırakmak istediğinizde kullanılır</li>
+                            <li>Kaydedilmemiş verileriniz varsa, önce kaydetmeyi unutmayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, gri arkaplan üzerinde yer alır</li>
+                            <li>Üç butondan en sağda olanıdır</li>
+                            <li>Üzerinde "Kaydet" yazısı veya disket simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi:</strong>
+                        <ul>
+                            <li>Hafızaya alınmış verileri veritabanına kaydeder</li>
+                            <li>Tekrar Yazma seçeneğine göre eski verileri siler veya korur</li>
+                            <li>İşlem sonucunu ekranın üst kısmındaki turuncu şeritte gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Zamanı:</strong>
+                        <ul>
+                            <li>Tamam butonuna bastıktan ve dosya içeriği başarıyla okunduktan sonra kullanılır</li>
+                            <li>Tekrar Yazma seçeneğini belirledikten sonra kullanılmalıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Butonların doğru sırayla kullanılması önemlidir: Önce Tamam, sonra Kaydet</li>
+                    <li>Kaydet butonuna basmadan Çıkış yaparsanız, verileriniz kaydedilmez</li>
+                    <li>Kaydetme işlemi uzun sürebilir, işlem tamamlanana kadar bekleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="uyarilar" class="section">
+        <h2>Uyarılar ve Dikkat Edilmesi Gerekenler</h2>
+        <div class="info-box">
+            <div class="warning-box">
+                <h4>Genel Uyarılar:</h4>
+                <ul>
+                    <li><strong>Dosya Formatı:</strong> Sadece TXT uzantılı dosyalar kabul edilir. Diğer formatlardaki dosyalar uyarı mesajı ile reddedilecektir.</li>
+                    <li><strong>Veri Kaybı Riski:</strong> "El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" seçeneğini işaretlerseniz, önceki veriler silinecektir. Bu seçeneği kullanırken dikkatli olun.</li>
+                    <li><strong>İşlem Sırası:</strong> Önce dosya seçimi, sonra Tamam butonu, ardından Kaydet butonu şeklinde doğru sırayı takip edin.</li>
+                    <li><strong>Yıl/Dönem Bilgileri:</strong> Yıl ve dönem bilgilerinin doğru olduğundan emin olun. Yanlış bilgiler veri aktarımında sorunlara yol açabilir.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Veri Aktarımı Sırasında Dikkat Edilecek Hususlar:</h4>
+                <ol>
+                    <li><strong>Sistem Yanıt Verme Süresi:</strong>
+                        <ul>
+                            <li>Büyük dosyaların okuma ve kaydetme işlemleri uzun sürebilir</li>
+                            <li>İşlem sırasında ekran donmuş gibi görünebilir, ancak bu normaldir</li>
+                            <li>Yükleme animasyonu veya uyarı mesajı görene kadar bekleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem İptali:</strong>
+                        <ul>
+                            <li>Dosya okuma veya kaydetme sırasında programı zorla kapatmayın</li>
+                            <li>İşlemi iptal etmek isterseniz, işlem tamamlanana kadar bekleyin ve ardından yeniden başlatın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Tutarlılığı:</strong>
+                        <ul>
+                            <li>El terminalinden alınan veriler ile sistemdeki verilerin tutarlı olması önemlidir</li>
+                            <li>Doğru yıl ve dönem seçildiğinden emin olun</li>
+                            <li>Herhangi bir tutarsızlık fark ederseniz, işlemi tekrarlamadan önce BT desteği alın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Verimliliği Artıracak Öneriler:</h4>
+                <ul>
+                    <li>Büyük veri aktarımlarını mesai saatleri dışında veya yoğun olmayan zamanlarda yapın</li>
+                    <li>Düzenli olarak yedekleme alın, özellikle "Tekrar Yazma" seçeneğini kullanmadan önce</li>
+                    <li>Veri aktarımı öncesinde el terminalindeki verilerin doğruluğunu kontrol edin</li>
+                    <li>Aynı verinin birden fazla kez aktarılmasından kaçının</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sık Sorulan Sorular ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Dosya formatı uygun değil uyarısı alıyorum:</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Seçilen dosya TXT uzantılı değil veya dosya adı uzantısı değiştirilmiş olabilir</li>
+                            <li><strong>Çözüm:</strong> El terminalinden alınan orijinal TXT dosyasını kullanın, dosya uzantısını değiştirmeyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Dosyası Taşınmamış uyarısı alıyorum:</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Kaydet butonuna basmadan önce Tamam butonuna basmamış olabilirsiniz</li>
+                            <li><strong>Çözüm:</strong> Önce Tamam butonuna basarak dosyayı hafızaya alın, ardından Kaydet butonuna basın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Bulunamadı uyarısı alıyorum:</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Yıl veya dönem bilgisi eksik ya da hatalı girilmiş olabilir</li>
+                            <li><strong>Çözüm:</strong> Yıl ve dönem bilgilerini kontrol edin veya büyüteç simgeli butona tıklayarak kayıtlı dönemlerden seçim yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sisteme veri aktarılmıyor:</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Dosya içeriği standart formatta olmayabilir veya dosya zarar görmüş olabilir</li>
+                            <li><strong>Çözüm:</strong> El terminalinden yeni bir dosya alın veya BT desteği için yöneticinize başvurun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Program yanıt vermiyor:</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Büyük dosyaların işlenmesi zaman alabilir</li>
+                            <li><strong>Çözüm:</strong> İşlem tamamlanana kadar bekleyin, zorunlu olmadıkça programı kapatmayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sık Sorulan Sorular:</h4>
+                <ol>
+                    <li><strong>Aynı dosyayı birden fazla kez aktarabilir miyim?</strong>
+                        <ul>
+                            <li>Evet, ancak "El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" seçeneğini işaretlerseniz, önceki veriler silinecektir</li>
+                            <li>Bu seçeneği işaretlemezseniz, aynı veriler yeniden eklenebilir ve mükerrer kayıtlar oluşabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yanlış döneme veri aktardım, ne yapmalıyım?</strong>
+                        <ul>
+                            <li>Bu durumda BT desteği almanız gerekir. Yöneticinize başvurun</li>
+                            <li>Kendiniz silme işlemi yapmaya çalışmayın, veri kaybına neden olabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hangi sıklıkla veri aktarımı yapmalıyım?</strong>
+                        <ul>
+                            <li>Kurumunuzun belirlediği dönemlerde, genellikle her sayaç okuma turu tamamlandığında</li>
+                            <li>Günlük veri aktarımı, veri tutarlılığını ve güncelliğini sağlamak için önerilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>En uygun dosya boyutu nedir?</strong>
+                        <ul>
+                            <li>Dosya boyutu için kesin bir sınır yoktur, ancak çok büyük dosyalar (10,000+ kayıt) işlenirken program yavaşlayabilir</li>
+                            <li>Mümkünse, çok büyük dosyaları daha küçük parçalara bölerek aktarmak daha verimli olabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Ne Zaman BT Desteği Almanız Gerekir:</h4>
+                <ul>
+                    <li>Tekrarlayan hata mesajları alıyorsanız</li>
+                    <li>Veri aktarımı sırasında program sürekli olarak yanıt vermiyorsa</li>
+                    <li>Veri aktarıldıktan sonra tutarsızlıklar fark ederseniz</li>
+                    <li>Önceki dönemlere ait verileri düzeltmeniz gerekiyorsa</li>
+                    <li>Dosya formatı veya içeriğiyle ilgili şüpheleriniz varsa</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Genel Tavsiyeler:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce el terminali kayıtlarının doğru ve eksiksiz olduğundan emin olun</li>
+                    <li>Veri aktarımı yapmadan önce doğru yıl ve dönem bilgilerini kontrol edin</li>
+                    <li>Önemli veri aktarımlarından önce ve sonra sistem yöneticinize haber verin</li>
+                    <li>Herhangi bir şüphe durumunda, önce test amaçlı küçük bir dosya ile deneme yapın</li>
+                    <li>Bu kullanıcı kılavuzunu her zaman elinizin altında bulundurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="adim-adim-ozet" class="section">
+        <h2>Adım Adım İşlem Özeti</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Veri Aktarma İşlemi Özeti:</h4>
+                <ol>
+                    <li><strong>Dosya Seçimi:</strong>
+                        <ul>
+                            <li>Upload butonuna tıklayın (Path alanının sağında)</li>
+                            <li>El terminalinden alınan TXT dosyasını seçin</li>
+                            <li>Aç/Open butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl ve Dönem Bilgisi Girişi:</strong>
+                        <ul>
+                            <li>Yıl kutusuna 4 haneli yıl bilgisini girin</li>
+                            <li>Dönem kutusuna dönem numarasını girin</li>
+                            <li>Veya arama butonuna tıklayarak listeden seçim yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya İçeriğini Okutma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki Tamam butonuna tıklayın</li>
+                            <li>Yükleme animasyonu görünecek ve ardından "Kayıtlar Alındı" mesajı gelecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tekrar Yazma Seçimi:</strong>
+                        <ul>
+                            <li>Gerekiyorsa "El Terminaline Yüklenen Bilgiler Tekrar Yazılsın" onay kutusunu işaretleyin</li>
+                            <li>Bu seçeneğin önceki verileri sileceğini unutmayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verileri Kaydetme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmındaki Kaydet butonuna tıklayın</li>
+                            <li>İşlem tamamlanana kadar bekleyin</li>
+                            <li>İşlem başarılı olduğunda "Kayıtlar Sisteme Aktarıldı" mesajı görüntülenecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış:</strong>
+                        <ul>
+                            <li>İşlem tamamlandıktan sonra Çıkış butonuna tıklayarak programı kapatabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Veri aktarımı işlemi, tamamlanana kadar adım adım ve doğru sırayla yapılmalıdır. Herhangi bir adımı atlamak veya yanlış sırada yapmak, veri kaybına veya hatalı veri aktarımına neden olabilir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kullanılabilir Klavye Kısayolları:</h4>
+                <ol>
+                    <li><strong>TAB Tuşu:</strong>
+                        <ul>
+                            <li>Bir sonraki alana geçmeyi sağlar</li>
+                            <li>Metin kutularından butonlara, butonlardan diğer kontrollere geçiş yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>SHIFT+TAB:</strong>
+                        <ul>
+                            <li>Bir önceki alana geçmeyi sağlar</li>
+                            <li>İşlem sırasını geri almak istediğinizde kullanışlıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>ENTER:</strong>
+                        <ul>
+                            <li>Metin alanlarında bir sonraki alana geçer (TAB tuşu gibi)</li>
+                            <li>Buton üzerinde iken butona tıklama işlevi görür</li>
+                        </ul>
+                    </li>
+                    <li><strong>ESC (Escape):</strong>
+                        <ul>
+                            <li>Açık olan listeleri veya menüleri kapatır</li>
+                            <li>Çıkış butonuna eşdeğer işlev görür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Verimlilik İpucu:</h4>
+                <p>Klavye kısayollarını kullanmak, işlemlerinizi daha hızlı tamamlamanıza yardımcı olur ve fare kullanım ihtiyacını azaltır. Özellikle sık veri aktarımı yapıyorsanız, klavye kısayollarına alışmak iş verimliliğinizi artıracaktır.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc" class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, El Terminalinden Sisteme Veri Aktarma (IMA) programının nasıl kullanılacağı konusunda temel bilgileri içermektedir. Programı kullanırken karşılaşabileceğiniz durumlar ve çözüm yolları detaylı olarak açıklanmıştır.</p>
+            
+            <p>Veri aktarımı süreçlerinin doğru ve eksiksiz yürütülmesi, belediye su tahakkuk sisteminin sağlıklı çalışması için büyük önem taşımaktadır. Bu kılavuzdaki adımları dikkatle takip ederek, veri aktarımı işlemlerinizi güvenle gerçekleştirebilirsiniz.</p>
+            
+            <p>Herhangi bir sorun yaşadığınızda öncelikle bu kılavuzdaki sorun giderme bölümüne başvurun. Çözüm bulamadığınız durumlarda BT desteği almanız önerilir.</p>
+            
+            <div class="tip-box">
+                <h4>Unutmayın:</h4>
+                <p>El terminalinden veri aktarımı, belediye su tahakkuk sürecinin kritik bir parçasıdır. Doğru ve zamanında yapılan veri aktarımları, abone bilgilerinin güncel kalmasını ve tahakkuk işlemlerinin sorunsuz yürütülmesini sağlar.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

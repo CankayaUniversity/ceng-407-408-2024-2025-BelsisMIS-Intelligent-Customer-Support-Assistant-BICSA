@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bölge Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bölge Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#bolge-bilgisi">Bölge Kodu ve Açıklama Bilgisi Girişi</a></li>
+                <li><a href="#kayit-navigasyon">Kayıt Navigasyon İşlemleri</a></li>
+                <li><a href="#yeni-kayit">Yeni Kayıt Ekleme İşlemi</a></li>
+                <li><a href="#kayit-guncelleme">Kayıt Güncelleme İşlemi</a></li>
+                <li><a href="#kayit-silme">Kayıt Silme İşlemi</a></li>
+                <li><a href="#kayit-arama">Kayıt Arama İşlemleri</a></li>
+                <li><a href="#kayitlar-listesi">Kayıtlar Listesi Kullanımı</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Bölge Tanımları programı, sistem içerisinde kullanılacak olan bölgeleri tanımlamak ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni bölge kayıtları oluşturabilirsiniz</li>
+                <li>Mevcut bölge kayıtlarını güncelleyebilirsiniz</li>
+                <li>Bölge kayıtlarını silebilirsiniz</li>
+                <li>Bölge kayıtları arasında gezinebilirsiniz</li>
+                <li>Bölge kayıtlarını arayabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Bölge tanımlamaları için gerekli kod ve açıklama bilgileri</li>
+                    <li>Bölge kodlarının benzersiz olması gerektiği</li>
+                    <li>Bölge kodları için sayısal değerler kullanılması gerektiği</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Bölge Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık beyaz renkli, kalın yazı tipi ile yazılmıştır ve sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu alanda "Bölge Kodu" ve "Açıklama" alanları yer alır</li>
+                            <li>Her alan etiketi sol tarafta, veri giriş kutuları ise etiketlerin sağ tarafında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>İlk satırda Kayıt Gezinti Butonları (İlk, Önceki, Sonraki, Son) bulunur</li>
+                            <li>İkinci satırda İşlem Butonları (Yeni, Kaydet, Sil, Kayıtlar, Çıkış) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Bölge Kodu alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bolge-bilgisi" class="section">
+        <h2>Bölge Kodu ve Açıklama Bilgisi Girişi</h2>
+        <div class="info-box">
+            <h3>Bölge Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Bölge Kodu Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, formun ilk satırında yer alır</li>
+                            <li>"Bölge Kodu" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya gelin</li>
+                            <li>Bölge için kullanmak istediğiniz numarayı girin
+                                <ul>
+                                    <li>Bu alana sadece sayısal değer girebilirsiniz</li>
+                                    <li>En fazla 4 basamaklı bir sayı (0-9999 arası) girebilirsiniz</li>
+                                    <li>Sistem otomatik olarak başa sıfır eklemez, ihtiyaç duyarsanız manuel olarak eklemelisiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fareyle Açıklama alanına tıklayarak bir sonraki alana geçebilirsiniz</li>
+                            <li>Bölge kodunu girdikten sonra, eğer bu kod daha önceden sisteme kaydedilmişse, ilgili bölge bilgileri otomatik olarak ekrana gelecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Açıklama Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölge Kodu alanının hemen altında, formun ikinci satırında yer alır</li>
+                            <li>"Açıklama" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında daha uzun bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya Bölge Kodu alanından TAB tuşuna basarak buraya gelin</li>
+                            <li>Bölgenin açıklamasını (adını, tanımını) girin
+                                <ul>
+                                    <li>Bu alana hem sayısal hem de metin değerleri girebilirsiniz</li>
+                                    <li>En fazla 50 karakter uzunluğunda bir açıklama girebilirsiniz</li>
+                                    <li>Açıklama alanı, bölgeyi tanımlayan anlamlı bir ifade olmalıdır (örneğin: "Kuzey Bölgesi", "İstanbul Avrupa", "Anadolu Yakası" gibi)</li>
+                                </ul>
+                            </li>
+                            <li>Açıklama alanını doldurduktan sonra TAB tuşuna basarak diğer alanlara geçebilir veya fareyle butonlara tıklayabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bölge Kodu alanı boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Bölge Kodu alanına sadece sayısal değerler girilebilir</li>
+                    <li>Açıklama alanı boş bırakılmamalıdır, bölgeyi tanımlayan anlamlı bir metin girilmelidir</li>
+                    <li>Aynı bölge kodunu birden fazla kayıt için kullanamazsınız, her bölge kodu benzersiz olmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Bölge Kodu alanına bir değer girip ENTER tuşuna bastığınızda, otomatik olarak bir sonraki alana (Açıklama) geçersiniz</li>
+                    <li>Kodlama yaparken belli bir mantık kullanmak faydalıdır (örn: 1000-1999 arası merkez bölgeler, 2000-2999 arası doğu bölgeleri gibi)</li>
+                    <li>Açıklama alanına girilen metinler anlaşılır ve ayırt edici olmalıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-navigasyon" class="section">
+        <h2>Kayıt Navigasyon İşlemleri</h2>
+        <div class="info-box">
+            <h3>Önceki ve Sonraki Kayıtlara Geçiş</h3>
+            <div class="step">
+                <h4>Önceki Kayıt Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, butonlar satırında, sol taraftan ikinci sırada yer alır</li>
+                            <li>Üzerinde sol yöne doğru bir ok işareti bulunan butondur</li>
+                            <li>İlk kayıt butonunun hemen sağında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Herhangi bir kayıt görüntülenirken Önceki butona tıklayın</li>
+                            <li>Sistem otomatik olarak, mevcut kayıttan bir önceki bölge koduna sahip kayda geçecektir</li>
+                            <li>Ekranda bölge kodu ve açıklama bilgileri güncellenerek önceki kaydın bilgileri görüntülenecektir</li>
+                            <li>Eğer görüntülenen kayıt zaten en küçük bölge koduna sahip kayıt ise, sistem en yüksek bölge koduna sahip kayda geçebilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Sonraki Kayıt Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, butonlar satırında, sol taraftan üçüncü sırada yer alır</li>
+                            <li>Üzerinde sağ yöne doğru bir ok işareti bulunan butondur</li>
+                            <li>Önceki kayıt butonunun hemen sağında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Herhangi bir kayıt görüntülenirken Sonraki butona tıklayın</li>
+                            <li>Sistem otomatik olarak, mevcut kayıttan bir sonraki bölge koduna sahip kayda geçecektir</li>
+                            <li>Ekranda bölge kodu ve açıklama bilgileri güncellenerek sonraki kaydın bilgileri görüntülenecektir</li>
+                            <li>Eğer görüntülenen kayıt zaten en yüksek bölge koduna sahip kayıt ise, sistem en küçük bölge koduna sahip kayda geçebilir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Önceki veya Sonraki butonlarını kullanabilmek için, sistemde en az bir kayıt olmalıdır</li>
+                    <li>Eğer kayıt görüntülerken herhangi bir değişiklik yaptıysanız, navigasyon butonlarına tıklamadan önce Kaydet butonuna basarak değişiklikleri kaydetmelisiniz, aksi halde yapılan değişiklikler kaybolacaktır</li>
+                    <li>Önceki kayıt butonuna tıklandığında sistem bölge koduna göre küçük olan ilk kaydı getirir</li>
+                    <li>Sonraki kayıt butonuna tıklandığında sistem bölge koduna göre büyük olan ilk kaydı getirir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kayıtlar arasında hızlıca gezinmek için navigasyon butonlarını kullanabilirsiniz</li>
+                    <li>Belirli bir kaydı aramak için doğrudan Bölge Kodu alanına ilgili kodu yazıp ENTER tuşuna basabilirsiniz</li>
+                    <li>Eğer sistemde çok sayıda kayıt varsa, belirli bir kaydı bulmak için Kayıtlar butonunu kullanmak daha hızlı olabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yeni-kayit" class="section">
+        <h2>Yeni Kayıt Ekleme İşlemi</h2>
+        <div class="info-box">
+            <h3>Yeni Bölge Kaydı Nasıl Oluşturulur</h3>
+            <div class="step">
+                <h4>Yeni Kayıt Oluşturma Adımları:</h4>
+                <ol>
+                    <li><strong>Yeni Kayıt Moduna Geçiş:</strong>
+                        <ul>
+                            <li>Program açıldığında otomatik olarak yeni kayıt modunda başlar</li>
+                            <li>Eğer önceden bir kayıt görüntülüyorsanız:
+                                <ul>
+                                    <li>Ekrandaki tüm alanları temizlemek için Yeni butonuna tıklayabilirsiniz</li>
+                                    <li>Yeni butonu, ekranın alt kısmında, ikinci buton satırının sol başında yer alır</li>
+                                    <li>Yeni butonuna tıkladığınızda tüm alanlar temizlenecek ve imleç Bölge Kodu alanına konumlanacaktır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölge Bilgilerini Girme:</strong>
+                        <ol>
+                            <li>Bölge Kodu alanına yeni bölge için kullanmak istediğiniz sayısal kodu girin
+                                <ul>
+                                    <li>Bu kod daha önce sistemde kayıtlı olmamalıdır</li>
+                                    <li>Maksimum 4 basamaklı bir sayı olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fareyle tıklayarak Açıklama alanına geçin</li>
+                            <li>Açıklama alanına bölgenin adını veya tanımını girin
+                                <ul>
+                                    <li>Maksimum 50 karakter uzunluğunda olabilir</li>
+                                    <li>Anlamlı ve tanımlayıcı bir metin olmalıdır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme İşlemi:</strong>
+                        <ol>
+                            <li>Tüm bilgileri girdikten sonra, Kaydet butonuna tıklayın
+                                <ul>
+                                    <li>Kaydet butonu, ekranın alt kısmında, ikinci buton satırında, Yeni butonunun sağında yer alır</li>
+                                    <li>Üzerinde disk simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Sistem, girdiğiniz bölge kodunun benzersiz olup olmadığını kontrol eder</li>
+                                    <li>Eğer kod benzersiz ise, yeni bölge kaydı oluşturulur</li>
+                                    <li>İşlem başarılı olursa ekranın üst kısmında bir onay mesajı görüntülenir</li>
+                                    <li>Herhangi bir hata durumunda, ekranın üst kısmında bir hata mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bölge kodu alanı ve açıklama alanı boş bırakılamaz, her ikisi de doldurulmalıdır</li>
+                    <li>Bölge kodu sistemde daha önce kullanılmamış olmalıdır</li>
+                    <li>Bölge kodu sadece sayısal değerler içerebilir</li>
+                    <li>Kaydetme işlemi tamamlanmadan programdan çıkarsanız, girdiğiniz bilgiler kaydedilmeyecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir kayıt girmeden önce, girmeyi planladığınız bölge kodunun sistemde olup olmadığını kontrol etmek için, Bölge Kodu alanına kodu yazıp Tab tuşuna basabilirsiniz</li>
+                    <li>Çok sayıda kayıt girecekseniz, Kaydet'e bastıktan sonra hemen Yeni butonuna basarak bir sonraki kayıt için formu temizleyebilirsiniz</li>
+                    <li>Açıklama alanına anlamlı ve ayırt edici tanımlar girmek, daha sonra kayıtları bulmanızı kolaylaştıracaktır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-guncelleme" class="section">
+        <h2>Kayıt Güncelleme İşlemi</h2>
+        <div class="info-box">
+            <h3>Mevcut Bölge Kaydı Nasıl Güncellenir</h3>
+            <div class="step">
+                <h4>Kayıt Güncelleme Adımları:</h4>
+                <ol>
+                    <li><strong>Güncellenecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Güncellemek istediğiniz bölge kaydını bulmak için birkaç yöntem kullanabilirsiniz:
+                                <ul>
+                                    <li>Bölge Kodu alanına doğrudan bölge kodunu yazıp Tab tuşuna basabilirsiniz</li>
+                                    <li>Önceki ve Sonraki navigasyon butonlarını kullanarak kayıtlar arasında gezinebilirsiniz</li>
+                                    <li>Kayıtlar butonunu kullanarak kayıt listesinden seçim yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz kayıt ekranda görüntülendiğinde, hem Bölge Kodu hem de Açıklama alanı ilgili verilerle dolu olacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ol>
+                            <li>Mevcut bir kaydı görüntülerken, sadece Açıklama alanını değiştirebilirsiniz
+                                <ul>
+                                    <li>Bölge Kodu alanı değiştirilemez (yani bir kaydın anahtarı değiştirilemez)</li>
+                                    <li>Açıklama alanına tıklayarak veya Tab tuşuna basarak buraya geçiş yapın</li>
+                                    <li>Mevcut açıklamayı silin veya değiştirin</li>
+                                    <li>Yeni açıklamayı girin (maksimum 50 karakter)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Güncellemeyi Kaydetme:</strong>
+                        <ol>
+                            <li>Değişiklikleri yaptıktan sonra, Kaydet butonuna tıklayın
+                                <ul>
+                                    <li>Kaydet butonu, ekranın alt kısmında, ikinci buton satırında, Yeni butonunun sağında yer alır</li>
+                                    <li>Üzerinde disk simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Sistem, değişiklikleri kaydeder</li>
+                                    <li>İşlem başarılı olursa ekranın üst kısmında bir onay mesajı görüntülenir</li>
+                                    <li>Herhangi bir hata durumunda, ekranın üst kısmında bir hata mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mevcut bir kaydın Bölge Kodu değiştirilemez, sadece Açıklama alanı güncellenebilir</li>
+                    <li>Bölge kodunu değiştirmek için mevcut kaydı silip yeni bir kayıt oluşturmanız gerekir</li>
+                    <li>Açıklama alanı boş bırakılamaz</li>
+                    <li>Değişiklikleri kaydetmeden önce doğru kaydı güncellediğinizden emin olun</li>
+                    <li>Güncelleme işlemi tamamlanmadan programdan çıkarsanız, yaptığınız değişiklikler kaydedilmeyecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Açıklama alanındaki metni tamamen silip yeniden yazmak yerine, sadece değiştirmek istediğiniz kısmı düzenleyebilirsiniz</li>
+                    <li>Bir kaydı güncelledikten sonra, diğer kayıtları güncellemek için navigasyon butonlarını kullanarak aralarında geçiş yapabilirsiniz</li>
+                    <li>Birden fazla kayıt güncelleyecekseniz, her güncelleme sonrası Kaydet butonuna basmayı unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-silme" class="section">
+        <h2>Kayıt Silme İşlemi</h2>
+        <div class="info-box">
+            <h3>Bölge Kaydı Nasıl Silinir</h3>
+            <div class="step">
+                <h4>Kayıt Silme Adımları:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz bölge kaydını bulmak için birkaç yöntem kullanabilirsiniz:
+                                <ul>
+                                    <li>Bölge Kodu alanına doğrudan bölge kodunu yazıp Tab tuşuna basabilirsiniz</li>
+                                    <li>Önceki ve Sonraki navigasyon butonlarını kullanarak kayıtlar arasında gezinebilirsiniz</li>
+                                    <li>Kayıtlar butonunu kullanarak kayıt listesinden seçim yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz kayıt ekranda görüntülendiğinde, hem Bölge Kodu hem de Açıklama alanı ilgili verilerle dolu olacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemini Başlatma:</strong>
+                        <ol>
+                            <li>Ekranda silinecek kayıt görüntülenirken, Sil butonuna tıklayın
+                                <ul>
+                                    <li>Sil butonu, ekranın alt kısmında, ikinci buton satırında, Kaydet butonunun sağında yer alır</li>
+                                    <li>Üzerinde çarpı (X) simgesi bulunabilir</li>
+                                </ul>
+                            </li>
+                            <li>Sil butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Sistem, silme işlemini onaylamanız için bir onay mesajı gösterecektir</li>
+                                    <li>"İptal" başlıklı bir mesaj kutusu görüntülenir ve "Evet" veya "Hayır" seçenekleri sunulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Silme İşlemini Onaylama:</strong>
+                        <ol>
+                            <li>Silme işlemini onaylamak için "Evet" seçeneğine tıklayın
+                                <ul>
+                                    <li>Onay penceresinde "Evet" seçeneğine tıkladığınızda, kayıt kalıcı olarak silinecektir</li>
+                                    <li>İşlem başarılı olursa ekranın üst kısmında bir onay mesajı görüntülenebilir</li>
+                                </ul>
+                            </li>
+                            <li>Silme işleminden vazgeçmek için "Hayır" seçeneğine tıklayın
+                                <ul>
+                                    <li>Onay penceresinde "Hayır" seçeneğine tıkladığınızda, silme işlemi iptal edilecek ve kayıt silinmeyecektir</li>
+                                    <li>Program, mevcut kaydı görüntülemeye devam edecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, bir kayıt silindikten sonra kurtarılamaz</li>
+                    <li>Silmeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Sistemin diğer bölümlerinde kullanılan bölge kayıtlarını silmeye çalıştığınızda hata alabilirsiniz</li>
+                    <li>Bölge kodu alanı boş ise (geçerli bir kayıt yoksa) Sil butonu çalışmayacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir kaydı silmeden önce, bu bölgenin sistem içinde başka yerlerde kullanılmadığından emin olun</li>
+                    <li>Eğer bir bölgeyi silmek yerine pasif hale getirmek istiyorsanız, açıklama kısmına "(Pasif)" gibi bir not ekleyerek kaydı güncellemeyi düşünebilirsiniz</li>
+                    <li>Birden fazla kaydı silecekseniz, her silme işlemi sonrası doğru kaydı seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-arama" class="section">
+        <h2>Kayıt Arama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Bölge Kaydı Nasıl Aranır</h3>
+            <div class="step">
+                <h4>Bölge Kodu ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Arama işlemi için Bölge Kodu alanını kullanacaksınız</li>
+                            <li>Bu alan, ekranın üst kısmında, başlığın hemen altında, formun ilk satırında yer alır</li>
+                            <li>"Bölge Kodu" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Bölge Kodu alanına tıklayın veya TAB tuşuyla buraya gelin</li>
+                            <li>Aramak istediğiniz bölgenin kodunu girin
+                                <ul>
+                                    <li>Sadece sayısal değer girebilirsiniz</li>
+                                    <li>Kod en fazla 4 basamaklı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Bölge kodunu girdikten sonra Tab tuşuna basın veya imleç başka bir alana çıkarın
+                                <ul>
+                                    <li>Bu işlem, arama sorgusunu tetikleyecektir</li>
+                                </ul>
+                            </li>
+                            <li>Sistem, girdiğiniz koda sahip bölge kaydını arayacaktır:
+                                <ul>
+                                    <li>Eğer kayıt bulunursa, tüm alanlar ilgili bilgilerle doldurulacaktır</li>
+                                    <li>Açıklama alanı otomatik olarak bulunun kaydın açıklaması ile doldurulacaktır</li>
+                                    <li>Eğer kayıt bulunamazsa, Açıklama alanı boş kalacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Kayıtlar Listesi ile Arama:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ikinci buton satırında, Sil butonunun sağında yer alır</li>
+                            <li>Üzerinde "Kayıtlar" yazısı bulunabilir</li>
+                            <li>Genellikle bir liste veya tablo simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Kayıtlar butonuna tıklayın
+                                <ul>
+                                    <li>Bu işlem yeni bir pencere açacaktır</li>
+                                    <li>Açılan pencerede sistemdeki tüm bölge kayıtlarının listesi görüntülenecektir</li>
+                                </ul>
+                            </li>
+                            <li>Listede aşağıdaki bilgiler görüntülenir:
+                                <ul>
+                                    <li>Bölge Kodu</li>
+                                    <li>Bölge Adı (Açıklama)</li>
+                                </ul>
+                            </li>
+                            <li>Listenin üst kısmında arama yapabileceğiniz bir metin kutusu bulunabilir
+                                <ul>
+                                    <li>Bu kutuya arama kriteri yazarak listeyi filtreleyebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Listede istediğiniz kaydı bulduğunuzda, üzerine çift tıklayın veya seçip "Seç" butonuna tıklayın
+                                <ul>
+                                    <li>Bu işlem listeyi kapatacak ve seçilen kaydın bilgilerini ana ekrana getirecektir</li>
+                                    <li>Ana ekranda Bölge Kodu ve Açıklama alanları, seçilen kaydın bilgileriyle doldurulacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bölge kodu ile arama yaparken, sadece tam kod eşleşmesi bulunur, kısmi eşleşmeler gösterilmez</li>
+                    <li>Olmayan bir bölge kodu aradığınızda hata mesajı almayabilirsiniz, sadece açıklama alanı boş kalacaktır</li>
+                    <li>Kayıtlar listesinde çok sayıda kayıt olabilir, aradığınız kaydı bulmak için listeyi filtreleme özelliğini kullanmanız önerilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir bölge kodunu biliyorsanız, doğrudan Bölge Kodu alanına yazıp Tab tuşuna basmak en hızlı arama yöntemidir</li>
+                    <li>Bölge adını biliyorsanız ama kodunu bilmiyorsanız, Kayıtlar butonunu kullanarak liste üzerinden arama yapmak daha uygundur</li>
+                    <li>Kayıtlar listesinde, sütun başlıklarına tıklayarak listeyi o sütuna göre sıralayabilirsiniz</li>
+                    <li>Birden fazla kayıt arasında karşılaştırma yapmak istiyorsanız, Kayıtlar listesini açık tutabilir ve ana ekran ile liste arasında geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayitlar-listesi" class="section">
+        <h2>Kayıtlar Listesi Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kayıtlar Listesi Penceresinin Detaylı Kullanımı</h3>
+            <div class="step">
+                <h4>Kayıtlar Listesi Penceresini Açma:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ikinci buton satırında, Sil butonunun sağında yer alır</li>
+                            <li>Üzerinde "Kayıtlar" yazısı ve genellikle bir tablo veya liste simgesi bulunur</li>
+                            <li>Genellikle ikinci buton satırında dördüncü sırada yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pencere Açma Adımları:</strong>
+                        <ol>
+                            <li>Kayıtlar butonuna tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır</li>
+                            <li>Bu pencere ekranın ortasında görüntülenecek ve ana ekranın önünde yer alacaktır</li>
+                            <li>Pencere başlığında genellikle "Bölge Kayıtları" veya benzer bir metin görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Liste Penceresinde Gezinme ve Arama:</h4>
+                <ol>
+                    <li><strong>Pencere Düzeni:</strong>
+                        <ul>
+                            <li>Pencerenin üst kısmında arama için bir metin kutusu bulunabilir</li>
+                            <li>Ortada, kayıtların listelendiği bir tablo yer alır
+                                <ul>
+                                    <li>Tabloda iki sütun bulunur: "Bölge Kodu" ve "Bölge Adı"</li>
+                                    <li>Sütun başlıkları tablonun en üstünde yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Pencerenin alt kısmında "Seç" ve "Kapat" gibi butonlar bulunabilir</li>
+                            <li>Listenin sağ tarafında bir kaydırma çubuğu (scrollbar) yer alabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listede Gezinme:</strong>
+                        <ol>
+                            <li>Kayıtlar arasında gezinmek için:
+                                <ul>
+                                    <li>Fare ile listede yukarı/aşağı kaydırabilirsiniz</li>
+                                    <li>Klavyedeki Yukarı/Aşağı ok tuşlarını kullanabilirsiniz</li>
+                                    <li>Sayfa Yukarı/Sayfa Aşağı tuşlarıyla daha hızlı gezinebilirsiniz</li>
+                                    <li>Kaydırma çubuğunu fare ile sürükleyerek listenin farklı bölümlerine gidebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Bir kaydı seçmek için:
+                                <ul>
+                                    <li>Fare ile ilgili satıra tıklayın</li>
+                                    <li>Seçilen satır vurgulanacaktır (genellikle mavi renkte)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Listede Arama Yapma:</strong>
+                        <ol>
+                            <li>Arama metin kutusuna tıklayın (genellikle pencerenin üst kısmında yer alır)</li>
+                            <li>Aramak istediğiniz bölge kodu veya bölge adıyla ilgili kriterleri yazın</li>
+                            <li>Arama kriterini yazdıkça liste otomatik olarak filtrelenebilir</li>
+                            <li>Eğer otomatik filtreleme yoksa, bir "Ara" butonu olabilir, bu butona tıklayarak aramayı başlatabilirsiniz</li>
+                            <li>Sonuçlar liste içinde gösterilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Kayıt Seçme ve Pencereyi Kapatma:</h4>
+                <ol>
+                    <li><strong>Kayıt Seçme:</strong>
+                        <ul>
+                            <li>Listeden bir kayıt seçmek için kayıt satırına çift tıklayabilirsiniz</li>
+                            <li>Veya kaydı tek tıklama ile seçtikten sonra "Seç" butonuna tıklayabilirsiniz
+                                <ul>
+                                    <li>"Seç" butonu genellikle pencerenin alt kısmında sol tarafta yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Kayıt seçildiğinde:
+                                <ul>
+                                    <li>Kayıtlar listesi penceresi kapanacaktır</li>
+                                    <li>Ana ekranda Bölge Kodu ve Açıklama alanları, seçilen kaydın bilgileriyle doldurulacaktır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim Yapmadan Kapatma:</strong>
+                        <ul>
+                            <li>Kayıt seçmeden pencereyi kapatmak için "Kapat" veya "İptal" butonuna tıklayabilirsiniz
+                                <ul>
+                                    <li>Bu buton genellikle pencerenin alt kısmında sağ tarafta yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Veya pencerenin sağ üst köşesindeki X butonuna tıklayabilirsiniz</li>
+                            <li>Pencere kapatıldığında, ana ekrandaki veriler değişmeden kalacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kayıtlar listesi yalnızca kayıtları görüntüleme ve seçme için kullanılır, bu listeden doğrudan kayıt ekleme, silme veya güncelleme yapamazsınız</li>
+                    <li>Eğer çok sayıda kayıt varsa, liste yüklenmesi biraz zaman alabilir</li>
+                    <li>Liste penceresini açtığınızda, ana pencere etkisizleştirilir, önce liste penceresini kapatmanız gerekir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sütun başlıklarına tıklayarak listeyi o sütuna göre sıralayabilirsiniz (örneğin, Bölge Kodu'na göre artan/azalan sıralama)</li>
+                    <li>Arama yaparken, tam kod yerine kısmi eşleşme için arama kutusuna kodun bir kısmını yazabilirsiniz</li>
+                    <li>Birden fazla kaydı karşılaştırmak istiyorsanız, not alarak veya pencerenin boyutunu ve konumunu ayarlayarak ana ekranla yan yana görüntüleyebilirsiniz</li>
+                    <li>Listede çok sayıda kayıt varsa, klavyede bir harfe basarak o harfle başlayan ilk kayda hızlıca gidebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Tüm Butonların Detaylı Kullanımı</h3>
+            <div class="step">
+                <h4>Navigasyon Butonları (İlk Kayıt, Önceki, Sonraki, Son Kayıt):</h4>
+                <ol>
+                    <li><strong>Butonların Konumu:</strong>
+                        <ul>
+                            <li>Navigasyon butonları ekranın alt kısmında, ilk buton satırında yer alır</li>
+                            <li>Soldan sağa doğru sırasıyla: İlk Kayıt, Önceki Kayıt, Sonraki Kayıt ve Son Kayıt butonları bulunur</li>
+                            <li>Her butonda yönlerini belirten ok simgeleri vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlk Kayıt Butonu:</strong>
+                        <ul>
+                            <li>En soldaki navigasyon butonudur ve üzerinde genellikle "|◄" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, sistemdeki en düşük bölge koduna sahip kayıt görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Önceki Kayıt Butonu:</strong>
+                        <ul>
+                            <li>İlk Kayıt butonunun hemen sağında yer alır ve üzerinde genellikle "◄" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, mevcut kayıttan bir önceki (bölge kodu daha küçük olan) kayıt görüntülenir</li>
+                            <li>Eğer görüntülenen kayıt zaten en küçük bölge koduna sahip kayıt ise, en yüksek bölge koduna sahip kayda geçebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Önceki Kayıt butonunun hemen sağında yer alır ve üzerinde genellikle "►" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, mevcut kayıttan bir sonraki (bölge kodu daha büyük olan) kayıt görüntülenir</li>
+                            <li>Eğer görüntülenen kayıt zaten en yüksek bölge koduna sahip kayıt ise, en küçük bölge koduna sahip kayda geçebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Kayıt Butonu:</strong>
+                        <ul>
+                            <li>En sağdaki navigasyon butonudur ve üzerinde genellikle "►|" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, sistemdeki en yüksek bölge koduna sahip kayıt görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>İşlem Butonları (Yeni, Kaydet, Sil, Kayıtlar, Çıkış):</h4>
+                <ol>
+                    <li><strong>Butonların Konumu:</strong>
+                        <ul>
+                            <li>İşlem butonları ekranın alt kısmında, ikinci buton satırında yer alır</li>
+                            <li>Soldan sağa doğru sırasıyla: Yeni, Kaydet, Sil, Kayıtlar ve Çıkış butonları bulunur</li>
+                            <li>Her butonun üzerinde anlamlı bir simge ve butonun işlevini belirten bir metin bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Butonu:</strong>
+                        <ul>
+                            <li>En soldaki işlem butonudur ve üzerinde genellikle bir sayfa veya "+" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, ekrandaki tüm alanlar temizlenir ve yeni bir kayıt girmeye hazır hale gelirsiniz</li>
+                            <li>İmleç otomatik olarak Bölge Kodu alanına konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Yeni butonunun hemen sağında yer alır ve üzerinde genellikle bir disk simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, ekrandaki bilgiler veritabanına kaydedilir</li>
+                            <li>Bölge Kodu daha önce sistemde yoksa yeni bir kayıt oluşturulur</li>
+                            <li>Bölge Kodu daha önce sistemde varsa mevcut kayıt güncellenir</li>
+                            <li>İşlem başarılı olursa ekranın üst kısmında bir onay mesajı görüntülenebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu:</strong>
+                        <ul>
+                            <li>Kaydet butonunun hemen sağında yer alır ve üzerinde genellikle bir çöp kutusu veya "X" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, ekranda görüntülenen kaydı silmek istediğinize dair bir onay penceresi açılır</li>
+                            <li>Onay verirseniz, kayıt sistemden kalıcı olarak silinir</li>
+                            <li>Bölge kodu alanı boş ise bu buton işlev görmeyecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıtlar Butonu:</strong>
+                        <ul>
+                            <li>Sil butonunun hemen sağında yer alır ve üzerinde genellikle bir liste veya tablo simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, sistemdeki tüm bölge kayıtlarının listelendiği bir pencere açılır</li>
+                            <li>Bu listeden bir kayıt seçerek ana ekrana getirmeniz mümkündür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li>En sağdaki işlem butonudur ve üzerinde genellikle bir kapı veya "X" simgesi bulunur</li>
+                            <li>Bu butona tıkladığınızda, program penceresi kapanır ve ana menüye dönersiniz</li>
+                            <li>Kaydedilmemiş değişiklikler varsa, çıkış yapmadan önce kaydetmeyi unutmayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Değişiklik yaptıktan sonra Kaydet butonuna basmayı unutmayın, aksi halde değişiklikleriniz kaydedilmeyecektir</li>
+                    <li>Silme işlemi geri alınamaz, bir kaydı silmeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Eklediğiniz veya güncellediğiniz kayıtlar, diğer kullanıcılar ve sistem için hemen görünür olur</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Klavye kısayollarını kullanarak daha hızlı çalışabilirsiniz:
+                        <ul>
+                            <li>TAB: Bir sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Bir önceki alana geçer</li>
+                            <li>ENTER: TAB gibi davranır, sonraki alana geçer</li>
+                            <li>ESC: Programdan çıkar (Çıkış butonu ile aynı işlevi görür)</li>
+                        </ul>
+                    </li>
+                    <li>Çok sayıda kayıt girişi yapacaksanız, her kayıt girişinden sonra Kaydet ve ardından Yeni butonuna basarak hızlıca çalışabilirsiniz</li>
+                    <li>Belirli bir bölge kodunu arayacaksanız, Bölge Kodu alanına yazıp Tab tuşuna basabilirsiniz; Kayıtlar butonunu kullanmak zorunda değilsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Kayıt bulunamadı" Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Bölge kodu aradığınızda kayıt bulunamıyor.</li>
+                            <li>Çözüm: Bölge kodunu doğru girdiğinizden emin olun. Eğer bölge kodundan emin değilseniz, Kayıtlar butonunu kullanarak tüm kayıtları listeleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu bölge kodu zaten kullanılıyor" Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Yeni bir kayıt eklemeye çalıştığınızda bu hata mesajını alabilirsiniz.</li>
+                            <li>Çözüm: Farklı bir bölge kodu kullanın veya önce mevcut kaydı silin, ardından yeni bilgilerle tekrar ekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu bölge silinemiyor" Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Bir bölgeyi silmeye çalıştığınızda bu hata mesajını alabilirsiniz.</li>
+                            <li>Çözüm: Bu bölge sistemde başka tablolarda kullanılıyor olabilir. Önce ilgili bağlantıları kaldırmanız gerekebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Bölge Kodu Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna bastığınızda "Bölge kodu boş olamaz" gibi bir hata alabilirsiniz.</li>
+                            <li>Çözüm: Bölge Kodu alanına geçerli bir sayısal değer girdiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Benzer bölgeler için benzer kodlar kullanmak, daha sonra kayıtları bulmayı kolaylaştırır</li>
+                    <li>Açıklama alanına anlamlı ve ayırt edici tanımlar girmek önemlidir</li>
+                    <li>Düzenli olarak kaydetme alışkanlığı edinmek, veri kaybını önler</li>
+                    <li>Çok sayıda kayıt girecekseniz, öncelikle bir çalışma planı yapın</li>
+                    <li>Silmeden önce her zaman kaydın başka yerlerde kullanılmadığından emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, silmeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Eklediğiniz veya güncellediğiniz bölgeler, sistemin diğer bölümlerinde hemen kullanılabilir hale gelir</li>
+                    <li>Bölge kodları benzersiz olmalıdır, aynı kodu birden fazla bölge için kullanamazsınız</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Bölge Tanımları programı, sistem içinde kullanılacak bölgeleri tanımlamanızı ve yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Bölge kodu ve açıklama bilgisi girişi</li>
+                <li>Kayıt navigasyon işlemleri</li>
+                <li>Yeni kayıt ekleme işlemi</li>
+                <li>Kayıt güncelleme işlemi</li>
+                <li>Kayıt silme işlemi</li>
+                <li>Kayıt arama işlemleri</li>
+                <li>Kayıtlar listesi kullanımı</li>
+                <li>İşlem butonları kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunlar</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

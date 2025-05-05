@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abone Barkod Basımı Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Abone Barkod Basımı Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#barkod-basimi">Barkod Basım İşlemi</a>
+                    <ul>
+                        <li><a href="#abone-araligi">Abone Numarası Aralığı Belirleme</a></li>
+                        <li><a href="#liste-görüntüleme">Barkod Listesini Görüntüleme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Abone Barkod Basımı" ekranı, su abonelerinin barkodlarının basılması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir abone numarası için barkod basabilirsiniz</li>
+                <li>Bir abone numarası aralığı belirleyerek toplu barkod basabilirsiniz</li>
+                <li>Barkodları ayrı bir pencerede görüntüleyebilirsiniz</li>
+                <li>Görüntülenen barkodları yazdırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Barkod basımı yapılacak abone numarası veya numaralarını</li>
+                    <li>Barkod basımı yapmak için gerekli yazıcı ayarlarını</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde çelik mavisi (steelBlue) renkli bir şeritte "ABONE BARKOD BASIMI" başlığı yer alır.</li>
+                            <li>Bu başlık, ekranın üst kısmında belirgin şekilde görünür ve beyaz renkte, kalın yazı tipiyle yazılmıştır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölümde "Abone no" etiketi ve yanında iki adet metin kutusu yer alır.</li>
+                            <li>Metin kutuları yan yana yerleştirilmiştir ve abone numarası aralığı girişi için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında iki buton yer alır.</li>
+                            <li>Solda "Liste" butonu, sağda "Çıkış" butonu bulunur.</li>
+                            <li>Bu butonlar gri tonlarda ve 3D görünümlüdür.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Ekran Boyutu:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Küçük bir pencere olarak açılır (320 piksel genişliğinde).</li>
+                    <li>Tüm alanlar ve butonlar bu pencere içerisine yerleştirilmiştir.</li>
+                    <li>Pencere boyutu sabit olduğundan, bilgisayar ekranınızın çözünürlüğüne bağlı olarak ekranın ortasında görüntülenecektir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="barkod-basimi" class="section">
+        <h2>Barkod Basım İşlemi</h2>
+        
+        <div id="abone-araligi" class="info-box">
+            <h3>Abone Numarası Aralığı Belirleme</h3>
+            
+            <div class="step">
+                <h4>Abone Numarası Girişi:</h4>
+                <ol>
+                    <li><strong>Tek Abone İçin Barkod Basımı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone no" etiketinin yanındaki ilk metin kutusuna tıklayın.</li>
+                            <li><strong>İşlem:</strong> Barkod basmak istediğiniz abone numarasını girin.</li>
+                            <li><strong>Otomatik İşlem:</strong> İlk kutuya bir abone numarası girdiğinizde, bu numara otomatik olarak ikinci kutuya da kopyalanır.</li>
+                            <li><strong>Sonuç:</strong> Bu şekilde sadece tek bir abone için barkod basımı yapılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Aralığı İçin Barkod Basımı:</strong>
+                        <ul>
+                            <li><strong>İlk Kutu:</strong> İlk metin kutusuna aralığın başlangıç abone numarasını girin.</li>
+                            <li><strong>İkinci Kutu:</strong> İkinci metin kutusuna aralığın bitiş abone numarasını girin.</li>
+                            <li><strong>Örnek:</strong> Eğer 1000 ile 1050 arasındaki tüm aboneler için barkod basmak istiyorsanız, ilk kutuya "1000", ikinci kutuya "1050" yazın.</li>
+                            <li><strong>Sonuç:</strong> Bu şekilde belirtilen aralıktaki tüm aboneler için barkod basımı yapılacaktır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Metin kutularına sadece sayısal değerler girilebilir (harfler veya özel karakterler kabul edilmez).</li>
+                    <li>Eğer ilk metin kutusunu boş bırakırsanız, otomatik olarak "0" değeri atanır.</li>
+                    <li>Eğer ikinci metin kutusunu boş bırakırsanız, otomatik olarak "99999999" değeri atanır.</li>
+                    <li>Bitiş abone numarası, başlangıç abone numarasından küçük olmamalıdır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir abone için barkod basmak istiyorsanız, sadece ilk kutuya numarayı girin. İkinci kutu otomatik olarak doldurulacaktır.</li>
+                    <li>Çok sayıda abone için barkod basarken, makul aralıklar belirleyin (örneğin, binlerce abone için tek seferde değil, yüzlük gruplar halinde).</li>
+                    <li>Abone numaraları genellikle sıralı olduğundan, belirli bir bölge veya mahalle için aralık belirleyerek toplu basım yapabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="liste-görüntüleme" class="info-box">
+            <h3>Barkod Listesini Görüntüleme</h3>
+            
+            <div class="step">
+                <h4>Barkod Listesini Görüntüleme ve Yazdırma:</h4>
+                <ol>
+                    <li><strong>Bilgileri Girdikten Sonra:</strong>
+                        <ul>
+                            <li>Abone numarası veya numarası aralığını girdikten sonra, ekranın alt kısmındaki "Liste" butonuna tıklayın.</li>
+                            <li>Bu buton sol tarafta yer alır ve genellikle üzerinde liste simgesi bulunur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Penceresi:</strong>
+                        <ul>
+                            <li>Butona tıkladığınızda, yeni bir pencere açılacaktır.</li>
+                            <li>Bu pencerede, belirlediğiniz abone numarası veya aralığındaki abonelerin barkodları görüntülenecektir.</li>
+                            <li>Pencere tam ekran olmayacak şekilde, genişlik olarak 792 piksel, yükseklik olarak 525 piksel boyutlarında açılır.</li>
+                            <li>Pencere özelliklerinden bazıları şunlardır:
+                                <ul>
+                                    <li>Yeniden boyutlandırılabilir (resizable) özelliktedir, böylece pencereyi istediğiniz boyuta getirebilirsiniz.</li>
+                                    <li>Tam ekran modu kapalıdır (fullscreen=no).</li>
+                                    <li>Durum çubuğu görünmez (status=no).</li>
+                                    <li>Dikey ve yatay kaydırma çubukları görünür (scrollbars=yes), böylece çok sayıda barkod varsa hepsini görebilirsiniz.</li>
+                                    <li>Araç çubuğu, menü çubuğu ve konum çubuğu görünmez (toolbar=no, menubar=no, location=no).</li>
+                                    <li>Pencere ekranın sol üst köşesinde açılır (left=0, top=0).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma İşlemi:</strong>
+                        <ul>
+                            <li>Açılan pencerede barkodları inceledikten sonra, tarayıcınızın yazdırma özelliğini kullanarak çıktı alabilirsiniz.</li>
+                            <li>Genellikle "Ctrl+P" tuş kombinasyonu veya pencere üzerindeki yazdırma simgesi ile yazdırma işlemini başlatabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Eğer çok geniş bir abone aralığı belirlerseniz, liste penceresinin yüklenmesi zaman alabilir.</li>
+                    <li>Açılan pencere yeniden boyutlandırılabilir özelliktedir. Eğer barkodlar tam görünmüyorsa, pencereyi büyütebilirsiniz.</li>
+                    <li>Yazdırma işlemi öncesinde yazıcı ayarlarınızı kontrol edin. Barkodların doğru boyutta ve kalitede basılması önemlidir.</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Yazdırma İpuçları:</h4>
+                <ul>
+                    <li>Barkod yazdırırken, yazıcı ayarlarından "Yüksek Kalite" seçeneğini tercih edin.</li>
+                    <li>Barkodların okunabilir olması için, ölçeklendirme yapmadan (tam boyutta) yazdırmaya özen gösterin.</li>
+                    <li>Çok sayıda barkod yazdırırken, kağıt tüketimini azaltmak için sayfa başına düşen barkod sayısını optimize edin.</li>
+                </ul>
+            </div>
+        </div>
+            
+            
+
+
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Eğer çok geniş bir abone aralığı belirlerseniz, liste penceresinin yüklenmesi zaman alabilir.</li>
+                    <li>Açılan pencere yeniden boyutlandırılabilir özelliktedir. Eğer barkodlar tam görünmüyorsa, pencereyi büyütebilirsiniz.</li>
+                    <li>Yazdırma işlemi öncesinde yazıcı ayarlarınızı kontrol edin. Barkodların doğru boyutta ve kalitede basılması önemlidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yazdırma İpuçları:</h4>
+                <ul>
+                    <li>Barkod yazdırırken, yazıcı ayarlarından "Yüksek Kalite" seçeneğini tercih edin.</li>
+                    <li>Barkodların okunabilir olması için, ölçeklendirme yapmadan (tam boyutta) yazdırmaya özen gösterin.</li>
+                    <li>Çok sayıda barkod yazdırırken, kağıt tüketimini azaltmak için sayfa başına düşen barkod sayısını optimize edin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana Butonlar:</h4>
+                <ol>
+                    <li><strong>Liste Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde liste simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Belirlenen abone numarası aralığındaki abonelerin barkodlarını içeren listeyi yeni bir pencerede açar.</li>
+                            <li><strong>Kullanım:</strong> Abone numarası veya aralığını girdikten sonra barkodları görüntülemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, "Liste" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, üzerinde çıkış simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Abone Barkod Basımı ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> İşleminiz tamamlandığında programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Liste butonuna basmadan önce, abone numarası veya aralığının doğru girildiğinden emin olun.</li>
+                    <li>Çıkış butonuna bastığınızda, girdiğiniz bilgiler kaydedilmeden program kapanacaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Enter</td>
+                        <td>TAB tuşu gibi davranır, bir sonraki alana geçiş yapar</td>
+                    </tr>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar (Çıkış butonuna basma işlevi)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Kısayol Tuşlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>İlk abone numarası kutusundan ikincisine geçmek için Enter veya TAB tuşunu kullanabilirsiniz.</li>
+                            <li>Abone numarası kutularından butonlara geçmek için yine Enter veya TAB tuşunu kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış:</strong>
+                        <ul>
+                            <li>Herhangi bir anda ESC tuşuna basarak programdan çıkabilirsiniz.</li>
+                            <li>Bu işlem, Çıkış butonuna tıklamakla aynı etkiye sahiptir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan sadece klavye ile işlemlerinizi tamamlayabilirsiniz.</li>
+                    <li>Enter tuşunun TAB işlevi görmesi, formda hızlı gezinmenizi sağlar.</li>
+                    <li>Sık kullanılan bu kısayolları öğrenmek, işlerinizi hızlandıracaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Liste Açılmıyor:</strong>
+                        <ul>
+                            <li>Abone numarası alanlarının boş olup olmadığını kontrol edin.</li>
+                            <li>Aralık değerlerinin uygun formatta (sadece sayılar) girildiğinden emin olun.</li>
+                            <li>Başlangıç numarasının bitiş numarasından büyük olmadığını kontrol edin.</li>
+                            <li>Tarayıcınızın pop-up engelleyicisinin açık olup olmadığını kontrol edin, açıksa yeni pencerelere izin verin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Barkodlar Düzgün Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Açılan pencere boyutunu büyüterek tüm içeriğin görünür olmasını sağlayın.</li>
+                            <li>Tarayıcınızın yakınlaştırma ayarlarını kontrol edin (genellikle Ctrl + fare tekerleği ile ayarlanabilir).</li>
+                            <li>Farklı bir tarayıcı kullanmayı deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li>Yazıcınızın açık ve çevrimiçi olduğundan emin olun.</li>
+                            <li>Yazıcı ayarlarından barkod yazdırma için uygun kalite ayarlarını seçin.</li>
+                            <li>Yazdırma önizlemesini kontrol ederek, barkodların sayfa içinde düzgün yerleştiğinden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Abone Aralığı Belirleme:</strong>
+                        <ul>
+                            <li>Çok geniş aralıklar yerine, daha küçük gruplar halinde barkod basımı yapın (örneğin 100-200 abone aralığı).</li>
+                            <li>Belirli bir bölge veya mahalle için abone numaralarını önceden gruplandırın.</li>
+                            <li>Sık kullandığınız abone aralıklarını not edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Barkod Listesi Görüntüleme:</strong>
+                        <ul>
+                            <li>Liste görüntülendiğinde, ilk olarak birkaç barkodun doğruluğunu kontrol edin.</li>
+                            <li>Tüm listeyi yazdırmadan önce, sayfa düzenini kontrol edin.</li>
+                            <li>Çok sayıda barkod yazdıracaksanız, yazıcınızın kağıt ve toner/mürekkep seviyesini kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım:</strong>
+                        <ul>
+                            <li>Bu programı düzenli kullanıyorsanız, klavye kısayollarını öğrenerek işlemlerinizi hızlandırın.</li>
+                            <li>Barkod basımı sonrası, birkaç barkodu gerçek ortamda test ederek okunabilirliklerini kontrol edin.</li>
+                            <li>Herhangi bir sorunla karşılaştığınızda sistem yöneticinize danışın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>İşleriniz tamamlandıktan sonra programdan çıkış yapmayı unutmayın.</li>
+                    <li>Barkod listelerini içeren çıktıları güvenli bir şekilde saklayın veya imha edin, abone bilgileri kişisel veri niteliğindedir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Toplu barkod basımı için en uygun zaman, sistem yoğunluğunun az olduğu saatleri tercih edin.</li>
+                    <li>Yazdırılan barkodların kalitesini periyodik olarak kontrol edin, gerekirse yazıcı bakımı yapın.</li>
+                    <li>Bu kılavuzu el altında bulundurun, özellikle yeni başlayan çalışanlar için faydalı olacaktır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Abone Barkod Basımı ekranı, su aboneleri için barkod basma işlemlerini kolaylaştıran basit ama etkili bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, adım adım bu talimatları takip ederek programı kolaylıkla kullanabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Doğru abone numarası aralığını belirleyin.</li>
+                    <li>Barkodların kalitesini kontrol edin.</li>
+                    <li>İşiniz bittiğinde programdan çıkış yapın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

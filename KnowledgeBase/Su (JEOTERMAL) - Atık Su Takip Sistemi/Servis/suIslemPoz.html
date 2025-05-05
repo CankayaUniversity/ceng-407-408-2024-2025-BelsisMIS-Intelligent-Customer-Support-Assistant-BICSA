@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşlem Pozu Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İşlem Pozu Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#kayit-no">Kayıt No (Recid) Kullanımı</a></li>
+                <li><a href="#islem-poz-bilgileri">İşlem Pozu Bilgileri Girişi</a></li>
+                <li><a href="#kesim-islem-turu">Kesim İşlem Türü Seçimi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#kayit-arama">Kayıt Arama ve Gezinme</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>İşlem Pozu Tanımları ekranı, su abonelerine yönelik işlem pozlarını tanımlamak ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni işlem pozu tanımları oluşturabilirsiniz</li>
+                <li>Mevcut işlem pozlarını düzenleyebilirsiniz</li>
+                <li>İşlem pozlarını silebilirsiniz</li>
+                <li>İşlem pozları için kesim durumlarını belirleyebilirsiniz</li>
+                <li>Tanımlanan işlem pozlarını listeden seçebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem pozları, su abonelerine yapılacak işlemleri tanımlar</li>
+                    <li>İşlem pozuna bağlı olarak abonelerin kesim durumları değişebilir</li>
+                    <li>Tanımlanan işlem pozları, abonelere ait iş emirlerinde kullanılır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (koyu yeşil-mavi) renkli bir şeritte "İşlem Poz Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında gri arka planlı ana çalışma alanı bulunur</li>
+                            <li>Kayıt No alanıyla başlar</li>
+                            <li>Ardından İşlem Pozu No, İşlem Pozu ve Kesim İşlem Türü alanları yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Kaydet, Önceki, Sonraki, Sil, Temizle, Liste ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Kayıt No alanına konumlanır</li>
+                    <li>Yeni bir kayıt ekleme modu ile başlar</li>
+                    <li>Kayıt No otomatik olarak doldurulur (bir sonraki boş kayıt numarası)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-no" class="section">
+        <h2>Kayıt No (Recid) Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kayıt Numarası Alan Kullanımı</h3>
+            <div class="step">
+                <h4>Kayıt No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlık çizgisinin hemen altında yer alır</li>
+                            <li>"Kayıt No" etiketi yanında metin kutusu bulunur</li>
+                            <li>Gri arka planlı ana form içinde en üstteki alandır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Program açıldığında Kayıt No alanı otomatik olarak doldurulur (bir sonraki boş kayıt numarası)</li>
+                            <li>Mevcut bir kaydı açmak için:
+                                <ul>
+                                    <li>İstediğiniz kayıt numarasını yazın</li>
+                                    <li>TAB tuşuna basarak alanı terk edin</li>
+                                    <li>Sistem otomatik olarak ilgili kaydı yükleyecektir</li>
+                                </ul>
+                            </li>
+                            <li>Kayıt numarası değiştirildiğinde ve başka bir kayıt numarası girildiğinde:
+                                <ul>
+                                    <li>Sistem otomatik olarak o numaralı kaydın var olup olmadığını kontrol eder</li>
+                                    <li>Kayıt bulunursa, ilgili bilgiler tüm alanlara yüklenir</li>
+                                    <li>Kayıt bulunamazsa, yeni kayıt ekleme moduna geçilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kayıt Arama Özelliği:</strong>
+                        <ol>
+                            <li>Kayıt numarasını hatırlamıyorsanız:
+                                <ul>
+                                    <li>Liste butonunu kullanabilirsiniz (ekranın alt kısmında yer alır)</li>
+                                    <li>Açılacak pencereden ilgili kaydı seçebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kayıt No alanı sadece rakamlardan oluşabilir, maksimum 5 haneli bir sayı olabilir</li>
+                    <li>Mevcut bir kayıt numarası girildiğinde, o kayıt tüm bilgileriyle yüklenir ve düzenleme moduna geçilir</li>
+                    <li>Sistem tarafından olmayan bir kayıt numarası girildiğinde, yeni kayıt ekleme moduna geçilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni kayıt eklemek istediğinizde Temizle butonunu kullanarak otomatik bir kayıt numarası alabilirsiniz</li>
+                    <li>Kayıt numaralarını bilmiyorsanız, Liste butonunu kullanarak mevcut kayıtları görüntüleyebilirsiniz</li>
+                    <li>TAB tuşunu kullanarak bir sonraki alana hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-poz-bilgileri" class="section">
+        <h2>İşlem Pozu Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>İşlem Pozu No ve İşlem Pozu Alanlarının Kullanımı</h3>
+            <div class="step">
+                <h4>İşlem Pozu No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Kayıt No alanının hemen altında yer alır</li>
+                            <li>"İşlem Pozu No" etiketi yanında metin kutusu bulunur</li>
+                            <li>Ana formun ikinci satırında, sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İşlem pozuna ait numarayı girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 5 haneli bir sayı olabilir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak İşlem Pozu alanına geçin</li>
+                            <li>Kayıt sırasında bu alan boş olamaz, mutlaka doldurulmalıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>İşlem Pozu Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Pozu No alanının hemen altında yer alır</li>
+                            <li>"İşlem Pozu" etiketi yanında metin kutusu bulunur</li>
+                            <li>Ana formun üçüncü satırında, sol tarafta yer alır</li>
+                            <li>Diğer alanlara göre daha geniş bir metin kutusudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İşlem pozunun tanımını girin
+                                <ul>
+                                    <li>Bu alana hem rakam hem harf girilebilir</li>
+                                    <li>Maksimum 100 karakter uzunluğunda bir metin girilebilir</li>
+                                    <li>İşlem pozunu açıklayıcı şekilde yazın (örn. "Sayaç Değişimi", "Abone Kapatma" vb.)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Kesim İşlem Türü alanına geçin</li>
+                            <li>Kayıt sırasında bu alan boş olamaz, mutlaka doldurulmalıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşlem Pozu No ve İşlem Pozu alanları boş bırakılamaz</li>
+                    <li>Kaydetme işlemi yapmadan önce bu alanları doldurduğunuzdan emin olun</li>
+                    <li>Boş bırakıldığında sistem uyarı mesajı verecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İşlem Pozu No'yu mümkün olduğunca sıralı ve anlamlı numaralar şeklinde verin</li>
+                    <li>İşlem Pozu tanımını, işlemi açıkça ifade edecek şekilde yazın</li>
+                    <li>Aynı işlem pozu numarasına sahip başka bir kayıt olmamasına dikkat edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kesim-islem-turu" class="section">
+        <h2>Kesim İşlem Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>Kesim İşlem Türü Alanının Kullanımı</h3>
+            <div class="step">
+                <h4>Kesim İşlem Türü Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Pozu alanının hemen altında yer alır</li>
+                            <li>"Kesim İşlem Türü" etiketi yanında açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Ana formun dördüncü satırında, sol tarafta yer alır</li>
+                            <li>Açılır listenin altında kırmızı renkle yazılmış bir açıklama metni vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut kesim durumu seçenekleri görüntülenecektir:
+                                <ul>
+                                    <li>Seçiniz (Varsayılan, değer: 0)</li>
+                                    <li>Kesik (değer: 1)</li>
+                                    <li>Açık (değer: 2)</li>
+                                </ul>
+                            </li>
+                            <li>İşlem pozuna uygun kesim durumunu seçin:
+                                <ul>
+                                    <li>"Seçiniz" - İşlem pozu kesim durumunu değiştirmeyecekse</li>
+                                    <li>"Kesik" - İşlem pozu uygulandığında abonenin suyu kesilecekse</li>
+                                    <li>"Açık" - İşlem pozu uygulandığında abonenin suyu açılacaksa</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz kesim durumu görüntülenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Açıklama Metni:</strong>
+                        <ul>
+                            <li>Kesim İşlem Türü alanının hemen altında kırmızı renkli bir açıklama yer alır</li>
+                            <li>Bu açıklama, kesim işlem türünün ne işe yaradığını hatırlatır</li>
+                            <li>Metin: "İşlem pozları için 'Kesim İşlem Türü' belirlenirse: o işlem pozunda bir iş emri oluşturulduğunda ilgili abonenin kesim durumu belirtilen kesim durumuna getirilir."</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kesim İşlem Türü, abonenin su kesim durumunu doğrudan etkiler</li>
+                    <li>Bu alan boş bırakılabilir, varsayılan olarak "Seçiniz" (0) değeri atanır</li>
+                    <li>İşlem pozu uygulandığında abonenin su durumu otomatik olarak değişeceği için dikkatli seçim yapın</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Abonenin su durumunu etkilemeyecek işlem pozları için "Seçiniz" seçeneğini kullanın</li>
+                    <li>Su kesme işlemleriyle ilgili işlem pozları için "Kesik" seçeneğini kullanın</li>
+                    <li>Su açma işlemleriyle ilgili işlem pozları için "Açık" seçeneğini kullanın</li>
+                    <li>Açıklama metnini okuyarak kesim işlem türünün etkisini hatırlayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kaydet, Sil ve Temizle Butonları</h3>
+            <div class="step">
+                <h4>Kaydet Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde en solda yer alır</li>
+                            <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Gerekli tüm alanları doldurun:
+                                <ul>
+                                    <li>İşlem Pozu No</li>
+                                    <li>İşlem Pozu</li>
+                                    <li>İsteğe bağlı olarak Kesim İşlem Türü</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Sistem veri kontrolü yapacaktır:
+                                <ul>
+                                    <li>İşlem Pozu No boşsa uyarı verecektir</li>
+                                    <li>İşlem Pozu boşsa uyarı verecektir</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgiler doğruysa kayıt işlemi tamamlanacak ve ekran temizlenecektir</li>
+                            <li>Yeni kayıt ekleme moduna geçilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Sil Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde Sonraki butonunun sağında yer alır</li>
+                            <li>Üzerinde bir çöp kutusu ikonu ve "Sil" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz kaydı yükleyin (Kayıt No girerek veya Liste butonunu kullanarak)</li>
+                            <li>Sil butonuna tıklayın</li>
+                            <li>Sistem onay mesajı gösterecektir: "Kayıt silinecek, devam etmek istiyor musunuz?"</li>
+                            <li>Onay mesajında:
+                                <ul>
+                                    <li>"Evet" butonuna tıklarsanız kayıt silinecektir</li>
+                                    <li>"Hayır" butonuna tıklarsanız silme işlemi iptal edilecektir</li>
+                                </ul>
+                            </li>
+                            <li>Silme işlemi tamamlandığında, ekran temizlenecek ve yeni kayıt ekleme moduna geçilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Temizle Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde Sil butonunun sağında yer alır</li>
+                            <li>Üzerinde bir süpürge ikonu ve "Temizle" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temizleme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Temizle butonuna tıklayın</li>
+                            <li>Sistem formdaki tüm alanları temizleyecektir</li>
+                            <li>Kayıt No alanına otomatik olarak yeni bir kayıt numarası atanacaktır</li>
+                            <li>Yeni kayıt ekleme moduna geçilecektir</li>
+                            <li>İmleç Kayıt No alanına konumlanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, silmeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Kaydetme işlemi yapmadan önce tüm zorunlu alanları doldurduğunuzdan emin olun</li>
+                    <li>İşlem Pozu No ve İşlem Pozu alanları boş olamaz</li>
+                    <li>Temizle butonu formdaki tüm bilgileri siler, kaydedilmemiş bilgiler varsa önce kaydedin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir kayıt eklemek istediğinizde Temizle butonunu kullanın</li>
+                    <li>Mevcut bir kaydı güncellemek için önce kaydı yükleyin, değişiklikleri yapın, sonra Kaydet butonuna tıklayın</li>
+                    <li>Silmeden önce mutlaka doğru kaydı sildiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="liste-cikis-butonlari" class="section">
+        <h2>Liste ve Çıkış Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Liste ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Liste Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde Temizle butonunun sağında yer alır</li>
+                            <li>Üzerinde bir liste ikonu ve "Liste" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Görüntüleme Adımları:</strong>
+                        <ol>
+                            <li>Liste butonuna tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır</li>
+                            <li>Bu pencerede tüm işlem pozlarının listesi görüntülenecektir:
+                                <ul>
+                                    <li>Kayıt No</li>
+                                    <li>İşlem Poz No</li>
+                                    <li>İşlem Pozu</li>
+                                </ul>
+                            </li>
+                            <li>Listeden bir kayıt seçmek için:
+                                <ul>
+                                    <li>İstediğiniz kayıda fare ile çift tıklayın</li>
+                                    <li>Seçilen kayıt ana forma yüklenecektir</li>
+                                    <li>Liste penceresi otomatik olarak kapanacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Liste penceresini kapatmak için:
+                                <ul>
+                                    <li>Pencere başlık çubuğundaki Kapat (X) düğmesine tıklayın</li>
+                                    <li>Herhangi bir seçim yapmadan ana forma döneceksiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde en sağda yer alır</li>
+                            <li>Üzerinde bir kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                            <li>Liste butonunun hemen sağındadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Kaydedilmemiş değişikliklerinizi kaydedin</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çıkış yapmadan önce kaydedilmemiş değişikliklerin kaybolacağını unutmayın</li>
+                    <li>Liste penceresinden bir kayıt seçtiğinizde, mevcut formda kaydedilmemiş değişiklikler varsa kaybolabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kayıt numarasını hatırlamıyorsanız Liste butonunu kullanarak aradığınız kaydı bulabilirsiniz</li>
+                    <li>Liste penceresini Escape (ESC) tuşuna basarak da kapatabilirsiniz</li>
+                    <li>Liste penceresinde, sütun başlıklarına tıklayarak sıralama yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-arama" class="section">
+        <h2>Kayıt Arama ve Gezinme</h2>
+        <div class="info-box">
+            <h3>Önceki ve Sonraki Butonları ile Kayıtlar Arasında Gezinme</h3>
+            <div class="step">
+                <h4>Sonraki Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde yer alır</li>
+                            <li>Önceki butonunun sağında, Sil butonunun solunda konumlanmıştır</li>
+                            <li>Üzerinde sağa doğru bir ok ikonu ve "Sonraki" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki Kayda Geçiş Adımları:</strong>
+                        <ol>
+                            <li>Herhangi bir kayıt açıkken Sonraki butonuna tıklayın</li>
+                            <li>Sistem, mevcut kayıt numarasından daha büyük olan ilk kayıt numarasını bulacaktır</li>
+                            <li>Eğer sonraki kayıt bulunursa:
+                                <ul>
+                                    <li>Sonraki kayıt bilgileri forma yüklenecektir</li>
+                                    <li>Kayıt No alanı yeni kayıt numarasını gösterecektir</li>
+                                </ul>
+                            </li>
+                            <li>Eğer sonraki kayıt bulunamazsa:
+                                <ul>
+                                    <li>Sistem "Sonraki kayıt bulunamadı" uyarısı gösterecektir</li>
+                                    <li>Mevcut kayıt formda kalmaya devam edecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Önceki Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde yer alır</li>
+                            <li>Kaydet butonunun sağında, Sonraki butonunun solunda konumlanmıştır</li>
+                            <li>Üzerinde sola doğru bir ok ikonu ve "Önceki" yazısı bulunur</li>
+                            <li>Ana formun altında, gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Önceki Kayda Geçiş Adımları:</strong>
+                        <ol>
+                            <li>Herhangi bir kayıt açıkken Önceki butonuna tıklayın</li>
+                            <li>Sistem, mevcut kayıt numarasından daha küçük olan en büyük kayıt numarasını bulacaktır</li>
+                            <li>Eğer önceki kayıt bulunursa:
+                                <ul>
+                                    <li>Önceki kayıt bilgileri forma yüklenecektir</li>
+                                    <li>Kayıt No alanı yeni kayıt numarasını gösterecektir</li>
+                                </ul>
+                            </li>
+                            <li>Eğer önceki kayıt bulunamazsa:
+                                <ul>
+                                    <li>Sistem "Önceki kayıt bulunamadı" uyarısı gösterecektir</li>
+                                    <li>Mevcut kayıt formda kalmaya devam edecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Liste Butonu ile Kayıt Arama:</h4>
+                <ol>
+                    <li><strong>Kayıt Arama Adımları:</strong>
+                        <ol>
+                            <li>Liste butonuna tıklayın</li>
+                            <li>Açılan pencerede tüm kayıtların listesi görüntülenecektir</li>
+                            <li>Arama yapmak için:
+                                <ul>
+                                    <li>Açılan pencerede klavyeden aramak istediğiniz değerin ilk harflerini yazın</li>
+                                    <li>İmleç otomatik olarak yazılan harflerle başlayan ilk kayda gidecektir</li>
+                                </ul>
+                            </li>
+                            <li>Kayıtlar arasında gezinmek için:
+                                <ul>
+                                    <li>Yukarı/Aşağı ok tuşlarını kullanabilirsiniz</li>
+                                    <li>Sayfa Yukarı/Sayfa Aşağı tuşlarını kullanabilirsiniz</li>
+                                    <li>Fare tekerleğini kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Bulduğunuz kaydı seçmek için:
+                                <ul>
+                                    <li>İstediğiniz kayda çift tıklayın</li>
+                                    <li>Seçilen kayıt ana forma yüklenecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Doğrudan Kayıt No Girerek Arama:</h4>
+                <ol>
+                    <li><strong>Kayıt No ile Arama Adımları:</strong>
+                        <ol>
+                            <li>Kayıt No alanına aramak istediğiniz kayıt numarasını girin</li>
+                            <li>TAB tuşuna basarak alanı terk edin veya başka bir alana tıklayın</li>
+                            <li>Sistem otomatik olarak girilen kayıt numarasını arayacaktır:
+                                <ul>
+                                    <li>Kayıt bulunursa, ilgili bilgiler forma yüklenecektir</li>
+                                    <li>Kayıt bulunamazsa, yeni kayıt ekleme moduna geçilecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Önceki veya Sonraki butonlarına tıkladığınızda, mevcut formdaki kaydedilmemiş değişiklikler kaybolabilir</li>
+                    <li>Liste penceresi açıkken ana formda değişiklik yapamazsınız</li>
+                    <li>Kayıt No alanına yeni bir değer girip alanı terk ettiğinizde, kaydedilmemiş değişiklikler kaybolabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kayıtlar arasında hızlıca gezinmek için Önceki ve Sonraki butonlarını kullanın</li>
+                    <li>Birden çok kayıt arasında hızlıca geçiş yapmak istiyorsanız Liste butonunu kullanın</li>
+                    <li>Kayıt numarasını biliyorsanız, doğrudan Kayıt No alanına yazarak en hızlı şekilde kaydı açabilirsiniz</li>
+                    <li>Liste penceresinde sütun başlıklarına tıklayarak sıralama yapabilirsiniz, böylece aradığınız kaydı daha kolay bulabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"İşlem Poz No'su belirtmelisiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: İşlem Pozu No alanını doldurduğunuzdan emin olun. Bu alan boş bırakılamaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İşlem Pozu belirtmelisiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: İşlem Pozu alanını doldurduğunuzdan emin olun. Bu alan boş bırakılamaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sonraki kayıt bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Sonraki butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Şu anda en son kayıttasınız, daha sonraki kayıt bulunmamaktadır. Liste butonunu kullanarak başka bir kayda geçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Önceki kayıt bulunamadı" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Önceki butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Şu anda ilk kayıttasınız, daha önceki kayıt bulunmamaktadır. Liste butonunu kullanarak başka bir kayda geçebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Silme İşlemi Yapılamıyor:</strong>
+                        <ul>
+                            <li>Sorun: Sil butonuna tıkladığınızda hiçbir şey olmuyor veya hata alıyorsunuz.</li>
+                            <li>Çözüm: Kaydın yüklenmiş olduğundan emin olun. Kayıt No alanı boşsa veya mevcut olmayan bir kayıtsa silme işlemi yapılamaz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem Pozu No'larını anlamlı ve kolay hatırlanacak şekilde verin</li>
+                    <li>İşlem Pozu tanımlarını açık ve anlaşılır yazın</li>
+                    <li>Kesim İşlem Türü'nü abonelerin su durumunu etkileyeceğini göz önünde bulundurarak seçin</li>
+                    <li>Yeni bir kayıt eklemeden önce benzer kayıtları kontrol edin</li>
+                    <li>Kayıt silmeden önce, kaydın başka yerlerde kullanılıp kullanılmadığını kontrol edin</li>
+                    <li>Düzenli olarak Liste butonunu kullanarak mevcut kayıtları gözden geçirin</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, silmeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Kesim İşlem Türü, abonelerin su durumunu doğrudan etkileyeceği için dikkatli seçilmelidir</li>
+                    <li>İşlem pozları, su abonelerine yönelik işlemleri tanımladığı için anlaşılır ve açık olmalıdır</li>
+                    <li>İşlem Pozu No ve İşlem Pozu alanları her zaman doldurulmalıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>İşlem Pozu Tanımları ekranı, su abonelerine yönelik işlem pozlarını tanımlamanızı ve yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>İşlem pozu kayıtlarını oluşturma ve düzenleme</li>
+                <li>Kayıt No, İşlem Pozu No ve İşlem Pozu alanlarının kullanımı</li>
+                <li>Kesim İşlem Türü seçimi ve önemi</li>
+                <li>Kaydet, Sil, Temizle, Liste ve Çıkış butonlarının kullanımı</li>
+                <li>Önceki ve Sonraki butonları ile kayıtlar arasında gezinme</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+
+</body>
+</html>

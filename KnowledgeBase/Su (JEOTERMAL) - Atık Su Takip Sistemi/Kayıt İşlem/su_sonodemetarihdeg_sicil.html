@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su-Son Ödeme Tarihi Değişiklik (Sicil Bazında) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su-Son Ödeme Tarihi Değişiklik (Sicil Bazında) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Temel Bileşenler</a></li>
+                <li><a href="#abone-sorgulama">Abone Bilgilerini Sorgulama</a></li>
+                <li><a href="#tahakkuk-listesi">Tahakkuk Listesi İnceleme</a></li>
+                <li><a href="#son-odeme-tarihi">Son Ödeme Tarihini Değiştirme</a></li>
+                <li><a href="#degisiklikleri-kaydetme">Değişiklikleri Kaydetme</a></li>
+                <li><a href="#temizleme-cikis">İşlemi Temizleme ve Çıkış</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Su-Son Ödeme Tarihi Değişiklik (Sicil Bazında) programı, abonelerin tahakkuk bordrosundaki son ödeme tarihlerini güncellemenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Abone numarasına göre sorgulama yapabilir</li>
+                <li>Abonenin borçlu tahakkuk kayıtlarını görüntüleyebilir</li>
+                <li>Seçilen tahakkukların son ödeme tarihlerini değiştirebilir</li>
+                <li>Değişiklikleri kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Değişiklik yapılacak abonenin abone numarası</li>
+                    <li>Son ödeme tarihinin hangi tahakkuklar için değiştirileceği</li>
+                    <li>Yeni son ödeme tarihleri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Temel Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında turkuaz renkli bir şeritte "Son Ödeme Tarihi Değişiklik" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında abone bilgilerinin görüntülendiği ve sorgulandığı kısım bulunur</li>
+                            <li>Bu bölümde "Abone No", "Adı" ve "Soyadı" alanları yer alır</li>
+                            <li>Abone No alanının yanında bir arama butonu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Tablosu Başlığı:</strong>
+                        <ul>
+                            <li>Abone bilgileri kısmının altında gri arka planlı bir tablo başlığı yer alır</li>
+                            <li>Bu başlıkta "Gelir Türü", "Borç Yılı", "Dönem", "Taksit", "Tutar" ve "Son Öd.Tar." sütunları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Tablo başlığının altında, abonenin borçlu tahakkuk kayıtlarının listelendiği kaydırılabilir bir alan bulunur</li>
+                            <li>Bu bölümde her bir tahakkuk kaydı bir satır olarak gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Formu Temizle, Kaydet ve Çıkış butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>İmleç "Abone No" alanında konumlanır</li>
+                    <li>Herhangi bir kayıt görüntülenmez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="abone-sorgulama" class="section">
+        <h2>Abone Bilgilerini Sorgulama</h2>
+        <div class="info-box">
+            <h3>Abone Numarası ile Sorgulama</h3>
+            <div class="step">
+                <h4>Abone Numarası ile Sorgulama Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Abone Numarası Girişi:</strong>
+                        <ul>
+                            <li>Ekranın üst bölümünde, turkuaz başlık kısmının hemen altında "Abone No:" yazısının yanındaki metin kutusuna, sorgulamak istediğiniz abonenin numarasını yazın</li>
+                            <li>Abone numarası sadece rakamlardan oluşmalıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorgulama İşlemi:</strong>
+                        <ol>
+                            <li>Abone numarasını yazdıktan sonra klavyeden Enter tuşuna basın veya Tab tuşuyla başka bir alana geçin</li>
+                            <li>Sistem otomatik olarak girilen abone numarasına ait bilgileri sorgular</li>
+                            <li>Sorgu sonucunda eğer abonenin borçlu tahakkukları varsa, tahakkuk listesi ekranda görüntülenir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sonuçların Kontrolü:</strong>
+                        <ul>
+                            <li>Sorgulama sonrasında "Adı" ve "Soyadı" alanları otomatik olarak doldurulur</li>
+                            <li>Tahakkuk listesi bölümünde abonenin borçlu tahakkukları görüntülenir</li>
+                            <li>Eğer giriş yaptığınız abone numarasının borçlu tahakkuku bulunmuyorsa "Abonenin borçlu tahakkuku bulunumadı" şeklinde bir uyarı mesajı alırsınız</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Arama Butonu ile Abone Sorgulama:</h4>
+                <ol>
+                    <li><strong>Arama Butonunun Kullanımı:</strong>
+                        <ul>
+                            <li>Abone No metin kutusunun hemen yanında, sağ tarafta bir arama (büyüteç simgeli) butonu bulunur</li>
+                            <li>Abone numarasını bilmiyorsanız veya abone listesinden seçim yapmak istiyorsanız bu butona tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Seçim Ekranı:</strong>
+                        <ol>
+                            <li>Arama butonuna tıkladığınızda yeni bir pencere açılır</li>
+                            <li>Bu pencerede abonelerin listesi görüntülenir</li>
+                            <li>Listede "Abone No", "Sicil No", "Sayaç No", "Adı", "Soyadı", "Mahalle", "Cadde", "Hane" ve "Sıra No" bilgileri bulunur</li>
+                        </ol>
+                    </li>
+                    <li><strong>Abone Seçimi:</strong>
+                        <ul>
+                            <li>Listeden işlem yapmak istediğiniz aboneyi bulun ve üzerine tıklayın</li>
+                            <li>Seçilen abonenin bilgileri otomatik olarak ana ekrandaki Abone No alanına aktarılır ve sorgulama işlemi başlatılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Abone numarası girilirken sadece rakam kullanılabilir</li>
+                    <li>Hatalı abone numarası girdiğinizde sistem uyarı verecektir</li>
+                    <li>Abone bilgilerinin doğru görüntülendiğinden emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Abone numarasını girdikten sonra Tab tuşuna basarak sonraki alana geçebilir ve sorgulamayı başlatabilirsiniz</li>
+                    <li>Abone adını veya soyadını biliyorsanız, arama butonuyla açılan pencerede ilgili sütunları kullanarak filtreleme yapabilirsiniz</li>
+                    <li>Sık kullandığınız abone numaralarını bir yere not alın veya ezberleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tahakkuk-listesi" class="section">
+        <h2>Tahakkuk Listesi İnceleme</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Kayıtlarını Görüntüleme ve İnceleme</h3>
+            <div class="step">
+                <h4>Tahakkuk Listesi Bölümünün Yapısı:</h4>
+                <ol>
+                    <li><strong>Liste Konumu:</strong>
+                        <ul>
+                            <li>Abone bilgileri kısmının altında, gri renkli tablo başlığının hemen altında bulunur</li>
+                            <li>Kaydırılabilir bir alan içerisinde yer alır</li>
+                            <li>Ekranın ortasında geniş bir alan kaplar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sütun Bilgileri:</strong>
+                        <ul>
+                            <li><b>Gelir Türü:</b> Tahakkukun hangi gelir türüne ait olduğunu gösterir (sol tarafta en geniş sütun)</li>
+                            <li><b>Borç Yılı:</b> Tahakkukun oluşturulduğu yılı gösterir (gelir türünün sağında)</li>
+                            <li><b>Dönem:</b> Tahakkukun hangi döneme ait olduğunu belirtir (borç yılının sağında)</li>
+                            <li><b>Taksit:</b> İlgili borcun taksit numarasını gösterir (dönem bilgisinin sağında)</li>
+                            <li><b>Tutar:</b> Tahakkuk tutarını gösterir, sağa yaslı olarak görüntülenir (taksit bilgisinin sağında)</li>
+                            <li><b>Son Öd.Tar.:</b> Tahakkukun son ödeme tarihini gösterir, en sağdaki sütundur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tahakkuk Kayıtlarını İnceleme:</h4>
+                <ol>
+                    <li><strong>Kayıtları Görüntüleme:</strong>
+                        <ul>
+                            <li>Abone numarası girildikten ve sorgulama yapıldıktan sonra, tahakkuk listesi otomatik olarak doldurulur</li>
+                            <li>Listede sadece abonenin ödenmemiş ve bekleyen tahakkukları görüntülenir</li>
+                            <li>Kayıtlar borç yılı, dönem ve taksit numarasına göre sıralanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıtlar Arası Gezinme:</strong>
+                        <ol>
+                            <li>Liste uzunsa, sağdaki kaydırma çubuğunu (scroll bar) kullanarak yukarı veya aşağı hareket edebilirsiniz</li>
+                            <li>Liste üzerinde fare tekerleği ile de yukarı/aşağı hareket edebilirsiniz</li>
+                            <li>Klavyede Sayfa Yukarı (Page Up) ve Sayfa Aşağı (Page Down) tuşlarını kullanarak da kayıtlar arasında gezinebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kayıt Detaylarını İnceleme:</strong>
+                        <ul>
+                            <li>Her bir kayıt için gelir türü, borç yılı, dönem, taksit, tutar ve son ödeme tarihi bilgilerini görebilirsiniz</li>
+                            <li>Tutar bilgisi Türk Lirası cinsinden ve sağa hizalı olarak görüntülenir</li>
+                            <li>Son ödeme tarihi GG.AA.YYYY formatında görüntülenir (örn: 15.06.2023)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Tahakkuk listesinde sadece ödenmemiş tahakkuklar görüntülenir</li>
+                    <li>Eğer abonenin hiç borçlu tahakkuku yoksa liste boş görünecektir</li>
+                    <li>Tahakkuk listesi üzerinde değişiklik yapabilmek için sistem yetkilendirmesine sahip olmanız gerekir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listedeki kayıtları daha kolay incelemek için pencereyi tam ekran yapabilirsiniz</li>
+                    <li>Liste çok uzunsa, önce tüm kayıtları gözden geçirip değişiklik yapılacak kayıtları belirleyin</li>
+                    <li>Belirli bir gelir türünü aramak için klavyenin Ctrl+F kombinasyonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="son-odeme-tarihi" class="section">
+        <h2>Son Ödeme Tarihini Değiştirme</h2>
+        <div class="info-box">
+            <h3>Tahakkukların Son Ödeme Tarihlerini Değiştirme</h3>
+            <div class="step">
+                <h4>Son Ödeme Tarihini Değiştirme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Değiştirilecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Tahakkuk listesinde, son ödeme tarihini değiştirmek istediğiniz tahakkuk kaydını bulun</li>
+                            <li>Gerekirse listeyi yukarı/aşağı kaydırarak ilgili kayda ulaşın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi Alanını Seçme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz kaydın en sağında bulunan "Son Öd.Tar." sütunundaki tarih alanına tıklayın</li>
+                            <li>Tıkladığınızda mevcut tarih seçili duruma gelecektir</li>
+                            <li>Fare imleci metin giriş modunda yanıp söner hale gelecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Yeni Tarihi Girme:</strong>
+                        <ul>
+                            <li>Seçili olan mevcut tarihi silip yeni tarihi girin veya mevcut tarihi düzenleyin</li>
+                            <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örneğin: 20.05.2023)</li>
+                            <li>Gün ve ay için tek basamaklı sayıları iki basamaklı hale getirin (örneğin: 5 yerine 05 yazın)</li>
+                            <li>Tarihler arasına nokta (.) işareti koyun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Girişi Onaylama:</strong>
+                        <ul>
+                            <li>Yeni tarihi girdikten sonra klavyede Enter tuşuna basarak girişi onaylayın</li>
+                            <li>Ya da başka bir alana tıklayarak da girişi onaylayabilirsiniz</li>
+                            <li>Geçerli bir tarih girdiğinizden emin olun, aksi halde sistem hata mesajı verebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Birden Fazla Kayıt İçin İşlemi Tekrarlama:</strong>
+                        <ul>
+                            <li>Başka tahakkukların da son ödeme tarihlerini değiştirmek istiyorsanız, aynı adımları her bir kayıt için tekrarlayın</li>
+                            <li>Tüm değişiklikleri tamamladıktan sonra Kaydet butonuna basarak işlemi tamamlayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih formatı mutlaka GG.AA.YYYY şeklinde olmalıdır (örn: 01.07.2023)</li>
+                    <li>Geçersiz bir tarih girdiğinizde (örneğin 32.13.2023) sistem hata verecektir</li>
+                    <li>Değişiklik yapılmış tarihler, kaydedilene kadar geçici olarak tutulur</li>
+                    <li>Değişikliklerinizi kaydetmeden programdan çıkarsanız, yaptığınız değişiklikler kaybolacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tab tuşunu kullanarak bir sonraki tahakkukun tarih alanına hızlıca geçebilirsiniz</li>
+                    <li>Birden fazla tahakkuk için aynı tarihi girecekseniz, ilk tarihi girdikten sonra kopyala-yapıştır işlemi kullanabilirsiniz</li>
+                    <li>Değiştirmek istemediğiniz tarihleri olduğu gibi bırakın, sadece değiştirmek istediğiniz kayıtlar üzerinde işlem yapın</li>
+                    <li>Yeni tarihi girerken noktaları (.) unutmayın, aksi halde sistem tarihi doğru algılamayabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="degisiklikleri-kaydetme" class="section">
+        <h2>Değişiklikleri Kaydetme</h2>
+        <div class="info-box">
+            <h3>Yapılan Değişiklikleri Sisteme Kaydetme</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Değişiklikleri Gözden Geçirme:</strong>
+                        <ul>
+                            <li>Son ödeme tarihlerinde yaptığınız tüm değişiklikleri bir kez daha kontrol edin</li>
+                            <li>Değiştirilen tarihler, orijinal tarihlerden farklı olacaktır</li>
+                            <li>Yalnızca değişiklik yapılan tahakkuklar kaydedilecektir, diğerleri değişmeden kalacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonunu Kullanma:</strong>
+                        <ol>
+                            <li>Değişiklikleri kontrol ettikten sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu, ekranın alt kısmındaki buton grubunda, Formu Temizle butonunun sağında ve Çıkış butonunun solunda yer alır</li>
+                            <li>Butona tıkladığınızda, sistem değişiklikleri veritabanına kaydetme işlemine başlayacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme İşleminin Tamamlanması:</strong>
+                        <ul>
+                            <li>Kaydetme işlemi başarıyla tamamlandığında, form otomatik olarak temizlenir ve yeni bir işlem için hazır hale gelir</li>
+                            <li>Eğer değiştirilmiş herhangi bir tahakkuk yoksa (yani tüm tarihleri aynı bıraktıysanız), Kaydet butonuna basıldığında hiçbir işlem yapılmaz</li>
+                            <li>Sistem sadece değişiklik yapılan (orijinal tarihinden farklı olan) tahakkukları kaydeder</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetme işlemi geri alınamaz, bu nedenle Kaydet butonuna basmadan önce değişiklikleri kontrol edin</li>
+                    <li>Kaydetme işlemi sırasında sistem yanıt vermiyormuş gibi görünebilir, bu normaldir, işlemin tamamlanmasını bekleyin</li>
+                    <li>Yalnızca değiştirdiğiniz tarihler kaydedilir, değiştirilmeyen tarihler (orijinal tarihle aynı kalanlar) kaydedilmez</li>
+                    <li>Kaydetme işlemi tamamlandıktan sonra, abone bilgileri ve tahakkuk listesi temizlenir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Değişiklikleri kaydetmeden önce son bir kez kontrol etmeyi alışkanlık haline getirin</li>
+                    <li>Çok sayıda tahakkuk için değişiklik yapıyorsanız, işlem sırasında ara sıra kaydetme yapmak daha güvenli olabilir</li>
+                    <li>Kaydetme işlemi tamamlandıktan sonra, yeni bir abone için işlem yapmak isterseniz yeni abone numarasını girebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="temizleme-cikis" class="section">
+        <h2>İşlemi Temizleme ve Çıkış</h2>
+        <div class="info-box">
+            <h3>Formu Temizleme ve Programdan Çıkış</h3>
+            <div class="step">
+                <h4>Formu Temizleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Temizleme Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Formu Temizle" butonuna tıklayın</li>
+                            <li>Bu buton, ekranın alt kısmındaki buton grubunda en soldaki butondur</li>
+                            <li>Butona tıkladığınızda, girilen tüm bilgiler ve görüntülenen tahakkuk listesi temizlenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temizleme İşleminin Sonuçları:</strong>
+                        <ol>
+                            <li>Abone numarası alanı boşaltılır</li>
+                            <li>Abonenin adı ve soyadı bilgileri temizlenir</li>
+                            <li>Tahakkuk listesi tamamen temizlenir</li>
+                            <li>İmleç otomatik olarak Abone No alanına konumlanır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Yeni İşlem Başlatma:</strong>
+                        <ul>
+                            <li>Form temizlendikten sonra, yeni bir abone için işlem yapmak üzere Abone No alanına yeni bir numara girebilirsiniz</li>
+                            <li>Yeni abone numarası girildikten sonra, Enter veya Tab tuşuyla sorgulama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Programdan Çıkış Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>İşlemlerinizi tamamladığınızda, ekranın alt kısmında bulunan "Çıkış" butonuna tıklayın</li>
+                            <li>Çıkış butonu, ekranın alt kısmındaki buton grubunda en sağdaki butondur, Kaydet butonunun sağında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış İşleminin Gerçekleşmesi:</strong>
+                        <ol>
+                            <li>Çıkış butonuna tıkladığınızda, program penceresi kapatılır</li>
+                            <li>Eğer kaydedilmemiş değişiklikler varsa, program otomatik olarak bunları kaydetmez</li>
+                            <li>Bu nedenle, çıkmadan önce değişikliklerinizi kaydettiğinizden emin olun</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Formu temizlediğinizde, kaydedilmemiş tüm değişiklikler kaybolur</li>
+                    <li>Programdan çıkmadan önce kaydedilmemiş değişiklikleriniz varsa, önce Kaydet butonuna tıklamanız önerilir</li>
+                    <li>Çıkış yapıldıktan sonra tekrar programa erişmek için yeniden giriş yapmanız gerekecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir abone için işlem yapmak istediğinizde, Çıkış yapmak yerine Formu Temizle butonunu kullanabilirsiniz</li>
+                    <li>Bir işlem dizisini tamamladıktan sonra, güvenlik açısından programdan çıkış yapmayı alışkanlık haline getirin</li>
+                    <li>Klavyeden ESC (Escape) tuşu da program penceresini kapatmak için kullanılabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>Tab tuşu: Bir sonraki alana geçer</li>
+                            <li>Shift+Tab: Bir önceki alana döner</li>
+                            <li>Enter: Tab tuşu gibi çalışır, bir sonraki alana geçer</li>
+                            <li>ESC (Escape): Programdan çıkış yapar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Sorgulamada Kolaylık:</strong>
+                        <ol>
+                            <li>Sık kullanılan abone numaralarını not edin</li>
+                            <li>Arama butonunu kullanarak abone listesinden kolayca seçim yapın</li>
+                            <li>Abone numarasını girdikten hemen sonra Tab veya Enter tuşuna basarak sorgulamayı başlatın</li>
+                        </ol>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi Değişikliğinde Verimlilik:</strong>
+                        <ul>
+                            <li>Toplu değişiklikler için aynı tarihi kopyala-yapıştır yöntemiyle kullanabilirsiniz</li>
+                            <li>Tab tuşu ile tahakkuklar arasında hızlıca dolaşabilirsiniz</li>
+                            <li>Değişiklik yapacağınız tahakkukları önceden belirleyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Abone Bilgileri Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Abone numarasının doğru girildiğinden emin olun</li>
+                            <li>Sistemde kayıtlı bir abone numarası olup olmadığını kontrol edin</li>
+                            <li>Arama butonunu kullanarak abone listesinden doğru aboneyi seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Listesi Boş Görünüyor:</strong>
+                        <ol>
+                            <li>Abonenin borçlu tahakkuku olmayabilir, bu durumda liste boş gelecektir</li>
+                            <li>Abonenin tüm tahakkukları ödenmiş olabilir</li>
+                            <li>"Abonenin borçlu tahakkuku bulunumadı" uyarısını alıyorsanız, abone numarasını kontrol edin</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tarih Değişikliği Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Tarihi doğru formatta girip girmediğinizi kontrol edin (GG.AA.YYYY)</li>
+                            <li>Bir değişiklik yaptıktan sonra Enter tuşuna basmayı unutmayın</li>
+                            <li>Değişikliklerinizi Kaydet butonuna basarak kaydetmeyi unutmayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li>Sistemin yoğun olduğu zamanlarda işlemlerin tamamlanması biraz zaman alabilir</li>
+                            <li>Kaydetme işlemi sırasında kısa süreli bir bekleme olabilir</li>
+                            <li>Aynı anda çok sayıda program açıksa, bazılarını kapatarak sistem performansını artırabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Son ödeme tarihlerini değiştirirken yetkilerinizi ve kurumsal politikaları göz önünde bulundurun</li>
+                    <li>Kritik tahakkuklar için değişiklik yapmadan önce yöneticinize danışmanız önerilir</li>
+                    <li>İşlemlerinizin kaydını tutun ve gerektiğinde referans olarak kullanın</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Son Kullanıcı Kontrol Listesi:</h4>
+                <ul>
+                    <li>Abone numarasını doğru girdiğinizden emin olun</li>
+                    <li>Tahakkuk listesini dikkatlice inceleyin</li>
+                    <li>Değiştirmek istediğiniz son ödeme tarihlerini doğru formatta girin</li>
+                    <li>Değişiklikleri kaydetmeyi unutmayın</li>
+                    <li>İşlem bittikten sonra formu temizleyin veya programdan çıkış yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sonuc" class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Su-Son Ödeme Tarihi Değişiklik (Sicil Bazında) programı, su abonelerinin tahakkuklarındaki son ödeme tarihlerini kolayca güncellemenizi sağlayan kullanışlı bir araçtır. Bu kılavuzda programın temel özellikleri ve kullanımı adım adım anlatılmıştır.</p>
+            <p>Program sayesinde:</p>
+    <ul>
+        <li>Abone bilgilerini sorgulayabilir</li>
+        <li>Borçlu tahakkukları görüntüleyebilir</li>
+        <li>Son ödeme tarihlerini değiştirebilir</li>
+        <li>Değişiklikleri kaydedebilirsiniz</li>
+    </ul>
+    
+    <p>Programı etkin bir şekilde kullanarak, abone tahakkuklarının son ödeme tarihlerini kolayca yönetebilir ve gerekli değişiklikleri yapabilirsiniz.</p>
+</div>
+    </div>
+</body>
+</html>

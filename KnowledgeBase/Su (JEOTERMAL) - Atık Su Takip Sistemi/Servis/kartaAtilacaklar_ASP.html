@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartına Kontör Yüklenecek Aboneler Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kartına Kontör Yüklenecek Aboneler Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#abone-secme">Abone Seçme İşlemi</a></li>
+                <li><a href="#yukleme-yapma">Kontör Yükleme İşlemi</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#hata-mesajlari">Hata Mesajları ve Çözümleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Kartına Kontör Yüklenecek Aboneler" ekranı, su kartı bulunan abonelere kontör (bakiye) yükleme işlemini gerçekleştirmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Kontör yüklenecek aboneleri görebilirsiniz</li>
+                <li>Tek veya çoklu abonelere aynı anda kontör yükleyebilirsiniz</li>
+                <li>Abonelerin bakiye yükleme durumlarını takip edebilirsiniz</li>
+                <li>Sadece bekleyen (durum=0) aboneleri listeleme ve işlem yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Kontör yüklemeden önce doğru aboneleri seçtiğinizden emin olun.</li>
+                    <li>İşlem tamamlanmadan ekranı kapatmayın.</li>
+                    <li>İşlem sonuçlarını kontrol edin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html><h4>Önemli Not:</h4>
+                <p>Bu ekranı kullanmadan önce:</p>
+                <ul>
+                    <li>Sisteme giriş yapmış olmalısınız</li>
+                    <li>Kontör yükleme yetkisine sahip olmalısınız</li>
+                    <li>Yükleme yapılacak abonelerin sistemde tanımlı olması gerekir</li>
+                    <li>Abonelerin makbuz numaraları ve yüklenecek kontör miktarları sistemde kayıtlı olmalıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde mavi (çelik mavisi) renkli bir şeritte "Kartına Kontör Yüklenecek Aboneler" başlığı yer alır.</li>
+                            <li>Bu başlık, ekranın hangi işlem için kullanıldığını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur.</li>
+                            <li>Bu bölümde kontör yüklenecek abonelerin listesi bir seçim kutusu içinde yer alır.</li>
+                            <li>Liste, ekranın ortasında gri kenarlı bir çerçeve içinde bulunur.</li>
+                            <li>Arka planda kart görseli bulunabilir (su kartı görüntüsü).</li>
+                            <li>Liste kutusu yüksekliği, aynı anda 7 abone görüntüleyecek şekilde ayarlanmıştır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında gri kenarlı bir çerçeve içinde butonlar yer alır.</li>
+                            <li>Bu bölümde Kaydet ve Çıkış butonları bulunur.</li>
+                            <li>Butonlar yan yana, ekranın altında ortalanmış şekilde yerleştirilmiştir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Kontör yüklenmeyi bekleyen tüm aboneler liste içinde görüntülenir (sadece durum=0 olan aboneler).</li>
+                    <li>Tüm aboneler otomatik olarak seçili durumdadır (sayfa yüklenirken bir JavaScript döngüsü ile).</li>
+                    <li>Herhangi bir işlem yapmadığınız sürece abonelere kontör yüklenmez.</li>
+                    <li>Sayfayı her açtığınızda sistem, sadece bekleyen (henüz işlemi tamamlanmamış) aboneleri gösterir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="abone-secme" class="section">
+        <h2>Abone Seçme İşlemi</h2>
+        <div class="info-box">
+            <h3>Abone Listesi Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Aboneleri Görüntüleme ve Seçme:</h4>
+                <ol>
+                    <li><strong>Abone Listesini İnceleme:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın orta bölümünde, kart görseli arka planı olan gri kenarlı bir kutu içinde.</li>
+                            <li><strong>Görünüm:</strong> Çoklu seçim yapılabilen bir liste kutusu (multiple select box).</li>
+                            <li><strong>İçerik:</strong> Her satırda abone numarası, abone adı soyadı ve yüklenecek kontör miktarı (ton) bilgisi yer alır.</li>
+                            <li><strong>Format:</strong> "Abone No-Adı Soyadı X Ton" şeklinde (örn. "12345-Ahmet Yılmaz 2 Ton").</li>
+                            <li><strong>Listelenen Aboneler:</strong> Sadece durumu 0 (sıfır) olan, yani kontör yükleme işlemi bekleyen aboneler görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tek Abone Seçme:</strong>
+                        <ul>
+                            <li>Listeden sadece bir aboneye kontör yüklemek istiyorsanız, diğer tüm seçimleri kaldırıp sadece o aboneyi seçmeniz gerekir.</li>
+                            <li>Önce herhangi bir aboneye tıklayarak tüm seçimleri kaldırın.</li>
+                            <li>Sonra kontör yüklemek istediğiniz aboneye tıklayarak sadece onu seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Abone Seçme:</strong>
+                        <ul>
+                            <li>Birden fazla aboneye aynı anda kontör yüklemek için Ctrl tuşuna basılı tutarak her aboneye tek tek tıklayın.</li>
+                            <li>Ardışık aboneleri seçmek için ilk aboneye tıklayın, sonra Shift tuşuna basılı tutarak son aboneye tıklayın. Aradaki tüm aboneler otomatik seçilecektir.</li>
+                            <li>Varsayılan olarak, program açıldığında tüm aboneler JavaScript ile otomatik seçili durumdadır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Tüm aboneleri hızlıca seçmek için liste boş bir alanına tıklayıp Ctrl+A tuş kombinasyonunu kullanabilirsiniz.</li>
+                    <li>Listede aşağı-yukarı kaydırma yapmak için liste içindeki kaydırma çubuğunu veya fare tekerleğini kullanabilirsiniz.</li>
+                    <li>Listenin boyutu "size=7" olarak ayarlanmıştır, bu nedenle aynı anda 7 abone görüntülenebilir. Daha fazla abone varsa kaydırma çubuğunu kullanmanız gerekecektir.</li>
+                    <li>Listedeki her abone için "abone no", "ad soyad" ve "miktar ton" bilgileri görüntülenir, bu sayede hangi abonelere ne kadar kontör yükleyeceğinizi görebilirsiniz.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Seçim yapmadan Kaydet butonuna basarsanız, hiçbir aboneye kontör yüklenmez.</li>
+                    <li>Program açıldığında JavaScript kodu sayesinde tüm aboneler otomatik seçili olduğundan, sadece belirli abonelere yükleme yapacaksanız mutlaka manuel seçim yapmalısınız.</li>
+                    <li>Listedeki bilgilere sadece bakabilirsiniz, herhangi bir düzenleme yapamazsınız. Abone bilgilerinde değişiklik yapmak için farklı ekranları kullanmanız gerekir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yukleme-yapma" class="section">
+        <h2>Kontör Yükleme İşlemi</h2>
+        <div class="info-box">
+            <h3>Kontör Yükleme Adımları</h3>
+            
+            <div class="step">
+                <h4>Kontör Yükleme İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Aboneleri Seçme:</strong>
+                        <ul>
+                            <li>Önceki bölümde anlatıldığı gibi, kontör yüklemek istediğiniz aboneleri listeden seçin.</li>
+                            <li>Birden fazla abone seçebilir veya tüm aboneleri seçili bırakabilirsiniz.</li>
+                            <li>Program açıldığında otomatik olarak tüm aboneler seçili durumda gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yükleme İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Aboneleri seçtikten sonra, alt bölümdeki "Kaydet" butonuna tıklayın.</li>
+                            <li>Kaydet butonu, ekranın alt kısmındaki gri kenarlı çerçeve içinde yer alır.</li>
+                            <li>Butona tıkladığınızda, form "EventControl" değerini "Run" olarak ayarlayarak sunucuya gönderir.</li>
+                            <li>Sistem seçilen tüm abonelere kontör yükleme işlemini başlatacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucunu Görüntüleme:</strong>
+                        <ul>
+                            <li>Kontör yükleme işlemi başladıktan sonra sistem, her abone için işlemi gerçekleştirir.</li>
+                            <li>İşlem sırasında herhangi bir hata oluşursa, ekranda ilgili hata mesajı görüntülenir.</li>
+                            <li>Başarılı işlemler için ekranda bir bildirim görüntülenmez, ancak ilgili abonelerin durumu sistemde 1 olarak güncellenecektir.</li>
+                            <li>Sistem, işlem durumu hakkında bilgiler sağlayabilir (belediyelere göre farklılık gösterebilir).</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası:</strong>
+                        <ul>
+                            <li>Kontör yükleme işlemi tamamlandıktan sonra, başarıyla yükleme yapılan aboneler bir daha listelenmez (durumları 1 olarak değişir).</li>
+                            <li>Hata alan aboneler (varsa) "durum=0" olarak kalır ve listede görünmeye devam eder.</li>
+                            <li>Yeni kontör yükleme işlemi yapmanız gerekirse, ekranı kapatıp tekrar açabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kontör yükleme işlemi başlatıldıktan sonra işlemi iptal etmek mümkün değildir.</li>
+                    <li>Başarılı şekilde kontör yüklenen abonelerin durumu "durum=1" olarak değiştirilir ve bu aboneler bir sonraki listelemenizde görünmezler.</li>
+                    <li>İşlem sırasında sayfa kapatılırsa veya bağlantı kesilirse, kısmi yüklemeler gerçekleşmiş olabilir.</li>
+                    <li>Belediyenize bağlı olarak (örneğin, belediye kodu 070202 ise) farklı bir kontör yükleme prosedürü uygulanabilir, ancak kullanıcı arayüzü aynı kalır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">            
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, gri kenarlı çerçeve içinde, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart bir buton, üzerinde "Kaydet" yazısı bulunur.</li>
+                            <li><strong>İşlev:</strong> Seçilen abonelere kontör yükleme işlemini başlatır.</li>
+                            <li><strong>Kullanım:</strong> Aboneleri seçtikten sonra bu butona tıklayarak yükleme işlemini başlatın.</li>
+                            <li><strong>Teknik İşlev:</strong> Form üzerindeki "EventControl" değerini "Run" olarak ayarlar ve formu sunucuya gönderir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, gri kenarlı çerçeve içinde, "Kaydet" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart bir buton, üzerinde "Çıkış" yazısı bulunur.</li>
+                            <li><strong>İşlev:</strong> "Kartına Kontör Yüklenecek Aboneler" ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> İşleminizi tamamladıktan sonra veya işlemden vazgeçmek istediğinizde bu butona tıklayın.</li>
+                            <li><strong>Onay Mesajı:</strong> Butona tıkladığınızda "Çıkmak istediğinizden emin misiniz?" şeklinde bir onay mesajı görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çıkış butonuna tıkladığınızda, program JavaScript ile size "Çıkmak istediğinizden emin misiniz?" şeklinde bir onay mesajı gösterecektir.</li>
+                    <li>Onay mesajında "Yes" (Evet) seçeneğini tıklarsanız ekran kapanır, "No" (Hayır) seçeneğini tıklarsanız ekranda kalmaya devam edersiniz.</li>
+                    <li>Eğer kontör yükleme işlemini tamamlamadan Çıkış butonuna basarsanız, seçtiğiniz abonelere kontör yüklenmeyecektir.</li>
+                    <li>Kaydet butonuna bastıktan sonra, işlem tamamlanana kadar bekleyin ve ekranı kapatmayın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hata-mesajlari" class="section">
+        <h2>Hata Mesajları ve Çözümleri</h2>
+        <div class="info-box">
+            <h3>Karşılaşabileceğiniz Hata Mesajları</h3>
+            
+            <div class="step">
+                <h4>Sistem Hata Mesajları ve Anlamları:</h4>
+                <table>
+                    <tr>
+                        <th>Hata Mesajı</th>
+                        <th>Anlamı</th>
+                        <th>Çözüm Önerisi</th>
+                    </tr>
+                    <tr>
+                        <td>[Abone No] abone geçersizdir</td>
+                        <td>Belirtilen abone numarası sistemde geçerli bir abone numarası değil.</td>
+                        <td>Abone bilgilerini kontrol edin, abone numarasının doğruluğundan emin olun.</td>
+                    </tr>
+                    <tr>
+                        <td>[Abone No] Abone Bulunamadı</td>
+                        <td>Belirtilen abone numarası sistemde bulunamadı.</td>
+                        <td>Abone numarasını kontrol edin, doğru girdiğinizden emin olun.</td>
+                    </tr>
+                    <tr>
+                        <td>Makbuz no boş olamaz</td>
+                        <td>Kontör yükleme işlemi için gerekli makbuz numarası boş.</td>
+                        <td>İlgili aboneye ait makbuz numarasının girildiğinden emin olun.</td>
+                    </tr>
+                    <tr>
+                        <td>Tutar yetersiz</td>
+                        <td>Yüklenmeye çalışılan kontör miktarı için yeterli bakiye yok.</td>
+                        <td>Yükleme tutarını kontrol edin, ödeme yapıldığından emin olun.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Hata mesajları, genellikle sorunlu abone numarasıyla birlikte görüntülenir.</li>
+                    <li>Bir hata oluştuğunda, sadece hata alan abonelerin işlemi başarısız olur, diğer abonelerin işlemi devam eder.</li>
+                    <li>Hata alan aboneler için durumu kontrol edip, sorunu çözdükten sonra tekrar işlem yapabilirsiniz.</li>
+                    <li>Belediye kodunuza göre (örneğin 070202 ise) farklı hata mesajları görüntülenebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Kontör Yükleme İşlemi İçin:</strong>
+                        <ul>
+                            <li>Yoğun günlerde, kontör yükleme işlemlerini toplu olarak yapmak daha verimli olabilir.</li>
+                            <li>Çok sayıda abone varsa, işlemi birkaç gruba bölerek yapmak kontrol açısından daha iyi olabilir.</li>
+                            <li>İşlem yapmadan önce, yüklenecek kontör miktarlarının doğruluğunu kontrol edin.</li>
+                            <li>Sayfa açıldığında zaten tüm aboneler seçili olduğundan, genellikle sadece Kaydet butonuna tıklamanız yeterlidir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Seçimi İçin:</strong>
+                        <ul>
+                            <li>Varsayılan olarak tüm aboneler seçili geldiğinden, sadece belirli abonelere işlem yapacaksanız önce listeyi temizleyin.</li>
+                            <li>Büyük listelerde, Ctrl+F kombinasyonunu kullanarak tarayıcı içinde abone adı veya numarası araması yapabilirsiniz.</li>
+                            <li>Liste her zaman "durum=0" olan aboneleri gösterir, işlemi tamamlanan aboneler bir sonraki açılışta listede görünmez.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>İşlem yapmadan önce sisteminizin internete bağlı olduğundan emin olun.</li>
+                            <li>Yoğun saatlerde işlem yapmak yerine, sistem yükünün daha az olduğu saatleri tercih edin.</li>
+                            <li>Her işlem sonrasında sonuçları kontrol edin ve gerekirse not alın.</li>
+                            <li>İşleminiz tamamlandığında mutlaka Çıkış butonunu kullanarak programdan güvenli şekilde çıkın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Güvenlik Uyarıları:</h4>
+                <ul>
+                    <li>İşleminizi tamamladıktan sonra mutlaka Çıkış butonunu kullanarak programdan çıkın.</li>
+                    <li>Başkalarının görebileceği bir bilgisayarda çalışıyorsanız, işiniz bittiğinde sistemden tamamen çıkış yapın.</li>
+                    <li>Kontör yükleme yetkisi sınırlı personele verilmiş olabilir, yetkisiz işlem yapmayın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, abone listesinin mantığını ve görüntülenme şeklini iyice öğrenin.</li>
+                    <li>Hata mesajlarını ve anlamlarını öğrenerek, sorunları daha hızlı çözebilirsiniz.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                    <li>Her zaman işlem öncesinde verilerin doğruluğunu kontrol edin - özellikle yüklenecek kontör miktarları önemlidir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Kartına Kontör Yüklenecek Aboneler" ekranı, su kartı kullanıcılarına kontör yükleme işlemlerini hızlı ve toplu şekilde gerçekleştirmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            

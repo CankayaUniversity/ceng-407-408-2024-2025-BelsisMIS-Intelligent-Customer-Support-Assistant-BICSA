@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Toplu Tahakkuk Hesaplama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Toplu Tahakkuk Hesaplama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları</a></li>
+                <li><a href="#tahakkuk-ucret">Tahakkuk Tipi ve Ücret Tipi Seçimi</a></li>
+                <li><a href="#abone-tipi">Abone Tipi İşlemleri</a></li>
+                <li><a href="#kayit-islemler">Kayıt ve Diğer İşlemler</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Su Toplu Tahakkuk Hesaplama ekranı, su abone ücretlerinin toplu olarak hesaplanması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir dönem için toplu tahakkuk hesaplama</li>
+                <li>Seçilen ücret tipine göre tahakkuk oluşturma</li>
+                <li>Abone tiplerine göre filtreleme</li>
+                <li>Tahakkuk tutarlarını görüntüleme ve kaydetme</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tahakkuk yapılacak yıl ve dönem bilgisi</li>
+                    <li>Kullanılacak tahakkuk tipi</li>
+                    <li>Ücret tipi bilgisi</li>
+                    <li>İşlem yapılacak abone tipleri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi (pastel) renkli bir şeritte "Su Toplu Tahakkuk Hesaplama" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Alanlar iki sütun halinde düzenlenmiştir</li>
+                            <li>Sol sütunda alan etiketleri, sağ sütunda giriş kutuları bulunur</li>
+                            <li>İlk giriş alanı "Yıl/Dönem" ile başlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi Görüntüleme Alanı:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında geniş bir alan bulunur</li>
+                            <li>Bu alan açık mavi çerçeveli, kaydırılabilir bir bölümdür</li>
+                            <li>Abone tiplerinin listelendiği ağaç yapısını gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında yer alır</li>
+                            <li>"Kaydet" ve "Çıkış" butonlarını içerir</li>
+                            <li>Butonlar parlak görünümlü ve üç boyutlu efektle gösterilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Yıl alanı sistem yılı ile doldurulur</li>
+                    <li>Diğer alanlar boş olarak başlar</li>
+                    <li>İmleç ilk veri giriş alanında konumlanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları</h2>
+        <div class="info-box">
+            <h3>Temel Veri Giriş Alanları</h3>
+
+            <div class="step">
+                <h4>Yıl/Dönem Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>En üstteki veri giriş alanı, başlığın hemen altında</li>
+                            <li>Solda "Yıl/Dönem" etiketi, sağda yan yana iki giriş kutusu</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Yıl giriş alanı: 4 haneli yıl numarası girilir (örn. 2025)</li>
+                            <li>Dönem giriş alanı: 2 haneli dönem numarası girilir (örn. 01)</li>
+                            <li>Alanlar tamamlandığında TAB tuşu ile bir sonraki alana geçilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İpuçları:</strong>
+                        <ul>
+                            <li>Yıl alanı açılışta otomatik olarak sistem yılıyla doldurulur</li>
+                            <li>Dönem alanı boş olarak gelir, genellikle ay numarası girilir</li>
+                            <li>Örneğin Mart 2025 için Yıl: 2025, Dönem: 03 girilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanına sadece rakam girilebilir</li>
+                    <li>Dönem alanına sadece rakam girilebilir</li>
+                    <li>Alanlar boş bırakıldığında tahakkuk hesaplaması yapılamaz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>ENTER tuşu da TAB tuşu gibi çalışır, sonraki alana geçirir</li>
+                    <li>Yanlış giriş yapıldığında alanı temizleyip yeniden giriş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tahakkuk-ucret" class="section">
+        <h2>Tahakkuk Tipi ve Ücret Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk ve Ücret Tiplerinin Seçilmesi</h3>
+            <div class="step">
+                <h4>Tahakkuk Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Dönem alanının hemen altında yer alır</li>
+                            <li>Solda "Tahakkuk Tipi" etiketi, sağda açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır liste içerisinde "..Seçiniz.." ve diğer tahakkuk tipleri listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Açılır liste kutusunun sağındaki oka tıklayın
+                                <ul>
+                                    <li>Liste açılarak mevcut tahakkuk tipleri görüntülenir</li>
+                                    <li>Varsayılan olarak "..Seçiniz.." seçili gelir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden bir tahakkuk tipi seçin
+                                <ul>
+                                    <li>Seçtiğiniz tahakkuk tipi kutu içerisinde görüntülenir</li>
+                                    <li>Tahakkuk tipi seçildiğinde, sistem otomatik olarak ücret tiplerini getirecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Ücret Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tipi alanının hemen altında yer alır</li>
+                            <li>Solda "Ücret Tipi" etiketi, sağda açılır liste kutusu bulunur</li>
+                            <li>Liste içeriği, seçilen tahakkuk tipine bağlı olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Önce "Tahakkuk Tipi" seçilmelidir
+                                <ul>
+                                    <li>Tahakkuk tipi seçilmeden ücret tipi seçilemez</li>
+                                    <li>Tahakkuk tipi değiştirildiğinde ücret tipi listesi güncellenir</li>
+                                </ul>
+                            </li>
+                            <li>Açılır liste kutusunun sağındaki oka tıklayın
+                                <ul>
+                                    <li>Seçilen tahakkuk tipine uygun ücret tipleri listelenir</li>
+                                    <li>Ücret tipi listesi boşsa, seçilen tahakkuk tipi için ücret tanımı bulunmuyor demektir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden bir ücret tipi seçin
+                                <ul>
+                                    <li>Seçilen ücret tipi, seçim kutusunda görüntülenir</li>
+                                    <li>Ücret tipi seçildiğinde, otomatik olarak abone tipleri yüklenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tahakkuk tipi seçilmeden ücret tipi listesine erişilemez</li>
+                    <li>Ücret tipi seçilmeden abone tipleri görüntülenemez</li>
+                    <li>Yıl ve dönem bilgileri girilmeden tahakkuk tipi işlemleri yapılamaz</li>
+                    <li>Ücret tipi seçiminden sonra sistem biraz yavaşlayabilir, lütfen bekleyin</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tahakkuk tipi seçildikten sonra çıkmadan TAB tuşuna basarak ücret tipi listesine geçebilirsiniz</li>
+                    <li>Ücret tipi listesini açmak için ALT+Aşağı Ok tuşlarını da kullanabilirsiniz</li>
+                    <li>Sık kullanılan ücret tiplerini not almanız, benzer işlemlerde zaman kazandırabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="abone-tipi" class="section">
+        <h2>Abone Tipi İşlemleri</h2>
+        <div class="info-box">
+            <h3>Abone Tiplerinin Görüntülenmesi ve Yönetimi</h3>
+            <div class="step">
+                <h4>Abone Tipi Ağacının Görüntülenmesi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ücret Tipi alanının altında geniş bir alan olarak yer alır</li>
+                            <li>Açık mavi çerçeve ile çevrelenmiş kaydırılabilir bir bölümdür</li>
+                            <li>Başlığı "Abone Tipi" olan bir ağaç yapısı içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Görüntülenir:</strong>
+                        <ol>
+                            <li>Yıl/Dönem alanını doldurun</li>
+                            <li>Tahakkuk Tipini seçin</li>
+                            <li>Ücret Tipini seçin
+                                <ul>
+                                    <li>Bu üç adım tamamlandığında abone tipleri otomatik olarak yüklenir</li>
+                                    <li>Yükleme sırasında kısa bir bekleme olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Abone tipleri ağaç yapısında görüntülenir
+                                <ul>
+                                    <li>Her abone tipi adıyla birlikte listelenir</li>
+                                    <li>Sağ tarafta "Tahakkuk Tutarı" sütunu görünür (başlangıçta 0 değerindedir)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Abone Tipi Ağacında Gezinme:</h4>
+                <ol>
+                    <li><strong>Kaydırma Çubuğu Kullanımı:</strong>
+                        <ul>
+                            <li>Abone tipi listesi uzun olduğunda sağ tarafta dikey kaydırma çubuğu görünür</li>
+                            <li>Kaydırma çubuğunu kullanarak tüm abone tiplerini görebilirsiniz</li>
+                            <li>Fare tekerleğiyle de yukarı-aşağı hareket edebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tuş Kombinasyonları:</strong>
+                        <ul>
+                            <li>Yukarı-Aşağı ok tuşları: Abone tipleri arasında gezinme</li>
+                            <li>Page Up / Page Down: Sayfalar halinde hızlı gezinme</li>
+                            <li>Home: Listenin başına gitme</li>
+                            <li>End: Listenin sonuna gitme</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Abone tipleri ağacı, tüm gerekli alanlar doldurulmadan görüntülenmez</li>
+                    <li>Çok fazla abone tipi varsa, yüklenmesi biraz zaman alabilir</li>
+                    <li>Tahakkuk tutarları, hesaplama yapılmadan önce 0 olarak görünür</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Abone tipi ağacında bir öğeye tıkladığınızda, o öğe seçili hale gelir</li>
+                    <li>Ağaç yapısı, abone tiplerini alfabetik sıraya göre gösterir</li>
+                    <li>Tahakkuk tutarları, kayıt işlemi sırasında hesaplanacaktır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-islemler" class="section">
+        <h2>Kayıt ve Diğer İşlemler</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Hesaplamalarını Kaydetme ve İşlem Butonları</h3>
+            <div class="step">
+                <h4>Kaydet Butonu ile Tahakkuk Hesaplama:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, sol tarafta yer alır</li>
+                            <li>Üzerinde "Kaydet" yazar ve parlak görünümlü gri bir düğmedir</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt İşlemini Gerçekleştirmek İçin:</strong>
+                        <ol>
+                            <li>Tüm gerekli alanları doldurun:
+                                <ul>
+                                    <li>Yıl ve Dönem bilgisi</li>
+                                    <li>Tahakkuk Tipi</li>
+                                    <li>Ücret Tipi</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonuna tıklayın:
+                                <ul>
+                                    <li>Sistem, giriş yapılan bilgilerin doğruluğunu kontrol eder</li>
+                                    <li>Eksik bilgi varsa uyarı mesajı görüntülenir</li>
+                                    <li>Tüm bilgiler tamamsa, tahakkuk hesaplama işlemi başlar</li>
+                                </ul>
+                            </li>
+                            <li>İşlem tamamlandığında:
+                                <ul>
+                                    <li>Sistem "Kayıt işlemi başarı ile yapılmıştır." mesajını gösterir</li>
+                                    <li>Form temizlenir ve yeni bir işlem için hazır hale gelir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Üzerinde "Çıkış" yazar ve kırmızı renkte parlak görünümlü bir düğmedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Yapmak İçin:</strong>
+                        <ol>
+                            <li>Çıkış butonuna tıklayın:
+                                <ul>
+                                    <li>Sistem "Çıkmak İstiyormusunuz?" şeklinde bir onay sorusu gösterir</li>
+                                </ul>
+                            </li>
+                            <li>Onay penceresinde:
+                                <ul>
+                                    <li>Evet'e tıklarsanız program kapanır</li>
+                                    <li>Hayır'a tıklarsanız program çalışmaya devam eder</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetmeden önce tüm alanların doğru doldurulduğundan emin olun</li>
+                    <li>Kayıt işlemi sırasında sistemden çıkmayın</li>
+                    <li>Tahakkuk miktarı büyükse kayıt işlemi biraz zaman alabilir</li>
+                    <li>Kaydedilmemiş bilgiler, programdan çıkıldığında kaybolacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Form Doğrulama ve Hata Mesajları:</h4>
+                <ol>
+                    <li><strong>Form Doğrulama:</strong>
+                        <ul>
+                            <li>Sistem, Kaydet butonuna basıldığında tüm alanları kontrol eder</li>
+                            <li>Eksik veya hatalı bir alan varsa uyarı mesajı gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Olası Hata Mesajları:</strong>
+                        <ul>
+                            <li>"Yıl bilgisi giriniz." - Yıl alanı boş bırakılmış</li>
+                            <li>"Dönem bilgisi giriniz." - Dönem alanı boş bırakılmış</li>
+                            <li>"Tahakkuk türünü seçiniz." - Tahakkuk tipi seçilmemiş</li>
+                            <li>"Ücret tipi seçiniz." - Ücret tipi seçilmemiş</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hata Durumunda Yapılacaklar:</strong>
+                        <ul>
+                            <li>Hata mesajını okuyun</li>
+                            <li>İlgili alanı düzeltin veya doldurun</li>
+                            <li>Tekrar Kaydet butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kaydet butonuna klavyeden ALT+K tuşlarıyla da erişebilirsiniz</li>
+                    <li>Çıkış butonuna klavyeden ESC tuşu ile de erişebilirsiniz</li>
+                    <li>İşlem sonrası formun otomatik temizlenmesi, ardışık tahakkuk işlemlerini hızlandırır</li>
+                    <li>Kaydedilen tahakkuk bilgileri sistem veritabanında saklanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB: Sonraki alana geçiş</li>
+                            <li>SHIFT+TAB: Önceki alana dönüş</li>
+                            <li>ENTER: TAB ile aynı işlevi görür</li>
+                            <li>ALT+Aşağı Ok: Açılır liste kutularını açma</li>
+                            <li>ESC: Programdan çıkış işlemini başlatır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı Veri Girişi:</strong>
+                        <ul>
+                            <li>Yıl ve dönem bilgileri doğru girildiğinde tüm süreç hızlanır</li>
+                            <li>Sık kullanılan tahakkuk tiplerini ezberlemek işlemi hızlandırır</li>
+                            <li>Aynı abone tiplerini içeren işlemleri art arda yapmak verimlidir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Ücret Tipi Listesi Boş Geliyor:</strong>
+                        <ul>
+                            <li>Sorun: Tahakkuk tipi seçildiği halde ücret tipi listesi boş</li>
+                            <li>Çözüm: Seçilen tahakkuk tipi için tanımlı ücret yoktur. Farklı bir tahakkuk tipi seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipleri Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Ücret tipi seçildiği halde abone tipleri listelenmedi</li>
+                            <li>Çözüm: Seçilen ücret tipine ait abone tipi tanımı yok. Farklı bir ücret tipi seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt İşlemi Yavaş:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıklandıktan sonra sistem uzun süre yanıt vermiyor</li>
+                            <li>Çözüm: Çok sayıda abone tipi varsa bu normaldir. İşlemin tamamlanmasını bekleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl/Dönem Değişikliği Sonrası Sorunlar:</strong>
+                        <ul>
+                            <li>Sorun: Yıl veya dönem değiştirildiğinde diğer alanlar sıfırlanmıyor</li>
+                            <li>Çözüm: Tahakkuk ve ücret tiplerini yeniden seçmelisiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Toplu tahakkuk işlemleri, sistem kaynaklarını yoğun kullanan işlemlerdir</li>
+                    <li>Büyük miktarda veri işlenirken diğer kullanıcıların sistem performansı etkilenebilir</li>
+                    <li>Tahakkuk işlemlerini mümkünse mesai saatleri dışında yapın</li>
+                    <li>İşlem öncesi gerekli yetkilere sahip olduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>En İyi Uygulama Önerileri:</h4>
+                <ul>
+                    <li>İşlemleri belirli bir düzende yapmak hatalardan kaçınmanızı sağlar</li>
+                    <li>Önce küçük gruplar halinde test işlemleri yapın</li>
+                    <li>Sık kullandığınız parametreleri not alın</li>
+                    <li>Herhangi bir sorunla karşılaştığınızda sistem yöneticinize başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

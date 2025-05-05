@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Fiyat Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Fiyat Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-donem">Yıl ve Dönem Bilgileri Girişi</a></li>
+                <li><a href="#tahakkuk-tipi">Tahakkuk Tipi Seçimi</a></li>
+                <li><a href="#abone-tipi">Abone Tipi Seçimi</a></li>
+                <li><a href="#atik-su">Atık Su Ayarları</a></li>
+                <li><a href="#kontor-katsayi">Kontör ve Katsayı Bilgileri</a></li>
+                <li><a href="#su-degerler">Su ve Atık Su Değerleri Girişi</a></li>
+                <li><a href="#kayit-islemleri">Kayıt İşlemleri (Yeni, Güncelleme, Silme)</a></li>
+                <li><a href="#kayit-gezinme">Kayıtlar Arasında Gezinme</a></li>
+                <li><a href="#fiyat-kopyala">Fiyat Kopyalama Fonksiyonu</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Fiyat Tanımları" programı, su ve atık su fiyatlarını yönetmek için kullanılan bir araçtır. Bu program ile aşağıdaki işlemleri yapabilirsiniz:</p>
+            <ul>
+                <li>Belirli bir dönem için su fiyatlarını tanımlama</li>
+                <li>Farklı tahakkuk tipleri ve abone tiplerini yönetme</li>
+                <li>Su ve atık su kademeli fiyat tarifelerini ayarlama</li>
+                <li>Fiyat bilgilerini güncelleme, arama ve kopyalama</li>
+                <li>Farklı dönemler için tarife oluşturma</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz yıl ve dönem bilgisi</li>
+                    <li>Çalışacağınız tahakkuk tipi ve abone tipi bilgileri</li>
+                    <li>Atık su hesaplama parametreleri</li>
+                    <li>Su ve atık su kademe miktarları ve fiyatları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (su yeşili) renkli bir şeritte "Su Fiyat Tanımları (Giriş)" veya "Su Fiyat Tanımları (Değişiklik)" başlığı yer alır</li>
+                            <li>Başlık, yeni kayıt ekleme veya mevcut kayıt düzenleme durumuna göre değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üst Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana parametre giriş alanları bulunur</li>
+                            <li>Bu bölümde Yıl/Dönem, Tahakkuk Tipi, Abone Tipi, Atık Su parametreleri yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında su ve atık su değerleri için tablo yer alır</li>
+                            <li>Tablo, kademeli su ve atık su fiyatlarını gösteren satırlardan oluşur</li>
+                            <li>En üstte "Su Değerleri" ve "Atık su Değerleri" başlıkları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında bir dizi işlem butonu yer alır</li>
+                            <li>Bu butonlar arasında Kaydet, İleri, Geri, Sil, Fiyat Kopyala, Çıkış gibi seçenekler bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Yıl alanına konumlanır</li>
+                    <li>Yeni kayıt eklemek için tüm gerekli alanları doldurmalısınız</li>
+                    <li>Kayıt güncellemek için önce kaydı bulmalı, sonra değişiklikleri yapmalısınız</li>
+                    <li>Boş su değeri satırları otomatik olarak yeni satır için kullanılır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="yil-donem" class="section">
+        <h2>Yıl ve Dönem Bilgileri Girişi</h2>
+        <div class="info-box">
+            <h3>Yıl ve Dönem Bilgisi Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Yıl/Dönem Alanları Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Programın üst kısmında, başlık çizgisinin hemen altında ilk sırada yer alır</li>
+                            <li>"Yıl" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu ve bir buton vardır</li>
+                            <li>Sol taraftaki metin kutusu Yıl, sağdaki kutu Dönem için kullanılır</li>
+                            <li>En sağdaki buton dönem arama (seçme) butonudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Yıl alanına işlem yapmak istediğiniz yılı girin (örn. 2023)
+                                <ul>
+                                    <li>Bu alan 4 haneli olmalıdır</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak Dönem alanına geçin</li>
+                            <li>Dönem alanına ilgili dönem numarasını girin (örn. 1, 2, 3)
+                                <ul>
+                                    <li>Bu alan 1-2 haneli olabilir</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Dönem Seçim Butonu Kullanımı:</strong>
+                        <ol>
+                            <li>Yıl ve Dönem alanlarının hemen sağında, küçük bir büyüteç simgesi içeren buton bulunur</li>
+                            <li>Bu butona tıkladığınızda "Su Dönem" penceresi açılır</li>
+                            <li>Açılan pencerede kayıtlı dönemlerin listesi görüntülenir</li>
+                            <li>Listeden istediğiniz dönemi seçin</li>
+                            <li>Seçiminiz onaylandığında, seçilen dönemin bilgileri otomatik olarak Yıl ve Dönem alanlarına aktarılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl ve Dönem alanları boş bırakılamaz, mutlaka doldurulmalıdır</li>
+                    <li>Yıl alanına 4 rakamdan oluşan geçerli bir yıl girilmelidir</li>
+                    <li>Dönem alanına en fazla 2 rakamdan oluşan geçerli bir dönem numarası girilmelidir</li>
+                    <li>Yıl ve Dönem bilgileri, diğer alanlarla birlikte kaydın benzersiz tanımlayıcısını oluşturur</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Manuel giriş yerine dönem seçim butonuyla dönem seçmek daha hatasız ve hızlıdır</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yıl ve Dönem bilgileri, diğer iki anahtar alan olan Tahakkuk Tipi ve Abone Tipi ile birlikte fiyat kaydını belirler</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tahakkuk-tipi" class="section">
+        <h2>Tahakkuk Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Tipi Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Tahakkuk Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl/Dönem satırının hemen altındaki ikinci satırda yer alır</li>
+                            <li>"Tahakkuk Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Liste kutusunda tahakkuk tipleri ve açıklamaları görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut tahakkuk tipleri listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz tahakkuk tipini seçin
+                                <ul>
+                                    <li>Liste içinde tahakkuk tipi kodu ve açıklaması birlikte görünür</li>
+                                    <li>Açıklamalar en fazla 25 karaktere kısaltılmış olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz tahakkuk tipi görüntülenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kayıt Arama:</strong>
+                        <ol>
+                            <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi girildikten sonra, listelere aşağı doğru gezinerek ilgili kayıtları arayabilirsiniz</li>
+                            <li>Tüm gerekli alanlar doldurulduktan sonra, sistem otomatik olarak kayıt araması yapacak ve mevcut kayıt bulunursa ekrana getirecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tahakkuk tipi seçilmeden işlem yapılamaz</li>
+                    <li>Tahakkuk tipi, kaydın temel tanımlayıcı bilgilerindendir</li>
+                    <li>Aynı yıl, dönem, tahakkuk tipi ve abone tipi kombinasyonu için sadece bir kayıt olabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tahakkuk tiplerinin kodlarını ve anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili tahakkuk tipinin ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Tahakkuk tipi seçimi ve diğer anahtarlar girildikten sonra tab tuşuna basarak Atık Su var mı alanına geçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="abone-tipi" class="section">
+        <h2>Abone Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Abone Tipi Nasıl Seçilir</h3>
+            <div class="step">
+                <h4>Abone Tipi Seçimi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tipi satırının hemen altındaki üçüncü satırda yer alır</li>
+                            <li>"Abone Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Liste kutusunda abone tipleri ve açıklamaları görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut abone tipleri listesi açılacaktır</li>
+                            <li>Listeden işlem yapmak istediğiniz abone tipini seçin
+                                <ul>
+                                    <li>Liste içinde abone tipi kodu ve açıklaması birlikte görünür</li>
+                                    <li>Açıklamalar en fazla 25 karaktere kısaltılmış olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz abone tipi görüntülenecektir</li>
+                            <li>Abone tipi seçiminden sonra, eğer diğer anahtar alanlar da doldurulmuşsa, sistem otomatik olarak kayıt araması yapacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Otomatik Arama İşlemi:</strong>
+                        <ol>
+                            <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi alanları doldurulduğunda, program otomatik olarak bu kriterlere uyan bir kayıt olup olmadığını kontrol eder</li>
+                            <li>Eğer eşleşen bir kayıt bulunursa, bu kayıtın tüm bilgileri ekranda görüntülenir</li>
+                            <li>Eğer eşleşen bir kayıt bulunmazsa, program yeni kayıt ekleme modunda kalır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Abone tipi seçilmeden işlem yapılamaz</li>
+                    <li>Abone tipi, kaydın temel tanımlayıcı bilgilerindendir</li>
+                    <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi kombinasyonu bir kaydı benzersiz şekilde tanımlar</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Abone tiplerinin kodlarını ve anlamlarını öğrenerek daha hızlı seçim yapabilirsiniz</li>
+                    <li>Listeyi açtığınızda klavyeden ilgili abone tipinin ilk harfini yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Abone tipi, fiyat tarifesinin uygulanacağı müşteri kategorisini belirler (örn. konut, işyeri, resmi daire)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="atik-su" class="section">
+        <h2>Atık Su Ayarları</h2>
+        <div class="info-box">
+            <h3>Atık Su Parametreleri Nasıl Ayarlanır</h3>
+            <div class="step">
+                <h4>Atık Su Var Mı Seçeneği:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone Tipi satırının hemen altındaki dördüncü satırda yer alır</li>
+                            <li>"Atık Su var Mı?" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, seçenekler listesi açılacaktır</li>
+                            <li>Üç seçenek bulunur:
+                                <ul>
+                                    <li>Boş (seçim yapılmamış)</li>
+                                    <li>Evet (1)</li>
+                                    <li>Hayır (2)</li>
+                                </ul>
+                            </li>
+                            <li>Atık su hesaplaması yapılacaksa "Evet" seçeneğini seçin</li>
+                            <li>Atık su hesaplaması yapılmayacaksa "Hayır" seçeneğini seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz değer görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Atık Su Oranı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>"Atık Su var Mı?" satırının hemen altındaki beşinci satırda yer alır</li>
+                            <li>"Atık Su Oranı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna atık su oranını girin</li>
+                            <li>Bu değer, su miktarına göre atık su miktarının hesaplanmasında kullanılır</li>
+                            <li>Sayısal bir değer olmalıdır (örn. 100 = %100, 80 = %80)</li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Katı Atık Su Oranı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>"Atık Su Oranı" satırının hemen altındaki altıncı satırda yer alır</li>
+                            <li>"Katı Atık Su Oranı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna katı atık su oranını girin</li>
+                            <li>Bu değer, katı atık için hesaplanan oranı belirtir</li>
+                            <li>Sayısal bir değer olmalıdır</li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Atık Su Miktarı Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>"Katı Atık Su Oranı" satırının hemen altındaki yedinci satırda yer alır</li>
+                            <li>"Atık Su Miktarı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, seçenekler listesi açılacaktır</li>
+                            <li>Üç seçenek bulunur:
+                                <ul>
+                                    <li>Boş (seçim yapılmamış)</li>
+                                    <li>Harcanan Su Miktarı (1)</li>
+                                    <li>Yatak Sayısı (2)</li>
+                                </ul>
+                            </li>
+                            <li>Atık su miktarı harcanan su miktarına göre hesaplanacaksa "Harcanan Su Miktarı" seçeneğini seçin</li>
+                            <li>Atık su miktarı yatak sayısına göre hesaplanacaksa "Yatak Sayısı" seçeneğini seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz değer görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Atık Su var Mı?" alanı "Evet" olarak seçildiğinde, atık su oranı ve hesaplama yöntemi seçilmelidir</li>
+                    <li>Atık su oranı genellikle 100 olarak girilir (kullanılan su kadar atık su)</li>
+                    <li>Katı atık su oranı, katı atık vergisi hesaplaması için kullanılır</li>
+                    <li>Atık su hesaplama yöntemi, abone tipine göre değişiklik gösterebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Abone tipine uygun atık su parametrelerini önceden belirleyin</li>
+                    <li>Eğer atık su hesaplaması yapılmayacaksa, "Atık Su var Mı?" alanını "Hayır" olarak ayarlayın</li>
+                    <li>Otel, hastane gibi abone tipleri için "Yatak Sayısı" seçeneği daha uygun olabilir</li>
+                    <li>Standart konut aboneleri için genellikle "Harcanan Su Miktarı" seçeneği kullanılır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kontor-katsayi" class="section">
+        <h2>Kontör ve Katsayı Bilgileri</h2>
+        <div class="info-box">
+            <h3>Kontör ve Katsayı Bilgileri Nasıl Ayarlanır</h3>
+            <div class="step">
+                <h4>Kontör Kademe ve Katsayı Alanları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>"Atık Su Miktarı" seçim alanının hemen altında yer alır</li>
+                            <li>"Kontör Kademe (1-2) / Katsayi (1-2-3)" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında beş adet metin kutusu yan yana yer alır</li>
+                            <li>İlk iki kutu kontör kademeleri için, son üç kutu katsayılar içindir</li>
+                            <li>Bu alan normalde gizlidir ve özel durumlarda kullanılır (Ekranda görünmeyebilir)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Birinci kontör kademe alanına ilk kademe değerini girin (varsayılan değer yoksa)
+                                <ul>
+                                    <li>Bu alan, ilk kontör kademesini belirtir</li>
+                                    <li>Sayısal bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci kontör kademe alanına geçin</li>
+                            <li>İkinci kontör kademe alanına ikinci kademe değerini girin
+                                <ul>
+                                    <li>Bu alan, ikinci kontör kademesini belirtir</li>
+                                    <li>Birinci değerden büyük olmalıdır</li>
+                                    <li>Değer girilmezse, sistem otomatik olarak 65000 değerini atar</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak birinci katsayı alanına geçin</li>
+                            <li>Birinci katsayı alanına ilk katsayı değerini girin
+                                <ul>
+                                    <li>Bu alan, ilk kademe için kullanılacak katsayıyı belirtir</li>
+                                    <li>Değer girilmezse, sistem otomatik olarak 1 değerini atar</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak ikinci katsayı alanına geçin</li>
+                            <li>İkinci katsayı alanına ikinci katsayı değerini girin
+                                <ul>
+                                    <li>Bu alan, ikinci kademe için kullanılacak katsayıyı belirtir</li>
+                                    <li>Değer girilmezse, sistem otomatik olarak birinci katsayı değerini kullanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak üçüncü katsayı alanına geçin</li>
+                            <li>Üçüncü katsayı alanına üçüncü katsayı değerini girin
+                                <ul>
+                                    <li>Bu alan, üçüncü kademe için kullanılacak katsayıyı belirtir</li>
+                                    <li>Değer girilmezse, sistem otomatik olarak ikinci katsayı değerini kullanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu alan genellikle gizlidir ve standart kullanımda görünmez olabilir</li>
+                    <li>Kontör kademe değerleri, fiyat kademelerinin belirlenmesinde kullanılır</li>
+                    <li>İkinci kademe değeri girilmezse, sistem otomatik olarak 65000 değerini atar</li>
+                    <li>İkinci kademe, birinci kademeden küçük olamaz</li>
+                    <li>İkinci kademe 65000'den büyük olamaz</li>
+                    <li>Katsayılar, fiyat hesaplamalarında çarpan olarak kullanılır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Standart kullanımda bu alanları değiştirmeniz gerekmeyebilir</li>
+                    <li>Kontör ve katsayı bilgileri genellikle sistem yöneticileri tarafından belirlenir</li>
+                    <li>Bir kademe için katsayı girilmezse, sistem bir önceki kademe katsayısını kullanır</li>
+                    <li>Kaydetme işleminden önce kontör ve katsayı değerlerinin doğruluğunu kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="su-degerler" class="section">
+        <h2>Su ve Atık Su Değerleri Girişi</h2>
+        <div class="info-box">
+            <h3>Su ve Atık Su Değerleri Tablosu Nasıl Kullanılır</h3>
+            <div class="step">
+                <h4>Tablo Yerleşimi ve Sütunlar:</h4>
+                <ol>
+                    <li><strong>Tablo Konumu:</strong>
+                        <ul>
+                            <li>Kontör ve katsayı bilgileri alanının altında, ekranın orta kısmında yer alır</li>
+                            <li>Tablo, ana parametrelerin girişinin yapıldığı alanların hemen altında bulunur</li>
+                            <li>Tablonun üst kısmında "Su Değerleri" ve "Atık su Değerleri" başlıkları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Yapısı:</strong>
+                        <ol>
+                            <li>Tablo yedi sütuna bölünmüştür:
+                                <ul>
+                                    <li>İşaretleyici Sütun: Aktif satırı gösterir, "*" işareti ile işaretlenir</li>
+                                    <li>İlk Miktar (Su): Su için ilk miktar değeri</li>
+                                    <li>Son Miktar (Su): Su için son miktar değeri</li>
+                                    <li>Fiyat (Su): Su için fiyat değeri</li>
+                                    <li>İlk Miktar (Atık Su): Atık su için ilk miktar değeri</li>
+                                    <li>Son Miktar (Atık Su): Atık su için son miktar değeri</li>
+                                    <li>Fiyat (Atık Su): Atık su için fiyat değeri</li>
+                                </ul>
+                            </li>
+                            <li>Her satır, su ve atık su için bir fiyat kademesini temsil eder</li>
+                            <li>Tabloda birden fazla satır olabilir, her satır farklı bir kademeyi gösterir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Fiyat Kademesi Bilgilerinin Girilmesi:</h4>
+                <ol>
+                    <li><strong>Veri Girişi Adımları (Su Değerleri):</strong>
+                        <ol>
+                            <li>Tablodaki ilk satırı seçin veya aktif satıra tıklayın</li>
+                            <li>İlk Miktar (Su) alanına kademe başlangıç değerini girin
+                                <ul>
+                                    <li>Bu alan, kademenin başlangıç su miktarını belirtir</li>
+                                    <li>İlk kademe için genellikle 0 veya 1 olarak girilir</li>
+                                    <li>Diğer kademeler için bir önceki kademenin son miktarından bir fazla değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak Son Miktar (Su) alanına geçin</li>
+                            <li>Son Miktar (Su) alanına kademe bitiş değerini girin
+                                <ul>
+                                    <li>Bu alan, kademenin son su miktarını belirtir</li>
+                                    <li>İlk miktar değerinden büyük olmalıdır</li>
+                                    <li>Son kademe için genellikle büyük bir değer girilir (örn. 1000, 9999)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak Fiyat (Su) alanına geçin</li>
+                            <li>Fiyat (Su) alanına bu kademe için birim fiyatı girin
+                                <ul>
+                                    <li>Bu alan, ilgili kademe için metreküp başına su fiyatını belirtir</li>
+                                    <li>Ondalık değer girilebilir (örn. 2.50, 3.75)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Veri Girişi Adımları (Atık Su Değerleri):</strong>
+                        <ol>
+                            <li>TAB tuşuna basarak İlk Miktar (Atık Su) alanına geçin</li>
+                            <li>İlk Miktar (Atık Su) alanına kademe başlangıç değerini girin
+                                <ul>
+                                    <li>Bu alan, kademenin başlangıç atık su miktarını belirtir</li>
+                                    <li>Genellikle su değerleriyle aynı olur</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak Son Miktar (Atık Su) alanına geçin</li>
+                            <li>Son Miktar (Atık Su) alanına kademe bitiş değerini girin
+                                <ul>
+                                    <li>Bu alan, kademenin son atık su miktarını belirtir</li>
+                                    <li>Genellikle su değerleriyle aynı olur</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak Fiyat (Atık Su) alanına geçin</li>
+                            <li>Fiyat (Atık Su) alanına bu kademe için birim fiyatı girin
+                                <ul>
+                                    <li>Bu alan, ilgili kademe için metreküp başına atık su fiyatını belirtir</li>
+                                    <li>Ondalık değer girilebilir (örn. 1.25, 2.00)</li>
+                                </ul>
+                            </li>
+                            <li>Son alana girişi tamamladığınızda, otomatik olarak yeni bir satır eklenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Mevcut Satırlar Arasında Geçiş:</h4>
+                <ol>
+                    <li><strong>Satır Seçme:</strong>
+                        <ul>
+                            <li>Tablodaki herhangi bir hücreye tıklayarak ilgili satırı seçebilirsiniz</li>
+                            <li>Seçilen satır, ilk sütunda "*" işareti ile işaretlenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Arasında Gezinme:</strong>
+                        <ol>
+                            <li>Satırlar arasında gezinmek için fare ile istediğiniz satırdaki herhangi bir alana tıklayın</li>
+                            <li>Aktif satır değiştiğinde, ilk sütundaki işaret de yeni satıra taşınır</li>
+                            <li>TAB tuşunu kullanarak alanlar arasında sırayla ilerleyebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Satır Silme:</h4>
+                <ol>
+                    <li><strong>Satır Silme Butonu:</strong>
+                        <ul>
+                            <li>Tablonun altında, sayfanın alt kısmında bir "Satır Sil" butonu bulunur</li>
+                            <li>Buton üzerinde küçük bir çarpı işareti ve "Satır Sil" yazısı yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Silme İşlemi:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırı seçmek için satırdaki herhangi bir alana tıklayın</li>
+                            <li>Satır seçildiğinde, ilk sütunda "*" işareti görünecektir</li>
+                            <li>"Satır Sil" butonuna tıklayın</li>
+                            <li>Seçilen satır tablodan silinecektir</li>
+                            <li>Tüm satırlar silinirse, sistem otomatik olarak yeni bir boş satır ekler</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Her kademe için İlk Miktar değeri, bir önceki kademenin Son Miktar değerinden bir fazla olmalıdır</li>
+                    <li>Son Miktar değeri, İlk Miktar değerinden büyük olmalıdır</li>
+                    <li>Kademeler arasında boşluk olmamalıdır (örn. 0-10, 11-20, 21-30)</li>
+                    <li>Fiyatlar, geçerli para birimi cinsinden (TL, kuruş vb.) girilmelidir</li>
+                    <li>Atık su değerleri, "Atık Su var Mı?" alanı "Evet" olarak seçildiğinde anlamlıdır</li>
+                    <li>Son kademenin Son Miktar değeri, makul bir üst sınır olmalıdır (örn. 1000, 9999)</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kademeleri düzenli bir yapıda oluşturun (örn. 0-10, 11-20, 21-50)</li>
+                    <li>Genellikle daha yüksek kademeler için daha yüksek birim fiyatlar girilir</li>
+                    <li>Atık su fiyatları genellikle su fiyatlarıyla orantılıdır</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca gezinebilirsiniz</li>
+                    <li>Son alana veri girişini tamamladığınızda, otomatik olarak yeni bir satır eklenir</li>
+                    <li>Gereksiz satırları "Satır Sil" butonu ile kaldırabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-islemleri" class="section">
+        <h2>Kayıt İşlemleri (Yeni, Güncelleme, Silme)</h2>
+        <div class="info-box">
+            <h3>Yeni Kayıt Ekleme</h3>
+            <div class="step">
+                <h4>Yeni Kayıt Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Yeni Kayıt Modu:</strong>
+                        <ul>
+                            <li>Program ilk açıldığında veya mevcut bir kaydı tamamladıktan sonra "Yeni Kayıt" modunda olur</li>
+                            <li>Bu modda, ekranın üst kısmında "Su Fiyat Tanımları (Giriş)" başlığı görünür</li>
+                            <li>Tüm alanlar boş olarak başlar ve imleç Yıl alanında konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Kayıt Ekleme Adımları:</strong>
+                        <ol>
+                            <li>Yıl ve Dönem bilgilerini girin</li>
+                            <li>Tahakkuk Tipi ve Abone Tipi seçimlerini yapın</li>
+                            <li>Atık Su parametrelerini ayarlayın</li>
+                            <li>Gerekirse Kontör ve Katsayı bilgilerini düzenleyin</li>
+                            <li>Su ve Atık Su değerlerini tabloya girin
+                                <ul>
+                                    <li>Kademe başlangıç ve bitiş değerlerini belirleyin</li>
+                                    <li>Her kademe için fiyat bilgilerini girin</li>
+                                    <li>Gerektiği kadar kademe ekleyin</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın (ekranın alt kısmında, sol tarafta disketi simgeleyen buton)</li>
+                            <li>Kayıt işlemi tamamlandığında sistem bir onay mesajı gösterecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kayıt Güncelleme İşlemi:</h4>
+                <ol>
+                    <li><strong>Mevcut Kaydı Bulma:</strong>
+                        <ol>
+                            <li>Güncellemek istediğiniz kaydın Yıl ve Dönem bilgilerini girin</li>
+                            <li>Tahakkuk Tipi ve Abone Tipi seçimlerini yapın</li>
+                            <li>Bu dört alanın kombinasyonu (Yıl, Dönem, Tahakkuk Tipi, Abone Tipi) belirli bir kaydı tanımlar</li>
+                            <li>Tüm alanlar doldurulduğunda, sistem otomatik olarak bu kriterlere uyan kaydı arayacaktır</li>
+                            <li>Eğer kayıt bulunursa, tüm alanlar bu kaydın değerleriyle doldurulacaktır</li>
+                            <li>Ekranın üst kısmında "Su Fiyat Tanımları (Değişiklik)" başlığı görünecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Güncelleme Adımları:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz alanlarda gerekli düzenlemeleri yapın</li>
+                            <li>Atık Su parametrelerini güncelleyin</li>
+                            <li>Su ve Atık Su değerlerini tabloda düzenleyin
+                                <ul>
+                                    <li>Mevcut kademeleri değiştirebilirsiniz</li>
+                                    <li>Yeni kademeler ekleyebilirsiniz</li>
+                                    <li>Gereksiz kademeleri silebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Tüm değişiklikleri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Güncelleme işlemi tamamlandığında sistem bir onay mesajı gösterecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kayıt Silme İşlemi:</h4>
+                <ol>
+                    <li><strong>Kayıt Silme Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz kaydı bulun
+                                <ul>
+                                    <li>Yıl ve Dönem bilgilerini girin</li>
+                                    <li>Tahakkuk Tipi ve Abone Tipi seçimlerini yapın</li>
+                                    <li>Sistem otomatik olarak kaydı arayacak ve bulacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Kayıt ekranda görüntülendiğinde, silme işlemi için hazırsınız</li>
+                            <li>Ekranın alt kısmında bulunan "Sil" butonuna tıklayın</li>
+                            <li>Sistem silme işlemini onaylamanızı isteyecektir
+                                <ul>
+                                    <li>Bir onay penceresi açılacaktır</li>
+                                    <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın</li>
+                                    <li>İptal etmek için "Hayır" butonuna tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Silme işlemi onaylandığında, kayıt sistemden kalıcı olarak silinecektir</li>
+                            <li>İşlem tamamlandığında sistem tekrar yeni kayıt moduna dönecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kayıtlar Arasında Arama:</h4>
+                <ol>
+                    <li><strong>Kayıtlar Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Kayıtlar" adlı bir buton bulunur (Üzerinde "win" yazabilir)</li>
+                            <li>Bu buton, kayıtlı fiyat tanımları arasında arama yapmanızı sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Arama Adımları:</strong>
+                        <ol>
+                            <li>"Kayıtlar" butonuna tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır</li>
+                            <li>Bu pencerede kayıtlı tüm fiyat tanımlarının listesi görüntülenir</li>
+                            <li>Listedeki her kayıt şu bilgileri içerir:
+                                <ul>
+                                    <li>Kayıt No</li>
+                                    <li>Yıl</li>
+                                    <li>Dönem</li>
+                                    <li>Tahakkuk Tipi</li>
+                                    <li>Abone Tipi</li>
+                                </ul>
+                            </li>
+                            <li>Listede istediğiniz kaydı bulun ve üzerine tıklayın</li>
+                            <li>Seçtiğiniz kayıt, ana ekranda ayrıntılı olarak görüntülenecektir</li>
+                            <li>Ana ekrana döndüğünüzde, seçilen kayıt bilgileri tüm alanlara yüklenmiş olacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kayıt silme işlemi geri alınamaz, silme öncesi dikkatli düşünün</li>
+                    <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi alanları kayıt aramada kullanılan anahtar alanlardır</li>
+                    <li>Aynı anahtar alanlara sahip birden fazla kayıt olamaz</li>
+                    <li>Kayıt güncellerken anahtar alanları değiştirirseniz, yeni bir kayıt oluşturmuş olursunuz</li>
+                    <li>Tüm değişiklikler Kaydet butonuna basılana kadar kaydedilmez</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir kayıt oluşturmadan önce, benzer bir kaydı şablon olarak kullanabilirsiniz</li>
+                    <li>Benzer bir kayıt bulmak için "Kayıtlar" butonunu kullanın</li>
+                    <li>Hızlı arama için Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi bilgilerini önceden hazırlayın</li>
+                    <li>Düzenli olarak kayıtlarınızın kontrolünü yapın</li>
+                    <li>Fiyat güncelleme işlemlerinde eski kayıtları silmek yerine kopyalayıp güncellemek daha verimli olabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-gezinme" class="section">
+        <h2>Kayıtlar Arasında Gezinme</h2>
+        <div class="info-box">
+            <h3>Kayıtlar Arasında İleri ve Geri Gitme</h3>
+            <div class="step">
+                <h4>Önceki ve Sonraki Kayıt Butonlarının Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları bölümünde yan yana iki buton bulunur</li>
+                            <li>Sol tarafta "Geri" (önceki kayıt) butonu, sağ tarafta "İleri" (sonraki kayıt) butonu yer alır</li>
+                            <li>"Geri" butonu üzerinde sol ok işareti, "İleri" butonu üzerinde sağ ok işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Önceki Kayda Gitme:</strong>
+                        <ol>
+                            <li>En az bir kayıt görüntülenmiş olmalıdır</li>
+                            <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi bilgilerinin girilmiş olması gerekir</li>
+                            <li>"Geri" butonuna tıklayın</li>
+                            <li>Sistem, mevcut kayıttan daha eski bir kaydı arayacaktır (sıralama kriterleri: Yıl, Dönem, Tahakkuk Tipi, Abone Tipi)</li>
+                            <li>Eğer daha eski bir kayıt bulunursa, bu kayıt ekranda görüntülenecektir</li>
+                            <li>Daha eski kayıt bulunamazsa, herhangi bir değişiklik olmayacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sonraki Kayda Gitme:</strong>
+                        <ol>
+                            <li>En az bir kayıt görüntülenmiş olmalıdır</li>
+                            <li>Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi bilgilerinin girilmiş olması gerekir</li>
+                            <li>"İleri" butonuna tıklayın</li>
+                            <li>Sistem, mevcut kayıttan daha yeni bir kaydı arayacaktır (sıralama kriterleri: Yıl, Dönem, Tahakkuk Tipi, Abone Tipi)</li>
+                            <li>Eğer daha yeni bir kayıt bulunursa, bu kayıt ekranda görüntülenecektir</li>
+                            <li>Daha yeni kayıt bulunamazsa, herhangi bir değişiklik olmayacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Belli Bir Kayda Doğrudan Gitme:</h4>
+                <ol>
+                    <li><strong>Kayıtlar Butonu ile Arama:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında "Kayıtlar" butonu bulunur</li>
+                            <li>Bu buton, tüm kayıtların listesini görüntülemenizi sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Doğrudan Kayıt Seçme Adımları:</strong>
+                        <ol>
+                            <li>"Kayıtlar" butonuna tıklayın</li>
+                            <li>Açılan pencerede, kayıtların listesi görüntülenecektir</li>
+                            <li>Bu liste şu sütunları içerir: Kayıt No, Yıl, Dönem, Tahakkuk Tipi, Abone Tipi</li>
+                            <li>Listede istediğiniz kaydı bulun ve üzerine tıklayın</li>
+                            <li>Pencere kapanacak ve seçtiğiniz kayıt ana ekranda görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yıl/Dönem, Tahakkuk Tipi ve Abone Tipi ile Arama:</h4>
+                <ol>
+                    <li><strong>Anahtar Alanlarla Arama:</strong>
+                        <ul>
+                            <li>Dört anahtar alan vardır: Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi</li>
+                            <li>Bu alanlar doldurulduğunda, sistem otomatik olarak eşleşen kaydı arar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Yıl ve Dönem alanlarını doldurun</li>
+                            <li>Tahakkuk Tipi ve Abone Tipi seçimlerini yapın</li>
+                            <li>Abone Tipi alanından çıktığınızda (TAB tuşuna basarak veya fare ile başka bir alana tıklayarak), sistem otomatik olarak arama yapar</li>
+                            <li>Eğer eşleşen bir kayıt bulunursa, tüm alanlar bu kaydın değerleriyle doldurulur</li>
+                            <li>Eğer eşleşen bir kayıt bulunamazsa, sistem yeni kayıt ekleme modunda kalır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Geri" ve "İleri" butonları, mevcut kayıttan daha eski veya daha yeni kayıtları bulmak için kullanılır</li>
+                    <li>Arama yapmak için en az Yıl ve Dönem bilgilerinin girilmiş olması gerekir</li>
+                    <li>Doğru kayıtları bulmak için Tahakkuk Tipi ve Abone Tipi seçimlerini doğru yapmanız önemlidir</li>
+                    <li>Kayıtlar arasında gezinirken, kaydedilmemiş değişiklikler kaybolabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Hızlı arama için "Kayıtlar" butonunu kullanın</li>
+                    <li>Bir önceki veya bir sonraki döneme ait kayıtları görmek için "Geri" ve "İleri" butonlarını kullanın</li>
+                    <li>Kayıtlar arasında gezinmeden önce, mevcut değişiklikleri kaydetmeyi unutmayın</li>
+                    <li>Abone tipine göre filtreleme yapmak için önce Yıl, Dönem ve Tahakkuk Tipi seçin, sonra istediğiniz Abone Tipini seçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="fiyat-kopyala" class="section">
+        <h2>Fiyat Kopyalama Fonksiyonu</h2>
+        <div class="info-box">
+            <h3>Fiyat Bilgilerini Bir Kayddan Diğerine Kopyalama</h3>
+            <div class="step">
+                <h4>Fiyat Kopyalama Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, fiyat tablosunun altında "Fiyat Kopyala" butonu bulunur</li>
+                            <li>Buton üzerinde küçük bir kopya/belge ikonu ve "Fiyat Kopyala" yazısı yer alır</li>
+                            <li>Buton, ileri-geri navigasyon butonlarının yanında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fiyat Kopyalama İşlevinin Amacı:</strong>
+                        <ol>
+                            <li>Bir dönemden diğerine fiyat bilgilerini hızlıca kopyalamak için kullanılır</li>
+                            <li>Birden fazla abone tipi için aynı fiyat yapısını uygulamak için kullanılır</li>
+                            <li>Fiyat değişikliklerinde zaman kazandırır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Fiyat Kopyalama İşlemi:</h4>
+                <ol>
+                    <li><strong>Kopyalama İşlemi Adımları:</strong>
+                        <ol>
+                            <li>"Fiyat Kopyala" butonuna tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır (sufiyatcopy.asp)</li>
+                            <li>Bu pencerede, fiyat bilgilerini kopyalamak için gerekli seçenekler sunulur:
+                                <ul>
+                                    <li>Kaynak Yıl/Dönem: Hangi dönemin fiyat bilgilerini kopyalayacağınızı seçin</li>
+                                    <li>Kaynak Tahakkuk Tipi: Hangi tahakkuk tipinin fiyat bilgilerini kopyalayacağınızı seçin</li>
+                                    <li>Kaynak Abone Tipi: Hangi abone tipinin fiyat bilgilerini kopyalayacağınızı seçin</li>
+                                    <li>Hedef Yıl/Dönem: Fiyat bilgilerinin kopyalanacağı dönemi seçin</li>
+                                    <li>Hedef Tahakkuk Tipi: Fiyat bilgilerinin kopyalanacağı tahakkuk tipini seçin</li>
+                                    <li>Hedef Abone Tipi: Fiyat bilgilerinin kopyalanacağı abone tipini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Gerekli seçimleri yapın</li>
+                            <li>Kopyalama işlemini başlatmak için "Kopyala" butonuna tıklayın</li>
+                            <li>İşlem tamamlandığında, sistem bir onay mesajı gösterecektir</li>
+                            <li>Pencereyi kapatmak için "Kapat" butonuna tıklayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Fiyat Artışı ile Kopyalama:</h4>
+                <ol>
+                    <li><strong>Artış Oranı Belirtme:</strong>
+                        <ul>
+                            <li>Fiyat kopyalama penceresinde, "Artış Oranı (%)" alanı bulunabilir</li>
+                            <li>Bu alan, kopyalama sırasında fiyatlara uygulanacak artış oranını belirtmenizi sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Artış Oranı ile Kopyalama Adımları:</strong>
+                        <ol>
+                            <li>Kaynak ve hedef seçimlerini yapın</li>
+                            <li>"Artış Oranı (%)" alanına istediğiniz artış yüzdesini girin (örn. 10 = %10 artış)</li>
+                            <li>"Kopyala" butonuna tıklayın</li>
+                            <li>Sistem, kaynak fiyatları belirtilen oranda artırarak hedefe kopyalayacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hedef olarak seçilen Yıl/Dönem, Tahakkuk Tipi ve Abone Tipi kombinasyonunda mevcut bir kayıt varsa, bu kayıt üzerine yazılacaktır</li>
+                    <li>Kopyalama işlemi geri alınamaz, işlem öncesi dikkatli düşünün</li>
+                    <li>Kaynak seçimlerinin doğru olduğundan emin olun</li>
+                    <li>Artış oranı girerken, ondalık ayırıcı olarak virgül kullanın (örn. 5,5 = %5,5 artış)</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Yeni bir dönem için fiyatları ayarlarken, önceki dönemin fiyatlarını kopyalayıp artış oranı uygulayarak zaman kazanabilirsiniz</li>
+                    <li>Farklı abone tipleri için benzer fiyat yapıları oluşturmak için kopyalama işlemi kullanılabilir</li>
+                    <li>Kopyalama işleminden sonra, gerekirse fiyatlarda manuel düzenlemeler yapabilirsiniz</li>
+                    <li>Büyük miktarda fiyat güncellemesi yapmanız gerekiyorsa, kopyalama işlemi önemli zaman tasarrufu sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Kayıt Bulunamadı" Sorunu:</strong>
+                        <ul>
+                            <li>Sorun: Yıl, Dönem, Tahakkuk Tipi ve Abone Tipi girdiğiniz halde kayıt bulunamıyor.</li>
+                            <li>Çözüm: Girdiğiniz değerleri kontrol edin. Özellikle Tahakkuk Tipi ve Abone Tipi seçimlerinin doğru olduğundan emin olun. "Kayıtlar" butonunu kullanarak mevcut kayıtları görüntüleyin ve doğru parametreleri belirleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda hata alıyorsunuz.</li>
+                            <li>Çözüm: Tüm zorunlu alanların doldurulduğundan emin olun. Tabloda en az bir fiyat kademesi tanımlanmış olmalıdır. Değerlerin geçerli aralıklarda olduğunu kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atık Su Değerleri Görünmüyor:</strong>
+                        <ul>
+                            <li>Sorun: Tabloda atık su değerlerini giremiyorsunuz.</li>
+                            <li>Çözüm: "Atık Su var Mı?" alanının "Evet" olarak seçildiğinden emin olun. Bu alan "Hayır" ise, atık su değerleri anlamsız olacaktır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Satır Eklenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Tabloda son satıra veri girişi yaptığınız halde yeni satır otomatik olarak eklenmiyor.</li>
+                            <li>Çözüm: Son sütundaki alana (Fiyat (Atık Su)) veri girdikten sonra TAB tuşuna basın veya farklı bir alana tıklayın. Eğer hala sorun devam ederse, mevcut satırları kontrol edin ve gerekirse manuel olarak yeni satır eklemek için sonuncu satırdaki herhangi bir alana tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Benzer fiyat yapıları için "Fiyat Kopyala" fonksiyonunu kullanın</li>
+                    <li>Kademeli fiyatlandırma için tutarlı bir yapı belirleyin ve bunu tüm kayıtlarda uygulayın</li>
+                    <li>Yeni bir dönem oluşturmadan önce, benzer bir dönemin fiyat yapısını inceleyerek şablon olarak kullanın</li>
+                    <li>Fiyat girişi yaparken, kademeler arasında boşluk olmadığından emin olun</li>
+                    <li>Kayıtlar arasında gezinirken, dört anahtar alanın (Yıl, Dönem, Tahakkuk Tipi, Abone Tipi) kombinasyonunu göz önünde bulundurun</li>
+                    <li>Düzenli olarak kullandığınız tahakkuk tipi ve abone tipi kodlarını öğrenerek hızlı seçim yapın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Fiyat bilgilerini silmeden önce, bu bilgilerin başka bir yerde yedeklendiğinden emin olun</li>
+                    <li>Büyük çaplı fiyat değişikliklerinden önce, mevcut yapı hakkında notlar alın</li>
+                    <li>Sistem yoğunken kritik fiyat güncelleme işlemleri yapmaktan kaçının</li>
+                    <li>Fiyat değişikliklerini uygulamadan önce ilgili birimlerle koordineli çalışın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Su Fiyat Tanımları programı, su ve atık su fiyatlarını etkili bir şekilde yönetmenizi sağlayan kapsamlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Yıl ve dönem bilgisi girişi</li>
+                <li>Tahakkuk tipi ve abone tipi seçimi</li>
+                <li>Atık su parametrelerinin ayarlanması</li>
+                <li>Kontör ve katsayı bilgilerinin yönetimi</li>
+                <li>Su ve atık su değerlerinin kademeli olarak tanımlanması</li>
+                <li>Kayıt ekleme, güncelleme ve silme işlemleri</li>
+                <li>Kayıtlar arasında gezinme ve arama</li>
+                <li>Fiyat kopyalama fonksiyonu kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

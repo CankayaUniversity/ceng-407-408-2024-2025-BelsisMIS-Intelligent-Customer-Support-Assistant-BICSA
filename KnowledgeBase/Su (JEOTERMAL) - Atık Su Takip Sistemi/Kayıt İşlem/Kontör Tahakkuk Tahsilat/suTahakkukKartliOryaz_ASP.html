@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartlı Abone İşlemleri (ORYAZ) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kartlı Abone İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#uretici-secimi">Üretici Seçimi</a></li>
+                <li><a href="#kart-islemleri">Kart İşlemleri</a>
+                    <ul>
+                        <li><a href="#kart-okuma">Kart Okuma</a></li>
+                        <li><a href="#kredi-hesaplama">Kredi Hesaplama</a></li>
+                        <li><a href="#kontor-yukleme">Kontör Yükleme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#odeme-islemleri">Ödeme İşlemleri</a>
+                    <ul>
+                        <li><a href="#odeme-sekli">Ödeme Şekli Seçimi</a></li>
+                        <li><a href="#banka-odemesi">Banka Ödemesi Ayrıntıları</a></li>
+                        <li><a href="#kredi-karti-odemesi">Kredi Kartı Ödemesi Ayrıntıları</a></li>
+                    </ul>
+                </li>
+                <li><a href="#abone-bilgileri">Abone Bilgileri ve Borç Durumu</a></li>
+                <li><a href="#fatura-bilgileri">Fatura Bilgileri</a></li>
+                <li><a href="#makbuz-islemleri">Makbuz İşlemleri</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Kartlı Abone İşlemleri" ekranı, su sayaçları için akıllı kart işlemlerini yönetmek üzere kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Abone kartlarını okuma</li>
+                <li>Yüklenecek kredi miktarını hesaplama</li>
+                <li>Karta kontör (kredi) yükleme</li>
+                <li>Tahsilat makbuzu oluşturma</li>
+                <li>Fatura bilgilerini görüntüleme</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Abonenin akıllı kartı (işlem yapacağınız kart)</li>
+                    <li>Aboneye yüklenecek kredi miktarı bilgisi</li>
+                    <li>Ödeme şekli bilgisi (nakit, banka vb.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Kartlı Abone İşlemleri (ORYAZ)" başlığı yer alır.</li>
+                            <li>Bu başlık, hangi üretici firmanın kart sistemiyle çalıştığınızı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üretici Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında farklı üretici firmaların isimleri (Baylan, Elektromed vb.) sıralanmıştır.</li>
+                            <li>Üreticiler farklı renk kutucuklar halinde (açık yeşil ve açık mavi) gösterilir.</li>
+                            <li>Her bir üretici kutucuğu tıklanabilir durumdadır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana Bilgi Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Üretici seçiminin altında abone bilgilerinin görüntülendiği ve işlem yapılan ana bölüm bulunur.</li>
+                            <li>Bu bölümde abone, kart ve sayaç bilgileri görüntülenir.</li>
+                            <li>Yüklenecek kredi miktarı ve ödeme şekli bu bölümde belirlenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kredi Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Ana bilgi giriş bölümünün altında kredi bilgileri yer alır.</li>
+                            <li>Yükleme tarihi, yüklenen kredi ve yedek kredi bilgileri burada gösterilir.</li>
+                            <li>Ayrıca bu bölümde yükleme notu girilebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında işlem butonları (Abone Oku, Hesapla, Kontör Yükle vb.) yer alır.</li>
+                            <li>Bu butonlar, programın temel işlevlerini gerçekleştirmenizi sağlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fatura Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında hesaplanan fatura bilgileri (Su Tutarı, Atık Su Tutarı vb.) görüntülenir.</li>
+                            <li>Makbuz bilgileri de bu bölümde yer alır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Öncelikle hangi firmanın kart sistemini kullanacağınızı seçmeniz gerekir.</li>
+                    <li>"Hesapla" ve "Kontör Yükle" butonları başlangıçta devre dışıdır.</li>
+                    <li>İşlem yapabilmek için önce "Abone Oku" butonu ile abone kartını okutmanız gerekir.</li>
+                    <li>Son Ödeme Tarihi alanı program açıldığında geçerli tarih ile otomatik doldurulur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="uretici-secimi" class="section">
+        <h2>Üretici Seçimi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Üretici Firma Seçimi:</h4>
+                <p>İşlemlere başlamadan önce, kullanacağınız kartın üretici firmasını seçmeniz gerekmektedir.</p>
+                <ol>
+                    <li><strong>Baylan:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, açık yeşil renkli kutucukta "Baylan" yazısı görüntülenir.</li>
+                            <li><strong>Kullanım:</strong> Baylan marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Elektromed:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Baylan" kutucuğunun hemen altında, açık mavi renkli kutucukta "Elektromed" yazısı görüntülenir.</li>
+                            <li><strong>Kullanım:</strong> Elektromed marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metlab:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Elektromed" kutucuğunun hemen altında, açık yeşil renkli kutucukta "Metlab" yazısı görüntülenir.</li>
+                            <li><strong>Kullanım:</strong> Metlab marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manas:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Metlab" kutucuğunun hemen altında, açık mavi renkli kutucukta "Manas" yazısı görüntülenir.</li>
+                            <li><strong>Kullanım:</strong> Manas marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Teksan:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Manas" kutucuğunun hemen altında, açık yeşil renkli kutucukta "Teksan" yazısı görüntülenir.</li>
+                            <li><strong>Kullanım:</strong> Teksan marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eas:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Bazı belediye kodlarında (örneğin 62100 koduna sahip belediyeler için), "Teksan" kutucuğunun altında, açık yeşil renkli kutucukta "Eas" yazısı görüntülenebilir.</li>
+                            <li><strong>Kullanım:</strong> Eas marka kartlarla işlem yapmak için bu kutucuğa tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Üretici Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Kartın üreticisini bilmiyorsanız, abonenin bilgilerinden veya kartın üzerindeki işaretlerden kontrol edebilirsiniz.</li>
+                    <li>Yanlış üretici seçimi durumunda, kart bilgileri doğru okunamayacağından işlemleriniz başarısız olabilir.</li>
+                    <li>Bir üretici seçtiğinizde, sistem sizi o üreticiye özel işlem ekranına yönlendirecektir.</li>
+                    <li>Her belediye, kendi anlaşmalı olduğu firmalarla çalıştığı için, bazı belediyeler için ekranda farklı üretici seçenekleri görüntülenebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kart-islemleri" class="section">
+        <h2>Kart İşlemleri</h2>
+        
+        <div id="kart-okuma" class="info-box">
+            <h3>Kart Okuma</h3>
+            
+            <div class="step">
+                <h4>Abone Kartını Okuma:</h4>
+                <ol>
+                    <li><strong>Kartı Yerleştirme:</strong>
+                        <ul>
+                            <li>Öncelikle kart okuyucunun bilgisayara bağlı olduğundan emin olun.</li>
+                            <li>Abonenin akıllı kartını kart okuyucuya yerleştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Oku Butonunu Kullanma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Buton, ekranın orta kısmında, işlem butonları bölümünde bulunur.</li>
+                            <li><strong>Görünüm:</strong> "Abone Oku" adlı gri renkli parlak buton.</li>
+                            <li><strong>Kullanım:</strong> Kartı okutmak için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kart Bilgilerinin Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Kart başarıyla okunduktan sonra, ekranın üst kısmındaki alanlar otomatik olarak doldurulur.</li>
+                            <li>"Abone No", "Kart No" ve "Sayaç No" alanları karttaki bilgilerle doldurulur.</li>
+                            <li>"Sicil No" ve "Adı Soyadı" alanları karttaki bilgilerle doldurulur.</li>
+                            <li>"Yıl", "Dönem" ve "Satış Sayısı" alanları sistem tarafından otomatik doldurulur.</li>
+                            <li>"Son Endeks" alanına mevcut endeks değeri otomatik olarak gelir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kredi Bilgilerinin Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında "Yükleme Tarihi", "Yüklenen Kredi" ve "Yedek Kredi" alanları karttaki bilgilerle doldurulur.</li>
+                            <li>Ekranın alt kısmında aboneye ait geçmiş borç bilgileri görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar ve Hata Mesajları:</h4>
+                <ul>
+                    <li><strong>Kart Okunamadı Hatası:</strong> "Kart No okunamadı lütfen kartı abone işlemlerinde okutunuz" mesajı görüntülenirse, kartın düzgün yerleştirilmediğini veya kartın hasar görmüş olabileceğini gösterir.</li>
+                    <li><strong>Abone Bitiş Tarihi Uyarısı:</strong> "Abonenin kapanış tarihi vardır. İşlem yapabilmek için abone işlemlerinden Abone Bitiş Tarihini kaldırınız!" mesajı görüntülenirse, bu abonenin sistemde kapatılmış olduğunu gösterir. İşlem yapmadan önce ilgili birimle iletişime geçerek abone bitiş tarihini kaldırtmanız gerekir.</li>
+                    <li><strong>Sayaç Numarası Hatası:</strong> Sayaç numarası 0 olarak görüntülenirse, "Sayaç numarasını düzeltip tekrar kart oluşturunuz" uyarısı alırsınız. Bu durumda abone işlemleri bölümüne yönlendirmeniz gerekir.</li>
+                    <li><strong>Tahsilat Kilidi Uyarısı:</strong> Abonenin tahsilatı kilitli olabilir. Bu durumda ekranda ilgili bir uyarı mesajı görürsünüz ve "Hesapla" butonu devre dışı kalır.</li>
+                    <li>Kartın okuyucuya doğru şekilde yerleştirildiğinden emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kart Okuma İpuçları:</h4>
+                <ul>
+                    <li>Kart okunamadığında kartı çıkarıp tekrar takın veya hafifçe temizleyin.</li>
+                    <li>Abone bilgilerinin doğru göründüğünden emin olun. Yanlış abone bilgileri görünüyorsa işleme devam etmeyin.</li>
+                    <li>Kart okunduktan sonra "Hesapla" ve "Kontör Yükle" butonları aktif hale gelir.</li>
+                    <li>Abonenin bakiye bilgisi görüntülendiğinde, bunu aboneye bildirin. Yükleme yapmadan önce eski borcunu ödemek isteyip istemediğini sorun.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kredi-hesaplama" class="info-box">
+            <h3>Kredi Hesaplama</h3>
+            
+            <div class="step">
+                <h4>Yüklenecek Kredi Miktarını Hesaplama:</h4>
+                <ol>
+                    <li><strong>Yüklenecek Kredi Girişi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Son Endeks / Yüklenecek Kredi" alanının sağ tarafında bulunan giriş kutusu.</li>
+                            <li><strong>Görünüm:</strong> Kısa bir metin kutusu.</li>
+                            <li><strong>Kullanım:</strong> Yüklenecek kredi miktarını (ton cinsinden) bu alana girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atık Su Miktarı:</strong>
+                        <ul>
+                            <li>Yüklenecek kredi miktarını girdiğinizde, sistem otomatik olarak atık su miktarını hesaplar.</li>
+                            <li>Bu hesaplama, abonelerin su tüketimlerinin yanında atık su hizmeti için de ücretlendirilmesini sağlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesapla Butonunu Kullanma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın orta kısmında, "Abone Oku" butonunun sağ tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> "Hesapla" adlı gri renkli parlak buton.</li>
+                            <li><strong>Kullanım:</strong> Yüklenecek kredi tutarını hesaplamak için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplanan Tutarın Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Hesaplama işlemi tamamlandıktan sonra, ekranın alt kısmındaki "Fatura Bilgileri" bölümünde hesaplanan tutarlar görüntülenir.</li>
+                            <li>"Su Tutarı", "Atık Su Tutarı", "Diğer Ücretler", "Ara Toplam", "KDV Tutarı" ve "Fatura Tutarı" alanları otomatik olarak doldurulur.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li><strong>Minimum Kredi Kontrolü:</strong> Yüklenecek kredi miktarı, sistemde tanımlı minimum kredi miktarından az olamaz. Böyle bir durumda uyarı mesajı alırsınız.</li>
+                    <li><strong>Dönem Kontrolü:</strong> Aynı dönem için daha önce tahakkuk yapılmışsa, "Bu döneme daha önce tahakkuk yapılmış" şeklinde bir uyarı mesajı alırsınız.</li>
+                    <li><strong>Fiyat Parametreleri Kontrolü:</strong> Sistemde fiyat parametreleri tanımlanmamışsa veya hatalı tanımlanmışsa, hesaplama işlemi yapılamaz ve uyarı mesajı alırsınız.</li>
+                    <li>Hesaplama yapılmadan "Kontör Yükle" işlemi gerçekleştirilemez.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kredi Hesaplama İpuçları:</h4>
+                <ul>
+                    <li>Yüklenecek kredi miktarını girdiğinizde, sistem otomatik olarak atık su miktarını hesaplar.</li>
+                    <li>Abonenin geçmiş borçları varsa, bu borçlar da fatura tutarına yansıtılabilir.</li>
+                    <li>Hesaplama yapmadan önce, doğru yıl ve dönem bilgilerinin göründüğünden emin olun.</li>
+                    <li>Hesaplanan tutarı aboneye bildirin ve onayını alın, ardından kontör yükleme işlemine geçin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kontor-yukleme" class="info-box">
+            <h3>Kontör Yükleme</h3>
+            
+            <div class="step">
+                <h4>Karta Kontör Yükleme:</h4>
+                <ol>
+                    <li><strong>Ödeme Şekli Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Ödeme Şekli" alanında bulunan açılır liste.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste kutusu.</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden uygun ödeme şeklini seçin (Nakit, Banka vb.).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yükleme Notu Girişi (Opsiyonel):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yükleme Notu" alanı, kredi bilgileri bölümünde bulunur.</li>
+                            <li><strong>Görünüm:</strong> Uzun bir metin kutusu.</li>
+                            <li><strong>Kullanım:</strong> Yükleme işlemiyle ilgili ek bilgileri bu alana girin.</li>
+                            <li><strong>Önem:</strong> Tahakkuksuz kontör yükleme işlemlerinde not girilmesi zorunludur. Ayrıca diğer özel durumlar için de not girilmesi faydalı olabilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi Kontrolü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Fatura bilgileri bölümünde, "Tarih" alanının sağ tarafında.</li>
+                            <li><strong>Görünüm:</strong> Tarih kutusu.</li>
+                            <li><strong>Kullanım:</strong> Son ödeme tarihini kontrol edin, gerekirse değiştirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontör Yükle Butonunu Kullanma:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın orta kısmında, "Hesapla" butonunun sağ tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> "Kontör Yükle" adlı gri renkli parlak buton.</li>
+                            <li><strong>Kullanım:</strong> Karta kontör yüklemek için bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Onayı ve Tamamlanması:</strong>
+                        <ul>
+                            <li>Yükleme işlemi başarıyla tamamlandığında "İşlem Tamamlandı" mesajı görüntülenir.</li>
+                            <li>Tahsilat makbuzu otomatik olarak yazdırılır.</li>
+                            <li>Form otomatik olarak temizlenir ve yeni bir işlem için hazır hale gelir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kontör yükleme işlemi öncesinde mutlaka "Hesapla" butonu ile tutarı hesaplatın.</li>
+                    <li>Yükleme işlemi sırasında kartı okuyucudan çıkarmayın.</li>
+                    <li>Banka veya kredi kartı ile ödeme seçildiğinde, ilgili alanların doldurulması zorunludur.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kontör Yükleme İpuçları:</h4>
+                <ul>
+                    <li>Yükleme işlemi tamamlandıktan sonra, abonenin kartını kontrol edin ve doğru kredi miktarının yüklendiğinden emin olun.</li>
+                    <li>İşlem tamamlandıktan sonra tahsilat makbuzunun bir kopyasını mutlaka aboneye verin.</li>
+                    <li>Yükleme notu alanına önemli bilgileri not etmek, ileride referans olması açısından faydalıdır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="abone-bilgileri" class="section">
+        <h2>Abone Bilgileri ve Borç Durumu</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Abone Bilgilerinin Görüntülenmesi:</h4>
+                <ol>
+                    <li><strong>Abone Numarası:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında ilk sırada, sol tarafta bulunan "Abone No / Kart No / Sayaç No / Tip" başlığının karşısındaki ilk metin kutusu.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin sistem numarası.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Numarası:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanının altında, "Sicil No" başlığının karşısında.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin sicil numarası.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adı Soyadı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sicil No" alanının altında, "Adı Soyadı" başlığının karşısında.</li>
+                            <li><strong>Görünüm:</strong> Yan yana iki adet sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin adı ve soyadı.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanının sağ tarafında, son metin kutusunda.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin tip açıklaması (Mesken, İşyeri vb.).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Abone Borç Durumu Bilgileri:</h4>
+                <ol>
+                    <li><strong>Geçmiş Dönem Borcu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ana bilgi giriş bölümünün alt kısmında, "Geçmiş Dönem Borcu:" başlığının karşısında.</li>
+                            <li><strong>Görünüm:</strong> Kırmızı renkli, sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin sadece su aboneliğinden kaynaklanan toplam borç miktarı.</li>
+                            <li><strong>Özellik:</strong> Borç varsa, abone kart okunduğunda sistem otomatik olarak bir uyarı mesajı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Borcu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Geçmiş Dönem Borcu" alanının altında, "Toplam Borcu:" başlığının karşısında.</li>
+                            <li><strong>Görünüm:</strong> Kırmızı renkli, sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Abonenin tüm belediye hizmetlerinden kaynaklanan toplam borç miktarı.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Tahsilat Kilitleri Hakkında Uyarılar:</h4>
+                <ul>
+                    <li>Bazı durumlarda sistemde abonenin tahsilat işlemleri kilitlenmiş olabilir.</li>
+                    <li>Tahsilat kilidi varsa, kart okunduğunda ilgili uyarı mesajı görüntülenir ve "Hesapla" butonu devre dışı kalır.</li>
+                    <li>Tahsilat kilitleri genellikle resmi kurumlar tarafından konur veya yasal sınırlamalara bağlıdır.</li>
+                    <li>Tahsilat kilidi olan bir aboneye işlem yapılabilmesi için öncelikle bu kilidin kaldırılması gereklidir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Bilgileri İpuçları:</h4>
+                <ul>
+                    <li>Abone kartını okuttuğunuzda, görüntülenen bilgilerin doğru olduğunu teyit edin.</li>
+                    <li>Abonenin borcu varsa, ödeme yapmak isteyip istemediğini sorun.</li>
+                    <li>Abone bilgilerinde bir hata veya tutarsızlık görürseniz, işleme devam etmeden önce sistem yöneticinize danışın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="odeme-islemleri" class="section">
+        <h2>Ödeme İşlemleri</h2>
+        
+        <div id="odeme-sekli" class="info-box">
+            <h3>Ödeme Şekli Seçimi</h3>
+            
+            <div class="step">
+                <h4>Ödeme Şekli Bilgileri:</h4>
+                <ol>
+                    <li><strong>Ödeme Şekli Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ana bilgi giriş bölümünde, "Son Endeks / Yüklenecek Kredi" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste kutusu.</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden uygun ödeme şeklini seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nakit Ödeme:</strong>
+                        <ul>
+                            <li>Nakit ödeme seçildiğinde ek bilgi girmeniz gerekmez.</li>
+                            <li>Sistem otomatik olarak nakit tahsilat olarak işlemi kaydeder.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Ödemesi:</strong>
+                        <ul>
+                            <li>Banka ödemesi seçildiğinde, ekranda ek alanlar görüntülenir:</li>
+                            <li><strong>Banka Hesap No:</strong> Açılır listeden banka hesabını seçin.</li>
+                            <li><strong>Dekont No:</strong> Banka dekont numarasını girin.</li>
+                            <li><strong>Ödeme Tarihi:</strong> Ödemenin yapıldığı tarihi girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kredi Kartı Ödemesi:</strong>
+                        <ul>
+                            <li>Kredi kartı ödemesi seçildiğinde, ekranda ek alan görüntülenir:</li>
+                            <li><strong>Kredi Kartı Hesap No:</strong> Açılır listeden kredi kartı hesabını seçin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="banka-odemesi" class="info-box">
+            <h3>Banka Ödemesi Ayrıntıları</h3>
+            
+            <div class="step">
+                <h4>Banka Ödemesi Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Banka Ayrıntıları Bölümü Görüntüleme:</strong>
+                        <ul>
+                            <li><strong>Tetikleme:</strong> Ödeme Şekli açılır listesinden "Banka" seçeneğini seçtiğinizde, banka ayrıntıları bölümü otomatik olarak görüntülenir.</li>
+                            <li><strong>Konum:</strong> "Ödeme Şekli" alanının altında görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Banka Hesap Numarası Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka ayrıntıları bölümünde ilk sırada yer alır.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste kutusu.</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden ödemenin yapıldığı banka hesabını seçin.</li>
+                            <li><strong>İçerik:</strong> Hesap numarası ve hesap adı birlikte görüntülenir (örneğin: "12345 - Ziraat Bankası").</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dekont Numarası Girişi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka ayrıntıları bölümünün ikinci satırında "Dekont No:" etiketinin karşısında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Metin kutusu.</li>
+                            <li><strong>Kullanım:</strong> Banka dekont numarasını bu alana girin.</li>
+                            <li><strong>Zorunluluk:</strong> Bu alan zorunludur ve boş bırakılamaz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ödeme Tarihi Girişi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Banka ayrıntıları bölümünde, "Dekont No:" alanının sağında, "Ödeme Tarihi:" etiketinin karşısında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Tarih kutusu.</li>
+                            <li><strong>Kullanım:</strong> Banka ödemesinin yapıldığı tarihi bu alana girin.</li>
+                            <li><strong>Format:</strong> GG.AA.YYYY formatında (örneğin: 15.04.2023).</li>
+                            <li><strong>Zorunluluk:</strong> Bu alan zorunludur ve boş bırakılamaz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Banka Ödemesi Uyarıları:</h4>
+                <ul>
+                    <li>Banka ödemesi seçildiğinde, tüm banka ayrıntı alanlarının doldurulması zorunludur.</li>
+                    <li>Dekont numarası girilmediğinde kontör yükleme işlemi gerçekleştirilemez.</li>
+                    <li>Ödeme tarihi geçerli bir tarih olmalıdır; gelecek tarihli ödeme girişi yapılamaz.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Banka Ödemesi İpuçları:</h4>
+                <ul>
+                    <li>Banka dekontu ile yapılan ödemelerde, dekont bilgilerini doğru girdiğinizden emin olun.</li>
+                    <li>Ödeme tarihini girerken, takvim simgesine tıklayarak açılan takvimden de seçim yapabilirsiniz.</li>
+                    <li>Sık kullanılan banka hesaplarını öğrenerek işlemlerinizi hızlandırabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="kredi-karti-odemesi" class="info-box">
+            <h3>Kredi Kartı Ödemesi Ayrıntıları</h3>
+            
+            <div class="step">
+                <h4>Kredi Kartı Ödemesi Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Kredi Kartı Ayrıntıları Bölümü Görüntüleme:</strong>
+                        <ul>
+                            <li><strong>Tetikleme:</strong> Ödeme Şekli açılır listesinden "Kredi Kartı" seçeneğini seçtiğinizde, kredi kartı ayrıntıları bölümü otomatik olarak görüntülenir.</li>
+                            <li><strong>Konum:</strong> "Ödeme Şekli" alanının altında görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kredi Kartı Hesap Numarası Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kredi kartı ayrıntıları bölümünde yer alır.</li>
+                            <li><strong>Görünüm:</strong> Açılır liste kutusu.</li>
+                            <li><strong>Kullanım:</strong> Açılır listeden ödemenin yapıldığı kredi kartı hesabını seçin.</li>
+                            <li><strong>İçerik:</strong> Hesap numarası ve hesap adı birlikte görüntülenir (genellikle "109" ile başlayan numaralar).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Kredi Kartı Ödemesi Uyarıları:</h4>
+                <ul>
+                    <li>Kredi kartı ödemesi seçildiğinde, kredi kartı hesabının seçilmesi zorunludur.</li>
+                    <li>Hesap seçimi yapılmadan kontör yükleme işlemi gerçekleştirilemez.</li>
+                    <li>Kredi kartı ödemelerinde dekont numarası ve ödeme tarihi girişi gerekmez.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kredi Kartı Ödemesi İpuçları:</h4>
+                <ul>
+                    <li>Kredi kartı ödemelerinde, doğru hesabın seçildiğinden emin olun.</li>
+                    <li>Farklı ödeme şekilleri arasında geçiş yaptığınızda, ilgili alanların otomatik olarak görünür veya gizli hale geldiğini göreceksiniz.</li>
+                    <li>Kredi kartı ödemeleri genellikle bankaların POS cihazları üzerinden gerçekleştirilir, bu nedenle ilgili POS işleminin tamamlandığından emin olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="fatura-bilgileri" class="section">
+        <h2>Fatura Bilgileri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Fatura Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Su Tutarı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Fatura bilgileri bölümünün sol üst kısmında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir (readonly) metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Yüklenecek su miktarının tutarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atık Su Tutarı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Su Tutarı" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Atık su hizmet bedelini gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Diğer Ücretler:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Atık Su Tutarı" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Ek ücretleri gösterir (varsa).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ara Toplam:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Fatura bilgileri bölümünün sağ üst kısmında, "Su Tutarı" alanının sağında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> KDV hariç toplam tutarı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>KDV Tutarı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Ara Toplam" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> Hesaplanan KDV tutarını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fatura Tutarı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "KDV Tutarı" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Kırmızı renkli, sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> KDV dahil toplam tutarı gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Diğer Ücretler" alanının altında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Sadece okunabilir metin kutusu.</li>
+                            <li><strong>İçerik:</strong> İşlem tarihini gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Tarih" alanının sağında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Düzenlenebilir tarih kutusu.</li>
+                            <li><strong>İçerik:</strong> Ödemenin yapılması gereken son tarihi gösterir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Fatura bilgileri, "Hesapla" butonu ile hesaplanmadan görüntülenmez.</li>
+                    <li>Hesaplanan tutarlar, dönem ve abone türüne göre değişiklik gösterebilir.</li>
+                    <li>Son ödeme tarihi, özellikle taksitli ödemeler için önemlidir, doğru girildiğinden emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Fatura Bilgileri İpuçları:</h4>
+                <ul>
+                    <li>Hesaplanan tutarların doğruluğunu kontrol edin, şüphe durumunda yeniden hesaplatın.</li>
+                    <li>Fatura tutarı, aboneye gösterilmesi gereken toplam ödeme miktarıdır.</li>
+                    <li>Son ödeme tarihi alanı değiştirilebilir, gerektiğinde manuel olarak güncelleyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="makbuz-islemleri" class="section">
+        <h2>Makbuz İşlemleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Makbuz Bilgileri ve Yazdırma:</h4>
+                <ol>
+                    <li><strong>Makbuz Bilgilerinin Görüntülenmesi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Fatura bilgileri bölümünün alt kısmında, "Tarih" ve "Son Ödeme Tarihi" alanlarının altında yer alır.</li>
+                            <li><strong>Görünüm:</strong> "Makbuz Seri" ve "Makbuz No" alanları.</li>
+                            <li><strong>İçerik:</strong> Makbuz seri numarası ve makbuz numarası otomatik olarak görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahsilat Makbuzunun Yazdırılması:</strong>
+                        <ul>
+                            <li>Kontör yükleme işlemi tamamlandıktan sonra, sistem otomatik olarak tahsilat makbuzunu yazdırma işlemini başlatır.</li>
+                            <li>Makbuz, ayarlarda belirtilen sayıda nüsha olarak yazdırılır.</li>
+                            <li>Makbuz üzerinde abone bilgileri, yüklenen kredi miktarı, tahsilat tutarı ve ödeme şekli gibi bilgiler yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Makbuz Numarasının Güncellenmesi:</strong>
+                        <ul>
+                            <li>Her başarılı tahsilat işleminden sonra makbuz numarası otomatik olarak bir arttırılır.</li>
+                            <li>Yeni bir işlem başlatıldığında güncel makbuz numarası görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Makbuz yazdırma işleminden önce yazıcının açık ve hazır olduğundan emin olun.</li>
+                    <li>Yazıcı hatası durumunda, işlem tamamlansa bile makbuz yazdırılamayabilir.</li>
+                    <li>Makbuz numaraları sıralı ve benzersiz olmalıdır, aynı makbuz numarasıyla birden fazla işlem yapılamaz.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Makbuz İşlemleri İpuçları:</h4>
+                <ul>
+                    <li>Makbuz üzerindeki bilgilerin doğru olduğunu kontrol edin.</li>
+                    <li>Makbuzun bir kopyasını aboneye, bir kopyasını da arşiv için saklayın.</li>
+                    <li>Makbuz yazdırılamadıysa, sistemde kayıtlı bilgilerle manuel makbuz düzenlenebilir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Ana İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Abone Oku Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın orta kısmında, işlem butonları bölümünün sol tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak görünümlü buton.</li>
+                            <li><strong>İşlev:</strong> Kart okuyucuya yerleştirilen aboneye ait kartı okur ve bilgileri ekrana getirir.</li>
+                            <li><strong>Kullanım:</strong> Kartı okuyucuya yerleştirdikten sonra bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesapla Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone Oku" butonunun sağ tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak görünümlü buton.</li>
+                            <li><strong>İşlev:</strong> Girilen yüklenecek kredi miktarına göre fatura tutarını hesaplar.</li>
+                            <li><strong>Kullanım:</strong> Yüklenecek kredi miktarını girdikten sonra bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontör Yükle Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Hesapla" butonunun sağ tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak görünümlü buton.</li>
+                            <li><strong>İşlev:</strong> Hesaplanan kredi miktarını karta yükler ve tahsilat işlemini gerçekleştirir.</li>
+                            <li><strong>Kullanım:</strong> Hesaplama işlemi tamamlandıktan sonra bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Form Temizle Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Kontör Yükle" butonunun sağ tarafında bulunur.</li>
+                            <li><strong>Görünüm:</strong> Gri renkli, parlak görünümlü buton.</li>
+                            <li><strong>İşlev:</strong> Formdaki tüm alanları temizler ve yeni bir işlem için hazır hale getirir.</li>
+                            <li><strong>Kullanım:</strong> Yeni bir işleme başlamak istediğinizde bu butona tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>"Hesapla" ve "Kontör Yükle" butonları, kart okunmadan önce devre dışıdır.</li>
+                    <li>İşlemler sırasında kartı okuyucudan çıkarmayın, aksi halde işlem başarısız olabilir.</li>
+                    <li>"Form Temizle" butonuna basıldığında tüm bilgiler silinir, işlem tamamlanmadan bu butona basmayın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Buton Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Butonlara tıklarken acele etmeyin, sistemin işlemi tamamlamasını bekleyin.</li>
+                    <li>Hata durumunda önce "Form Temizle" butonuna tıklayıp işlemi yeniden başlatın.</li>
+                    <li>İşlem sırası: Abone Oku → Yüklenecek Kredi Gir → Hesapla → Kontör Yükle şeklinde olmalıdır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kart Okunamadı Sorunu:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> "Kart No okunamadı" hatası veya bilgilerin ekrana gelmemesi.</li>
+                            <li><strong>Çözüm:</strong> Kartı çıkarıp tekrar takın, kartın temiz olduğundan emin olun, doğru üretici seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Yapılamıyor Sorunu:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> "Hesapla" butonuna tıklandığında fatura bilgileri görüntülenmiyor.</li>
+                            <li><strong>Çözüm:</strong> Yüklenecek kredi miktarının girildiğinden emin olun, gerekirse kartı tekrar okutun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kontör Yüklenemiyor Sorunu:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> "Yükleme İşlemi Başarısız" hatası.</li>
+                            <li><strong>Çözüm:</strong> Kartın okuyucuda doğru yerleştirildiğinden emin olun, işlemi tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Bitiş Tarihi Sorunu:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> "Abonenin kapanış tarihi vardır" uyarısı.</li>
+                            <li><strong>Çözüm:</strong> Abone işlemleri bölümünden abone bitiş tarihini kaldırtmanız gerekir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahsilat Kilidi Sorunu:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> "Hesapla" butonu devre dışı kalır ve tahsilat kilidi uyarısı görüntülenir.</li>
+                            <li><strong>Çözüm:</strong> Yetkili birime başvurarak tahsilat kilidinin nedenini öğrenin ve kaldırılmasını sağlayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ödeme Şekli Sorunları:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> Banka veya kredi kartı alanları görünmüyor veya seçilemiyor.</li>
+                            <li><strong>Çözüm:</strong> Ödeme şeklini açılır listeden tekrar seçin, sayfayı yenileyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Makbuz Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li><strong>Belirtileri:</strong> Makbuz yazdırılmıyor veya hatalı yazdırılıyor.</li>
+                            <li><strong>Çözüm:</strong> Yazıcının açık ve bağlı olduğundan emin olun, yazdırma işlemini tekrar başlatın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>İşlem Öncesi Hazırlık:</strong>
+                        <ul>
+                            <li>İşleme başlamadan önce aboneden yükletilecek kredi miktarını öğrenin.</li>
+                            <li>Ödeme şeklini önceden belirleyin.</li>
+                            <li>Kart okuyucunun doğru çalıştığından emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı İşlem Adımları:</strong>
+                        <ul>
+                            <li>Abone kartını okutun.</li>
+                            <li>Yüklenecek kredi miktarını girin ve hemen "Hesapla" butonuna tıklayın.</li>
+                            <li>Hesaplanan tutarı aboneye bildirin ve onayını alın.</li>
+                            <li>Onay sonrası "Kontör Yükle" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonrası Kontrol:</strong>
+                        <ul>
+                            <li>Yükleme işlemi tamamlandıktan sonra kartı tekrar okutarak yüklenen kredinin doğruluğunu kontrol edin.</li>
+                            <li>Makbuzun doğru yazdırıldığından emin olun.</li>
+                            <li>Aboneye makbuzu ve kartını vermeyi unutmayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Genel Uyarılar:</h4>
+                <ul>
+                    <li>Kartlı abone işlemleri sırasında sistem hatası alırsanız, işlemi iptal edip yeniden başlatın.</li>
+                    <li>Aboneden alınan ödeme tutarının, hesaplanan fatura tutarıyla aynı olduğundan emin olun.</li>
+                    <li>Farklı üreticilerin kartları birbirleriyle uyumlu değildir, doğru üreticiyi seçtiğinizden emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan ödeme şekli ve kredi miktarlarını öğrenerek işlem hızınızı artırabilirsiniz.</li>
+                    <li>Abonelere işlem sürecini kısaca açıklayarak, işlem sırasında beklemelerini sağlayın.</li>
+                    <li>Gün sonunda yapılan işlemlerin kontrolünü yapmak için tahsilat raporlarını kontrol edin.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Kartlı Abone İşlemleri (ORYAZ) sistemi, su sayaçları için akıllı kart işlemlerini hızlı ve etkili bir şekilde yönetmenizi sağlayan kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>İşlemleri sırasıyla gerçekleştirin.</li>
+                    <li>Kart bilgilerini doğru okuttuğunuzdan emin olun.</li>
+                    <li>Tahsilat işlemlerini dikkatle yapın.</li>
+                    <li>Aboneye makbuzunu mutlaka verin.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

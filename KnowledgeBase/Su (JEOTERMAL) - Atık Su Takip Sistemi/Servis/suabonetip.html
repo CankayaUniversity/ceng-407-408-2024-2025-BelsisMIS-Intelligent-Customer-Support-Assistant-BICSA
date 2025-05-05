@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abone Tipleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Abone Tipleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#abone-tipi">Abone Tipi Bilgileri (Ekleme, Silme, Güncelleme)</a></li>
+                <li><a href="#hesaplama-ayarlari">Abone Tipi İçin Hesaplama Ayarları</a></li>
+                <li><a href="#sayac-takdir">Sayaç Takdir Değerleri Ayarlama</a></li>
+                <li><a href="#kdv-vergi">KDV ve Vergi Ayarları</a></li>
+                <li><a href="#kategorilendirme">Abone Tipi Kategorilendirme ve Eşleştirme</a></li>
+                <li><a href="#butonlar">Navigasyon ve İşlem Butonları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Abone Tipleri programı, su abonelerinin tiplerini tanımlamak, düzenlemek ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni abone tipleri oluşturabilirsiniz</li>
+                <li>Var olan abone tiplerini düzenleyebilirsiniz</li>
+                <li>Abone tiplerinin hesaplama ayarlarını yapabilirsiniz</li>
+                <li>Sayaç takdir değerlerini belirleyebilirsiniz</li>
+                <li>KDV ve diğer vergilerin hesaplama ayarlarını yapabilirsiniz</li>
+                <li>Abone tiplerini kategorilere ayırabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Abone tipi kodlama sistemini</li>
+                    <li>Hesaplama tiplerini ve ne anlama geldiklerini</li>
+                    <li>Sayaç takdir hesaplama tiplerini</li>
+                    <li>KDV tahakkuk türlerini</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Abone Tipleri" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Abone Tipi alanıyla başlar</li>
+                            <li>Ardından Açıklama, Hesaplama Tipleri, Sayaç Takdir Değerleri, KDV Ayarları ve Kategorilendirme alanları sıralanır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Kaydet, Sil, İleri, Geri, Çıkış ve diğer navigasyon butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Abone Tipi alanına konumlanır</li>
+                    <li>Yeni kayıt modunda başlar</li>
+                    <li>İşlem yapmadan önce gerekli tüm alanları doldurduğunuzdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="abone-tipi" class="section">
+        <h2>Abone Tipi Bilgileri (Ekleme, Silme, Güncelleme)</h2>
+        <div class="info-box">
+            <h3>Abone Tipi Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>Abone Tipi Giriş Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, formun en üst satırında yer alır</li>
+                            <li>"Abone Tipi" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                            <li>Metin kutusu kısa, yaklaşık 4-5 karakter genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla bu alana gelin</li>
+                            <li>Abone tipi kodunu yazın (en fazla 4 haneli sayı olabilir)</li>
+                            <li>Mevcut bir abone tipini aramak istiyorsanız, kodu yazıp abone tipi alanından çıktığınızda (TAB tuşuna basarak veya başka bir alana tıklayarak) sistem otomatik olarak o kodu arayacaktır
+                                <ul>
+                                    <li>Kod bulunursa, tüm bilgiler ekrana otomatik olarak yüklenecektir</li>
+                                    <li>Kod bulunamazsa, yeni kayıt girişi için boş form hazır olacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Abone tipi kodu alanını boş bırakamazsınız, mutlaka bir değer girmelisiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Açıklama Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone Tipi alanının hemen altında yer alır</li>
+                            <li>"Açıklama" etiketi sol tarafta bulunur</li>
+                            <li>Metin kutusu geniş, yaklaşık 50 karakter uzunluğundadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açıklama Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla bu alana gelin</li>
+                            <li>Abone tipini tanımlayan açıklayıcı metni yazın (örn. "Mesken", "İşyeri", "Resmi Daire" vb.)</li>
+                            <li>En fazla 50 karakter girebilirsiniz</li>
+                            <li>Açıklama alanını boş bırakamazsınız, mutlaka bir değer girmelisiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Abone Tipi Aramak için Alternatif Yöntem:</h4>
+            <p>Abone tipi kodunu bilmiyorsanız ancak listeden seçmek istiyorsanız:</p>
+            <ol>
+                <li>Ekranın alt kısmında bulunan navigasyon butonları arasındaki "..." (üç nokta) butonuna tıklayın. Bu buton, abone tipi alanının sağ alt kısmında yer alır ve bir mercek/araştırma simgesi bulunabilir.</li>
+                <li>Açılan pencerede tüm abone tipleri listelenecektir</li>
+                <li>Listeden istediğiniz abone tipini seçin</li>
+                <li>Seçilen abone tipinin bilgileri otomatik olarak ana forma yüklenecektir</li>
+            </ol>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Kısa Yollar:</h4>
+            <ul>
+                <li>Yeni bir abone tipi eklemek için Abone Tipi alanına henüz kullanılmayan bir kod girin</li>
+                <li>Var olan bir abone tipini düzenlemek için kodunu yazın veya listeden seçin</li>
+                <li>Abone tiplerinde genellikle mantıklı bir sıralama kullanılır (örn. 1000-1999 meskenler, 2000-2999 işyerleri gibi)</li>
+            </ul>
+        </div>
+    </div>
+    <div id="hesaplama-ayarlari" class="section">
+        <h2>Abone Tipi İçin Hesaplama Ayarları</h2>
+        <div class="info-box">
+            <h3>Gecikme Zammı ve Hesaplama Tipi Ayarları</h3>
+            <div class="step">
+                <h4>Gecikme Zammı Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Açıklama alanının hemen altında yer alır</li>
+                            <li>"Gecikme Zammı" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gecikme Zammı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>İki seçenek görünecektir: "Hesapla" veya "Hesaplama"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Hesapla (1):</strong> Bu tipteki aboneler için gecikme zammı hesaplanacaktır</li>
+                                    <li><strong>Hesaplama (0):</strong> Bu tipteki aboneler için gecikme zammı hesaplanmayacaktır</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Hesaplama Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Gecikme Zammı alanının hemen altında yer alır</li>
+                            <li>"Hesaplama Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Tipi Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>İki seçenek görünecektir: "Kademeli Hesaplama" veya "Normal Hesaplama"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Kademeli Hesaplama (1):</strong> Su kullanım miktarına göre farklı tarifeler kullanılır</li>
+                                    <li><strong>Normal Hesaplama (2):</strong> Tek tarife kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                            <li>Varsayılan olarak "Normal Hesaplama" seçilidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Gecikme Zammı ayarı, ödemelerin gecikmesi durumunda ek ücret uygulanıp uygulanmayacağını belirler</li>
+                    <li>Hesaplama Tipi, su tüketim ücretinin nasıl hesaplanacağını belirler</li>
+                    <li>Kademeli hesaplama genellikle artan oranlı tarifeyi ifade eder (kullanım arttıkça birim fiyat artar)</li>
+                    <li>Bu ayarları doğru seçmek, abonelere yapılacak tahakkukların doğruluğu için kritik önem taşır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sayac-takdir" class="section">
+        <h2>Sayaç Takdir Değerleri Ayarlama</h2>
+        <div class="info-box">
+            <h3>Sayaç Takdir Hesaplama Ayarları</h3>
+            <div class="step">
+                <h4>Sayaç Takdir Hesaplama Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Hesaplama Tipi alanının hemen altında yer alır</li>
+                            <li>"Sayaç Takdir Hesaplama Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Takdir Hesaplama Tipi Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Beş farklı seçenek görünecektir:</li>
+                            <ul>
+                                <li><strong>Sayaç Takdir Bedeli (1):</strong> Sabit bir değer kullanılır</li>
+                                <li><strong>Bir Önceki Yılın Aynı Dönem Su Miktarı (2):</strong> Geçen yılın aynı dönemindeki su tüketimi baz alınır</li>
+                                <li><strong>Bir Önceki Dönem Kullanılan Su Miktarı (3):</strong> Bir önceki dönemdeki su tüketimi baz alınır</li>
+                                <li><strong>Geçen Yılın Kullanılan Su Ortalaması (4):</strong> Geçen yılın tüm dönemlerinin ortalaması alınır</li>
+                                <li><strong>X Dönem Kadar Ortalama Alınması (5):</strong> Belirli sayıda dönemin ortalaması alınır</li>
+                            </ul>
+                            <li>Abone tipine uygun olan hesaplama yöntemini seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Katsayı Ayarı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sayaç Takdir Hesaplama Tipi alanının hemen altında yer alır</li>
+                            <li>"Katsayı" etiketi sol tarafta bulunur</li>
+                            <li>Metin kutusu sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Katsayı Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla bu alana gelin</li>
+                            <li>Hesaplamalarda kullanılacak çarpan değerini girin</li>
+                            <li>Bu değer sayısal olmalı ve genellikle 1 varsayılan değerdir</li>
+                            <li>Örneğin, takdir edilecek miktarı %20 artırmak istiyorsanız 1.20 girebilirsiniz</li>
+                            <li>En fazla 2 haneli bir sayı girebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sayaç Takdir Miktarı (m³) Ayarı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Katsayı alanının hemen altında yer alır</li>
+                            <li>"Sayaç Takdir Miktarı (m³)" etiketi sol tarafta bulunur</li>
+                            <li>Metin kutusu sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Takdir Miktarı Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla bu alana gelin</li>
+                            <li>Sayaç okunamadığında varsayılan olarak kullanılacak su miktarını girin</li>
+                            <li>Bu değer metreküp (m³) cinsinden olmalıdır</li>
+                            <li>En fazla 15 haneli bir sayı girebilirsiniz</li>
+                            <li>Bu alan özellikle "Sayaç Takdir Bedeli" hesaplama tipi seçildiğinde önemlidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Sayaç Takdir Dönem Ayarı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sayaç Takdir Miktarı alanının hemen altında yer alır</li>
+                            <li>"Sayaç Takdir Dönem" etiketi sol tarafta bulunur</li>
+                            <li>Metin kutusu sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Takdir Dönem Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın veya TAB tuşuyla bu alana gelin</li>
+                            <li>Hesaplamada kullanılacak dönem sayısını girin</li>
+                            <li>Bu değer sayısal olmalıdır</li>
+                            <li>En fazla 5 haneli bir sayı girebilirsiniz</li>
+                            <li>Bu alan özellikle "X Dönem Kadar Ortalama Alınması" hesaplama tipi seçildiğinde önemlidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Sayaç takdir değerleri, sayaç okunamadığında veya arızalandığında kullanılacak değerleri belirler</li>
+                    <li>Doğru hesaplama tipini seçmek, adil bir tahakkuk için önemlidir</li>
+                    <li>Katsayı değeri genellikle 1 olarak bırakılır, ancak özel durumlarda değiştirilebilir</li>
+                    <li>Sayaç Takdir Miktarı, özellikle "Sayaç Takdir Bedeli" seçeneğinde kritik önem taşır</li>
+                    <li>Dönem sayısı, "X Dönem Kadar Ortalama Alınması" seçeneğinde kaç dönemin ortalamasının alınacağını belirler</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Tavsiye Edilen Ayarlar:</h4>
+                <ul>
+                    <li>Mesken tipi aboneler için genellikle "Bir Önceki Dönem Kullanılan Su Miktarı" tercih edilir</li>
+                    <li>Mevsimsel değişim gösteren işyerleri için "Bir Önceki Yılın Aynı Dönem Su Miktarı" daha uygundur</li>
+                    <li>Yeni aboneler için "Sayaç Takdir Bedeli" kullanılmalıdır</li>
+                    <li>Düzenli tüketimi olan kurumsal aboneler için "Geçen Yılın Kullanılan Su Ortalaması" tercih edilebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kdv-vergi" class="section">
+        <h2>KDV ve Vergi Ayarları</h2>
+        <div class="info-box">
+            <h3>KDV ve Vergi Hesaplama Ayarları</h3>
+            <div class="step">
+                <h4>Muaf Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sayaç Takdir Dönem alanının hemen altında yer alır</li>
+                            <li>"Muaf" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Muaf Ayarı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Üç seçenek görünecektir: "Seçiniz", "Evet" ve "Hayır"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Seçiniz (-1):</strong> Henüz bir seçim yapılmadı</li>
+                                    <li><strong>Evet (1):</strong> Bu abone tipi vergilerden muaf tutulacak</li>
+                                    <li><strong>Hayır (0):</strong> Bu abone tipine normal vergi uygulanacak</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yatak Sayısına Göre Tahakkuk:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Muaf alanının hemen altında yer alır</li>
+                            <li>"Yatak Sayısına Göre Tahakkuk" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yatak Sayısına Göre Tahakkuk Ayarı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Üç seçenek görünecektir: "Seçiniz", "Evet" ve "Hayır"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Seçiniz (-1):</strong> Henüz bir seçim yapılmadı</li>
+                                    <li><strong>Evet (1):</strong> Tahakkuk yatak sayısına göre hesaplanacak (hastane, otel gibi yerler için)</li>
+                                    <li><strong>Hayır (0):</strong> Yatak sayısı dikkate alınmayacak</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>KDV Hesaplanacak mı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yatak Sayısına Göre Tahakkuk alanının hemen altında yer alır</li>
+                            <li>"KDV Hesaplanacak mı" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>KDV Hesaplanacak mı Ayarı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>İki seçenek görünecektir: "Evet" ve "Hayır"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Evet (1):</strong> Bu abone tipine KDV uygulanacak</li>
+                                    <li><strong>Hayır (0):</strong> Bu abone tipine KDV uygulanmayacak</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="kdv-vergi-devam" class="section">
+        <div class="info-box">
+            <div class="step">
+                <h4>KDV Hesabı (KDV Tahakkuk Türü):</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>KDV Hesaplanacak mı alanının hemen altında yer alır</li>
+                            <li>"KDV Hesabı" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>KDV Hesabı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Sistemde tanımlı KDV tahakkuk türlerinin listesi açılacaktır</li>
+                            <li>Liste içindeki her kalem "tahakkuk kodu - tahakkuk açıklaması" formatında görünür</li>
+                            <li>Genellikle 391 ile başlayan kodlar KDV tahakkuk türleri için kullanılır</li>
+                            <li>Abone tipine uygun KDV tahakkuk türünü seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Atık Su KDV Hesabı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>KDV Hesabı alanının hemen altında yer alır</li>
+                            <li>"Atık Su KDV Hesabı" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Atık Su KDV Hesabı Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Sistemde tanımlı KDV tahakkuk türlerinin listesi açılacaktır</li>
+                            <li>Liste içindeki her kalem "tahakkuk kodu - tahakkuk açıklaması" formatında görünür</li>
+                            <li>Genellikle 391 ile başlayan kodlar KDV tahakkuk türleri için kullanılır</li>
+                            <li>Atık su için uygun KDV tahakkuk türünü seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>KDV ve vergi ayarları, abonelerin faturalarındaki vergi hesaplamalarını doğrudan etkiler</li>
+                    <li>KDV Hesabı seçilmediğinde, kaydetme işlemi sırasında "KDV tahakkuk türü seçilmemiş" uyarısı alırsınız</li>
+                    <li>Resmi kurumlar, okullar, camiler gibi bazı abone tipleri vergiden muaf olabilir</li>
+                    <li>Yatak sayısına göre tahakkuk özellikle hastane, yurt, otel gibi tesisler için önemlidir</li>
+                    <li>KDV ve Atık Su KDV hesapları farklı olabilir, doğru seçimi yaptığınızdan emin olun</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="kategorilendirme" class="section">
+        <h2>Abone Tipi Kategorilendirme ve Eşleştirme</h2>
+        <div class="info-box">
+            <h3>Abone Tipi Sınıflandırma Ayarları</h3>
+            <div class="step">
+                <h4>Abone Tipi (ÇTV) Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Atık Su KDV Hesabı alanının hemen altında yer alır</li>
+                            <li>"Abone Tipi (ÇTV)" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sol tarafta ve "Abone Tip Eşleştir" butonu sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tipi (ÇTV) Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Üç seçenek görünecektir: "Seçiniz", "İşyeri" ve "Mesken"</li>
+                            <li>Seçiminizi yapın:
+                                <ul>
+                                    <li><strong>Seçiniz (-1):</strong> Henüz bir sınıflandırma belirlenmedi</li>
+                                    <li><strong>İşyeri (1):</strong> Ticari faaliyet gösteren yerler</li>
+                                    <li><strong>Mesken (0):</strong> Konut olarak kullanılan yerler</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Abone Tip Eşleştir Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Abone Tipi (ÇTV) açılır listesinin sağ tarafında yer alır</li>
+                            <li>Üzerinde "Abone Tip Eşleştir" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde çelik mavisi renkte yazı görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tip Eşleştir Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Butona tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır: "suAboneTipSec"</li>
+                            <li>Bu pencerede abone tipleri listesi görüntülenir</li>
+                            <li>İlgili abone tipini seçerek eşleştirme yapabilirsiniz</li>
+                            <li>Eşleştirme yapıldıktan sonra pencere kapanır ve seçilen değer ana forma aktarılır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Üst Abone Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Abone Tipi (ÇTV) alanının hemen altında yer alır</li>
+                            <li>"Üst Abone Tipi" etiketi sol tarafta bulunur</li>
+                            <li>Açılır liste kutusu (dropdown) sol tarafta ve "Üst Abone Tip Oluştur" butonu sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üst Abone Tipi Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Sistemde tanımlı üst abone tiplerinin listesi açılacaktır</li>
+                            <li>Liste içindeki her kalem bir üst abone tipi kategorisini temsil eder</li>
+                            <li>En üstte "Seçiniz" seçeneği bulunur (bu değer 0'dır)</li>
+                            <li>Abone tipiniz için uygun üst kategoriyi seçin</li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Üst Abone Tip Oluştur Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Üst Abone Tipi açılır listesinin sağ tarafında yer alır</li>
+                            <li>Üzerinde "Üst Abone Tip Oluştur" yazısı bulunur</li>
+                            <li>Gri zemin üzerinde çelik mavisi renkte yazı görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üst Abone Tip Oluştur Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Butona tıklayın</li>
+                            <li>Yeni bir pencere açılacaktır: "suUstAboneTip"</li>
+                            <li>Bu pencerede yeni bir üst abone tipi oluşturabilirsiniz</li>
+                            <li>Gerekli alanları doldurun ve kaydedin</li>
+                            <li>İşlem tamamlandıktan sonra pencere kapanır ve yeni oluşturulan üst abone tipi, Üst Abone Tipi listesine eklenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Abone Tipi (ÇTV) seçimi, Çevre Temizlik Vergisi kategorisini belirler</li>
+                    <li>İşyeri seçildiğinde daha yüksek ÇTV oranları uygulanabilir</li>
+                    <li>Üst Abone Tipi, abone tiplerini daha geniş kategoriler altında gruplamak için kullanılır</li>
+                    <li>Bu gruplandırma, raporlama ve toplu işlemlerde kolaylık sağlar</li>
+                    <li>Üst Abone Tipi seçilmediğinde (0 seçildiğinde), abone tipi herhangi bir üst gruba dahil edilmez</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Kategorilendirme İpuçları:</h4>
+                <ul>
+                    <li>Benzer abone tiplerini aynı üst kategori altında gruplamak, toplu işlemleri kolaylaştırır</li>
+                    <li>Örneğin, tüm resmi kurumları bir üst kategoride, tüm meskenleri başka bir üst kategoride toplayabilirsiniz</li>
+                    <li>Abone Tip Eşleştir fonksiyonu, mevcut abone tiplerini kolayca ilişkilendirmenizi sağlar</li>
+                    <li>Yeni bir kategori ihtiyacınız olduğunda, Üst Abone Tip Oluştur butonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="butonlar" class="section">
+        <h2>Navigasyon ve İşlem Butonları</h2>
+        <div class="info-box">
+            <h3>Kayıt İşlemleri ve Navigasyon Butonları</h3>
+            <div class="step">
+                <h4>Kaydetme İşlemi:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, orta bölümde butonlar grubunun içinde yer alır</li>
+                            <li>Üzerinde bir disk ikonu veya kaydetme simgesi bulunabilir</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Nasıl Yapılır:</strong>
+                        <ol>
+                            <li>Tüm gerekli alanları doldurun:
+                                <ul>
+                                    <li>Abone Tipi (zorunlu)</li>
+                                    <li>Açıklama (zorunlu)</li>
+                                    <li>Gecikme Zammı ve Hesaplama Tipi ayarlarını yapın</li>
+                                    <li>Sayaç Takdir ayarlarını yapın</li>
+                                    <li>KDV ve vergi ayarlarını yapın (KDV tahakkuk türü zorunludur)</li>
+                                    <li>Kategorilendirme seçimlerini yapın</li>
+                                </ul>
+                            </li>
+                            <li>Tüm bilgileri kontrol edin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                            <li>Yeni kayıt ekliyorsanız "Kaydet" butonu "Save" işlemini gerçekleştirir</li>
+                            <li>Mevcut bir kaydı düzenliyorsanız "Kaydet" butonu "Update" işlemini gerçekleştirir</li>
+                            <li>İşlem başarılı olduğunda bilgi mesajı görüntülenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Silme İşlemi:</h4>
+                <ol>
+                    <li><strong>Sil Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, butonlar grubunun içinde, genellikle Kaydet butonunun yanında yer alır</li>
+                            <li>Üzerinde bir çöp kutusu ikonu veya silme simgesi bulunabilir</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Nasıl Yapılır:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz abone tipini ekrana yükleyin (abone tipi kodunu girerek veya listeden seçerek)</li>
+                            <li>Sil butonuna tıklayın</li>
+                            <li>Onay mesajı görüntülenir: "İptal"</li>
+                            <li>Silmek istediğinize eminseniz "Evet" seçeneğini tıklayın</li>
+                            <li>İşlemi iptal etmek için "Hayır" seçeneğini tıklayın</li>
+                            <li>Silme işlemi başarılı olduğunda kayıt sistemden kaldırılır ve form temizlenir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İleri/Geri Navigasyon Butonları:</h4>
+                <ol>
+                    <li><strong>İleri-Geri Butonları Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, butonlar grubunun içinde yer alırlar</li>
+                            <li>İleri butonu genellikle sağa doğru ok işareti, Geri butonu sola doğru ok işareti içerir</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptirler</li>
+                        </ul>
+                    </li>
+                    <li><strong>İleri-Geri Butonları Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Geri (Önceki) butonunu kullanmak için:
+                                <ul>
+                                    <li>Geri butonuna tıklayın</li>
+                                    <li>Sistem, mevcut abone tipi kodundan daha küçük kodlu abone tiplerini arar</li>
+                                    <li>Bulduğu en büyük koda sahip (mevcut koddan küçük) abone tipini ekrana yükler</li>
+                                    <li>Eğer daha küçük kodlu abone tipi yoksa, işlem gerçekleşmez</li>
+                                </ul>
+                            </li>
+                            <li>İleri (Sonraki) butonunu kullanmak için:
+                                <ul>
+                                    <li>İleri butonuna tıklayın</li>
+                                    <li>Sistem, mevcut abone tipi kodundan daha büyük kodlu abone tiplerini arar</li>
+                                    <li>Bulduğu en küçük koda sahip (mevcut koddan büyük) abone tipini ekrana yükler</li>
+                                    <li>Eğer daha büyük kodlu abone tipi yoksa, işlem gerçekleşmez</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, genellikle butonlar grubunun en sağında yer alır</li>
+                            <li>Üzerinde bir kapı/çıkış ikonu veya X işareti bulunabilir</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan sonra Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanır ve bir önceki ekrana veya ana menüye dönersiniz</li>
+                            <li>Kaydedilmemiş değişiklikleriniz varsa, çıkmadan önce kaydetmeyi unutmayın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Arama (List/Win) Butonu:</h4>
+                <ol>
+                    <li><strong>Arama Butonu Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, butonlar grubunun içinde yer alır</li>
+                            <li>Üzerinde genellikle bir mercek ikonu veya "..." simgesi bulunur</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Butonu Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Arama butonuna tıklayın</li>
+                            <li>Yeni bir pencere açılır: abone tipleri listesi</li>
+                            <li>Bu listede mevcut tüm abone tipleri görüntülenir (kod ve açıklama ile birlikte)</li>
+                            <li>İstediğiniz abone tipini bulun ve üzerine tıklayın</li>
+                            <li>Seçtiğiniz abone tipinin bilgileri otomatik olarak ana forma yüklenir</li>
+                            <li>Bu buton özellikle abone tipi kodunu bilmediğiniz durumlarda faydalıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetmeden önce tüm zorunlu alanları doldurduğunuzdan emin olun:
+                        <ul>
+                            <li>Abone Tipi kodu</li>
+                            <li>Açıklama</li>
+                            <li>KDV tahakkuk türü</li>
+                        </ul>
+                    </li>
+                    <li>Silme işlemi geri alınamaz, bu nedenle işlem öncesi emin olun</li>
+                    <li>İleri-Geri butonları, abone tipi kodlarına göre sıralı gezinme sağlar</li>
+                    <li>Çıkış yapmadan önce kaydedilmemiş değişiklikleri kaydettiğinizden emin olun</li>
+                    <li>Düzenlemek istediğiniz abone tipini bulamıyorsanız, Arama (List/Win) butonunu kullanın</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>İşlem Kısayolları:</h4>
+                <ul>
+                    <li>Bilinen bir abone tipi kodunu doğrudan girmek, listeden arama yapmaktan daha hızlıdır</li>
+                    <li>TAB tuşu: Bir sonraki alana geçer</li>
+                    <li>SHIFT+TAB: Bir önceki alana geçer</li>
+                    <li>ESC tuşu: Programdan çıkış yapar</li>
+                    <li>ENTER tuşu: TAB gibi davranır, sonraki alana geçiş yapar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"KDV tahakkuk türü seçilmemiş" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda bu uyarıyı alıyorsunuz</li>
+                            <li>Çözüm: "KDV Hesabı" alanından bir KDV tahakkuk türü seçtiğinizden emin olun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydın Bulunamaması:</strong>
+                        <ul>
+                            <li>Sorun: Abone tipi kodunu girdikten sonra kayıt bulunamıyor</li>
+                            <li>Çözüm: Kod numarasını doğru girdiğinizden emin olun veya Arama (List/Win) butonunu kullanarak listeden seçim yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşleminin Yapılamaması:</strong>
+                        <ul>
+                            <li>Sorun: Abone tipini silmek istediğinizde işlem gerçekleşmiyor</li>
+                            <li>Çözüm: Bu abone tipi başka tablolarda kullanımda olabilir. Öncelikle ilişkili kayıtları kontrol edin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Varsayılan Değerlerin Yüklenmemesi:</strong>
+                        <ul>
+                            <li>Sorun: Yeni kayıt ekranında bazı alanların varsayılan değerleri yüklenmiyor</li>
+                            <li>Çözüm: Formu kapatıp yeniden açın veya tarayıcı sayfasını yenileyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Abone tipleri için mantıklı bir kodlama sistemi kullanın (örn. 1000-1999 meskenler, 2000-2999 işyerleri)</li>
+                    <li>Açıklama alanına anlaşılır ve ayırt edici tanımlar girin</li>
+                    <li>Benzer özellikteki abone tiplerini aynı üst abone tipi altında gruplandırın</li>
+                    <li>Yeni bir abone tipi eklerken, benzer bir mevcut abone tipini yükleyip üzerinde değişiklik yaparak zaman kazanabilirsiniz</li>
+                    <li>KDV ve vergi ayarlarını yaparken yasal düzenlemelere uygun hareket edin</li>
+                    <li>Değişikliklerden sonra abone tipinin doğru çalıştığını test edin</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Ortak Kullanım Senaryoları:</h4>
+                <ol>
+                    <li><strong>Yeni Bir Abone Tipi Oluşturma:</strong>
+                        <ul>
+                            <li>Kullanılmayan bir abone tipi kodu belirleyin</li>
+                            <li>Kodu ve açıklamayı girin</li>
+                            <li>Gecikme zammı ve hesaplama tipi ayarlarını yapın</li>
+                            <li>Sayaç takdir ayarlarını belirleyin</li>
+                            <li>KDV ve vergi ayarlarını yapın</li>
+                            <li>Kategorilendirme seçimlerini yapın</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mevcut Bir Abone Tipini Güncelleme:</strong>
+                        <ul>
+                            <li>Abone tipi kodunu girin veya listeden seçin</li>
+                            <li>Değiştirmek istediğiniz alanları güncelleyin</li>
+                            <li>Kaydet butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Tiplerini Toplu Olarak İnceleme:</strong>
+                        <ul>
+                            <li>İlk abone tipini yükleyin</li>
+                            <li>İleri butonunu kullanarak sırayla diğer abone tiplerine geçiş yapın</li>
+                            <li>Gerektiğinde değişiklik yapın ve kaydedin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Abone tipi tanımlamaları, tüm faturalama ve tahakkuk sistemini etkileyecek önemli ayarlardır</li>
+                    <li>Değişiklik yapmadan önce mevcut ayarları not edin</li>
+                    <li>Özellikle KDV ve vergi ayarlarını değiştirirken dikkatli olun</li>
+                    <li>Yeni eklenen veya değiştirilen abone tiplerini test faturalar üzerinde kontrol edin</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Abone Tipleri programı, su abonelerinin tiplerini tanımlamak ve yönetmek için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Abone tipi bilgilerinin girilmesi ve düzenlenmesi</li>
+                <li>Hesaplama ayarlarının yapılandırılması</li>
+                <li>Sayaç takdir değerlerinin belirlenmesi</li>
+                <li>KDV ve vergi ayarlarının yapılması</li>
+                <li>Abone tiplerinin kategorilendirmesi ve eşleştirilmesi</li>
+                <li>Kayıt işlemleri ve navigasyon butonlarının kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+</div>
+    </div>
+</body>
+</html>

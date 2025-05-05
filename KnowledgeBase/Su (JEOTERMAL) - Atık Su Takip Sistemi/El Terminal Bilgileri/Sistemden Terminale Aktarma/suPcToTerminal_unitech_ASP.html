@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitech El Terminali Veri Aktarım Sistemi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Unitech El Terminali Veri Aktarım Sistemi</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#dosya-yolu">Dosya Yolu</a></li>
+                        <li><a href="#yil-donem">Yıl ve Dönem Bilgileri</a></li>
+                        <li><a href="#abone-bilgileri">Abone Bilgileri</a></li>
+                        <li><a href="#sicil-bilgileri">Sicil Numarası</a></li>
+                        <li><a href="#sayac-bilgileri">Sayaç Numarası</a></li>
+                        <li><a href="#adres-bilgileri">Adres Bilgileri (Mahalle, Cadde, Hane, Sıra No)</a></li>
+                        <li><a href="#siralama">Sıralama Seçenekleri</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#islemler">Veri Aktarım İşlemleri</a>
+                    <ul>
+                        <li><a href="#veri-aktarimi">Veri Aktarımı Yapma</a></li>
+                        <li><a href="#filtreleme">Filtreleme ve Belirli Verileri Aktarma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#dosyalar">Oluşturulan Dosyalar ve İçerikleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Sistemden Terminale Veri Aktarma - UNITECH" ekranı, su abonelik bilgilerini ve ilgili verileri sisteminizden Unitech el terminallerine aktarmak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Abone bilgilerini</li>
+                <li>Abonelik türlerini</li>
+                <li>Sayaç durum bilgilerini</li>
+                <li>Kullanıcı bilgilerini</li>
+                <li>Fatura ve ödeme detaylarını</li>
+            </ul>
+            <p>terminallere gönderebilir, sahada okuma yapılmasını sağlayabilirsiniz.</p>
+            
+            <div class="info-box">
+                <h3>Sistemin Amacı ve Önemi</h3>
+                <p>Bu sistem, su sayaçlarının verimli ve doğru şekilde okunmasını sağlayarak belediye veya su idaresinin fatura işlemlerini kolaylaştırır. El terminali veri aktarım sürecinin doğru yönetilmesi şu avantajları sağlar:</p>
+                <ul>
+                    <li>Sayaç okuma işlemlerinin hızlanması ve hata oranının azalması</li>
+                    <li>Saha personelinin optimum rotalarda çalışabilmesi</li>
+                    <li>Müşteri şikayetlerinin azalması ve hizmet kalitesinin artması</li>
+                    <li>Faturalandırma süreçlerinin hızlanması ve nakit akışının iyileşmesi</li>
+                    <li>Abonelerle ilgili sorunların sahada tespit edilip raporlanabilmesi</li>
+                </ul>
+                <p>Program, bu faydaları sağlamak için su abonelik bilgilerini Unitech el terminalleri formatına dönüştürür ve terminallerin okuma işlemini yapabilmesi için gerekli tüm bilgileri hazırlar.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Dosyaların kaydedileceği klasör yolu</li>
+                    <li>Aktarılacak fatura dönemi (yıl ve dönem)</li>
+                    <li>Aktarılacak abone bilgilerinin aralığı (isteğe bağlı filtreleme için)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Sistemden terminale veri aktarma - UNITECH" başlığı yer alır.</li>
+                            <li>Bu başlık, programın amacını belirtir ve ekranın en üst kısmında yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında, ortalanmış bir tabloda veri giriş alanları bulunur.</li>
+                            <li>Bu bölüm, dosya yolu, yıl, dönem ve çeşitli filtreleme seçenekleri için veri giriş kutuları içerir.</li>
+                            <li>Veri giriş kutuları solda etiketleri, sağda ise giriş alanlarıyla düzenlenmiştir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Alanları:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün orta kısmında, abone numarası, sicil numarası, sayaç numarası ve adres bilgileri için filtreleme alanları yer alır.</li>
+                            <li>Bu alanların her biri, belirli bir aralık seçimine olanak sağlamak için yan yana iki giriş kutusundan oluşur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçeneği:</strong>
+                        <ul>
+                            <li>Filtreleme alanlarının altında, açılır menü (dropdown) şeklinde sıralama seçeneği bulunur.</li>
+                            <li>Bu seçenek, verilerin nasıl sıralanacağını belirlemenizi sağlar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında "Kaydet" ve "Çıkış" butonları yer alır.</li>
+                            <li>Bu butonlar, veri aktarım işlemini başlatmak veya programdan çıkmak için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tüm alanlar boş olarak gösterilir.</li>
+                    <li>İmleç "Dosya yolu" alanında konumlanır.</li>
+                    <li>Sayısal alanlara sadece sayı girişi yapılabilir.</li>
+                    <li>Tarih formatı günler için GGAAYYYY şeklindedir (örn. 25122023).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımları</h2>
+        
+        <div id="dosya-yolu" class="info-box">
+            <h3>Dosya Yolu</h3>
+            
+            <div class="step">
+                <h4>Dosya Yolu Alanı:</h4>
+                <ol>
+                    <li><strong>Dosya Yolu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, başlığın hemen altında ilk veri giriş alanıdır.</li>
+                            <li><strong>Özellik:</strong> Uzun bir metin kutusudur, 50 karaktere kadar giriş yapılabilir.</li>
+                            <li><strong>Varsayılan Değer:</strong> C:\GIDEN</li>
+                            <li><strong>Kullanım:</strong> Oluşturulacak dosyaların kaydedileceği klasör yolunu belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dosya Yolu İpuçları:</h4>
+                <ul>
+                    <li>Girdiğiniz klasörün bilgisayarınızda var olduğundan emin olun.</li>
+                    <li>Klasör yoksa, program hata verecektir; önceden klasörü oluşturmanız gerekir.</li>
+                    <li>Genellikle "C:\GIDEN" varsayılan olarak kullanılır, ancak ihtiyaca göre değiştirilebilir.</li>
+                    <li>Yol içinde Türkçe karakter kullanmamaya özen gösterin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="yil-donem" class="info-box">
+            <h3>Yıl ve Dönem Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Yıl ve Dönem Alanları:</h4>
+                <ol>
+                    <li><strong>Yıl:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Dosya yolu alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Fatura dönemine ait yıl bilgisini girin (örn. 2023).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Yıl alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 2 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Fatura dönemini belirtir (1-12 arası bir sayı, ayı temsil eder).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dönem Filtrelemesi Önemli Bilgi:</h4>
+                <ul>
+                    <li>Sistem, girdiğiniz dönem için tahakkuk edilmemiş (faturası kesilmemiş) aboneleri aktaracaktır.</li>
+                    <li>Eğer belirtilen yıl ve dönem için tüm abonelerin tahakkuku yapılmışsa, veri aktarımı boş sonuç verebilir.</li>
+                    <li>Aktarım öncesi ilgili dönemin durumunu kontrol etmeniz önerilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yıl ve Dönem İpuçları:</h4>
+                <ul>
+                    <li>Yıl alanına 4 haneli tam yıl girilmelidir (örn. 2023).</li>
+                    <li>Dönem alanına, su faturalandırma döneminize uygun sayı girilmelidir:</li>
+                    <ul>
+                        <li>Aylık faturalandırma yapılıyorsa: 1 (Ocak), 2 (Şubat), ..., 12 (Aralık)</li>
+                        <li>İki aylık faturalandırma yapılıyorsa: 1 (Ocak-Şubat), 2 (Mart-Nisan), ... gibi</li>
+                    </ul>
+                    <li>Veri aktarımı, belirtilen yıl ve dönem için tahakkuk edilmemiş (faturası kesilmemiş) aboneleri içerecektir.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Abone No Alanları:</h4>
+                <ol>
+                    <li><strong>Abone no (Başlangıç):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Dönem alanının altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> 8 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak abone numarası aralığının başlangıcını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone no (Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç abone numarasının sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> 8 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak abone numarası aralığının bitişini belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Numarası İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir abone grubuna veri aktarmak istiyorsanız, bu alanları doldurun.</li>
+                    <li>Tüm aboneleri aktarmak istiyorsanız, bu alanları boş bırakabilirsiniz.</li>
+                    <li>Sadece bir abone için aktarım yapmak isterseniz, başlangıç ve bitiş alanlarına aynı abone numarasını girin.</li>
+                    <li>Abone numaralarını girerken sıfırla başlayan numaraları, başındaki sıfırları yazmadan girin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sicil-bilgileri" class="info-box">
+            <h3>Sicil Numarası</h3>
+            
+            <div class="step">
+                <h4>Sicil No Alanları:</h4>
+                <ol>
+                    <li><strong>Sicil no (Başlangıç):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Abone numarası alanlarının altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> 8 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak sicil numarası aralığının başlangıcını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil no (Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç sicil numarasının sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> 8 karakterli sayısal bir alandır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak sicil numarası aralığının bitişini belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sicil Numarası İpuçları:</h4>
+                <ul>
+                    <li>Sicil numarası, abone sahibinin kimlik numarasıdır (genel sicil numarası).</li>
+                    <li>Belirli bir sicil numarası aralığı için aktarım yapmak istiyorsanız bu alanları doldurun.</li>
+                    <li>Tüm sicil numaraları için aktarım yapmak istiyorsanız, bu alanları boş bırakabilirsiniz.</li>
+                    <li>Sicil numarası filtrelemesi, özellikle belirli bir kuruma veya kişiye ait tüm abonelikleri aktarmak istediğinizde faydalıdır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sayac-bilgileri" class="info-box">
+            <h3>Sayaç Numarası</h3>
+            
+            <div class="step">
+                <h4>Sayaç No Alanları:</h4>
+                <ol>
+                    <li><strong>Sayaç no (Başlangıç):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Sicil numarası alanlarının altında, sol tarafta yer alır.</li>
+                            <li><strong>Özellik:</strong> 10 karakterli bir metin alanıdır (hem rakam hem harf içerebilir).</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak sayaç numarası aralığının başlangıcını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç no (Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Başlangıç sayaç numarasının sağında yer alır.</li>
+                            <li><strong>Özellik:</strong> 10 karakterli bir metin alanıdır (hem rakam hem harf içerebilir).</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak sayaç numarası aralığının bitişini belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sayaç Numarası İpuçları:</h4>
+                <ul>
+                    <li>Sayaç numaraları genellikle sayaç üzerinde yazılı olan benzersiz tanımlayıcılardır.</li>
+                    <li>Belirli sayaç modellerine veya bölgesine göre filtreleme yapmak istediğinizde kullanışlıdır.</li>
+                    <li>Bazı sayaç numaraları harf içerebilir, bu durumda büyük/küçük harf duyarlılığına dikkat edin.</li>
+                    <li>Tüm sayaçlar için aktarım yapmak istiyorsanız, bu alanları boş bırakabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="adres-bilgileri" class="info-box">
+            <h3>Adres Bilgileri</h3>
+            
+            <div class="step">
+                <h4>Mahalle, Cadde, Hane ve Sıra No Alanları:</h4>
+                <ol>
+                    <li><strong>Mahalle (Başlangıç ve Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Sayaç numarası alanlarının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 karakterli sayısal alanlardır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak mahalle kodu aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde (Başlangıç ve Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mahalle alanlarının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 karakterli sayısal alanlardır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak cadde kodu aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hane (Başlangıç ve Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Cadde alanlarının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 karakterli sayısal alanlardır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak hane numarası aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıra no (Başlangıç ve Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Hane alanlarının altında yer alır.</li>
+                            <li><strong>Özellik:</strong> 4 karakterli sayısal alanlardır.</li>
+                            <li><strong>Kullanım:</strong> Aktarılacak sıra numarası aralığını belirtir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Adres Bilgileri İpuçları:</h4>
+                <ul>
+                    <li>Adres bilgilerine göre filtreleme, belirli bir bölgedeki abonelere veri aktarmak istediğinizde kullanışlıdır.</li>
+                    <li>Mahalle ve cadde kodları, sisteminizdeki kod tablosuna göre sayısal değerlerdir, isimleri değil.</li>
+                    <li>Mahalle kodlarını bilmiyorsanız, sisteminizin diğer ekranlarından bu bilgilere ulaşabilirsiniz.</li>
+                    <li>Bölgesel bir aktarım yapmak için, önce mahalle kodunu belirleyin, gerekirse cadde, hane ve sıra numarası ile daraltın.</li>
+                    <li>Tüm adresler için aktarım yapmak istiyorsanız, bu alanları boş bırakabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="siralama" class="info-box">
+            <h3>Sıralama Seçenekleri</h3>
+            
+            <div class="step">
+                <h4>Sıralama Açılır Menüsü:</h4>
+                <ol>
+                    <li><strong>Konum:</strong> Adres bilgilerinin altında, ekranın ortasında yer alır.</li>
+                    <li><strong>Özellik:</strong> Açılır liste (dropdown) menüsüdür.</li>
+                    <li><strong>Kullanım:</strong> Aktarılacak verilerin hangi sıraya göre düzenleneceğini belirler.</li>
+                    <li><strong>Seçenekler:</strong>
+                        <ul>
+                            <li><strong>Abone no:</strong> Aboneleri abone numarasına göre sıralar.</li>
+                            <li><strong>Mahalle Cadde Hane:</strong> Aboneleri önce mahalle, sonra cadde, sonra hane ve son olarak sıra numarasına göre sıralar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sıralama Seçiminin Etkisi:</h4>
+                <ul>
+                    <li>"Abone no" seçildiğinde: Tüm veriler abone numarasına göre küçükten büyüğe sıralanacaktır.</li>
+                    <li>"Mahalle Cadde Hane" seçildiğinde: Veriler önce mahalle koduna, sonra aynı mahalle içinde cadde koduna, sonra hane ve sıra numarasına göre sıralanacaktır.</li>
+                    <li>Bu sıralama, terminalde abonelerin hangi sırada görüneceğini belirler ve saha personelinin rotasını etkileyebilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sıralama İpuçları:</h4>
+                <ul>
+                    <li>Saha ekibiniz belirli bir abone numarası sırasına göre okuma yapıyorsa "Abone no" seçeneğini kullanın.</li>
+                    <li>Saha ekibiniz coğrafi bölgelere göre okuma yapıyorsa "Mahalle Cadde Hane" seçeneği daha verimli olacaktır.</li>
+                    <li>Mahalle Cadde Hane sıralaması, özellikle saha personelinin belirli bir bölgeyi tamamlaması için optimum rotayı sağlar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, Çıkış butonunun solunda yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü bir düğmedir, diskete kaydetme simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Belirtilen kriterlere göre veri aktarımını başlatır ve dosyaları oluşturur.</li>
+                            <li><strong>Kullanım:</strong> Tüm gerekli bilgileri girdikten sonra veri aktarımını başlatmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, Kaydet butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü bir düğmedir, çıkış simgesi bulunur.</li>
+                            <li><strong>İşlev:</strong> Veri aktarım ekranını kapatır ve programa döner.</li>
+                            <li><strong>Kullanım:</strong> İşleminizi tamamladıktan sonra veya iptal etmek istediğinizde tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna basmadan önce tüm gerekli alanları doldurduğunuzdan emin olun.</li>
+                    <li>Özellikle Dosya Yolu, Yıl ve Dönem alanları zorunludur ve boş bırakılamaz.</li>
+                    <li>Çıkış butonuna basıldığında veri aktarımı yapılmadan program kapanır.</li>
+                    <li>İşlem sırasında ekranı kapatmayın, aktarım tamamlanana kadar bekleyin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Buton Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Veri aktarımı büyük veri miktarlarında zaman alabilir, sabırlı olun.</li>
+                    <li>Klavye ile ENTER tuşuna basarak da Kaydet butonunu etkinleştirebilirsiniz.</li>
+                    <li>ESC tuşu ile Çıkış butonunu etkinleştirebilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islemler" class="section">
+        <h2>Veri Aktarım İşlemleri</h2>
+        
+        <div id="veri-aktarimi" class="info-box">
+            <h3>Veri Aktarımı Yapma</h3>
+            
+            <div class="step">
+                <h4>Temel Veri Aktarım Adımları:</h4>
+                <ol>
+                    <li><strong>Programı Açma:</strong>
+                        <ul>
+                            <li>Sistemden Terminale Veri Aktarma - UNITECH programını açın.</li>
+                            <li>Ekran, veri giriş alanlarıyla birlikte görüntülenecektir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Zorunlu Bilgileri Girme:</strong>
+                        <ul>
+                            <li>Dosya Yolu alanına, terminale aktarılacak verilerin kaydedileceği klasör yolunu girin (örn. C:\GIDEN).</li>
+                            <li>Yıl alanına, aktarılacak fatura döneminin yılını girin (örn. 2023).</li>
+                            <li>Dönem alanına, fatura dönemini girin (1-12 arası).</li>
+                        </ul>
+                    </li>
+                    <li><strong>İsteğe Bağlı Filtreleri Belirleme:</strong>
+                        <ul>
+                            <li>Belirli bir abone grubunu aktarmak istiyorsanız, filtreleme alanlarını kullanın.</li>
+                            <li>Tüm aboneleri aktarmak istiyorsanız, filtreleme alanlarını boş bırakın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçeneğini Belirleme:</strong>
+                        <ul>
+                            <li>Açılır listeden, verilerin nasıl sıralanacağını seçin (Abone no veya Mahalle Cadde Hane).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aktarımı Başlatma:</strong>
+                        <ul>
+                            <li>Tüm gerekli bilgileri girdikten sonra "Kaydet" butonuna tıklayın.</li>
+                            <li>Sistem, belirtilen kriterlere göre verileri sorgulayacak ve dosyaları oluşturacaktır.</li>
+                            <li>İşlem sırasında ekranın yanıt vermediğini düşünebilirsiniz, bu normaldir, işlemin tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </li>
+
+                    <div class="tip-box">
+                        <h4>Aktarım Süresi Beklentileri:</h4>
+                        <ul>
+                            <li>Veri aktarım süresi, aktarılacak abone sayısına bağlı olarak değişir:</li>
+                            <li>100 abone için: Yaklaşık 1-2 dakika</li>
+                            <li>1.000 abone için: Yaklaşık 5-10 dakika</li>
+                            <li>10.000+ abone için: 30 dakika veya daha fazla sürebilir</li>
+                            <li>Aktarım sırasında programın yanıt vermediğini düşünseniz bile, işlemi kesmeyin ve tamamlanmasını bekleyin.</li>
+                        </ul>
+                    </div>
+
+                    <li><strong>İşlem Tamamlandıktan Sonra:</strong>
+                        <ul>
+                            <li>Aktarım tamamlandığında, belirtilen klasörde dosyalar oluşturulacaktır.</li>
+                            <li>El terminali için hazır olan bu dosyaları terminale yükleyebilirsiniz.</li>
+                            <li>Programdan çıkmak için "Çıkış" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Veri aktarımı sırasında, özellikle büyük veri setlerinde, sistem yanıt vermiyor gibi görünebilir. Bu normaldir, işlem tamamlanana kadar bekleyin.</li>
+                    <li>Aktarım sırasında programı kapatmayın veya bilgisayarı yeniden başlatmayın, bu veri kaybına neden olabilir.</li>
+                    <li>Dosya yolu olarak belirtilen klasörün var olduğundan ve yazma iznine sahip olduğunuzdan emin olun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Büyük veri setleri için işlemi mesai saatleri dışında planlamak daha verimli olabilir.</li>
+                    <li>Her aktarım öncesi, hedef klasördeki eski dosyaları yedeklemek iyi bir uygulamadır.</li>
+                    <li>Sorun yaşarsanız, daha küçük abone grupları halinde aktarım yapmayı deneyin.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="filtreleme" class="info-box">
+            <h3>Filtreleme ve Belirli Verileri Aktarma</h3>
+            
+            <div class="step">
+                <h4>Belirli Veri Gruplarını Aktarma:</h4>
+                <ol>
+                    <li><strong>Abone Numarasına Göre Filtreleme:</strong>
+                        <ul>
+                            <li>Abone no alanlarına başlangıç ve bitiş değerlerini girin.</li>
+                            <li>Örnek: 1000 ile 2000 arasındaki aboneleri aktarmak için, başlangıç olarak 1000, bitiş olarak 2000 girin.</li>
+                            <li>Tek bir abone için, her iki alana da aynı numarayı girin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Numarasına Göre Filtreleme:</strong>
+                        <ul>
+                            <li>Sicil no alanlarına başlangıç ve bitiş değerlerini girin.</li>
+                            <li>Bu, özellikle bir kuruma ait tüm abonelikleri aktarmak için kullanışlıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Numarasına Göre Filtreleme:</strong>
+                        <ul>
+                            <li>Sayaç no alanlarına başlangıç ve bitiş değerlerini girin.</li>
+                            <li>Belirli model veya seri sayaçları takip etmek için kullanışlıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adres Bilgilerine Göre Filtreleme:</strong>
+                        <ul>
+                            <li>Belirli bir mahalledeki aboneler için mahalle kodunu her iki mahalle alanına da girin.</li>
+                            <li>Daha spesifik bir bölge için cadde, hane ve sıra no alanlarını da kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Birden Fazla Filtre Kullanma:</strong>
+                        <ul>
+                            <li>Birden fazla filtreleme alanını birlikte kullanabilirsiniz.</li>
+                            <li>Örneğin, belirli bir mahalledeki belirli abone numarası aralığını aktarabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Filtreleme Uyarıları:</h4>
+                <ul>
+                    <li>Çok dar filtreler kullandığınızda, hiç veri bulunmaması durumu oluşabilir.</li>
+                    <li>Filtreleri tam olarak doldurmadığınızda, program beklediğinizden farklı sonuçlar üretebilir.</li>
+                    <li>Başlangıç değeri her zaman bitiş değerinden küçük veya eşit olmalıdır.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Tahakkuk Durumu ve Veri Aktarımı:</h4>
+                <ul>
+                    <li>Bu program, <strong>henüz tahakkuk edilmemiş</strong> (faturası kesilmemiş) aboneleri terminale aktarmak için tasarlanmıştır.</li>
+                    <li>Eğer filtrelediğiniz abonelerin tamamı için tahakkuk işlemi yapılmışsa, aktarım sonucunda boş dosyalar oluşabilir.</li>
+                    <li>Aktarım öncesi ilgili dönemin tahakkuk durumunu kontrol etmek için Su Tahakkuk ekranını kullanabilirsiniz.</li>
+                    <li>Tahakkuk yapılmış aboneler için tekrar okuma yapılacaksa, önce ilgili dönemin tahakkuklarını iptal etmek gerekebilir.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Önce geniş bir filtre ile deneme yapın, sonra gerekirse daraltın.</li>
+                    <li>Belirli bir mahalle veya bölgeye veri aktarırken, o bölgenin kod bilgilerini önceden hazırlayın.</li>
+                    <li>Abone gruplarını belirlerken, saha ekibinin günlük okuma kapasitesini dikkate alın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="terminal-hazirlik" class="info-box">
+        <h3>Terminal Hazırlığı Kontrol Listesi</h3>
+        
+        <div class="step">
+            <h4>Aktarım Öncesi Terminal Hazırlığı:</h4>
+            <ol>
+                <li><strong>Terminal Kontrolü:</strong>
+                    <ul>
+                        <li>El terminalinin şarjının tam olduğundan emin olun.</li>
+                        <li>Terminalin belleğinde yeterli boş alan olduğunu kontrol edin.</li>
+                        <li>Gerekirse eski dönem verilerini terminalden yedekleyin ve silin.</li>
+                    </ul>
+                </li>
+                <li><strong>Bağlantı Testi:</strong>
+                    <ul>
+                        <li>Terminali bilgisayara bağlayın ve bağlantının çalıştığını test edin.</li>
+                        <li>Terminal yazılımının güncel olduğundan emin olun.</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanıcı Bilgileri:</strong>
+                    <ul>
+                        <li>Terminal kullanıcılarının KUL.DAT dosyasında tanımlandığından emin olun.</li>
+                        <li>Kullanıcı şifrelerini terminal operatörlerine bildirin.</li>
+                    </ul>
+                </li>
+                <li><strong>Tarih ve Saat:</strong>
+                    <ul>
+                        <li>Terminaldeki tarih ve saat ayarlarının doğru olduğunu kontrol edin.</li>
+                        <li>Yanlış tarih/saat, okuma verilerinde sorunlara neden olabilir.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="dosyalar" class="section">
+        <h2>Oluşturulan Dosyalar ve İçerikleri</h2>
+        <div class="info-box">
+            <h3>El Terminaline Aktarılan Dosyalar</h3>
+            <p>Veri aktarımı tamamlandığında, belirtilen klasör yolunda aşağıdaki dosyalar oluşturulur:</p>
+            
+            <div class="step">
+                <h4>ABONE.DAT:</h4>
+                <ul>
+                    <li><strong>İçerik:</strong> Abone ve sayaç bilgilerini içerir.</li>
+                    <li><strong>Veri Alanları:</strong> 
+                        <ul>
+                            <li>Kullanıcı no, Abone/Sicil no, Mahalle ve Cadde kodları</li>
+                            <li>Kapı ve daire numaraları</li>
+                            <li>Abone tipi ve açıklaması</li>
+                            <li>Mahalle ve cadde adları</li>
+                            <li>Sayaç numarası ve durumu</li>
+                            <li>Geçmiş dönem borcu</li>
+                            <li>Abone adı ve soyadı</li>
+                            <li>Blok ve apartman bilgileri</li>
+                            <li>Fatura dönemi (yıl, ay)</li>
+                            <li>Endeks ve ödeme bilgileri</li>
+                            <li>Çeşitli ücret ve tutar bilgileri</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> El terminalinde abone bilgilerini görmek ve sayaç okuma işlemi yapmak için kullanılır.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>ABONETUR.DAT:</h4>
+                <ul>
+                    <li><strong>İçerik:</strong> Abone tiplerini ve tarife bilgilerini içerir.</li>
+                    <li><strong>Veri Alanları:</strong> 
+                        <ul>
+                            <li>Abone tipi kodu</li>
+                            <li>KDV ve atık su KDV oranları</li>
+                            <li>Atıksu oranı</li>
+                            <li>Su ve atıksu kademe bilgileri (alt sınır, üst sınır, fiyat)</li>
+                            <li>Minimum, maksimum ve uyarı tüketim miktarları</li>
+                            <li>KDV hesaplama bilgisi</li>
+                            <li>Çevre temizlik vergisi</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> El terminalinde tarifeler, kademeler ve ücret hesaplamaları için kullanılır.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>DURUM.DAT:</h4>
+                <ul>
+                    <li><strong>İçerik:</strong> Sayaç durum kodlarını ve açıklamalarını içerir.</li>
+                    <li><strong>Veri Alanları:</strong> 
+                        <ul>
+                            <li>Durum kodu</li>
+                            <li>Durum açıklaması</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> El terminalinde sayaç durumlarını (çalışıyor, arızalı, vb.) kaydetmek için kullanılır.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>KUL.DAT:</h4>
+                <ul>
+                    <li><strong>İçerik:</strong> Kullanıcı bilgilerini içerir.</li>
+                    <li><strong>Veri Alanları:</strong> 
+                        <ul>
+                            <li>Kullanıcı numarası</li>
+                            <li>Şifre</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> El terminalinde kullanıcı girişi ve yetkilendirme için kullanılır.</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>ACIKLAMA.DAT:</h4>
+                <ul>
+                    <li><strong>İçerik:</strong> Genel bilgiler ve açıklamaları içerir.</li>
+                    <li><strong>Veri Alanları:</strong> 
+                        <ul>
+                            <li>Mahalle kodu</li>
+                            <li>Son ödeme tarihi</li>
+                            <li>Ödeme yeri bilgisi</li>
+                            <li>Belediye adı</li>
+                            <li>Yuvarlama oranı ve tipi</li>
+                            <li>Dönem açıklaması (ayın adı)</li>
+                            <li>Diğer açıklama alanları</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım:</strong> El terminalinde genel bilgileri ve dönem açıklamalarını göstermek için kullanılır.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dosya Uyarıları:</h4>
+                <ul>
+                    <li>Bu dosyalar özel bir formatta olup, doğrudan elle düzenlenmemelidir.</li>
+                    <li>Dosyaların bütünlüğü, el terminalinin doğru çalışması için kritik önem taşır.</li>
+                    <li>Aktarım tamamlanmadan dosyaları terminale yüklemeyin.</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Oluşturulan Dosyaları Terminale Aktarma:</h4>
+                <ol>
+                    <li><strong>Veri Aktarım Yazılımını Açın:</strong>
+                        <ul>
+                            <li>El terminalinizin veri aktarım yazılımını bilgisayarınızda başlatın.</li>
+                            <li>Terminali bilgisayara bağlayın ve "veri alma" moduna getirin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosyaları Seçin:</strong>
+                        <ul>
+                            <li>Aktarım yazılımında, oluşturduğunuz klasörü (örn. C:\GIDEN) seçin.</li>
+                            <li>Tüm DAT dosyalarını (ABONE.DAT, ABONETUR.DAT, DURUM.DAT, KUL.DAT, ACIKLAMA.DAT) seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aktarımı Başlatın:</strong>
+                        <ul>
+                            <li>Aktarım yazılımındaki "Gönder" veya "Aktar" butonuna tıklayın.</li>
+                            <li>Aktarım ilerlemesini izleyin, tüm dosyaların başarıyla aktarıldığından emin olun.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminali Kontrol Edin:</strong>
+                        <ul>
+                            <li>Aktarım tamamlandıktan sonra terminalde "Aktarım Başarılı" mesajını görmelisiniz.</li>
+                            <li>Terminalde birkaç abone kaydını kontrol ederek verilerin doğru aktarıldığından emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dosya İşlem İpuçları:</h4>
+                <ul>
+                    <li>Her aktarım öncesi önceki dosyaları yedekleyin, böylece sorun olursa geri dönebilirsiniz.</li>
+                    <li>Dosyaları terminale aktarmadan önce klasörde tüm dosyaların oluştuğunu kontrol edin.</li>
+                    <li>Dosya boyutlarını kontrol ederek, veri aktarımının beklendiği gibi gerçekleştiğinden emin olun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Dosya Oluşturulmuyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna bastıktan sonra belirtilen yolda dosyalar oluşturulmuyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Belirtilen klasörün var olduğunu kontrol edin, yoksa oluşturun.</li>
+                                    <li>Klasöre yazma yetkiniz olduğundan emin olun.</li>
+                                    <li>Dosya yolunu doğru girdiğinizden emin olun (örn. C:\GIDEN).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Dosyalar Oluşuyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Dosyalar oluşuyor ancak içlerinde veri yok veya çok az veri var.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Filtreleme kriterlerinizi kontrol edin, çok sınırlayıcı olabilir.</li>
+                                    <li>Yıl ve dönem bilgilerinin doğru olduğundan emin olun.</li>
+                                    <li>Belirtilen dönemde tahakkuk edilmemiş abone olup olmadığını kontrol edin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna bastıktan sonra program uzun süre yanıt vermiyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Büyük veri setlerinde bu normal bir durumdur, sabırlı olun.</li>
+                                    <li>Daha küçük veri grupları halinde aktarım yapın.</li>
+                                    <li>Bilgisayarınızın kaynaklarını kontrol edin, başka ağır programları kapatın.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Eksik veya Hatalı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Oluşturulan dosyalarda bazı veriler eksik veya hatalı görünüyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Kaynak verilerin doğru ve güncel olduğundan emin olun.</li>
+                                    <li>İlgili abonelerin bilgilerini sisteminizde kontrol edin.</li>
+                                    <li>Abone bilgilerinde Türkçe karakter veya özel işaret olup olmadığını kontrol edin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminal Dosyaları Okumuyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> El terminali oluşturulan dosyaları yükleme sırasında hata veriyor.</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Tüm dosyaların (ABONE.DAT, ABONETUR.DAT, DURUM.DAT, KUL.DAT, ACIKLAMA.DAT) eksiksiz oluştuğunu kontrol edin.</li>
+                                    <li>Dosya boyutlarının çok küçük olmadığını doğrulayın.</li>
+                                    <li>Terminal yazılımı ile dosya formatının uyumlu olduğundan emin olun.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Planlı Veri Aktarımı:</strong>
+                        <ul>
+                            <li>Veri aktarımlarını mesai saatleri dışında veya sistem yoğunluğunun az olduğu zamanlarda planlayın.</li>
+                            <li>Büyük veri setlerini parçalara bölerek aktarın (örn. mahalle mahalle).</li>
+                            <li>Aktarım öncesi sistem kaynakları üzerindeki yükü azaltın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Yönetimi:</strong>
+                        <ul>
+                            <li>Her aktarım için ayrı bir klasör oluşturun (örn. C:\GIDEN\OCAK2023).</li>
+                            <li>Eski dosyaları düzenli olarak arşivleyin veya yedekleyin.</li>
+                            <li>Dosya adlandırma standartları belirleyin (örn. ABONE_20230115.DAT).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Terminal Entegrasyonu:</strong>
+                        <ul>
+                            <li>Terminal cihazlarının yazılım sürümünün güncel olduğundan emin olun.</li>
+                            <li>Terminallerin dosya aktarım protokollerini ve bağlantı yöntemlerini öğrenin.</li>
+                            <li>Terminal kullanıcılarını doğru verilerle eşleştirin (KUL.DAT dosyasındaki bilgiler).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Kontrolü:</strong>
+                        <ul>
+                            <li>Aktarım öncesi ve sonrası veri sayılarını karşılaştırın.</li>
+                            <li>Örnek abonelerin bilgilerini kontrol ederek aktarımın doğruluğunu teyit edin.</li>
+                            <li>Terminale yüklemeden önce dosya bütünlüğünü kontrol edin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>Oluşturulan dosyalarda kişisel bilgiler bulunduğundan, güvenli bir şekilde saklayın ve aktarın.</li>
+                    <li>Terminaller ve dosyalar üzerinde yetkisiz erişimleri engellemek için şifre koruması kullanın.</li>
+                    <li>Kullanılmayan eski dönem verilerini düzenli olarak arşivleyin veya güvenli bir şekilde silin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, sık kullandığınız filtre değerlerini bir yere not edin.</li>
+                    <li>Mahallelerin ve caddelerin kodlarını içeren bir referans tablosu hazırlayın.</li>
+                    <li>Abone grupları için standart filtreleme kuralları belirleyin (örn. her okuyucu için belirli bir mahalle grubu).</li>
+                    <li>Sorun yaşadığınızda, önce filtreleri basitleştirin ve adım adım karmaşıklığı artırın.</li>
+                    <li>El terminallerinin kullanım kılavuzunu inceleyerek, oluşturulan dosyaların terminale nasıl aktarılacağını öğrenin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Sistemden Terminale Veri Aktarma - UNITECH" ekranı, su abonelik bilgilerini ve ilgili verileri el terminallerine aktarmak için kullanılan önemli bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Veri aktarımı süreci, doğru ve eksiksiz bilgilerin el terminallerine aktarılmasıyla saha personelinin işini kolaylaştırır. Ayrıca, verilerin doğru şekilde filtrelenmesi ve sıralanması, saha operasyonlarının verimliliğini artırır.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Her zaman doğru yıl ve dönem bilgilerini girin.</li>
+                    <li>Veri aktarımı öncesi dosya yolunu kontrol edin.</li>
+                    <li>Filtreleme kriterlerini dikkatli belirleyin.</li>
+                    <li>Sorunlar için bu kılavuzdaki ipuçlarına başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

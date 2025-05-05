@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Abone Defteri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Abone Defteri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#filtre-alanlari">Filtre Alanları ve Kullanımları</a>
+                    <ul>
+                        <li><a href="#siralama">Sıralama Seçenekleri</a></li>
+                        <li><a href="#tarih-filtresi">Yıl ve Dönem Filtreleri</a></li>
+                        <li><a href="#abone-bilgileri">Abone Bilgileri Filtreleri</a></li>
+                        <li><a href="#konum-bilgileri">Konum Bilgileri Filtreleri</a></li>
+                        <li><a href="#sayac-bilgileri">Sayaç Bilgileri Filtreleri</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#rapor-olusturma">Rapor Oluşturma ve Görüntüleme</a>
+                    <ul>
+                        <li><a href="#filtre-kullanimi">Filtrelerin Etkin Kullanımı</a></li>
+                        <li><a href="#rapor-yazdirma">Rapor Yazdırma</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kisayollar">Kısayol Tuşları</a></li>
+                <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+                <li><a href="#kullanim-senaryolari">Yaygın Kullanım Senaryoları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Abone Defteri" ekranı, su abonelerine ait bilgilerin sorgulanması, listelenmesi ve defter halinde raporlanması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli dönemlerdeki su abonelerini listeleme</li>
+                <li>Abone numarasına göre aboneleri sorgulama</li>
+                <li>Mahalle, cadde veya adrese göre aboneleri filtreleme</li>
+                <li>Sayaç numarası veya sırasına göre arama yapma</li>
+                <li>Sonuçları defter formatında görüntüleme ve yazdırma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Sorgulamak istediğiniz yıl ve dönem bilgisi</li>
+                    <li>Varsa, görüntülemek istediğiniz abone numarası aralığı</li>
+                    <li>Varsa, filtrelemek istediğiniz mahalle veya cadde bilgisi</li>
+                    <li>Varsa, aramak istediğiniz sayaç numarası aralığı</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>İlk Kez Kullananlar İçin:</h4>
+                <p>Programı ilk kez kullanıyorsanız, şu adımları izleyin:</p>
+                <ol>
+                    <li>Program açıldığında, filtreleri olduğu gibi bırakarak hemen "Listele" butonuna tıklayın.</li>
+                    <li>Açılan raporu inceleyin ve programın genel çalışma mantığını anlayın.</li>
+                    <li>Daha sonra, ihtiyacınıza göre filtreleri ayarlayarak daha spesifik raporlar oluşturun.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "SU OKUMA DEFTERİ" başlığı yer alır.</li>
+                            <li>Bu başlık, ekranın amacını ve içeriğini belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı olan filtre bölümü bulunur.</li>
+                            <li>Bu bölüm, raporunuzu oluşturmak için gerekli tüm filtreleme seçeneklerini içerir.</li>
+                            <li>Filtreler, ekranın solundan sağına doğru düzenli bir şekilde yerleştirilmiştir.</li>
+                            <li>Sol tarafta etiketler, sağ tarafta ise veri giriş kutuları yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında butonlar yer alır.</li>
+                            <li>Bu butonlar, filtreleri uygulamak (Listele) ve programdan çıkmak (Çıkış) için kullanılır.</li>
+                            <li>Butonlar 3D görünümlü ve gri tonlardadır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Yıl alanına içinde bulunduğunuz yıl otomatik olarak getirilir.</li>
+                    <li>Dönem alanlarına varsayılan olarak 1-99 aralığı atanır.</li>
+                    <li>Abone numarası ve GTT sicil numarası alanlarına varsayılan olarak 0-999999999 aralığı atanır.</li>
+                    <li>Diğer filtre alanları boş bırakılır.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Ekranı Tanıma:</h4>
+                <p>Programa ilk girdiğinizde, ekranın tamamını inceleyerek filtrelerin yerlerini ve işlevlerini tanımak önemlidir. Tüm filtreler mantıklı bir düzende yerleştirilmiştir:</p>
+                <ul>
+                    <li>Ekranın üst kısmında: Sıralama ve tarih filtreleri</li>
+                    <li>Orta kısımda: Abone ve konum bilgileri filtreleri</li>
+                    <li>Alt kısımda: Sayaç bilgileri filtreleri ve butonlar</li>
+                </ul>
+                <p>Her eleman net şekilde etiketlenmiştir, böylece hangi bilgiyi nereye gireceğinizi kolayca anlayabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtre-alanlari" class="section">
+        <h2>Filtre Alanları ve Kullanımları</h2>
+        
+        <div id="siralama" class="info-box">
+            <h3>Sıralama Seçenekleri</h3>
+            
+            <div class="step">
+                <h4>Sıralama Alanı:</h4>
+                <ol>
+                    <li><strong>Sıralama Açılır Menüsü:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, ilk filtre alanıdır.</li>
+                            <li><strong>Özellik:</strong> Açılır liste (dropdown) şeklindedir.</li>
+                            <li><strong>Seçenekler:</strong> İki farklı sıralama seçeneği sunar:
+                                <ol>
+                                    <li>Abone No Sıralı (varsayılan)</li>
+                                    <li>Mahalle, Cadde, Hane, Sıra No Sıralı</li>
+                                </ol>
+                            </li>
+                            <li><strong>Kullanım:</strong> Raporunuzun hangi kritere göre sıralanacağını belirler.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sıralama Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir abone grubunu izlemek istiyorsanız "Abone No Sıralı" seçeneğini kullanın.</li>
+                    <li>Coğrafi bölgeye göre aboneleri görüntülemek istiyorsanız "Mahalle, Cadde, Hane, Sıra No Sıralı" seçeneğini kullanın.</li>
+                    <li>Sıralama seçeneği, raporunuzun düzeni için önemlidir ve sonuçların gruplandırılma şeklini etkiler.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tarih-filtresi" class="info-box">
+            <h3>Yıl ve Dönem Filtreleri</h3>
+            
+            <div class="step">
+                <h4>Tarih Filtresi Alanları:</h4>
+                <ol>
+                    <li><strong>Yıl:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sıralama" alanının altında, sıralama alanının hemen altındaki bölümde yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal değer girişi yapılan metin kutusudur.</li>
+                            <li><strong>Varsayılan Değer:</strong> İçinde bulunduğunuz yıl.</li>
+                            <li><strong>Kullanım:</strong> Raporlamak istediğiniz abone defterinin yılını belirtir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Yıl" alanının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal değer girişi yapılan metin kutularıdır.</li>
+                            <li><strong>Varsayılan Değer:</strong> Başlangıç için "1", bitiş için "99".</li>
+                            <li><strong>Kullanım:</strong> Su faturalarının dönem aralığını belirtir. Örneğin, sadece 2. dönem faturalarını görmek için her iki alana da "2" yazabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dönem Filtreleme Uyarısı:</h4>
+                <p>Su faturaları genellikle belirli dönemlerde kesilir. Kurumunuza göre dönem sayısı değişebilir. Örneğin:</p>
+                <ul>
+                    <li>Bazı belediyeler yılda 6 dönem (2 aylık periyotlarla) faturalandırma yapar.</li>
+                    <li>Bazı belediyeler yılda 12 dönem (aylık) faturalandırma yapar.</li>
+                    <li>Dönem filtresini kullanırken kurumunuzun dönem yapısını göz önünde bulundurun.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tarih Filtresi Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Tüm yıl içindeki aboneleri görmek için dönem aralığını "1-99" olarak bırakın.</li>
+                    <li>Sadece belirli bir dönemi görmek istiyorsanız, başlangıç ve bitiş alanlarına aynı değeri girin.</li>
+                    <li>Geçmiş yılları sorgularken, o yıla ait verilerin sistemde bulunduğundan emin olun.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="abone-bilgileri" class="info-box">
+            <h3>Abone Bilgileri Filtreleri</h3>
+            
+            <div class="step">
+                <h4>Abone Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>GTT Sicil No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Dönem" alanlarının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal değer girişi yapılan metin kutularıdır.</li>
+                            <li><strong>Varsayılan Değer:</strong> Başlangıç için "0", bitiş için "999999999".</li>
+                            <li><strong>Kullanım:</strong> Genel Tahakkuk Tahsilat (GTT) sicil numarası aralığını belirterek filtreleme yapar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "GTT Sicil No" alanlarının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal değer girişi yapılan metin kutularıdır.</li>
+                            <li><strong>Varsayılan Değer:</strong> Başlangıç için "0", bitiş için "999999999".</li>
+                            <li><strong>Kullanım:</strong> Su abone numarası aralığını belirterek filtreleme yapar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abone Bilgileri Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Tek bir aboneyi görmek istiyorsanız, başlangıç ve bitiş alanlarına aynı abone numarasını yazın.</li>
+                    <li>Belirli bir abone grubunu görmek için uygun bir numara aralığı belirleyin.</li>
+                    <li>GTT sicil numarası ve abone numarası farklı kavramlardır. GTT sicil numarası, abonelerin tüm belediye hizmetleri için geçerli genel sicil numarasıdır.</li>
+                    <li>Fatura veya başka bir belgeden abone numarasını öğrenebilirsiniz. Bu numara genellikle 4-8 haneli olur.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="konum-bilgileri" class="info-box">
+            <h3>Konum Bilgileri Filtreleri</h3>
+            
+            <div class="step">
+                <h4>Konum Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Mahalle:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Abone No" alanlarının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin girişi yapılan kutudur.</li>
+                            <li><strong>Varsayılan Değer:</strong> Boş.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir mahalledeki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Mahalle" alanının hemen altında yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin girişi yapılan kutudur.</li>
+                            <li><strong>Varsayılan Değer:</strong> Boş.</li>
+                            <li><strong>Kullanım:</strong> Belirli bir caddedeki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hane (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Cadde" alanının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Sayısal değer girişi yapılan metin kutularıdır.</li>
+                            <li><strong>Varsayılan Değer:</strong> Başlangıç için "0", bitiş için "9999".</li>
+                            <li><strong>Kullanım:</strong> Belirli hane numarası aralığındaki aboneleri filtrelemek için kullanılır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Konum Bilgileri Uyarıları:</h4>
+                <ul>
+                    <li>Mahalle ve cadde isimlerini girerken, sistemdeki yazım şekline dikkat edin.</li>
+                    <li>Mahalle veya cadde adının bir kısmını yazdığınızda, o kısmı içeren tüm kayıtlar listelenecektir.</li>
+                    <li>Büyük/küçük harf duyarlılığı olmayabilir, ancak Türkçe karakterleri doğru kullanmaya özen gösterin.</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Türkçe Karakter Kullanımı:</h4>
+                <p>Mahalle ve cadde adlarını girerken Türkçe karakterleri (ç, ş, ı, ğ, ö, ü) doğru kullanmaya özen gösterin. Yanlış karakter kullanımı sonuçları etkileyebilir.</p>
+                <p>Örneğin: "ÇIĞDEM" yerine "CIGDEM" yazarsanız aradığınız sonuçları bulamayabilirsiniz.</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>Konum Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla mahalle veya cadde ismi yazmak yerine, tek bir konum için arama yapıp sonuçları incelemek daha etkilidir.</li>
+                    <li>Mahalle ismini tam olarak bilmiyorsanız, bildiğiniz kısmı yazıp arama yapabilirsiniz.</li>
+                    <li>Hane numarası filtrelemesi, özellikle apartman veya site gibi çok sayıda abonesi olan binalar için faydalıdır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sayac-bilgileri" class="info-box">
+            <h3>Sayaç Bilgileri Filtreleri</h3>
+            
+            <div class="step">
+                <h4>Sayaç Bilgileri Alanları:</h4>
+                <ol>
+                    <li><strong>Sıra No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Hane" alanlarının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin girişi yapılan kutulardır (alfanümerik değer girilebilir).</li>
+                            <li><strong>Varsayılan Değer:</strong> Bitiş için "zzzzzzzzzz" (en sondaki değer).</li>
+                            <li><strong>Kullanım:</strong> Abone sıra numarası aralığına göre filtreleme yapar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayaç Sıra No (Başlangıç-Bitiş):</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Sıra No" alanlarının hemen altında, yan yana iki metin kutusu olarak yer alır.</li>
+                            <li><strong>Özellik:</strong> Metin girişi yapılan kutulardır (alfanümerik değer girilebilir).</li>
+                            <li><strong>Varsayılan Değer:</strong> Bitiş için "zzzzzzzzzzzzzzz" (en sondaki değer).</li>
+                            <li><strong>Kullanım:</strong> Sayaç seri numarası veya tanımlayıcı koduna göre filtreleme yapar.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sayaç Bilgileri Filtreleme İpuçları:</h4>
+                <ul>
+                    <li>Sayaç sıra numaraları genellikle belirli bir formatta olur, bu formatı bilerek arama yapmak sonuçları daraltır.</li>
+                    <li>Tek bir sayacı aramak için başlangıç ve bitiş alanlarına aynı değeri girin.</li>
+                    <li>Sayaç değişimi yapılan abonelerde, eski ve yeni sayaç numaralarını kontrol edin.</li>
+                    <li>Sayaç üzerindeki numaralar ile sistemdeki sayaç numaraları farklı olabilir. Emin değilseniz, fatura üzerindeki sayaç numarasını kullanın.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Butonları:</h4>
+                <ol>
+                    <li><strong>Listele (List) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın alt kısmında, sol tarafta yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, liste simgeli.</li>
+                            <li><strong>İşlev:</strong> Belirlediğiniz filtrelere göre su abone defteri raporunu oluşturur ve yeni bir pencerede görüntüler.</li>
+                            <li><strong>Kullanım:</strong> Tüm filtreleri ayarladıktan sonra bu butona tıklayarak raporu görüntüleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış (Exit) Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Listele" butonunun hemen sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> 3D görünümlü gri düğme, çıkış kapısı simgeli.</li>
+                            <li><strong>İşlev:</strong> Su Abone Defteri ekranını kapatır.</li>
+                            <li><strong>Kullanım:</strong> Programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok geniş aralıkta filtre kullanırsanız (örneğin tüm aboneler), rapor oluşturma süreci uzun sürebilir.</li>
+                    <li>Listele butonuna bastıktan sonra yeni bir pencere açılacaktır, tarayıcınızın açılır pencere engelleyicisi aktifse izin vermeniz gerekebilir.</li>
+                    <li>Büyük raporlar için sistem yükü artabilir, bu durumda işlemin tamamlanmasını bekleyin.</li>
+                    <li>Çıkış butonuna bastığınızda, şu ana kadar ayarladığınız tüm filtreler sıfırlanır ve pencere kapanır. Yaptığınız değişiklikleri kaydetmek istiyorsanız, önce "Listele" butonuna basın.</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Butonları Etkili Kullanma:</h4>
+                <p>İşlerinizi hızlandırmak için klavye kısayollarını kullanabilirsiniz:</p>
+                <ul>
+                    <li>"Listele" butonu için ENTER tuşuna basabilirsiniz (eğer imleç metin kutusunda değilse).</li>
+                    <li>"Çıkış" butonu için ESC tuşunu kullanabilirsiniz.</li>
+                    <li>Raporlarınızı oluşturduktan sonra, farklı filtreleme seçeneklerini denemek için ana ekrana geri dönüp yeni bir sorgu oluşturabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="rapor-olusturma" class="section">
+        <h2>Rapor Oluşturma ve Görüntüleme</h2>
+        
+        <div id="filtre-kullanimi" class="info-box">
+            <h3>Filtrelerin Etkin Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Etkili Rapor Oluşturma Adımları:</h4>
+                <ol>
+                    <li><strong>Rapor Amacını Belirleme:</strong>
+                        <ul>
+                            <li>Hangi bilgileri görüntülemek istediğinizi netleştirin.</li>
+                            <li>Genel bir rapor mu yoksa detaylı bir sorgu mu yapacağınıza karar verin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Uygun Filtreleri Seçme:</strong>
+                        <ul>
+                            <li>Yıl ve dönem bilgilerini doğru şekilde girin.</li>
+                            <li>Abone numarası, mahalle veya sayaç numarası gibi spesifik kriterleri belirleyin.</li>
+                            <li>Çok geniş aralıklar yerine, daha dar ve yönetilebilir filtreler kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Türünü Belirleme:</strong>
+                        <ul>
+                            <li>Abone numarasına göre mi yoksa konum bilgilerine göre mi sıralama yapılacağını seçin.</li>
+                            <li>Raporun amacına en uygun sıralama türünü kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Oluşturma:</strong>
+                        <ul>
+                            <li>Tüm filtreler ayarlandıktan sonra "Listele" butonuna tıklayın.</li>
+                            <li>Yeni pencerede açılan raporu inceleyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Filtre Kullanım Örnekleri:</h4>
+                <ul>
+                    <li><strong>Belirli bir cadde ve hane aralığı:</strong> Cadde adını ve hane aralığını belirleyin, böylece cadde üzerindeki belirli bir bölgeyi görüntüleyebilirsiniz.</li>
+                    <li><strong>Belirli sayaç numarası aralığı:</strong> Sayaç sıra numarası alanlarına bilinen aralığı girin, bu özellikle sayaç değişimi veya kontrolü yapılacak aboneler için faydalıdır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="rapor-yazdirma" class="info-box">
+            <h3>Rapor Görüntüleme ve Yazdırma</h3>
+            
+            <div class="step">
+                <h4>Rapor Görüntüleme ve Yazdırma Adımları:</h4>
+                <ol>
+                    <li><strong>Raporun Açılması:</strong>
+                        <ul>
+                            <li>"Listele" butonuna tıkladığınızda, yeni bir pencerede rapor görüntülenecektir.</li>
+                            <li>Bu pencere, rapor görüntüleyici formatında açılır ve raporunuzu defter biçiminde gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor İçeriğini İnceleme:</strong>
+                        <ul>
+                            <li>Raporda abone bilgileri, tüketim bilgileri ve diğer detaylar yer alır.</li>
+                            <li>Raporun başlığında tarih ve filtre kriterleri bulunur.</li>
+                            <li>Sıralama seçiminize göre aboneler listelenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Üzerinde Gezinme:</strong>
+                        <ul>
+                            <li>Sayfalar arasında gezinmek için, rapor görüntüleyicinin alt kısmındaki sayfa navigasyon butonlarını kullanabilirsiniz.</li>
+                            <li>Büyüteç simgelerine tıklayarak raporu yakınlaştırıp uzaklaştırabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Yazdırma:</strong>
+                        <ul>
+                            <li>Rapor görüntüleyicinin üst kısmındaki "Yazdır" butonuna tıklayın.</li>
+                            <li>Açılan yazdırma diyaloğunda gerekli yazıcı ayarlarını yapın.</li>
+                            <li>Sayfaların doğru şekilde yazdırılması için önizlemeyi kontrol edin.</li>
+                            <li>"Yazdır" butonuna tıklayarak raporu yazdırın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Yazdırma Uyarıları:</h4>
+                <ul>
+                    <li>Büyük raporlar çok sayıda sayfa içerebilir, gereksiz kağıt israfını önlemek için sadece ihtiyaç duyduğunuz sayfaları yazdırmayı tercih edin.</li>
+                    <li>Sayfa kenar boşluklarını kontrol edin, çok dar ayarlandığında içerik kesilebilir.</li>
+                    <li>Raporun doğru şekilde yazdırılabilmesi için yazıcı ayarlarını kontrol edin.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Rapor Görüntüleme İpuçları:</h4>
+                <ul>
+                    <li>Rapor penceresini tam ekran yaparak daha iyi bir görüntüleme deneyimi elde edebilirsiniz.</li>
+                    <li>Önemli bilgileri hızlıca bulmak için tarayıcınızın "Sayfada Bul" (CTRL+F) özelliğini kullanabilirsiniz.</li>
+                    <li>Rapor görüntüleyici penceresini açık tutabilir ve ana ekranda farklı filtreler kullanarak yeni raporlar oluşturabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Kısayol Tuşları</h2>
+        <div class="info-box">
+            <h3>Kullanılabilir Kısayol Tuşları</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tuş Kombinasyonu</th>
+                        <th>İşlev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TAB</td>
+                        <td>Bir sonraki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>SHIFT + TAB</td>
+                        <td>Bir önceki alana geçer</td>
+                    </tr>
+                    <tr>
+                        <td>ENTER</td>
+                        <td>TAB tuşu gibi, bir sonraki alana geçer (özellikle metin alanlarında)</td>
+                    </tr>
+                    <tr>
+                        <td>ESC</td>
+                        <td>Programdan çıkış yapar veya işlemi iptal eder</td>
+                    </tr>
+                    <tr>
+                        <td>CTRL + F</td>
+                        <td>Rapor penceresinde arama yapar (tarayıcı özelliği)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step">
+                <h4>Kısayol Tuşlarını Kullanma:</h4>
+                <ol>
+                    <li><strong>Form İçinde Gezinme:</strong>
+                        <ul>
+                            <li>Alanlar arasında hızlıca geçiş yapmak için TAB veya ENTER tuşunu kullanın.</li>
+                            <li>Bir önceki alana dönmek için SHIFT + TAB tuş kombinasyonunu kullanın.</li>
+                            <li>Programdan çıkmak için ESC tuşuna basabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metin Kutularında:</strong>
+                        <ul>
+                            <li>Metin içinde hareket etmek için ok tuşlarını kullanın.</li>
+                            <li>Bir metin alanının tüm içeriğini seçmek için üç kez hızlıca tıklayın veya CTRL + A tuş kombinasyonunu kullanın.</li>
+                            <li>Kopyalamak için CTRL + C, yapıştırmak için CTRL + V tuş kombinasyonlarını kullanabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Kısayol Tuşları İpuçları:</h4>
+                <ul>
+                    <li>Fare (mouse) kullanmadan tüm işlemleri klavye ile yapabilirsiniz, bu işinizi hızlandırır.</li>
+                    <li>Alanlar arasında TAB tuşu ile gezinmek, formları doldurmayı hızlandırır.</li>
+                    <li>Sık kullandığınız filtreleri bir not defterine kaydedip, gerektiğinde kopyala-yapıştır ile formları hızlıca doldurabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Sorun Giderme ve Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturulmuyor:</strong>
+                        <ul>
+                            <li>Filtrelerin doğru formatta girildiğinden emin olun (sayısal alanlara sadece sayı girin).</li>
+                            <li>Tarih aralıklarının mantıklı olduğunu kontrol edin (örn. başlangıç değeri bitiş değerinden büyük olmamalı).</li>
+                            <li>Tarayıcınızın açılır pencere engelleyicisinin rapor penceresini engellemiyor olduğundan emin olun.</li>
+                            <li>Sistemde çok yoğun bir sorgu için bekleyin, işlem birkaç dakika sürebilir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtrelediğim Aboneler Görünmüyor:</strong>
+                        <ul>
+                            <li>Abone numarası veya GTT sicil numarasını doğru girdiğinizden emin olun.</li>
+                            <li>Mahalle veya cadde adını doğru yazdığınızdan emin olun, sistem kayıtlarındaki yazım şekli önemlidir.</li>
+                            <li>Yıl ve dönem bilgilerinin doğru olduğunu kontrol edin, aradığınız abone o dönemde aktif olmayabilir.</li>
+                            <li>Çok spesifik filtreler kullanıyorsanız, filtreleri biraz genişleterek tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Çok Büyük/Yavaş Açılıyor:</strong>
+                        <ul>
+                            <li>Çok geniş bir aralık yerine daha spesifik filtreler kullanmayı deneyin.</li>
+                            <li>Raporun yüklenmesi için biraz daha bekleyin, büyük veri setleri için yükleme süresi uzayabilir.</li>
+                            <li>Bilgisayarınızda diğer programları kapatarak sistem kaynaklarını serbest bırakın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma Sorunları:</strong>
+                        <ul>
+                            <li>Yazıcı bağlantınızı kontrol edin.</li>
+                            <li>Sayfa boyutu ve kenar boşluğu ayarlarını kontrol edin.</li>
+                            <li>Sorunu çözemiyorsanız, raporu PDF olarak kaydedin ve sonra yazdırmayı deneyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Filtre Kullanımı İçin:</strong>
+                        <ul>
+                            <li>En sık kullandığınız filtre kombinasyonlarını not edin, böylece hızlıca erişebilirsiniz.</li>
+                            <li>Önce geniş bir aralıkla filtreleme yapın, sonra sonuçlara göre filtreleri daraltın.</li>
+                            <li>Raporda görmek istediğiniz verilere odaklanın, gereksiz bilgileri filtrelemek için spesifik kriterler kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Abone Bilgilerini Bulma:</strong>
+                        <ul>
+                            <li>Abone numarasını biliyorsanız, doğrudan abone numarası filtresi kullanın.</li>
+                            <li>Adres bilgisi ile arama yaparken, mahalle adını tam olarak yazın, cadde adının ise en belirgin kısmını yazın.</li>
+                            <li>Sayaç numarası ile aramada, numaranın tamamını veya belirgin bir kısmını yazın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Genel Kullanım İçin:</strong>
+                        <ul>
+                            <li>İşlemlerinizi tamamladıktan sonra programdan düzgün şekilde çıkış yapın.</li>
+                            <li>Önemli raporları PDF olarak kaydedin veya yazdırın.</li>
+                            <li>Karmaşık sorgular için adım adım ilerleyin, önce basit bir sorgu yapıp sonra kriterleri ekleyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Güvenliği Uyarıları:</h4>
+                <ul>
+                    <li>Abone bilgileri kişisel veri içerir, bu bilgileri sadece gerekli durumlarda ve yetkiniz dahilinde kullanın.</li>
+                    <li>Büyük raporları oluştururken sistem kaynaklarını yoğun kullanacağınızı unutmayın, mesai saatleri dışında çalışmak daha verimli olabilir.</li>
+                    <li>Şüpheli durumlarda sistem yöneticinize danışın.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profesyonel İpuçları:</h4>
+                <ul>
+                    <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                    <li>Raporları oluştururken önce amacınızı belirleyin, sonra en uygun filtreleri kullanın.</li>
+                    <li>Büyük raporlar yerine, daha küçük ve özelleştirilmiş raporlar oluşturmak hem daha hızlı hem de daha kullanışlıdır.</li>
+                    <li>Sorun yaşadığınızda bu kullanıcı kılavuzuna başvurun, çoğu sorun için çözüm burada mevcuttur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kullanim-senaryolari" class="section">
+        <h2>Yaygın Kullanım Senaryoları</h2>
+        <div class="info-box">
+            <h3>Sık Kullanılan Sorgulama Örnekleri</h3>
+            
+            <div class="step">
+                <h4>Örnek Senaryo 1: Belirli Bir Aboneyi Bulma</h4>
+                <ol>
+                    <li><strong>Senaryo:</strong> Abone numarası 12345 olan aboneyi bulmak istiyorsunuz.</li>
+                    <li><strong>Uygulama:</strong>
+                        <ul>
+                            <li>Yıl alanını içinde bulunduğunuz yıl olarak bırakın.</li>
+                            <li>Dönem alanlarını varsayılan değerleri olan 1-99 olarak bırakın.</li>
+                            <li>"Abone No" başlangıç ve bitiş alanlarına "12345" yazın.</li>
+                            <li>Diğer alanları boş bırakın.</li>
+                            <li>"Listele" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuç:</strong> Raporda sadece 12345 numaralı abonenin bilgileri görüntülenecektir.</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Örnek Senaryo 2: Belirli Bir Mahalledeki Tüm Aboneleri Listeleme</h4>
+                <ol>
+                    <li><strong>Senaryo:</strong> "ATATÜRK" mahallesindeki tüm aboneleri listelemek istiyorsunuz.</li>
+                    <li><strong>Uygulama:</strong>
+                        <ul>
+                            <li>Yıl alanını içinde bulunduğunuz yıl olarak bırakın.</li>
+                            <li>Dönem alanlarını varsayılan değerleri olan 1-99 olarak bırakın.</li>
+                            <li>"Mahalle" alanına "ATATÜRK" yazın.</li>
+                            <li>Sıralama olarak "Mahalle, Cadde, Hane, Sıra No Sıralı" seçeneğini işaretleyin.</li>
+                            <li>Diğer alanları boş bırakın.</li>
+                            <li>"Listele" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuç:</strong> Raporda ATATÜRK mahallesindeki tüm aboneler, adres sırasına göre listelenecektir.</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Örnek Senaryo 3: Belirli Bir Dönemdeki Aboneleri Görüntüleme</h4>
+                <ol>
+                    <li><strong>Senaryo:</strong> 2023 yılının 2. dönemindeki tüm aboneleri görüntülemek istiyorsunuz.</li>
+                    <li><strong>Uygulama:</strong>
+                        <ul>
+                            <li>"Yıl" alanına "2023" yazın.</li>
+                            <li>"Dönem" başlangıç ve bitiş alanlarına "2" yazın.</li>
+                            <li>Diğer alanları varsayılan değerlerinde bırakın.</li>
+                            <li>"Listele" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuç:</strong> Raporda 2023 yılının 2. dönemindeki tüm aboneler listelenecektir.</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Örnek Senaryo 4: Belirli Bir Cadde ve Hane Aralığı Sorgulama</h4>
+                <ol>
+                    <li><strong>Senaryo:</strong> "CUMHURİYET" caddesindeki 10-50 arasındaki hane numaralarını listelemek istiyorsunuz.</li>
+                    <li><strong>Uygulama:</strong>
+                        <ul>
+                            <li>Yıl ve dönem bilgilerini uygun şekilde doldurun.</li>
+                            <li>"Cadde" alanına "CUMHURİYET" yazın.</li>
+                            <li>"Hane" başlangıç alanına "10", bitiş alanına "50" yazın.</li>
+                            <li>Sıralama olarak "Mahalle, Cadde, Hane, Sıra No Sıralı" seçeneğini işaretleyin.</li>
+                            <li>"Listele" butonuna tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonuç:</strong> Raporda CUMHURİYET caddesindeki 10 ile 50 arasındaki hane numaralarına sahip aboneler listelenecektir.</li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik Senaryolar:</h4>
+                <ul>
+                    <li><strong>Sayaç Okuma Listeleri:</strong> Belirli bir mahalle/cadde için sayaç okuma defteri oluşturmak için, mahalle/cadde adını girin ve sıralamayı "Mahalle, Cadde, Hane, Sıra No Sıralı" olarak ayarlayın.</li>
+                    <li><strong>Faturalandırma Kontrolleri:</strong> Belirli bir dönemde faturalandırılmış aboneleri kontrol etmek için, yıl ve dönem bilgilerini girin ve abone numarası sıralı rapor alın.</li>
+                    <li><strong>Sayaç Değişimi İçin Liste:</strong> Belirli bir sayaç serisindeki aboneleri listelemek için "Sayaç Sıra No" aralığını belirleyin.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Su Abone Defteri ekranı, su abonelerine ait bilgileri sorgulama, filtreleme ve raporlama için kullanılan kapsamlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır. Yeni başlayanlar, aşamalı olarak ve buradaki adımları takip ederek programı kullanmaya başlayabilir.</p>
+
+            <p>Farklı filtreleme seçenekleri ve sıralama türleri sayesinde, ihtiyaçlarınıza en uygun raporları oluşturabilirsiniz. Raporları yazdırarak arşivleyebilir veya diğer departmanlarla paylaşabilirsiniz.</p>
+
+            <p>Bu kılavuzda yanıtını bulamadığınız sorularınız veya özel durumlar için lütfen sistem yöneticinize veya destek ekibine başvurun.</p>
+
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Programla çalışırken şunlara dikkat edin:</p>
+                <ul>
+                    <li>Filtreleri doğru ve etkin kullanın.</li>
+                    <li>Büyük raporlar için sistem yükleme süresine sabır gösterin.</li>
+                    <li>Kişisel verileri koruyun ve sadece gerekli durumlarda kullanın.</li>
+                    <li>İhtiyaç duyduğunuzda bu kılavuza başvurun.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

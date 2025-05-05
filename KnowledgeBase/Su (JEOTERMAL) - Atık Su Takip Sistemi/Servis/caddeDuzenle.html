@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadde Düzenleme Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cadde Düzenleme Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#mahalle-secimi">Mahalle Seçimi</a></li>
+                <li><a href="#cadde-goruntuleme">Cadde Numaralarını Görüntüleme</a></li>
+                <li><a href="#cadde-duzenleme">Cadde Numaralarını Düzenleme</a></li>
+                <li><a href="#cadde-siralama">Cadde Sıralama İşlemleri</a></li>
+                <li><a href="#kaydetme-cikis">Veri Kaydetme ve Çıkış İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Cadde Düzenleme programı, mahallelerdeki cadde numaralarını düzenlemek ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Mahalle bazında caddeleri görüntüleyebilirsiniz</li>
+                <li>Caddelere yeni numaralar atayabilirsiniz</li>
+                <li>Caddelerin sıralamalarını değiştirebilirsiniz</li>
+                <li>Yapılan değişiklikleri kaydedebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz mahalle kodunu</li>
+                    <li>Cadde numaralarının hangi sırayla düzenlenmesi gerektiğini</li>
+                    <li>Bu programda yapacağınız değişikliklerin sistemdeki cadde numaralarını doğrudan etkileyeceğini</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli (Teal) bir şeritte "Cadde No Düzenle :" başlığı yer alır</li>
+                            <li>Başlık koyu renkli arka plan üzerinde beyaz yazı ile gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında gri renkli bir tablo içinde yer alır</li>
+                            <li>Sol tarafta "Mahalle" etiketi, sağ tarafta açılır liste (dropdown) kutusu bulunur</li>
+                            <li>Açılır listede mahalle kodları ve isimleri gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde Listesi Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Mahalle seçim bölümünün altında yer alır</li>
+                            <li>Dört sütundan oluşur: İşlem butonları, Cad.No, Cadde, Yeni Cad.No</li>
+                            <li>Başlık satırı açık mavi (skyblue) renkli arka planla vurgulanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Başlık satırının altında, beyaz arka planlı bir liste alanı bulunur</li>
+                            <li>Bu alanda seçilen mahalleye ait caddelerin listesi görüntülenir</li>
+                            <li>Her satırın başında yukarı/aşağı hareket butonları bulunur</li>
+                            <li>Liste, kaydırma çubuğu ile aşağı yukarı hareket ettirilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında gri renkli bir şeritte yer alır</li>
+                            <li>Kaydet ve İptal (Çıkış) butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Mahalle seçim listesine konumlanır</li>
+                    <li>Mahalle seçimi yapılmadan cadde listesi görüntülenmez</li>
+                    <li>Mahalle seçimi yapıldıktan sonra, o mahalleye ait caddeler otomatik olarak listelenir</li>
+                    <li>Cadde listesi gözüktüğünde, her caddenin "Yeni Cadde No" değeri otomatik olarak sıralı şekilde atanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mahalle-secimi" class="section">
+        <h2>Mahalle Seçimi</h2>
+        <div class="info-box">
+            <h3>Mahalle Seçimi Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Mahalle Seçimi Adım Adım:</h4>
+                <ol>
+                    <li><strong>Mahalle Seçim Alanını Bulma:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, turkuaz renkli "Cadde No Düzenle :" başlığının hemen altında gri renkli bir tablo içerisinde yer alır</li>
+                            <li>Sol tarafta "Mahalle" etiketi, sağında ise genişliği ekranın tamamına yayılan bir açılır liste (dropdown) kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açılır Listeyi Açma:</strong>
+                        <ul>
+                            <li>Açılır liste kutusunun sağ tarafındaki aşağı ok işaretine tıklayın</li>
+                            <li>Tıkladığınızda, sistemde kayıtlı mahalleler liste halinde açılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mahalle Seçimi Yapma:</strong>
+                        <ul>
+                            <li>Açılan listede en üstte "--Seçiniz--" seçeneği bulunur</li>
+                            <li>Bu seçeneğin altında mahalle kodları ve isimleri "Kod - Mahalle Adı" formatında listelenir</li>
+                            <li>Listede işlem yapmak istediğiniz mahalleyi fare ile tıklayarak seçin</li>
+                            <li>Mahalleyi seçtiğinizde liste otomatik olarak kapanır ve seçtiğiniz mahalle bilgisi görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçimin Onaylanması:</strong>
+                        <ul>
+                            <li>Mahalle seçimi yaptıktan sonra, sistem otomatik olarak seçilen mahalleye ait caddeleri listelemek için sayfayı yeniler</li>
+                            <li>Yenileme işlemi sonrasında, seçilen mahalleye ait caddeler alt bölümde listelenir</li>
+                            <li>Eğer seçilen mahallede hiç cadde yoksa, liste boş görünecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mahalle seçmeden diğer işlemleri yapamazsınız</li>
+                    <li>Mahalle seçildiğinde sayfada kısa bir yükleme süresi olabilir</li>
+                    <li>"--Seçiniz--" seçeneği ile işlem yapılamaz, mutlaka bir mahalle seçilmelidir</li>
+                    <li>Mahalle değiştirildiğinde, daha önce yapılan cadde düzenlemeleri kaydedilmemiş ise kaybolacaktır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="cadde-goruntuleme" class="section">
+        <h2>Cadde Numaralarını Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Cadde Listesi Nasıl Görüntülenir ve Okunur</h3>
+            
+            <div class="step">
+                <h4>Cadde Listesini Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Mahalle Seçimi Yapma:</strong>
+                        <ul>
+                            <li>Önceki bölümde anlatıldığı gibi, açılır listeden bir mahalle seçin</li>
+                            <li>Mahalle seçimi yapıldığında, sistem otomatik olarak o mahalleye ait caddeleri listelemeye başlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cadde Listesinin Yerleşimi:</strong>
+                        <ul>
+                            <li>Cadde listesi, mahalle seçim bölümünün altında, beyaz arka planlı bir alanda görüntülenir</li>
+                            <li>Liste, dört sütundan oluşan bir tablo şeklindedir</li>
+                            <li>Tablo başlıkları açık mavi (skyblue) renkte vurgulanmıştır</li>
+                            <li>Tablonun genişliği ekranın sol tarafına yaslanmış durumdadır ve yaklaşık 300 piksel genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunlarını Tanıma:</strong>
+                        <ul>
+                            <li><strong>Birinci Sütun:</strong> İşlem butonları sütunu - yukarı/aşağı ok işaretli butonlar bulunur</li>
+                            <li><strong>İkinci Sütun:</strong> "Cad.No" - Caddenin mevcut kod numarasını gösterir</li>
+                            <li><strong>Üçüncü Sütun:</strong> "Cadde" - Caddenin adını gösterir</li>
+                            <li><strong>Dördüncü Sütun:</strong> "Yeni Cad.No" - Caddeye atanacak yeni kod numarasını gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listede Gezinme:</strong>
+                        <ul>
+                            <li>Liste uzunsa, sağ tarafta bir kaydırma çubuğu görünür</li>
+                            <li>Kaydırma çubuğunu kullanarak veya fare tekerleğini çevirerek listede aşağı/yukarı hareket edebilirsiniz</li>
+                            <li>Liste alanının yüksekliği yaklaşık 235 piksel ile sınırlandırılmıştır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Cadde listesinin her satırı bir caddeyi temsil eder</li>
+                    <li>Her cadde için mevcut cadde numarası ve adı değiştirilemez, sadece yeni cadde numarası değiştirilebilir</li>
+                    <li>Listedeki caddelerin "Yeni Cad.No" değerleri, program ilk açıldığında 1'den başlayarak artan şekilde otomatik olarak atanır</li>
+                    <li>Listenin uzunluğuna bağlı olarak tüm caddeleri görmek için kaydırma çubuğunu kullanmanız gerekebilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cadde-duzenleme" class="section">
+    <h2>Cadde Numaralarını Düzenleme</h2>
+    <div class="info-box">
+        <h3>Caddelere Yeni Numara Atama İşlemi</h3>
+        
+        <div class="step">
+            <h4>Cadde Numaralarını Düzenleme Adım Adım:</h4>
+            <ol>
+                <li><strong>Düzenleme İşleminin Anlaşılması:</strong>
+                    <ul>
+                        <li>Bu programda, caddelerin mevcut numaraları değiştirilemez</li>
+                        <li>Sadece "Yeni Cad.No" sütununda gösterilen yeni numara değerleri değiştirilebilir</li>
+                        <li>Yeni numaralar, program açıldığında otomatik olarak 1'den başlayarak sıralı şekilde atanır</li>
+                        <li>Düzenleme işlemi, caddelerin sırasını değiştirerek yapılır</li>
+                    </ul>
+                </li>
+                <li><strong>Sıralamanın Önemi:</strong>
+                    <ul>
+                        <li>Caddelerin sistem içindeki sıralaması, "Yeni Cad.No" değerlerine göre belirlenir</li>
+                        <li>Kaydetme işleminden sonra, caddeler bu yeni numaralara göre sıralanacaktır</li>
+                        <li>Programın amacı, caddeleri istediğiniz sıralamaya göre yeniden numaralandırmaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Caddeleri Sıralama Yöntemi:</strong>
+                    <ul>
+                        <li>Caddelerin sıralamasını değiştirmek için, her satırın başındaki yukarı/aşağı ok butonlarını kullanmalısınız</li>
+                        <li>Bu butonlar, caddelerin listedeki pozisyonunu değiştirmenize olanak sağlar</li>
+                        <li>Cadde sıralamasını değiştirdiğinizde, yeni cadde numaraları otomatik olarak güncellenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Cadde adları ve mevcut cadde numaraları değiştirilemez</li>
+                <li>Caddelerin yeni numaraları, listedeki sıralamaya göre otomatik olarak 1'den başlayarak atanır</li>
+                <li>Düzenleme işlemi, sadece caddelerin yerlerini değiştirerek yapılır</li>
+                <li>Yeni cadde numarası, mevcut cadde numarası ile aynı olacak şekilde sıralanırsa, o cadde için herhangi bir değişiklik yapılmayacaktır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="cadde-siralama" class="section">
+    <h2>Cadde Sıralama İşlemleri</h2>
+    <div class="info-box">
+        <h3>Caddeleri Yukarı/Aşağı Taşıma</h3>
+        
+        <div class="step">
+            <h4>Cadde Sıralama İşlemleri Adım Adım:</h4>
+            <ol>
+                <li><strong>Sıralama Butonlarını Tanıma:</strong>
+                    <ul>
+                        <li>Her cadde satırının başında (birinci sütunda) iki adet buton bulunur</li>
+                        <li>Sol taraftaki buton üzerinde yukarı ok (▲) sembolü vardır ve caddeyi yukarı taşımak için kullanılır</li>
+                        <li>Sağ taraftaki buton üzerinde aşağı ok (▼) sembolü vardır ve caddeyi aşağı taşımak için kullanılır</li>
+                        <li>Bu butonlar gri renkte, küçük boyutlu ve webdings yazı tipinde semboller içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Caddeyi Yukarı Taşıma:</strong>
+                    <ol>
+                        <li>Yukarı taşımak istediğiniz cadde satırını belirleyin</li>
+                        <li>Satırın başındaki yukarı ok (▲) butonuna tıklayın</li>
+                        <li>Tıkladığınızda, cadde bir üst satırdaki cadde ile yer değiştirecektir</li>
+                        <li>Yer değiştirme sonrasında, her iki caddenin "Yeni Cad.No" değerleri de otomatik olarak güncellenir</li>
+                        <li>Liste başındaki ilk cadde için yukarı taşıma butonu çalışmaz</li>
+                    </ol>
+                </li>
+                <li><strong>Caddeyi Aşağı Taşıma:</strong>
+                    <ol>
+                        <li>Aşağı taşımak istediğiniz cadde satırını belirleyin</li>
+                        <li>Satırın başındaki aşağı ok (▼) butonuna tıklayın</li>
+                        <li>Tıkladığınızda, cadde bir alt satırdaki cadde ile yer değiştirecektir</li>
+                        <li>Yer değiştirme sonrasında, her iki caddenin "Yeni Cad.No" değerleri de otomatik olarak güncellenir</li>
+                        <li>Liste sonundaki son cadde için aşağı taşıma butonu çalışmaz</li>
+                    </ol>
+                </li>
+                <li><strong>Satır Vurgulama Özelliği:</strong>
+                    <ul>
+                        <li>Bir cadde satırındaki yukarı veya aşağı butonuna tıkladığınızda, o satır açık sarı (lightyellow) renkte vurgulanır</li>
+                        <li>Vurgulama, işlem yaptığınız satırı daha kolay görmenizi sağlar</li>
+                        <li>Vurgulama, butondan elinizi çektiğinizde kaybolur ve satır normal beyaz arka planına döner</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Bir caddeyi uzun mesafe taşımak için butona art arda birkaç kez tıklamanız gerekebilir</li>
+                <li>Her taşıma işleminden sonra "Yeni Cad.No" değerlerinin otomatik olarak güncellendiğini kontrol edin</li>
+                <li>Taşıma işlemlerini dikkatli yapın, özellikle uzun listelerde yanlış tıklamalar olabilir</li>
+                <li>Butonlar çok yakın olduğundan, doğru butona tıkladığınızdan emin olun</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Liste başındaki ilk cadde için yukarı taşıma butonu işlevsel değildir</li>
+                <li>Liste sonundaki son cadde için aşağı taşıma butonu işlevsel değildir</li>
+                <li>Taşıma işlemi sırasında, sadece iki komşu cadde yer değiştirir, uzak mesafelere tek seferde taşıma yapılamaz</li>
+                <li>Değişiklikler otomatik olarak kaydedilmez, işlemlerinizi tamamladıktan sonra Kaydet butonunu kullanmanız gerekir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="kaydetme-cikis" class="section">
+    <h2>Veri Kaydetme ve Çıkış İşlemleri</h2>
+    <div class="info-box">
+        <h3>Yaptığınız Değişiklikleri Kaydetme veya İptal Etme</h3>
+        
+        <div class="step">
+            <h4>Değişiklikleri Kaydetme İşlemi Adım Adım:</h4>
+            <ol>
+                <li><strong>Kaydetme İşlemine Hazırlık:</strong>
+                    <ul>
+                        <li>Tüm sıralama işlemlerinizi tamamlayın</li>
+                        <li>Caddelerin yeni numaralarının doğru sıralandığından emin olun</li>
+                        <li>Kaydetme işlemi öncesinde, değişiklikleri son bir kez gözden geçirin</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydet Butonunu Bulma:</strong>
+                    <ul>
+                        <li>Kaydet butonu, ekranın alt kısmında gri renkli bir şerit içinde yer alır</li>
+                        <li>Buton, şeridin ortasında sol tarafta konumlanmıştır</li>
+                        <li>Üzerinde bir disk ikonu ve "Kaydet" yazısı bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme İşlemini Gerçekleştirme:</strong>
+                    <ol>
+                        <li>Kaydet butonuna tıklayın</li>
+                        <li>Tıkladığınızda, bir onay penceresi açılacaktır</li>
+                        <li>Onay penceresinde "Cadde numaralarına 'Yeni Cadde No' değeri atanacaktır. Onaylıyor musunuz?" mesajı görünür</li>
+                        <li>Onaylamak için "Evet" butonuna tıklayın</li>
+                        <li>İptal etmek için "Hayır" butonuna tıklayın</li>
+                        <li>"Evet" seçeneğini seçerseniz, sistem değişiklikleri veritabanına kaydeder</li>
+                        <li>Kaydetme işlemi sırasında Kaydet ve İptal butonları geçici olarak devre dışı kalır</li>
+                    </ol>
+                </li>
+                <li><strong>Kaydetme İşleminin Tamamlanması:</strong>
+                    <ul>
+                        <li>Kaydetme işlemi tamamlandığında, sistem otomatik olarak ana ekrana döner</li>
+                        <li>Değişiklikler veritabanına kaydedilmiş olur</li>
+                        <li>Artık tüm sistemde yeni cadde numaraları geçerli olacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                <li><strong>ESC:</strong> Programdan çıkmak için (İptal butonu ile aynı işlevi görür)</li>
+                <li><strong>ALT + K:</strong> Kaydet butonunu aktif etmek için</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>"Mahalle Seçilmemiş" Sorunu:</strong>
+                    <ul>
+                        <li>Sorun: Cadde listesi görüntülenmiyor</li>
+                        <li>Çözüm: Açılır listeden bir mahalle seçtiğinizden emin olun. "--Seçiniz--" seçeneği ile işlem yapamazsınız.</li>
+                    </ul>
+                </li>
+                <li><strong>Butonların Yanıt Vermemesi:</strong>
+                    <ul>
+                        <li>Sorun: Yukarı/aşağı butonları tıkladığınızda tepki vermiyor</li>
+                        <li>Çözüm: İlk veya son satırda olup olmadığınızı kontrol edin. İlk satır için yukarı, son satır için aşağı butonları çalışmaz.</li>
+                    </ul>
+                </li>
+                <li><strong>Değişikliklerin Kaybolması:</strong>
+                    <ul>
+                        <li>Sorun: Yaptığınız sıralama değişiklikleri kayboluyor</li>
+                        <li>Çözüm: Değişiklik yaptıktan sonra Kaydet butonuna tıklayın ve onay penceresinde "Evet" seçeneğini seçin.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Değişiklik yapmadan önce, caddelerin mevcut sıralamasını inceleyerek işleminizi planlayın</li>
+                <li>Taşıma işlemlerini tek tek ve dikkatli yapın, özellikle çok sayıda cadde varsa</li>
+                <li>Bir caddeyi taşıdıktan sonra, "Yeni Cad.No" değerlerinin doğru güncellendiğinden emin olun</li>
+                <li>Aynı mahalledeki tüm caddeleri bir seferde numaralandırmaya çalışın, parça parça yapmaktan kaçının</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet</h2>
+    <div class="info-box">
+        <p>Cadde Düzenleme programı, mahallelerdeki cadde numaralarını kolayca yeniden düzenlemenizi sağlayan pratik bir araçtır. Bu kılavuzda şu konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Mahalle seçimi yaparak caddeleri görüntüleme</li>
+            <li>Caddelerin sıralamasını yukarı/aşağı butonları ile değiştirme</li>
+            <li>Yeni cadde numaralarının otomatik olarak nasıl atandığını anlama</li>
+            <li>Değişiklikleri kaydetme ve programdan çıkış işlemleri</li>
+            <li>Verimli çalışma için pratik ipuçları</li>
+        </ul>
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, lütfen bu kılavuzdaki ilgili bölümlere başvurun veya sistem yöneticinize danışın.</p>
+    </div>
+</div>
+        
+        <div class="step">
+            <h4>Programdan Çıkış İşlemi Adım Adım:</h4>
+            <ol>
+                <li><strong>İptal (Çıkış) Butonunu Bulma:</strong>
+                    <ul>
+                        <li>İptal butonu, ekranın alt kısmında Kaydet butonunun yanında yer alır</li>
+                        <li>Buton, gri renkli şeridin içinde, Kaydet butonunun sağında konumlanmıştır</li>
+                        <li>Üzerinde bir çıkış/kapı ikonu ve "İptal" yazısı bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış İşlemini Gerçekleştirme:</strong>
+                    <ol>
+                        <li>İptal butonuna tıklayın</li>
+                        <li>Tıkladığınızda, program penceresi doğrudan kapanacaktır</li>
+                        <li>Eğer herhangi bir değişiklik yaptıysanız ve kaydetmediyseniz, bu değişiklikler kaydedilmeden kaybolacaktır</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Kaydetme işlemi geri alınamaz, onay penceresi bu nedenle gösterilir</li>
+                <li>Yeni cadde numarası mevcut cadde numarası ile aynı olan caddeler için değişiklik yapılmaz</li>
+                <li>Değişiklikler kaydedilmeden programdan çıkılırsa, tüm değişiklikler kaybolur</li>
+                <li>Kaydet butonuna tıkladıktan sonra onay penceresinde "Hayır" seçeneğini seçerseniz, kaydetme işlemi iptal edilir ve program ana ekranda kalır</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>ALT + K tuş kombinasyonu ile Kaydet butonunu hızlıca aktif edebilirsiniz</li>
+                <li>Büyük değişiklikler yapmadan önce mevcut numaralandırmayı not etmek faydalı olabilir</li>
+                <li>Cadde numaralarının sıralaması diğer programları ve raporları etkileyebileceğinden, değişiklikleri dikkatli yapın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

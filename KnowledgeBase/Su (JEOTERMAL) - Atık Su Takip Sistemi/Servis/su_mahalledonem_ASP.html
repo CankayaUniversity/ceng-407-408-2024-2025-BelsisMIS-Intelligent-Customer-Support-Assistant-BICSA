@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Dönem Mahalle Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Su Dönem Mahalle Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#donem-secimi">Dönem Seçimi ve Listeleme</a></li>
+                <li><a href="#mahalle-islemleri">Mahalle Bilgilerini Düzenleme</a>
+                    <ul>
+                        <li><a href="#tarih-girisi">Ödeme Tarihleri Girişi</a></li>
+                        <li><a href="#mesaj-girisi">Mesaj Bilgileri Girişi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#verileri-kaydetme">Verileri Kaydetme</a></li>
+                <li><a href="#kapatma">Programdan Çıkış</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme ve Pratik İpuçları</a></li>
+                <li><a href="#ornekler">Örnek Senaryolar ve Kullanım Örnekleri</a></li>
+                <li><a href="#toplu-islemler">Toplu İşlemler ve Özel Durumlar</a></li>
+                <li><a href="#sss">Sık Sorulan Sorular</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Su Dönem Mahalle Tanımları" ekranı, su faturalarındaki dönemler için mahalle bazında bilgilerin girilmesi, güncellenmesi ve görüntülenmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Dönem bazında mahallelere özel ödeme tarihlerini tanımlama</li>
+                <li>İlk ödeme tarihlerini belirleme</li>
+                <li>Son ödeme tarihlerini belirleme</li>
+                <li>Mahallelere özel ihbarname mesajlarını tanımlama</li>
+                <li>Sicillere özel mesajları tanımlama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Düzenlemek istediğiniz dönem bilgisi (yıl/dönem)</li>
+                    <li>Mahalleler için belirlenecek ilk ödeme tarihleri</li>
+                    <li>Mahalleler için belirlenecek son ödeme tarihleri</li>
+                    <li>Mahallelere özel iletilecek ihbarname mesajları (varsa)</li>
+                    <li>Sicillere özel iletilecek mesajlar (varsa)</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <h4>Mesaj Sisteminin Amacı:</h4>
+                <p>Programda tanımlayabileceğiniz iki tip mesaj vardır:</p>
+                <ul>
+                    <li><strong>İhbarname Mesajı:</strong> Bu mesajlar, ilgili mahalleye gönderilen su faturası ihbarnamelerinde görüntülenir. Genellikle ödeme hatırlatmaları, fatura ile ilgili özel bilgiler veya mahalleye özel duyurular için kullanılır.</li>
+                    <li><strong>Sicil Mesajı:</strong> Bu mesajlar, su abonelerinin sicil bilgilerine özel olarak eklenir ve faturalarda veya çevrimiçi sorgulamalarda görüntülenir. Abone ile ilgili özel hatırlatmalar veya bilgilendirmeler için kullanılır.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde mavi renkli bir şeritte "Su Dönem Mahalle Tanımları" başlığı yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında "Dönem" etiketi yanında bir açılır liste (dropdown) kutusu bulunur.</li>
+                            <li>Bu açılır listede sistemde tanımlı dönemler (yıl/dönem formatında) görüntülenir.</li>
+                            <li>Listede en fazla 15 dönem gösterilir ve yakın tarihli dönemler en üstte yer alır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Dönem seçim kutusunun altında "Listele" ve "Kapat" butonları yer alır.</li>
+                            <li>"Listele" butonuna basıldığında seçili dönem için mahalle bilgileri listelenir.</li>
+                            <li>"Kapat" butonuna basıldığında program kapatılır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mesaj Alanı:</strong>
+                        <ul>
+                            <li>Butonların altında, ortada kırmızı renkte bir mesaj alanı vardır.</li>
+                            <li>Bu alan, kaydetme işlemi sonrası "Kayıt İşleminiz Tamamlanmıştır." mesajını gösterir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Bölümü:</strong>
+                        <ul>
+                            <li>Listele butonuna basıldıktan sonra ekranın alt kısmında tüm mahalle bilgilerini içeren bir tablo görüntülenir.</li>
+                            <li>Bu tablo 5 sütundan oluşur: Mahalle Adı, İlk Ödeme Tarihi, Son Ödeme Tarihi, İhbarname Mesajı ve Sicil Mesajı.</li>
+                            <li>Tablonun üstünde ve altında "Kaydet" ve "Kapat" butonları bulunur.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Kullanıcı arayüzü 500x600 piksel boyutunda bir pencerede açılır.</li>
+                    <li>Pencere ekranın sol üst köşesinden 200 piksel sağa ve 20 piksel aşağıda konumlanır.</li>
+                    <li>Veri görüntülemek için öncelikle bir dönem seçip "Listele" butonuna basmanız gerekir.</li>
+                    <li>Mahalleler, tabloda alfabetik olarak (mahalle adına göre artan sırada) listelenir.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="donem-secimi" class="section">
+        <h2>Dönem Seçimi ve Listeleme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Dönem Seçme ve Mahalle Bilgilerini Listeleme:</h4>
+                <ol>
+                    <li><strong>Dönem Seçimi:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Ekranın üst kısmında, başlığın hemen altında yer alır.</li>
+                            <li><strong>Görünüm:</strong> "Dönem" etiketi yanında açılır liste (dropdown) kutusu.</li>
+                            <li><strong>İçerik:</strong> Yıl/dönem formatında dönem bilgileri (örn. "2023/1").</li>
+                            <li><strong>Kullanım:</strong> Listeyi açmak için kutuya tıklayın ve düzenlemek istediğiniz dönemi seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listele Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Dönem seçim kutusunun altında, ekranın orta üst kısmında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart gri buton, üzerinde "Listele" yazısı bulunur.</li>
+                            <li><strong>Kullanım:</strong> Seçtiğiniz dönem için mahalle bilgilerini görüntülemek için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kapat Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> "Listele" butonunun sağında yer alır.</li>
+                            <li><strong>Görünüm:</strong> Standart gri buton, üzerinde "Kapat" yazısı bulunur.</li>
+                            <li><strong>Kullanım:</strong> Programdan çıkmak için tıklayın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeleme Sonuçları:</strong>
+                        <ul>
+                            <li>"Listele" butonuna tıkladıktan sonra, seçilen döneme ait mahalle bilgileri alfabetik sırayla (mahalle adına göre) aşağıdaki tabloda görüntülenir.</li>
+                            <li>Daha önce bu dönem için kayıt yapılmamışsa, mahalleler yine listelenir ancak tarih ve mesaj alanları boş olur.</li>
+                            <li>Eğer listede hiç mahalle görünmüyorsa, sistem veritabanında mahalle tanımı yapılmamış olabilir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h4>Dönem Bilgisi Hakkında:</h4>
+                <p>Programda görüntülenen dönem bilgisi, "yıl/dönem" formatında gösterilir (örn. "2023/1"). Bu bilgi:</p>
+                <ul>
+                    <li>Sistemde en son eklenen 15 dönem, tarihe göre azalan sırada (en yenisi en üstte) listelenir.</li>
+                    <li>Yeni dönemler, sistem yöneticileri tarafından ayrı bir modülde oluşturulur.</li>
+                    <li>Eski dönemlere (listede gösterilmeyen) erişmeniz gerekiyorsa, sistem yöneticinize başvurmalısınız.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Dönem Seçimi İpuçları:</h4>
+                <ul>
+                    <li>Açılır listedeki dönemler en yeniden en eskiye doğru sıralanmıştır.</li>
+                    <li>Listede en fazla 15 dönem görüntülenir.</li>
+                    <li>Dönem seçtikten sonra mutlaka "Listele" butonuna basmanız gerekir, aksi halde bilgiler görüntülenmez.</li>
+                    <li>Enter tuşu basıldığında, TAB tuşu gibi bir sonraki alana geçiş yapar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="mahalle-islemleri" class="section">
+        <h2>Mahalle Bilgilerini Düzenleme</h2>
+        
+        <div id="tarih-girisi" class="info-box">
+            <h3>Ödeme Tarihleri Girişi</h3>
+            
+            <div class="step">
+                <h4>Mahalle Bilgileri Tablosu:</h4>
+                <ol>
+                    <li><strong>Tablo Başlıkları:</strong>
+                        <ul>
+                            <li>Mahalle Adı: Sistemde kayıtlı mahalle isimleri burada gösterilir (düzenlenemez).</li>
+                            <li>İlk Ödeme Tarihi: Fatura ödemelerinin başlangıç tarihi için giriş alanı.</li>
+                            <li>Son Ödeme Tarihi: Fatura ödemelerinin son tarihi için giriş alanı.</li>
+                            <li>İhbarname Mesajı: Mahalleye özel ihbarname mesajları için giriş alanı.</li>
+                            <li>Sicil Mesajı: Sicillere özel mesajlar için giriş alanı.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İlk Ödeme Tarihi Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tablonun ikinci sütununda, her mahalle satırında yer alır.</li>
+                            <li><strong>Özellik:</strong> Tarih formatında veri girişi yapılan metin kutusu.</li>
+                            <li><strong>Veri Türü:</strong> GG.AA.YYYY formatında tarih girişi (örn. "01.05.2023").</li>
+                            <li><strong>Kullanım:</strong> Fatura ödemelerinin başlayacağı tarihi girin.</li>
+                            <li><strong>Boyut:</strong> 10 karakter ile sınırlıdır.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Ödeme Tarihi Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tablonun üçüncü sütununda, her mahalle satırında yer alır.</li>
+                            <li><strong>Özellik:</strong> Tarih formatında veri girişi yapılan metin kutusu.</li>
+                            <li><strong>Veri Türü:</strong> GG.AA.YYYY formatında tarih girişi (örn. "15.05.2023").</li>
+                            <li><strong>Kullanım:</strong> Fatura ödemelerinin son tarihini girin.</li>
+                            <li><strong>Boyut:</strong> 10 karakter ile sınırlıdır.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tarih Bilgilerini Girmek İçin:</h4>
+                <ol>
+                    <li>Düzenlemek istediğiniz mahallenin satırını bulun.</li>
+                    <li>İlk Ödeme Tarihi alanına tıklayın veya TAB tuşu ile bu alana gelin.</li>
+                    <li>Tarihi GG.AA.YYYY formatında girin (örneğin: 01.05.2023).</li>
+                    <li>TAB tuşuna basarak Son Ödeme Tarihi alanına geçin.</li>
+                    <li>Son ödeme tarihini GG.AA.YYYY formatında girin (örneğin: 15.05.2023).</li>
+                    <li>TAB tuşuna basarak bir sonraki alana (İhbarname Mesajı) geçebilirsiniz.</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Tarih Girişi Hakkında Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Tarihler gün.ay.yıl formatında olmalıdır (örn. 01.05.2023).</li>
+                    <li>Son ödeme tarihi, ilk ödeme tarihinden sonraki bir tarih olmalıdır.</li>
+                    <li>Son ödeme tarihini boş bırakırsanız, bu alan sistemde NULL olarak kaydedilir ve varsayılan tarih uygulanabilir.</li>
+                    <li>İlk ödeme tarihi boş bırakılırsa, önceki kayıtlı değeri korunur; ilk kez kayıt yapılıyorsa boş kalır.</li>
+                    <li>Tarihler boş bırakıldığında, sistem ana dönem tanımlamasındaki ilk ve son ödeme tarihlerini kullanır.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tarih Girişi İpuçları:</h4>
+                <ul>
+                    <li>Tarih alanları nokta (.) ile ayrılmış gün, ay ve yıl değerlerini kabul eder.</li>
+                    <li>TAB tuşu ile alanlar arasında hızlı geçiş yapabilirsiniz.</li>
+                    <li>Tarih alanında değişiklik yapmak istemiyorsanız, mevcut değeri olduğu gibi bırakabilirsiniz.</li>
+                    <li>Alanı tamamen boşaltmak isterseniz, içindeki tarih verisini silip boş bırakabilirsiniz.</li>
+                    <li>Tek haneli gün ve aylar için başına 0 eklemeniz gerekmez, sistem otomatik olarak düzenleyecektir (örn. 1.5.2023 girilebilir).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mesaj-girisi" class="info-box">
+            <h3>Mesaj Bilgileri Girişi</h3>
+            
+            <div class="step">
+                <h4>Mesaj Alanları:</h4>
+                <ol>
+                    <li><strong>İhbarname Mesajı Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tablonun dördüncü sütununda, her mahalle satırında yer alır.</li>
+                            <li><strong>Özellik:</strong> Standart metin giriş kutusu.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Mahalleye özel ihbarname mesajını girin.</li>
+                            <li><strong>Boyut:</strong> Maksimum 75 karakter ile sınırlıdır, görünür boyutu 50 karakterdir.</li>
+                            <li><strong>Görüntülenme:</strong> Bu mesaj, ilgili mahalledeki tüm abonelerin su faturası ihbarnamelerinde görüntülenir.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Mesajı Alanı:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Tablonun beşinci (son) sütununda, her mahalle satırında yer alır.</li>
+                            <li><strong>Özellik:</strong> Standart metin giriş kutusu.</li>
+                            <li><strong>Veri Türü:</strong> Metin girişine izin verir.</li>
+                            <li><strong>Kullanım:</strong> Sicillere özel mesajı girin.</li>
+                            <li><strong>Boyut:</strong> Maksimum 75 karakter ile sınırlıdır, görünür boyutu 50 karakterdir.</li>
+                            <li><strong>Görüntülenme:</strong> Bu mesaj, abone sicil bilgilerinde ve çevrimiçi sorgulamalarda görüntülenir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Mesaj Bilgilerini Girmek İçin:</h4>
+                <ol>
+                    <li>Düzenlemek istediğiniz mahallenin satırını bulun.</li>
+                    <li>İhbarname Mesajı alanına tıklayın veya TAB tuşu ile bu alana gelin.</li>
+                    <li>Mahalleye özel ihbarname mesajını yazın (örneğin: "Ödeme geciktirme cezası uygulanacaktır").</li>
+                    <li>TAB tuşuna basarak Sicil Mesajı alanına geçin.</li>
+                    <li>Sicillere özel mesajı yazın (örneğin: "Ödemelerinizi zamanında yapınız").</li>
+                    <li>TAB tuşuna basarak bir sonraki mahallenin ilk alanına geçebilirsiniz.</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h4>Mesaj Kullanım Amacı:</h4>
+                <p>Her iki mesaj türünün farklı kullanım amaçları vardır:</p>
+                <ul>
+                    <li><strong>İhbarname Mesajı:</strong> Tüm mahalle sakinlerine iletilecek genel duyurular, hatırlatmalar veya uyarılar için kullanılır. Örneğin:
+                        <ul>
+                            <li>"Mahallenizde 15-20 Haziran tarihleri arasında su kesintisi yapılacaktır."</li>
+                            <li>"Su sayaçlarınızı donmaya karşı koruyunuz."</li>
+                            <li>"Faturaların zamanında ödenmesi kesinti olmaması için önemlidir."</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Mesajı:</strong> Abonelik işlemleriyle ilgili özel bilgilendirmeler, hatırlatmalar veya talimatlar için kullanılır. Örneğin:
+                        <ul>
+                            <li>"Abonelik işlemleriniz için www.suisletmesi.com adresini ziyaret ediniz."</li>
+                            <li>"Ödeme noktaları hakkında bilgi için 444 XX XX numaralı hattı arayınız."</li>
+                            <li>"Adres değişikliğinizi bildirmeyi unutmayınız."</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Mesaj Girişi İpuçları:</h4>
+                <ul>
+                    <li>Mesaj alanlarını boş bırakabilirsiniz, zorunlu değildir.</li>
+                    <li>Mesajlar fatura ve ihbarnamelerde görüntüleneceği için kısa ve net ifadeler kullanın.</li>
+                    <li>Karakter sayısı 75'i geçmemelidir, aksi halde mesajınız kesilebilir.</li>
+                    <li>Önceden girilmiş bir mesajı değiştirmek için mevcut mesajı silip yenisini yazabilirsiniz.</li>
+                    <li>Birden fazla mahalleye aynı mesajı girmek için kopyala-yapıştır yöntemini kullanabilirsiniz.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="verileri-kaydetme" class="section">
+        <h2>Verileri Kaydetme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Değişiklikleri Kaydetme:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Mahalle tablosunun üstünde ve altında yer alır.</li>
+                            <li><strong>Görünüm:</strong
+                                <li><strong>Kaydet Butonu:</strong>
+                                    <ul>
+                                        <li><strong>Konum:</strong> Mahalle tablosunun üstünde ve altında yer alır.</li>
+                                        <li><strong>Görünüm:</strong> Standart gri buton, üzerinde "Kaydet" yazısı bulunur.</li>
+                                        <li><strong>Kullanım:</strong> Tüm mahalleler için yaptığınız değişiklikleri kaydetmek için tıklayın.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Kaydetme İşlemi:</strong>
+                                    <ul>
+                                        <li>Tüm mahallelere ait bilgileri girdikten veya düzenledikten sonra, "Kaydet" butonuna tıklayın.</li>
+                                        <li>Sistem tüm değişiklikleri veritabanına kaydedecektir.</li>
+                                        <li>Kaydetme işlemi başarılı olduğunda ekranın üst orta kısmında kırmızı renkli "Kayıt İşleminiz Tamamlanmıştır." mesajı görüntülenir.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Kayıt İşlem Süreci:</strong>
+                                    <ul>
+                                        <li>Kaydet butonuna bastığınızda, sistem tablodaki her bir mahalle için ayrı bir kayıt işlemi gerçekleştirir.</li>
+                                        <li>Yeni kayıtlar eklenir, mevcut kayıtlar güncellenir.</li>
+                                        <li>Tüm kayıt işlemleri tamamlandığında, onay mesajı görüntülenir.</li>
+                                        <li>Kayıt sonrası form temizlenmez, yaptığınız değişiklikler ekranda görünmeye devam eder.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+            
+                        <div class="warning-box">
+                            <h4>Önemli Bilgiler:</h4>
+                            <ul>
+                                <li>Değişiklikleri kaydetmeden programı kapatırsanız, yaptığınız tüm değişiklikler kaybolacaktır.</li>
+                                <li>Kaydet butonuna bastığınızda, tablodaki tüm mahalle bilgileri aynı anda kaydedilir.</li>
+                                <li>Sadece seçilen dönem için değişiklikler kaydedilir, diğer dönemler etkilenmez.</li>
+                                <li>Tarih alanları boş bırakıldığında, ilk ödeme tarihi mevcut değerini korur, son ödeme tarihi NULL olarak kaydedilir.</li>
+                                <li>Herhangi bir hata durumunda ekranda bir hata mesajı görüntülenecektir.</li>
+                            </ul>
+                        </div>
+            
+                        <div class="tip-box">
+                            <h4>Kaydetme İşlemi İpuçları:</h4>
+                            <ul>
+                                <li>Büyük değişiklikler yapmadan önce tüm verileri kontrol edin.</li>
+                                <li>Önemli değişikliklerden sonra mutlaka "Kaydet" butonuna basın.</li>
+                                <li>Tabloda çok sayıda mahalle varsa, kaydırma çubuğunu kullanarak tüm mahalleleri kontrol edin ve değişikliklerinizi tamamlayın, sonra kaydedin.</li>
+                                <li>Başarılı kayıt işleminden sonra, aynı dönem için tekrar "Listele" butonuna basarak güncel verileri görüntüleyebilirsiniz.</li>
+                                <li>Veri girişi yaparken belirli aralıklarla kaydetme işlemi yapın, böylece uzun süren çalışmalar sırasında veri kaybı yaşamazsınız.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="kapatma" class="section">
+                    <h2>Programdan Çıkış</h2>
+                    <div class="info-box">
+                        <div class="step">
+                            <h4>Programı Kapatma:</h4>
+                            <ol>
+                                <li><strong>Kapat Butonu:</strong>
+                                    <ul>
+                                        <li><strong>Konum:</strong> Dönem seçimi altında, Listele butonunun yanında, tablonun üst ve alt kısmında yer alır.</li>
+                                        <li><strong>Görünüm:</strong> Standart gri buton, üzerinde "Kapat" yazısı bulunur.</li>
+                                        <li><strong>Kullanım:</strong> Programdan çıkmak için bu butona tıklayın.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Çıkış İşlemi:</strong>
+                                    <ul>
+                                        <li>Değişikliklerinizi kaydettikten sonra program penceresini kapatmak için "Kapat" butonuna tıklayın.</li>
+                                        <li>Program penceresi hemen kapanacaktır.</li>
+                                        <li>Kapatma işleminde herhangi bir onay mesajı görüntülenmez.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+            
+                        <div class="warning-box">
+                            <h4>Önemli Uyarılar:</h4>
+                            <ul>
+                                <li>Değişikliklerinizi kaydetmeden "Kapat" butonuna basarsanız, tüm değişiklikleriniz kaybolacaktır.</li>
+                                <li>Değişiklik yaptıysanız, çıkmadan önce mutlaka "Kaydet" butonuna basın.</li>
+                                <li>Program kapatıldıktan sonra tekrar açılması gerektiğinde, tüm adımları yeniden yapmanız gerekecektir.</li>
+                            </ul>
+                        </div>
+            
+                        <div class="tip-box">
+                            <h4>Çıkış İpuçları:</h4>
+                            <ul>
+                                <li>ESC tuşuna basarak da programdan çıkabilirsiniz.</li>
+                                <li>Bilgisayarınızdaki standart pencere kapatma düğmesi (X) ile de programı kapatabilirsiniz.</li>
+                                <li>İşlerinizi tamamladıktan sonra programı kapatmak, sistem kaynaklarının verimli kullanılmasını sağlar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="sorun-giderme" class="section">
+                    <h2>Sorun Giderme ve Pratik İpuçları</h2>
+                    <div class="info-box">
+                        <div class="step">
+                            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                            <ol>
+                                <li><strong>Tarihlerin Doğru Görüntülenmemesi:</strong>
+                                    <ul>
+                                        <li><strong>Sorun:</strong> Tarih formatı yanlış girildiğinde sistem tarihi doğru işleyemeyebilir.</li>
+                                        <li><strong>Çözüm:</strong> Tarihleri mutlaka GG.AA.YYYY formatında girin (örn. 01.05.2023).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Kayıt İşlemi Tamamlanmıyor:</strong>
+                                    <ul>
+                                        <li><strong>Sorun:</strong> Kaydet butonuna bastıktan sonra onay mesajı görünmüyor.</li>
+                                        <li><strong>Çözüm:</strong> Tarih formatlarını kontrol edin ve tekrar kaydetmeyi deneyin.</li>
+                                        <li><strong>Ek Çözüm:</strong> Çok uzun mesajlar sorun yaratabilir, 75 karakterden kısa olduklarından emin olun.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tabloda Mahallelerin Görüntülenmemesi:</strong>
+                                    <ul>
+                                        <li><strong>Sorun:</strong> Dönem seçilip Listele butonuna basıldığında tablo boş görünüyor.</li>
+                                        <li><strong>Çözüm:</strong> Başka bir dönem seçmeyi deneyin veya bilgilerin sisteme eklendiğinden emin olun.</li>
+                                        <li><strong>Ek Çözüm:</strong> Sistem yöneticinize başvurarak mahalle tanımlamalarının yapılıp yapılmadığını kontrol edin.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tarih Değişiklikleri Kaydedilmiyor:</strong>
+                                    <ul>
+                                        <li><strong>Sorun:</strong> Tarih alanları değiştirilmesine rağmen, Kaydet butonuna basıldıktan sonra değişiklikler görünmüyor.</li>
+                                        <li><strong>Çözüm:</strong> Tarih formatını kontrol edin ve tarihi tamamen silin, sonra yeniden girin.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Sistem Yanıt Vermiyor:</strong>
+                                    <ul>
+                                        <li><strong>Sorun:</strong> Butonlara tıkladığınızda sistem yanıt vermiyor.</li>
+                                        <li><strong>Çözüm:</strong> Programı kapatıp yeniden açın.</li>
+                                        <li><strong>Ek Çözüm:</strong> Bilgisayarınızı yeniden başlatın, sorun devam ederse sistem yöneticinize başvurun.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h4>Verimli Çalışma İpuçları:</h4>
+                            <ol>
+                                <li><strong>Klavye Kısayolları:</strong>
+                                    <ul>
+                                        <li>TAB tuşu: Bir sonraki alana geçiş yapar.</li>
+                                        <li>SHIFT + TAB: Bir önceki alana geçiş yapar.</li>
+                                        <li>ENTER: Tab tuşu gibi davranır, bir sonraki alana geçiş yapar.</li>
+                                        <li>ESC: Programdan çıkış yapar.</li>
+                                        <li>CTRL+TAB: Metin kutusu içinde bir sonraki sözcüğe geçiş yapar.</li>
+                                        <li>HOME: Metin kutusu içinde satır başına gider.</li>
+                                        <li>END: Metin kutusu içinde satır sonuna gider.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Veri Girişi İçin:</strong>
+                                    <ul>
+                                        <li>Birden fazla mahalleye aynı tarihleri girecekseniz, kopyala-yapıştır özelliğini kullanabilirsiniz (Ctrl+C ile kopyalayıp Ctrl+V ile yapıştırabilirsiniz).</li>
+                                        <li>Çok sayıda mahalle varsa, en önemli mahalleleri önce düzenleyin, sonra diğerlerine geçin.</li>
+                                        <li>Aynı mesajı birden fazla mahalleye girmek için mesajı bir kez yazıp kopyalayarak diğer alanlara yapıştırabilirsiniz.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tarih Girişi İçin:</strong>
+                                    <ul>
+                                        <li>Tarih girerken nokta (.) kullanın, sisteme girilirken otomatik olarak doğru formata dönüştürülecektir.</li>
+                                        <li>Gün ve ay değerlerini tek haneli girerseniz de sistem otomatik olarak düzeltecektir (örn. 1.5.2023 yerine 01.05.2023).</li>
+                                        <li>İlk ve son ödeme tarihleri arasında yeterli bir zaman aralığı bırakın.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+            
+                        <div class="warning-box">
+                            <h4>Veri Güvenliği Uyarıları:</h4>
+                            <ul>
+                                <li>İşlemlerinizi tamamladıktan sonra her zaman programdan güvenli çıkış yapın.</li>
+                                <li>Tarih değişikliklerinden sonra mutlaka Kaydet butonuna basın.</li>
+                                <li>Şüpheli durumlar veya hata mesajları için sistem yöneticinize danışın.</li>
+                                <li>Çok sayıda mahalle için toplu değişiklik yapmadan önce bir yedek alma işleminin yapılmasını sistem yöneticinizden isteyin.</li>
+                            </ul>
+                        </div>
+            
+                        <div class="tip-box">
+                            <h4>Profesyonel İpuçları:</h4>
+                            <ul>
+                                <li>Bu programı düzenli olarak kullanacaksanız, kısayol tuşlarını öğrenmek uzun vadede size zaman kazandıracaktır.</li>
+                                <li>Özellikle yoğun dönemlerde (örneğin yeni dönem başlangıcında) verileri erkenden hazırlayıp sisteme girin.</li>
+                                <li>Fatura kesim tarihlerini ilk ve son ödeme tarihlerine göre planlayın.</li>
+                                <li>Mahalle mesajlarını kısa ve anlaşılır tutun, uzun mesajlar faturalarda düzgün görüntülenmeyebilir.</li>
+                                <li>Belirli aralıklarla (örneğin 5-10 mahalle düzenledikten sonra) Kaydet butonuna basarak işleminizi tamamlayın.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="ornekler" class="section">
+                    <h2>Örnek Senaryolar ve Kullanım Örnekleri</h2>
+                    <div class="info-box">
+                        <h3>Örnek Senaryolar</h3>
+                        
+                        <div class="step">
+                            <h4>Örnek 1: Standart Tarih Girişi</h4>
+                            <p><strong>Senaryo:</strong> Atatürk Mahallesi için normal ödeme dönemi tanımlama</p>
+                            <ol>
+                                <li>Dönem açılır listesinden "2023/1" seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>Atatürk Mahallesi satırını bulun.</li>
+                                <li>İlk Ödeme Tarihi alanına "01.05.2023" yazın.</li>
+                                <li>Son Ödeme Tarihi alanına "15.05.2023" yazın.</li>
+                                <li>İhbarname Mesajı alanına "Zamanında ödeme yapmanız rica olunur." yazın.</li>
+                                <li>Sicil Mesajı alanını boş bırakın.</li>
+                                <li>"Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h4>Örnek 2: Özel Durum Mesajı</h4>
+                            <p><strong>Senaryo:</strong> Cumhuriyet Mahallesi için altyapı çalışması nedeniyle özel ödeme dönemi</p>
+                            <ol>
+                                <li>Dönem açılır listesinden "2023/1" seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>Cumhuriyet Mahallesi satırını bulun.</li>
+                                <li>İlk Ödeme Tarihi alanına "05.05.2023" yazın.</li>
+                                <li>Son Ödeme Tarihi alanına "25.05.2023" yazın.</li>
+                                <li>İhbarname Mesajı alanına "Altyapı çalışması nedeniyle ödeme süresi uzatılmıştır." yazın.</li>
+                                <li>Sicil Mesajı alanına "Su kesintileri için özür dileriz." yazın.</li>
+                                <li>"Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h4>Örnek 3: Toplu Tarih Güncellemesi</h4>
+                            <p><strong>Senaryo:</strong> Tatil sezonu nedeniyle tüm mahallelerde ödeme tarihlerinin değiştirilmesi</p>
+                            <ol>
+                                <li>Dönem açılır listesinden "2023/2" seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>İlk mahallenin ilk ödeme tarihini "10.07.2023", son ödeme tarihini "30.07.2023" olarak girin.</li>
+                                <li>Bu tarihleri seçip kopyalayın (CTRL+C).</li>
+                                <li>Diğer mahallelerin tarih alanlarına gidip yapıştırın (CTRL+V).</li>
+                                <li>Tüm mahallelere "Bayram tatili nedeniyle ödeme süresi uzatılmıştır" mesajını yazın.</li>
+                                <li>"Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h4>Örnek 4: Tarihleri Boş Bırakma</h4>
+                            <p><strong>Senaryo:</strong> Bazı mahalleler için özel bir tarih belirtmeden, sistem genelinde tanımlı tarihlerin kullanılması</p>
+                            <ol>
+                                <li>Dönem açılır listesinden "2023/3" seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>Özel tarih uygulamak istediğiniz mahalleler için tarihleri girin.</li>
+                                <li>Sistem genelindeki tarihleri kullanacak mahallelerin tarih alanlarını boş bırakın.</li>
+                                <li>İhtiyaç duyulan mesajları girin.</li>
+                                <li>"Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="tip-box">
+                            <h4>Örnek Mesaj Metinleri:</h4>
+                            <ul>
+                                <li><strong>İhbarname Mesajı örnekleri:</strong>
+                                    <ul>
+                                        <li>"Ödeme yapmayı unutmayınız, son ödeme tarihinden sonra gecikme cezası uygulanacaktır."</li>
+                                        <li>"Online ödeme için www.suodemeleri.gov.tr adresini ziyaret edebilirsiniz."</li>
+                                        <li>"Mayıs ayı içerisinde periyodik bakım nedeniyle su kesintisi olacaktır."</li>
+                                        <li>"Su sayaçlarınızın kontrolü için görevlilere yardımcı olunuz."</li>
+                                        <li>"Fatura bilgilendirmeleri artık SMS ile de yapılmaktadır."</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Sicil Mesajı örnekleri:</strong>
+                                    <ul>
+                                        <li>"Sicil numaranızı her işlemde belirtmeyi unutmayınız."</li>
+                                        <li>"Adres değişikliklerini kurumumuza bildiriniz."</li>
+                                        <li>"Borç sorgulama için 444 XX XX numaralı hattı arayabilirsiniz."</li>
+                                        <li>"e-Fatura sistemine geçiş yapabilirsiniz."</li>
+                                        <li>"Otomatik ödeme talimatı için şubelerimize başvurunuz."</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="toplu-islemler" class="section">
+                    <h2>Toplu İşlemler ve Özel Durumlar</h2>
+                    <div class="info-box">
+                        <h3>Tüm Mahallelere Aynı Bilgileri Uygulama</h3>
+                        
+                        <div class="step">
+                            <h4>Tüm Mahallelere Aynı Tarih Uygulama:</h4>
+                            <ol>
+                                <li>Dönem seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>İlk mahallenin satırına gidin.</li>
+                                <li>İlk ve son ödeme tarihlerini girin.</li>
+                                <li>Girdiğiniz ilk tarihi seçin ve kopyalayın (CTRL+C).</li>
+                                <li>Alt+Tab veya fare ile diğer mahallelerin aynı alanlarına gidip yapıştırın (CTRL+V).</li>
+                                <li>Son ödeme tarihi için de aynı işlemi yapın.</li>
+                                <li>İşlem tamamlandığında "Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h4>Tüm Mahallelere Aynı Mesajı Uygulama:</h4>
+                            <ol>
+                                <li>Dönem seçin ve "Listele" butonuna tıklayın.</li>
+                                <li>İlk mahallenin İhbarname Mesajı alanına mesajı yazın.</li>
+                                <li>Yazdığınız mesajı seçin ve kopyalayın (CTRL+C).</li>
+                                <li>Diğer mahallelerin aynı alanlarına fare ile veya Tab tuşunu kullanarak geçin.</li>
+                                <li>Her mahalle için yapıştırma işlemi yapın (CTRL+V).</li>
+                                <li>Sicil Mesajı için de aynı işlemi tekrarlayabilirsiniz.</li>
+                                <li>İşlem tamamlandığında "Kaydet" butonuna tıklayın.</li>
+                            </ol>
+                        </div>
+            
+                        <div class="info-box">
+                            <h4>Özel Durumlar:</h4>
+                            <p>Bazı özel durumlarda sistemi nasıl kullanacağınıza dair bilgiler:</p>
+                            <ul>
+                                <li><strong>Fatura gecikmesi durumu:</strong> Tüm mahallelerin ödeme tarihleri geciktiğinde, hızlıca tüm mahallelere aynı tarihleri uygulayın.</li>
+                                <li><strong>Acil durum bildirimleri:</strong> Sel, deprem gibi acil durumlarda tüm mahallelere aynı bilgilendirme mesajını ekleyin.</li>
+                                <li><strong>Bakım çalışmaları:</strong> Belirli bölgelerdeki mahallelere özel bakım mesajları girin.</li>
+                                <li><strong>Tarife değişiklikleri:</strong> Yeni tarife bilgilendirmelerini tüm mahallelerin ihbarname mesajlarına ekleyin.</li>
+                            </ul>
+                        </div>
+            
+                        <div class="warning-box">
+                            <h4>Toplu İşlemlerde Dikkat Edilmesi Gerekenler:</h4>
+                            <ul>
+                                <li>Toplu değişiklikler yapmadan önce doğru dönemi seçtiğinizden emin olun.</li>
+                                <li>Çok sayıda mahalle için işlem yaparken, belirli aralıklarla kaydetme işlemi yapın.</li>
+                                <li>Yanlışlıkla tüm mahallelere uygulanan bir değişikliği geri almak zor olabilir, dikkatli olun.</li>
+                                <li>Önemli değişikliklerden önce sistem yöneticinize danışın.</li>
+                            </ul>
+                        </div>
+            
+                        <div class="tip-box">
+                            <h4>Toplu İşlem İpuçları:</h4>
+                            <ul>
+                                <li>Belirli bir grup mahalleye aynı bilgileri uygulamak için alfabetik sıralamadan yararlanabilirsiniz.</li>
+                                <li>Uzun mesajları önce bir metin editöründe hazırlayıp sonra kopyalayabilirsiniz.</li>
+                                <li>Karmaşık toplu işlemler için önce bir "işlem listesi" hazırlayın, sonra sırayla uygulayın.</li>
+                                <li>İlgili mahalleleri görsel olarak işaretlemek için kağıt üzerinde bir kontrol listesi kullanabilirsiniz.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="sss" class="section">
+                    <h2>Sık Sorulan Sorular</h2>
+                    <div class="info-box">
+                        <h3>Kullanıcılar Tarafından Sıkça Sorulan Sorular</h3>
+                        
+                        <div class="step">
+                            <h4>Genel Sorular</h4>
+                            <ol>
+                                <li><strong>Soru:</strong> Bir mahalle için ilk ödeme tarihini girdiğim halde son ödeme tarihini boş bırakabilir miyim?</li>
+                                <li><strong>Cevap:</strong> Evet, son ödeme tarihini boş bırakabilirsiniz. Bu durumda sistemde NULL olarak kaydedilir ve varsayılan son ödeme tarihi uygulanabilir.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Birden fazla dönemi aynı anda düzenleyebilir miyim?</li>
+                                <li><strong>Cevap:</strong> Hayır, her seferinde sadece bir dönem üzerinde çalışabilirsiniz. Bir dönem için işlemleri tamamladıktan sonra, açılır listeden başka bir dönem seçip "Listele" butonuna basarak o dönemi düzenleyebilirsiniz.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Hatalı bir tarih girişi yaptım, nasıl düzeltebilirim?</li>
+                                <li><strong>Cevap:</strong> İlgili tarih alanının içeriğini tamamen silip doğru tarihi girin ve ardından "Kaydet" butonuna basın.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Mesaj alanına çok uzun bir metin yazdım, sistem bunu kabul eder mi?</li>
+                                <li><strong>Cevap:</strong> Mesaj alanları en fazla 75 karakter ile sınırlıdır. Daha uzun metinler girebilirsiniz ancak sadece ilk 75 karakter sisteme kaydedilir.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Yeni bir mahalle sisteme eklendiğinde, bu ekranda otomatik olarak görünür mü?</li>
+                                <li><strong>Cevap:</strong> Evet, yeni mahalleler sistem yöneticileri tarafından ana mahalle listesine eklendiğinde, bu ekranda otomatik olarak görüntülenecektir.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Yeni bir dönem nasıl oluşturabilirim?</li>
+                                <li><strong>Cevap:</strong> Yeni dönemler bu ekrandan oluşturulamaz. Yeni dönem oluşturma işlemi sistem yöneticileri tarafından ayrı bir modülde gerçekleştirilir. Yeni dönem eklenmesi gerekiyorsa, sistem yöneticinize başvurun.</li>
+                            </ol>
+                            <ol>
+                                <li><strong>Soru:</strong> Belirli bir dönem için bir mahallenin ödeme tarihlerini sıfırlayabilir miyim?</li>
+                                <li><strong>Cevap:</strong> Evet, ilgili mahallenin tarih alanlarının içeriğini tamamen silip boş bırakabilirsiniz. Son ödeme tarihi boş bı
+                                    <ol>
+                                        <li><strong>Soru:</strong> Belirli bir dönem için bir mahallenin ödeme tarihlerini sıfırlayabilir miyim?</li>
+                                        <li><strong>Cevap:</strong> Evet, ilgili mahallenin tarih alanlarının içeriğini tamamen silip boş bırakabilirsiniz. Son ödeme tarihi boş bırakıldığında NULL olarak kaydedilir, ilk ödeme tarihi boş bırakıldığında ise varsa önceki değerini korur.</li>
+                                    </ol>
+                                    <ol>
+                                        <li><strong>Soru:</strong> Sistem tarafından kullanılan tarih formatı nedir?</li>
+                                        <li><strong>Cevap:</strong> Tarihler GG.AA.YYYY formatında girilmelidir (örneğin 01.05.2023). Tek haneli gün ve aylar için başına 0 eklenmesi gerekmez, sistem otomatik olarak düzenleyecektir.</li>
+                                    </ol>
+                                    <ol>
+                                        <li><strong>Soru:</strong> Mahalleler hangi sırada listelenir?</li>
+                                        <li><strong>Cevap:</strong> Mahalleler, mahalle adına göre alfabetik olarak (A'dan Z'ye) listelenir. Bu sıralama sistemde sabit olup değiştirilemez.</li>
+                                    </ol>
+                                    <ol>
+                                        <li><strong>Soru:</strong> Toplu güncelleme yaparken tüm mahalleleri aynı anda göremiyorum, ne yapmalıyım?</li>
+                                        <li><strong>Cevap:</strong> Tablo içinde kaydırma çubuğunu kullanarak tüm mahallelere ulaşabilirsiniz. Çok sayıda mahalle varsa, küçük gruplar halinde çalışıp her grubu tamamladıktan sonra kaydetme işlemi yapabilirsiniz.</li>
+                                    </ol>
+                                </div>
+                    
+                                <div class="warning-box">
+                                    <h4>Önemli Bilgiler:</h4>
+                                    <ul>
+                                        <li>Sistem aynı anda en fazla 15 dönemi listeleyebilmektedir. Daha eski dönemlere erişmeniz gerekiyorsa, sistem yöneticinize başvurun.</li>
+                                        <li>Kayıt edilen tarih ve mesaj bilgileri, fatura ve ihbarnamelere otomatik olarak yansıyacaktır.</li>
+                                        <li>Önemli bilgilendirmeler için mesaj alanlarını kullanın, ancak bu alanların karakter sınırı olduğunu unutmayın.</li>
+                                        <li>Program üzerinde yapılan değişiklikler, fatura kesme işleminin yapıldığı dönemi etkileyecektir.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="section">
+                            <h2>Sonuç</h2>
+                            <div class="info-box">
+                                <p>"Su Dönem Mahalle Tanımları" ekranı, su faturalarındaki dönemler için mahalle bazında ödeme tarihlerini ve özel mesajları tanımlamanızı sağlayan kullanışlı bir araçtır. Bu kılavuz, programın temel işlevlerini ve verimli kullanım yöntemlerini açıklamaktadır.</p>
+                    
+                                <p>Yeni başlayanlar, adım adım bu kılavuzdaki yönergeleri takip ederek programı kolayca kullanmaya başlayabilirler. Herhangi bir sorunla karşılaşırsanız, önce bu kılavuzdaki "Sorun Giderme" bölümüne göz atın, çözüm bulamazsanız sistem yöneticinize başvurun.</p>
+                    
+                                <div class="tip-box">
+                                    <h4>Hatırlatma:</h4>
+                                    <p>Programla çalışırken şunlara dikkat edin:</p>
+                                    <ul>
+                                        <li>Bilgilerinizi düzenli olarak kaydedin.</li>
+                                        <li>Tarihleri doğru formatta girin.</li>
+                                        <li>Mesajları kısa ve anlaşılır tutun.</li>
+                                        <li>İşlem tamamlandığında sistemden güvenli çıkış yapın.</li>
+                                        <li>Toplu işlemlerde dikkatli olun ve düzenli aralıklarla kayıt yapın.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="info-box">
+                                    <h4>Özetle Önemli Noktalar:</h4>
+                                    <ol>
+                                        <li>Program 500x600 piksel boyutunda bir pencerede açılır ve ekranın sol üst kısmında konumlanır.</li>
+                                        <li>Çalışmaya başlamak için bir dönem seçip "Listele" butonuna tıklamalısınız.</li>
+                                        <li>Mahalleler alfabetik sırayla listelenir ve aynı anda tüm mahalleler için düzenleme yapabilirsiniz.</li>
+                                        <li>Tarihler GG.AA.YYYY formatında girilmeli, mesajlar 75 karakteri geçmemelidir.</li>
+                                        <li>Değişiklikleri kaydetmek için "Kaydet" butonuna, programdan çıkmak için "Kapat" butonuna tıklayın.</li>
+                                        <li>Kopyala-yapıştır özelliği, toplu işlemlerde size zaman kazandıracaktır.</li>
+                                        <li>İşlemlerinizi tamamladıktan sonra programdan güvenle çıkın.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </body>
+                    </html>        
