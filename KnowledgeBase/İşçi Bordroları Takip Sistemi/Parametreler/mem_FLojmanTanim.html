@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojman Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Lojman Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#lojman-kayit-islemleri">Lojman Kayıtları İşlemleri</a>
+                    <ul>
+                        <li><a href="#yeni-kayit">Yeni Lojman Kaydı Ekleme</a></li>
+                        <li><a href="#kayit-guncelleme">Mevcut Lojman Kaydını Görüntüleme/Güncelleme</a></li>
+                        <li><a href="#kayit-silme">Lojman Kaydı Silme</a></li>
+                    </ul>
+                </li>
+                <li><a href="#butonlar">Program Butonları ve İşlevleri</a></li>
+                <li><a href="#kisayollar">Klavye Kısayolları</a></li>
+                <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Lojman Tanımları programı, kurumunuza ait lojmanların kayıtlarını yönetmenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni lojman kaydı oluşturma</li>
+                <li>Mevcut lojman bilgilerini görüntüleme</li>
+                <li>Lojman kira tutarlarını güncelleme</li>
+                <li>Lojman kayıtlarını silme</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Lojman kodları (1-99 arası numara)</li>
+                    <li>Lojman kira tutarları</li>
+                    <li>Programı kullanmak için gerekli kullanıcı yetkileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Lojman Tanımları (Giriş)" veya "Lojman Tanımları (Değişiklik)" başlığı yer alır</li>
+                            <li>Başlık, o anda programın hangi modda olduğunu gösterir (Giriş = yeni kayıt, Değişiklik = düzenleme)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu bölümde "Lojman Kodu" ve "Kira Tutarı" alanları yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta, giriş kutuları sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, veri giriş alanlarının altında yer alır</li>
+                            <li>İki satır halinde düzenlenmiş butonlar bulunur</li>
+                            <li>Üst satırda: Önceki, Sonraki, Liste butonları</li>
+                            <li>Alt satırda: Temizle, Kaydet, Sil, Çıkış butonları</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Başlık "Lojman Tanımları (Giriş)" olarak gelir</li>
+                    <li>İmleç "Lojman Kodu" alanında konumlanır</li>
+                    <li>Yeni bir kayıt girişi için hazır bekleme durumunda başlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="lojman-kayit-islemleri" class="section">
+        <h2>Lojman Kayıtları İşlemleri</h2>
+        <div class="info-box">
+            <p>Bu bölümde lojman kayıtları üzerinde yapabileceğiniz temel işlemleri adım adım öğreneceksiniz.</p>
+        </div>
+        
+        <div id="yeni-kayit" class="section">
+            <h3>Yeni Lojman Kaydı Ekleme</h3>
+            <div class="step">
+                <h4>Adım Adım Yeni Lojman Kaydı Ekleme:</h4>
+                <ol>
+                    <li><strong>Programa Giriş:</strong>
+                        <ul>
+                            <li>Program açıldığında otomatik olarak "Lojman Tanımları (Giriş)" başlıklı ekran görüntülenir</li>
+                            <li>Başlık turkuaz renkli üst şeritte yer alır ve yeni kayıt ekleme modunda olduğunuzu gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lojman Kodu Girişi:</strong>
+                        <ul>
+                            <li>İmleç otomatik olarak "Lojman Kodu" alanında bulunur</li>
+                            <li>"Lojman Kodu" etiketi ekranın sol üst kısmında yer alır</li>
+                            <li>Etiketin hemen sağında küçük bir metin kutusu bulunur</li>
+                            <li>Bu alana 1-99 arası bir sayı girin (Önemli: "0" değeri kullanılamaz)</li>
+                            <li>Kodu girdikten sonra TAB tuşuna basarak bir sonraki alana geçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kira Tutarı Girişi:</strong>
+                        <ul>
+                            <li>"Kira Tutarı" etiketi, Lojman Kodu alanının hemen alt satırında yer alır</li>
+                            <li>Etiketin sağındaki metin kutusuna kira miktarını TL cinsinden girin</li>
+                            <li>Ondalık ayırıcı olarak virgül (,) kullanın (Örnek: 1250,00)</li>
+                            <li>Değer girilmezse varsayılan olarak "0" değeri kaydedilecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydı Tamamlama:</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu, ekranın alt tarafında, Sil ve Çıkış butonlarının arasında yer alır</li>
+                            <li>Veya klavyeden ALT+S tuş kombinasyonunu kullanabilirsiniz</li>
+                            <li>İşlem başarılı olduğunda, sistem bir sonraki boş kayıt için ekranı temizler</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Lojman Kodu her kayıt için benzersiz olmalıdır</li>
+                    <li>Mevcut bir kodu tekrar girmeye çalışırsanız, sistem sizi uyaracak ve kayıt güncelleme moduna geçecektir</li>
+                    <li>Lojman Kodu "0" olamaz, "0" değerini girmeye çalıştığınızda uyarı alacaksınız</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Alanlar arasında gezinmek için TAB tuşunu kullanabilirsiniz</li>
+                    <li>ENTER tuşu da TAB tuşu ile aynı işlevi görür</li>
+                    <li>Kira tutarını girerken para birimi sembolü (₺) yazmaya gerek yoktur</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="kayit-guncelleme" class="section">
+            <h3>Mevcut Lojman Kaydını Görüntüleme/Güncelleme</h3>
+            <div class="step">
+                <h4>Adım Adım Lojman Kaydı Görüntüleme ve Güncelleme:</h4>
+                <ol>
+                    <li><strong>Kaydı Bulma (Doğrudan Kod Girerek):</strong>
+                        <ul>
+                            <li>Program açıkken "Lojman Kodu" alanına aramak istediğiniz lojmanın kodunu girin</li>
+                            <li>Lojman Kodu alanı, ekranın üst kısmında yer alan ilk giriş alanıdır</li>
+                            <li>Kodu girdikten sonra TAB tuşuna basın veya Lojman Kodu alanından çıkın</li>
+                            <li>Eğer girilen kod mevcutsa, sistem otomatik olarak bu kaydı getirecek ve "Lojman Tanımları (Değişiklik)" başlığını gösterecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydı Bulma (Liste Üzerinden):</strong>
+                        <ul>
+                            <li>Ekranın orta alt kısmında bulunan "Liste" butonuna tıklayın</li>
+                            <li>Liste butonu, üst buton sırasında, Önceki ve Sonraki butonlarının yanında yer alır</li>
+                            <li>Açılan pencereden istediğiniz lojmanı seçin</li>
+                            <li>Seçilen lojman bilgileri ana ekrana yüklenecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydı Bulma (Önceki/Sonraki Butonlarıyla):</strong>
+                        <ul>
+                            <li>"Önceki" butonu, ekranın orta alt kısmında sol tarafta bulunur</li>
+                            <li>"Sonraki" butonu, Önceki butonunun hemen sağında yer alır</li>
+                            <li>Mevcut bir kaydı görüntülerken bu butonları kullanarak kayıtlar arasında gezinebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Güncelleme:</strong>
+                        <ul>
+                            <li>Kayıt yüklendikten sonra "Kira Tutarı" alanında değişiklik yapabilirsiniz</li>
+                            <li>Kira Tutarı alanı, Lojman Kodu alanının hemen altında yer alır</li>
+                            <li>Değişikliği yaptıktan sonra ekranın alt kısmındaki "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu, alt buton sırasında ortada yer alır</li>
+                            <li>Veya ALT+S tuş kombinasyonunu kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Notlar:</h4>
+                <ul>
+                    <li>Güncelleme modunda "Lojman Kodu" alanı değiştirilemez (gri renkli görünür)</li>
+                    <li>Değişiklik yapılmasını istemediğiniz bir kayıt için "Çıkış" butonuna basarak işlemi iptal edebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-silme" class="section">
+        <h3>Lojman Kaydı Silme</h3>
+        <div class="step">
+            <h4>Adım Adım Lojman Kaydı Silme:</h4>
+            <ol>
+                <li><strong>Silinecek Kaydı Bulma:</strong>
+                    <ul>
+                        <li>Öncelikle silmek istediğiniz lojman kaydını bulmanız gerekir</li>
+                        <li>Bunun için "Lojman Kodu" alanına silmek istediğiniz lojmanın kodunu girin</li>
+                        <li>Lojman Kodu alanı ekranın üst kısmında yer alan ilk giriş alanıdır</li>
+                        <li>Veya "Liste" butonunu kullanarak açılan listeden silinecek kaydı seçebilirsiniz</li>
+                        <li>Liste butonu, ekranın orta alt kısmında, Önceki ve Sonraki butonlarının yanında yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemini Başlatma:</strong>
+                    <ul>
+                        <li>Silinecek kayıt ekranda görüntülendiğinde, "Sil" butonuna tıklayın</li>
+                        <li>Sil butonu, ekranın alt kısmında, Kaydet butonunun sağında, Çıkış butonunun solunda yer alır</li>
+                        <li>Sistem size bir onay mesajı gösterecektir: "İptal İşlemini Onaylıyor musunuz?"</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemini Onaylama:</strong>
+                    <ul>
+                        <li>Onay penceresinde "Evet" butonuna tıklayarak silme işlemini onaylayın</li>
+                        <li>İşlemi iptal etmek için "Hayır" butonuna tıklayın</li>
+                        <li>Evet'i seçerseniz, kayıt kalıcı olarak silinecektir</li>
+                        <li>Silme işlemi tamamlandıktan sonra, program otomatik olarak yeni kayıt ekleme moduna geçecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Silme işlemi geri alınamaz! Onay vermeden önce doğru kaydı sildiğinizden emin olun</li>
+                <li>Silinen kayıtlar kalıcı olarak sistemden kaldırılır</li>
+                <li>Silme işlemi için kullanıcı yetkinizin olduğundan emin olun</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Program Butonları ve İşlevleri</h2>
+        <div class="info-box">
+            <h3>Tüm Butonların Detaylı Açıklaması</h3>
+            
+            <table>
+                <tr>
+                    <th>Buton Adı</th>
+                    <th>Konum</th>
+                    <th>İşlev</th>
+                </tr>
+                <tr>
+                    <td>Önceki</td>
+                    <td>Ekranın orta-alt kısmında, sol tarafta</td>
+                    <td>Mevcut kayıttan bir önceki kayda gitmek için kullanılır. Sıralama lojman kodu numarasına göredir.</td>
+                </tr>
+                <tr>
+                    <td>Sonraki</td>
+                    <td>Önceki butonunun sağında</td>
+                    <td>Mevcut kayıttan bir sonraki kayda gitmek için kullanılır. Sıralama lojman kodu numarasına göredir.</td>
+                </tr>
+                <tr>
+                    <td>Liste</td>
+                    <td>Sonraki butonunun sağında</td>
+                    <td>Tüm lojman kayıtlarını listeleyen bir pencere açar. Bu listeden kayıt seçimi yapabilirsiniz.</td>
+                </tr>
+                <tr>
+                    <td>Temizle</td>
+                    <td>Alt buton sırasında, sol tarafta</td>
+                    <td>Ekrandaki tüm alanları temizler ve programı yeni kayıt ekleme moduna getirir.</td>
+                </tr>
+                <tr>
+                    <td>Kaydet</td>
+                    <td>Temizle butonunun sağında</td>
+                    <td>Ekrandaki bilgileri kaydeder. Yeni kayıt veya güncelleme işlemini tamamlar.</td>
+                </tr>
+                <tr>
+                    <td>Sil</td>
+                    <td>Kaydet butonunun sağında</td>
+                    <td>Görüntülenen kaydı silmek için kullanılır. İşlem onay gerektirir.</td>
+                </tr>
+                <tr>
+                    <td>Çıkış</td>
+                    <td>Alt buton sırasında, en sağda</td>
+                    <td>Programdan çıkış yapar ve pencereyi kapatır.</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <h4>Buton Kullanım İpuçları:</h4>
+                <ul>
+                    <li>Butonları klavye kısayolları ile de kullanabilirsiniz (Klavye Kısayolları bölümüne bakınız)</li>
+                    <li>Bir işlemi iptal etmek isterseniz, Çıkış butonuna basın ve tekrar giriş yapın</li>
+                    <li>Liste butonunu kullanarak kayıtlar arasında daha hızlı gezinebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Klavye Kısayolları</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin Klavye Kısayolları</h3>
+            
+            <table>
+                <tr>
+                    <th>Tuş Kombinasyonu</th>
+                    <th>İşlev</th>
+                </tr>
+                <tr>
+                    <td>TAB</td>
+                    <td>Bir sonraki alana geçer</td>
+                </tr>
+                <tr>
+                    <td>SHIFT + TAB</td>
+                    <td>Bir önceki alana döner</td>
+                </tr>
+                <tr>
+                    <td>ENTER</td>
+                    <td>TAB tuşu gibi çalışır, bir sonraki alana geçer</td>
+                </tr>
+                <tr>
+                    <td>ESC</td>
+                    <td>Programdan çıkış yapar (Çıkış butonuna basmakla aynı işlevi görür)</td>
+                </tr>
+                <tr>
+                    <td>ALT + L</td>
+                    <td>Liste butonunu çalıştırır</td>
+                </tr>
+                <tr>
+                    <td>ALT + S</td>
+                    <td>Kaydet butonunu çalıştırır</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ul>
+                    <li>Fare kullanmak yerine klavye kısayolları kullanarak daha hızlı çalışabilirsiniz</li>
+                    <li>Özellikle çok sayıda kayıt girişi yapıyorsanız, TAB ve ENTER tuşlarını kullanarak hızlıca ilerleyebilirsiniz</li>
+                    <li>Alanlara doğrudan erişmek için ALT + ilgili alanın alt çizgili harfini kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sorun-giderme" class="section">
+        <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Genel Sorunlar ve Çözüm Yolları:</h4>
+                <ol>
+                    <li><strong>Sorun: "Lojman Kodu 'sıfır' Olamaz" Hatası</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Lojman kodu olarak 0 (sıfır) değeri girmeye çalıştınız</li>
+                            <li><strong>Çözüm:</strong> Lojman kodu için 1-99 arası bir sayı kullanın</li>
+                            <li><strong>İşlem Adımları:</strong>
+                                <ol>
+                                    <li>Uyarı mesajını "Tamam" diyerek kapatın</li>
+                                    <li>Lojman Kodu alanına geçerli bir değer girin (1-99 arası)</li>
+                                    <li>İşleme devam edin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: Kayıt Sırasında Hata Mesajı</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Sistem kaydetme işlemi sırasında bir hata ile karşılaştı</li>
+                            <li><strong>Çözüm:</strong> Hata detaylarını kontrol edin ve tekrar deneyin</li>
+                            <li><strong>İşlem Adımları:</strong>
+                                <ol>
+                                    <li>Hata mesajını okuyun ve not alın</li>
+                                    <li>Temizle butonuna basarak formu sıfırlayın</li>
+                                    <li>Bilgileri tekrar girin ve kaydetmeyi deneyin</li>
+                                    <li>Sorun devam ederse, sistem yöneticinize hata mesajını iletin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: "Lojman Kodu Girilmemiş!" Uyarısı</strong>
+                        <ul>
+                            <li><strong>Neden:</strong> Lojman Kodu alanını boş bıraktınız</li>
+                            <li><strong>Çözüm:</strong> Lojman Kodu alanına geçerli bir değer girin</li>
+                            <li><strong>İşlem Adımları:</strong>
+                                <ol>
+                                    <li>Uyarı mesajını "Tamam" diyerek kapatın</li>
+                                    <li>Lojman Kodu alanına geçerli bir kod girin</li>
+                                    <li>İşleme devam edin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Program Tepki Vermediğinde:</h4>
+                <ol>
+                    <li><strong>Bekleyin:</strong> Bazı işlemler (özellikle kaydetme ve silme) birkaç saniye sürebilir</li>
+                    <li><strong>Yeniden Başlatın:</strong> Program uzun süre yanıt vermezse, ESC tuşuna basarak kapatın ve yeniden açın</li>
+                    <li><strong>Yardım Alın:</strong> Sorun devam ederse sistem yöneticinize başvurun</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Herhangi bir hata durumunda, ekrandaki hata mesajını okuyun ve not alın</li>
+                    <li>Sistemde uzun süre işlem yapmadığınızda oturum süreniz dolabilir, bu durumda yeniden giriş yapmanız gerekebilir</li>
+                    <li>Büyük değişiklikler yapmadan önce mevcut verileri kontrol edin</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik Çözüm Yolları:</h4>
+                <ul>
+                    <li>Aynı anda birden fazla kullanıcının aynı kaydı düzenlemeye çalışmasından kaçının</li>
+                    <li>İşlemlerinizi tamamladıktan sonra programdan düzgün bir şekilde çıkış yapın</li>
+                    <li>Karşılaştığınız hataları ve çözümleri not alın, benzer durumlarla karşılaştığınızda daha hızlı çözüm üretebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc" class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, Lojman Tanımları programının temel işlevlerini ve kullanımını açıklamaktadır. Program ile ilgili daha detaylı bilgi veya özel durumlar için sistem yöneticinize başvurabilirsiniz.</p>
+            
+            <p>Lojman Tanımları programı, doğru kullanıldığında kurumsal lojman yönetimini kolaylaştıran pratik bir araçtır. Bu kılavuzda belirtilen adımları takip ederek, programı etkin bir şekilde kullanabilir ve lojman kayıtlarını sorunsuz bir şekilde yönetebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>Her yeni lojman kaydı veya güncelleme işleminden sonra bilgileri kontrol etmeyi unutmayın. Özellikle kira tutarı gibi finansal bilgilerin doğruluğu önemlidir.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

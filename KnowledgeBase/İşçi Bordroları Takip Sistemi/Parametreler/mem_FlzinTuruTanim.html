@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İzin Türü Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>İzin Türü Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+            <li><a href="#izin-turu-bilgileri">İzin Türü Bilgilerinin Girilmesi</a></li>
+            <li><a href="#navigasyon">Navigasyon ve Kayıt Bulma</a></li>
+            <li><a href="#kayit-islemleri">Kayıt İşlemleri (Kaydetme, Güncelleme, Silme)</a></li>
+            <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+            <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>İzin Türü Tanımları programı, personel izin yönetimi için gerekli olan izin türlerinin tanımlanması, düzenlenmesi ve yönetilmesi için kullanılan bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>Yeni izin türleri tanımlama</li>
+            <li>Mevcut izin türlerini düzenleme</li>
+            <li>İzin türlerini listeleme</li>
+            <li>İzin türü silme</li>
+        </ul>
+        işlemlerini gerçekleştirebilirsiniz.
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu program, personel izin yönetiminin temel taşıdır. İzin türlerinin doğru tanımlanması, personel izin işlemlerinin doğru yürütülmesi için büyük önem taşır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "İzin Türü Tanımları (Giriş)" veya "İzin Türü Tanımları (Değişiklik)" başlığı yer alır</li>
+                        <li>Başlık, işlem durumuna göre (yeni kayıt veya düzenleme) otomatik değişir</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                        <li>İzin Kodu, İzin Adı, İzin Tipi ve İzin Süresi alanlarını içerir</li>
+                        <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında iki satır halinde butonlar yer alır</li>
+                        <li>Üst sırada: Önceki, Sonraki ve Liste butonları bulunur</li>
+                        <li>Alt sırada: Form Temizle, Kaydet, Sil ve Çıkış butonları bulunur</li>
+                        <li>Butonların hepsi gri zeminde ve üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Yeni kayıt modunda başlar ("İzin Türü Tanımları (Giriş)" başlığı ile)</li>
+                <li>İmleç "İzin Kodu" alanına konumlanır</li>
+                <li>Yeni kayıt için otomatik olarak bir izin kodu önerilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="izin-turu-bilgileri" class="section">
+    <h2>İzin Türü Bilgilerinin Girilmesi</h2>
+    <div class="info-box">
+        <h3>İzin Bilgilerinin Tanımlanması</h3>
+        <div class="step">
+            <h4>İzin Kodu Girişi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Başlık şeridinin hemen altında, ekranın sol tarafında "İzin Kodu" etiketi bulunur</li>
+                        <li>Etiketin yanında, sağda bir metin kutusu yer alır</li>
+                        <li>Metin kutusu yaklaşık 5 karakter genişliğindedir ve kırmızı kenarlıkla belirtilmiş zorunlu bir alandır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Program açıldığında bu alanda otomatik olarak bir numara görüntülenir (sistemdeki son izin kodundan bir fazlası)</li>
+                        <li>Bu numarayı olduğu gibi kullanabilir veya farklı bir numara girebilirsiniz</li>
+                        <li>Sadece sayısal değer girebilirsiniz, harf veya özel karakter kabul edilmez</li>
+                        <li>Numara girildikten sonra TAB tuşuna basarak bir sonraki alana geçebilirsiniz</li>
+                        <li>Eğer girdiğiniz kod sistemde zaten varsa, program sizi otomatik olarak kayıt düzenleme moduna geçirecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İzin Adı Girişi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>İzin Kodu alanının hemen altında yer alır</li>
+                        <li>"İzin Adı" etiketi yanında sağda bir metin kutusu bulunur</li>
+                        <li>Metin kutusu yaklaşık 50 karakter genişliğindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Bu alana izin türünün tam adını yazın (örneğin "Yıllık İzin", "Doğum İzni", "Mazeret İzni" vb.)</li>
+                        <li>Türkçe karakterler dahil herhangi bir karakter kullanabilirsiniz</li>
+                        <li>İzin adı maksimum 50 karakter olabilir</li>
+                        <li>Bilgi girişi tamamlandıktan sonra TAB tuşuna basarak bir sonraki alana geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İzin Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>İzin Adı alanının hemen altında yer alır</li>
+                        <li>"İzin Tipi" etiketi yanında sağda bir açılır liste kutusu bulunur</li>
+                        <li>Açılır liste kutusunun sağında "İzin Süresi" alanı yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Açılır listeye tıklayarak veya Alt+Aşağı Ok tuşlarını kullanarak seçenekleri görüntüleyin</li>
+                        <li>İki seçenek bulunmaktadır:
+                            <ul>
+                                <li>"Yıllık" (varsayılan): Yıllık olarak hesaplanacak izin türleri için</li>
+                                <li>"Diğer": Yıllık olmayan özel izin türleri için</li>
+                            </ul>
+                        </li>
+                        <li>Listeden uygun seçeneği seçmek için tıklayın</li>
+                        <li>Seçiminizi yaptıktan sonra TAB tuşuna basarak İzin Süresi alanına geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İzin Süresi Girişi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>İzin Tipi seçim kutusunun hemen sağında yer alır</li>
+                        <li>"İzin Süresi" etiketi yanında sağda bir metin kutusu bulunur</li>
+                        <li>Metin kutusu yaklaşık 5 karakter genişliğindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Bu alana izin türünün varsayılan gün sayısını girin</li>
+                        <li>Sadece sayısal değer girebilirsiniz</li>
+                        <li>Örneğin yıllık izin için "14" veya "20" girebilirsiniz</li>
+                        <li>Maksimum 5 basamaklı bir değer girebilirsiniz</li>
+                        <li>Bilgi girişi tamamlandıktan sonra TAB tuşuna basarak butonlara geçebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>İzin Kodu alanı zorunludur ve boş bırakılamaz</li>
+                <li>İzin Kodu olarak "0" değeri kullanılamaz</li>
+                <li>Aynı İzin Kodunu birden fazla kayıt için kullanamazsınız</li>
+                <li>İzin Tipi seçilmediğinde, varsayılan olarak "Yıllık" seçeneği atanır</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+            <li>ENTER tuşu da TAB tuşu gibi çalışır ve bir sonraki alana geçmenizi sağlar</li>
+            <li>İzin Süresi "0" olarak bırakılabilir, bu durumda manuel olarak süre girilmesi gerekecektir</li>
+        </ul>
+    </div>
+</div>
+</div>
+<div id="navigasyon" class="section">
+    <h2>Navigasyon ve Kayıt Bulma</h2>
+    <div class="info-box">
+        <h3>Kayıtlar Arasında Gezinme</h3>
+        <div class="step">
+            <h4>Önceki Kayıt Görüntüleme:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst buton satırının sol başında yer alır</li>
+                        <li>Buton üzerinde sol yönü gösteren ok işareti bulunur</li>
+                        <li>Butonun üzerinde "Önceki" yazısı yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Butona tıklayın veya ALT+P tuş kombinasyonunu kullanın</li>
+                        <li>Mevcut kayıttan daha düşük izin koduna sahip en yüksek kayıt görüntülenir</li>
+                        <li>Eğer daha düşük kodlu kayıt yoksa sistem sizi uyaracaktır</li>
+                        <li>Buton tıklandığında, program otomatik olarak düzenleme moduna geçer</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Sonraki Kayıt Görüntüleme:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Önceki butonunun hemen sağında yer alır</li>
+                        <li>Buton üzerinde sağ yönü gösteren ok işareti bulunur</li>
+                        <li>Butonun üzerinde "Sonraki" yazısı yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Butona tıklayın veya ALT+N tuş kombinasyonunu kullanın</li>
+                        <li>Mevcut kayıttan daha yüksek izin koduna sahip en düşük kayıt görüntülenir</li>
+                        <li>Eğer daha yüksek kodlu kayıt yoksa sistem sizi uyaracaktır</li>
+                        <li>Buton tıklandığında, program otomatik olarak düzenleme moduna geçer</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İzin Kodu ile Kayıt Bulma:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, "İzin Kodu" etiketinin yanındaki metin kutusu</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>İzin Kodu alanına aramak istediğiniz kayıdın kodunu yazın</li>
+                        <li>TAB tuşuna basın veya alanın dışına tıklayın</li>
+                        <li>Sistem, girdiğiniz kodun varlığını kontrol eder</li>
+                        <li>Eğer kod sistemde varsa, ilgili kayıt düzenleme modunda açılır</li>
+                        <li>Kod sistemde yoksa, İzin Adı alanına geçerek yeni kayıt girişine devam edebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Kayıtlı İzin Türleri Listesinden Seçim:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Sonraki butonunun hemen sağında yer alır</li>
+                        <li>Butonun üzerinde "Liste" yazısı yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Butona tıklayın</li>
+                        <li>Yeni bir pencerede "Kayıtlı İzin Türleri Listesi" açılır</li>
+                        <li>Listeden bir izin türü seçmek için üzerine çift tıklayın</li>
+                        <li>Seçtiğiniz izin türüne ait bilgiler ana ekranda düzenleme modunda açılır</li>
+                        <li>Liste penceresini kapatmak için sağ üstteki X butonuna tıklayabilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Kayıt arama işlemlerinden sonra program otomatik olarak düzenleme moduna geçer</li>
+                <li>Düzenleme modunda İzin Kodu alanı değiştirilemez hale gelir (gri renkte görünür)</li>
+                <li>Önceki veya sonraki kayıt bulunamadığında sistem bilgilendirme mesajı gösterir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Çok sayıda kayıt arasından seçim yapmak için Liste butonunu kullanmak daha pratiktir</li>
+                <li>İzin kodunu biliyorsanız, doğrudan kodu yazarak hızlıca kayıda erişebilirsiniz</li>
+                <li>Ardışık kayıtları incelemek için Önceki/Sonraki butonlarını kullanmak pratiktir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="kayit-islemleri" class="section">
+    <h2>Kayıt İşlemleri (Kaydetme, Güncelleme, Silme)</h2>
+    <div class="info-box">
+        <h3>Yeni Kayıt Ekleme</h3>
+        <div class="step">
+            <h4>Yeni İzin Türü Ekleme:</h4>
+            <ol>
+                <li><strong>Başlangıç Durumu:</strong>
+                    <ul>
+                        <li>Program açıldığında veya form temizlendiğinde otomatik olarak yeni kayıt ekleme modundadır</li>
+                        <li>Ekranın üst kısmında "İzin Türü Tanımları (Giriş)" başlığı görünür</li>
+                        <li>İzin Kodu alanında otomatik olarak bir sonraki kod numarası önerilir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Yapılır:</strong>
+                    <ol>
+                        <li>İzin Kodu alanını kontrol edin, gerekirse değiştirin (zorunlu alan, kırmızı çerçeveli)</li>
+                        <li>İzin Adı alanına izin türünün adını yazın</li>
+                        <li>İzin Tipi açılır listesinden uygun tipi seçin (Yıllık veya Diğer)</li>
+                        <li>İzin Süresi alanına varsayılan gün sayısını girin</li>
+                        <li>Ekranın alt kısmında, alt buton satırında ortada bulunan "Kaydet" butonuna tıklayın</li>
+                        <li>İşlem başarılı olursa, sistem otomatik olarak yeni kayıt ekleme moduna döner ve yeni bir izin kodu önerir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Mevcut Kayıt Güncelleme:</h4>
+            <ol>
+                <li><strong>Düzenleme Moduna Geçiş:</strong>
+                    <ul>
+                        <li>Mevcut bir kayıt bulun (İzin Kodu ile arama yaparak, Önceki/Sonraki butonlarını kullanarak veya Liste butonundan seçim yaparak)</li>
+                        <li>Kayıt açıldığında ekranın üst kısmında "İzin Türü Tanımları (Değişiklik)" başlığı görünür</li>
+                        <li>İzin Kodu alanı gri renkli ve değiştirilemez durumdadır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Yapılır:</strong>
+                    <ol>
+                        <li>İzin Adı, İzin Tipi ve İzin Süresi alanlarında istediğiniz değişiklikleri yapın</li>
+                        <li>Ekranın alt kısmında, alt buton satırında ortada bulunan "Kaydet" butonuna tıklayın</li>
+                        <li>İşlem başarılı olursa, sistem otomatik olarak yeni kayıt ekleme moduna döner</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Kayıt Silme:</h4>
+            <ol>
+                <li><strong>Silinecek Kaydı Açma:</strong>
+                    <ul>
+                        <li>Silmek istediğiniz kaydı bulun (İzin Kodu ile arama yaparak, Önceki/Sonraki butonlarını kullanarak veya Liste butonundan seçim yaparak)</li>
+                        <li>Kayıt açıldığında ekranın üst kısmında "İzin Türü Tanımları (Değişiklik)" başlığı görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Yapılır:</strong>
+                    <ol>
+                        <li>Ekranın alt kısmında, alt buton satırında ortada bulunan "Sil" butonuna tıklayın</li>
+                        <li>Sistem onay soracaktır: "İptal İşlemini Onaylıyor musunuz?"</li>
+                        <li>Onaylamak için "Evet" butonuna tıklayın</li>
+                        <li>İşlem başarılı olursa, sistem otomatik olarak yeni kayıt ekleme moduna döner</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>İzin Kodu alanı boş bırakılamaz, aksi halde kayıt işlemi yapılamaz</li>
+                <li>İzin Kodu "0" olamaz, bu değeri girerseniz sistem uyarı verecektir</li>
+                <li>Kayıt silme işlemi geri alınamaz, silinen veriler kurtarılamaz</li>
+                <li>Yeni kayıt modunda Sil butonu kullanılamaz</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Bir kaydı hızlıca güncellemek için, doğrudan izin kodunu yazıp TAB tuşuna basın</li>
+                <li>Benzer bir izin türü eklemek için, mevcut bir kaydı açın, Form Temizle butonuna basın ve değişiklikleri yaparak yeni kayıt olarak ekleyin</li>
+                <li>Silme işlemi öncesinde kaydın başka yerlerde kullanılmadığından emin olun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="butonlar" class="section">
+    <h2>Butonlar ve İşlevleri</h2>
+    <div class="info-box">
+        <h3>Ekrandaki Butonlar ve Kullanımları</h3>
+        <div class="step">
+            <h4>Navigasyon Butonları:</h4>
+            <ol>
+                <li><strong>Önceki Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Ekranın alt kısmında, üst buton satırının sol başında yer alır</li>
+                        <li><strong>Görünüm:</strong> Sol oka sahip, gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Mevcut izin kodundan daha küçük kodlu en büyük kaydı gösterir</li>
+                        <li><strong>Kısayol:</strong> ALT+P</li>
+                    </ul>
+                </li>
+                <li><strong>Sonraki Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Önceki butonunun hemen sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Sağ oka sahip, gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Mevcut izin kodundan daha büyük kodlu en küçük kaydı gösterir</li>
+                        <li><strong>Kısayol:</strong> ALT+N</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Sonraki butonunun hemen sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Kayıtlı izin türlerinin listelendiği bir pencere açar</li>
+                        <li><strong>Kısayol:</strong> ALT+L</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>İşlem Butonları:</h4>
+            <ol>
+                <li><strong>Form Temizle Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Ekranın alt kısmında, alt buton satırının sol başında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Formu temizler ve yeni kayıt girişi için hazırlar</li>
+                        <li><strong>Kısayol:</strong> ALT+F</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydet Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Form Temizle butonunun hemen sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Yeni kayıt ekler veya mevcut kaydı günceller</li>
+                        <li><strong>Kısayol:</strong> ALT+S</li>
+                    </ul>
+                </li>
+                <li><strong>Sil Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Kaydet butonunun hemen sağında yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Açık olan kaydı siler (sadece düzenleme modunda aktiftir)</li>
+                        <li><strong>Kısayol:</strong> ALT+D</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış Butonu:</strong>
+                    <ul>
+                        <li><strong>Konum:</strong> Sil butonunun hemen sağında, alt buton satırının sağ ucunda yer alır</li>
+                        <li><strong>Görünüm:</strong> Gri renkli, üç boyutlu görünümlü buton</li>
+                        <li><strong>İşlev:</strong> Programdan çıkış yapar</li>
+                        <li><strong>Kısayol:</strong> ALT+X veya ESC</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Form Temizle ve Çıkış butonları kullanıldığında onay mesajı gösterilir</li>
+                <li>Sil butonu sadece düzenleme modunda aktiftir, yeni kayıt modunda kullanılamaz</li>
+                <li>ESC tuşu programdan çıkış yapar, kaydedilmemiş değişiklikler kaybolabilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Klavye kısayollarını kullanarak fare kullanımını azaltabilir ve işlemlerinizi hızlandırabilirsiniz</li>
+                <li>Sık kullanılan butonlar için ALT tuşu kombinasyonlarını ezberleyin</li>
+                <li>İşlemleri hızlandırmak için TAB tuşunu kullanarak alanlar arasında gezinin ve ENTER tuşu ile butonları etkinleştirin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Kısayollar</h2>
+    <div class="info-box">
+        <h3>Verimli Kullanım İçin İpuçları</h3>
+        <div class="step">
+            <h4>Klavye Kısayolları:</h4>
+            <ol>
+                <li><strong>Genel Klavye Kısayolları:</strong>
+                    <ul>
+                        <li><strong>TAB:</strong> Bir sonraki alana geçer</li>
+                        <li><strong>SHIFT+TAB:</strong> Bir önceki alana döner</li>
+                        <li><strong>ENTER:</strong> TAB tuşu gibi çalışır, bir sonraki alana geçer</li>
+                        <li><strong>ESC:</strong> Programdan çıkış yapar</li>
+                    </ul>
+                </li>
+                <li><strong>Buton Kısayolları:</strong>
+                    <ul>
+                        <li><strong>ALT+P:</strong> Önceki butonunu etkinleştirir</li>
+                        <li><strong>ALT+N:</strong> Sonraki butonunu etkinleştirir</li>
+                        <li><strong>ALT+L:</strong> Liste butonunu etkinleştirir</li>
+                        <li><strong>ALT+F:</strong> Form Temizle butonunu etkinleştirir</li>
+                        <li><strong>ALT+S:</strong> Kaydet butonunu etkinleştirir</li>
+                        <li><strong>ALT+D:</strong> Sil butonunu etkinleştirir</li>
+                        <li><strong>ALT+X:</strong> Çıkış butonunu etkinleştirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Verimli Form Kullanımı:</h4>
+            <ol>
+                <li><strong>Hızlı Veri Girişi:</strong>
+                    <ul>
+                        <li>İzin kodunu direkt yazıp TAB tuşuna basarak kayıt arama yapabilirsiniz</li>
+                        <li>Alanlar arasında geçiş için fare yerine TAB tuşunu kullanmak daha hızlıdır</li>
+                        <li>Açılır liste kutusunda ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Benzer Kayıtlar İçin:</strong>
+                    <ul>
+                        <li>Benzer bir izin türü eklemek için mevcut kaydı açın, Form Temizle butonuna basın ve sadece değişen bilgileri güncelleyin</li>
+                        <li>Yeni kayıtlar için önerilen izin kodunu kullanmak daha pratiktir</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Doğrulama:</strong>
+                    <ul>
+                        <li>İzin Kodu girildiğinde sistem otomatik olarak varlık kontrolü yapar</li>
+                        <li>Kaydetme öncesinde tüm alanları gözden geçirin</li>
+                        <li>Özellikle İzin Adı alanındaki yazım hatalarına dikkat edin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Liste Görünümünü Etkin Kullanma:</h4>
+            <ol>
+                <li><strong>Kayıt Arama:</strong>
+                    <ul>
+                        <li>Liste butonunu kullanarak tüm izin türlerini görebilirsiniz</li>
+                        <li>Liste ekranında sütun başlıklarına tıklayarak sıralama yapabilirsiniz</li>
+                        <li>Liste ekranında klavye ile ilk harfleri yazarak hızlı arama yapabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Üzerinden Seçim:</strong>
+                    <ul>
+                        <li>Listeden bir kayda çift tıklayarak ana ekranda açabilirsiniz</li>
+                        <li>Liste ekranını açık bırakarak birden fazla kayıt arasında hızlı geçiş yapabilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Dikkat Edilmesi Gerekenler:</h4>
+            <ul>
+                <li>Kaydedilmemiş değişiklikler varken başka bir kayda geçmeye çalışırsanız veriler kaybolabilir</li>
+                <li>Aynı izin kodunu birden fazla kayıt için kullanamazsınız</li>
+                <li>Silme işlemi geri alınamaz, silmeden önce doğru kaydı açtığınızdan emin olun</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li>Onay gerektiren işlemlerde (Silme, Form Temizleme, Çıkış) ENTER tuşu "Evet", ESC tuşu "Hayır" işlevi görür</li>
+                <li>Benzer izin türleri için şablon oluşturup küçük değişikliklerle yeni kayıtlar oluşturabilirsiniz</li>
+                <li>İzin kodlarını anlamlı gruplar halinde organize edin (örneğin, yıllık izinler için 100-199, hastalık izinleri için 200-299 gibi)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="sorun-giderme" class="section">
+    <h2>Sorun Giderme</h2>
+    <div class="info-box">
+        <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+        <div class="step">
+            <h4>Kaydetme İşlemi Sorunları:</h4>
+            <ol>
+                <li><strong>Kaydet Butonu Çalışmıyor:</strong>
+                    <ul>
+                        <li>İzin Kodu alanının dolu olduğunu kontrol edin (zorunlu alan)</li>
+                        <li>"0" değeri girilmiş olabilir, İzin Kodu "0" olamaz</li>
+                        <li>Geçersiz bir karakter girilmediğinden emin olun</li>
+                        <li>Sayfa yeniden yüklenene kadar bekleyin</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Sırasında Hata Mesajı:</strong>
+                    <ul>
+                        <li>Aynı İzin Kodu zaten kullanımda olabilir</li>
+                        <li>Veri girişlerinde izin verilen karakter sınırlarını aşmadığınızdan emin olun</li>
+                        <li>İzin Süresi alanına sayısal olmayan bir değer girilmiş olabilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Arama ve Gezinme Sorunları:</h4>
+            <ol>
+                <li><strong>Kayıt Bulunamıyor:</strong>
+                    <ul>
+                        <li>İzin Kodu doğru girildiğinden emin olun</li>
+                        <li>Aradığınız kayıt silinmiş olabilir</li>
+                        <li>Gezinme butonlarını kullanarak kayıtlar arasında dolaşmayı deneyin</li>
+                        <li>Liste butonunu kullanarak tüm kayıtları görüntüleyin</li>
+                    </ul>
+                </li>
+                <li><strong>Önceki/Sonraki Butonları Çalışmıyor:</strong>
+                    <ul>
+                        <li>İzin Kodu alanında geçerli bir değer olduğundan emin olun</li>
+                        <li>İlk veya son kayıtta olabilirsiniz (bu durumda ilgili yönde kayıt olmaz)</li>
+                        <li>Form Temizle butonuna basarak yeni bir başlangıç yapın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Silme İşlemi Sorunları:</h4>
+            <ol>
+                <li><strong>Sil Butonu Aktif Değil:</strong>
+                    <ul>
+                        <li>Yeni kayıt modundasınız, sadece düzenleme modunda silme yapılabilir</li>
+                        <li>Önce bir kayıt bulun veya açın (İzin Kodu ile arama yapın)</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemi Yapılamıyor:</strong>
+                    <ul>
+                        <li>Kayıt başka tablolarda kullanılıyor olabilir</li>
+                        <li>Silme yetkisi olmayabilir</li>
+                        <li>Sistem yanıt verene kadar bekleyin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Genel Sorunlar:</h4>
+            <ol>
+                <li><strong>Program Yavaş Çalışıyor:</strong>
+                    <ul>
+                        <li>Diğer açık uygulamaları kapatmayı deneyin</li>
+                        <li>Tarayıcıyı yeniden başlatın</li>
+                        <li>Bağlantı sorunları olabilir, ağ bağlantısını kontrol edin</li>
+                    </ul>
+                </li>
+                <li><strong>Ekran Elemanları Düzgün Görünmüyor:</strong>
+                    <ul>
+                        <li>Tarayıcı penceresinin yeterince büyük olduğundan emin olun</li>
+                        <li>Tarayıcının yakınlaştırma ayarını kontrol edin</li>
+                        <li>Farklı bir tarayıcı kullanmayı deneyin</li>
+                    </ul>
+                </li>
+                <li><strong>Hata Mesajları:</strong>
+                    <ul>
+                        <li>Hata mesajını not alın</li>
+                        <li>Form Temizle butonuna basarak yeniden başlayın</li>
+                        <li>Sorun devam ederse, programı kapatıp yeniden açın</li>
+                        <li>Sistem yöneticinize veya teknik destek ekibine başvurun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Uzaktan Destek İçin:</h4>
+            <ul>
+                <li>Karşılaştığınız sorunu detaylı olarak not alın</li>
+                <li>Hangi izin kodu ile çalışırken sorun yaşadığınızı belirtin</li>
+                <li>Ekranda görünen hata mesajlarını tam olarak not edin</li>
+                <li>Yaptığınız işlemleri adım adım anlatın</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Sorunu Önleme İpuçları:</h4>
+            <ul>
+                <li>Uzun süre çalışırken düzenli aralıklarla kaydetme işlemi yapın</li>
+                <li>Önemli değişikliklerden önce mevcut verinin bir kopyasını not alın</li>
+                <li>Kritik silme işlemlerinden önce iki kez düşünün</li>
+                <li>Klavye kısayollarını ve butonları dikkatle kullanın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ozet" class="section">
+    <h2>Özet ve Hatırlatmalar</h2>
+    <div class="info-box">
+        <h3>Önemli Noktalar</h3>
+        <div class="step">
+            <h4>Temel Fonksiyonlar:</h4>
+            <ul>
+                <li>İzin Türü Tanımları programı, personel izin yönetimi için izin türlerini tanımlamaya yarar</li>
+                <li>Dört temel alanla çalışır: İzin Kodu, İzin Adı, İzin Tipi ve İzin Süresi</li>
+                <li>İzin Kodu alanı zorunludur ve benzersiz olmalıdır</li>
+                <li>İki çalışma modu vardır: Yeni Kayıt (Giriş) ve Kayıt Düzenleme (Değişiklik)</li>
+            </ul>
+        </div>
+    
+        <div class="step">
+            <h4>Temel İşlemler:</h4>
+            <ul>
+                <li><strong>Yeni Kayıt:</strong> Bilgileri girin ve Kaydet butonuna basın</li>
+                <li><strong>Kayıt Bulma:</strong> İzin Kodu girin, Önceki/Sonraki butonlarını kullanın veya Liste butonundan seçim yapın</li>
+                <li><strong>Güncelleme:</strong> Kaydı bulun, değişiklikleri yapın ve Kaydet butonuna basın</li>
+                <li><strong>Silme:</strong> Kaydı bulun, Sil butonuna basın ve onaylayın</li>
+                <li><strong>Formu Temizleme:</strong> Form Temizle butonuna basın ve onaylayın</li>
+                <li><strong>Programdan Çıkış:</strong> Çıkış butonuna basın veya ESC tuşuna basın</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Son Hatırlatmalar:</h4>
+            <ul>
+                <li>İzin kodlarını anlamlı bir düzende yapılandırın (örneğin, benzer izin türleri için yakın kodlar kullanın)</li>
+                <li>İzin adlarında standart bir terminoloji kullanın</li>
+                <li>İzin türleri ve süreleri personel politikalarınıza uygun olmalıdır</li>
+                <li>Gereksiz izin türü tanımlarından kaçının, mevcut izin türlerini güncelleyin</li>
+                <li>Düzenli olarak kayıtlarınızı gözden geçirin ve güncelleyin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesinti Maaş Tipi Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kesinti Maaş Tipi Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçme/Değiştirme</a></li>
+                <li><a href="#kesinti-tanimlama">Kesinti Tanımlama İşlemleri</a></li>
+                <li><a href="#butonlar">Butonların Kullanımı ve İşlevleri</a></li>
+                <li><a href="#kopyalama">Kesinti Maaş Tipi Kopyalama</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Kesinti Maaş Tipi Tanımları programı, farklı maaş tiplerine uygulanacak kesintileri tanımlamak ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Farklı maaş tiplerine özel kesintiler tanımlayabilir</li>
+                <li>Her bir kesinti için hesaplama seçeneği belirleyebilir</li>
+                <li>Mevcut kesinti tanımlarını görüntüleyebilir ve düzenleyebilir</li>
+                <li>Bir maaş tipine ait kesinti tanımlarını başka maaş tiplerine kopyalayabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Bilmeniz Gerekenler:</h4>
+                <p>Bu programı kullanmadan önce şu bilgileri edinmeniz yararlı olacaktır:</p>
+                <ul>
+                    <li>Tanımlamak istediğiniz maaş tipi numarası veya adı</li>
+                    <li>Bu maaş tipine eklemek istediğiniz kesinti türleri</li>
+                    <li>Her kesinti için hesaplama kuralı (Evet/Hayır)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Kesinti Maaş Tipi Tanımları" başlığı bulunur</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçim Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında bulunur</li>
+                            <li>Sol tarafta "Maaş Tipi" etiketi, yanında açılır liste kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Tanımlama Bölümü:</strong>
+                        <ul>
+                            <li>Maaş tipi seçim bölümünün altında yer alır</li>
+                            <li>Üst kısmında gri zeminli bir başlık çubuğu bulunur (Kesintiler ve Seçim)</li>
+                            <li>Kesinti tanımlama bölümü kaydırma çubuğuna sahip bir tablo şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında, gri zeminli bir alanda butonlar yer alır</li>
+                            <li>Yeni, Temizle, Kaydet, Sil, Bul, Kopyala ve Çıkış butonları yan yana dizilidir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Maaş tipi açılır listesi boş olarak gelir</li>
+                    <li>Kesinti tanımlama bölümünde herhangi bir veri görünmez</li>
+                    <li>Öncelikle bir maaş tipi seçilmesi veya yeni bir kayıt oluşturulması gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçme/Değiştirme</h2>
+        <div class="info-box">            
+            <div class="step">
+                <h4>Maaş Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, turkuaz renkli başlık çubuğunun hemen altında</li>
+                            <li>Sol tarafta "Maaş Tipi" etiketi, sağında açılır liste kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Seçim Yapmak İçin:</strong>
+                        <ol>
+                            <li>Açılır liste kutusunun sağındaki oka tıklayın
+                                <ul>
+                                    <li>Sistemde tanımlı tüm maaş tipleri listede görüntülenir</li>
+                                    <li>Listede maaş tipi numarası ve açıklaması birlikte görünür</li>
+                                </ul>
+                            </li>
+                            <li>Listeden istediğiniz maaş tipini seçin
+                                <ul>
+                                    <li>Seçtiğiniz maaş tipine tıkladığınızda liste otomatik kapanır</li>
+                                    <li>Seçilen maaş tipi liste kutusunda görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Maaş tipi seçildiğinde:
+                                <ul>
+                                    <li>Sistem otomatik olarak seçilen maaş tipine ait kesinti kayıtlarını getirir</li>
+                                    <li>Kesinti tanımlama bölümündeki tablo, bu maaş tipine ait kesintilerle doldurulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Alternatif Seçim Yöntemi:</strong>
+                        <ol>
+                            <li>Açılır listede ilk harfi yazarak hızlı seçim yapabilirsiniz
+                                <ul>
+                                    <li>Örneğin "M" harfine basarak "Memur" gibi M ile başlayan maaş tiplerini bulabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>İsterseniz listede aşağı/yukarı ok tuşlarını kullanarak da gezinebilirsiniz</li>
+                            <li>İstediğiniz maaş tipini bulduğunuzda Enter tuşuna basarak seçimi tamamlayabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Maaş Tipi Nasıl Bulunur:</h4>
+                <ol>
+                    <li><strong>Bul Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan butonlar arasında yer alan "Bul" butonuna tıklayın
+                                <ul>
+                                    <li>Buton üzerinde bir büyüteç simgesi bulunur</li>
+                                    <li>Buton, Sil ve Kopyala butonları arasında yer alır</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Penceresi Kullanımı:</strong>
+                        <ol>
+                            <li>Bul butonuna tıkladığınızda yeni bir pencere açılır</li>
+                            <li>Bu pencerede maaş tiplerinin listesi görüntülenir
+                                <ul>
+                                    <li>Liste kayıt numarası ve maaş tipi açıklaması sütunlarını içerir</li>
+                                    <li>Varsayılan olarak maaş tipi numarasına göre sıralanmıştır</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz maaş tipini listede bulun ve üzerine çift tıklayın
+                                <ul>
+                                    <li>Seçilen maaş tipi ana ekrana aktarılır</li>
+                                    <li>Arama penceresi otomatik olarak kapanır</li>
+                                    <li>Seçilen maaş tipine ait kesinti kayıtları ekranda görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Maaş tipi seçilmeden kesinti tanımları görüntülenmez ve yeni kesinti eklenemez</li>
+                    <li>Eğer bir maaş tipini değiştirirseniz, önceki maaş tipine yaptığınız ancak kaydetmediğiniz değişiklikler kaybolur</li>
+                    <li>Yeni kesinti tanımladıktan sonra "Kaydet" butonuna basmayı unutmayın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Klavye ile hızlı gezinmek için TAB tuşunu kullanabilirsiniz</li>
+                    <li>Maaş tipi listesinde numaraya göre hızlı arama yapmak için numarayı yazabilirsiniz</li>
+                    <li>Sık kullandığınız maaş tiplerinin numaralarını not almanız işinizi kolaylaştırır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kesinti-tanimlama" class="section">
+        <h2>Kesinti Tanımlama İşlemleri</h2>
+        <div class="info-box">            
+            <div class="step">
+                <h4>Kesinti Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Kesinti Tablosu Konumu:</strong>
+                        <ul>
+                            <li>Maaş tipi seçim alanının altında yer alır</li>
+                            <li>Gri renkli başlık çubuğunda "Kesintiler" ve "Seçim" etiketleri bulunur</li>
+                            <li>Kaydırılabilir bir alan içinde tablo şeklinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo İçeriği:</strong>
+                        <ul>
+                            <li>Sol sütunda her satır için silme butonu yer alır (kırmızı X simgeli)</li>
+                            <li>Orta sütunda kesinti türünü seçmek için açılır liste kutusu bulunur</li>
+                            <li>Sağ sütunda kesintinin hesaplanıp hesaplanmayacağını belirten "Evet/Hayır" seçeneği vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Görüntüleme İşlemi:</strong>
+                        <ol>
+                            <li>Bir maaş tipi seçtiğinizde, o maaş tipine tanımlanmış tüm kesintiler tabloda listelenir</li>
+                            <li>Eğer tabloda çok sayıda kayıt varsa, sağ taraftaki kaydırma çubuğunu kullanarak aşağı-yukarı hareket edebilirsiniz</li>
+                            <li>Her satır bir kesinti tanımını temsil eder</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yeni Kesinti Nasıl Eklenir:</h4>
+                <ol>
+                    <li><strong>Yeni Butonunu Kullanma:</strong>
+                        <ol>
+                            <li>Öncelikle kesinti eklemek istediğiniz maaş tipini seçin</li>
+                            <li>Ekranın alt kısmında bulunan "Yeni" butonuna tıklayın
+                                <ul>
+                                    <li>Buton, ekranın alt kısmında sol tarafta yer alır</li>
+                                    <li>Üzerinde yeşil + simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Yeni butona tıkladığınızda:
+                                <ul>
+                                    <li>Kesinti tablosuna yeni bir boş satır eklenir</li>
+                                    <li>İmleç otomatik olarak yeni satırdaki kesinti seçim kutusuna odaklanır</li>
+                                    <li>Yeni satır için "Hesaplama" seçeneği varsayılan olarak "Evet" seçilidir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kesinti Seçimi:</strong>
+                        <ol>
+                            <li>Yeni eklenen satırda kesinti seçim kutusunun yanındaki oka tıklayın
+                                <ul>
+                                    <li>Açılan listede sistemde tanımlı tüm kesinti türleri görüntülenir</li>
+                                    <li>Her kesinti için kesinti sıra numarası ve açıklaması gösterilir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden eklemek istediğiniz kesinti türünü seçin
+                                <ul>
+                                    <li>Seçim yaptığınızda liste otomatik olarak kapanır</li>
+                                    <li>Seçilen kesinti adı ve numarası kutuda görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Hesaplama Seçeneği Belirleme:</strong>
+                        <ol>
+                            <li>Kesinti seçimi yaptıktan sonra TAB tuşuna basarak hesaplama seçeneğine geçin</li>
+                            <li>Açılır liste kutusunda:
+                                <ul>
+                                    <li>"Evet" seçeneği, bu kesintinin hesaplanacağını belirtir (varsayılan)</li>
+                                    <li>"Hayır" seçeneği, bu kesintinin hesaplanmayacağını belirtir</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz seçeneği belirledikten sonra:
+                                <ul>
+                                    <li>Enter veya TAB tuşuna basarak işlemi tamamlayabilirsiniz</li>
+                                    <li>Birden fazla kesinti eklemek için "Yeni" butonuna tekrar tıklayabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm kesinti tanımlamalarını tamamladıktan sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayın
+                                <ul>
+                                    <li>Kaydet butonu, Temizle butonunun sağında yer alır</li>
+                                    <li>Üzerinde mavi bir disket simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Yapılan tüm kesinti tanımlamaları sisteme kaydedilir</li>
+                                    <li>Kayıt başarılı olduğunda herhangi bir uyarı mesajı görüntülenmez</li>
+                                    <li>Kayıt sırasında hata oluşursa ekranda hata mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="kesinti-silme-guncelleme" class="section">
+        <h2>Kesinti Silme ve Güncelleme İşlemleri</h2>
+        <div class="info-box">            
+            <div class="step">
+                <h4>Kesinti Nasıl Silinir:</h4>
+                <ol>
+                    <li><strong>Satır Silme Butonu ile Silme:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz kesinti satırının sol başında bulunan silme butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton her satırın başında yer alır ve üzerinde kırmızı bir X simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Silme butonuna tıkladığınızda bir onay mesajı görüntülenir:
+                                <ul>
+                                    <li>"Satır İptal Edilecek, Onaylıyor musunuz?"</li>
+                                </ul>
+                            </li>
+                            <li>Onay penceresinde:
+                                <ul>
+                                    <li>"Evet" seçeneğine tıklarsanız, ilgili kesinti satırı silinir</li>
+                                    <li>"Hayır" seçeneğine tıklarsanız, silme işlemi iptal edilir</li>
+                                </ul>
+                            </li>
+                            <li>Silme işlemi sonrası:
+                                <ul>
+                                    <li>İlgili kesinti satırı tablodan kaldırılır</li>
+                                    <li>Değişikliklerin kalıcı olması için "Kaydet" butonuna tıklamayı unutmayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Tüm Maaş Tipi Kesintilerini Silme:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmında bulunan "Sil" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın alt kısmında, "Kaydet" butonunun sağında yer alır</li>
+                                    <li>Üzerinde kırmızı bir X simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Silme butonuna tıkladığınızda bir onay mesajı görüntülenir:
+                                <ul>
+                                    <li>"İptal İşlemini Onaylıyor musunuz?"</li>
+                                </ul>
+                            </li>
+                            <li>Onay penceresinde:
+                                <ul>
+                                    <li>"Evet" seçeneğine tıklarsanız, seçili maaş tipine ait tüm kesinti tanımları silinir</li>
+                                    <li>"Hayır" seçeneğine tıklarsanız, silme işlemi iptal edilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kesinti Nasıl Güncellenir:</h4>
+                <ol>
+                    <li><strong>Kesinti Türü Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz kesinti satırında, kesinti türü açılır listesine tıklayın
+                                <ul>
+                                    <li>Bu liste, her satırın orta sütununda yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Açılan listeden yeni kesinti türünü seçin
+                                <ul>
+                                    <li>Sistemde tanımlı tüm kesinti türleri listede görüntülenir</li>
+                                    <li>Seçim yaptığınızda liste otomatik olarak kapanır</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat edilmesi gereken nokta:
+                                <ul>
+                                    <li>Aynı kesinti türünü birden fazla kez seçmeye çalışırsanız sistem uyarı verir</li>
+                                    <li>"Bu Kesinti Önceden Seçilmiştir!" mesajı görüntülenir</li>
+                                    <li>Böyle bir durumda kesinti seçimi eski haline geri döner</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Hesaplama Seçeneği Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz kesinti satırında, hesaplama seçeneği açılır listesine tıklayın
+                                <ul>
+                                    <li>Bu liste, her satırın sağ sütununda yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Açılan listeden yeni seçeneği belirleyin:
+                                <ul>
+                                    <li>"Evet": Kesintinin hesaplanacağını belirtir</li>
+                                    <li>"Hayır": Kesintinin hesaplanmayacağını belirtir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikleri tamamladıktan sonra "Kaydet" butonuna tıklayın
+                                <ul>
+                                    <li>Kaydet butonu ekranın alt kısmında, Temizle butonunun sağında yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Kaydet butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Yapılan tüm değişiklikler sisteme kaydedilir</li>
+                                    <li>Kayıt başarılı olduğunda herhangi bir uyarı mesajı görüntülenmez</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemleri geri alınamaz, bu nedenle silmeden önce onay mesajını dikkatlice okuyun</li>
+                    <li>Değişiklik yaptıktan sonra mutlaka "Kaydet" butonuna basın, aksi takdirde değişiklikler kaydedilmez</li>
+                    <li>Bir maaş tipindeki değişiklikleri kaydetmeden başka bir maaş tipine geçerseniz, değişiklikleriniz kaybolur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Butonların Kullanımı ve İşlevleri</h2>
+        <div class="info-box">
+            <h3>İşlem Butonları</h3>
+            
+            <div class="step">
+                <h4>Ana İşlem Butonları:</h4>
+                <p>Ekranın alt kısmında gri zeminde sıralanmış butonlar şu işlevlere sahiptir:</p>
+                <ol>
+                    <li><strong>Yeni Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> En soldaki buton</li>
+                            <li><strong>Görünüm:</strong> Üzerinde yeşil + işareti bulunan buton</li>
+                            <li><strong>İşlev:</strong> Yeni bir kesinti satırı ekler</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında kesinti tablosuna yeni bir boş satır eklenir ve imleç otomatik olarak yeni satırdaki kesinti seçim kutusuna odaklanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Temizle Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Yeni butonunun sağında</li>
+                            <li><strong>Görünüm:</strong> Üzerinde süpürge simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Ekranı temizler ve başlangıç durumuna döndürür</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında ekrandaki tüm seçimler ve kesinti kayıtları temizlenir, maaş tipi seçimi aktif hale gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Temizle butonunun sağında</li>
+                            <li><strong>Görünüm:</strong> Üzerinde mavi disket simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Yapılan tüm değişiklikleri veritabanına kaydeder</li>
+                            <li><strong>Kullanım:</strong> Kesinti tanımlama, silme veya güncelleme işlemlerini tamamladıktan sonra tıklanarak değişikliklerin kalıcı olması sağlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Kaydet butonunun sağında</li>
+                            <li><strong>Görünüm:</strong> Üzerinde kırmızı X simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Seçili maaş tipine ait tüm kesinti tanımlarını siler</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında onay mesajı gelir, onaylamanız durumunda seçili maaş tipine ait tüm kesinti tanımları sistemden silinir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bul Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Sil butonunun sağında</li>
+                            <li><strong>Görünüm:</strong> Üzerinde büyüteç simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Maaş tipi arama penceresini açar</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında maaş tipi arama penceresi açılır, listeden seçim yaparak istediğiniz maaş tipini hızlıca bulabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyala Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> Bul butonunun sağında</li>
+                            <li><strong>Görünüm:</strong> Üzerinde kopyalama simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Kesinti maaş tipi kopyalama ekranını açar</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında yeni bir pencere açılır, bir maaş tipine ait kesintileri başka bir maaş tipine kopyalama işlemi bu pencerede yapılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li><strong>Konum:</strong> En sağdaki buton</li>
+                            <li><strong>Görünüm:</strong> Üzerinde çıkış (kapı) simgesi bulunan buton</li>
+                            <li><strong>İşlev:</strong> Kesinti Maaş Tipi Tanımları programını kapatır</li>
+                            <li><strong>Kullanım:</strong> Butona tıklandığında program penceresini kapatır ve ana menüye döner</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Programdan çıkmadan önce kaydetmediğiniz değişiklikler varsa mutlaka "Kaydet" butonuna basın</li>
+                    <li>Tüm kesintileri silerken onay mesajını dikkatlice okuyun</li>
+                    <li>Temizle butonuna bastığınızda kaydetmediğiniz değişiklikler kaybolur</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Butonlara mouse ile tıklayabildiğiniz gibi ALT + buton üzerindeki altı çizili harf kombinasyonunu da kullanabilirsiniz</li>
+                    <li>ESC tuşu ile programdan hızlıca çıkabilirsiniz</li>
+                    <li>Çok sayıda kesinti ekleyecekseniz, önce tümünü ekleyin, sonra bir kez "Kaydet" butonuna basın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kopyalama" class="section">
+        <h2>Kesinti Maaş Tipi Kopyalama</h2>
+        <div class="info-box">            
+            <div class="step">
+                <h4>Kesinti Tanımlarını Bir Maaş Tipinden Diğerine Nasıl Kopyalanır:</h4>
+                <ol>
+                    <li><strong>Kopyalama Penceresini Açma:</strong>
+                        <ol>
+                            <li>Ana ekranın alt kısmında bulunan "Kopyala" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton, Bul butonunun sağında, Çıkış butonunun solunda yer alır</li>
+                                    <li>Üzerinde kopyalama simgesi bulunur</li>
+                                </ul>
+                            </li>
+                            <li>Kopyala butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Yeni bir pencere açılır</li>
+                                    <li>Bu pencere "Kesinti Maaş Tipi Kopyalama" başlığını taşır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kopyalama Ekranının Kullanımı:</strong>
+                        <ol>
+                            <li>Kopyalama ekranı iki temel bölümden oluşur:
+                                <ul>
+                                    <li>"Kaynak Maaş Tipi" seçim alanı: Kesintileri kopyalanacak maaş tipini seçmek için</li>
+                                    <li>"Hedef Maaş Tipi" seçim alanı: Kesintilerin kopyalanacağı maaş tipini seçmek için</li>
+                                </ul>
+                            </li>
+                            <li>Kaynak Maaş Tipi Seçimi:
+                                <ul>
+                                    <li>Ekranın üst kısmında "Kaynak Maaş Tipi" etiketi yanındaki açılır listeye tıklayın</li>
+                                    <li>Açılan listeden kesintilerini kopyalamak istediğiniz maaş tipini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Hedef Maaş Tipi Seçimi:
+                                <ul>
+                                    <li>Ekranın orta kısmında "Hedef Maaş Tipi" etiketi yanındaki açılır listeye tıklayın</li>
+                                    <li>Açılan listeden kesintilerin kopyalanacağı maaş tipini seçin</li>
+                                    <li>İsterseniz birden fazla hedef maaş tipi seçebilirsiniz (CTRL tuşu ile çoklu seçim yapabilirsiniz)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kopyalama İşlemini Gerçekleştirme:</strong>
+                        <ol>
+                            <li>Kaynak ve hedef maaş tiplerini seçtikten sonra ekranın alt kısmındaki "Kopyala" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın alt kısmında, sol tarafta yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Kopyala butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Bir onay mesajı görüntülenir: "Kopyalama işlemini onaylıyor musunuz?"</li>
+                                    <li>"Evet" seçeneğine tıklarsanız, kaynak maaş tipindeki tüm kesinti tanımları hedef maaş tip(ler)ine kopyalanır</li>
+                                    <li>"Hayır" seçeneğine tıklarsanız, kopyalama işlemi iptal edilir</li>
+                                </ul>
+                            </li>
+                            <li>Kopyalama tamamlandığında:
+                                <ul>
+                                    <li>İşlemin başarılı olduğunu belirten bir bilgi mesajı görüntülenir</li>
+                                    <li>Hedef maaş tipine ait önceki kesinti tanımları korunur ve kaynak maaş tipinden yeni kesintiler eklenir</li>
+                                    <li>Eğer hedef maaş tipinde kaynak maaş tipindeki kesintilerle aynı kesintiler varsa, kopyalama işlemi bu kesintileri atlar</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kopyalama Ekranını Kapatma:</strong>
+                        <ul>
+                            <li>İşlemi tamamladıktan sonra ekranın alt kısmındaki "Çıkış" butonuna tıklayın
+                                <ul>
+                                    <li>Bu buton ekranın alt kısmında, sağ tarafta yer alır</li>
+                                </ul>
+                            </li>
+                            <li>Çıkış butonuna tıkladığınızda:
+                                <ul>
+                                    <li>Kopyalama penceresi kapanır</li>
+                                    <li>Ana Kesinti Maaş Tipi Tanımları ekranına geri dönersiniz</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kopyalama işlemi, hedef maaş tipindeki mevcut kesinti tanımlarını silmez, sadece yeni kesintileri ekler</li>
+                    <li>Aynı kesinti türü hem kaynak hem de hedef maaş tipinde varsa, bu kesinti kopyalanmaz</li>
+                    <li>Kopyalama işlemi geri alınamaz, bu nedenle onay mesajını dikkatlice okuyun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla hedef maaş tipine aynı anda kopyalama yaparak zamandan tasarruf edebilirsiniz</li>
+                    <li>CTRL tuşu ile birden fazla hedef maaş tipi seçebilirsiniz</li>
+                    <li>Kopyalama işleminden önce hem kaynak hem de hedef maaş tiplerindeki mevcut kesinti tanımlarını gözden geçirin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Klavye Kısayolları:</h4>
+                <p>Kesinti Maaş Tipi Tanımları programında işlerinizi hızlandırmak için kullanabileceğiniz klavye kısayolları:</p>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçiş yapar</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçiş yapar</li>
+                    <li><strong>ENTER:</strong> TAB tuşu gibi bir sonraki alana geçiş yapar</li>
+                    <li><strong>ESC:</strong> Programdan çıkış yapar</li>
+                    <li><strong>ALT + L:</strong> Arama penceresinde listeler</li>
+                    <li><strong>ALT + İlgili Butonun Altı Çizili Harfi:</strong> İlgili butonu çalıştırır</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ol>
+                    <li><strong>Maaş Tipi Seçimi:</strong>
+                        <ul>
+                            <li>Sık kullandığınız maaş tiplerinin numaralarını not alın</li>
+                            <li>Açılır listede ilk harfi yazarak hızlı seçim yapın</li>
+                            <li>Arama ekranında sütun başlıklarına tıklayarak sıralama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Tanımlama:</strong>
+                        <ul>
+                            <li>Benzer kesintileri bir arada tanımlayın</li>
+                            <li>Önce tüm kesintileri ekleyin, sonra bir kez kaydedin</li>
+                            <li>Bir kesintinin seçildiğini kontrol etmek için kesinti türü açılır listesini açıp bakabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplu İşlemler:</strong>
+                        <ul>
+                            <li>Birden fazla maaş tipine aynı kesintileri tanımlamanız gerekiyorsa, kopyalama işlevini kullanın</li>
+                            <li>Önce bir maaş tipine tüm kesintileri tanımlayın, sonra diğerlerine kopyalayın</li>
+                            <li>Benzer maaş tipleri için şablonlar oluşturun ve bunları kopyalama kaynağı olarak kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kesinti Yönetimi İçin İpuçları:</h4>
+                <ul>
+                    <li>Her kesinti için hesaplama seçeneğini (Evet/Hayır) dikkatli belirleyin, bu seçim maaş hesaplamalarını doğrudan etkiler</li>
+                    <li>Aynı kesinti birden fazla kez seçilemez, sistem buna izin vermez ve uyarı verir</li>
+                    <li>Kesintileri mantıklı gruplar halinde düzenleyin, örneğin zorunlu kesintiler, isteğe bağlı kesintiler vb.</li>
+                    <li>Yeni bir kesinti eklemeden önce mevcut kesintileri kontrol edin, gereksiz tekrarlardan kaçının</li>
+                    <li>Değişiklik yapmadan önce mevcut durumu not alın, böylece gerekirse eski haline dönebilirsiniz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Zaman Kazandıran Öneriler:</h4>
+                <ul>
+                    <li>Kesinti tablosunda alt satırlara hızlıca gitmek için fare tekerleğini kullanabilirsiniz</li>
+                    <li>Açılır listelerde ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Değişiklikleri sık sık kaydedin, böylece veri kaybı yaşamazsınız</li>
+                    <li>Programı düzenli olarak kullanıyorsanız, sık kullandığınız maaş tiplerini ve kesintileri not edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kesinti Seçilemiyor Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Bir kesinti türünü seçmek istediğinizde sistem "Bu Kesinti Önceden Seçilmiştir!" uyarısı veriyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Tabloda mevcut kesintileri kontrol edin, aynı kesinti zaten tanımlanmış olabilir</li>
+                                    <li>Kaydırma çubuğunu kullanarak tüm tabloyu gözden geçirin</li>
+                                    <li>Eğer aynı kesinti farklı bir maaş tipine tanımlanmak isteniyorsa, doğru maaş tipini seçtiğinizden emin olun</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipi Seçilemiyor Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Maaş tipi açılır listesi aktif değil veya seçim yapılamıyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Önce "Temizle" butonuna tıklayın, bu ekranı başlangıç durumuna getirir</li>
+                                    <li>Maaş tipi seçim alanının aktif hale geldiğini göreceksiniz</li>
+                                    <li>Eğer sorun devam ederse programı kapatıp yeniden açın</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kesinti tanımları kaydedilmiyor veya kaydetme sırasında hata mesajı alınıyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Maaş tipinin doğru seçildiğinden emin olun</li>
+                                    <li>Tüm kesinti seçimlerinin doğru yapıldığını kontrol edin</li>
+                                    <li>Sistem yöneticinizle iletişime geçerek veritabanı erişim yetkilerinizi kontrol edin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Kopyalama Sorunu:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kesintiler bir maaş tipinden diğerine kopyalanmıyor</li>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Kaynak maaş tipinin kesinti tanımları olduğunu kontrol edin</li>
+                                    <li>Hedef maaş tipinin doğru seçildiğinden emin olun</li>
+                                    <li>Kopyalamak istediğiniz kesintilerin hedef maaş tipinde zaten var olmadığından emin olun</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sistem Hataları ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Program Açılmıyor:</strong>
+                        <ul>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Sistem yöneticinizle iletişime geçin</li>
+                                    <li>Ağ bağlantınızı kontrol edin</li>
+                                    <li>Kullanıcı yetki seviyenizi kontrol ettirin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Görüntülenmiyor:</strong>
+                        <ul>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Ekranı temizleyip yeniden maaş tipi seçin</li>
+                                    <li>Veritabanı bağlantı sorunları için sistem yöneticinize başvurun</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Beklenmeyen Hata Mesajları:</strong>
+                        <ul>
+                            <li><strong>Çözüm:</strong> 
+                                <ul>
+                                    <li>Hata mesajının tam metnini not alın</li>
+                                    <li>Programı kapatıp yeniden açın</li>
+                                    <li>Hata devam ederse sistem yöneticinizle iletişime geçin ve hata mesajını paylaşın</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Yardım Alma:</h4>
+                <p>Aşağıdaki durumlarda sistem yöneticinizle iletişime geçin:</p>
+                <ul>
+                    <li>Programda tekrarlayan hatalar alıyorsanız</li>
+                    <li>Kullanıcı yetkilerinizin yetersiz olduğunu düşünüyorsanız</li>
+                    <li>Veri tabanı erişim sorunları yaşıyorsanız</li>
+                    <li>Kesinti veya maaş tipi tanımlarında sorun yaşıyorsanız</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Önleyici Tedbirler:</h4>
+                <ul>
+                    <li>Önemli değişikliklerden önce mevcut yapılandırmayı not alın</li>
+                    <li>Değişiklikleri düzenli olarak kaydedin</li>
+                    <li>Büyük değişiklikler yapmadan önce sistem yöneticinize danışın</li>
+                    <li>Programı düzenli aralıklarla kapatıp yeniden açın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="uygulamalar" class="section">
+        <h2>Kullanım Senaryoları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Senaryo 1: Yeni Bir Maaş Tipine Kesinti Tanımlama</h4>
+                <ol>
+                    <li>Kesinti Maaş Tipi Tanımları programını açın</li>
+                    <li>Maaş tipi açılır listesinden yeni tanımlanan maaş tipini seçin</li>
+                    <li>"Yeni" butonuna tıklayarak kesinti tablosuna yeni bir satır ekleyin</li>
+                    <li>Kesinti listesinden ilk eklemek istediğiniz kesinti türünü seçin</li>
+                    <li>Hesaplama seçeneğini belirleyin (genellikle "Evet" seçilir)</li>
+                    <li>Adım 3-5'i eklemek istediğiniz her kesinti için tekrarlayın</li>
+                    <li>Tüm kesintileri ekledikten sonra "Kaydet" butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında "Çıkış" butonuna tıklayarak programdan çıkın</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Senaryo 2: Benzer Maaş Tiplerinde Kesintileri Toplu Güncelleme</h4>
+                <ol>
+                    <li>Önce bir maaş tipindeki tüm kesintileri eksiksiz olarak tanımlayın ve kaydedin</li>
+                    <li>"Kopyala" butonuna tıklayarak kopyalama penceresini açın</li>
+                    <li>Kaynak maaş tipi olarak eksiksiz tanımladığınız maaş tipini seçin</li>
+                    <li>Hedef maaş tipi olarak CTRL tuşu ile birden fazla maaş tipi seçin</li>
+                    <li>"Kopyala" butonuna tıklayın ve onay penceresinde "Evet" seçeneğini işaretleyin</li>
+                    <li>Kopyalama işlemi tamamlandıktan sonra "Çıkış" butonuna tıklayarak kopyalama penceresini kapatın</li>
+                    <li>Gerekirse her maaş tipini ayrı ayrı açarak özel durumları güncelleyin</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Senaryo 3: Kesintileri Güncelleme</h4>
+                <ol>
+                    <li>Maaş tipi açılır listesinden güncellemek istediğiniz maaş tipini seçin</li>
+                    <li>Kesinti tablosunda güncellemek istediğiniz kesinti satırını bulun</li>
+                    <li>Hesaplama seçeneğini değiştirmek için açılır listeye tıklayıp yeni seçim yapın</li>
+                    <li>Farklı bir kesinti eklemek için "Yeni" butonuna tıklayın ve yeni satırda kesinti seçin</li>
+                    <li>Bir kesinti türünü kaldırmak için o satırın başındaki silme butonuna tıklayın ve onaylayın</li>
+                    <li>Tüm değişiklikleri yaptıktan sonra "Kaydet" butonuna tıklayın</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="son-hatirlatmalar" class="section">
+        <h2>Son Hatırlatmalar</h2>
+        <div class="info-box">
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Değişiklikleri yapmadan önce doğru maaş tipini seçtiğinizden emin olun</li>
+                    <li>İşlemlerinizi tamamladıktan sonra "Kaydet" butonuna basmayı unutmayın</li>
+                    <li>Silme işlemleri geri alınamaz, silmeden önce onay mesajını dikkatlice okuyun</li>
+                    <li>Sorun yaşarsanız sistem yöneticinizle iletişime geçin</li>
+                    <li>Programdan çıkmadan önce kaydetmediğiniz değişiklikler varsa kaydedin</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Bilinmesi Gereken Özel Durumlar:</h4>
+                <ul>
+                    <li>Bir kesinti türü bir maaş tipinde yalnızca bir kez tanımlanabilir</li>
+                    <li>Maaş hesaplama işlemleri için kesintilerin hesaplama seçeneği önemlidir</li>
+                    <li>Kopyalama işlemi hedef maaş tipinde var olan kesintileri etkilemez</li>
+                    <li>Program ilk açıldığında maaş tipi seçimi aktif olmazsa "Temizle" butonunu kullanın</li>
+                </ul>
+            </div>
+            
+            <p>Bu kullanıcı kılavuzu, Kesinti Maaş Tipi Tanımları programını doğru ve verimli şekilde kullanmanıza yardımcı olmak amacıyla hazırlanmıştır. Programa ilişkin sorularınız veya önerileriniz için sistem yöneticinizle iletişime geçebilirsiniz.</p>
+        </div>
+    </div>
+
+</body>
+</html>

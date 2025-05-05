@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceza Türü Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ceza Türü Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Arayüz Tanıtımı</a></li>
+                <li><a href="#ceza-bilgileri">Ceza Kodu ve Bilgileri Giriş Alanları</a></li>
+                <li><a href="#yeni-ceza">Adım Adım Yeni Ceza Türü Tanımlama</a></li>
+                <li><a href="#ceza-guncelleme">Adım Adım Var Olan Ceza Türünü Bulma ve Güncelleme</a></li>
+                <li><a href="#ceza-silme">Adım Adım Ceza Türü Silme</a></li>
+                <li><a href="#ceza-hesaplama">Ceza Hesaplama Tanımlama</a></li>
+                <li><a href="#butonlar">Gezinme ve İşlem Butonları</a></li>
+                <li><a href="#kisayollar">Klavye Kısayolları ve Tuş Kombinasyonları</a></li>
+                <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ceza Türü Tanımları programı, personel için uygulanacak ceza türlerinin tanımlanması, düzenlenmesi ve yönetilmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni ceza türleri oluşturma</li>
+                <li>Var olan ceza türlerini görüntüleme ve düzenleme</li>
+                <li>Ceza uygulaması için kesinti oranlarını belirleme</li>
+                <li>Ceza türlerini silme</li>
+                <li>Ceza sürelerinin kıdemden düşülüp düşülmeyeceğini belirleme</li>
+                <li>Cezalar için hesaplama yöntemleri tanımlama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlanacak ceza türünün adı</li>
+                    <li>Ceza için uygulanacak kesinti oranları (varsa)</li>
+                    <li>Ceza süresinin kıdemden düşülüp düşülmeyeceği bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Arayüz Tanıtımı</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "CEZA TÜR TANIMLARI (GİRİŞ)" veya "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" başlığı yer alır</li>
+                            <li>Bu başlık, yeni bir ceza türü eklemek için mi yoksa var olan bir ceza türünü değiştirmek için mi ekranın açıldığına bağlı olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sol tarafta alan etiketleri (Ceza Kodu, Ceza Adı, vb.), sağ tarafta ise veri giriş kutuları yer alır</li>
+                            <li>Alanlar yukarıdan aşağıya doğru mantıklı bir sırada yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında iki satırda butonlar yer alır</li>
+                            <li>Üst satırda gezinme butonları (Önceki, Sonraki, Liste) ve Hesaplamalar butonu bulunur</li>
+                            <li>Alt satırda form işlem butonları (Temizle, Kaydet, Sil, Çıkış) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Ekran başlığı "CEZA TÜR TANIMLARI (GİRİŞ)" olarak gelir</li>
+                    <li>İmleç Ceza Kodu alanında konumlanır</li>
+                    <li>Sistem otomatik olarak yeni bir ceza kodu önerir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceza Türü Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ceza Türü Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Arayüz Tanıtımı</a></li>
+                <li><a href="#ceza-bilgileri">Ceza Kodu ve Bilgileri Giriş Alanları</a></li>
+                <li><a href="#yeni-ceza">Adım Adım Yeni Ceza Türü Tanımlama</a></li>
+                <li><a href="#ceza-guncelleme">Adım Adım Var Olan Ceza Türünü Bulma ve Güncelleme</a></li>
+                <li><a href="#ceza-silme">Adım Adım Ceza Türü Silme</a></li>
+                <li><a href="#ceza-hesaplama">Ceza Hesaplama Tanımlama</a></li>
+                <li><a href="#butonlar">Gezinme ve İşlem Butonları</a></li>
+                <li><a href="#kisayollar">Klavye Kısayolları ve Tuş Kombinasyonları</a></li>
+                <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ceza Türü Tanımları programı, personel için uygulanacak ceza türlerinin tanımlanması, düzenlenmesi ve yönetilmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni ceza türleri oluşturma</li>
+                <li>Var olan ceza türlerini görüntüleme ve düzenleme</li>
+                <li>Ceza uygulaması için kesinti oranlarını belirleme</li>
+                <li>Ceza türlerini silme</li>
+                <li>Ceza sürelerinin kıdemden düşülüp düşülmeyeceğini belirleme</li>
+                <li>Cezalar için hesaplama yöntemleri tanımlama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlanacak ceza türünün adı</li>
+                    <li>Ceza için uygulanacak kesinti oranları (varsa)</li>
+                    <li>Ceza süresinin kıdemden düşülüp düşülmeyeceği bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Arayüz Tanıtımı</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "CEZA TÜR TANIMLARI (GİRİŞ)" veya "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" başlığı yer alır</li>
+                            <li>Bu başlık, yeni bir ceza türü eklemek için mi yoksa var olan bir ceza türünü değiştirmek için mi ekranın açıldığına bağlı olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sol tarafta alan etiketleri (Ceza Kodu, Ceza Adı, vb.), sağ tarafta ise veri giriş kutuları yer alır</li>
+                            <li>Alanlar yukarıdan aşağıya doğru mantıklı bir sırada yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında iki satırda butonlar yer alır</li>
+                            <li>Üst satırda gezinme butonları (Önceki, Sonraki, Liste) ve Hesaplamalar butonu bulunur</li>
+                            <li>Alt satırda form işlem butonları (Temizle, Kaydet, Sil, Çıkış) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Ekran başlığı "CEZA TÜR TANIMLARI (GİRİŞ)" olarak gelir</li>
+                    <li>İmleç Ceza Kodu alanında konumlanır</li>
+                    <li>Sistem otomatik olarak yeni bir ceza kodu önerir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ceza-guncelleme" class="section">
+        <h2>Adım Adım Var Olan Ceza Türünü Bulma ve Güncelleme</h2>
+        <div class="info-box">
+            <h3>Var Olan Ceza Türünü Bulma</h3>
+            
+            <div class="step">
+                <h4>Doğrudan Ceza Kodu ile Arama:</h4>
+                <ol>
+                    <li><strong>Ceza Kodunu Girme:</strong>
+                        <ul>
+                            <li>Programı açın ve Ceza Kodu alanına aramak istediğiniz ceza kodunu yazın</li>
+                            <li>Ceza Kodu alanı ekranın üst kısmında, sol tarafta "Ceza Kodu" etiketi yanındaki metin kutusudur</li>
+                            <li>TAB tuşuna bastığınızda veya başka bir alana tıkladığınızda, sistem otomatik olarak ilgili ceza kodunu arayacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonucun Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Eğer girilen kod sistemde varsa, ilgili ceza türünün tüm bilgileri form alanlarına doldurulacaktır</li>
+                            <li>Ekranın başlığı "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" olarak değişecektir</li>
+                            <li>Artık kaydı güncelleyebilir veya silebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Liste Üzerinden Arama (Pencere Kullanarak):</h4>
+                <ol>
+                    <li><strong>Liste Penceresini Açma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ortada bulunan butonlar arasından "Liste" butonuna tıklayın</li>
+                            <li>Liste butonu, "Önceki" ve "Sonraki" butonlarının yanında, küçük bir pencere simgesiyle gösterilmektedir</li>
+                            <li>Bu butona tıkladığınızda yeni bir pencere açılacak ve sistemdeki tüm ceza türleri listelenecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeden Seçim Yapma:</strong>
+                        <ul>
+                            <li>Açılan pencerede ceza türleri Kayıt No, Ceza Adı, Kesinti Oran1 ve Kesinti Oran2 sütunlarıyla görüntülenir</li>
+                            <li>İstediğiniz ceza türüne tıklayarak seçin</li>
+                            <li>Seçtiğiniz ceza türü vurgulanacaktır</li>
+                            <li>Seçimi tamamlamak için liste penceresindeki "Seç" butonuna tıklayın veya satıra çift tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonucun Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Liste penceresi kapanacak ve seçilen ceza türünün bilgileri ana formda görüntülenecektir</li>
+                            <li>Ekranın başlığı "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" olarak değişecektir</li>
+                            <li>Artık kaydı güncelleyebilir veya silebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Önceki/Sonraki Butonları ile Gezinme:</h4>
+                <ol>
+                    <li><strong>Önceki Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, sol tarafta bulunan "Önceki" butonuna tıklayın</li>
+                            <li>Bu buton, mevcut ceza kodundan daha küçük koda sahip olan bir önceki ceza türünü gösterecektir</li>
+                            <li>Eğer görüntülenen ceza kodu zaten en düşük kodsa, sistem herhangi bir değişiklik yapmayacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>"Önceki" butonunun sağında bulunan "Sonraki" butonuna tıklayın</li>
+                            <li>Bu buton, mevcut ceza kodundan daha büyük koda sahip olan bir sonraki ceza türünü gösterecektir</li>
+                            <li>Eğer görüntülenen ceza kodu zaten en yüksek kodsa, sistem herhangi bir değişiklik yapmayacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Geçerli bir ceza kodu girmelisiniz, aksi takdirde sistem "Kayıt No Girilmemiş" uyarısı verecektir</li>
+                    <li>Eğer girdiğiniz ceza kodu sistemde yoksa, sistem yeni kayıt modu olarak devam edecektir</li>
+                    <li>Ceza kodunu değiştirmek için önce "Temizle" butonuna basarak yeni bir form açmanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Var Olan Ceza Türünü Güncelleme</h3>
+            
+            <div class="step">
+                <h4>Ceza Türü Bilgilerini Değiştirme:</h4>
+                <ol>
+                    <li><strong>Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Yukarıda anlatılan yöntemlerden birini kullanarak güncellemek istediğiniz ceza türünü bulun</li>
+                            <li>Kaydı bulduğunuzda, ekranın başlığı "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" olarak değişecektir</li>
+                            <li>Ceza Kodu alanı artık değiştirilemez durumda (gri renkli) olacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Değiştirme:</strong>
+                        <ul>
+                            <li>Değiştirmek istediğiniz alana tıklayın veya TAB tuşuyla ilerleyerek o alana gelin</li>
+                            <li>Mevcut bilgileri silin ve yeni bilgileri girin</li>
+                            <li>Güncelleyebileceğiniz alanlar: Ceza Adı, Kesinti Oran1, Kesinti Oran2 ve "Ceza süresi kıdemden düşülsün?" seçeneğidir</li>
+                            <li>Açılır listeden ceza süresinin kıdemden düşülüp düşülmeyeceğini değiştirmek için listeye tıklayın ve yeni seçimi yapın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikleri yaptıktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu, form temizle ve sil butonları arasında, ekranın alt orta kısmında yer alır</li>
+                            <li>Sistem değişiklikleri kontrol edecek ve zorunlu alanların doldurulup doldurulmadığını denetleyecektir</li>
+                            <li>Herhangi bir eksik veya hata yoksa, ceza türü güncellenecek ve sistem otomatik olarak yeni bir form açacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Olası Hata Durumları:</h4>
+                <ul>
+                    <li>Ceza Adı alanını boş bırakırsanız: "Ceza Kodu Girilmemiş!" uyarısı alırsınız</li>
+                    <li>Güncelleme sırasında sistem hatası olursa, ekranda hata mesajı görüntülenecektir</li>
+                    <li>Ceza Kodu alan değiştirilemez, değiştirmek isterseniz yeni bir kayıt oluşturmanız gerekir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Başarılı Güncelleme İşareti:</h4>
+                <p>Güncelleme işleminin başarıyla tamamlandığını anlamak için:</p>
+                <ul>
+                    <li>Form temizlenir ve yeni bir ceza kodu otomatik olarak önerilir</li>
+                    <li>İmleç tekrar Ceza Kodu alanına konumlanır</li>
+                    <li>Sistem herhangi bir hata mesajı göstermez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ceza-silme" class="section">
+        <h2>Adım Adım Ceza Türü Silme</h2>
+        <div class="info-box">
+            <h3>Var Olan Ceza Türünü Silme</h3>
+            
+            <div class="step">
+                <h4>Ceza Türünü Silmek İçin:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Yukarıda anlatılan "Var Olan Ceza Türünü Bulma" yöntemlerinden birini kullanarak silmek istediğiniz ceza türünü bulun</li>
+                            <li>Kaydı bulduğunuzda, ekranın başlığı "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" olarak değişecektir</li>
+                            <li>Ceza Kodu alanı artık değiştirilemez durumda (gri renkli) olacaktır</li>
+                            <li>Tüm ceza türü bilgilerinin doğru görüntülendiğinden emin olun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemini Başlatma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, "Kaydet" butonunun sağında bulunan "Sil" butonuna tıklayın</li>
+                            <li>Sistem size bir onay penceresi gösterecektir: "İptal İşlemini Onaylıyor musunuz?"</li>
+                            <li>Bu uyarı, silme işleminin geri alınamayacağını hatırlatmak içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemini Onaylama:</strong>
+                        <ul>
+                            <li>Silme işlemini onaylamak için onay penceresindeki "Evet" butonuna tıklayın</li>
+                            <li>İşlemi iptal etmek istiyorsanız "Hayır" butonuna tıklayın</li>
+                            <li>"Evet" butonuna tıklarsanız, sistem ceza türünü silecek ve otomatik olarak yeni bir form açacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz! Silinen bir ceza türünü geri getirmek için yeniden oluşturmanız gerekir</li>
+                    <li>Sistem silme işlemini onaylatmak için bir onay penceresi gösterir</li>
+                    <li>Eğer silmek istediğiniz ceza türü başka yerlerde kullanılıyorsa, silme işlemi başarısız olabilir veya ilişkili kayıtlar etkilenebilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Başarılı Silme İşareti:</h4>
+                <p>Silme işleminin başarıyla tamamlandığını anlamak için:</p>
+                <ul>
+                    <li>Form temizlenir ve yeni bir ceza kodu otomatik olarak önerilir</li>
+                    <li>İmleç tekrar Ceza Kodu alanına konumlanır</li>
+                    <li>Sistem herhangi bir hata mesajı göstermez</li>
+                    <li>Silinen ceza kodu artık listede görünmeyecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ceza-hesaplama" class="section">
+        <h2>Ceza Hesaplama Tanımlama</h2>
+        <div class="info-box">
+            <h3>Ceza Türüne Hesaplama Tanımlama</h3>
+            
+            <div class="step">
+                <h4>Ceza Hesaplama Penceresini Açma:</h4>
+                <ol>
+                    <li><strong>Öncelikle Ceza Türünü Bulma:</strong>
+                        <ul>
+                            <li>Hesaplama tanımlamak istediğiniz ceza türünü önce sisteme kaydetmelisiniz</li>
+                            <li>Sadece kayıtlı ceza türlerine hesaplama tanımlanabilir</li>
+                            <li>Önceki bölümlerde anlatılan yöntemlerle var olan bir ceza türünü bulun</li>
+                            <li>Kaydı bulduğunuzda ekranın başlığı "CEZA TÜR TANIMLARI (DEĞİŞİKLİK)" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplamalar Butonunu Kullanma:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, üst sıradaki butonlar arasında "Hesaplamalar" butonuna tıklayın</li>
+                            <li>Bu buton, Liste butonunun sağında, "Hesaplamalar" yazısı ve küçük bir simgeyle gösterilir</li>
+                            <li>Eğer mevcut ceza türü henüz kaydedilmemişse, sistem "Kayıtlı Bir Ceza Türüne Hesaplama Tanımlayabilirsiniz!" uyarısı verecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Penceresi:</strong>
+                        <ul>
+                            <li>Hesaplamalar butonuna tıkladığınızda, yeni bir açılır pencere görüntülenecektir</li>
+                            <li>Bu pencere, ceza türü için özel hesaplama yöntemleri tanımlamanıza olanak tanır</li>
+                            <li>Pencere ekranın ortasında, ana formun üzerinde açılır</li>
+                            <li>Pencerenin boyutu 700x480 pikseldir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hesaplama Penceresi Kullanımı:</h4>
+                <ol>
+                    <li><strong>Hesaplama Türü Seçme ve Tanımlama:</strong>
+                        <ul>
+                            <li>Açılan hesaplama penceresinde, ceza için uygulanacak hesaplama yöntemlerini tanımlayabilirsiniz</li>
+                            <li>Bu pencerede ceza türü için disiplin işlemleri ve ilgili hesaplamalar yapılandırılır</li>
+                            <li>Formda bulunan alanları doldurarak ceza hesaplama kurallarını belirleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Tanımını Kaydetme:</strong>
+                        <ul>
+                            <li>Gerekli bilgileri girdikten sonra, hesaplama penceresindeki "Kaydet" butonuna tıklayın</li>
+                            <li>Sistemde herhangi bir hata yoksa, hesaplama tanımı ceza türüne eklenecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplama Penceresini Kapatma:</strong>
+                        <ul>
+                            <li>İşlemleriniz bittiğinde, hesaplama penceresini kapatmak için pencerenin sağ üst köşesindeki "X" butonuna tıklayın</li>
+                            <li>Pencere kapanacak ve ana ceza türü formuna geri döneceksiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hesaplama tanımları yalnızca kayıtlı ceza türlerine eklenebilir</li>
+                    <li>Yeni oluşturduğunuz ve henüz kaydetmediğiniz ceza türlerine hesaplama ekleyemezsiniz</li>
+                    <li>Hesaplama penceresini açmadan önce, ceza türünün bilgilerini değiştirdiyseniz, önce bu değişiklikleri kaydetmeniz önerilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir ceza türüne birden fazla hesaplama tanımı ekleyebilirsiniz</li>
+                    <li>Hesaplama tanımlarını daha sonra düzenleyebilir veya silebilirsiniz</li>
+                    <li>Hesaplama tanımları, ceza uygulandığında otomatik olarak devreye girecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>Gezinme ve İşlem Butonları</h2>
+        <div class="info-box">
+            <h3>Form Üzerindeki Butonlar</h3>
+            
+            <div class="step">
+                <h4>Üst Sıradaki Butonlar (Gezinme ve Özel İşlemler):</h4>
+                <ol>
+                    <li><strong>Önceki Butonu:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, üst sırada, en sol tarafta yer alır</li>
+                            <li>Görünüm: Üzerinde sol ok işareti bulunan bir butondur</li>
+                            <li>İşlev: Mevcut ceza kodundan daha küçük koda sahip olan bir önceki ceza türünü gösterir</li>
+                            <li>Kullanım: Kayıtlar arasında geriye doğru gezinmek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki Butonu:</strong>
+                        <ul>
+                            <li>Konum: Önceki butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde sağ ok işareti bulunan bir butondur</li>
+                            <li>İşlev: Mevcut ceza kodundan daha büyük koda sahip olan bir sonraki ceza türünü gösterir</li>
+                            <li>Kullanım: Kayıtlar arasında ileriye doğru gezinmek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Butonu:</strong>
+                        <ul>
+                            <li>Konum: Sonraki butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde pencere simgesi bulunan bir butondur</li>
+                            <li>İşlev: Sistemdeki tüm ceza türlerini listeleyen yeni bir pencere açar</li>
+                            <li>Kullanım: Kayıtlar arasında arama yapmak ve istediğiniz ceza türünü bulmak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hesaplamalar Butonu:</strong>
+                        <ul>
+                            <li>Konum: Liste butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Hesaplamalar" yazısı ve küçük bir simge bulunan bir butondur</li>
+                            <li>İşlev: Mevcut ceza türü için hesaplama yöntemleri tanımlamanızı sağlayan yeni bir pencere açar</li>
+                            <li>Kullanım: Ceza türüne özel hesaplama kuralları eklemek için kullanılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Alt Sıradaki Butonlar (Temel Form İşlemleri):</h4>
+                <ol>
+                    <li><strong>Temizle Butonu:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, alt sırada, en sol tarafta yer alır</li>
+                            <li>Görünüm: Üzerinde "Temizle" yazısı veya temizleme simgesi bulunan bir butondur</li>
+                            <li>İşlev: Formdaki tüm alanları temizler ve yeni bir ceza kodu atar</li>
+                            <li>Kullanım: Yeni bir ceza türü tanımlamak istediğinizde mevcut formu sıfırlamak için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Konum: Temizle butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Kaydet" yazısı veya disk simgesi bulunan bir butondur</li>
+                            <li>İşlev: Formdaki bilgileri kontrol eder ve yeni bir ceza türü ekler veya mevcut ceza türünü günceller</li>
+                            <li>Kullanım: Yeni veya değiştirilmiş ceza türü bilgilerini sisteme kaydetmek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu:</strong>
+                        <ul>
+                            <li>Konum: Kaydet butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Sil" yazısı veya çöp kutusu simgesi bulunan bir butondur</li>
+                            <li>İşlev: Mevcut ceza türünü sistemden siler (onay ister)</li>
+                            <li>Kullanım: Artık ihtiyaç duyulmayan ceza türlerini silmek için kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış Butonu:</strong>
+                        <ul>
+                            <li>Konum: Alt sırada, en sağ tarafta yer alır</li>
+                            <li>Görünüm: Üzerinde "Çıkış" yazısı veya çıkış simgesi bulunan bir butondur</li>
+                            <li>İşlev: Ceza Türü Tanımları programını kapatır</li>
+                            <li>Kullanım: Programdan çıkmak istediğinizde kullanılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydetmediğiniz değişiklikler, Temizle butonuna bastığınızda veya programdan çıktığınızda kaybolacaktır</li>
+                    <li>Silme işlemi geri alınamaz, işlem öncesi onay penceresi gösterilir</li>
+                    <li>Temizle butonu formu sıfırlar ve yeni kayıt moduna geçer</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Butonlar hem fare ile tıklanarak hem de klavye kısayolları ile kullanılabilir</li>
+                    <li>Gezinme butonlarını kullanarak tüm ceza türlerini hızlıca inceleyebilirsiniz</li>
+                    <li>Liste butonu, aradığınız ceza türünü hızlıca bulmanızı sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceza Türü Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        /* Stil tanımları önceki bölümlerle aynı */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ceza Türü Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="kisayollar" class="section">
+        <h2>Klavye Kısayolları ve Tuş Kombinasyonları</h2>
+        <div class="info-box">
+            <h3>Hızlı Kullanım İçin Klavye Kısayolları</h3>
+            
+            <div class="step">
+                <h4>Genel Klavye Kısayolları:</h4>
+                <ol>
+                    <li><strong>Form Alanları Arası Gezinme:</strong>
+                        <ul>
+                            <li>TAB tuşu: Bir sonraki form alanına geçer</li>
+                            <li>SHIFT + TAB: Bir önceki form alanına döner</li>
+                            <li>ENTER tuşu: TAB tuşu gibi çalışır, bir sonraki form alanına geçer</li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Kontrolü:</strong>
+                        <ul>
+                            <li>ESC tuşu: Programdan çıkış yapar (Çıkış butonuyla aynı işlevi görür)</li>
+                            <li>ALT + L: Liste butonunu çalıştırır ve ceza türleri listesini açar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Açılır Listeler ve Pencereler:</h4>
+                <ol>
+                    <li><strong>Açılır Liste (Dropdown) Kontrolü:</strong>
+                        <ul>
+                            <li>ALT + Aşağı Ok: Açılır listeyi açar (örn. "Ceza süresi kıdemden düşülsün?" listesi)</li>
+                            <li>İlk harf: Listedeki ilgili harfle başlayan seçeneğe hızlıca gider</li>
+                            <li>Yukarı/Aşağı Ok tuşları: Listede gezinmeyi sağlar</li>
+                            <li>ENTER: Seçilen öğeyi onaylar ve listeyi kapatır</li>
+                            <li>ESC: Seçim yapmadan listeyi kapatır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Penceresi Kontrolü:</strong>
+                        <ul>
+                            <li>İlk harf: Listede ilgili harfle başlayan kayıtlara hızlıca gider</li>
+                            <li>Yukarı/Aşağı Ok tuşları: Listede gezinmeyi sağlar</li>
+                            <li>Çift tıklama: Seçilen ceza türünü ana forma yükler</li>
+                            <li>ESC: Pencereyi kapatır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Ceza türü kodu girip ENTER'a basarak kaydı hızlıca arayabilirsiniz</li>
+                    <li>ESC tuşu açık pencereleri kapatmak veya programdan çıkmak için kullanılabilir</li>
+                    <li>Liste penceresinde ilk harfleri yazarak hızlıca arama yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Veri Giriş Sorunları:</h4>
+                <ol>
+                    <li><strong>Sorun: "Kayıt No Girilmemiş!" uyarısı alıyorum</strong>
+                        <ul>
+                            <li>Nedeni: Ceza Kodu alanı boş bırakılmış veya geçersiz bir değer girilmiş</li>
+                            <li>Çözüm: Ceza Kodu alanına en fazla 4 haneli bir sayı girin</li>
+                            <li>Not: Sistem tarafından önerilen kodu kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: "Ceza Kodu Girilmemiş!" uyarısı alıyorum</strong>
+                        <ul>
+                            <li>Nedeni: Ceza Adı alanı boş bırakılmış</li>
+                            <li>Çözüm: Ceza Adı alanına bir değer girin (en fazla 50 karakter)</li>
+                            <li>Not: Ceza adı ceza türünü tanımlamalıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: Tuşlar çalışmıyor veya form yanıt vermiyor</strong>
+                        <ul>
+                            <li>Nedeni: Program geçici olarak yanıt vermiyor olabilir</li>
+                            <li>Çözüm: Biraz bekleyin ve tekrar deneyin, gerekirse programı kapatıp yeniden açın</li>
+                            <li>Not: Kayıtlı olmayan değişiklikler kaybolabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kayıt ve Güncelleme Sorunları:</h4>
+                <ol>
+                    <li><strong>Sorun: Kaydettiğim ceza türü görünmüyor</strong>
+                        <ul>
+                            <li>Nedeni: Kayıt işlemi tamamlanmamış olabilir</li>
+                            <li>Çözüm: "Kaydet" butonuna bastığınızdan emin olun ve sistem yanıt verene kadar bekleyin</li>
+                            <li>Kontrol: Liste butonunu kullanarak kayıtları kontrol edin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: Değişikliklerim kaydedilmiyor</strong>
+                        <ul>
+                            <li>Nedeni: Forma giriş yapmış ancak "Kaydet" butonuna basmamış olabilirsiniz</li>
+                            <li>Çözüm: Değişiklikleri yaptıktan sonra "Kaydet" butonuna basın</li>
+                            <li>Not: Ceza Kodu alanı gri renkte ve değiştirilemez olmalıdır (değişiklik modu)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: "Kayıtlı Bir Ceza Türüne Hesaplama Tanımlayabilirsiniz!" uyarısı alıyorum</strong>
+                        <ul>
+                            <li>Nedeni: Henüz kaydedilmemiş bir ceza türüne hesaplama tanımlamaya çalışıyorsunuz</li>
+                            <li>Çözüm: Önce ceza türünü kaydedin, sonra Hesaplamalar butonuna tıklayın</li>
+                            <li>Not: Hesaplamalar sadece kayıtlı ceza türlerine eklenebilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Silme ve İşlem Sorunları:</h4>
+                <ol>
+                    <li><strong>Sorun: Silme işlemi yapamıyorum</strong>
+                        <ul>
+                            <li>Nedeni: Mevcut bir ceza türünü seçmemiş olabilirsiniz</li>
+                            <li>Çözüm: Önce silmek istediğiniz ceza türünü bulun, sonra "Sil" butonuna tıklayın</li>
+                            <li>Not: Sadece "Değişiklik" modunda silme işlemi yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sorun: Onay penceresi görünmüyor</strong>
+                        <ul>
+                            <li>Nedeni: Pencere arkada kalmış olabilir</li>
+                            <li>Çözüm: Görev çubuğunda açık pencereleri kontrol edin veya ALT+TAB ile pencereler arasında geçiş yapın</li>
+                            <li>Not: Onay pencereleri genellikle ana pencerenin üzerinde görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gereken Hususlar:</h4>
+                <ul>
+                    <li>Kaydetmediğiniz değişiklikler, programdan çıktığınızda veya yeni bir form açtığınızda kaybolur</li>
+                    <li>Silme işlemleri geri alınamaz, onaylamadan önce dikkatli olun</li>
+                    <li>Ceza kodları benzersiz olmalıdır, aynı kodu tekrar kullanamzsınız</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>İyi Uygulama Önerileri:</h4>
+                <ul>
+                    <li>Düzenli olarak değişiklikleri kaydedin</li>
+                    <li>Sistematik ceza kodları kullanmaya özen gösterin</li>
+                    <li>Açıklayıcı ceza adları kullanın</li>
+                    <li>İşlem yapmadan önce doğru kaydı seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yhteenveto" class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>Ceza Türü Tanımları programı, personel için uygulanacak ceza türlerinin yönetimini sağlayan kullanıcı dostu bir arayüz sunar. Bu kılavuzda:</p>
+            <ul>
+                <li>Programın genel kullanımı ve arayüz bileşenleri</li>
+                <li>Yeni ceza türü ekleme adımları</li>
+                <li>Var olan ceza türlerini bulma ve güncelleme yöntemleri</li>
+                <li>Ceza türü silme prosedürü</li>
+                <li>Ceza hesaplama tanımlama</li>
+                <li>Butonların işlevleri ve konumları</li>
+                <li>Klavye kısayolları ve verimli kullanım ipuçları</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+            </ul>
+            <p>konularını detaylı bir şekilde inceledik.</p>
+            
+            <div class="tip-box">
+                <h4>Son Öneriler:</h4>
+                <ul>
+                    <li>Programı kullanırken önce bu kılavuzdaki temel adımları takip edin</li>
+                    <li>Yeni işlemleri denemeden önce önemli verileri yedekleyin</li>
+                    <li>Sorun yaşadığınızda, "Sık Karşılaşılan Sorunlar ve Çözümleri" bölümüne başvurun</li>
+                    <li>Tekrarlayan işlemler için klavye kısayollarını kullanarak zamandan tasarruf edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

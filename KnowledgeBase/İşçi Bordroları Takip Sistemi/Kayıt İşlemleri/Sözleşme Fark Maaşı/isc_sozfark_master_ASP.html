@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sözleşme Fark Maaşı Yıl-Dönem ve Sicil Oluşturma - Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sözleşme Fark Maaşı Yıl-Dönem ve Sicil Oluşturma</h1>
+        <img src="/api/placeholder/200/50" alt="Logo" />
+    </div>
+
+    <div class="section">
+        <h2>1. Genel Bilgiler</h2>
+        <p>Bu ekran, geçmişe dönük maaşlar için yevmiye artışı yaparak fark maaşı oluşturmanızı sağlar. Sözleşme değişiklikleri sonrası yapılacak fark maaş hesaplamalarında kullanılan bu ekran, belirlediğiniz kriterlere göre fark hesaplamasını otomatik olarak yapar.</p>
+        
+        <div class="warning-box">
+            <strong>DİKKAT!</strong>
+            <p>Kayıt işlemini yapmadan önce aşağıdaki açıklamaları dikkatle okuyunuz:</p>
+            <ul>
+                <li>Bu işlem; Geçmişe Dönük Maaşlar için; Yevmiye Artışı yaparak, Fark Maaşı oluşturmak içindir.</li>
+                <li>İşlem sonunda, daha önce hesapladığınız Sözleşme Fark Maaşı bilgileri silinecektir. <em>(Maaşı hesaplamış iseniz maaşlarınız zarar görmeyecektir.)</em></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Ekran Arayüzü</h2>
+        <p>Ekran üzerinde bulunan alanlar ve işlevleri aşağıda detaylı olarak açıklanmıştır:</p>
+
+        <h3>2.1. Sözleşme Tarihi</h3>
+        <p>Ekranın üst kısmında yer alan bu alan, sözleşmenin geçerlilik tarihini belirtmenize olanak sağlar. Tarih alanı, sayfanın sol tarafında "Sözleşme Tarihi" başlığının hemen sağında yer alır ve küçük bir metin kutusundan oluşur.</p>
+        <div class="tip-box">
+            <p>Tarihi GG.AA.YYYY formatında giriniz. Örneğin: 15.04.2023</p>
+            <p>Tarih seçiminde nokta (.) kullanarak gün, ay ve yıl bilgilerini ayırınız.</p>
+        </div>
+
+        <h3>2.2. Sicil</h3>
+        <p>Sicil numarası aralığını belirtmeniz gereken iki metin kutusu, "Sicil" başlığının hemen sağında yan yana bulunmaktadır:</p>
+        <ul>
+            <li>Sol taraftaki kutu (Başlangıç): Bu alana fark maaşı hesaplamasına dahil edilecek ilk sicil numarasını giriniz. Boş bırakırsanız otomatik olarak 0 değerini alacaktır.</li>
+            <li>Sağ taraftaki kutu (Bitiş): Bu alana fark maaşı hesaplamasına dahil edilecek son sicil numarasını giriniz. Boş bırakırsanız otomatik olarak 99999999 değerini alacaktır.</li>
+        </ul>
+        <div class="tip-box">
+            <p>Sadece belli bir sicil numarasına sahip çalışan için işlem yapmak istiyorsanız, her iki kutuya da aynı numarayı girebilirsiniz.</p>
+            <p>Sicil numaraları sadece rakamlardan oluşmalıdır, harf ya da özel karakter içermemelidir.</p>
+        </div>
+
+        <h3>2.3. Bölüm / Maaş Tipi</h3>
+        <p>Bu bölümde iki adet çoklu seçim kutusu bulunmaktadır:</p>
+        <ul>
+            <li><strong>Bölüm:</strong> "Bolum / Maaş Tipi" başlığının hemen altında, sol tarafta bulunan bu liste kutusu, işçilerin çalıştığı bölümleri içerir. Liste kutusu içinde bölüm numarası ve adı birlikte görüntülenir.</li>
+            <li><strong>Maaş Tipi:</strong> Bölüm liste kutusunun hemen sağında yer alan bu liste kutusu, maaş tiplerini içerir. Bu kutuda sicil tiplerine ait açıklamalar listelenir.</li>
+        </ul>
+        <div class="info-box">
+            <p><strong>Çoklu Seçim Yapmak İçin:</strong> Listeden birden fazla öğe seçmek için klavyenizden CTRL tuşunu basılı tutarak seçmek istediğiniz öğelere tıklayabilirsiniz. Her iki liste kutusunda da varsayılan olarak tüm değerler seçilidir, ihtiyacınıza göre değiştirebilirsiniz.</p>
+        </div>
+
+        <h3>2.4. Sendika</h3>
+        <p>"Sendika" başlığının hemen altında yer alan çoklu seçim listesinden ilgili sendikaları seçebilirsiniz. Bu liste kutusu, Bölüm liste kutusunun hemen altında bulunur ve sendika kodu ile sendika adı birlikte görüntülenir. Varsayılan olarak tüm sendikalar seçilidir.</p>
+
+        <h3>2.5. Dönemler</h3>
+        <p>"Dönemler" başlığının hemen altında yer alan çoklu seçim listesinden ilgili yıl ve dönemleri seçebilirsiniz. Bu liste kutusu, Sendika liste kutusunun hemen altında bulunur. Dönemler "Yıl/Ay (Maaş Tipi)" formatında görüntülenir ve varsayılan olarak tüm dönemler seçilidir. Bu listede 2004 yılından sonraki dönemler görüntülenir.</p>
+        <div class="tip-box">
+            <p>Dönem formatında ilk kısım yılı, ikinci kısım ayı (tek haneli aylar için başında 0 bulunur), parantez içindeki kısım ise maaş tipini belirtir.</p>
+            <p>Örnek: 2023/05 (Normal Maaş)</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. İşlemler</h2>
+        <p>Ekranın alt kısmında yer alan butonlar aracılığıyla aşağıdaki işlemleri gerçekleştirebilirsiniz:</p>
+
+        <div class="step">
+            <h3>3.1. Kaydet (Kayıt)</h3>
+            <p>Kaydet butonu ekranın alt kısmında ortada yer alır. Bu butona tıkladığınızda:</p>
+            <ol>
+                <li>Sistem, seçtiğiniz tüm bölüm, sicil tipi, sendika ve dönem bilgilerini dahili bir şekilde işleyerek kaydetmeye hazırlanır.</li>
+                <li>İşlem öncesinde "Daha önce Tanımlamanız var ise Silinecek. Emin misiniz?" şeklinde bir onay mesajı görüntülenecektir.</li>
+                <li>"Evet" seçeneğini tıkladığınızda, aynı kriterlere sahip önceki hesaplamalar silinecek ve yeni hesaplamalar kaydedilecektir.</li>
+                <li>İşlem tamamlandığında "Kayıt Tamamlandı..." mesajı görüntülenecek ve ekran otomatik olarak kapanacaktır.</li>
+                <li>"Hayır" seçeneğini tıklarsanız, kaydetme işlemi iptal edilecek ve mevcut ekranda kalacaksınız.</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>3.2. Temizle</h3>
+            <p>Temizle butonu, ekranın alt kısmında, Kaydet butonunun solunda yer alır. Bu butona tıkladığınızda:</p>
+            <ol>
+                <li>Ekrandaki tüm seçimleriniz sıfırlanır ve varsayılan değerlere döner.</li>
+                <li>Sicil numaralarına ait metin kutuları boşaltılır (sonrasında varsayılan değerler otomatik atanacaktır).</li>
+                <li>Bölüm, Maaş Tipi, Sendika ve Dönemler liste kutularında varsayılan olarak tüm değerler tekrar seçili hale gelir.</li>
+                <li>Sözleşme Tarihi alanı boşaltılır.</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>3.3. Çıkış</h3>
+            <p>Çıkış butonu, ekranın alt kısmında, Temizle butonunun solunda yer alır. Bu butona tıkladığınızda:</p>
+            <ol>
+                <li>Herhangi bir işlem yapılmaz ve kaydetmediğiniz tüm değişiklikler kaybolur.</li>
+                <li>Ekran kapatılır ve bir önceki menüye dönülür.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Sık Karşılaşılan Sorular</h2>
+        
+        <table>
+            <tr>
+                <th>Soru</th>
+                <th>Cevap</th>
+            </tr>
+            <tr>
+                <td>Neden "Daha önce Tanımlamanız var ise Silinecek" uyarısı alıyorum?</td>
+                <td>Bu işlem, daha önce aynı kriterlerle oluşturulmuş fark maaşı hesaplamalarını silip yeniden oluşturacaktır. Bu uyarı, önceki hesaplamalarınızı kaybetmemeniz için sizi bilgilendirme amaçlıdır.</td>
+            </tr>
+            <tr>
+                <td>Maaş verilerim kaybolacak mı?</td>
+                <td>Hayır, maaşı hesaplamış iseniz maaşlarınız zarar görmeyecektir. Sadece sözleşme fark maaşı bilgileri silinecektir.</td>
+            </tr>
+            <tr>
+                <td>Hiçbir seçim yapmadan işlemi başlatabilir miyim?</td>
+                <td>Evet, sicil alanları için varsayılan değerler otomatik olarak atanacaktır (0-99999999). Diğer liste kutularında da varsayılan olarak tüm değerler seçilidir. Ancak sözleşme tarihini belirtmeniz gerekir.</td>
+            </tr>
+            <tr>
+                <td>Hesaplama nasıl yapılır?</td>
+                <td>Seçtiğiniz kriterlere göre sistem otomatik olarak hesaplama yapar ve fark maaşını oluşturur. Seçtiğiniz dönemler, bölümler, maaş tipleri, sendikalar ve sicil aralığı hesaplamaya dahil edilecektir.</td>
+            </tr>
+            <tr>
+                <td>Çoklu seçim listelerindeki tüm öğeleri nasıl seçerim?</td>
+                <td>Varsayılan olarak tüm öğeler seçilidir. Eğer değiştirdiyseniz, CTRL+A tuş kombinasyonunu kullanarak liste içindeki tüm öğeleri seçebilirsiniz.</td>
+            </tr>
+            <tr>
+                <td>Belirli bir sicile göre filtreleme yapabilir miyim?</td>
+                <td>Evet, hem başlangıç hem de bitiş sicil numarası alanlarına aynı sicil numarasını girerek yalnızca o sicil için hesaplama yapabilirsiniz.</td>
+            </tr>
+            <tr>
+                <td>Sözleşme tarihi hangi amaçla kullanılır?</td>
+                <td>Sözleşme tarihi, fark maaşı hesaplamasının hangi tarihe göre yapılacağını belirlemede kullanılır. Bu tarih, yeni sözleşmenin geçerli olduğu tarihi ifade eder.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>5. İyi Uygulamalar</h2>
+        <div class="tip-box">
+            <ul>
+                <li>İşlem yapmadan önce tüm seçimlerinizi dikkatlice kontrol ediniz.</li>
+                <li>Çok geniş bir sicil numarası aralığı ve çok sayıda dönem seçmek, işlemin daha uzun sürmesine neden olabilir. Mümkünse daha spesifik seçimler yapınız.</li>
+                <li>Şüphe duyduğunuz durumlarda, önce küçük bir sicil aralığı için test yapmanız önerilir.</li>
+                <li>İşlem tamamlandıktan sonra, oluşturulan fark maaşı hesaplamalarını ilgili raporlar aracılığıyla kontrol etmeyi unutmayınız.</li>
+                <li>Önemli veri değişiklikleri yapmadan önce sistem yöneticinizle iletişime geçmeniz önerilir.</li>
+                <li>Sözleşme tarihini doğru formatta girdiğinizden emin olunuz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Ekranın Çalışma Mantığı</h2>
+        <p>Bu ekran, aşağıdaki adımları izleyerek çalışır:</p>
+        <ol>
+            <li>Kullanıcı tarafından girilen sözleşme tarihi, seçilen sicil aralığı, bölümler, maaş tipleri, sendikalar ve dönemler sistem tarafından alınır.</li>
+            <li>Kaydet butonuna basıldığında, seçilen kriterlere göre daha önce tanımlanmış sözleşme fark maaşı hesaplamaları kontrol edilir.</li>
+            <li>Onay mesajına "Evet" cevabı verildiğinde, önceki hesaplamalar silinir ve yeni hesaplamalar yapılır.</li>
+            <li>İşlem sonunda kayıt tamamlandı mesajı görüntülenir ve ekran kapatılır.</li>
+        </ol>
+        <div class="info-box">
+            <p>Bu işlem, yeni sözleşme koşullarına göre geçmişe dönük olarak hesaplanması gereken fark maaşlarının oluşturulmasını sağlar. Örneğin, geriye dönük maaş artışı yapıldığında, önceki dönemlere ait fark maaşlarının hesaplanması bu ekran aracılığıyla gerçekleştirilir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Hata Mesajları ve Çözümleri</h2>
+        <table>
+            <tr>
+                <th>Hata Mesajı</th>
+                <th>Olası Nedeni</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>Tarih formatı hatalı</td>
+                <td>Sözleşme tarihi yanlış formatta girilmiş olabilir.</td>
+                <td>Tarihi GG.AA.YYYY formatında giriniz. Örneğin: 15.04.2023</td>
+            </tr>
+            <tr>
+                <td>Sicil alanına sadece rakam girilebilir</td>
+                <td>Sicil alanına harf veya özel karakterler girilmiş olabilir.</td>
+                <td>Sicil alanlarına sadece rakam giriniz.</td>
+            </tr>
+            <tr>
+                <td>Bitiş sicili, başlangıç sicilinden küçük olamaz</td>
+                <td>Sicil aralığı hatalı girilmiş olabilir.</td>
+                <td>Bitiş sicil numarasının, başlangıç sicil numarasından büyük veya eşit olduğundan emin olunuz.</td>
+            </tr>
+            <tr>
+                <td>Kayıt sırasında hata oluştu</td>
+                <td>Veritabanı işlemi sırasında bir sorun oluşmuş olabilir.</td>
+                <td>Sistem yöneticinizle iletişime geçiniz veya işlemi daha sonra tekrar deneyiniz.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <p><strong>Not:</strong> Bu dokümanda açıklanan işlemler sadece sözleşme fark maaşı oluşturmak için kullanılmaktadır. Oluşturulan fark maaşlarının hesaplanması, görüntülenmesi ve raporlanması için ilgili diğer ekranları kullanmanız gerekmektedir.</p>
+    </div>
+</body>
+</html>

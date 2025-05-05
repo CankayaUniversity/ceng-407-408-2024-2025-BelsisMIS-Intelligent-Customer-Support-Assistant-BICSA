@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Yardım Tanımlama Sistemi - Kullanım Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Personel Yardım Tanımlama Sistemi</h1>
+    <img src="/api/placeholder/150/50" alt="Şirket Logosu">
+</div>
+
+<h1>Personel Yardım Tanımlama Sistemi Kullanım Kılavuzu</h1>
+
+<div class="info-box">
+    <strong>Bu dokümanda neler öğreneceksiniz?</strong>
+    <ul>
+        <li>Personel yardım tanımlama ekranının genel görünümü ve özellikleri</li>
+        <li>Personellere yardım tutarlarını bireysel olarak tanımlama</li>
+        <li>Toplu güncelleme fonksiyonu ile birden fazla personele aynı anda yardım tanımlama</li>
+        <li>Tanımlanan yardımları kaydetme</li>
+        <li>Yardım tipi, sendika ve bölüme göre filtreleme yöntemleri</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>1. Sistem Hakkında Genel Bilgi</h2>
+    <p>Personel Yardım Tanımlama Sistemi (iscSicilYardimGrid), çalışanlara yapılacak çeşitli yardımların (sendika yardımı, sosyal yardım, vb.) miktarlarını tanımlamak ve yönetmek için kullanılan bir ekrandır. Bu sistem sayesinde:</p>
+    <ul>
+        <li>Farklı bölümlerdeki personellere kolay erişim sağlayabilirsiniz</li>
+        <li>Her personel için farklı yardım tipleri tanımlayabilirsiniz</li>
+        <li>Toplu güncelleme yaparak çok sayıda personel için aynı anda yardım tanımlaması yapabilirsiniz</li>
+        <li>Tanımlamaları sisteme kaydedebilirsiniz</li>
+    </ul>
+    
+    <div class="info-box">
+        <strong>Ne İşe Yarar?</strong>
+        <p>Bu sistem, şirketinizde çalışan personellere yapılacak farklı türdeki özel yardımların (örneğin; yemek yardımı, eğitim yardımı, yakacak yardımı, ulaşım yardımı vb.) miktarlarını belirlemek için kullanılır. Her personel için farklı yardım tipleri ve miktarları tanımlayabilirsiniz. Ayrıca personelin sendika üyeliği ve bölüm bilgilerine göre filtreleme yaparak toplu tanımlama da yapabilirsiniz.</p>
+    </div>
+    
+    <div class="warning-box">
+        <strong>Önemli Bilgiler:</strong>
+        <ul>
+            <li>Bu ekran sadece aktif çalışanları (işten çıkışı olmayanları) gösterir</li>
+            <li>Personeller bölümlere göre gruplandırılmıştır</li>
+            <li>Personel sendika bilgileri kırmızı renkte gösterilir</li>
+            <li>Her yardım tipi için ayrı bir sütun bulunur</li>
+            <li>Değişiklikler "Kaydet" butonuna basılmadan veritabanına kaydedilmez</li>
+            <li>Sistem açıldığında otomatik olarak tam ekran moduna geçer</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>2. Ekranın Genel Görünümü</h2>
+    <p>Sisteme giriş yaptığınızda karşınıza gelen ekran, personellerin bölümlere göre listelendiği ve her personel için yardım tanımlamalarının yapılabileceği bir tablodur. Sistem otomatik olarak ekranı tam ekran boyutuna getirir.</p>
+
+    <div class="info-box">
+        <p>Ekranın üst kısmında aşağıdaki başlıklar ve butonlar bulunur:</p>
+        <ul>
+            <li>"YARDIM TANIMLARI" başlığı (ekranın en üstünde, mavi başlık çubuğu)</li>
+            <li>"Toplu Güncelleme" butonu (başlığın hemen altında)</li>
+            <li>"Kaydet" butonu (Toplu Güncelleme butonunun altında)</li>
+            <li>Yardım tipleri için sütun başlıkları</li>
+        </ul>
+    </div>
+
+    <p>Sayfanın orta kısmında yardım tiplerinin listelendiği bir tablo başlığı ve altında personellerin bölümlere göre gruplandığı bir liste görünür. Tablo yapısı şu şekildedir:</p>
+    
+    <ul>
+        <li><strong>İlk sütun:</strong> Personel adı, soyadı ve bağlı oldukları sendika bilgisini gösterir. Sendika bilgisi kırmızı renkte parantez içinde gösterilir.</li>
+        <li><strong>Diğer sütunlar:</strong> Her bir yardım tipi için ayrı bir sütun bulunur. Yardım tipleri sisteme tanımlanmış yardımlar olarak görünür (örn. "1.Yardım", "2.Yardım" gibi veya tanımlanmış özel yardım isimleri).</li>
+    </ul>
+    
+    <p>Tablo satırları, personellerin bağlı oldukları bölümlere göre gruplandırılmıştır. Her bölüm başlığı gri bir satırda görünür ve yanında "+" butonu bulunur.</p>
+
+    <div class="info-box">
+        <strong>Sistem İlk Açıldığında:</strong>
+        <p>Sistem ilk açıldığında tablo üzerinde tüm yardım tipleri gösterilir. Başlangıçta tüm bölümler kapalı durumdadır ve görmek istediğiniz bölümleri manuel olarak açmanız gerekir.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>3. Bölümleri Açma/Kapama İşlemi</h2>
+    <p>Personeller bölümlere göre gruplandırılmıştır. Başlangıçta tüm bölümler kapalı durumdadır.</p>
+    
+    <div class="step">
+        <strong>Bir bölümü açmak için:</strong>
+        <ol>
+            <li>Bölüm adının yanındaki "+" butonuna tıklayın. Bu buton gri renkte bir satırın en solunda bulunur.</li>
+            <li>Butona tıkladığınızda, o bölüme ait tüm personeller listelenir ve buton "-" işaretine dönüşür.</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <strong>Bir bölümü kapatmak için:</strong>
+        <ol>
+            <li>Açık olan bölümün yanındaki "-" butonuna tıklayın.</li>
+            <li>Butona tıkladığınızda, o bölüme ait personel listesi kapanır ve buton "+" işaretine dönüşür.</li>
+        </ol>
+    </div>
+    
+    <div class="tip-box">
+        <strong>İpucu:</strong> Ekrandaki kalabalığı azaltmak için, üzerinde çalışmadığınız bölümleri kapalı tutabilirsiniz. Bu, özellikle çok sayıda bölüm ve personel olduğunda işinizi kolaylaştıracaktır.
+    </div>
+</div>
+
+<div class="section">
+    <h2>4. Personellere Yardım Tutarı Tanımlama</h2>
+    <p>Her personele farklı yardım tipleri için ayrı ayrı tutarlar tanımlayabilirsiniz.</p>
+    
+    <div class="step">
+        <strong>Bireysel olarak yardım tutarı tanımlamak için:</strong>
+        <ol>
+            <li>İlgili bölümü, bölüm adının yanındaki "+" butonuna tıklayarak açın.</li>
+            <li>Listeden yardım tanımlamak istediğiniz personeli bulun. Personel adı, soyadı ve varsa bağlı olduğu sendika kırmızı renkte parantez içinde gösterilir.</li>
+            <li>Personel satırında, tanımlamak istediğiniz yardım tipine ait sütundaki kutuya tıklayın.</li>
+            <li>Kutuya tıkladığınızda, kutunun etrafında ince gri bir çerçeve belirir ve varsa mevcut değer seçili hale gelir.</li>
+            <li>Yardım tutarını yazın. Sadece rakam ve virgül kullanabilirsiniz.</li>
+            <li>Başka bir alana tıkladığınızda, girdiğiniz tutar kaydedilir ve kutunun arka plan rengi buğday rengine (açık kahverengi) dönüşür.</li>
+        </ol>
+    </div>
+    
+    <div class="info-box">
+        <strong>Tutar Girişi Hakkında Açıklama:</strong>
+        <p>Yardım tutarlarını girerken, sistem otomatik olarak para birimi formatına çevirir. Örneğin:</p>
+        <ul>
+            <li>Eğer "0" girerseniz: Personel o yardımdan yararlanmaz (kutunun arka planı normal renkte kalır)</li>
+            <li>Herhangi bir pozitif değer (örn. "100" ya da "100,50") girerseniz: Personel o yardımdan yararlanır ve kutunun arka planı buğday rengine döner</li>
+            <li>Ondalık kısım için virgül kullanılır (nokta kullanılmaz)</li>
+            <li>Sistem sadece rakam ve virgül girişine izin verir, başka bir karakter girmeye çalıştığınızda bu karakterler kabul edilmez</li>
+        </ul>
+        <p>Bir kutuya tıkladığınızda, o alana otomatik olarak odaklanılır ve mevcut değer tamamen seçilir duruma gelir. Bu sayede yeni bir değer girdiğinizde eski değerin silinmesine gerek kalmaz.</p>
+    </div>
+    
+    <div class="warning-box">
+        <strong>Önemli Notlar:</strong>
+        <ul>
+            <li>Tutar girerken sadece rakam ve virgül kullanabilirsiniz. Harf veya diğer karakterler kabul edilmez.</li>
+            <li>Değer girilmiş kutular buğday rengi (açık kahverengi) ile, boş kutular ise satırın normal arka plan rengiyle gösterilir.</li>
+            <li>Yaptığınız değişiklikler, "Kaydet" butonuna basana kadar sisteme kaydedilmez!</li>
+            <li>Enter tuşuna bastığınızda otomatik olarak bir sonraki alana geçilir, veri kaydı yapılmaz. Kayıt için mutlaka sayfanın alt veya üst kısmındaki "Kaydet" düğmesine basmalısınız.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>5. Toplu Güncelleme Fonksiyonu</h2>
+    <p>Çok sayıda personele aynı anda aynı yardım tutarını tanımlamak için Toplu Güncelleme özelliğini kullanabilirsiniz.</p>
+    
+    <div class="step">
+        <strong>Toplu güncelleme yapmak için:</strong>
+        <ol>
+            <li>Ekranın üst kısmında bulunan "Toplu Güncelleme" butonuna tıklayın. Buton, "YARDIM TANIMLARI" başlığının hemen altında bulunur.</li>
+            <li>Butona tıkladığınızda, ekranın ortasında bir pencere açılacaktır. Aynı zamanda ekranın geri kalanı hafifçe karartılır.</li>
+            <li>Bu pencerede aşağıdaki seçenekleri göreceksiniz:
+                <ul>
+                    <li><strong>Sendika:</strong> Açılan listeden bir sendika seçin veya "--Tümü--" seçeneğini bırakarak tüm sendikalardaki personelleri dahil edin. Bu seçenek pencerenin en üstünde yer alır.</li>
+                    <li><strong>Yardım Tipi:</strong> Açılan listeden güncellemek istediğiniz yardım tipini seçin veya "--Tümü--" seçeneğini bırakarak tüm yardım tiplerini güncelleyin. Bu seçenek Sendika seçeneğinin hemen altında yer alır.</li>
+                    <li><strong>Bölüm:</strong> Açılan listeden bir bölüm seçin veya "--Tümü--" seçeneğini bırakarak tüm bölümlerdeki personelleri dahil edin. Bu seçenek Yardım Tipi seçeneğinin hemen altında yer alır.</li>
+                    <li><strong>Güncellenecek Tutar:</strong> Tanımlamak istediğiniz yardım tutarını girin. Bu alan, pencerenin ortasında, "---Güncellenecek Tutar---" başlığı altında bulunur ve kırmızı renkle vurgulanmıştır.</li>
+                </ul>
+            </li>
+            <li>Tüm seçimlerinizi yaptıktan sonra pencerenin alt kısmında bulunan "Tamam" butonuna tıklayın. "Tamam" butonu, "Vazgeç" butonunun yanında yer almaktadır.</li>
+            <li>İşlemi iptal etmek isterseniz, "Vazgeç" butonuna tıklayabilirsiniz.</li>
+            <li>Seçtiğiniz kriterlere uyan tüm personellerin ilgili yardım kutularına belirlediğiniz tutar otomatik olarak yazılacaktır.</li>
+        </ol>
+    </div>
+    
+    <div class="info-box">
+        <strong>Toplu Güncelleme Kriterleri:</strong>
+        <ul>
+            <li>Sendika + Yardım Tipi + Bölüm: Sadece belirli bir sendikaya bağlı, belirli bir bölümdeki personellere, belirli bir yardım tipini tanımlar.</li>
+            <li>Sendika + Yardım Tipi: Sendikaya bağlı tüm personellere, seçilen yardım tipini tanımlar.</li>
+            <li>Bölüm + Yardım Tipi: Seçilen bölümdeki tüm personellere, seçilen yardım tipini tanımlar.</li>
+            <li>Sadece Yardım Tipi: Tüm personellere seçilen yardım tipini tanımlar.</li>
+            <li>Sendika + Tüm Yardımlar: Sendikaya bağlı tüm personellere, tüm yardım tiplerini tanımlar.</li>
+            <li>Tüm Seçenekler "--Tümü--": Sistemdeki tüm personellere, tüm yardım tiplerini aynı tutarda tanımlar.</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <strong>İpucu:</strong> Toplu güncelleme yapmadan önce, hangi kriterlere göre filtreleme yapacağınızı iyi düşünün. Yanlış bir toplu güncelleme, çok sayıda personelin bilgilerini değiştirebilir. İşlem sonrasında tablo üzerinde kontrol yapmanız önerilir.
+    </div>
+    
+    <div class="warning-box">
+        <strong>Dikkat:</strong> 
+        <ul>
+            <li>Toplu güncelleme işlemi sırasında yapılan değişiklikler, "Kaydet" butonuna basana kadar sisteme kaydedilmez!</li>
+            <li>Tutar alanına değer girilmediğinde veya 0 girildiğinde, toplu güncelleme işlemi sırasında "0" değeri atanır.</li>
+            <li>Toplu güncelleme penceresinde "Tutar" alanına sadece rakam ve virgül kullanabilirsiniz.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>6. Değişiklikleri Kaydetme</h2>
+    <p>Personellere tanımladığınız yardım tutarlarını sisteme kaydetmek için:</p>
+    
+    <div class="step">
+        <strong>Kaydetme işlemi için:</strong>
+        <ol>
+            <li>Tüm değişikliklerinizi yaptıktan sonra, ekranın üst veya alt kısmında bulunan "Kaydet" butonuna tıklayın. Bu buton mavi başlıklı satırlarda bulunur ve "YARDIM TANIMLARI" başlığının altında ya da tablonun en altında yer alır.</li>
+            <li>Butona tıkladığınızda, yaptığınız tüm değişiklikler sisteme kaydedilir.</li>
+            <li>Sistem, veritabanındaki tüm önceki tanımlamaları siler ve yeni girdiğiniz tüm değerleri kaydeder.</li>
+            <li>Kaydetme işlemi başarılı olursa, ekranda herhangi bir hata mesajı görmezsiniz ve değişiklikleriniz sisteme işlenmiş olur.</li>
+            <li>Eğer kaydetme işlemi sırasında bir hata oluşursa, sayfanın alt kısmında bir hata mesajı görüntülenir.</li>
+        </ol>
+    </div>
+    
+    <div class="warning-box">
+        <strong>Çok Önemli Uyarılar:</strong>
+        <ul>
+            <li>Sistemden çıkmadan önce mutlaka "Kaydet" butonuna basarak değişikliklerinizi kaydetmelisiniz. Aksi takdirde, yaptığınız tüm değişiklikler kaybedilecektir.</li>
+            <li>Kaydet butonuna bastığınızda, <strong>TÜM</strong> yardım tanımlamaları sistemde güncellenir, sadece değiştirdiğiniz değerler değil!</li>
+            <li>Herhangi bir personelin yardım tutarını "0" yaparsanız veya boş bırakırsanız, bu personel o yardımdan yararlanamayacaktır.</li>
+            <li>Toplu güncelleme yaptıktan sonra, değişiklikleri kontrol etmek için ilgili bölümleri açıp kontrol etmeniz önerilir.</li>
+            <li>Boş değerler ve "0" değeri aynı şekilde değerlendirilir - her iki durumda da personel o yardımdan yararlanamaz.</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <strong>Kayıt İşleminin Teknik Detayı:</strong>
+        <p>Kaydet butonuna bastığınızda, sistem şu işlemleri gerçekleştirir:</p>
+        <ol>
+            <li>Veritabanındaki tüm mevcut yardım tanımlamaları silinir</li>
+            <li>Sayfada girilen ve sıfırdan farklı olan tüm yardım tutarları yeniden veritabanına kaydedilir</li>
+            <li>Herhangi bir sorun oluşursa, tüm işlem geri alınır ve hiçbir değişiklik kaydedilmez</li>
+        </ol>
+        <p>Bu nedenle, "Kaydet" butonuna basmadan önce tüm değişikliklerin doğru olduğundan emin olun.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>7. Yardım Tipi Seçimi ve Filtreleme</h2>
+    
+    <p>Sistem, tüm tanımlı yardım tiplerini tablo başlıklarında gösterir. Başlangıçta tüm yardım tipleri görüntülenir.</p>
+    
+    <div class="info-box">
+        <strong>Yardım Tipleri:</strong>
+        <p>Yardım tipleri, sistemde tanımlanan özel yardımlardır. Bu yardımlar tablo başlıklarında görünür (örneğin: "1.Yardım", "2.Yardım" veya "Eğitim Yardımı", "Yakacak Yardımı" gibi).</p>
+        <p>Her personel için her yardım tipine ait bir değer girebilirsiniz. Bir personel birden fazla yardım tipinden yararlanabilir.</p>
+    </div>
+    
+    <div class="warning-box">
+        <strong>Dikkat:</strong>
+        <p>Toplu güncelleme yaparken "Yardım Tipi" açılır listesinden "--Tümü--" seçeneğini seçerseniz, girdiğiniz tutar seçtiğiniz kriterlere uyan tüm personellerin tüm yardım tiplerine uygulanır. Bu, mevcut tüm değerlerin üzerine yazılacağı anlamına gelir.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>8. Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+    
+    <table>
+        <tr>
+            <th>Sorun</th>
+            <th>Olası Neden</th>
+            <th>Çözüm</th>
+        </tr>
+        <tr>
+            <td>Tutar girilemiyor veya harf yazılamıyor</td>
+            <td>Sistem sadece rakam ve virgül girişine izin verir</td>
+            <td>Sadece rakam ve virgül kullanarak tutar girişi yapın. Nokta yerine virgül kullanmaya dikkat edin.</td>
+        </tr>
+        <tr>
+            <td>Toplu güncelleme yapıldığı halde bazı personellerin değerleri değişmedi</td>
+            <td>Sendika, bölüm veya yardım tipi filtresi, bu personelleri kapsamıyor olabilir</td>
+            <td>Filtre seçeneklerini kontrol edin veya daha geniş bir filtre kullanın. Personel sendika bilgisinin doğru olduğunu kontrol edin.</td>
+        </tr>
+        <tr>
+            <td>Kaydet butonuna basıldığında hata alınıyor</td>
+            <td>Sistem hatası veya geçersiz veri girişi olabilir</td>
+            <td>Girilen değerleri kontrol edin, gerekirse sayfayı yenileyip işlemi tekrarlayın. Çok büyük tutarlar veya geçersiz karakterler hataya neden olabilir.</td>
+        </tr>
+        <tr>
+            <td>Bölüm açılmıyor veya kapanmıyor</td>
+            <td>Tarayıcı sorunu olabilir</td>
+            <td>Sayfayı yenileyin veya farklı bir tarayıcı kullanmayı deneyin. Tarayıcı pencere boyutunu tam ekran yapın.</td>
+        </tr>
+        <tr>
+            <td>Enter tuşuna basıldığında kayıt yapılmıyor</td>
+            <td>Normal sistem davranışı - Enter tuşu sadece sonraki alana geçiş yapar</td>
+            <td>Kaydetmek için mutlaka ekranın üst veya alt kısmındaki "Kaydet" butonuna tıklamanız gerekir.</td>
+        </tr>
+        <tr>
+            <td>Toplu güncelleme penceresi kapanmıyor</td>
+            <td>Tarayıcı sorunu veya işlem hatası</td>
+            <td>Pencerenin alt kısmındaki "Vazgeç" butonuna tıklayın. Eğer hala kapanmıyorsa sayfayı yenileyin (F5).</td>
+        </tr>
+        <tr>
+            <td>Boş değerler sıfır olarak kaydediliyor</td>
+            <td>Normal sistem davranışı</td>
+            <td>Boş değer bırakmak ile sıfır girmek aynı sonucu verir - personel o yardımdan yararlanamaz.</td>
+        </tr>
+        <tr>
+            <td>Tüm bölümler görünmüyor</td>
+            <td>Bölümler varsayılan olarak kapalıdır</td>
+            <td>Her bölümün yanındaki "+" butonuna tıklayarak bölümleri açmanız gerekir.</td>
+        </tr>
+        <tr>
+            <td>Değişiklikler sonrası kutunun rengi değişmiyor</td>
+            <td>Değer 0 olarak girilmiş olabilir</td>
+            <td>Sadece 0'dan farklı değerler girildiğinde kutunun arka plan rengi buğday rengine dönüşür.</td>
+        </tr>
+        <tr>
+            <td>Değişiklikler kaydedilmiyor</td>
+            <td>"Kaydet" butonuna basılmamış olabilir</td>
+            <td>Değişiklik yaptıktan sonra mutlaka "Kaydet" butonuna basın. Ekranın hem üst hem de alt kısmında "Kaydet" butonu vardır.</td>
+        </tr>
+        <tr>
+            <td>Yardım tipleri görünmüyor</td>
+            <td>Yardım tanımları eksik olabilir</td>
+            <td>Sistem yöneticinize başvurun. Yardım tanımlarının sistem tarafından yapılması gerekir.</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>9. Önemli İpuçları</h2>
+    
+    <div class="tip-box">
+        <ul>
+            <li><strong>Tablo Düzeni:</strong> Personeller bölümlere göre gruplanmıştır. İhtiyacınız olan bölümü açıp, diğerlerini kapalı tutarsanız ekranda daha kolay gezinebilirsiniz.</li>
+            <li><strong>Sendika Bilgisi:</strong> Personel adının yanında kırmızı renkte gösterilen sendika bilgisi, toplu güncelleme yaparken filtreleme için kullanılabilir.</li>
+            <li><strong>Hızlı Erişim:</strong> Birden fazla personele aynı tutarda yardım tanımlayacaksanız, tek tek girmek yerine Toplu Güncelleme fonksiyonunu kullanın.</li>
+            <li><strong>Düzenli Kaydetme:</strong> Özellikle çok sayıda değişiklik yapıyorsanız, belirli aralıklarla "Kaydet" butonuna basarak verilerinizi güvence altına alın.</li>
+            <li><strong>Kontrol:</strong> Kaydetmeden önce, özellikle toplu güncelleme sonrası, değişiklikleri gözden geçirin.</li>
+            <li><strong>Alanlar Arası Geçiş:</strong> Enter tuşu ile bir sonraki alana geçebilirsiniz. Bu, birden fazla personele sırayla değer girerken zaman kazandırır.</li>
+            <li><strong>Değer Girişi:</strong> Bir alana tıkladığınızda mevcut değer otomatik olarak seçilir, böylece yeni değeri doğrudan yazabilirsiniz.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>10. Yeni Özellikler ve Detaylar</h2>
+    
+    <div class="info-box">
+        <strong>Yardım Tutarı Format Detayları:</strong>
+        <p>Yardım tutarları girilirken dikkat edilmesi gereken özellikler:</p>
+        <ul>
+            <li>Sistem ondalık ayırıcı olarak virgül kullanır (nokta değil)</li>
+            <li>Tutar girerken nokta kullanırsanız, sistem bunu dikkate almaz</li>
+            <li>Tutar girilen alanlar para birimi formatında düzenlenir</li>
+            <li>Sıfırdan farklı bir değer girildiğinde kutunun arka plan rengi buğday rengine dönüşür</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <strong>Enter Tuşu Kullanımı:</strong>
+        <p>Sistem, kullanıcı deneyimini kolaylaştırmak için Enter tuşuna özel bir fonksiyon atamıştır:</p>
+        <ul>
+            <li>Veri giriş alanında Enter tuşuna bastığınızda, bir sonraki veri giriş alanına geçiş yapılır</li>
+            <li>Enter tuşu, kaydetme işlemi yapmaz, sadece alanlar arası geçiş sağlar</li>
+            <li>Bu özellik, çok sayıda personel için hızlı veri girişi yapmanızı kolaylaştırır</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <strong>İşlem Sırası Önerisi:</strong>
+        <ol>
+            <li>Önce çalışmak istediğiniz bölüm veya bölümleri açın</li>
+            <li>Bireysel değişiklikler veya toplu güncellemeler yapın</li>
+            <li>Değişiklikleri kontrol edin</li>
+            <li>Tüm değişiklikler doğruysa "Kaydet" butonuna basın</li>
+            <li>Başka değişiklikler yapmadan önce kaydedilen değerlerin doğruluğunu kontrol edin</li>
+        </ol>
+    </div>
+</div>
+
+<div class="section">
+    <h2>11. Özet</h2>
+    <p>Personel Yardım Tanımlama Sistemi, personellere yapılacak çeşitli yardımların tutarlarını kolayca tanımlamanızı ve yönetmenizi sağlar. Bu dokümanda, sistemin temel kullanımını öğrendiniz:</p>
+    <ul>
+        <li>Bölümleri açma ve kapama</li>
+        <li>Personellere bireysel olarak yardım tutarı tanımlama</li>
+        <li>Toplu güncelleme fonksiyonu ile filtreleme yaparak çoklu tanımlama</li>
+        <li>Değişiklikleri kaydetme</li>
+        <li>Sendika, bölüm ve yardım tipine göre filtreleme</li>
+        <li>Tutar girişi kuralları ve format detayları</li>
+    </ul>
+    <p>Sistemi kullanırken herhangi bir sorunla karşılaşırsanız, bu dokümandaki Sık Karşılaşılan Sorunlar bölümüne başvurabilir veya BT Destek ekibinden yardım isteyebilirsiniz.</p>
+</div>
+
+</body>
+</html>

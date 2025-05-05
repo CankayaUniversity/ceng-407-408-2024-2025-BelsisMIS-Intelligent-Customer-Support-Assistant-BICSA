@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kıdem Tazminatı Hesaplama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kıdem Tazminatı Hesaplama</h1>
+        <img src="/api/placeholder/150/50" alt="Şirket Logosu">
+    </div>
+
+    <div class="section">
+        <h1>Kıdem Tazminatı Hesaplama Kullanıcı Kılavuzu</h1>
+        <p>Bu doküman, çalışanlar için kıdem tazminatı hesaplama sürecinde size rehberlik edecektir. Sistem, kıdem tazminatı bilgilerini hesaplamanıza, kaydetmenize ve yazdırmanıza olanak tanır.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Kıdem Tazminatı Hesaplamasına Giriş</h2>
+        <p>Kıdem tazminatı, çalışanların belirli koşullar altında işten ayrıldıklarında ödenen bir tutardır. Bu uygulama, çalışanın çalışma süresi ve maaş bilgilerine göre uygun miktarı hesaplamanıza yardımcı olur.</p>
+        
+        <div class="info-box">
+            <strong>Ne zaman kullanılır:</strong> Bu ekranı, bir çalışan emeklilik, işten çıkarılma, vefat, istifa nedeniyle veya belirli süreli iş sözleşmesi sona erdiğinde işten ayrılırken kullanın.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Kıdem Tazminatı Hesaplama Ekranına Erişim</h2>
+        <p>Kıdem tazminatı hesaplama ekranına erişmek için:</p>
+        <ol>
+            <li>Sisteme kimlik bilgilerinizle giriş yapın</li>
+            <li>Personel Yönetimi bölümüne gidin</li>
+            <li>"Kıdem Tazminatı Hesaplama" seçeneğine tıklayın</li>
+        </ol>
+        
+        <div class="tip-box">
+            <strong>İpucu:</strong> Kıdem tazminatı formu iki ana bölümden oluşur:
+            <ul>
+                <li>Üst kısımda çalışan bilgileri ve hesaplama bölümü</li>
+                <li>Alt kısımda ücret türleri detayları bölümü</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Çalışan Kaydını Bulma</h2>
+        <div class="step">
+            <h3>Adım 1: Çalışan Sicil Numarasını Girin</h3>
+            <p>"Sicil No" alanına (ekranın sol üst kısmında bulunur) çalışan sicil numarasını girin ve klavyede Enter tuşuna basın.</p>
+            
+            <div class="tip-box">
+                <strong>Alternatif yöntem:</strong> Çalışanın sicil numarasını bilmiyorsanız, Sicil No alanının yanındaki küçük arama düğmesine (büyüteç simgeli) tıklayın. Bu, çalışanı bulup seçebileceğiniz bir arama penceresi açacaktır.
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 2: Çalışan Bilgilerini Doğrulayın</h3>
+            <p>Çalışan sicil numarasını girdikten sonra, sistem otomatik olarak şunları gösterecektir:</p>
+            <ul>
+                <li>Tam adı ("Adı / Soyadı" alanında)</li>
+                <li>İşe başlama tarihi ("Giriş Tarihi" alanında)</li>
+                <li>İşten ayrılma tarihi ("Çıkış Tarihi" alanında)</li>
+                <li>Çalışma süresi ("Çalışma Süresi" bölümünde yıl, ay ve gün olarak gösterilir)</li>
+            </ul>
+            <p>Devam etmeden önce doğru çalışan olduğundan emin olun.</p>
+            
+            <div class="warning-box">
+                <strong>Önemli:</strong> Eğer "Sicil bulunamadı" mesajı görürseniz, doğru sicil numarasını girdiğinizden emin olun veya arama düğmesini kullanarak çalışanı bulun.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Çalışan Verilerini Kontrol Etme ve Değiştirme</h2>
+        <p>Aşağıdaki bilgileri gözden geçirin ve gerekli değişiklikleri yapın:</p>
+        
+        <div class="step">
+            <h3>İstihdam Dönemi Detayları</h3>
+            <p>Ekranın sol üst bölümündeki şu alanları kontrol edin:</p>
+            <ul>
+                <li><strong>Giriş Tarihi:</strong> Çalışanın işe başlama tarihi. Bu alan formatta GG/AA/YYYY şeklinde olmalıdır ve değiştirilebilir.</li>
+                <li><strong>Çıkış Tarihi:</strong> Çalışanın işten ayrılma tarihi. Devam eden istihdam için bu tarih mevcut tarih olabilir.</li>
+                <li><strong>Çalışma Süresi:</strong> Toplam istihdam süresini yıl, ay ve gün olarak gösterir. Sistem otomatik olarak hesaplayacaktır, ancak gerekirse bu değerleri manuel olarak düzenleyebilirsiniz.</li>
+                <li><strong>Günün Tarihi:</strong> Hesaplama tarihi. Varsayılan olarak mevcut tarihe ayarlanır, ancak değiştirilebilir.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Maksimum Kıdem Tazminatı Eşiği</h3>
+            <p>"En.Yuk.Dev.Mem.Tazm." alanı, devlet çalışanları için maksimum kıdem tazminatı eşiğini gösterir. Bu değer sistem tarafından otomatik olarak doldurulur ve genellikle değiştirilmesi gerekmez.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Ek Bilgiler</h3>
+            <p>Ekranın sağ üst bölümünde şunları sağlayabilirsiniz:</p>
+            <ul>
+                <li><strong>Not:</strong> Bu kıdem tazminatı hesaplamasıyla ilgili notlar (ekranın sağ üst köşesinde bulunan metin alanına yazılır).</li>
+                <li><strong>Yetkili:</strong> Ödemeyi yetkilendiren kişinin adı (Not alanının altında bulunan metin kutusuna yazılır).</li>
+                <li><strong>Statü:</strong> Çalışanın istihdam statüsü (Yetkili alanının altında bulunur).</li>
+                <li><strong>Taz.Ödeneceği Tertip:</strong> Ödemenin nasıl düzenleneceği (ekranın sol tarafında, "En.Yuk.Dev.Mem.Tazm." alanının altında bulunur).</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Yuvarlama Ayarları</h3>
+            <p>Son tutarın nasıl yuvarlanması gerektiğini belirtin (ekranın sağ üst kısmında bulunan):</p>
+            <ul>
+                <li><strong>Yuvarlama Oranı:</strong> Yuvarlama için ondalık hassasiyeti ayarlayın (örneğin, iki ondalık basamak için 0,01).</li>
+                <li><strong>Yuvarlama Tipi:</strong> Açılır menüden şunlardan birini seçin:
+                    <ul>
+                        <li><strong>Üste:</strong> Her zaman yukarı yuvarla</li>
+                        <li><strong>Serbest:</strong> Standart matematiksel yuvarlama</li>
+                        <li><strong>Alta:</strong> Her zaman aşağı yuvarla</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Tazminat Nedeni</h3>
+            <p>Ekranın sağ alt kısmında, "Kıdem Tazm. Durumu" açılır menüsünden kıdem tazminatı nedenini seçin:</p>
+            <ul>
+                <li>Emekliye Ayrılanlar</li>
+                <li>İş Akdine Son Verilenler</li>
+                <li>Vefat Nedeniyle</li>
+                <li>İstifa Eden</li>
+                <li>Belirli Süreli İş Sözleşmesi Sona Eren</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Hesaplama için Ücret Bilgileri</h2>
+        <p>Ekranın alt bölümü, kıdem tazminatı hesaplamasında kullanılan ücret türlerini gösterir.</p>
+        
+        <div class="step">
+            <h3>Ücret Bileşenlerini Gözden Geçirin</h3>
+            <p>Sistem, çalışanın son maaş geçmişinden ücret bileşenlerini otomatik olarak yükler. Bunlar şunları içerebilir:</p>
+            <ul>
+                <li>1 Günlük Yevmiye</li>
+                <li>1 Günlük Aile Çocuk Yardımı</li>
+                <li>1 Günlük Yemek Ücreti</li>
+                <li>1 Günlük Sorumluluk Zammı</li>
+                <li>1 Günlük İkramiye</li>
+                <li>Diğer geçerli ücret bileşenleri</li>
+            </ul>
+            <p>Her ücret türü, günlük tutarıyla birlikte ekranın alt kısmındaki tabloda görüntülenir.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Yeni Ücret Türleri Ekleme</h3>
+            <p>Gerekirse, ek ücret bileşenleri ekleyebilirsiniz:</p>
+            <ol>
+                <li>"Yeni" düğmesine tıklayın (ücret türleri tablosunun altında, ekranın alt orta kısmında en solda bulunan düğme)</li>
+                <li>Tabloda yeni bir boş satır görünecektir</li>
+                <li>İlk sütuna ücret türü açıklamasını girin</li>
+                <li>İkinci sütuna günlük tutarı girin</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Ücret Türlerini Kaldırma</h3>
+            <p>Bir ücret türünü kaldırmak için, o satırın sonundaki küçük X düğmesine (iptal simgesi) tıklayın.</p>
+        </div>
+        
+        <div class="warning-box">
+            <strong>Önemli:</strong> Kıdem tazminatı hesaplamasının doğruluğu doğrudan ücret bilgilerine bağlıdır. İlgili tüm ücret bileşenlerinin doğru tutarlarla dahil edildiğinden emin olun.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Kıdem Tazminatını Hesaplama</h2>
+        
+        <div class="step">
+            <h3>Adım 1: Tüm Bilgileri Doğrulayın</h3>
+            <p>Hesaplamadan önce, tüm istihdam detaylarının ve ücret bilgilerinin doğru olduğundan emin olun.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 2: "HESAPLA" Düğmesine Tıklayın</h3>
+            <p>"Ödenmesi Ger. Tazm." alanının yanında bulunan turuncu "HESAPLA" düğmesine tıklayın (ekranın sağ üst kısmında, tazminat tutarının görüntülendiği alanın yanında).</p>
+            <p>Sistem, kıdem tazminatını şunlara dayanarak hesaplayacaktır:</p>
+            <ul>
+                <li>İstihdam süresi (yıl, ay, gün)</li>
+                <li>Ücret bileşenleri</li>
+                <li>Yasal sınırlar ve düzenlemeler</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 3: Hesaplama Sonuçlarını Gözden Geçirin</h3>
+            <p>Hesaplamadan sonra, aşağıdaki alanları kontrol edin:</p>
+            <ul>
+                <li><strong>Hesap.Tazm.:</strong> Hesaplanan kıdem tazminatı tutarını gösterir (ekranın sağ üst kısmında, "Ödenmesi Ger. Tazm." alanının üzerindedir).</li>
+                <li><strong>Ödenmesi Ger. Tazm.:</strong> Ödenecek nihai tutarı gösterir (ekranın sağ üst kısmında, HESAPLA düğmesinin yanındadır).</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <strong>İpucu:</strong> HESAPLA düğmesi gri renkte ve tıklanamıyorsa, muhtemelen tabloda ücret bilgisi eksiktir. Ekranın alt kısmındaki tabloda en az bir ücret türü ve tutarı olduğundan emin olun.
+        </div>
+        
+        <div class="tip-box">
+            <strong>İpucu:</strong> Hesaplanan tutar doğru görünmüyorsa, şunları tekrar kontrol edin:
+            <ul>
+                <li>Çalışma süresi (yıl, ay, gün)</li>
+                <li>Ücret bileşenleri ve tutarları</li>
+                <li>Başlangıç ve bitiş tarihleri</li>
+                <li>Doğru kıdem tazminatı nedeninin seçildiğinden emin olun</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Hesaplamayı Kaydetme</h2>
+        
+        <div class="step">
+            <h3>"Kaydet" Düğmesine Tıklayın</h3>
+            <p>Hesaplamayı kaydetmek için, ekranın alt orta kısmında bulunan "Kaydet" düğmesine tıklayın.</p>
+            <p>Bu, tüm hesaplama detaylarını gelecekte referans olması için sistemde saklayacaktır.</p>
+        </div>
+        
+        <div class="info-box">
+            <strong>Not:</strong> Kaydedildikten sonra, aynı çalışanı tekrar aradığınızda bu hesaplama kullanılabilir olacaktır, böylece kıdem tazminatı ödeme geçmişini takip edebilirsiniz.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Maaş Kaydı Oluşturma</h2>
+        
+        <div class="step">
+            <h3>"Maaş Oluştur" Düğmesine Tıklayın</h3>
+            <p>Hesaplama ve kaydetme işleminden sonra, kıdem tazminatı ödemesi için bir maaş kaydı oluşturabilirsiniz:</p>
+            <ol>
+                <li>Ekranın alt orta kısmında bulunan "Maaş Oluştur" düğmesine tıklayın (Yeni düğmesinin hemen sağında)</li>
+                <li>Onaylama detaylarını soran yeni bir pencere açılacaktır</li>
+                <li>Gerekli bilgileri tamamlayın</li>
+                <li>Maaş kaydını oluşturmak için onaylayın</li>
+            </ol>
+            <p>Bu, bordro sistemi tarafından işlenebilecek kıdem tazminatı ödemesi için resmi bir maaş kaydı oluşturacaktır.</p>
+        </div>
+        
+        <div class="warning-box">
+            <strong>Önemli:</strong> "Maaş Oluştur" düğmesine tıklayabilmek için önce bir tazminat tutarı hesaplanmış olmalıdır. Eğer tutar hesaplanmadıysa, düğme devre dışı olacaktır.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Kıdem Tazminatı Belgesini Yazdırma</h2>
+        
+        <div class="step">
+            <h3>"Yazdır" Düğmesine Tıklayın</h3>
+            <p>Kıdem tazminatı hesaplamasını yazdırmak için:</p>
+            <ol>
+                <li>Ekranın alt sağ kısmında bulunan "Yazdır" düğmesine tıklayın</li>
+                <li>Kıdem tazminatı formunu gösteren bir baskı önizleme penceresi açılacaktır</li>
+                <li>Tüm bilgilerin doğru olduğundan emin olmak için belgeyi gözden geçirin</li>
+                <li>Yazıcınıza göndermek için önizleme penceresindeki yazdır düğmesine tıklayın</li>
+            </ol>
+        </div>
+        
+        <div class="tip-box">
+            <strong>İpucu:</strong> Yazdırmadan önce hesaplamayı kaydetmeniz gerekiyor. Eğer "Yazdır" düğmesine tıkladığınızda hiçbir şey olmuyorsa, önce "Kaydet" düğmesine tıklayın, ardından tekrar yazdırmayı deneyin.
+        </div>
+        
+        <div class="tip-box">
+            <strong>İpucu:</strong> Yazdırılan belge şunlar için kullanılabilir:
+            <ul>
+                <li>Resmi kayıt tutma</li>
+                <li>Çalışana verme</li>
+                <li>İlgili makamlara sunma</li>
+                <li>Muhasebe amaçları</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. Diğer Fonksiyonlar</h2>
+        
+        <div class="step">
+            <h3>Formu Temizleme</h3>
+            <p>Yeni bir hesaplama başlatmak için, ekranın alt orta kısmındaki "Temizle" düğmesine tıklayın. Bu, tüm alanları sıfırlayacaktır.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Mevcut Kayıtları Bulma</h3>
+            <p>Daha önce kaydedilmiş kıdem tazminatı hesaplamaları aramak için:</p>
+            <ol>
+                <li>Ekranın alt orta kısmındaki "Bul" düğmesine tıklayın</li>
+                <li>Bir arama penceresi açılacaktır</li>
+                <li>Arama kriterlerini seçin ve çalışanı bulun</li>
+                <li>Kaydedilmiş kıdem tazminatı hesaplamasını yüklemek için çalışana tıklayın</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Kayıt Silme</h3>
+            <p>Kaydedilmiş bir hesaplamayı silmek için:</p>
+            <ol>
+                <li>Önce, silmek istediğiniz hesaplamayı bulun ve yükleyin</li>
+                <li>Ekranın alt orta kısmındaki "Sil" düğmesine tıklayın (Bul düğmesinin sağında)</li>
+                <li>İstendiğinde silme işlemini onaylayın</li>
+            </ol>
+            <div class="warning-box">
+                <strong>Dikkat:</strong> Silinen kayıtlar kurtarılamaz. Onaylamadan önce bu hesaplamayı kalıcı olarak kaldırmak istediğinizden emin olun.
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Formdan Çıkma</h3>
+            <p>Kıdem tazminatı hesaplama ekranını kapatmak için, ekranın alt orta kısmındaki "Çıkış" düğmesine tıklayın (Sil düğmesinin sağında).</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>11. Düğme Konumları Referansı</h2>
+        <p>Formdaki tüm düğmelerin konumu için hızlı bir referans:</p>
+        
+        <table>
+            <tr>
+                <th>Düğme</th>
+                <th>Konum</th>
+                <th>İşlev</th>
+            </tr>
+            <tr>
+                <td>Arama (Büyüteç)</td>
+                <td>Sicil No alanının sağ tarafında, sol üst köşede</td>
+                <td>Çalışan arama penceresini açar</td>
+            </tr>
+            <tr>
+                <td>HESAPLA</td>
+                <td>"Ödenmesi Ger. Tazm." alanının sağ tarafında, sağ üst bölümde</td>
+                <td>Kıdem tazminatı tutarını hesaplar</td>
+            </tr>
+            <tr>
+                <td>Yeni</td>
+                <td>Alt orta, en soldaki düğme</td>
+                <td>Yeni bir ücret türü satırı ekler</td>
+            </tr>
+            <tr>
+                <td>Maaş Oluştur</td>
+                <td>Alt orta, Yeni'nin yanında</td>
+                <td>Kıdem tazminatı ödemesi için bir maaş kaydı oluşturur</td>
+            </tr>
+            <tr>
+                <td>Temizle</td>
+                <td>Alt orta, Maaş Oluştur'un sağında</td>
+                <td>Yeni bir hesaplama başlatmak için tüm alanları temizler</td>
+            </tr>
+            <tr>
+                <td>Kaydet</td>
+                <td>Alt orta, Temizle'nin sağında</td>
+                <td>Hesaplamayı kaydeder</td>
+            </tr>
+            <tr>
+                <td>Bul</td>
+                <td>Alt orta, Kaydet'in sağında</td>
+                <td>Mevcut hesaplamalar için arama açar</td>
+            </tr>
+            <tr>
+                <td>Sil</td>
+                <td>Alt orta, Bul'un sağında</td>
+                <td>Mevcut hesaplamayı siler</td>
+            </tr>
+            <tr>
+                <td>Çıkış</td>
+                <td>Alt orta, Sil'in sağında</td>
+                <td>Formu kapatır</td>
+            </tr>
+            <tr>
+                <td>Yazdır</td>
+                <td>Alt sağ, Çıkış'ın sağında</td>
+                <td>Kıdem tazminatı hesaplama belgesini yazdırır</td>
+            </tr>
+            <tr>
+                <td>X (Satır silme)</td>
+                <td>Her ücret türü satırının sonunda, sağda</td>
+                <td>Bu ücret türünü hesaplamadan kaldırır</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>12. Sık Karşılaşılan Sorunların Çözümü</h2>
+        
+        <div class="info-box">
+            <h3>Çalışan Bulunamadı</h3>
+            <p><strong>Sorun:</strong> Sistem "Sicil bulunamadı" mesajını gösteriyor.</p>
+            <p><strong>Çözüm:</strong> Doğru çalışan sicil numarasını girip girmediğinizi kontrol edin. Sicil numarasını manuel olarak yazmak yerine arama düğmesini (Sicil No alanının yanındaki büyüteç simgesi) kullanarak çalışanı bulun.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Hesapla Düğmesi Devre Dışı</h3>
+            <p><strong>Sorun:</strong> HESAPLA düğmesi gri renkte ve tıklanamıyor.</p>
+            <p><strong>Çözüm:</strong> Bu genellikle eksik ücret bilgisi olduğunda olur. Alt bölümde en az bir ücret türü ve tutarı olduğundan emin olun. Eğer tabloda hiç ücret türü yoksa, "Yeni" düğmesine tıklayarak en az bir ücret türü ekleyin.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Yazdırma Çalışmıyor</h3>
+            <p><strong>Sorun:</strong> Yazdır düğmesine tıklarken hiçbir şey olmuyor.</p>
+            <p><strong>Çözüm:</strong> Yazdırmadan önce hesaplamayı kaydetmelisiniz. "Kaydet" düğmesine tıklayın, ardından tekrar yazdırmayı deneyin.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Yanlış Hesaplama</h3>
+            <p><strong>Sorun:</strong> Hesaplanan tutar yanlış görünüyor.</p>
+            <p><strong>Çözüm:</strong> Tüm girdileri kontrol edin:
+                <ul>
+                    <li>Çalışma süresini doğrulayın (yıl, ay, gün)</li>
+                    <li>Tüm ücret bileşenlerinin dahil edildiğinden emin olun</li>
+                    <li>Başlangıç ve bitiş tarihlerini doğrulayın</li>
+                    <li>Doğru kıdem tazminatı nedeninin seçildiğinden emin olun</li>
+                </ul>
+            </p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Maaş Oluştur Düğmesi Devre Dışı</h3>
+            <p><strong>Sorun:</strong> Maaş Oluştur düğmesine tıklayamıyorum.</p>
+            <p><strong>Çözüm:</strong> Maaş oluşturabilmek için önce bir tazminat tutarı hesaplanmış olmalıdır. Önce "HESAPLA" düğmesine tıklayın, ardından "Maaş Oluştur" düğmesi aktif hale gelecektir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Ücret Bilgileri Görünmüyor</h3>
+            <p><strong>Sorun:</strong> Alt tabloda hiçbir ücret türü otomatik olarak yüklenmiyor.</p>
+            <p><strong>Çözüm:</strong> Çalışanın son dönem maaş kayıtları sistemde olmayabilir. "Yeni" düğmesine tıklayarak manuel olarak ücret türleri ekleyin.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>13. Ek Yardım</h2>
+        <p>Bu kullanıcı kılavuzunda açıklanmayan herhangi bir sorunla karşılaşırsanız veya ek yardıma ihtiyacınız olursa:</p>
+        <ul>
+            <li>BT Destek ekibinize başvurun</li>
+            <li>İnsan Kaynakları departmanınıza danışın</li>
+            <li>Yazılım eğitim dökümanlarını inceleyin</li>
+            <li>Yazılım sağlayıcısının destek hattını arayın</li>
+        </ul>
+        
+        <div class="info-box">
+            <p>Bu doküman, kıdem tazminatı hesaplama ekranının temel işlevlerini kapsamaktadır. Yazılımın diğer özellikleri veya daha ayrıntılı bilgi için ilgili birimlere başvurun.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>14. Terimler Sözlüğü</h2>
+        <table>
+            <tr>
+                <th>Terim</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Kıdem Tazminatı</td>
+                <td>Belirli koşullar altında işten ayrılan çalışanlara ödenen yasal hak</td>
+            </tr>
+            <tr>
+                <td>Yevmiye</td>
+                <td>Günlük ücret</td>
+            </tr>
+            <tr>
+                <td>İkramiye</td>
+                <td>Ek ödeme veya bonus</td>
+            </tr>
+            <tr>
+                <td>Yuvarlama Oranı</td>
+                <td>Hesaplanan tutarın hangi hassasiyetle yuvarlanacağını belirten değer</td>
+            </tr>
+            <tr>
+                <td>Yuvarlama Tipi</td>
+                <td>Hesaplanan tutarın nasıl yuvarlanacağını belirten seçenek (Üste, Serbest, Alta)</td>
+            </tr>
+            <tr>
+                <td>Tazminat Durumu</td>
+                <td>Kıdem tazminatının hangi nedenle ödendiğini belirten durum</td>
+            </tr>
+            <tr>
+                <td>En.Yuk.Dev.Mem.Tazm.</td>
+                <td>En Yüksek Devlet Memuru Tazminatı - yasal maksimum kıdem tazminatı sınırını belirtir</td>
+            </tr>
+            <tr>
+                <td>Taz.Ödeneceği Tertip</td>
+                <td>Tazminatın ödeme şeklini veya kaynağını belirten bilgi</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>15. Adım Adım Kıdem Tazminatı Hesaplama Örneği</h2>
+        
+        <div class="step">
+            <h3>Örnek Senaryo</h3>
+            <p>Ahmet Yılmaz isimli çalışan, emeklilik nedeniyle işten ayrılıyor. Kendisi için kıdem tazminatı hesaplamamız gerekiyor.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 1: Çalışan Bilgilerini Girin</h3>
+            <ol>
+                <li>Kıdem Tazminatı Hesaplama ekranını açın</li>
+                <li>"Sicil No" alanına "1234" yazın (Ahmet Yılmaz'ın sicil numarası)</li>
+                <li>Enter tuşuna basın veya yanındaki arama düğmesine tıklayın</li>
+                <li>Sistem, Ahmet Yılmaz'ın bilgilerini otomatik olarak yükleyecektir</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 2: Tarih Bilgilerini Kontrol Edin</h3>
+            <ol>
+                <li>Sistem tarafından yüklenen "Giriş Tarihi" değerinin doğru olduğunu kontrol edin (01/05/2010)</li>
+                <li>"Çıkış Tarihi" alanına bugünün tarihini girin veya mevcut tarihi kontrol edin</li>
+                <li>"Günün Tarihi" alanında bugünün tarihinin olduğunu kontrol edin</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 3: Çalışma Süresini Kontrol Edin</h3>
+            <p>Sistem, işe giriş ve çıkış tarihlerine göre çalışma süresini otomatik olarak hesaplayacaktır. Bu örnek için:</p>
+            <ul>
+                <li>Yıl: 13</li>
+                <li>Ay: 3</li>
+                <li>Gün: 15</li>
+            </ul>
+            <p>Bu değerler, ilgili alanlarda görünecektir. Değerlerin doğru olduğunu kontrol edin.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 4: Kıdem Tazminatı Durumunu Seçin</h3>
+            <p>"Kıdem Tazm. Durumu" açılır menüsünden "Emekliye Ayrılanlar" seçeneğini seçin.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 5: Ücret Bilgilerini Kontrol Edin</h3>
+            <p>Ekranın alt kısmındaki tabloda, sistem tarafından otomatik olarak yüklenen ücret bileşenlerini kontrol edin:</p>
+            <ul>
+                <li>1 Günlük Yevmiye: 500,00 TL</li>
+                <li>1 Günlük Aile Çocuk Yardımı: 25,00 TL</li>
+                <li>1 Günlük Yemek Ücreti: 30,00 TL</li>
+                <li>1 Günlük İkramiye: 83,33 TL</li>
+            </ul>
+            <p>Gerekirse ücret türlerini ekleyin veya değiştirin.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 6: Yuvarlama Tercihlerini Ayarlayın</h3>
+            <ol>
+                <li>"Yuvarlama Oranı" alanına "0,01" değerini girin (iki ondalık basamak için)</li>
+                <li>"Yuvarlama Tipi" açılır menüsünden "Serbest" seçeneğini seçin</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 7: Hesaplamayı Yapın</h3>
+            <p>Turuncu "HESAPLA" düğmesine tıklayın (Ödenmesi Ger. Tazm. alanının yanında).</p>
+            <p>Sistem, tazminat tutarını hesaplayacak ve sonuçları şu alanlarda gösterecektir:</p>
+            <ul>
+                <li>Hesap.Tazm.: 273.500,50 TL</li>
+                <li>Ödenmesi Ger. Tazm.: 273.500,50 TL</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 8: Ek Bilgileri Doldurun</h3>
+            <ol>
+                <li>"Not" alanına bilgilendirici bir açıklama yazın, örneğin: "Emeklilik nedeniyle yapılan kıdem tazminatı ödemesi"</li>
+                <li>"Yetkili" alanına kendi adınızı veya yetkilinin adını yazın</li>
+                <li>"Statü" alanına çalışanın statüsünü yazın, örneğin: "İşçi"</li>
+                <li>"Taz.Ödeneceği Tertip" alanına ödeme yöntemi bilgisini yazın, örneğin: "Banka Hesabı"</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 9: Hesaplamayı Kaydedin</h3>
+            <p>"Kaydet" düğmesine tıklayarak hesaplamayı kaydedin.</p>
+            <p>Sistem, hesaplamayı veritabanına kaydedecek ve bir onay mesajı gösterecektir.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 10: Maaş Kaydı Oluşturun</h3>
+            <p>"Maaş Oluştur" düğmesine tıklayın. Açılan pencerede gerekli bilgileri doldurun ve onaylayın.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 11: Çıktı Alın</h3>
+            <p>"Yazdır" düğmesine tıklayarak kıdem tazminatı hesaplama belgesinin çıktısını alın.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>16. Sık Sorulan Sorular</h2>
+        
+        <div class="info-box">
+            <h3>Kıdem tazminatı nedir?</h3>
+            <p>Kıdem tazminatı, belirli koşullar altında işten ayrılma durumunda çalışana verilen bir tür ücrettir. Çalışanın hizmet süresi, ücreti ve ayrılma nedeni gibi faktörlere göre hesaplanır.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Kıdem tazminatına kim hak kazanır?</h3>
+            <p>En yaygın kıdem tazminatı hak kazanma durumları şunlardır:</p>
+            <ul>
+                <li>Emekliye ayrılanlar</li>
+                <li>İşveren tarafından haklı neden olmaksızın işten çıkarılanlar</li>
+                <li>Vefat edenler (tazminat yasal mirasçılarına ödenir)</li>
+                <li>Askerlik görevi nedeniyle ayrılanlar</li>
+                <li>Kadın çalışanların evlilik nedeniyle bir yıl içinde işten ayrılmaları durumunda</li>
+                <li>Belirli süreli iş sözleşmesi sona erenler</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Hesaplamada hangi ücretler dikkate alınır?</h3>
+            <p>Kıdem tazminatı hesaplamasında çalışanın brüt ücreti ile birlikte bazı sürekli yan ödemeler de (yemek yardımı, aile yardımı, yakacak yardımı gibi) dikkate alınır. Bu ödeme kalemleri, çalışanın son ayda aldığı ödemeler üzerinden 30 güne bölünerek günlük tutara çevrilir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Hesaplamadan sonra tutar değiştirilebilir mi?</h3>
+            <p>Evet, hesaplamadan sonra "Ödenmesi Ger. Tazm." alanındaki tutarı manuel olarak değiştirebilirsiniz. Ancak, yasal gereklilikler nedeniyle, değiştirilmiş tutarın hesaplanan tutardan düşük olmaması önerilir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Hatalı bir hesaplamayı nasıl düzeltebilirim?</h3>
+            <p>Hatalı kaydedilmiş bir hesaplamayı düzeltmek için:</p>
+            <ol>
+                <li>İlgili çalışanı arayın (sicil numarasını girerek veya Bul düğmesini kullanarak)</li>
+                <li>Hatalı kayıt yüklendiğinde değişiklikleri yapın</li>
+                <li>Tekrar HESAPLA düğmesine tıklayın</li>
+                <li>Kaydet düğmesine tıklayarak güncellenmiş hesaplamayı kaydedin</li>
+            </ol>
+            <p>Eğer tamamen yeni bir hesaplama yapmak istiyorsanız, eski kaydı silin ve sıfırdan yeni bir hesaplama yapın.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Bir çalışan için birden fazla kıdem tazminatı hesaplayabilir miyim?</h3>
+            <p>Evet, bir çalışan için farklı tarihler veya durumlar için birden fazla kıdem tazminatı hesaplaması yapabilirsiniz. Her hesaplamayı ayrı ayrı kaydettiğinizde sistem bunları saklayacaktır. Önceki hesaplamalara erişmek için "Bul" düğmesini kullanabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>17. Yasal Bilgiler</h2>
+        <p>Kıdem tazminatı hesaplaması, Türkiye'deki mevcut iş kanunları ve ilgili yasal düzenlemelere göre yapılmaktadır. Bu yazılım, mevzuata uygun hesaplama yapar, ancak yasal değişiklikler olması durumunda güncellenmelidir.</p>
+        
+        <div class="warning-box">
+            <p><strong>Önemli Uyarı:</strong> Bu yazılımın sonuçları bilgilendirme amaçlıdır. Resmi işlemler için mutlaka insan kaynakları ve hukuk birimleriyle iletişime geçilmesi önerilir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>18. Kullanıcı Ara Yüzü Detaylı Açıklaması</h2>
+        
+        <div class="step">
+            <h3>Üst Bölüm - Sol Taraf</h3>
+            <p>Ekranın sol üst kısmında aşağıdaki alanlar bulunur:</p>
+            <ul>
+                <li><strong>Sicil No:</strong> En üstte yer alan, çalışan sicil numarasını girdiğiniz ilk alandır. Yanında bir büyüteç şeklinde arama düğmesi bulunur.</li>
+                <li><strong>Adı / Soyadı:</strong> Sicil numarası girildikten sonra otomatik doldurulan, çalışanın tam adını gösteren alandır.</li>
+                <li><strong>Giriş Tarihi:</strong> Çalışanın işe başlama tarihinin girildiği alandır. GG/AA/YYYY formatında olmalıdır.</li>
+                <li><strong>Çıkış Tarihi:</strong> Çalışanın işten ayrılma tarihinin girildiği alandır. GG/AA/YYYY formatında olmalıdır.</li>
+                <li><strong>Çalışma Süresi:</strong> Yıl, Ay ve Gün olarak üç ayrı alanda gösterilen toplam çalışma süresidir.</li>
+                <li><strong>Günün Tarihi:</strong> Hesaplama yapılan günün tarihidir, varsayılan olarak sistem tarihi gelir.</li>
+                <li><strong>En.Yuk.Dev.Mem.Tazm.:</strong> Devlet memurları için belirlenen maksimum tazminat tutarını gösteren alandır.</li>
+                <li><strong>Taz.Ödeneceği Tertip:</strong> Tazminatın ödeme şeklini veya kaynağını belirten bilgidir.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Üst Bölüm - Sağ Taraf</h3>
+            <p>Ekranın sağ üst kısmında aşağıdaki alanlar bulunur:</p>
+            <ul>
+                <li><strong>Not:</strong> Hesaplama ile ilgili açıklamaların yazılabileceği metin alanıdır.</li>
+                <li><strong>Yetkili:</strong> Ödemeyi yetkilendiren kişinin adının yazıldığı alandır.</li>
+                <li><strong>Statü:</strong> Çalışanın istihdam statüsünün belirtildiği alandır.</li>
+                <li><strong>Yuvarlama Oranı:</strong> Hesaplanan tutarın yuvarlanma hassasiyetini belirleyen sayısal alandır.</li>
+                <li><strong>Yuvarlama Tipi:</strong> Üste, Serbest veya Alta olmak üzere yuvarlama şeklinin seçildiği açılır menüdür.</li>
+                <li><strong>Hesap.Tazm.:</strong> Sistem tarafından hesaplanan tazminat tutarını gösteren alandır.</li>
+                <li><strong>Ödenmesi Ger. Tazm.:</strong> Ödenecek nihai tazminat tutarını gösteren ve yanında turuncu HESAPLA düğmesi bulunan alandır.</li>
+                <li><strong>Kıdem Tazm. Durumu:</strong> Tazminat nedeninin seçildiği açılır menüdür. Seçenekler: Emekliye Ayrılanlar, İş Akdine Son Verilenler, Vefat Nedeniyle, İstifa Eden, Belirli Süreli İş Sözleşmesi Sona Eren.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Alt Bölüm - Ücret Türleri Tablosu</h3>
+            <p>Ekranın orta kısmında, "KIDEM HESABINDA KULLANILAN ÜCRET TÜRLERİ" başlığı altında bir tablo bulunur. Bu tabloda:</p>
+            <ul>
+                <li><strong>Ücret Türü:</strong> Sol sütunda, ücret bileşeninin adı veya açıklaması yer alır.</li>
+                <li><strong>Günlük Tutar:</strong> Sağ sütunda, her bir ücret türü için hesaplamada kullanılacak günlük tutar yer alır.</li>
+                <li><strong>İptal Simgesi (X):</strong> Her satırın sonunda, o ücret türünü tablodan kaldırmak için kullanılabilecek bir X düğmesi bulunur.</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Alt Bölüm - İşlem Düğmeleri</h3>
+            <p>Ekranın en alt kısmında, soldan sağa doğru sıralanmış düğmeler bulunur:</p>
+            <ul>
+                <li><strong>Yeni:</strong> En solda bulunan, yeni bir ücret türü satırı eklemek için kullanılan düğme.</li>
+                <li><strong>Maaş Oluştur:</strong> Kıdem tazminatı ödemesi için maaş kaydı oluşturmak için kullanılan düğme.</li>
+                <li><strong>Temizle:</strong> Formu sıfırlamak ve yeni bir hesaplama başlatmak için kullanılan düğme.</li>
+                <li><strong>Kaydet:</strong> Hesaplamayı kaydetmek için kullanılan düğme.</li>
+                <li><strong>Bul:</strong> Kayıtlı hesaplamaları aramak için kullanılan düğme.</li>
+                <li><strong>Sil:</strong> Mevcut hesaplamayı silmek için kullanılan düğme.</li>
+                <li><strong>Çıkış:</strong> Formu kapatmak için kullanılan düğme.</li>
+                <li><strong>Yazdır:</strong> En sağda bulunan, hesaplama çıktısı almak için kullanılan düğme.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

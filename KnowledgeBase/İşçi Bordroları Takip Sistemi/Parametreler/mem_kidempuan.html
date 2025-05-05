@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kıdem Puan Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kıdem Puan Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve UI Elemanları</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları</a></li>
+                <li><a href="#adim-adim">Kıdem Puanı Tanımlama - Adım Adım</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#kayit-islemleri">Kayıt İşlemleri - Detaylı Açıklama</a></li>
+                <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Kıdem Puan Tanımları" programı, personel kıdem yıllarına göre puan değerlerinin tanımlanması ve yönetilmesi için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Kıdem yıllarına göre puan değerleri tanımlama</li>
+                <li>Mevcut puan tanımlarını görüntüleme</li>
+                <li>Puan değerlerini güncelleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlanacak kıdem yılı değeri</li>
+                    <li>Her kıdem yılı için belirlenecek puan değeri</li>
+                    <li>Sistemdeki mevcut puan tanımları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve UI Elemanları</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında turkuaz renkli bir şeritte "Kıdem Puan Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı tablo şeklinde bulunur</li>
+                            <li>Tablonun en üst satırı koyu gri renkli başlık satırıdır</li>
+                            <li>Başlık satırının altında veri satırları yer alır</li>
+                            <li>Her satır bir kıdem yılı ve puan bilgisini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Tablo bölümünün alt kısmında yer alır</li>
+                            <li>Kaydet ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Tabloda mevcut kayıtları yükler</li>
+                    <li>Kıdem yılı alanları devre dışı (gri renkli) olarak gelir</li>
+                    <li>Kıdem puanı alanları aktif olarak gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları</h2>
+        <div class="info-box">
+            <h3>Tablo Bölümü Veri Giriş Alanları</h3>
+            
+            <div class="step">
+                <h4>Tablo Başlıkları:</h4>
+                <ol>
+                    <li><strong>KIDEM YILI:</strong>
+                        <ul>
+                            <li>Tablonun ilk sütununda yer alır</li>
+                            <li>Koyu gri zeminde beyaz yazı ile gösterilir</li>
+                            <li>Personelin kıdem yılını belirtir</li>
+                        </ul>
+                    </li>
+                    <li><strong>KIDEM PUAN:</strong>
+                        <ul>
+                            <li>Tablonun ikinci sütununda yer alır</li>
+                            <li>Koyu gri zeminde beyaz yazı ile gösterilir</li>
+                            <li>Her kıdem yılına karşılık gelen puanı belirtir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Veri Giriş Alanları:</h4>
+                <ol>
+                    <li><strong>Kıdem Yılı Alanı:</strong>
+                        <ul>
+                            <li>KIDEM YILI başlığının altında, tablonun ilk sütununda bulunur</li>
+                            <li>Bu alan devre dışı bırakılmıştır (açık gri renkli ve değiştirilemez)</li>
+                            <li>Maksimum 4 karakter uzunluğunda olup sadece tam sayı değerler içerir</li>
+                            <li>Sistemde tanımlı olan kıdem yıllarını gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kıdem Puanı Alanı:</strong>
+                        <ul>
+                            <li>KIDEM PUAN başlığının altında, tablonun ikinci sütununda bulunur</li>
+                            <li>Aktif durumdadır ve kullanıcı tarafından değiştirilebilir</li>
+                            <li>Maksimum 4 karakter uzunluğundadır</li>
+                            <li>Sadece tam sayı değerler girilebilir</li>
+                            <li>Kıdem yılına karşılık gelen puan değerini içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kıdem yılı alanlarına değer girişi yapılamaz, bunlar sistem tarafından otomatik olarak tanımlanır</li>
+                    <li>Kıdem puanı alanlarına sadece sayısal değerler girilebilir</li>
+                    <li>Boş değer girilmesi durumunda sistem hata verecektir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile bir sonraki alana, SHIFT+TAB tuş kombinasyonu ile bir önceki alana geçiş yapabilirsiniz</li>
+                    <li>ENTER tuşu da TAB tuşu gibi çalışır ve bir sonraki alana geçiş sağlar</li>
+                    <li>ESC tuşu ile programdan çıkış yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="adim-adim" class="section">
+        <h2>Kıdem Puanı Tanımlama - Adım Adım</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kıdem Puanı Değiştirme:</h4>
+                <ol>
+                    <li><strong>Programa Giriş:</strong>
+                        <ul>
+                            <li>Program açıldığında otomatik olarak mevcut kıdem puanı tanımlamaları yüklenir</li>
+                            <li>Tablo formatında, her satırda bir kıdem yılı ve ona karşılık gelen puan değeri görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değiştirilecek Satırı Bulma:</strong>
+                        <ul>
+                            <li>Tabloda yukarıdan aşağıya doğru kıdem yıllarını kontrol edin</li>
+                            <li>Değiştirmek istediğiniz kıdem yılına karşılık gelen satırı bulun</li>
+                            <li>Tablo satırları kıdem yıllarına göre sıralanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Puan Değeri Değiştirme:</strong>
+                        <ul>
+                            <li>İlgili satırda, KIDEM PUAN sütununda bulunan metin kutusuna tıklayın</li>
+                            <li>Mevcut değeri silin veya üzerine yazın</li>
+                            <li>Yeni puan değerini girin (maksimum 4 karakter ve sadece sayısal değer)</li>
+                            <li>Değer girildiğinde, metin kutusunun içindeki yazı siyah renkte görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Diğer Satırlara Geçiş:</strong>
+                        <ul>
+                            <li>Bir satırdaki değişikliği tamamladıktan sonra TAB tuşuna basarak veya fare ile bir sonraki satıra geçebilirsiniz</li>
+                            <li>İhtiyaç duyulan diğer kıdem yılları için aynı işlemi tekrarlayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikler tamamlandıktan sonra, tablonun alt kısmında sol tarafta bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu gri zeminde ve üç boyutlu görünümdedir</li>
+                            <li>Sistem değişiklikleri kaydedecek ve ekran yenilenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Kıdem yılı alanları değiştirilemez, sadece puan değerleri güncellenebilir</li>
+                    <li>Değişiklikler "Kaydet" butonuna basılana kadar sisteme kaydedilmez</li>
+                    <li>Kayıt işlemi tamamlandığında sistem otomatik olarak tabloyu yeniler</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Tablonun alt kısmında, sol tarafta yer alır</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünümdedir</li>
+                            <li>Butonun üzerinde "Kaydet" ifadesi yazılıdır</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi:</strong>
+                        <ul>
+                            <li>Tabloda yapılan tüm değişiklikleri veritabanına kaydeder</li>
+                            <li>Kayıt işlemi tamamlandığında ekran yenilenir ve güncel veriler gösterilir</li>
+                            <li>Herhangi bir değişiklik yapılmamışsa da butona basıldığında ekran yenilenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Tabloda gerekli değişiklikleri yaptıktan sonra butona bir kez tıklayın</li>
+                            <li>Fare ile butona tıklamak yerine klavyeden ALT + S tuş kombinasyonunu da kullanabilirsiniz</li>
+                            <li>Kaydet butonuna basıldığında butonda kısa süreli bir basılma efekti görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Tablonun alt kısmında, Kaydet butonunun hemen sağında yer alır</li>
+                            <li>Gri zemin üzerinde üç boyutlu görünümdedir</li>
+                            <li>Butonun üzerinde "Çıkış" ifadesi yazılıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi:</strong>
+                        <ul>
+                            <li>Programdan çıkış yaparak pencereyi kapatır</li>
+                            <li>Eğer kaydedilmemiş değişiklikler varsa, bu değişiklikler kaydedilmeden program kapatılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Programdan çıkmak istediğinizde butona bir kez tıklayın</li>
+                            <li>Fare ile butona tıklamak yerine klavyeden ESC tuşunu da kullanabilirsiniz</li>
+                            <li>Çıkış butonuna basıldığında butonda kısa süreli bir basılma efekti görünür ve program penceresi kapanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çıkış butonuna basmadan önce değişiklikleri kaydetmek için mutlaka "Kaydet" butonuna basılmalıdır</li>
+                    <li>Kaydedilmemiş değişiklikler program kapatıldığında kaybolacaktır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Hızlı işlem için Kaydet (ALT + S) ve Çıkış (ESC) klavye kısayollarını kullanabilirsiniz</li>
+                    <li>Yanlışlıkla yapılan değişiklikleri iptal etmek için Kaydet butonuna basmadan Çıkış butonuna basabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-islemleri" class="section">
+        <h2>Kayıt İşlemleri - Detaylı Açıklama</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kıdem Puanı Değişikliklerini Kaydetme:</h4>
+                <ol>
+                    <li><strong>Değişiklik Öncesi Hazırlık:</strong>
+                        <ul>
+                            <li>Programa giriş yapın ve tablodaki mevcut verilerin tam olarak yüklenmesini bekleyin</li>
+                            <li>Değiştirilecek kıdem yıllarını ve yeni puan değerlerini önceden belirleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Puan Değerlerini Değiştirme:</strong>
+                        <ul>
+                            <li>İlgili satırdaki KIDEM PUAN sütunundaki metin kutusuna tıklayın</li>
+                            <li>Mevcut değeri seçmek için çift tıklayabilir veya üzerine yazabilirsiniz</li>
+                            <li>Yeni puan değerini girin (sadece sayısal değer ve maksimum 4 karakter)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Birden Fazla Değişiklik Yapma:</strong>
+                        <ul>
+                            <li>Bir satırdaki değişikliği tamamladıktan sonra TAB tuşu ile bir sonraki satıra geçebilirsiniz</li>
+                            <li>Bu şekilde birden fazla kıdem yılı için puan değişikliği yapabilirsiniz</li>
+                            <li>Yapılan değişiklikler ekranda görünür ancak henüz veritabanına kaydedilmemiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm değişiklikleri tamamladıktan sonra, tablonun alt kısmındaki "Kaydet" butonuna tıklayın</li>
+                            <li>Kaydet butonu ekranın alt kısmında, sol tarafta yer alır</li>
+                            <li>Sistem değişiklikleri veritabanına kaydeder ve ekranı yeniler</li>
+                            <li>Kayıt işlemi başarılı olduğunda herhangi bir hata mesajı görüntülenmez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Sonrası Kontrol:</strong>
+                        <ul>
+                            <li>Kayıt işlemi tamamlandıktan sonra verilerin doğru şekilde güncellendiğinden emin olmak için tablodaki değerleri kontrol edin</li>
+                            <li>Eğer yanlış bir değer girilmişse, aynı adımları tekrar ederek düzeltme yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Hata Durumları ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Kayıt Sırasında Hata Mesajı:</strong>
+                        <ul>
+                            <li>Kaydet butonuna bastıktan sonra "Hata" başlıklı bir uyarı mesajı görüntülenebilir</li>
+                            <li>Bu durumda sistem, değişiklikleri kaydetmede bir sorun yaşamış demektir</li>
+                            <li>Hata mesajındaki bilgilere göre sorunu giderin ve tekrar kaydetmeyi deneyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Geçersiz Veri Girişi:</strong>
+                        <ul>
+                            <li>Kıdem puanı alanına sayısal olmayan bir değer veya 4 karakterden uzun bir değer girilmesi durumunda sistem hata verebilir</li>
+                            <li>Bu durumda geçerli bir değer girip tekrar deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Değişiklikler "Kaydet" butonuna basılana kadar veritabanına kaydedilmez</li>
+                    <li>Kayıt işlemi öncesinde verilerin doğruluğunu kontrol edin</li>
+                    <li>Kıdem puanı değerleri personel kıdem hesaplamalarında kullanıldığı için doğru girilmesi önemlidir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sorun-giderme" class="section">
+        <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Kayıt Sorunları:</h4>
+                <ol>
+                    <li><strong>Kayıt İşlemi Gerçekleşmiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna bastığınızda değişiklikler kaydedilmiyor veya ekran yenilenmiyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Ağ bağlantınızı kontrol edin</li>
+                                    <li>Programı kapatıp yeniden açın</li>
+                                    <li>Sistem yöneticinizle iletişime geçin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Hata Mesajı Alınması:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kaydet butonuna bastığınızda "Hata" başlıklı bir mesaj görüntüleniyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Hata mesajındaki açıklamayı dikkatlice okuyun</li>
+                                    <li>Girdiğiniz değerlerin uygun formatta olduğundan emin olun (sadece sayısal değer ve maksimum 4 karakter)</li>
+                                    <li>Programı kapatıp yeniden açmayı deneyin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Veri Girişi Sorunları:</h4>
+                <ol>
+                    <li><strong>Kıdem Yılı Alanının Değiştirilememesi:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kıdem yılı alanına değer girişi yapılamıyor.</li>
+                            <li><strong>Açıklama:</strong> Bu bir sorun değil, programın normal davranışıdır. Kıdem yılı alanları sadece görüntüleme amaçlıdır ve kullanıcı tarafından değiştirilemez.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sayısal Olmayan Değer Girişi:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Kıdem puanı alanına harf veya özel karakter girildiğinde sistem kabul etmiyor.</li>
+                            <li><strong>Açıklama:</strong> Kıdem puanı alanına sadece sayısal değerler girilebilir. Harfler veya özel karakterler sistem tarafından kabul edilmez.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Program Sorunları:</h4>
+                <ol>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Program açılmıyor veya işlem sırasında donuyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Bilgisayarınızı yeniden başlatın</li>
+                                    <li>Diğer açık programları kapatın</li>
+                                    <li>Sistem yöneticinizle iletişime geçin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Yanlış Veri Görüntüleme:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Tabloda yanlış veya eksik veriler görüntüleniyor.</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Programı kapatıp yeniden açın</li>
+                                    <li>Eğer sorun devam ederse sistem yöneticinizle iletişime geçin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Programda herhangi bir sorun yaşadığınızda öncelikle programı kapatıp yeniden açmayı deneyin</li>
+                    <li>Kıdem puanı değerlerini değiştirirken dikkatli olun, yanlış girişler personel ödemelerini etkileyebilir</li>
+                    <li>Hata mesajlarını not alın ve sistem yöneticinize bildirin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Hızlı Veri Girişi İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB tuşu: Bir sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Bir önceki alana döner</li>
+                            <li>ENTER: TAB tuşu gibi bir sonraki alana geçer</li>
+                            <li>ESC: Programdan çıkış yapar</li>
+                            <li>ALT + S: Kaydet butonuna basma işlevini gerçekleştirir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metin Seçimi:</strong>
+                        <ul>
+                            <li>Bir alandaki mevcut değeri tamamen değiştirmek için çift tıklayın</li>
+                            <li>Değerin bir kısmını değiştirmek için tek tıklayıp imlecinizi istediğiniz konuma getirin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ol>
+                    <li><strong>İşlem Sırası:</strong>
+                        <ul>
+                            <li>Önce tüm değişiklikleri yapın, sonra Kaydet butonuna basın</li>
+                            <li>Çok sayıda değişiklik yapacaksanız, gruplar halinde kaydedin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Kontrolü:</strong>
+                        <ul>
+                            <li>Değişiklik yaptıktan sonra verileri tekrar kontrol edin</li>
+                            <li>Kayıt işlemi sonrasında da verilerin doğru kaydedildiğinden emin olun</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yararlı Bilgiler:</h4>
+                <ul>
+                    <li>Kıdem puanı değerleri personel kıdem tazminatı hesaplamalarında kullanılır</li>
+                    <li>Her kıdem yılı için bir puan değeri tanımlanmalıdır</li>
+                    <li>Puan değerleri genellikle kıdem yılı arttıkça yükselir, ancak bu bir zorunluluk değildir</li>
+                    <li>Değişiklikler tüm sistemde anında etkili olur, bu nedenle dikkatli olun</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Program Kullanımı Optimizasyonu:</h4>
+                <ol>
+                    <li><strong>Pencere Boyutlandırma:</strong>
+                        <ul>
+                            <li>Program penceresini istediğiniz boyutta ayarlayabilirsiniz</li>
+                            <li>Pencere büyütüldüğünde tablo daha geniş alanda görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Hazırlığı:</strong>
+                        <ul>
+                            <li>Değiştirilecek puan değerlerini önceden belirleyin</li>
+                            <li>Değişiklik yapacağınız satırların yerlerini önceden tespit edin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="ozet" class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, "Kıdem Puan Tanımları" programının nasıl kullanılacağı konusunda temel bilgileri içermektedir. Program, personel kıdem yıllarına göre puan değerlerinin tanımlanması ve yönetilmesi için kullanılır.</p>
+            
+            <p>Kılavuzda şu konular ele alınmıştır:</p>
+            <ul>
+                <li>Programın genel tanıtımı ve kullanım amacı</li>
+                <li>Ekran düzeni ve UI elemanları</li>
+                <li>Veri giriş alanları ve özellikleri</li>
+                <li>Kıdem puanı tanımlama adımları</li>
+                <li>Program butonları ve işlevleri</li>
+                <li>Kayıt işlemlerinin detaylı açıklaması</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+                <li>Programı daha verimli kullanmak için pratik ipuçları</li>
+            </ul>
+            
+            <p>Bu programı kullanırken karşılaşabileceğiniz sorunlar veya önerileriniz için sistem yöneticinizle iletişime geçebilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sistem Gereksinimleri</h2>
+        <div class="info-box">
+            <p>Kıdem Puan Tanımları programı, BelSis ağ ortamında çalışan bir uygulamadır. Programın düzgün çalışması için aşağıdaki gereksinimlere ihtiyaç vardır:</p>
+            
+            <ul>
+                <li>BelSis ağına bağlı bir bilgisayar</li>
+                <li>Geçerli kullanıcı hesabı ve yetkileri</li>
+                <li>Internet Explorer 6.0 veya üzeri tarayıcı</li>
+                <li>Ekran çözünürlüğü: En az 1024x768</li>
+            </ul>
+            
+            <p>Program kullanımı için herhangi bir ek yazılım veya donanım gerekmemektedir.</p>
+        </div>
+    </div>
+</body>
+</html>

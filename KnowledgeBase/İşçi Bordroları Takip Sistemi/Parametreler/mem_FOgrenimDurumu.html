@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenim Durumu Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Öğrenim Durumu Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Yerleşim</a></li>
+                <li><a href="#kayit-ekleme">Öğrenim Durumu Kaydı Ekleme (Adım Adım)</a></li>
+                <li><a href="#kayit-arama">Mevcut Öğrenim Durumu Kaydını Arama</a></li>
+                <li><a href="#kayit-duzenleme">Öğrenim Durumu Kaydını Düzenleme</a></li>
+                <li><a href="#kayit-silme">Öğrenim Durumu Kaydını Silme</a></li>
+                <li><a href="#kayitlar-gezinme">Kayıtlar Arası Gezinme</a></li>
+                <li><a href="#hizli-erisim">Hızlı Erişim ve Kısayollar</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Öğrenim Durumu Tanımları" ekranı, personel bilgi sisteminde kullanılacak öğrenim durumu kayıtlarını tanımlamanıza olanak sağlar. Bu ekran ile:</p>
+            <ul>
+                <li>Yeni öğrenim durumu kayıtları ekleyebilir</li>
+                <li>Mevcut öğrenim durumu kayıtlarını görüntüleyebilir</li>
+                <li>Öğrenim durumu kayıtlarını düzenleyebilir</li>
+                <li>Öğrenim durumu kayıtlarını silebilir</li>
+                <li>Kayıtlar arasında gezinebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu ekranı kullanmadan önce şu bilgilere ihtiyaç duyacaksınız:</p>
+                <ul>
+                    <li>Eklenecek öğrenim durumunun kodu</li>
+                    <li>Öğrenim durumunun açıklaması</li>
+                    <li>İlk ve son derece/kademe bilgileri</li>
+                    <li>Yasal kod bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Yerleşim</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Öğrenim Durumu Tanımları (Giriş)" veya "Öğrenim Durumu Tanımları (Değişiklik)" başlığı yer alır</li>
+                            <li>Başlık, işlem moduna göre (Giriş/Değişiklik) otomatik değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alan ana bölümdür</li>
+                            <li>Okul Kodu, Açıklama, İlk/Son Derece, İlk/Son Kademe ve Yasal Kodu alanları burada bulunur</li>
+                            <li>Her alan etiketi ve giriş kutusu yan yana yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün altında iki satır halinde düzenlenmiştir</li>
+                            <li>Üst satırda gezinme butonları (Önceki, Sonraki, Liste) yer alır</li>
+                            <li>Alt satırda işlem butonları (Form Temizle, Kaydet, Sil, Çıkış) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Ekran açıldığında:</p>
+                <ul>
+                    <li>Varsayılan olarak "Giriş" modunda başlar</li>
+                    <li>İmleç otomatik olarak "Okul Kodu" alanına konumlanır</li>
+                    <li>Sistem otomatik olarak bir sonraki kullanılabilir kod numarasını önerir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="kayit-ekleme" class="section">
+        <h2>Öğrenim Durumu Kaydı Ekleme (Adım Adım)</h2>
+        <div class="info-box">
+            <h3>Yeni Öğrenim Durumu Kaydı Nasıl Eklenir?</h3>
+            
+            <div class="step">
+                <h4>Adım 1: Ekranı Hazırlama</h4>
+                <ol>
+                    <li>Eğer başka bir işlem yapıyorsanız önce ekranı temizleyin:
+                        <ul>
+                            <li>Ekranın alt kısmında yer alan, sol taraftan ikinci sıradaki "Form Temizle" butonuna tıklayın</li>
+                            <li>Açılan onay penceresinde "Evet" seçeneğini tıklayın</li>
+                            <li>Ekran temizlenecek ve "Öğrenim Durumu Tanımları (Giriş)" başlığı görünecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 2: Okul Kodu Girişi</h4>
+                <ol>
+                    <li>Ekranın üst kısmında, başlığın hemen altında yer alan "Okul Kodu" etiketinin yanındaki metin kutusuna okul kodunu girin
+                        <ul>
+                            <li>Bu alan kırmızı kenarlıdır ve zorunlu alandır</li>
+                            <li>Sistem tarafından önerilen kod numarasını kullanabilir veya başka bir numara girebilirsiniz</li>
+                            <li>Bu alana sadece rakam girilebilir (maksimum 3 karakter)</li>
+                            <li>"0" değeri giremezsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Kodu girdikten sonra TAB tuşuna basarak bir sonraki alana ilerleyin</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 3: Açıklama Girişi</h4>
+                <ol>
+                    <li>"Açıklama" etiketinin yanındaki metin kutusuna öğrenim durumunun açıklamasını girin
+                        <ul>
+                            <li>Bu alan "Okul Kodu" alanının bir satır altında yer alır</li>
+                            <li>Maksimum 70 karakter uzunluğunda veri girebilirsiniz</li>
+                            <li>Örneğin: "İlkokul", "Ortaokul", "Lise" gibi</li>
+                        </ul>
+                    </li>
+                    <li>Açıklamayı girdikten sonra TAB tuşuna basarak bir sonraki alana ilerleyin</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 4: İlk Derece ve Kademe Girişi</h4>
+                <ol>
+                    <li>"İlk Derece" etiketinin yanındaki metin kutusuna değeri girin
+                        <ul>
+                            <li>Bu alan "Açıklama" alanının bir satır altında, sol tarafta yer alır</li>
+                            <li>Buraya sadece rakam girilebilir (maksimum 3 karakter)</li>
+                        </ul>
+                    </li>
+                    <li>TAB tuşuna basarak "İlk Kademe" alanına geçin
+                        <ul>
+                            <li>Bu alan "İlk Derece" alanının hemen sağında yer alır</li>
+                            <li>Buraya sadece rakam girilebilir (maksimum 3 karakter)</li>
+                        </ul>
+                    </li>
+                    <li>İlk Kademe değerini girdikten sonra TAB tuşuna basarak bir sonraki alana ilerleyin</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 5: Son Derece ve Kademe Girişi</h4>
+                <ol>
+                    <li>"Son Derece" etiketinin yanındaki metin kutusuna değeri girin
+                        <ul>
+                            <li>Bu alan "İlk Derece" alanının bir satır altında, sol tarafta yer alır</li>
+                            <li>Buraya sadece rakam girilebilir (maksimum 3 karakter)</li>
+                        </ul>
+                    </li>
+                    <li>TAB tuşuna basarak "Son Kademe" alanına geçin
+                        <ul>
+                            <li>Bu alan "Son Derece" alanının hemen sağında yer alır</li>
+                            <li>Buraya sadece rakam girilebilir (maksimum 3 karakter)</li>
+                        </ul>
+                    </li>
+                    <li>Son Kademe değerini girdikten sonra TAB tuşuna basarak bir sonraki alana ilerleyin</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 6: Yasal Kod Seçimi</h4>
+                <ol>
+                    <li>"Yasal Kodu" etiketinin yanındaki açılır listeden uygun kodu seçin
+                        <ul>
+                            <li>Bu alan "Son Derece" alanının bir satır altında yer alır</li>
+                            <li>Açılır listeyi açmak için liste kutucuğunun sağındaki ok işaretine tıklayın</li>
+                            <li>Listeden uygun seçeneği tıklayarak seçin (örn: "5-Dört Yıllık Lise")</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 7: Kayıt İşlemi</h4>
+                <ol>
+                    <li>Tüm bilgileri girdikten sonra, ekranın alt kısmında yer alan "Kaydet" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton alt sıradaki butonların sol taraftan ikinci sırasında yer alır</li>
+                            <li>Kayıt işlemi gerçekleştirilecek ve ekran temizlenecektir</li>
+                            <li>Sistem otomatik olarak bir sonraki kod numarasını önerecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilecek Noktalar:</h4>
+                <ul>
+                    <li>Okul Kodu alanı zorunludur ve boş bırakılamaz</li>
+                    <li>Okul Kodu "0" olamaz</li>
+                    <li>Derece ve kademe alanlarına sadece rakam girilebilir</li>
+                    <li>Aynı koda sahip ikinci bir kayıt eklenemez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Bir önceki alana dönmek için SHIFT+TAB tuş kombinasyonunu kullanabilirsiniz</li>
+                    <li>ENTER tuşu da TAB tuşu gibi bir sonraki alana geçmenizi sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-arama" class="section">
+        <h2>Mevcut Öğrenim Durumu Kaydını Arama</h2>
+        <div class="info-box">
+            <h3>Mevcut Kayıtları Nasıl Arayabilirsiniz?</h3>
+            
+            <div class="step">
+                <h4>Direkt Okul Kodu ile Arama:</h4>
+                <ol>
+                    <li>Ekranın en üst kısmında yer alan "Okul Kodu" alanına aramak istediğiniz kaydın kodunu girin
+                        <ul>
+                            <li>Bu alan başlığın hemen altında, sol tarafta yer alır</li>
+                            <li>Kırmızı kenarlı metin kutusuna kod numarasını yazın</li>
+                        </ul>
+                    </li>
+                    <li>Kod numarasını girdikten sonra TAB tuşuna basın veya imleç ile başka bir alana tıklayın
+                        <ul>
+                            <li>Sistem otomatik olarak girilen kodu arayacaktır</li>
+                            <li>Kayıt bulunursa tüm alanlar otomatik olarak dolacaktır</li>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişecektir</li>
+                            <li>Okul Kodu alanı gri renkte ve değiştirilemez duruma gelecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Liste Üzerinden Arama:</h4>
+                <ol>
+                    <li>Ekranın orta kısmında bulunan butonlardan "Liste" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton üst sıradaki butonların en sağında yer alır</li>
+                            <li>"Önceki" ve "Sonraki" butonlarının yanındadır</li>
+                        </ul>
+                    </li>
+                    <li>Açılan pencereden istediğiniz kayda çift tıklayın
+                        <ul>
+                            <li>Liste penceresi açılacak ve mevcut tüm kayıtları gösterecektir</li>
+                            <li>Pencerede "Okul Kodu", "Açıklama", "İlk Derece", "İlk Kademe", "Son Derece", "Son Kademe" bilgileri görünecektir</li>
+                            <li>İstediğiniz kaydı bulana kadar yukarı-aşağı kaydırma çubuğunu kullanabilirsiniz</li>
+                            <li>Bulunan kayda çift tıkladığınızda, ana ekrana dönecek ve seçilen kaydın bilgileri ekrana gelecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Önceki/Sonraki Butonları ile Arama:</h4>
+                <ol>
+                    <li>Herhangi bir kaydı görüntülerken, aşağıdaki yöntemlerle diğer kayıtlara geçebilirsiniz:
+                        <ul>
+                            <li>"Önceki" butonu: Ekranın orta kısmında, ilk buton olarak yer alır. Mevcut koddan küçük bir koda sahip kaydı gösterir</li>
+                            <li>"Sonraki" butonu: "Önceki" butonunun hemen sağında yer alır. Mevcut koddan büyük bir koda sahip kaydı gösterir</li>
+                        </ul>
+                    </li>
+                    <li>Bu butonlara tıkladığınızda:
+                        <ul>
+                            <li>Sistem sırayla bir önceki veya bir sonraki kaydı getirir</li>
+                            <li>Eğer önceki veya sonraki kayıt yoksa sistem sizi bilgilendirecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Noktalar:</h4>
+                <ul>
+                    <li>Eğer aramak istediğiniz kod mevcut değilse, sistem otomatik olarak yeni kayıt moduna geçecektir</li>
+                    <li>Kayıt aramasından sonra başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişir</li>
+                    <li>Arama sırasında Okul Kodu alanının değiştirilemez durumda olduğunu unutmayın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Liste penceresinde bir sütuna tıklayarak o sütuna göre sıralama yapabilirsiniz</li>
+                    <li>Kod numarasını tam olarak bilmiyorsanız Liste penceresini kullanmanız daha kolay olacaktır</li>
+                    <li>Önceki/Sonraki butonları ile tüm kayıtlar arasında sırayla dolaşabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-duzenleme" class="section">
+        <h2>Öğrenim Durumu Kaydını Düzenleme</h2>
+        <div class="info-box">
+            <h3>Mevcut Bir Kaydı Nasıl Düzenlersiniz?</h3>
+            
+            <div class="step">
+                <h4>Adım 1: Düzenlenecek Kaydı Bulma</h4>
+                <ol>
+                    <li>Öncelikle düzenlemek istediğiniz kaydı bulun:
+                        <ul>
+                            <li>Doğrudan "Okul Kodu" alanına kodu girerek</li>
+                            <li>Ya da "Liste" butonuna tıklayarak ve listeden seçerek</li>
+                            <li>Veya "Önceki"/"Sonraki" butonlarını kullanarak</li>
+                        </ul>
+                    </li>
+                    <li>Kayıt bulunduğunda:
+                        <ul>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişecektir</li>
+                            <li>Tüm alanlar kayıttaki mevcut değerlerle dolacaktır</li>
+                            <li>Okul Kodu alanı gri renkte ve değiştirilemez durumda olacaktır</li>
+                            <li>İmleç "Açıklama" alanına konumlanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 2: Bilgileri Güncelleme</h4>
+                <ol>
+                    <li>Değiştirmek istediğiniz alanlara yeni değerleri girin:
+                        <ul>
+                            <li>"Açıklama" alanı - Okul Kodu alanının bir satır altında</li>
+                            <li>"İlk Derece" ve "İlk Kademe" alanları - Açıklama alanının bir satır altında</li>
+                            <li>"Son Derece" ve "Son Kademe" alanları - İlk Derece/Kademe alanlarının bir satır altında</li>
+                            <li>"Yasal Kodu" alanı - Son Derece/Kademe alanlarının bir satır altında</li>
+                        </ul>
+                    </li>
+                    <li>Alanlar arasında TAB tuşu ile ilerleyerek tüm değişiklikleri yapın</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 3: Değişiklikleri Kaydetme</h4>
+                <ol>
+                    <li>Tüm değişiklikleri yaptıktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton alt sıradaki butonların sol taraftan ikinci sırasında yer alır</li>
+                            <li>Güncelleme işlemi gerçekleştirilecek ve ekran temizlenecektir</li>
+                            <li>Sistem otomatik olarak bir sonraki kullanılabilir kod numarasını önerecektir</li>
+                            <li>Başlık tekrar "Öğrenim Durumu Tanımları (Giriş)" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Noktalar:</h4>
+                <ul>
+                    <li>Değişiklik modunda Okul Kodu alanı değiştirilemez</li>
+                    <li>Değişiklik yapılan tüm alanlar veri formatlarına uygun olmalıdır</li>
+                    <li>İşlem tamamlandıktan sonra sistem otomatik olarak yeni kayıt ekleme moduna geçer</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Eğer sadece bir alanı değiştirmek istiyorsanız, diğer alanlara dokunmadan TAB tuşu ile ilgili alana gidebilirsiniz</li>
+                    <li>Değişiklik yapmaktan vazgeçerseniz, "Form Temizle" butonunu kullanarak işlemi iptal edebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-silme" class="section">
+        <h2>Öğrenim Durumu Kaydını Silme</h2>
+        <div class="info-box">
+            <h3>Mevcut Bir Kaydı Nasıl Silersiniz?</h3>
+            
+            <div class="step">
+                <h4>Adım 1: Silinecek Kaydı Bulma</h4>
+                <ol>
+                    <li>Öncelikle silmek istediğiniz kaydı bulun:
+                        <ul>
+                            <li>Doğrudan "Okul Kodu" alanına kodu girerek</li>
+                            <li>Ya da "Liste" butonuna tıklayarak ve listeden seçerek</li>
+                            <li>Veya "Önceki"/"Sonraki" butonlarını kullanarak</li>
+                        </ul>
+                    </li>
+                    <li>Kayıt bulunduğunda:
+                        <ul>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişecektir</li>
+                            <li>Tüm alanlar kayıttaki mevcut değerlerle dolacaktır</li>
+                            <li>Okul Kodu alanı gri renkte ve değiştirilemez durumda olacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım 2: Silme İşlemini Gerçekleştirme</h4>
+                <ol>
+                    <li>Ekranın alt kısmında bulunan "Sil" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton alt sıradaki butonların sol taraftan üçüncü sırasında yer alır</li>
+                            <li>"Kaydet" butonunun hemen sağında bulunur</li>
+                        </ul>
+                    </li>
+                    <li>Açılan onay penceresinde "Evet" seçeneğini tıklayın
+                        <ul>
+                            <li>Sistem "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay sorusu soracaktır</li>
+                            <li>"Evet" butonuna tıkladığınızda silme işlemi gerçekleştirilecektir</li>
+                            <li>"Hayır" butonuna tıklarsanız silme işlemi iptal edilecektir</li>
+                        </ul>
+                    </li>
+                    <li>Silme işlemi tamamlandığında:
+                        <ul>
+                            <li>Kayıt sistemden silinecektir</li>
+                            <li>Ekran temizlenecektir</li>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Giriş)" olarak değişecektir</li>
+                            <li>Sistem otomatik olarak bir sonraki kullanılabilir kod numarasını önerecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz! Kayıt kalıcı olarak silinir</li>
+                    <li>Silme işlemini gerçekleştirmeden önce kaydı iyi kontrol edin</li>
+                    <li>Eğer kayıt başka tablolarda ilişkili olarak kullanılıyorsa silme işlemi yapılamayabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Silme işleminden emin değilseniz "Hayır" butonuna tıklayarak işlemi iptal edebilirsiniz</li>
+                    <li>Sistemdeki kayıtları düzenli olarak gözden geçirerek kullanılmayan kayıtları temizlemek iyi bir uygulamadır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayitlar-gezinme" class="section">
+        <h2>Kayıtlar Arası Gezinme</h2>
+        <div class="info-box">
+            <h3>Kayıtlar Arasında Nasıl Gezinirsiniz?</h3>
+            
+            <div class="step">
+                <h4>Önceki Kayıt Butonu Kullanımı</h4>
+                <ol>
+                    <li>Herhangi bir kaydı görüntülerken veya boş ekranda "Önceki" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton ekranın orta kısmında, sol taraftaki ilk buton olarak yer alır</li>
+                            <li>Mevcut görüntülenen kayıttan kod numarası olarak daha küçük olan kayda geçmenizi sağlar</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında:
+                        <ul>
+                            <li>Sistem otomatik olarak bir önceki kaydı getirir</li>
+                            <li>Eğer daha küçük numaralı kayıt yoksa "Önceki Kayıt Bulunamadı.." uyarısı görüntülenir</li>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sonraki Kayıt Butonu Kullanımı</h4>
+                <ol>
+                    <li>Herhangi bir kaydı görüntülerken veya boş ekranda "Sonraki" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton ekranın orta kısmında, "Önceki" butonunun hemen sağında yer alır</li>
+                            <li>Mevcut görüntülenen kayıttan kod numarası olarak daha büyük olan kayda geçmenizi sağlar</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında:
+                        <ul>
+                            <li>Sistem otomatik olarak bir sonraki kaydı getirir</li>
+                            <li>Eğer daha büyük numaralı kayıt yoksa "Sonraki Kayıt Bulunamadı.." uyarısı görüntülenir</li>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Liste Butonu Kullanımı</h4>
+                <ol>
+                    <li>"Liste" butonuna tıklayın
+                        <ul>
+                            <li>Bu buton ekranın orta kısmında, "Sonraki" butonunun hemen sağında yer alır</li>
+                            <li>Tüm kayıtları bir liste halinde görmenizi sağlar</li>
+                        </ul>
+                    </li>
+                    <li>Açılan listeden istediğiniz kayda çift tıklayın
+                        <ul>
+                            <li>Liste penceresindeki herhangi bir kayda çift tıkladığınızda, o kayıt ana ekrana gelecektir</li>
+                            <li>Başlık "Öğrenim Durumu Tanımları (Değişiklik)" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Noktalar:</h4>
+                <ul>
+                    <li>Kayıt görüntüleme modunda Okul Kodu alanı değiştirilemez durumdadır</li>
+                    <li>Eğer kayıt bulunamazsa, ekran boş kayıt ekleme moduna geçer</li>
+                    <li>Gezinme sırasında yapılmamış değişiklikler kaybolacaktır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm kayıtları hızlıca görmek için Liste butonu en pratik yoldur</li>
+                    <li>Kod numaralarına göre sırayla ilerlemek için Önceki/Sonraki butonlarını kullanabilirsiniz</li>
+                    <li>Boş ekranda "Önceki" butonuna tıklarsanız, sistem en büyük kod numaralı kaydı getirir</li>
+                    <li>Boş ekranda "Sonraki" butonuna tıklarsanız, sistem en küçük kod numaralı kaydı getirir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hizli-erisim" class="section">
+        <h2>Hızlı Erişim ve Kısayollar</h2>
+        <div class="info-box">
+            <h3>Kullanabileceğiniz Tuş Kombinasyonları</h3>
+            
+            <div class="step">
+                <h4>Klavye Kısayolları</h4>
+                <ol>
+                    <li>Genel Gezinme Kısayolları:
+                        <ul>
+                            <li><strong>TAB:</strong> Bir sonraki alana geçmek için kullanılır</li>
+                            <li><strong>SHIFT + TAB:</strong> Bir önceki alana geri dönmek için kullanılır</li>
+                            <li><strong>ENTER:</strong> TAB tuşu gibi çalışır, bir sonraki alana geçer</li>
+                            <li><strong>ESC:</strong> Ekrandan çıkış yapar (onay penceresi açılır)</li>
+                        </ul>
+                    </li>
+                    <li>Sayı/Metin Giriş Alanları:
+                        <ul>
+                            <li>Okul Kodu, İlk/Son Derece ve İlk/Son Kademe alanlarına sadece sayısal değer girebilirsiniz</li>
+                            <li>Açıklama alanına hem sayısal hem alfabetik karakterler girebilirsiniz</li>
+                            <li>Yasal Kod alanında sadece açılır listeden seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Buton Açıklamaları</h4>
+                <ol>
+                    <li>"Form Temizle" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın alt kısmında, sol taraftaki ilk buton</li>
+                            <li>İşlev: Ekranı temizler ve yeni kayıt ekleme moduna geçer</li>
+                            <li>Kullanım: Tüm formu sıfırlamak ve yeni kayıt eklemeye başlamak istediğinizde kullanın</li>
+                        </ul>
+                    </li>
+                    <li>"Kaydet" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın alt kısmında, "Form Temizle" butonunun sağında</li>
+                            <li>İşlev: Yeni kayıt ekler veya mevcut kaydı günceller</li>
+                            <li>Kullanım: Veri girişi tamamlandıktan sonra kullanın</li>
+                        </ul>
+                    </li>
+                    <li>"Sil" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın alt kısmında, "Kaydet" butonunun sağında</li>
+                            <li>İşlev: Mevcut görüntülenen kaydı siler</li>
+                            <li>Kullanım: Sadece değişiklik modunda (bir kayıt görüntülenirken) aktiftir</li>
+                        </ul>
+                    </li>
+                    <li>"Çıkış" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın alt kısmında, en sağdaki buton</li>
+                            <li>İşlev: Ekrandan çıkış yapar</li>
+                            <li>Kullanım: İşlemlerinizi tamamladığınızda kullanın</li>
+                        </ul>
+                    </li>
+                    <li>"Önceki" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın orta kısmında, sol taraftaki ilk buton</li>
+                            <li>İşlev: Bir önceki kayda geçer</li>
+                            <li>Kullanım: Kayıtlar arasında geriye doğru gezinmek için kullanın</li>
+                        </ul>
+                    </li>
+                    <li>"Sonraki" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın orta kısmında, "Önceki" butonunun sağında</li>
+                            <li>İşlev: Bir sonraki kayda geçer</li>
+                            <li>Kullanım: Kayıtlar arasında ileriye doğru gezinmek için kullanın</li>
+                        </ul>
+                    </li>
+                    <li>"Liste" Butonu:
+                        <ul>
+                            <li>Yer: Ekranın orta kısmında, "Sonraki" butonunun sağında</li>
+                            <li>İşlev: Tüm kayıtları liste halinde gösterir</li>
+                            <li>Kullanım: Kayıtlar arasında hızlıca gezinmek veya belirli bir kaydı bulmak için kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Verileri girerken TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Yeni kayıt ekleme sırasında, bir önceki kayıt bilgilerini görmek isterseniz "Liste" butonunu kullanabilirsiniz</li>
+                    <li>Değişiklik yapmaktan vazgeçerseniz, "Form Temizle" butonunu kullanarak işlemi iptal edebilirsiniz</li>
+                    <li>Öğrenim durumu kodlarını ardışık olarak vermeniz, kayıtları daha kolay yönetmenizi sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Kayıt Ekleme Sorunları</h4>
+                <ol>
+                    <li>Sorun: "Okul Kodu Girilmemiş!" uyarısı alıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Okul Kodu alanı zorunludur ve boş bırakılamaz. Geçerli bir kod girmelisiniz.</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: "Okul Kodu 'sıfır' olamaz.." uyarısı alıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Okul Kodu alanına 0 (sıfır) değeri girilemez. 1 ile 999 arasında bir değer girin.</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: Aynı kodu kullanarak ikinci bir kayıt eklemeye çalışıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Her kod yalnızca bir kez kullanılabilir. Farklı bir kod numarası girin veya mevcut kaydı düzenleyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kayıt Arama Sorunları</h4>
+                <ol>
+                    <li>Sorun: Aramak istediğiniz kod bulunamıyor.
+                        <ul>
+                            <li>Çözüm: Kod numarasının doğru olduğundan emin olun. "Liste" butonuna tıklayarak tüm kayıtları görebilir ve aradığınız kaydın kodunu kontrol edebilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: "Önceki Kayıt Bulunamadı.." veya "Sonraki Kayıt Bulunamadı.." uyarısı alıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Bu uyarı, daha önceki veya daha sonraki kod numarasına sahip kayıt olmadığını gösterir. Normal bir durumdur ve bir hata değildir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kaydetme Sorunları</h4>
+                <ol>
+                    <li>Sorun: Kaydet butonuna tıkladıktan sonra kayıt işlemi gerçekleşmiyor.
+                        <ul>
+                            <li>Çözüm: Zorunlu alanların (Okul Kodu) doldurulduğundan emin olun. Ayrıca, veri formatlarının uygun olduğunu kontrol edin (örneğin, derece ve kademe alanlarına sadece sayı girilmelidir).</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: Değişiklikler kaydedilmiyor.
+                        <ul>
+                            <li>Çözüm: Değişiklik modunda olduğunuzdan emin olun (başlık "Öğrenim Durumu Tanımları (Değişiklik)" olmalıdır). Ayrıca, değişiklik yaptığınız alanın veri formatına uygun olduğunu kontrol edin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Silme Sorunları</h4>
+                <ol>
+                    <li>Sorun: Sil butonuna tıkladığınızda hiçbir şey olmuyor.
+                        <ul>
+                            <li>Çözüm: Sil butonu yalnızca değişiklik modunda (bir kayıt görüntülenirken) aktiftir. Önce bir kaydı arayın ve görüntüleyin, ardından silme işlemini gerçekleştirin.</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: Silme işlemi sırasında hata alıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Silmeye çalıştığınız kayıt, sistemdeki başka tablolarda ilişkili olarak kullanılıyor olabilir. Bu durumda önce ilişkili kayıtları silmeniz gerekecektir.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Genel Sorunlar</h4>
+                <ol>
+                    <li>Sorun: Ekran yanıt vermiyor veya donuyor.
+                        <ul>
+                            <li>Çözüm: ESC tuşuna basarak ekrandan çıkmayı deneyin ve tekrar açın. Bu işe yaramazsa, programı kapatıp yeniden başlatın.</li>
+                        </ul>
+                    </li>
+                    <li>Sorun: Listede çok fazla kayıt var ve aradığınız kaydı bulmakta zorlanıyorsunuz.
+                        <ul>
+                            <li>Çözüm: Liste penceresinde, sütun başlıklarına tıklayarak kayıtları o sütuna göre sıralayabilirsiniz. Ayrıca, doğrudan Okul Kodu alanına kod numarasını yazarak belirli bir kaydı hızlıca bulabilirsiniz.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilecek Noktalar:</h4>
+                <ul>
+                    <li>Ekrandan çıkmadan önce değişiklikleri kaydettiğinizden emin olun</li>
+                    <li>Silme işlemi geri alınamaz, bu nedenle dikkatli olun</li>
+                    <li>Veri girişi yaparken doğru formatlara uyduğunuzdan emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yardımcı İpuçları:</h4>
+                <ul>
+                    <li>Düzenli olarak test kayıtları oluşturarak sistemi tanıyın</li>
+                    <li>Karmaşık bilgi girişlerinde, önce bir not kağıdına yazın, sonra sisteme girin</li>
+                    <li>Yaygın kullanılan öğrenim durumu kodlarını bir yere not edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="alan-aciklamalari" class="section">
+        <h2>Alan Açıklamaları</h2>
+        <div class="info-box">
+            <h3>Ekrandaki Alanların Açıklamaları</h3>
+            
+            <div class="step">
+                <h4>Veri Giriş Alanları</h4>
+                <ol>
+                    <li>Okul Kodu:
+                        <ul>
+                            <li>Konum: Ekranın üst kısmında, başlığın hemen altında</li>
+                            <li>Format: Sadece rakam (1-999 arası)</li>
+                            <li>Açıklama: Öğrenim durumunu tanımlayan benzersiz kod numarası</li>
+                            <li>Zorunlu alan: Evet (kırmızı kenarlı)</li>
+                        </ul>
+                    </li>
+                    <li>Açıklama:
+                        <ul>
+                            <li>Konum: Okul Kodu alanının bir satır altında</li>
+                            <li>Format: Alfanümerik (maksimum 70 karakter)</li>
+                            <li>Açıklama: Öğrenim durumunun tam adı veya açıklaması</li>
+                            <li>Zorunlu alan: Hayır</li>
+                        </ul>
+                    </li>
+                    <li>İlk Derece:
+                        <ul>
+                            <li>Konum: Açıklama alanının bir satır altında, sol tarafta</li>
+                            <li>Format: Sadece rakam (0-999 arası)</li>
+                            <li>Açıklama: Öğrenim durumu için başlangıç derece değeri</li>
+                            <li>Zorunlu alan: Hayır</li>
+                        </ul>
+                    </li>
+                    <li>İlk Kademe:
+                        <ul>
+                            <li>Konum: İlk Derece alanının sağında</li>
+                            <li>Format: Sadece rakam (0-999 arası)</li>
+                            <li>Açıklama: Öğrenim durumu için başlangıç kademe değeri</li>
+                            <li>Zorunlu alan: Hayır</li>
+                        </ul>
+                    </li>
+                    <li>Son Derece:
+                        <ul>
+                            <li>Konum: İlk Derece alanının bir satır altında, sol tarafta</li>
+                            <li>Format: Sadece rakam (0-999 arası)</li>
+                            <li>Açıklama: Öğrenim durumu için bitiş derece değeri</li>
+                            <li>Zorunlu alan: Hayır</li>
+                        </ul>
+                    </li>
+                    <li>Son Kademe:
+                        <ul>
+                            <li>Konum: Son Derece alanının sağında</li>
+                            <li>Format: Sadece rakam (0-999 arası)</li>
+                            <li>Açıklama: Öğrenim durumu için bitiş kademe değeri</li>
+                            <li>Zorunlu alan: Hayır</li>
+                        </ul>
+                    </li>
+                    <li>Yasal Kodu:
+                        <ul>
+                            <li>Konum: Son Derece alanının bir satır altında</li>
+                            <li>Format: Açılır listeden seçim</li>
+                            <li>Açıklama: Öğrenim durumunun yasal sınıflandırma kodu</li>
+                            <li>Zorunlu alan: Hayır</li>
+                            <li>Seçenekler: 1-Okuryazar, 2-İlkokul, 3-Ortaokul ve Dengi, vb.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yasal Kod Değerleri:</h4>
+                <p>Yasal Kod alanında seçebileceğiniz değerler şunlardır:</p>
+                <ul>
+                    <li>0: ---Yasal Kodu Seçiniz---</li>
+                    <li>1: 1-Okuryazar</li>
+                    <li>2: 2-İlkokul</li>
+                    <li>3: 3-Ortaokul ve Dengi</li>
+                    <li>4: 4-Lise ve Dengi</li>
+                    <li>5: 5-Dört Yıllık Lise</li>
+                    <li>6: 6-İki Yıllık Yüksekokul</li>
+                    <li>7: 7-Üç Yıllık Yüksekokul</li>
+                    <li>8: 8-Dört Yıllık Yüksekokul</li>
+                    <li>9: 9-Beş Yıllık Yüksekokul</li>
+                    <li>10: 10-6 Yıllık Yüksekokul</li>
+                    <li>11: 11-Lisansüstü Eğitim</li>
+                    <li>12: 12-Doktora</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ozet" class="section">
+        <h2>Özet ve Önemli Hatırlatmalar</h2>
+        <div class="info-box">
+            <h3>Öğrenim Durumu Tanımları Ekranı Özeti</h3>
+            
+            <div class="step">
+                <h4>Temel İşlemler</h4>
+                <ul>
+                    <li><strong>Yeni Kayıt Ekleme:</strong> Okul Kodu ve diğer bilgileri girin, Kaydet butonuna tıklayın</li>
+                    <li><strong>Kayıt Arama:</strong> Okul Kodu girin veya Liste butonunu kullanın</li>
+                    <li><strong>Kayıt Düzenleme:</strong> Önce kaydı bulun, değişiklikleri yapın, Kaydet butonuna tıklayın</li>
+                    <li><strong>Kayıt Silme:</strong> Önce kaydı bulun, Sil butonuna tıklayın, onaylayın</li>
+                    <li><strong>Kayıtlar Arası Gezinme:</strong> Önceki, Sonraki veya Liste butonlarını kullanın</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>Son Hatırlatmalar:</h4>
+                <ul>
+                    <li>Okul Kodu alanı zorunludur ve benzersiz olmalıdır</li>
+                    <li>Okul Kodu "0" değeri alamaz, 1-999 arasında bir değer olmalıdır</li>
+                    <li>Silme işlemi geri alınamaz, silmeden önce emin olun</li>
+                    <li>Değişiklik yapılan alanlar uygun veri formatlarına sahip olmalıdır</li>
+                    <li>Ekrandan çıkmadan önce değişiklikleri kaydedin</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapın</li>
+                    <li>ENTER tuşu da TAB gibi bir sonraki alana geçmenizi sağlar</li>
+                    <li>ESC tuşu ile ekrandan çıkabilirsiniz</li>
+                    <li>Kayıtları düzenli olarak kontrol ederek güncel tutun</li>
+                    <li>Öğrenim durumu kodlarını ardışık olarak vermeye çalışın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

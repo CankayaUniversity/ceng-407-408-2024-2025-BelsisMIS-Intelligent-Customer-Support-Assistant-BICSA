@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İşçi Maaş İptali Kullanıcı Kılavuzu</title>
+<style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>İşçi Maaş İptali</h1>
+    <img src="/api/placeholder/200/50" alt="Şirket Logosu">
+</div>
+
+<div class="section">
+    <h1>İşçi Maaş İptali Kullanıcı Kılavuzu</h1>
+    <p>Bu kılavuz, İşçi Maaş İptali ekranının kullanımını adım adım anlatmaktadır. Bu ekran, belirli kriterlere göre seçilen işçilerin maaş kayıtlarını iptal etmenize yardımcı olur.</p>
+</div>
+
+<div class="section">
+    <h2>1. Ekran Genel Görünümü</h2>
+    <p>İşçi Maaş İptali ekranı açıldığında karşınıza aşağıdaki bölümlerden oluşan bir form gelecektir:</p>
+    
+    <div class="info-box">
+        <p>Ekranın en üst kısmında mavi-turkuaz renkli bir başlık çubuğunda "<strong>İşçi Maaş İptali</strong>" yazısı görünecektir.</p>
+    </div>
+    
+    <p>Form aşağıdaki bölümlerden oluşmaktadır:</p>
+    <ul>
+        <li><strong>Başlangıç ve Bitiş sütunları:</strong> Ekranın üst kısmında "Başlangıç" ve "Bitiş" yazan iki sütun başlığı göreceksiniz.</li>
+        <li><strong>Sicil No aralığı:</strong> Ekranın üst kısmında, başlangıç ve bitiş kutucuklarını içeren ilk satır.</li>
+        <li><strong>Yıl/Ay seçimi:</strong> İkinci satırda, başlangıç sütunu altında yer alan Yıl ve Ay kutucukları.</li>
+        <li><strong>Bölüm seçim listesi:</strong> Ekranın orta kısmında, geniş bir liste kutusu.</li>
+        <li><strong>Sicil Tipi seçim listesi:</strong> Bölüm seçiminin hemen altında yer alan liste kutusu.</li>
+        <li><strong>Maaş Tipi seçim listesi:</strong> Sicil Tipi seçiminin altında yer alan liste kutusu.</li>
+        <li><strong>"Puantajlar Silinsin" seçeneği:</strong> Maaş Tipi seçiminin altında yer alan onay kutusu.</li>
+        <li><strong>İşlem butonları:</strong> Ekranın en alt kısmında, ortada yan yana yer alan "Sil" ve "Çıkış" butonları.</li>
+    </ul>
+    
+    <div class="info-box">
+        <p>Tüm bu bileşenler, gri renkli, dikdörtgen şeklinde bir form içerisinde yer almaktadır. Form içindeki metin renkleri siyah, başlık kısmı ise turkuaz renktedir.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>2. Formu Doldurma</h2>
+
+    <div class="step">
+        <h3>Adım 1: Sicil No Aralığını Belirleme</h3>
+        <p>Ekranın üst kısmında, "Sicil No" satırında iki kutucuk göreceksiniz:</p>
+        <ul>
+            <li><strong>Başlangıç Sicil No:</strong> Sol tarafta, "Başlangıç" sütunu altındaki kutucuğa maaş iptali yapılacak işçilerin başlangıç sicil numarasını yazınız. Eğer boş bırakırsanız otomatik olarak "0" değeri atanacaktır.</li>
+            <li><strong>Bitiş Sicil No:</strong> Sağ tarafta, "Bitiş" sütunu altındaki kutucuğa maaş iptali yapılacak işçilerin bitiş sicil numarasını yazınız. Eğer boş bırakırsanız otomatik olarak "999999999" değeri atanacaktır.</li>
+        </ul>
+        <div class="tip-box">
+            <p>Sadece tek bir işçinin maaşını iptal etmek istiyorsanız, hem başlangıç hem de bitiş sicil no kısmına aynı sicil numarasını yazabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Adım 2: Yıl ve Ay Belirleme</h3>
+        <p>Ekranın ikinci satırında, "Yıl / Ay" kısmında:</p>
+        <ul>
+            <li><strong>Yıl:</strong> Sol taraftaki ilk kutucuğa iptal edilecek maaşın ait olduğu yılı yazınız (örneğin 2025). Bu kutucuk küçüktür ve sadece 4 rakam girişine izin verir. Eğer boş bırakırsanız, içinde bulunduğunuz yıl otomatik olarak yazılacaktır.</li>
+            <li><strong>/</strong> İşareti kutucuklar arasında bulunur ve sabit olarak ekranda yer alır, değiştirilemez.</li>
+            <li><strong>Ay:</strong> Sağ taraftaki ikinci kutucuğa iptal edilecek maaşın ait olduğu ayı yazınız (1-12 arası bir sayı). Bu kutucuk çok küçüktür ve sadece 2 rakam girişine izin verir. Eğer boş bırakırsanız, içinde bulunduğunuz ay otomatik olarak yazılacaktır.</li>
+        </ul>
+        <div class="info-box">
+            <p>Ay bilgisini girerken tek haneli aylar için başa sıfır koymanıza gerek yoktur. Örneğin Ocak ayı için "1", Şubat ayı için "2" yazabilirsiniz.</p>
+        </div>
+        <div class="warning-box">
+            <p><strong>Dikkat:</strong> Ekran sadece belirtilen yıl ve aya ait maaşları iptal edecektir. Kilitlenmiş maaş dönemlerinde iptal işlemi yapılamaz. Sistem, girdiğiniz yıl ve ay bilgisine göre maaş döneminin kilitli olup olmadığını otomatik olarak kontrol edecektir.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Adım 3: Bölüm Seçimi</h3>
+        <p>Ekranın ortasında yer alan "Bölüm" başlığının altındaki dikdörtgen liste kutusunda şirketinizdeki tüm bölümler listelenmektedir. Bu liste kutusu geniş ve dikdörtgen şeklindedir ve içinde kaydırma çubuğu vardır. Bu listeden maaşları iptal edilecek işçilerin çalıştığı bölüm veya bölümleri seçiniz.</p>
+        
+        <p>Bölüm liste kutusu, "Sicil No" ve "Yıl/Ay" satırlarının hemen altında yer alır ve genellikle ekranın sol tarafındaki "Bölüm" yazısının karşısında konumlanmıştır. Liste kutusunun yüksekliği, ekranda aynı anda 4 bölüm gösterecek şekilde ayarlanmıştır.</p>
+        
+        <p>Birden fazla bölüm seçmek için:</p>
+        <ul>
+            <li>Klavyenizden CTRL tuşunu basılı tutarak fare ile istediğiniz bölümleri tek tek seçebilirsiniz. Seçilen bölümler mavi renkte vurgulanacaktır.</li>
+            <li>Ardışık bölümleri seçmek için SHIFT tuşunu basılı tutarak ilk ve son bölümü seçebilirsiniz. Bu durumda o iki bölüm arasındaki tüm bölümler de seçilmiş olacaktır.</li>
+            <li>Tüm bölümleri seçmek isterseniz, liste kutusuna tıklayıp CTRL+A tuşlarına basabilirsiniz.</li>
+        </ul>
+        
+        <div class="tip-box">
+            <p>Seçim yaparken, seçtiğiniz bölümlerin mavi renkle vurgulandığından emin olun. Seçimi iptal etmek için CTRL tuşunu basılı tutarak seçili bölüme tekrar tıklayabilirsiniz.</p>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Önemli:</strong> En az bir bölüm seçmelisiniz, aksi halde "Bölüm Seçiniz" uyarısını alacak ve işleme devam edemeyeceksiniz. Bu liste çoklu seçime (multiple selection) imkan tanır, yani aynı anda birden fazla bölüm seçebilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Adım 4: Sicil Tipi Seçimi</h3>
+        <p>"Sicil Tipi" başlığının altındaki liste kutusunda tanımlı sicil tipleri listelenmektedir. Bu liste kutusu, Bölüm seçimi liste kutusunun hemen altında yer alır ve aynı genişliktedir. Sicil tipleri bu listede alt alta sıralanmıştır. Bu listeden iptal edilecek maaşların ait olduğu sicil tipini veya tiplerini seçiniz.</p>
+        
+        <p>Sicil tipi liste kutusu, ekranın orta bölümünde, "Bölüm" liste kutusunun tam altında yer almaktadır ve genellikle ekranın sol tarafındaki "Sicil Tipi" yazısının karşısında konumlanmıştır. Liste kutusunun yüksekliği, ekranda aynı anda 4 sicil tipi gösterecek şekilde ayarlanmıştır.</p>
+        
+        <p>Sicil tipi örnekleri şunlar olabilir:</p>
+        <ul>
+            <li>Kadrolu</li>
+            <li>Sözleşmeli</li>
+            <li>Geçici</li>
+            <li>Stajyer</li>
+            <li>vb.</li>
+        </ul>
+        
+        <p>Birden fazla sicil tipi seçmek için Bölüm seçiminde anlatılan adımları uygulayabilirsiniz:</p>
+        <ul>
+            <li>Klavyenizden CTRL tuşunu basılı tutarak fare ile istediğiniz sicil tiplerini tek tek seçebilirsiniz. Seçilen sicil tipleri mavi renkte vurgulanacaktır.</li>
+            <li>Ardışık sicil tiplerini seçmek için SHIFT tuşunu basılı tutarak ilk ve son sicil tipini seçebilirsiniz.</li>
+            <li>Tüm sicil tiplerini seçmek isterseniz, liste kutusuna tıklayıp CTRL+A tuşlarına basabilirsiniz.</li>
+        </ul>
+        
+        <div class="warning-box">
+            <p><strong>Önemli:</strong> En az bir sicil tipi seçmelisiniz, aksi halde işlemi onayladığınızda "Sicil Tipi Seçiniz" uyarısını alacak ve işleme devam edemeyeceksiniz. Bu liste de çoklu seçime (multiple selection) imkan tanır.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Adım 5: Maaş Tipi Seçimi</h3>
+        <p>"Maaş Tipi" başlığının altındaki liste kutusunda tanımlı maaş tipleri listelenmektedir. Bu liste kutusu, Sicil Tipi seçimi liste kutusunun hemen altında yer alır ve diğer liste kutularıyla aynı genişliktedir. Maaş tipleri bu listede alt alta sıralanmıştır. Bu listeden iptal edilecek maaş tipini veya tiplerini seçiniz.</p>
+        
+        <p>Maaş tipi liste kutusu, ekranın orta bölümünde, "Sicil Tipi" liste kutusunun tam altında yer almaktadır ve genellikle ekranın sol tarafındaki "Maaş Tipi" yazısının karşısında konumlanmıştır. Liste kutusunun yüksekliği, ekranda aynı anda 4 maaş tipi gösterecek şekilde ayarlanmıştır.</p>
+        
+        <p>Maaş tipi örnekleri şunlar olabilir:</p>
+        <ul>
+            <li>Normal Maaş</li>
+            <li>İkramiye</li>
+            <li>Avans</li>
+            <li>Fazla Mesai</li>
+            <li>vb.</li>
+        </ul>
+        
+        <p>Birden fazla maaş tipi seçmek için Bölüm seçiminde anlatılan adımları uygulayabilirsiniz:</p>
+        <ul>
+            <li>Klavyenizden CTRL tuşunu basılı tutarak fare ile istediğiniz maaş tiplerini tek tek seçebilirsiniz. Seçilen maaş tipleri mavi renkte vurgulanacaktır.</li>
+            <li>Ardışık maaş tiplerini seçmek için SHIFT tuşunu basılı tutarak ilk ve son maaş tipini seçebilirsiniz.</li>
+            <li>Tüm maaş tiplerini seçmek isterseniz, liste kutusuna tıklayıp CTRL+A tuşlarına basabilirsiniz.</li>
+        </ul>
+        
+        <div class="tip-box">
+            <p>Farklı maaş tipleri seçerken dikkatli olun. Örneğin, sadece normal maaşları iptal etmek istiyorsanız, sadece "Normal Maaş" tipini seçin. Eğer ikramiyeleri de iptal etmek istiyorsanız, "İkramiye" tipini de seçmeniz gerekir.</p>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Önemli:</strong> En az bir maaş tipi seçmelisiniz, aksi halde işlemi onayladığınızda "Maaş Tipi Seçiniz" uyarısını alacak ve işleme devam edemeyeceksiniz. Bu liste de çoklu seçime (multiple selection) imkan tanır.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Adım 6: Puantaj Silme Seçeneği</h3>
+        <p>Ekranın alt kısmında, Maaş Tipi liste kutusunun hemen altında, sol tarafta "Puantajlar Silinsin" yazısı ve yanında küçük bir kare şeklinde onay kutusu bulunmaktadır:</p>
+        <ul>
+            <li>Eğer bu kutucuğu işaretlerseniz (kutucuğa tıklayarak içine çarpı işareti koyarsanız), maaş kaydı ile birlikte ilgili puantaj kayıtları da silinecektir.</li>
+            <li>Eğer bu kutucuğu işaretlemezseniz (kutucuk boş kalırsa), sadece maaş kaydı silinecek, puantaj kayıtları sistemde kalacaktır.</li>
+        </ul>
+        
+        <div class="info-box">
+            <p><strong>Puantaj Nedir?</strong> Puantaj, işçilerin çalışma saatleri, fazla mesaileri, izinleri ve diğer ücret hesaplamalarına temel oluşturan kayıtlardır. Bu kayıtlar, maaş hesaplamalarında kullanılır ve işçinin o ay içindeki çalışma durumunu detaylı olarak gösterir.</p>
+        </div>
+        
+        <div class="tip-box">
+            <p><strong>Ne Zaman İşaretlenmeli?</strong> Eğer puantaj kayıtlarında hata varsa ve tamamen silmek istiyorsanız bu kutucuğu işaretleyin. Ancak yalnızca maaşı iptal edip, puantaj bilgisini korumak ve daha sonra bu puantaj bilgilerine dayanarak yeni bir maaş hesaplaması yapmak istiyorsanız, bu kutucuğu işaretlemeyin.</p>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Dikkat:</strong> Puantaj kayıtları silindiğinde, o döneme ait tüm çalışma bilgileri (mesai saatleri, izinler vb.) kaybolacaktır. Eğer ileride bu bilgilere ihtiyaç duyacaksanız, puantaj kayıtlarını silmeden sadece maaş iptali yapmayı tercih ediniz.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>3. İşlemleri Gerçekleştirme</h2>
+    
+    <div class="step">
+        <h3>Maaş İptal İşlemini Başlatma</h3>
+        <p>Tüm seçimlerinizi yaptıktan sonra, ekranın alt kısmında bulunan düğmeleri kullanarak işlemlerinizi gerçekleştirebilirsiniz:</p>
+        <ul>
+            <li><strong>Sil düğmesi:</strong> Ekranın en alt kısmında, ortada biraz sol tarafta yer alan düğmedir. Üzerinde "Sil" yazısı ve genellikle kırmızı bir X simgesi bulunur. Bu düğmeye tıkladığınızda, belirlediğiniz kriterlere göre maaş iptal işlemi başlatılacaktır.</li>
+            <li><strong>Çıkış düğmesi:</strong> Sil düğmesinin sağ tarafında yer alır ve üzerinde "Çıkış" yazısı bulunur. Bu düğmeye tıkladığınızda İşçi Maaş İptali ekranı kapanacak ve bir önceki ekrana döneceksiniz.</li>
+        </ul>
+        
+        <p>Sil düğmesine tıklamadan önce şu kontrolleri yapmış olmanız gerekir:</p>
+        <ol>
+            <li>Sicil No aralığını doğru girdiğinizden emin olun.</li>
+            <li>Yıl ve ay bilgisinin doğru olduğundan emin olun.</li>
+            <li>En az bir bölüm seçtiğinizden emin olun.</li>
+            <li>En az bir sicil tipi seçtiğinizden emin olun.</li>
+            <li>En az bir maaş tipi seçtiğinizden emin olun.</li>
+            <li>Puantaj kayıtlarının silinip silinmeyeceğine karar verin ve ona göre "Puantajlar Silinsin" kutucuğunu işaretleyin veya boş bırakın.</li>
+        </ol>
+        
+        <div class="warning-box">
+            <p><strong>Dikkat:</strong> Sil düğmesine bastığınızda "Bu İşlem Sonunda İlgili Maaşlar Silinecektir..! Devam Etmek İstiyor musunuz?" şeklinde bir onay mesajı içeren bir diyalog kutusu açılacaktır. Bu mesaj kutusunda iki seçenek vardır:</p>
+            <ul>
+                <li><strong>Evet:</strong> İşleme devam etmek ve maaş kayıtlarını silmek için bu seçeneği tıklayın.</li>
+                <li><strong>Hayır:</strong> İşlemi iptal etmek ve önceki ekrana dönmek için bu seçeneği tıklayın.</li>
+            </ul>
+            <p>Bu işlem geri alınamaz! Eğer "Evet" seçeneğini tıklarsanız, belirlediğiniz kriterlere uyan tüm maaş kayıtları (ve eğer seçtiyseniz puantaj kayıtları) kalıcı olarak silinecektir. İşlemi onaylamadan önce seçimlerinizi bir kez daha gözden geçirmeniz önerilir.</p>
+        </div>
+        
+        <div class="info-box">
+            <p>İşlem başladığında ekranda "Lütfen Bekleyiniz..." yazılı bir mesaj görünecektir. İşlem tamamlandığında, bu mesaj kaybolacak ve forma geri döneceksiniz. İşlemin başarılı olup olmadığını ekranın üst kısmında görüntülenecek mesajdan anlayabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <h3>Ekrandan Çıkış Yapma</h3>
+        <p>İşlemlerinizi tamamladıktan sonra ekrandan çıkmak için:</p>
+        <ul>
+            <li><strong>Çıkış düğmesi:</strong> Ekranın alt kısmında, Sil düğmesinin sağında yer alan düğmedir. Bu düğmeye tıkladığınızda İşçi Maaş İptali ekranı kapanacak ve bir önceki ekrana döneceksiniz.</li>
+        </ul>
+        <p>Ayrıca, klavyenizden ESC (Escape) tuşuna basarak da ekrandan çıkış yapabilirsiniz.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>4. Önemli Bilgiler ve Uyarılar</h2>
+    
+    <div class="warning-box">
+        <h3>Kilitli Dönemler</h3>
+        <p>Maaş dönemleri kilitlendiğinde o döneme ait maaş iptali yapılamaz. Yıl ve ay bilgisini girdiğinizde sistem ilgili dönemin kilitli olup olmadığını otomatik olarak kontrol eder. Eğer dönem kilitli ise "Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!" uyarısını içeren bir mesaj kutusu açılacaktır.</p>
+        
+        <p>Bu mesaj kutusu açıldığında:</p>
+        <ul>
+            <li>Mesaj kutusunu kapatmak için "Tamam" düğmesine basınız.</li>
+            <li>Daha sonra, ya farklı bir yıl/ay seçiniz ya da sistem yöneticinizden ilgili maaş döneminin kilidinin açılmasını talep ediniz.</li>
+        </ul>
+        
+        <p>Maaş dönemleri genellikle maaş ödemeleri tamamlandıktan ve resmi kayıtlar oluşturulduktan sonra kilitlenir. Bu, hatalı değişiklikleri önlemek için bir güvenlik önlemidir.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Filtreleme Mantığı</h3>
+        <p>Sistem, girdiğiniz tüm kriterleri "VE" mantığıyla değerlendirir. Yani seçtiğiniz sicil numarası aralığında, belirttiğiniz yıl/ay döneminde, seçtiğiniz bölüm(ler)de, seçtiğiniz sicil tip(ler)inde ve seçtiğiniz maaş tip(ler)inde olan kayıtlar iptal edilecektir.</p>
+        
+        <p>Örnek olarak:</p>
+        <ul>
+            <li>Sicil No aralığını 1000-2000 olarak belirlediyseniz,</li>
+            <li>Yıl/Ay olarak 2025/02 (Şubat 2025) seçtiyseniz,</li>
+            <li>Bölüm olarak "Üretim" ve "Bakım" seçtiyseniz,</li>
+            <li>Sicil Tipi olarak "Kadrolu" seçtiyseniz,</li>
+            <li>Maaş Tipi olarak "Normal Maaş" seçtiyseniz,</li>
+        </ul>
+        
+        <p>Sistem, sicil numarası 1000 ile 2000 arasında olan VE Şubat 2025 dönemine ait VE Üretim VEYA Bakım bölümlerinde çalışan VE Kadrolu statüsünde olan VE Normal Maaş alan işçilerin maaş kayıtlarını iptal edecektir.</p>
+        
+        <p>Yani bir kaydın iptal edilmesi için, belirttiğiniz TÜM kriterlere uyması gerekir. Eğer herhangi bir kriter uyuşmazsa, o kayıt iptal edilmeyecektir.</p>
+    </div>
+
+    <div class="tip-box">
+        <h3>Verimli Kullanım İpuçları</h3>
+        <ul>
+            <li>İşlem yapmadan önce tüm seçimlerinizi dikkatlice kontrol ediniz.</li>
+            <li>Çok sayıda kaydı silmek yerine, mümkünse işlemi daha küçük gruplar halinde yapmayı tercih ediniz.</li>
+            <li>Puantaj kayıtlarını silmeden önce, ileride bu kayıtlara ihtiyacınız olup olmayacağını değerlendiriniz.</li>
+            <li>Maaş iptali sonrasında ilgili personelin maaş çeklerinin de iptal edilmesi gerektiğini unutmayınız.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h2>5. Sık Sorulan Sorular</h2>
+    
+    <div class="info-box">
+        <h3>S: Yanlışlıkla maaş iptali yaptım, geri alabilir miyim?</h3>
+        <p>C: Hayır, maaş iptali işlemi geri alınamaz. Bu nedenle onay mesajında "Evet" seçeneğini tıklamadan önce emin olmalısınız. Yanlışlıkla silinen maaşları tekrar hesaplatmanız gerekecektir.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>S: Puantaj kayıtlarını silmeden maaş iptali yaparsam ne olur?</h3>
+        <p>C: Sadece maaş kayıtları silinir, puantaj kayıtları sistemde kalır. Bu sayede aynı dönem için tekrar maaş hesaplaması yapabilirsiniz.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>S: Birden fazla bölüm, sicil tipi veya maaş tipi seçebilir miyim?</h3>
+        <p>C: Evet, klavyenizden CTRL tuşunu basılı tutarak fare ile istediğiniz seçenekleri işaretleyebilirsiniz.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>S: Neden bazı dönemlerde maaş iptali yapamıyorum?</h3>
+        <p>C: Maaş dönemi kilitlenmişse o döneme ait maaş iptali yapılamaz. Böyle bir durumda sistem sizi "Maaş Dönemi Kilitli" mesajıyla uyaracaktır.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>6. Yardım ve Destek</h2>
+    <p>Bu kılavuzda yer almayan sorularınız veya karşılaştığınız sorunlar için lütfen IT Destek ekibi ile iletişime geçiniz.</p>
+    <div class="info-box">
+        <p><strong>IT Destek:</strong> Dahili hat: 1234</p>
+        <p><strong>E-posta:</strong> it.destek@sirketiniz.com</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>7. Veri Giriş İpuçları ve Kısayollar</h2>
+    
+    <div class="tip-box">
+        <h3>Form Üzerinde Dolaşma</h3>
+        <ul>
+            <li><strong>TAB Tuşu:</strong> Formda bir sonraki alana geçmek için kullanabilirsiniz.</li>
+            <li><strong>SHIFT+TAB:</strong> Formda bir önceki alana geri dönmek için kullanabilirsiniz.</li>
+            <li><strong>ENTER Tuşu:</strong> Bu sistemde ENTER tuşu TAB tuşu gibi davranır ve bir sonraki alana geçmenizi sağlar.</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <h3>Liste Kutularını Kullanma</h3>
+        <ul>
+            <li><strong>Yukarı/Aşağı Ok Tuşları:</strong> Liste kutusunda yukarı veya aşağı hareket etmek için kullanabilirsiniz.</li>
+            <li><strong>İlk Harf:</strong> Liste kutusunda bir harfe basarsanız, o harfle başlayan ilk öğeye gidersiniz.</li>
+            <li><strong>CTRL+A:</strong> Listedeki tüm öğeleri seçmek için kullanabilirsiniz.</li>
+            <li><strong>CTRL+Tıklama:</strong> Çoklu seçim için bir öğeyi seçili ise seçimden çıkarmak, seçili değilse seçime eklemek için kullanabilirsiniz.</li>
+            <li><strong>SHIFT+Tıklama:</strong> İki öğe arasındaki tüm öğeleri seçmek için kullanabilirsiniz.</li>
+        </ul>
+    </div>
+    
+    <div class="tip-box">
+        <h3>Sayısal Giriş Alanları</h3>
+        <ul>
+            <li>Sicil No, Yıl ve Ay alanlarına sadece rakam girebilirsiniz.</li>
+            <li>Yıl için 4 rakam (örn. 2025), Ay için 1 veya 2 rakam (örn. 2 veya 02) girmeniz yeterlidir.</li>
+            <li>Sicil No alanlarına başında sıfır olan numaralar girerken, başındaki sıfırları yazmak zorunda değilsiniz.</li>
+            <li>Formdaki tüm sayısal alanlarda sağa hizalı yazı görüntülenecektir.</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>Hata Mesajları ve Çözümleri</h3>
+        <table>
+            <tr>
+                <th>Hata Mesajı</th>
+                <th>Olası Neden</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>"Bölüm Seçiniz"</td>
+                <td>Hiçbir bölüm seçilmemiş</td>
+                <td>Bölüm listesinden en az bir bölüm seçin</td>
+            </tr>
+            <tr>
+                <td>"Sicil Tipi Seçiniz"</td>
+                <td>Hiçbir sicil tipi seçilmemiş</td>
+                <td>Sicil Tipi listesinden en az bir sicil tipi seçin</td>
+            </tr>
+            <tr>
+                <td>"Maaş Tipi Seçiniz"</td>
+                <td>Hiçbir maaş tipi seçilmemiş</td>
+                <td>Maaş Tipi listesinden en az bir maaş tipi seçin</td>
+            </tr>
+            <tr>
+                <td>"Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!"</td>
+                <td>Seçilen yıl/ay dönemi ya sistemde tanımlı değil ya da kilitli</td>
+                <td>Farklı bir yıl/ay dönemi seçin veya sistem yöneticinize başvurun</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>8. Örnek Senaryolar</h2>
+    
+    <div class="step">
+        <h3>Senaryo 1: Belirli Bir İşçinin Maaşını İptal Etme</h3>
+        <ol>
+            <li>İşçi Maaş İptali ekranını açın.</li>
+            <li>Başlangıç Sicil No kutucuğuna işçinin sicil numarasını yazın (örneğin 12345).</li>
+            <li>Bitiş Sicil No kutucuğuna da aynı sicil numarasını yazın (12345).</li>
+            <li>Yıl kutucuğuna ilgili yılı (örneğin 2025) yazın.</li>
+            <li>Ay kutucuğuna ilgili ayı (örneğin 2) yazın.</li>
+            <li>Bölüm listesinden işçinin çalıştığı bölümü seçin.</li>
+            <li>Sicil Tipi listesinden işçinin sicil tipini seçin.</li>
+            <li>Maaş Tipi listesinden iptal edilecek maaş tipini seçin.</li>
+            <li>Eğer puantaj kayıtlarını da silmek istiyorsanız, "Puantajlar Silinsin" kutucuğunu işaretleyin.</li>
+            <li>Sil düğmesine tıklayın.</li>
+            <li>Açılan onay kutusunda "Evet" seçeneğini tıklayın.</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h3>Senaryo 2: Belirli Bir Bölümdeki Tüm İşçilerin Maaşlarını İptal Etme</h3>
+        <ol>
+            <li>İşçi Maaş İptali ekranını açın.</li>
+            <li>Sicil No alanlarını boş bırakın (tüm sicil numaraları dahil edilecektir).</li>
+            <li>Yıl kutucuğuna ilgili yılı yazın.</li>
+            <li>Ay kutucuğuna ilgili ayı yazın.</li>
+            <li>Bölüm listesinden sadece istediğiniz bölümü seçin (örneğin "Üretim").</li>
+            <li>Sicil Tipi listesinden tüm sicil tiplerini seçin (CTRL+A ile).</li>
+            <li>Maaş Tipi listesinden tüm maaş tiplerini seçin (CTRL+A ile).</li>
+            <li>Puantaj kayıtlarını da silmek istiyorsanız, "Puantajlar Silinsin" kutucuğunu işaretleyin.</li>
+            <li>Sil düğmesine tıklayın.</li>
+            <li>Açılan onay kutusunda "Evet" seçeneğini tıklayın.</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h3>Senaryo 3: Belirli Bir Maaş Tipini İptal Etme (Örneğin İkramiye)</h3>
+        <ol>
+            <li>İşçi Maaş İptali ekranını açın.</li>
+            <li>Sicil No alanlarını boş bırakın (tüm sicil numaraları dahil edilecektir).</li>
+            <li>Yıl kutucuğuna ilgili yılı yazın.</li>
+            <li>Ay kutucuğuna ilgili ayı yazın.</li>
+            <li>Bölüm listesinden tüm bölümleri seçin (CTRL+A ile).</li>
+            <li>Sicil Tipi listesinden tüm sicil tiplerini seçin (CTRL+A ile).</li>
+            <li>Maaş Tipi listesinden sadece "İkramiye" seçeneğini seçin.</li>
+            <li>Puantaj kayıtlarını da silmek istiyorsanız, "Puantajlar Silinsin" kutucuğunu işaretleyin.</li>
+            <li>Sil düğmesine tıklayın.</li>
+            <li>Açılan onay kutusunda "Evet" seçeneğini tıklayın.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="section">
+    <h2>9. Ekran Mesajları ve Anlamları</h2>
+    
+    <p>İşçi Maaş İptali ekranını kullanırken karşılaşabileceğiniz çeşitli mesajlar ve anlamları aşağıda açıklanmıştır:</p>
+    
+    <table>
+        <tr>
+            <th>Mesaj</th>
+            <th>Anlam</th>
+            <th>Yapılması Gereken</th>
+        </tr>
+        <tr>
+            <td>"Bölüm Seçiniz"</td>
+            <td>Hiçbir bölüm seçilmeden Sil düğmesine basıldığında görünür.</td>
+            <td>Bölüm listesinden en az bir bölüm seçin.</td>
+        </tr>
+        <tr>
+            <td>"Sicil Tipi Seçiniz"</td>
+            <td>Hiçbir sicil tipi seçilmeden Sil düğmesine basıldığında görünür.</td>
+            <td>Sicil Tipi listesinden en az bir sicil tipi seçin.</td>
+        </tr>
+        <tr>
+            <td>"Maaş Tipi Seçiniz"</td>
+            <td>Hiçbir maaş tipi seçilmeden Sil düğmesine basıldığında görünür.</td>
+            <td>Maaş Tipi listesinden en az bir maaş tipi seçin.</td>
+        </tr>
+        <tr>
+            <td>"Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!"</td>
+            <td>Seçilen yıl/ay dönemi ya sistemde tanımlı değil ya da kilitlidir.</td>
+            <td>Farklı bir yıl/ay dönemi seçin veya sistem yöneticinizden kilidi açmasını isteyin.</td>
+        </tr>
+        <tr>
+            <td>"Bu İşlem Sonunda İlgili Maaşlar Silinecektir..! Devam Etmek İstiyor musunuz?"</td>
+            <td>Sil düğmesine bastıktan sonra görünen onay mesajıdır.</td>
+            <td>"Evet" seçeneğini tıklarsanız işlem devam eder, "Hayır" seçeneğini tıklarsanız iptal edilir.</td>
+        </tr>
+        <tr>
+            <td>"Lütfen Bekleyiniz..."</td>
+            <td>İşlem devam ederken görünen bilgi mesajıdır.</td>
+            <td>İşlem tamamlanana kadar bekleyin.</td>
+        </tr>
+    </table>
+    
+    <div class="info-box">
+        <h3>Teknik Hata Mesajları</h3>
+        <p>Sistemde nadiren teknik hata mesajları görünebilir. Bu mesajlar genellikle teknik terimler içerir ve sistem yöneticileri için anlam taşır. Böyle bir mesajla karşılaşırsanız:</p>
+        <ol>
+            <li>Mesajın içeriğini not alın veya ekran görüntüsünü kaydedin.</li>
+            <li>IT Destek ekibi ile iletişime geçin ve bu bilgileri paylaşın.</li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

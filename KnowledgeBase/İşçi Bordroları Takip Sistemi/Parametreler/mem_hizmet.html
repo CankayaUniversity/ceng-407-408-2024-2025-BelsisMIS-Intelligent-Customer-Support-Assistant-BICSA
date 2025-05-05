@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmet Sınıfı Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hizmet Sınıfı Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+            <li><a href="#kayit-islemleri">Hizmet Sınıfı Kayıt İşlemleri</a></li>
+            <li><a href="#gezinme">Gezinme ve Kayıt Arama İşlemleri</a></li>
+            <li><a href="#ozel-butonlar">Özel İşlem Butonları</a></li>
+            <li><a href="#hata-mesajlari">Hata Mesajları ve Sorun Giderme</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Hizmet Sınıfı modülü, sistemdeki hizmet sınıflarının tanımlanması, güncellenmesi ve yönetilmesi için kullanılan bir araçtır. Bu program ile şu işlemleri gerçekleştirebilirsiniz:</p>
+        <ul>
+            <li>Yeni hizmet sınıfı tanımlama</li>
+            <li>Mevcut hizmet sınıflarını düzenleme</li>
+            <li>Hizmet sınıflarını silme</li>
+            <li>Kayıtlar arasında gezinme ve arama</li>
+        </ul>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olmanız gerekir:</p>
+            <ul>
+                <li>Hizmet sınıfı kodu (numerik değer)</li>
+                <li>Hizmet sınıfı adı</li>
+                <li>Hizmet kodu</li>
+                <li>Yasal kod bilgisi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "Hizmet Sınıfı (Giriş)" veya "Hizmet Sınıfı (Değişiklik)" başlığı yer alır</li>
+                        <li>Başlık, yeni kayıt ekleme veya mevcut kayıt üzerinde değişiklik yapma durumuna göre otomatik olarak değişir</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                        <li>Bu bölümde hizmet sınıfı ile ilgili tüm bilgilerin girilebileceği form alanları yer alır</li>
+                        <li>Form alanları iki sütunlu bir tablo içinde düzenlenmiştir</li>
+                        <li>Sol sütunda alan adları, sağ sütunda veri giriş kutuları bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, veri giriş alanlarının altında yer alır</li>
+                        <li>İki satır halinde düzenlenmiş butonlar mevcuttur</li>
+                        <li>Üst satırda gezinme butonları (İlk, Önceki, Sonraki, Son, Kayıt Penceresi) bulunur</li>
+                        <li>Alt satırda işlem butonları (Formu Temizle, Kaydet, Sil, Çıkış) yer alır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında:</p>
+            <ul>
+                <li>Ekran başlığı "Hizmet Sınıfı (Giriş)" olarak gelir</li>
+                <li>İmleç "Hizmet Sınıfı" alanında konumlanır</li>
+                <li>Tüm alanlar boş olarak başlar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="veri-alanlari" class="section">
+    <h2>Veri Giriş Alanları</h2>
+    <div class="info-box">
+        <h3>Hizmet Sınıfı Formu Ana Alanları</h3>
+        
+        <div class="step">
+            <h4>Hizmet Sınıfı ile İlgili Temel Alanlar:</h4>
+            <ol>
+                <li><strong>Hizmet Sınıfı:</strong>
+                    <ul>
+                        <li>Formun en üst kısmında, ilk veri giriş alanıdır</li>
+                        <li>Sol tarafta "Hizmet Sınıfı" etiketi, sağ tarafta sayısal veri girişi yapılan metin kutusu bulunur</li>
+                        <li>Maksimum 5 rakam girebilirsiniz</li>
+                        <li>Bu alan zorunludur ve benzersiz bir değer olmalıdır</li>
+                    </ul>
+                </li>
+                <li><strong>Hizmet Adı:</strong>
+                    <ul>
+                        <li>Hizmet Sınıfı alanının hemen alt satırında yer alır</li>
+                        <li>Sol tarafta "Hizmet Adı" etiketi, sağ tarafta metin girişi yapılan kutu bulunur</li>
+                        <li>Maksimum 50 karakter girebilirsiniz</li>
+                        <li>Hizmet sınıfının açıklaması bu alana yazılır</li>
+                    </ul>
+                </li>
+                <li><strong>Hizmet Kodu:</strong>
+                    <ul>
+                        <li>Hizmet Adı alanının hemen alt satırında yer alır</li>
+                        <li>Sol tarafta "Hizmet Kodu" etiketi, sağ tarafta metin girişi yapılan kutu bulunur</li>
+                        <li>Maksimum 10 karakter girebilirsiniz</li>
+                        <li>Hizmet için kullanılan kısa kod bu alana yazılır</li>
+                    </ul>
+                </li>
+                <li><strong>Yasal Kodu:</strong>
+                    <ul>
+                        <li>Hizmet Kodu alanının hemen alt satırında yer alır</li>
+                        <li>Sol tarafta "Yasal Kodu" etiketi, sağ tarafta açılır liste kutusu bulunur</li>
+                        <li>Liste açıldığında 13 farklı yasal kod seçeneği görünür</li>
+                        <li>Varsayılan olarak "---Yasal Kodu Seçiniz---" seçeneği gelir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Yasal Kod Seçenekleri:</h4>
+            <p>Yasal Kodu açılır listesinde şu seçenekler bulunur:</p>
+            <ul>
+                <li>0-Yasal Kodu Seçiniz</li>
+                <li>1-Genel İdare Hizmetleri</li>
+                <li>2-Mülki İdare Amirliği</li>
+                <li>3-Sağlık Hizmetleri</li>
+                <li>4-Teknik Hizmetler</li>
+                <li>5-Eğitim-Öğretim Hizmetleri</li>
+                <li>6-Avukatlık Hizmetleri</li>
+                <li>7-Emniyet Hizmetleri</li>
+                <li>8-Din Hizmetleri</li>
+                <li>9-Yardımcı Hizmetler</li>
+                <li>10-Hakimlik-Savcılık</li>
+                <li>11-Öğretim Elemanları</li>
+                <li>12-Sözleşmeli Personel</li>
+                <li>13-Savunma Hizmetleri</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Bilgiler:</h4>
+            <ul>
+                <li>Hizmet Sınıfı alanı zorunludur, boş bırakılamaz</li>
+                <li>Hizmet Sınıfı alanına sadece rakam girilebilir</li>
+                <li>Hizmet Adı alanı için Türkçe karakter kullanılabilir</li>
+                <li>Yasal Kod seçimi için listeden bir değer seçilmelidir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="kayit-islemleri" class="section">
+    <h2>Hizmet Sınıfı Kayıt İşlemleri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Yeni Kayıt Ekleme:</h4>
+            <ol>
+                <li><strong>Formu Hazırlama:</strong>
+                    <ul>
+                        <li>Formun boş olduğundan emin olun. Gerekirse Formu Temizle butonuna tıklayarak formu temizleyin</li>
+                        <li>Ekranın üst kısmındaki başlığın "Hizmet Sınıfı (Giriş)" olduğunu kontrol edin</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Girişi:</strong>
+                    <ol>
+                        <li>Hizmet Sınıfı alanına benzersiz bir numara girin
+                            <ul>
+                                <li>İmleç varsayılan olarak bu alanda konumlanır</li>
+                                <li>Bu alanı boş bırakırsanız hata mesajı alırsınız</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak Hizmet Adı alanına geçin
+                            <ul>
+                                <li>Hizmet Sınıfının tam adını girin (örn. "Eğitim Hizmetleri")</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak Hizmet Kodu alanına geçin
+                            <ul>
+                                <li>Hizmet için kısa bir kod girin (örn. "EH-01")</li>
+                            </ul>
+                        </li>
+                        <li>TAB tuşuna basarak Yasal Kodu alanına geçin
+                            <ul>
+                                <li>Açılır listeden uygun yasal kodu seçin</li>
+                                <li>Liste kutusunun sağındaki oka tıklayarak seçenekleri görebilirsiniz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><strong>Kaydetme:</strong>
+                    <ul>
+                        <li>Tüm bilgileri girdikten sonra, ekranın alt kısmında yer alan "Kaydet" butonuna tıklayın</li>
+                        <li>Kaydet butonu, gezinme butonlarının olduğu satırın altında, ortada yer alır</li>
+                        <li>İşlem başarılı olduğunda form temizlenir ve yeni kayıt için hazır hale gelir</li>
+                        <li>Hata durumunda ekranda hata mesajı görüntülenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Güncelleme:</h4>
+            <ol>
+                <li><strong>Kaydı Bulma:</strong>
+                    <ul>
+                        <li>Güncellemek istediğiniz kaydı bulun. Bunun için:</li>
+                        <li>İlk/Önceki/Sonraki/Son butonlarını kullanabilirsiniz (ekranın alt kısmında, üst buton satırında yer alır)</li>
+                        <li>Veya Hizmet Sınıfı alanına doğrudan güncellenmek istenen kaydın numarasını girerek TAB tuşuna basabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Bilgileri Güncelleme:</strong>
+                    <ol>
+                        <li>Kayıt yüklendiğinde ekranın üst kısmındaki başlık "Hizmet Sınıfı (Değişiklik)" olarak değişir</li>
+                        <li>Hizmet Sınıfı alanı otomatik olarak devre dışı bırakılır (değiştirilemez)</li>
+                        <li>Güncellemek istediğiniz alanlara yeni değerleri girin:
+                            <ul>
+                                <li>Hizmet Adı alanı için TAB tuşuna basarak bu alana gelin ve yeni adı yazın</li>
+                                <li>Hizmet Kodu için TAB tuşuna basarak bu alana gelin ve yeni kodu yazın</li>
+                                <li>Yasal Kodu için TAB tuşuna basarak bu alana gelin ve açılır listeden yeni kodu seçin</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ul>
+                        <li>Tüm değişiklikleri yaptıktan sonra "Kaydet" butonuna tıklayın</li>
+                        <li>İşlem başarılı olduğunda form boş olarak yüklenir ve yeni kayıt moduna geçer</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Silme:</h4>
+            <ol>
+                <li><strong>Silinecek Kaydı Bulma:</strong>
+                    <ul>
+                        <li>Silmek istediğiniz kaydı bulun. Bunun için:</li>
+                        <li>İlk/Önceki/Sonraki/Son butonlarını kullanabilirsiniz</li>
+                        <li>Veya Hizmet Sınıfı alanına doğrudan silinmek istenen kaydın numarasını girin ve TAB tuşuna basın</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemi:</strong>
+                    <ul>
+                        <li>Kayıt ekrana yüklendiğinde, ekranın alt kısmında yer alan "Sil" butonuna tıklayın</li>
+                        <li>Sil butonu, Kaydet butonunun sağında yer alır</li>
+                        <li>Onay penceresi açılır: "İptal İşlemini Onaylıyor musunuz?"</li>
+                        <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın</li>
+                        <li>İşlem tamamlandığında form boş olarak yüklenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Silme işlemi geri alınamaz, dikkatli olun</li>
+                <li>Kaydetmeden önce tüm bilgilerin doğruluğunu kontrol edin</li>
+                <li>Kaydetme sırasında Hizmet Sınıfı alanının boş olmaması gerekir</li>
+                <li>Aynı Hizmet Sınıfı numarası ile birden fazla kayıt oluşturamazsınız</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="gezinme" class="section">
+    <h2>Gezinme ve Kayıt Arama İşlemleri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Kayıtlar Arasında Gezinme:</h4>
+            <ol>
+                <li><strong>Gezinme Butonları:</strong>
+                    <ul>
+                        <li>Formun alt kısmında, üst buton satırında soldan sağa doğru sıralanmış dört gezinme butonu bulunur:</li>
+                        <li><strong>İlk Kayıt (|&lt;):</strong> Sistemdeki ilk hizmet sınıfı kaydını görüntüler. Buton, en solda yer alır.</li>
+                        <li><strong>Önceki Kayıt (&lt;):</strong> Mevcut kayıttan bir önceki kayıta geçer. İlk Kayıt butonunun sağında yer alır.</li>
+                        <li><strong>Sonraki Kayıt (&gt;):</strong> Mevcut kayıttan bir sonraki kayıta geçer. Önceki Kayıt butonunun sağında yer alır.</li>
+                        <li><strong>Son Kayıt (&gt;|):</strong> Sistemdeki son hizmet sınıfı kaydını görüntüler. Sonraki Kayıt butonunun sağında yer alır.</li>
+                    </ul>
+                </li>
+                <li><strong>Gezinme Butonlarının Kullanımı:</strong>
+                    <ol>
+                        <li>İlk Kayıt butonuna tıkladığınızda:
+                            <ul>
+                                <li>Sistem en düşük Hizmet Sınıfı numarasına sahip kaydı getirir</li>
+                                <li>Ekranın üst kısmındaki başlık "Hizmet Sınıfı (Değişiklik)" olarak değişir</li>
+                            </ul>
+                        </li>
+                        <li>Önceki Kayıt butonuna tıkladığınızda:
+                            <ul>
+                                <li>Sistem mevcut kayıttan daha düşük Hizmet Sınıfı numarasına sahip en yakın kaydı getirir</li>
+                                <li>Eğer mevcut kayıt en küçük numaraya sahipse, işlem gerçekleşmez</li>
+                            </ul>
+                        </li>
+                        <li>Sonraki Kayıt butonuna tıkladığınızda:
+                            <ul>
+                                <li>Sistem mevcut kayıttan daha yüksek Hizmet Sınıfı numarasına sahip en yakın kaydı getirir</li>
+                                <li>Eğer mevcut kayıt en büyük numaraya sahipse, işlem gerçekleşmez</li>
+                            </ul>
+                        </li>
+                        <li>Son Kayıt butonuna tıkladığınızda:
+                            <ul>
+                                <li>Sistem en yüksek Hizmet Sınıfı numarasına sahip kaydı getirir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Hizmet Sınıfı Numarası ile Kayıt Arama:</h4>
+            <ol>
+                <li><strong>Doğrudan Hizmet Sınıfı Arama:</strong>
+                    <ul>
+                        <li>Formun üst kısmında yer alan "Hizmet Sınıfı" metin kutusuna, aramak istediğiniz hizmet sınıfının numarasını girin</li>
+                        <li>TAB tuşuna basın veya kutunun dışına tıklayın</li>
+                        <li>Eğer girilen numara ile bir kayıt varsa, sistem bu kaydı otomatik olarak yükler</li>
+                        <li>Eğer girilen numara ile kayıt yoksa, imleç Hizmet Adı alanına geçer ve yeni kayıt için form hazırlanır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Penceresi ile Arama:</h4>
+            <ol>
+                <li><strong>Kayıt Penceresi Butonu:</strong>
+                    <ul>
+                        <li>Gezinme butonlarının olduğu satırda, en sağda yer alan "Kayıt Penceresi" butonuna tıklayın</li>
+                        <li>Bu buton, Son Kayıt butonunun sağında bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Penceresi Kullanımı:</strong>
+                    <ol>
+                        <li>Butona tıkladığınızda "hizmetwin.asp" sayfası ayrı bir pencerede açılır</li>
+                        <li>Bu pencerede kayıtları görebilir ve seçim yapabilirsiniz</li>
+                        <li>İstediğiniz kaydı seçtiğinizde:
+                            <ul>
+                                <li>Seçilen kayıt ana formda otomatik olarak yüklenir</li>
+                                <li>Ekranın üst kısmındaki başlık "Hizmet Sınıfı (Değişiklik)" olarak değişir</li>
+                                <li>Form, güncelleme moduna geçer</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Belirli bir kaydı hızlıca bulmak için Hizmet Sınıfı numarasını direkt olarak girmek en hızlı yöntemdir</li>
+                <li>Tüm kayıtları görmek için İlk Kayıt butonuna basıp, sonra Sonraki Kayıt butonunu kullanarak gezinebilirsiniz</li>
+                <li>Kayıt penceresini kullanmak, özellikle kayıt sayısı çok olduğunda daha pratiktir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ozel-butonlar" class="section">
+    <h2>Özel İşlem Butonları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Formu Temizle Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, ikinci buton satırında en solda yer alır</li>
+                        <li>Üç boyutlu görünümlü gri bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi ve Kullanımı:</strong>
+                    <ul>
+                        <li>Butona tıkladığınızda form üzerindeki tüm alanlar temizlenir</li>
+                        <li>Form "Hizmet Sınıfı (Giriş)" moduna döner</li>
+                        <li>İmleç otomatik olarak Hizmet Sınıfı alanına konumlanır</li>
+                        <li>Bu buton, yeni kayıt girişi yapmak istediğinizde, mevcut formun içeriğini temizlemek için kullanılır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kaydet Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, ikinci buton satırında, Formu Temizle butonunun sağında yer alır</li>
+                        <li>Üç boyutlu görünümlü gri bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi ve Kullanımı:</strong>
+                    <ul>
+                        <li>Yeni kayıt oluştururken veya mevcut kaydı güncellerken veri kaydetmek için kullanılır</li>
+                        <li>Butona tıklamadan önce tüm gerekli alanların doldurulduğundan emin olun</li>
+                        <li>Kaydetme işlemi başarılı olduğunda form temizlenir ve yeni kayıt moduna geçer</li>
+                        <li>Hata durumunda ekranda hata mesajı görüntülenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Sil Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, ikinci buton satırında, Kaydet butonunun sağında yer alır</li>
+                        <li>Üç boyutlu görünümlü gri bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi ve Kullanımı:</strong>
+                    <ul>
+                        <li>Ekranda görüntülenen mevcut kaydı silmek için kullanılır</li>
+                        <li>Butona tıkladığınızda "İptal İşlemini Onaylıyor musunuz?" onay mesajı görüntülenir</li>
+                        <li>"Evet" butonuna tıklarsanız kayıt silinir, "Hayır" butonuna tıklarsanız silme işlemi iptal edilir</li>
+                        <li>Silme işlemi başarılı olduğunda form temizlenir ve yeni kayıt moduna geçer</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, ikinci buton satırında en sağda yer alır</li>
+                        <li>Sil butonunun sağında konumlanmıştır</li>
+                        <li>Üç boyutlu görünümlü gri bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi ve Kullanımı:</strong>
+                    <ul>
+                        <li>Programdan çıkmak için kullanılır</li>
+                        <li>Butona tıkladığınızda Hizmet Sınıfı penceresi kapanır</li>
+                        <li>Kaydedilmemiş değişiklikler varsa, çıkış yapmadan önce bunları kaydetmeniz önerilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Silme işlemi geri alınamaz, dikkatli olun</li>
+                <li>Formdan çıkmadan önce tüm değişiklikleri kaydettiğinizden emin olun</li>
+                <li>Kaydedilmemiş değişiklikler varken Çıkış butonuna basarsanız, değişiklikler kaydedilmeden program kapanır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="hata-mesajlari" class="section">
+    <h2>Hata Mesajları ve Sorun Giderme</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Sık Karşılaşılan Hata Mesajları:</h4>
+            <ol>
+                <li><strong>"Hizmet Tipi Girilmemiş!"</strong>
+                    <ul>
+                        <li><strong>Hata Durumu:</strong> Kaydet butonuna tıkladığınızda Hizmet Sınıfı alanı boş ise bu hata mesajı görüntülenir</li>
+                        <li><strong>Çözüm:</strong> Hizmet Sınıfı alanına geçerli bir numara girin</li>
+                        <li><strong>Detay:</strong> Bu hata mesajı ekranın ortasında açılan bir iletişim kutusunda görüntülenir. Tamam butonuna tıklayarak mesajı kapatabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>"Hizmet Sınıfı Girilmemiş"</strong>
+                    <ul>
+                        <li><strong>Hata Durumu:</strong> Hizmet Sınıfı alanı boş olduğunda ve başka bir alana geçmeye çalıştığınızda bu hata oluşur</li>
+                        <li><strong>Çözüm:</strong> Hizmet Sınıfı alanına geçerli bir numara girin</li>
+                        <li><strong>Detay:</strong> Hata mesajından sonra imleç otomatik olarak Hizmet Sınıfı alanına konumlanır</li>
+                    </ul>
+                </li>
+                <li><strong>Genel İşlem Hatası</strong>
+                    <ul>
+                        <li><strong>Hata Durumu:</strong> Kaydetme, güncelleme veya silme işlemi sırasında veritabanı hatası oluştuğunda görüntülenir</li>
+                        <li><strong>Çözüm:</strong> İşlemi tekrar deneyin, sorun devam ederse sistem yöneticinize başvurun</li>
+                        <li><strong>Detay:</strong> Bu tür hatalar genellikle arka planda çalışan veritabanı işlemleri ile ilgilidir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Yaygın Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Form Yanıt Vermiyor</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Butonlara tıkladığınızda veya TAB tuşuna bastığınızda form yanıt vermiyorsa</li>
+                        <li><strong>Çözüm:</strong> Çıkış butonuna tıklayarak formdan çıkın ve tekrar açın</li>
+                        <li><strong>Alternatif Çözüm:</strong> ESC tuşuna basarak da formdan çıkabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Bulunamıyor</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Var olduğunu bildiğiniz bir Hizmet Sınıfı numarasını girdiğinizde kayıt görüntülenmiyorsa</li>
+                        <li><strong>Çözüm:</strong> Numarayı doğru girdiğinizden emin olun, yine bulunamazsa Kayıt Penceresi butonunu kullanarak tüm kayıtları görüntüleyin</li>
+                        <li><strong>Detay:</strong> Bazen kayıt sistemde var olmasına rağmen farklı bir numara altında kaydedilmiş olabilir</li>
+                    </ul>
+                </li>
+                <li><strong>Türkçe Karakter Sorunu</strong>
+                    <ul>
+                        <li><strong>Sorun:</strong> Hizmet Adı alanına girdiğiniz Türkçe karakterler (ç, ğ, ı, ö, ş, ü) doğru görüntülenmiyorsa</li>
+                        <li><strong>Çözüm:</strong> Bilgisayarınızın dil ayarlarının Türkçe olduğundan emin olun</li>
+                        <li><strong>Alternatif Çözüm:</strong> Türkçe karakter içeren bilgileri kopyala-yapıştır ile girmeyi deneyin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Sistem Yöneticisine Başvurmanız Gereken Durumlar:</h4>
+            <ul>
+                <li>Aynı hata mesajı sürekli tekrarlanıyorsa</li>
+                <li>Veri kaybı yaşıyorsanız (kaydettiğiniz bilgiler kaydedilmiyorsa)</li>
+                <li>Form açılmıyorsa veya çok yavaş çalışıyorsa</li>
+                <li>Yasal Kod listesi boş geliyorsa</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Klavye Kısayolları:</h4>
+            <ol>
+                <li><strong>TAB Tuşu:</strong>
+                    <ul>
+                        <li>Bir sonraki alana geçmek için kullanılır</li>
+                        <li>Form alanları arasında sırayla geçiş yapmanızı sağlar</li>
+                    </ul>
+                </li>
+                <li><strong>SHIFT + TAB:</strong>
+                    <ul>
+                        <li>Bir önceki alana dönmek için kullanılır</li>
+                        <li>Yanlışlıkla geçtiğiniz bir alanı düzeltmek istediğinizde kullanışlıdır</li>
+                    </ul>
+                </li>
+                <li><strong>ENTER Tuşu:</strong>
+                    <ul>
+                        <li>TAB tuşu gibi çalışır ve bir sonraki alana geçmenizi sağlar</li>
+                        <li>Not: Butonlar üzerinde ENTER tuşu basılmak istenen butonu aktif eder</li>
+                    </ul>
+                </li>
+                <li><strong>ESC Tuşu:</strong>
+                    <ul>
+                        <li>Formdan çıkmak için kullanılabilir</li>
+                        <li>Çıkış butonuna tıklamakla aynı işlevi görür</li>
+                    </ul>
+                </li>
+                <li><strong>ALT + Aşağı Ok:</strong>
+                    <ul>
+                        <li>Yasal Kod açılır listesini açmak için kullanılabilir</li>
+                        <li>İmleç liste kutusunda iken bu tuş kombinasyonu listeyi açar</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ol>
+                <li><strong>Hızlı Veri Girişi:</strong>
+                    <ul>
+                        <li>Çok sayıda kayıt girecekseniz, bir kayıt ekledikten sonra Hizmet Sınıfı alanında otomatik artan numaralar kullanın</li>
+                        <li>Örneğin, ilk kayıt için 1, ikinci kayıt için 2 gibi</li>
+                        <li>TAB tuşunu kullanarak alanlar arasında hızlı geçiş yapın</li>
+                    </ul>
+                </li>
+                <li><strong>Benzer Kayıtları Kopyalama:</strong>
+                    <ul>
+                        <li>Benzer kayıtlar girecekseniz, önce bir kayıt oluşturun</li>
+                        <li>Kayıt Penceresi butonunu kullanarak bu kaydı bulun ve açın</li>
+                        <li>Hizmet Sınıfı alanını yeni bir numara ile değiştirin</li>
+                        <li>Diğer alanlarda küçük değişiklikler yapın ve kaydedin</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıtları Düzenli Kontrol Etme:</strong>
+                    <ul>
+                        <li>Yeni kayıtlar ekledikten sonra İlk Kayıt butonundan başlayarak Sonraki Kayıt butonu ile tüm kayıtları gözden geçirin</li>
+                        <li>Bu, yanlış girilen bilgileri hızlıca tespit etmenize yardımcı olur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li><strong>Yasal Kod Seçiminde:</strong> Liste kutusunu açtıktan sonra, seçmek istediğiniz kodun ilk rakamına basarak hızlıca o seçeneğe atlayabilirsiniz. Örneğin, "5-Eğitim-Öğretim Hizmetleri" için "5" tuşuna basın.</li>
+                <li><strong>Yeni Kayıt Eklemede:</strong> Önceki kayda benzer bir kayıt eklerken, önce o kaydı açıp, sonra sadece Hizmet Sınıfı numarasını değiştirerek yeni kayıt olarak kaydedin. Bu, tüm bilgileri yeniden girmekten daha hızlıdır.</li>
+                <li><strong>Form Temizleme:</strong> Yeni bir kayıt eklemek istediğinizde, mevcut formdaki tüm alanları tek tek silmek yerine, Formu Temizle butonunu kullanarak formu hızlıca sıfırlayabilirsiniz.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="sonuc" class="section">
+    <h2>Sonuç</h2>
+    <div class="info-box">
+        <p>Bu kullanıcı kılavuzu, Hizmet Sınıfı modülünün tüm özelliklerini ve kullanım adımlarını detaylı bir şekilde açıklamaktadır. Modülü kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzdaki ilgili bölümleri gözden geçirin.</p>
+
+        <p>Kılavuzda yer alan adım adım talimatları takip ederek:</p>
+        <ul>
+            <li>Yeni hizmet sınıfları ekleyebilir</li>
+            <li>Mevcut kayıtları güncelleyebilir</li>
+            <li>Gerektiğinde kayıtları silebilir</li>
+            <li>Kayıtlar arasında hızlıca gezinebilir</li>
+            <li>Sistem üzerinde verimli bir şekilde çalışabilirsiniz</li>
+        </ul>
+
+        <p>Kılavuzda açıklanmayan bir durumla karşılaşırsanız veya ek yardıma ihtiyaç duyarsanız, lütfen sistem yöneticinizle iletişime geçin.</p>
+    </div>
+</div>
+</body>
+</html>

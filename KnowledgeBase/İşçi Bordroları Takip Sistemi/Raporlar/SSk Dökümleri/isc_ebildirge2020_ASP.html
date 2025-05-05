@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Bildirge Sistemi Kullanım Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>E-Bildirge Sistemi Kullanım Kılavuzu</h1>
+        <img src="/api/placeholder/200/50" alt="Logo Placeholder">
+    </div>
+
+    <div class="section">
+        <h1>E-Bildirge (Versiyon 2) Kullanım Kılavuzu</h1>
+        <p>Bu doküman, E-Bildirge sistemini kullanarak SGK (Sosyal Güvenlik Kurumu) bildirgelerini hazırlama sürecinde size yardımcı olmak için hazırlanmıştır.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Giriş</h2>
+        <p>E-Bildirge sistemi, işveren tarafından çalışanların SGK bildirgelerini elektronik ortamda hazırlamak ve göndermek için kullanılan bir sistemdir. Bu kılavuzda, sistemin nasıl kullanılacağı adım adım anlatılmaktadır.</p>
+        
+        <div class="info-box">
+            <h3>Soru: Bildirge oluşturulurken "Kayıt Bulunamadı" hatası alıyorum. Ne yapmalıyım?</h3>
+            <p><strong>Cevap:</strong> Bu hata genellikle seçtiğiniz filtreleme kriterlerine uygun personel bulunamadığında oluşur. Filtreleme seçeneklerini genişletmeyi deneyin veya tüm seçenekleri seçili duruma getirin. Özellikle "Bölüm", "Maaş Tipi", "Görev" ve "Sicil Tipi" seçimlerinizi kontrol edin ve mümkünse hepsini seçin.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Soru: "Girmiş Olduğunuz Yıl ve Ay Değeri Aylık Parametrelerde Mevcut Değil!" uyarısı alıyorum. Ne anlama geliyor?</h3>
+            <p><strong>Cevap:</strong> Bu uyarı, seçtiğiniz yıl ve ay için sistem veritabanında bir tanımlama yapılmadığını gösterir. İlgili dönemi aylık parametrelerde tanımlamanız gerekmektedir. Bunun için sistem yöneticinize başvurunuz.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Soru: Oluşturduğum XML dosyasını nerede bulabilirim?</h3>
+            <p><strong>Cevap:</strong> XML dosyası, "E-Bildirge Dosya" alanında belirttiğiniz konuma kaydedilir. Varsayılan olarak "C:\ebild\" klasörü (belediye kodu 160300 ise) veya "C:\" dizini (diğer kurumlar için) kullanılır. Dosya adı genellikle "YILAY.xml" formatındadır. Örneğin, 2025 yılı Mart ayı için "202503.xml" olacaktır.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Soru: BDP dosyası nedir ve ne için kullanılır?</h3>
+            <p><strong>Cevap:</strong> BDP (Beyanname Düzenleme Programı) dosyası, SGK'nın BDP yazılımında kullanılmak üzere oluşturulan bir metin dosyasıdır. Bu dosya, personel bilgilerini, çalışma gün sayılarını, kazanç bilgilerini ve diğer SGK verilerini tab ile ayrılmış bir metin formatında içerir. BDP dosyasını, SGK'nın e-bildirge sistemine toplu veri aktarımı yapmak için kullanabilirsiniz.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Soru: "Meslek kodu seçilmemiş X kişi mevcuttur" uyarısı alıyorum. Ne yapmalıyım?</h3>
+            <p><strong>Cevap:</strong> 2012 yılı Kasım ayından itibaren, tüm personel için meslek kodu bilgisi SGK tarafından zorunlu tutulmaktadır. Bu uyarıyı aldığınızda, Servis menüsünden "Meslek Kodları Eşleştirme" seçeneğini kullanarak, eksik meslek kodlarını tanımlamalısınız. Meslek kodları, personelin yaptığı işe uygun olarak SGK'nın standart meslek kodları listesinden seçilmelidir.</p>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>box">
+            <p><strong>Bilgi:</strong> Bu sistem, çalışanların sosyal güvenlik bilgilerinin SGK'ya elektronik ortamda bildirilmesi için kullanılır. Sistemin doğru kullanımı, yasal yükümlülüklerin zamanında ve eksiksiz yerine getirilmesi açısından önemlidir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. E-Bildirge Ekranına Erişim</h2>
+        <p>E-Bildirge ekranına erişmek için:</p>
+        <ol>
+            <li>Uygulamaya giriş yapın</li>
+            <li>Ana menüden E-Bildirge seçeneğini bulun ve tıklayın</li>
+            <li>Sistem, E-Bildirge ekranını otomatik olarak yeni bir pencere şeklinde açacaktır</li>
+        </ol>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> E-Bildirge ekranı açıldığında, pencere otomatik olarak ekranın ortasına konumlanacak ve 950x680 piksel boyutunda olacaktır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. E-Bildirge Ekranı</h2>
+        <p>E-Bildirge ekranı, bildirgeleri hazırlamak için gerekli tüm seçenekleri içerir. Ekran genel olarak iki ana bölümden oluşur:</p>
+        <ul>
+            <li><strong>Sol Panel:</strong> Dosya bilgileri, sicil numarası aralığı, maaş dönemi, bildirge tarihi, aracı ve belge türü seçimleri</li>
+            <li><strong>Sağ Panel:</strong> Görev, sicil tipi, belge türü, kanun türü ve SGK bilgileri seçimleri</li>
+        </ul>
+        <p>Ekranın altında ise işlem butonları bulunmaktadır: Listele, Çıkış, İsim Giriş ve BDP İçin Dosya Oluştur.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Temel Bilgilerin Girilmesi</h2>
+        
+        <div class="step">
+            <h3>4.1. Dosya Bilgileri</h3>
+            <p>Ekranın sol üst kısmında yer alan dosya bilgileri bölümünde:</p>
+            <ul>
+                <li><strong>E-Bildirge Dosya:</strong> En üstte, sol tarafta bulunan bu metin kutusuna XML formatında oluşturulacak bildirge dosyasının kaydedileceği konum ve adını girebilirsiniz. Genellikle "C:\ebild\YILAYNO.xml" formatında oluşturulur.</li>
+                <li><strong>BDP Dosya:</strong> Hemen altındaki metin kutusuna BDP (Beyanname Düzenleme Programı) için oluşturulacak metin dosyasının kaydedileceği konum ve adını girebilirsiniz. Genellikle "C:\ebild\YILAYNO_BDP.txt" formatında oluşturulur.</li>
+            </ul>
+            <p>Bu alanlar, sistem tarafından seçtiğiniz yıl ve ay değerlerine göre otomatik olarak doldurulur, ancak gerekirse elle de değiştirebilirsiniz.</p>
+        </div>
+
+        <div class="step">
+            <h3>4.2. Sicil Numarası Aralığı</h3>
+            <p>"E-Bildirge Dosya" ve "BDP Dosya" alanlarının altında yer alan "Sicil No" alanı:</p>
+            <ul>
+                <li>Sol taraftaki kutuya başlangıç sicil numarasını (varsayılan değer: 0)</li>
+                <li>Sağ taraftaki kutuya bitiş sicil numarasını (varsayılan değer: 999999999)</li>
+            </ul>
+            <p>Belirli bir sicil numarası aralığı için bildirim yapmak istiyorsanız, bu alanları değiştirebilirsiniz. Tüm personel için bildirim yapmak istiyorsanız, varsayılan değerleri değiştirmenize gerek yoktur.</p>
+        </div>
+
+        <div class="step">
+            <h3>4.3. Maaş Dönemi Seçimi</h3>
+            <p>Sicil numarası alanının hemen altında bulunan "Maaş Yıl / Ay" alanı, bildirgenin hangi dönem için oluşturulacağını belirtir:</p>
+            <ul>
+                <li>Sol taraftaki alanlara başlangıç dönemi (yıl/ay): İlk kutucuğa yıl, ikinci kutucuğa ay değerini giriniz.</li>
+                <li>Sağ taraftaki alanlara bitiş dönemi (yıl/ay): İlk kutucuğa yıl, ikinci kutucuğa ay değerini giriniz.</li>
+            </ul>
+            <p>Tek bir ay için bildirim yapıyorsanız, başlangıç ve bitiş değerlerini aynı girebilirsiniz.</p>
+            
+            <div class="warning-box">
+                <p><strong>Dikkat:</strong> Girdiğiniz yıl ve ay değerlerinin sistem veritabanında tanımlı olması gerekir. Eğer tanımlı değilse, sistem "Girmiş Olduğunuz Yıl ve Ay Değeri Aylık Parametrelerde Mevcut Değil!" şeklinde bir uyarı verecek ve işleme devam edemeyeceksiniz. Böyle bir durumda sistem yöneticinize başvurunuz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>4.4. Bildirge Tarihi</h3>
+            <p>Maaş dönemi alanının hemen altındaki "Bildirge Tarihi" metin kutusuna, bildirgenin verildiği tarihi giriniz. Bu alan genellikle sistem tarafından otomatik olarak güncel tarih ile doldurulur ve değiştirmeniz gerekmez.</p>
+        </div>
+
+        <div class="step">
+            <h3>4.5. Aracı</h3>
+            <p>Bildirge Tarihi alanının altında bulunan "Aracı" metin kutusuna, bildirgeyi veren aracı kurumun kodunu giriniz. Doğrudan işveren olarak bildirim yapıyorsanız, önceden dolu olan varsayılan değer "000" değerini kullanabilirsiniz.</p>
+        </div>
+
+        <div class="step">
+            <h3>4.6. Belge Türü Seçimi</h3>
+            <p>Aracı alanının altındaki "Belge" adlı açılır menüden bildirgenin türünü seçiniz:</p>
+            <ul>
+                <li><strong>Asıl:</strong> İlk defa verilen bildirgeler için</li>
+                <li><strong>Ek:</strong> Daha önce verilmiş bir bildirgeye ek olarak verilen bildirgeler için</li>
+                <li><strong>Toplu Sözleşme:</strong> Toplu iş sözleşmesi kapsamında verilen bildirgeler için</li>
+            </ul>
+            <p>Genellikle "Asıl" seçeneği kullanılır. Bu alan varsayılan olarak "Asıl" seçili olarak gelir.</p>
+            
+            <div class="warning-box">
+                <p><strong>Önemli Uyarı:</strong> "Belge" alanından "Asıl" dışında bir seçenek seçildiğinde, bazı durumlarda SGK bildirim günü "00" olarak ayarlanabilir. Bu durum özellikle belediye kodunuz 160300 ise geçerlidir. Bildirge içeriğini dikkatlice kontrol ediniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Filtreleme Seçenekleri</h2>
+        
+        <div class="step">
+            <h3>5.1. Bölüm Seçimi</h3>
+            <p>Ekranın sol alt kısmında, "Belge" açılır menüsünün altında yer alan "Bölüm" çoklu seçim listesinden, bildirgeye dahil edilecek bölümleri seçebilirsiniz. Birden fazla bölüm seçmek için:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz bölümlere tıklayınız.</li>
+                <li>Tüm bölümleri seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm bölümleri otomatik olarak seçer.</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>5.2. Maaş Tipi Seçimi</h3>
+            <p>Bölüm seçim listesinin altında bulunan "Maaş Tipi" çoklu seçim listesinden, bildirgede yer alacak maaş tiplerini seçebilirsiniz:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz maaş tiplerine tıklayınız.</li>
+                <li>Tüm maaş tiplerini seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm maaş tiplerini otomatik olarak seçer.</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>5.3. Görev Seçimi</h3>
+            <p>Ekranın sağ üst kısmında en üstte bulunan "Görev" çoklu seçim listesinden, bildirgeye dahil edilecek görev tiplerini seçebilirsiniz:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz görevlere tıklayınız.</li>
+                <li>Tüm görevleri seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm görevleri otomatik olarak seçer.</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>5.4. Sicil Tipi Seçimi</h3>
+            <p>Görev seçim listesinin altında bulunan "Sicil Tipi" çoklu seçim listesinden, bildirgeye dahil edilecek sicil tiplerini seçebilirsiniz:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz sicil tiplerine tıklayınız.</li>
+                <li>Tüm sicil tiplerini seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm sicil tiplerini otomatik olarak seçer.</li>
+            </ol>
+            <p>Bu alan, personelin hangi sicil tipinde olduğuna göre filtreleme yapmak için kullanılır (örneğin: memur, işçi, sözleşmeli personel vb.).</p>
+        </div>
+
+        <div class="step">
+            <h3>5.5. Belge Türü Seçimi</h3>
+            <p>Sicil Tipi seçim listesinin altında bulunan "Belge Türü" çoklu seçim listesinden, bildirgeye dahil edilecek belge türlerini seçebilirsiniz:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz belge türlerine tıklayınız.</li>
+                <li>Tüm belge türlerini seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm belge türlerini otomatik olarak seçer.</li>
+            </ol>
+            <p>Belge türleri, SGK'ya bildirge verilirken kullanılan resmi belge türlerini ifade eder. Bu listede göreceğiniz değerler "1-Normal", "2-Ek Belge", "3-Toplu İş Sözleşmesi" gibi kodlanmış değerlerdir.</p>
+        </div>
+
+        <div class="step">
+            <h3>5.6. Kanun Türü Seçimi</h3>
+            <p>Belge Türü seçim listesinin altında bulunan "Kanun Türü" çoklu seçim listesinden, bildirgeye dahil edilecek kanun türlerini seçebilirsiniz:</p>
+            <ol>
+                <li>CTRL tuşunu basılı tutarken seçmek istediğiniz kanun türlerine tıklayınız.</li>
+                <li>Tüm kanun türlerini seçmek için herhangi bir işlem yapmanıza gerek yoktur. Sistem açılışta tüm kanun türlerini otomatik olarak seçer.</li>
+            </ol>
+            <p>Kanun türleri, personelin tabi olduğu kanunları ifade eder (örneğin: 5510, 4857 vb.). Bildirgede personelin hangi kanuna göre bildirildiğini belirtmek için önemlidir.</p>
+        </div>
+
+        <div class="step">
+            <h3>5.7. SGK Bilgileri Seçimi</h3>
+            <p>Kanun Türü seçim listesinin altında bulunan "SGK Bilgileri" açılır menüsünden, SGK bilgilerinin hangi kaynaktan alınacağını seçebilirsiniz:</p>
+            <ul>
+                <li><strong>SGK Bilgileri Bölümden Alınsın:</strong> Personelin SGK bilgileri bölüm tanımlarından alınır.</li>
+                <li><strong>SGK Bilgileri Görevden Alınsın:</strong> Personelin SGK bilgileri görev tanımlarından alınır.</li>
+            </ul>
+            <p>Genellikle "SGK Bilgileri Bölümden Alınsın" seçeneği kullanılır. Bu alan varsayılan olarak "SGK Bilgileri Bölümden Alınsın" seçili gelir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. İşlemler</h2>
+        
+        <div class="step">
+            <h3>6.1. Bildirge Oluşturma</h3>
+            <p>Tüm gerekli bilgileri girdikten sonra, ekranın alt orta kısmında bulunan "Listele" butonuna tıklayarak bildirge oluşturma işlemini başlatabilirsiniz. Bu buton, diğer işlem butonlarıyla aynı hizada, en solda yer alır. Bu işlem:</p>
+            <ol>
+                <li>Girilen kriterlere göre veritabanından personel bilgilerini çeker.</li>
+                <li>Bu bilgileri kullanarak XML formatında bir E-Bildirge dosyası oluşturur.</li>
+                <li>Dosyayı belirttiğiniz konuma kaydeder.</li>
+            </ol>
+            <p>İşlem başarılı olduğunda "XML Dosya Hazırlandı" şeklinde bir mesaj görüntülenir.</p>
+            
+            <div class="warning-box">
+                <p><strong>Dikkat:</strong> Eğer bildirge oluşturulamamışsa, "Kayıt Bulunamadı" şeklinde bir hata mesajı alabilirsiniz. Bu durumda filtreleme seçeneklerinizi kontrol ediniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>6.2. BDP İçin Dosya Oluşturma</h3>
+            <p>BDP (Beyanname Düzenleme Programı) için gerekli dosyayı oluşturmak için, ekranın alt kısmında, "Listele" butonunun sağında yer alan diğer butonların en sağındaki "BDP İçin Dosya Oluştur" butonuna tıklayınız. Bu işlem:</p>
+            <ol>
+                <li>Tüm filtreleme seçeneklerini "Listele" butonunda olduğu gibi toplar.</li>
+                <li>Sistem, girilen kriterlere göre personel bilgilerini içeren bir metin dosyası oluşturacaktır.</li>
+                <li>Dosya, "BDP Dosya" alanında belirttiğiniz konuma kaydedilir.</li>
+            </ol>
+            <p>İşlem başarılı olduğunda "BDP İçin Dosya Hazırlandı" şeklinde bir mesaj görüntülenir.</p>
+            
+            <div class="info-box">
+                <p><strong>BDP Dosyası Ne İşe Yarar?</strong> BDP dosyası, SGK'nın Beyanname Düzenleme Programı'nda kullanılmak üzere hazırlanan, personelin maaş ve SGK bilgilerini içeren özel formatlı bir metin dosyasıdır. Bu dosya sayesinde SGK sistemine toplu veri girişi yapabilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>6.3. İsim Giriş</h3>
+            <p>"Listele" butonunun sağında ve "BDP İçin Dosya Oluştur" butonunun solunda yer alan "İsim Giriş" butonuna tıklayarak, SGK aylık isim giriş ekranına erişebilirsiniz. Bu ekranda:</p>
+            <ol>
+                <li>Personele ait ek bilgileri (örneğin, eksik gün nedenleri, işten çıkış nedenleri, ikramiye bilgileri vb.) girebilir veya düzenleyebilirsiniz.</li>
+                <li>Bu bilgiler, bildirge oluşturulurken kullanılacaktır.</li>
+            </ol>
+            <p>İsim Giriş ekranı, yeni bir diyalog penceresi olarak açılır. Bu ekranda işlemlerinizi tamamladıktan sonra kapatarak E-Bildirge ekranına geri dönebilirsiniz.</p>
+        </div>
+
+        <div class="step">
+            <h3>6.4. Çıkış</h3>
+            <p>"Listele" butonunun sağında ve "İsim Giriş" butonunun solunda bulunan "Çıkış" butonuna tıklayarak E-Bildirge ekranını kapatabilirsiniz. Bu buton, işlemlerinizi tamamladıktan sonra programdan çıkmak için kullanılır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Önemli Bilgiler ve İpuçları</h2>
+        
+        <div class="tip-box">
+            <h3>Meslek Kodları</h3>
+            <p>2012 yılı Kasım ayından itibaren, tüm personel için meslek kodu bilgisi zorunludur. Eğer meslek kodu seçilmemiş personel varsa, sistem bildirge oluşturma sırasında "Meslek kodu seçilmemiş X kişi mevcuttur" şeklinde bir uyarı verecektir. Bu durumda:</p>
+            <ol>
+                <li>Servis menüsünden "Meslek Kodları Eşleştirme" seçeneğini kullanarak eksik meslek kodlarını tamamlayınız.</li>
+                <li>Ardından bildirge oluşturma işlemini tekrarlayınız.</li>
+            </ol>
+            <p>Meslek kodları, SGK'nın standart meslek kodları listesinden seçilmelidir. Bu kodlar, her personelin mesleğini resmi olarak tanımlar ve SGK bildirimlerinde kullanılır.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>Raporlu Personel</h3>
+            <p>Bildirge oluşturulduktan sonra, o dönemde raporlu olan personel listesi ayrıca bir mesaj kutusu olarak gösterilir. Bu bilgi kutusu:</p>
+            <ul>
+                <li>Başlık olarak "HAZIRLADIĞINIZ DÖNEMDEKİ RAPORLU KİŞİLER" ibaresini içerir.</li>
+                <li>Raporlu her personelin sicil numarası, adı ve soyadı bilgilerini listeler.</li>
+            </ul>
+            <p>Bu liste, raporlu personelin takibi ve bildirgelerin doğruluğunun kontrolü için önemlidir. Özellikle raporlu durumda olan personelin, bildirgedeki gün ve prim bilgilerinin doğru olduğundan emin olmalısınız.</p>
+        </div>
+
+        <div class="warning-box">
+            <h3>Mahiyet Seçiminde Dikkat Edilecek Noktalar</h3>
+            <p>Belge mahiyeti (Asıl, Ek veya Toplu Sözleşme) seçimi, bildirgenin nasıl işleneceğini belirler:</p>
+            <ul>
+                <li>Eğer "Asıl" seçilmezse ve belediye kodunuz 160300 ise, SGK gün sayısı otomatik olarak "00" olarak ayarlanır.</li>
+                <li>Bu durumda bildirge içeriğini dikkatlice kontrol etmeniz gerekir, çünkü gün sayısı sıfır olduğunda SGK primi hesaplanmayabilir.</li>
+            </ul>
+            <p>Doğru mahiyet seçimi, SGK bildirgelerinin doğru işlenmesi için kritik öneme sahiptir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Belge Türü ve Kanun Numarası Seçimi</h3>
+            <p>Oluşturulan XML dosyasında, seçilen belge türleri ve kanun numaraları gruplandırılarak raporlanır. Bu nedenle:</p>
+            <ul>
+                <li>Aynı belge türü ve kanun numarasına sahip personel, dosyada birlikte gruplanır.</li>
+                <li>Farklı belge türü veya kanun numarasına sahip personel, dosyada ayrı gruplarda listelenir.</li>
+            </ul>
+            <p>Bu nedenle, filtrelemelerde belge türü ve kanun numarası seçimlerinizi dikkatli yapın. Bu seçimler, bildirgenin doğru yapılandırılması için önemlidir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Ekran Düzeni ve Navigasyon</h2>
+        
+        <div class="info-box">
+            <h3>Ekranın Genel Düzeni</h3>
+            <p>E-Bildirge ekranında gezinirken şunlara dikkat ediniz:</p>
+            <ul>
+                <li>Tüm alanlar arasında TAB tuşu ile geçiş yapabilirsiniz.</li>
+                <li>Enter tuşuna bastığınızda, imleç otomatik olarak bir sonraki alana geçecektir.</li>
+                <li>Çoklu seçim listelerinde (Bölüm, Maaş Tipi, Görev vb.), CTRL tuşunu basılı tutarak birden fazla öğe seçebilirsiniz.</li>
+                <li>Tarih alanlarına giriş yaparken gün/ay/yıl formatını kullanınız.</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Pencere Boyutu ve Konumu</h3>
+            <p>E-Bildirge ekranı açıldığında:</p>
+            <ul>
+                <li>Pencere, ekranın ortasına konumlanır.</li>
+                <li>Pencere boyutu 950x680 piksel olarak ayarlanır.</li>
+                <li>Pencereyi istediğiniz gibi yeniden boyutlandırabilir veya taşıyabilirsiniz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Dosya Formatları ve İçerikleri</h2>
+        
+        <div class="info-box">
+            <h3>9.1. XML Dosyası İçeriği</h3>
+            <p>E-Bildirge sistemi tarafından oluşturulan XML dosyası şu bilgileri içerir:</p>
+            <ul>
+                <li><strong>İşyeri Bilgileri:</strong> İşyeri sicil numarası, kontrol numarası, işyeri aracı numarası, unvan, adres ve vergi numarası</li>
+                <li><strong>Bordro Bilgileri:</strong> Dönem ay ve yılı, hizmet dönemi ay ve yılı, tahakkuk nedeni ve belge mahiyeti</li>
+                <li><strong>Çalışan Bilgileri:</strong> SGK sicil numarası, TC kimlik numarası, ad, soyad, ilk soyad (varsa), prime esas kazanç, gün sayısı, giriş ve çıkış günleri (varsa), eksik gün sayısı ve nedeni, ikramiye bilgileri (varsa), meslek kodu</li>
+            </ul>
+            <p>Oluşturulan dosya, SGK'nın belirlediği XML şema yapısına uygun olarak hazırlanır ve e-bildirge sistemine yüklemeye hazır durumdadır.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>9.2. BDP Dosyası İçeriği</h3>
+            <p>BDP İçin oluşturulan metin dosyası, tab karakterleri ile ayrılmış alanlardan oluşur ve şu bilgileri içerir:</p>
+            <ul>
+                <li>Belge mahiyeti (A: Asıl, E: Ek, T: Toplu Sözleşme)</li>
+                <li>Belge türü ve kanun numarası</li>
+                <li>İşyeri bilgileri (şube kodu, il kodu, sıra numarası vb.)</li>
+                <li>Sigortalı bilgileri (sicil numarası, TC kimlik numarası, ad, soyad)</li>
+                <li>Çalışma bilgileri (gün sayısı, uzaktan çalışma durumu, hak edilen ücret)</li>
+                <li>İşe giriş-çıkış bilgileri (gün, ay ve çıkış nedeni)</li>
+                <li>Eksik gün bilgileri (sayısı ve nedeni)</li>
+                <li>Vergi ve prim bilgileri (GV matrahı, muafiyet durumu, engellilik oranı vb.)</li>
+            </ul>
+            <p>Bu dosya, BDP programına yüklenerek SGK'ya bildirimde kullanılabilir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. Belge ve Kanun Türleri</h2>
+        
+        <div class="info-box">
+            <h3>10.1. Belge Türleri</h3>
+            <p>Belge türleri, SGK bildirgesinin hangi tür personel için düzenlendiğini belirtir. Yaygın belge türleri:</p>
+            <ul>
+                <li><strong>1:</strong> Normal (SGK'lı çalışanlar için)</li>
+                <li><strong>2:</strong> Ek belge</li>
+                <li><strong>7:</strong> Puantaj (Yıllık bildirimler için)</li>
+                <li><strong>9:</strong> Toplu iş sözleşmesi</li>
+                <li><strong>13:</strong> Yurtdışı iş bulma kurumu</li>
+                <li><strong>14:</strong> Kısmi istihdam</li>
+                <li><strong>23:</strong> İtibari hizmet süreleri</li>
+                <li><strong>25:</strong> Emekli çalışanlar</li>
+            </ul>
+            <p>Belge türünü, personelin çalışma durumuna uygun olarak seçmelisiniz.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>10.2. Kanun Türleri</h3>
+            <p>Kanun türleri, personelin tabi olduğu sosyal güvenlik kanunlarını belirtir. Yaygın kanun türleri:</p>
+            <ul>
+                <li><strong>5510:</strong> Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu</li>
+                <li><strong>4857:</strong> İş Kanunu</li>
+                <li><strong>5746:</strong> Ar-Ge ve Tasarım Faaliyetlerinin Desteklenmesi Kanunu</li>
+                <li><strong>6111:</strong> Bazı Alacakların Yeniden Yapılandırılması Hakkında Kanun</li>
+                <li><strong>687:</strong> İstihdamın Teşviki Kanunu</li>
+            </ul>
+            <p>Kanun türünü, personelin istihdam şekline ve yararlandığı teşviklere göre seçmelisiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>11. Eksik Gün ve İşten Çıkış Nedenleri</h2>
+        
+        <div class="info-box">
+            <h3>11.1. Eksik Gün Nedenleri</h3>
+            <p>Eksik gün nedenleri, personelin tam çalışmadığı günlerin nedenini açıklar. Yaygın eksik gün nedenleri:</p>
+            <ul>
+                <li><strong>01:</strong> İstirahat (rapor)</li>
+                <li><strong>03:</strong> Disiplin cezası</li>
+                <li><strong>04:</strong> Gözaltı</li>
+                <li><strong>05:</strong> Tutukluluk</li>
+                <li><strong>06:</strong> Kısmi istihdam</li>
+                <li><strong>07:</strong> Puantaj kayıtları</li>
+                <li><strong>08:</strong> Grev</li>
+                <li><strong>09:</strong> Lokavt</li>
+                <li><strong>10:</strong> Genel çalışmama hali</li>
+                <li><strong>11:</strong> Doğal afet</li>
+                <li><strong>12:</strong> Birden fazla neden</li>
+                <li><strong>13:</strong> Diğer</li>
+                <li><strong>14:</strong> İstifa (Çalışan)</li>
+                <li><strong>15:</strong> Malulen emeklilik</li>
+            </ul>
+            <p>Eksik gün nedeni, SGK bildirgesinde personelin durumunu doğru şekilde yansıtmak için önemlidir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>11.2. İşten Çıkış Nedenleri</h3>
+            <p>İşten çıkış nedenleri, personelin iş akdinin sona erme nedenini belirtir. Yaygın işten çıkış nedenleri:</p>
+            <ul>
+                <li><strong>1:</strong> Deneme süreli iş sözleşmesinin işverence feshi</li>
+                <li><strong>2:</strong> Deneme süreli iş sözleşmesinin işçi tarafından feshi</li>
+                <li><strong>3:</strong> Belirsiz süreli iş sözleşmesinin işçi tarafından feshi (istifa)</li>
+                <li><strong>4:</strong> Belirsiz süreli iş sözleşmesinin işveren tarafından haklı sebep bildirilmeden feshi</li>
+                <li><strong>5:</strong> Belirli süreli iş sözleşmesinin sona ermesi</li>
+                <li><strong>8:</strong> Emeklilik (yaşlılık) veya toptan ödeme nedeniyle</li>
+                <li><strong>9:</strong> Malulen emeklilik nedeniyle</li>
+                <li><strong>10:</strong> Ölüm</li>
+                <li><strong>11:</strong> İş kazası sonucu ölüm</li>
+                <li><strong>12:</strong> Askerlik</li>
+                <li><strong>13:</strong> Kadın işçinin evlenmesi</li>
+                <li><strong>14:</strong> Emeklilik için yaş dışında diğer şartların tamamlanması</li>
+                <li><strong>15:</strong> Toplu işçi çıkarma</li>
+                <li><strong>16:</strong> Sözleşme sona ermeden sigortalının aynı işverene ait diğer işyerine nakli</li>
+                <li><strong>17:</strong> İşyerinin kapanması</li>
+                <li><strong>18:</strong> İşin sona ermesi</li>
+                <li><strong>19:</strong> Mevsim bitimi</li>
+                <li><strong>20:</strong> Kampanya bitimi</li>
+                <li><strong>21:</strong> Statü değişikliği</li>
+                <li><strong>22:</strong> Diğer nedenler</li>
+                <li><strong>23:</strong> İşçi tarafından zorunlu nedenle fesih</li>
+                <li><strong>24:</strong> İşçi tarafından sağlık nedeniyle fesih</li>
+                <li><strong>25:</strong> İşçi tarafından işverenin ahlak ve iyiniyet kurallarına aykırı davranışı nedeniyle fesih</li>
+                <li><strong>26:</strong> İşverence işçinin ahlak ve iyiniyet kurallarına aykırı davranışı nedeniyle fesih</li>
+                <li><strong>27:</strong> İşverence zorunlu nedenlerle ve tutukluluk nedeniyle fesih</li>
+                <li><strong>28:</strong> İşverence sağlık nedeniyle fesih</li>
+                <li><strong>29:</strong> İşverence işçinin yeterliliği nedeniyle fesih</li>
+                <li><strong>30:</strong> Vize süresinin bitimi (İstisnai haller)</li>
+                <li><strong>31:</strong> Borçlar Kanunu, Sendikalar Kanunu, Grev ve Lokavt Kanunu kapsamında kendi istek ve kusuru dışında fesih</li>
+                <li><strong>32:</strong> 4046 sayılı Kanunun 21. maddesine göre özelleştirme nedeniyle fesih</li>
+                <li><strong>33:</strong> Gazeteci tarafından sözleşmenin feshi</li>
+                <li><strong>34:</strong> İşyerinin devri, işin veya işyerinin niteliğinin değişmesi nedeniyle fesih</li>
+            </ul>
+            <p>İşten çıkış nedeni, personelin işten ayrılma durumunda SGK bildirgesinde belirtilmelidir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>12. İletişim ve Destek</h2>
+        <p>E-Bildirge sistemi ile ilgili sorularınız veya sorunlarınız için:</p>
+        <ul>
+            <li>Sistem yöneticinize başvurabilirsiniz.</li>
+            <li>SGK İletişim Merkezi'ni arayabilirsiniz: <strong>170</strong></li>
+            <li>SGK'nın resmi web sitesini ziyaret edebilirsiniz: <a href="https://www.sgk.gov.tr" target="_blank">www.sgk.gov.tr</a></li>
+        </ul>
+        
+        <div class="tip-box">
+            <h3>Bildirge Gönderimi Öncesi Kontrol Listesi</h3>
+            <p>Bildirgeyi SGK'ya göndermeden önce şu kontrolleri yapmanız önerilir:</p>
+            <ol>
+                <li>Tüm personelin meslek kodlarının tanımlanmış olduğundan emin olun.</li>
+                <li>Personel listesinin tam ve doğru olduğunu kontrol edin.</li>
+                <li>Bildirge döneminin doğru olduğundan emin olun.</li>
+                <li>Eksik gün ve işten çıkış nedenlerinin doğru girildiğini kontrol edin.</li>
+                <li>Prime esas kazanç tutarlarının doğruluğunu kontrol edin.</li>
+                <li>Oluşturulan dosyaların kaydedildiği konumları not edin.</li>
+            </ol>
+        </div>
+    </div>

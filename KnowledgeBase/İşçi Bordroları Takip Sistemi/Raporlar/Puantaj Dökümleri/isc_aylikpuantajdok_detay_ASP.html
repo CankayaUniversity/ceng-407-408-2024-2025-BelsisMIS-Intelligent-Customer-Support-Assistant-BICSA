@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aylık Puantaj Döküm Detayı - Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AYLIK PUANTAJ DÖKÜM DETAYI</h1>
+        <img src="/api/placeholder/200/50" alt="Kurum Logosu">
+    </div>
+
+    <div class="section">
+        <h1>Aylık Puantaj Döküm Detayı - Kullanıcı Kılavuzu</h1>
+        <p>Bu kılavuz, çalışanlar için detaylı aylık puantaj raporlarını oluşturmanıza ve görüntülemenize yardımcı olacaktır. Rapor, her çalışan için çalışma günleri, fazla mesai, izinler ve diğer zaman ile ilgili bilgileri gösterir.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Rapora Erişim</h2>
+        <p>Aylık Puantaj Döküm Detayı ekranına erişmek için:</p>
+        <ol>
+            <li>Sisteme giriş yapın</li>
+            <li>Raporlar bölümüne gidin</li>
+            <li>"Aylık Puantaj Döküm Detayı" seçeneğini seçin</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>2. Rapor Parametrelerinin Ayarlanması</h2>
+        <p>Rapor ekranını açtığınızda, raporunuz için parametreleri ayarlamanızı sağlayan çeşitli alanlar içeren bir form göreceksiniz. Ekranın üst kısmında "AYLIK PUANTAJ DÖKÜMÜ (DETAY)" başlığını göreceksiniz.</p>
+
+        <div class="step">
+            <h3>Tarih Aralığı</h3>
+            <p>İlk olarak, raporunuz için zaman aralığını belirleyin:</p>
+            <ul>
+                <li><strong>Başlangıç Yıl/Ay:</strong> Formun en üst kısmında bulunan ilk satırdaki alanlara başlangıç yılını (4 rakam) ve ayını (1-12) girin. Bu alanlar ekranın üst kısmında, "Başlangıç" başlığı altında yan yana bulunmaktadır.</li>
+                <li><strong>Bitiş Yıl/Ay:</strong> Formun aynı satırında sağ tarafta, "Bitiş" başlığı altında bulunan alanlara bitiş yılını ve ayını girin.</li>
+            </ul>
+            <div class="info-box">
+                <p>Eğer başlangıç değerlerini girmezseniz, sistem başlangıç yılı için mevcut yılı, başlangıç ayı için "1" değerini otomatik olarak atayacaktır.</p>
+                <p>Eğer bitiş değerlerini girmezseniz, sistem bitiş yılı için mevcut yılı, bitiş ayı için mevcut ayı otomatik olarak atayacaktır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Sicil Numarası Aralığı</h3>
+            <p>Raporunuza dahil edilecek çalışanları sicil numaralarına göre filtrelemek için:</p>
+            <ul>
+                <li><strong>Başlangıç Sicil No:</strong> "Sicil No" satırının sol tarafındaki kutucuğa başlangıç sicil numarasını girin.</li>
+                <li><strong>Bitiş Sicil No:</strong> "Sicil No" satırının sağ tarafındaki kutucuğa bitiş sicil numarasını girin.</li>
+            </ul>
+            <div class="info-box">
+                <p>Başlangıç sicil numarasını girmezseniz, sistem otomatik olarak "0" değerini atayacaktır.</p>
+                <p>Bitiş sicil numarasını girmezseniz, sistem otomatik olarak "9999999999" değerini atayacaktır.</p>
+                <p>Bu ayarlamayla tüm sicil numaralarını kapsayan bir aralık belirleyebilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>SGK Numarası Aralığı</h3>
+            <p>Raporunuza dahil edilecek çalışanları SGK numaralarına göre filtrelemek için:</p>
+            <ul>
+                <li><strong>Başlangıç SGK No:</strong> "SGK No" satırının sol tarafındaki kutucuğa başlangıç SGK numarasını girin.</li>
+                <li><strong>Bitiş SGK No:</strong> "SGK No" satırının sağ tarafındaki kutucuğa bitiş SGK numarasını girin.</li>
+            </ul>
+            <div class="info-box">
+                <p>Bitiş SGK numarasını girmezseniz, sistem otomatik olarak "zzzzzzzzzz" değerini atayacaktır, böylece tüm SGK numaraları dahil edilir.</p>
+                <p>SGK numaralarını belirli bir aralığa göre filtrelemek istediğinizde, bu alanları kullanabilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Bölüm Seçimi</h3>
+            <p>Raporunuza dahil edilecek bölümleri belirlemek için:</p>
+            <ul>
+                <li>Formun ortasında bulunan "Bölüm" başlığı altındaki çoklu seçim listesinden bir veya birden fazla bölüm seçin. Bu liste, sisteminizde tanımlı tüm bölümleri içerir.</li>
+                <li>Birden fazla bölüm seçmek için CTRL tuşunu basılı tutarak istediğiniz bölümleri tıklayın.</li>
+                <li>Tüm bölümleri seçmek için varsayılan olarak hepsi seçilidir (ekran açıldığında), herhangi bir değişiklik yapmanıza gerek yoktur.</li>
+            </ul>
+            <div class="warning-box">
+                <p>En az bir bölüm seçmelisiniz, aksi takdirde sistem "Bölüm seçmelisiniz..!" uyarısı verecek ve rapor oluşturmayacaktır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Maaş Tipi Seçimi</h3>
+            <p>Raporunuza dahil edilecek maaş tiplerini belirlemek için:</p>
+            <ul>
+                <li>"Maaş Tipi" başlığı altındaki çoklu seçim listesinden bir veya birden fazla maaş tipi seçin. Bu liste, sisteminizde tanımlı tüm maaş tiplerini içerir.</li>
+                <li>Birden fazla maaş tipi seçmek için CTRL tuşunu basılı tutarak istediğiniz maaş tiplerini tıklayın.</li>
+                <li>Tüm maaş tiplerini seçmek için varsayılan olarak hepsi seçilidir (ekran açıldığında), herhangi bir değişiklik yapmanıza gerek yoktur.</li>
+            </ul>
+            <div class="warning-box">
+                <p>En az bir maaş tipi seçmelisiniz, aksi takdirde sistem "Maaş tipi seçmelisiniz..!" uyarısı verecek ve rapor oluşturmayacaktır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Sicil Tipi Seçimi</h3>
+            <p>Raporunuza dahil edilecek sicil tiplerini belirlemek için:</p>
+            <ul>
+                <li>"Sicil Tipi" başlığı altındaki çoklu seçim listesinden bir veya birden fazla sicil tipi seçin. Bu liste, sisteminizde tanımlı tüm sicil tiplerini içerir (örneğin: memur, sözleşmeli, işçi vb.).</li>
+                <li>Birden fazla sicil tipi seçmek için CTRL tuşunu basılı tutarak istediğiniz sicil tiplerini tıklayın.</li>
+                <li>Tüm sicil tiplerini seçmek için varsayılan olarak hepsi seçilidir (ekran açıldığında), herhangi bir değişiklik yapmanıza gerek yoktur.</li>
+            </ul>
+            <div class="info-box">
+                <p>Sicil tipi, çalışanların istihdam türünü belirtir ve bu filtreyle belirli istihdam türündeki çalışanları raporunuza dahil edebilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>İşten Çıkış Nedeni Seçimi</h3>
+            <p>Raporunuza dahil edilecek işten çıkış nedenlerini belirlemek için:</p>
+            <ul>
+                <li>"İşten Çıkış Nedeni" başlığı altındaki çoklu seçim listesinden bir veya birden fazla işten çıkış nedeni seçin. Bu liste, sisteminizde tanımlı tüm işten çıkış nedenlerini içerir.</li>
+                <li>Birden fazla neden seçmek için CTRL tuşunu basılı tutarak istediğiniz nedenleri tıklayın.</li>
+                <li>Tüm nedenleri seçmek için varsayılan olarak hepsi seçilidir (ekran açıldığında), herhangi bir değişiklik yapmanıza gerek yoktur.</li>
+            </ul>
+            <div class="info-box">
+                <p>Bu filtre, belirli işten çıkış nedenlerine sahip çalışanları raporunuza dahil etmenizi sağlar.</p>
+                <p>İşten ayrılmamış çalışanları da dahil etmek için, uygun seçeneği (genellikle "0" değeri) seçtiğinizden emin olun.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>İndex Tipi Seçimi</h3>
+            <p>Raporunuzun sıralama düzenini belirlemek için:</p>
+            <ul>
+                <li>"İndex Tipi" başlığı altındaki açılır listeden bir sıralama seçeneği seçin:</li>
+                <ul>
+                    <li><strong>1-Sicil No Sıralı:</strong> Rapor sicil numarasına göre sıralanır (varsayılan).</li>
+                    <li><strong>2-Bölüm No Sıralı:</strong> Rapor önce bölüm numarasına, sonra her bölüm içinde sicil numarasına göre sıralanır.</li>
+                    <li><strong>3-Adı Soyadı Sıralı:</strong> Rapor çalışanların adı ve soyadına göre alfabetik olarak sıralanır.</li>
+                </ul>
+            </ul>
+            <div class="info-box">
+                <p>Sıralama düzeni, raporunuzun nasıl organize edileceğini ve verilerin nasıl gruplanacağını belirler.</p>
+                <p>Bölüm bazlı analiz yapmak istiyorsanız "2-Bölüm No Sıralı" seçeneğini tercih edebilirsiniz.</p>
+                <p>Çalışan adına göre alfabetik sıralama yapmak istiyorsanız "3-Adı Soyadı Sıralı" seçeneğini tercih edebilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Puan Sütunları Seçimi</h3>
+            <p>Raporunuza özel puan sütunlarını eklemek için:</p>
+            <ul>
+                <li>"Puan Sütunları" başlığı altındaki çoklu seçim listesinden bir veya birden fazla puan sütunu seçin. Bu liste, sisteminizde tanımlı tüm puan tiplerini içerir.</li>
+                <li>Birden fazla puan sütunu seçmek için CTRL tuşunu basılı tutarak istediğiniz sütunları tıklayın.</li>
+                <li>En fazla 3 puan sütunu seçebilirsiniz. Daha fazla seçerseniz, sistem yalnızca ilk 3 sütunu dikkate alacaktır.</li>
+                <li>Seçtiğiniz puan sütunları, raporda normal sütunların sağında ek sütunlar olarak görünecektir.</li>
+            </ul>
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Puan sütunları, standart puantaj bilgilerine ek olarak özel puanlamaları (örneğin: performans puanı, özel izin günleri, vb.) görmek için kullanışlıdır. İhtiyacınıza göre en uygun puan sütunlarını seçin.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Raporu Çalıştırma</h2>
+        <p>Tüm parametreleri ayarladıktan sonra raporu oluşturmak için:</p>
+        <ol>
+            <li>Formun alt kısmında bulunan <strong>"Listele"</strong> düğmesine tıklayın. Bu düğme, formun en altında sol tarafta bulunmaktadır.</li>
+            <li>Sistem, belirlediğiniz kriterlere uygun verileri işleyecek ve raporu ekranda gösterecektir.</li>
+            <li>Rapor oluşturulduğunda, formun üst kısmındaki filtreler gizlenecek ve sadece rapor görüntülenecektir.</li>
+            <li>Ekranın üst kısmında rapor başlığı ve raporun oluşturulduğu tarih görünecektir.</li>
+            <li>Raporun alt kısmında, raporun sayfa numarası ve o sayfadaki kayıt sayısı görüntülenecektir.</li>
+        </ol>
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Parametreleri her değiştirdiğinizde yeni bir rapor oluşturmak için "Listele" düğmesine tıklamanız gerekir.</p>
+        </div>
+        <div class="info-box">
+            <p><strong>Not:</strong> Rapor oluşturulurken veriler otomatik olarak seçtiğiniz İndex Tipine göre sıralanacaktır:</p>
+            <ul>
+                <li>1-Sicil No Sıralı: Sicil numarasına göre artan sıralamada</li>
+                <li>2-Bölüm No Sıralı: Önce bölüm numarasına, sonra sicil numarasına göre artan sıralamada</li>
+                <li>3-Adı Soyadı Sıralı: Çalışanların adı ve soyadına göre alfabetik sıralamada</li>
+            </ul>
+        </div>
+        <div class="warning-box">
+            <p><strong>Dikkat:</strong> Çok fazla kayıt içeren raporlarda sistem yanıt süresi uzayabilir. Lütfen raporun oluşturulması için bekleyin ve işlem sırasında başka bir butona tıklamayın.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Rapor İçeriği</h2>
+        <p>Aylık Puantaj Döküm Detayı raporunun içeriği aşağıdaki bilgileri içerir:</p>
+
+        <h3>Rapor Başlığı</h3>
+        <p>Raporun üst kısmında, şu bilgiler görüntülenir:</p>
+        <ul>
+            <li>T.C. başlığı (en üstte sol tarafta)</li>
+            <li>Belediye veya kurum adı (sol üstte, büyük harflerle)</li>
+            <li>Raporun oluşturulduğu tarih (sağ üstte)</li>
+            <li>Rapor dönemi (örn. "2025/1 - 2025/3 AYLIK PUANTAJ DÖKÜMÜ (DETAY)") - Seçtiğiniz başlangıç yıl/ay ve bitiş yıl/ay değerlerine göre otomatik oluşturulur ve sayfanın ortasında gösterilir</li>
+        </ul>
+
+        <h3>Rapor Tablosu</h3>
+        <p>Rapor tablosu, aşağıdaki sütunları içerir (Not: Beledi kodunuz 60200 ise bazı sütun başlıkları farklı olabilir, bu durumda parantez içindeki alternatif isimler geçerlidir):</p>
+        <table>
+            <tr>
+                <th>Sütun Adı</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>B.No</td>
+                <td>Bölüm numarası - Çalışanın hangi bölümde çalıştığını gösterir</td>
+            </tr>
+            <tr>
+                <td>Sicil No</td>
+                <td>Çalışanın sicil numarası - Kurumda kullanılan benzersiz kimlik numarası</td>
+            </tr>
+            <tr>
+                <td>Adı</td>
+                <td>Çalışanın adı</td>
+            </tr>
+            <tr>
+                <td>Soyadı</td>
+                <td>Çalışanın soyadı</td>
+            </tr>
+            <tr>
+                <td>Nor. Gün</td>
+                <td>Normal çalışma günü sayısı - İlgili dönemde normal mesaide çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Tat. Gün</td>
+                <td>Tatil günü sayısı - İlgili dönemde resmi tatil olan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Paz. Çal.</td>
+                <td>Pazar günü çalışma sayısı - İlgili dönemde Pazar günleri çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Cts. Çal.</td>
+                <td>Cumartesi günü çalışma sayısı - İlgili dönemde Cumartesi günleri çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Ücr. İzin</td>
+                <td>Ücretli izin gün sayısı - İlgili dönemde ücretli izin kullanılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Bay. Çal.</td>
+                <td>Bayram günü çalışma sayısı - İlgili dönemde bayram günlerinde çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Tat. Çal.</td>
+                <td>Tatil günü çalışma sayısı (bazı kurumlar için Faz.Mes.(50%) olarak görünür) - İlgili dönemde resmi tatil günlerinde çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Ymk. Gün</td>
+                <td>Yemek günü sayısı - İlgili dönemde yemek ücreti ödenecek gün sayısı</td>
+            </tr>
+            <tr>
+                <td>SGK Gün</td>
+                <td>SGK'ya bildirilen gün sayısı - İlgili dönemde SGK'ya (Sosyal Güvenlik Kurumu) prim ödenen gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Fiil. Çal.</td>
+                <td>Fiili çalışma günü sayısı - İlgili dönemde fiilen çalışılan toplam gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Vard. Gün</td>
+                <td>Vardiya günü sayısı - İlgili dönemde vardiyalı çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Gece Çal.</td>
+                <td>Gece çalışma günü sayısı - İlgili dönemde gece vardiyasında çalışılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Faz. Mes.</td>
+                <td>Fazla mesai saati (bazı kurumlar için Faz.Mes.(100%) olarak görünür) - İlgili dönemde yapılan fazla mesai saati toplamı</td>
+            </tr>
+            <tr>
+                <td>Rap. Gün.</td>
+                <td>Rapor (sağlık izni) günü sayısı - İlgili dönemde sağlık raporu alınan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Yol Gün</td>
+                <td>Yol izni günü sayısı - İlgili dönemde yol izni kullanılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Ücs. İzin</td>
+                <td>Ücretsiz izin gün sayısı - İlgili dönemde ücretsiz izin kullanılan gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Sor. Gün</td>
+                <td>Sorumluluk günü sayısı (bazı kurumlar için İş Risk Gün olarak görünür) - İlgili dönemde sorumluluk primi ödenen gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Kan. İkr.</td>
+                <td>Kanuni ikramiye günü sayısı - İlgili dönemde kanuni ikramiye hak edilen gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Söz. İkr.</td>
+                <td>Sözleşme ikramiye günü sayısı - İlgili dönemde sözleşme ikramiyesi hak edilen gün sayısı</td>
+            </tr>
+            <tr>
+                <td>Ek Puan Sütunları</td>
+                <td>Seçtiğiniz puan sütunları (en fazla 3 adet) burada görünür - Bu sütunlarda, sisteminizde tanımlanan özel puan türlerine ait değerler gösterilir</td>
+            </tr>
+        </table>
+
+        <h3>Rapor Toplamları</h3>
+        <p>Raporun alt kısmında, tablodaki tüm sayısal değerlerin toplamları "GENEL TOPLAM" satırında gösterilir. Bu satır, sayfadaki tüm personelin değerlerinin toplamını gösterir ve şunları içerir:</p>
+        <ul>
+            <li>Normal gün toplamı</li>
+            <li>Tatil günü toplamı</li>
+            <li>Pazar çalışma günü toplamı</li>
+            <li>Cumartesi çalışma günü toplamı</li>
+            <li>Ücretli izin günü toplamı</li>
+            <li>Bayram çalışma günü toplamı</li>
+            <li>Tatil çalışma günü toplamı</li>
+            <li>Yemek günü toplamı</li>
+            <li>SGK günü toplamı</li>
+            <li>Fiili çalışma günü toplamı</li>
+            <li>Vardiya günü toplamı</li>
+            <li>Gece çalışma günü toplamı</li>
+            <li>Fazla mesai saati toplamı</li>
+            <li>Rapor günü toplamı</li>
+            <li>Yol günü toplamı</li>
+            <li>Ücretsiz izin günü toplamı</li>
+            <li>Sorumluluk günü toplamı</li>
+            <li>Kanuni ikramiye günü toplamı</li>
+            <li>Sözleşme ikramiye günü toplamı</li>
+            <li>Varsa ek puan sütunlarının toplamları</li>
+        </ul>
+        <div class="info-box">
+            <p>Bu toplamlar, yöneticilerin dönemsel çalışma analizi yapabilmesi ve toplam puantaj verilerini görebilmesi için önemlidir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Raporu Yazdırma</h2>
+        <p>Raporu yazdırmak için:</p>
+        <ol>
+            <li>Rapor görüntülendikten sonra, ekranın altında bulunan yazdırma araç çubuğunu göreceksiniz.</li>
+            <li>Yazdırma simgesine tıklayarak raporu doğrudan yazıcıya gönderebilirsiniz.</li>
+            <li>Alternatif olarak, yazdırma araç çubuğundaki diğer seçenekleri kullanarak raporu PDF olarak kaydedebilir veya e-posta olarak gönderebilirsiniz (sisteminizin yapılandırmasına bağlı olarak).</li>
+            <li>Veya tarayıcınızın yazdırma işlevini (genellikle Ctrl+P) kullanabilirsiniz.</li>
+        </ol>
+        <div class="info-box">
+            <p>Rapor, sayfa başına 40 satır (varsayılan) olacak şekilde sayfalara bölünür. Bu değer sistem yapılandırmasına bağlı olarak değişebilir.</p>
+            <p>Her sayfanın sonunda "Sayfa no X Yazılan Kayıt Sayısı Y" şeklinde bilgi görüntülenir.</p>
+            <p>Eğer rapor birden fazla sayfaya yayılıyorsa, her sayfa kendi içinde "GENEL TOPLAM" satırını içerir ve bu satır o sayfaya kadar olan kayıtların toplamını gösterir.</p>
+        </div>
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Yazdırmadan önce raporu kontrol edin ve gerekirse yazdırma ayarlarını (yönlendirme, kenar boşlukları vb.) ayarlayın. Rapor yatay (landscape) modda daha iyi görüntülenebilir, özellikle çok sayıda puan sütunu eklediyseniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Rapordan Çıkış ve Filtrelere Dönüş</h2>
+        <p>Rapordan çıkmak veya filtre ekranına geri dönmek için:</p>
+        <ul>
+            <li>Rapor görüntülendikten sonra, ekranın altında bulunan <strong>"Çıkış"</strong> düğmesine tıklayabilirsiniz. Bu, rapor penceresini kapatacaktır.</li>
+            <li>Eğer filtrelere geri dönmek ve başka bir rapor oluşturmak istiyorsanız, tarayıcınızın "Geri" düğmesini kullanabilir veya yeniden aynı rapor menüsüne girebilirsiniz.</li>
+        </ul>
+        <div class="info-box">
+            <p>Rapor oluşturulduktan sonra filtre formunu tekrar görmek için sayfayı yenilemeniz gerekebilir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Klavye Kullanımı ve Kısayollar</h2>
+        <p>Form ekranında aşağıdaki klavye kısayollarını kullanabilirsiniz:</p>
+        <ul>
+            <li><strong>Enter tuşu:</strong> Form üzerinde bir alandan diğerine geçmek için Enter tuşuna basabilirsiniz. Enter tuşu, Tab tuşu gibi davranacak ve bir sonraki alana geçmenizi sağlayacaktır.</li>
+            <li><strong>Tab tuşu:</strong> Bir alandan diğerine geçmek için kullanabilirsiniz.</li>
+            <li><strong>CTRL tuşu:</strong> Çoklu seçim listelerinde (Bölüm, Maaş Tipi, Sicil Tipi, İşten Çıkış Nedeni, Puan Sütunları) birden fazla öğe seçmek için CTRL tuşunu basılı tutarak ilgili öğelere tıklayabilirsiniz.</li>
+            <li><strong>SHIFT tuşu:</strong> Çoklu seçim listelerinde, bir aralık seçmek için kullanabilirsiniz. İlk öğeye tıklayın, SHIFT tuşunu basılı tutun ve aralığın son öğesine tıklayın - aradaki tüm öğeler seçilecektir.</li>
+        </ul>
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> İşinizi kolaylaştırmak için tarih alanları arasında Enter tuşunu kullanarak hızlıca geçiş yapabilirsiniz. Örneğin, başlangıç yılını girdikten sonra Enter tuşuna basarak başlangıç ayına, sonra tekrar Enter tuşuna basarak bitiş yılına geçebilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Veri Yorumlama ve Analiz</h2>
+        <p>Aylık Puantaj Döküm Detayı raporunuzdaki verileri yorumlarken şu noktalara dikkat edebilirsiniz:</p>
+        
+        <div class="info-box">
+            <h3>Puantaj Verilerini Anlama</h3>
+            <ul>
+                <li><strong>Fiili Çalışma vs. SGK Günü:</strong> Fiili çalışma günü, gerçekten işyerinde çalışılan günleri gösterirken, SGK günü, SGK'ya bildirilecek prim gününü gösterir. Bu iki değer arasında farklılık olabilir (örneğin, raporlu günler SGK gününe dahil edilir ama fiili çalışma gününe dahil edilmez).</li>
+                <li><strong>Normal Gün ve Diğer Çalışma Günleri:</strong> Normal gün sayısına ek olarak Cumartesi, Pazar, bayram ve tatil günlerindeki çalışmaları ayrı sütunlarda görebilirsiniz. Bu, fazla mesai ve ek ödemelerin hesaplanmasında önemlidir.</li>
+                <li><strong>İzin Takibi:</strong> Ücretli izin, ücretsiz izin ve rapor günleri sütunları, personelin devam durumunu ve izin kullanımını takip etmenizi sağlar.</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Analiz İpuçları</h3>
+            <ul>
+                <li><strong>Bölüm Bazlı Analiz:</strong> İndex tipini "2-Bölüm No Sıralı" seçerek, bölüm bazında mesai ve izin durumlarını daha kolay analiz edebilirsiniz.</li>
+                <li><strong>Fazla Mesai Takibi:</strong> "Faz. Mes." sütunu, ilgili dönemde yapılan fazla mesai saatlerini gösterir. Bu veriyi kullanarak, hangi personelin veya bölümün daha fazla mesai yaptığını tespit edebilirsiniz.</li>
+                <li><strong>Vardiya ve Gece Çalışma Analizi:</strong> Vardiya günü ve gece çalışma günü sütunları, vardiyalı çalışan personelin izlenmesinde faydalıdır.</li>
+                <li><strong>Genel Toplam Satırı:</strong> Sayfanın altındaki "GENEL TOPLAM" satırı, tüm personelin toplam değerlerini gösterir. Bu, genel puantaj durumunu hızlıca değerlendirmenizi sağlar.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Sık Sorulan Sorular</h2>
+        
+        <div class="info-box">
+            <h3>Raporda Hiç Veri Görünmüyor</h3>
+            <p><strong>Olası Nedenler ve Çözümler:</strong></p>
+            <ul>
+                <li>Seçtiğiniz tarih aralığında veri olmayabilir. Daha geniş bir tarih aralığı deneyin.</li>
+                <li>Seçtiğiniz sicil numarası, SGK numarası, bölüm, maaş tipi veya sicil tipi filtrelerine uygun personel olmayabilir. Filtreleri genişletin.</li>
+                <li>İşten çıkış nedeni filtreniz, görüntülemek istediğiniz personeli hariç tutuyor olabilir. Tüm nedenleri seçtiğinizden emin olun.</li>
+                <li>Sistemde henüz veri bulunmayabilir. Sistem yöneticinize danışın.</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Tüm Personeli Raporda Göremiyorum</h3>
+            <p><strong>Olası Nedenler ve Çözümler:</strong></p>
+            <ul>
+                <li>Sicil numarası aralığınız tüm personeli kapsamıyor olabilir. Başlangıç sicil numarasını "0", bitiş sicil numarasını "9999999999" olarak ayarlayın.</li>
+                <li>SGK numarası aralığınız tüm personeli kapsamıyor olabilir. Başlangıç SGK numarasını boş bırakın, bitiş SGK numarasını boş bırakın (sistem otomatik olarak "zzzzzzzzzz" değerini atayacaktır).</li>
+                <li>Bölüm, maaş tipi veya sicil tipi filtreleriniz tüm personeli kapsamıyor olabilir. Tüm seçenekleri seçtiğinizden emin olun.</li>
+                <li>İşten çıkış nedeni filtresinde bazı seçenekler seçili olmayabilir. Tüm seçenekleri seçtiğinizden emin olun.</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Rapordaki Sayısal Değerler Farklı Görünüyor</h3>
+            <p><strong>Açıklama:</strong></p>
+            <ul>
+                <li>Sistem, sayısal değerleri özel bir formatlama ile göstermektedir. Büyük sayılar binlik ayırıcılarla gösterilebilir.</li>
+                <li>Bazı kurumlar için (belediye kodu 60200 olanlar) bazı sütun başlıkları ve içerikleri farklı olabilir.</li>
+                <li>"Faz. Mes." sütununda gösterilen değerler saat cinsindedir, gün cinsinden değildir.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Puan Sütunlarında Değer Göremiyorum</h3>
+            <p><strong>Olası Nedenler ve Çözümler:</strong></p>
+            <ul>
+                <li>İlgili dönemde seçilen puan türlerine ait değer girilmemiş olabilir.</li>
+                <li>Puan türleri sisteminizde tanımlı olmalıdır. Tanımlı değilse, sistem yöneticinize başvurun.</li>
+                <li>En fazla 3 puan sütunu görüntülenebilir. Daha fazla seçtiyseniz, sistem yalnızca ilk 3 sütunu gösterecektir.</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h3>İpucu: Rapor Performansı</h3>
+            <p>Çok geniş tarih aralıkları veya çok sayıda personel içeren raporlar, sistemin yanıt süresini yavaşlatabilir. Mümkünse, raporlarınızı daha küçük gruplar halinde oluşturun. Örneğin:</p>
+            <ul>
+                <li>Bir seferde tek bir bölüm için rapor oluşturun.</li>
+                <li>Tarih aralığını daha kısa tutun (örneğin, bir yıl yerine üç aylık dönemler halinde).</li>
+                <li>Sicil numarası aralığını bölümlere ayırın.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. İletişim ve Destek</h2>
+        <p>Bu kullanıcı kılavuzunda bulamadığınız bilgiler veya yaşadığınız sorunlar için:</p>
+        <ul>
+            <li>Sistem yöneticiniz ile iletişime geçin.</li>
+            <li>Kurumunuzun bilgi işlem departmanından destek alın.</li>
+            <li>Program tedarikçisi ile iletişime geçmek için kurumunuzun ilgili birimine başvurun.</li>
+        </ul>
+        <div class="info-box">
+            <p>Rapor çıktılarınızda tutarsızlıklar veya hatalar gördüğünüzde, ekran görüntüsü alarak ve problemi detaylı bir şekilde açıklayarak bilgi işlem departmanına iletmeniz, sorunun daha hızlı çözülmesine yardımcı olacaktır.</p>
+        </div>
+    </div>
+</body>
+</html>

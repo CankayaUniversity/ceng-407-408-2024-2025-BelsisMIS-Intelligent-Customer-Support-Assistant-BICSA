@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicil Hareket Tipi Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sicil Hareket Tipi Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#temel-kavramlar">Sicil Hareket Tipi ile İlgili Temel Kavramlar</a></li>
+                <li><a href="#ekran-alanlari">Ekran Alanları ve Veri Giriş Bölümleri</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları</a></li>
+                <li><a href="#sicil-ekleme">Adım Adım Sicil Hareket Tipi Ekleme</a></li>
+                <li><a href="#sicil-guncelleme">Adım Adım Sicil Hareket Tipi Güncelleme</a></li>
+                <li><a href="#sicil-silme">Adım Adım Sicil Hareket Tipi Silme</a></li>
+                <li><a href="#arama-listeleme">Arama ve Listeleme İşlemleri</a></li>
+                <li><a href="#sorun-giderme">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Sicil Hareket Tipi Tanımları programı, personel sicil işlemlerinin kategorize edilmesi ve yönetilmesi için kullanılan önemli bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel hareketlerini tanımlama (işe giriş, çıkış, ara hareketler)</li>
+                <li>Sicil hareketlerine ait tanımları oluşturma ve düzenleme</li>
+                <li>Hizmet cetvelinde görüntülenecek hareketleri belirleme</li>
+                <li>Personel sicil kayıtlarının takibini yapma</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Oluşturmak istediğiniz sicil hareket tipinin kodu</li>
+                    <li>Hareket tipine ait açıklama bilgisi</li>
+                    <li>Hareketin hizmet cetvelinde görüntülenip görüntülenmeyeceği</li>
+                    <li>Hareketin sicile etkisi (giriş, çıkış veya ara hareket)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (deniz mavisi) renkli bir şeritte "Sicil Hareket Tipi Tanımları (Giriş)" veya "Sicil Hareket Tipi Tanımları (Değişiklik)" başlığı yer alır</li>
+                            <li>Bu başlık, yapılan işleme göre (ekleme veya güncelleme) otomatik olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında bir çerçeve içinde ana çalışma alanı bulunur</li>
+                            <li>"Sicil Hareket Tipi" alanı ile başlar</li>
+                            <li>Açıklama, hizmet cetveli görüntüleme ve sicile etkisi alanlarını içerir</li>
+                            <li>Her alan etiketiyle birlikte solda yer alır, veri giriş kutuları sağdadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında iki satır halinde butonlar yer alır</li>
+                            <li>Üst satırda gezinme butonları (Önceki, Sonraki, Listele) bulunur</li>
+                            <li>Alt satırda ise işlem butonları (Temizle, Kaydet, Sil, Çıkış) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Başlık "Sicil Hareket Tipi Tanımları (Giriş)" olarak görünür</li>
+                    <li>İmleç "Sicil Hareket Tipi" alanında konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>Sistem en son sicil hareket tipi numarasını otomatik olarak getirir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="temel-kavramlar" class="section">
+        <h2>Sicil Hareket Tipi ile İlgili Temel Kavramlar</h2>
+        <div class="info-box">
+            <p>Sicil hareket tipleri, personel kayıtlarında meydana gelen değişiklikleri kategorize etmek için kullanılır. Bu bölümde, programı kullanırken karşılaşacağınız temel kavramları açıklayacağız.</p>
+            
+            <h3>Temel Kavramlar:</h3>
+            <ul>
+                <li><strong>Sicil Hareket Tipi:</strong> Personel hareketlerini tanımlayan sayısal bir koddur. Her hareket tipinin benzersiz bir kodu olmalıdır.</li>
+                <li><strong>Açıklama:</strong> Sicil hareket tipinin ne anlama geldiğini açıklayan kısa bir tanımdır.</li>
+                <li><strong>Hizmet Cetvelinde Görüntülenme:</strong> İlgili hareket tipinin hizmet cetveli raporlarında görünüp görünmeyeceğini belirler.</li>
+                <li><strong>Sicile Etkisi:</strong> Hareketin personel kaydına olan etkisini belirtir:
+                    <ul>
+                        <li><strong>Giriş:</strong> Personelin işe başlama hareketleri için kullanılır</li>
+                        <li><strong>Çıkış:</strong> Personelin işten ayrılma hareketleri için kullanılır</li>
+                        <li><strong>Ara Hareket:</strong> Personelin çalışma sürecinde meydana gelen diğer hareketleri ifade eder</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Bilgilendirme:</h4>
+                <p>Sicil hareket tipleri, personel kayıtlarının doğru şekilde kategorilendirilmesi ve raporlanması için önemlidir. Doğru tanımlamalar, personel hareketlerinin izlenmesini ve raporlanmasını kolaylaştırır.</p>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları</h2>
+        <div class="info-box">
+            <h3>Gezinme Butonları (Üst Satır)</h3>
+            
+            <div class="step">
+                <h4>Önceki Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında, üst satırın sol tarafında yer alır</li>
+                            <li>Üzerinde "Önceki" yazar ve bir sol ok işareti içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Mevcut sicil hareket tipinden önce gelen (daha küçük numaralı) kaydı gösterir</li>
+                            <li>Sistem en yakın küçük numaralı kaydı otomatik olarak bulur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>Eğer sicil hareket tipi alanı boşsa, sistem en yüksek numaralı kaydı varsayarak bir önceki kaydı getirir</li>
+                            <li>Bir kayıt görüntülendikten sonra Önceki butonuna tekrar tıklayarak sırayla geriye doğru kayıtları gezebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sonraki Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Önceki butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Sonraki" yazar ve bir sağ ok işareti içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Mevcut sicil hareket tipinden sonra gelen (daha büyük numaralı) kaydı gösterir</li>
+                            <li>Sistem en yakın büyük numaralı kaydı otomatik olarak bulur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>Eğer sicil hareket tipi alanı boşsa, sistem sıfır değerini varsayarak bir sonraki kaydı getirir</li>
+                            <li>Bir kayıt görüntülendikten sonra Sonraki butonuna tekrar tıklayarak sırayla ileriye doğru kayıtları gezebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Listele Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Sonraki butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Listele" yazar ve bir liste simgesi içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Tüm sicil hareket tipi kayıtlarını içeren bir liste penceresi açar</li>
+                            <li>Bu listeden seçim yaparak kayıtlar arasında gezinebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>Açılan pencerede kayıtlar sicil hareket tipi numarası ve açıklamasıyla listelenir</li>
+                            <li>Listeden bir kayıt seçerek ana ekrana bu kaydın bilgilerini getirebilirsiniz</li>
+                            <li>Pencereyi kapatmak için ESC tuşuna basabilir veya sağ üstteki çarpı butonuna tıklayabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>İşlem Butonları (Alt Satır)</h3>
+
+            <div class="step">
+                <h4>Temizle Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Alt satırın sol tarafında yer alır</li>
+                            <li>Üzerinde "Temizle" yazar ve bir süpürge/silgi simgesi içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Ekrandaki tüm giriş alanlarını temizler</li>
+                            <li>Program başlangıç durumuna döner</li>
+                            <li>Sistem otomatik olarak yeni bir kayıt ekleme moduna geçer</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>Sistem tüm alanları temizleyecek ve son sicil hareket tipi numarasını otomatik olarak getirecektir</li>
+                            <li>Başlık "Sicil Hareket Tipi Tanımları (Giriş)" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Temizle butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Kaydet" yazar ve bir disket simgesi içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Yeni kayıt eklerken: Girilen bilgileri veritabanına kaydeder</li>
+                            <li>Mevcut kaydı güncellerken: Değişiklikleri kaydeder</li>
+                            <li>İşlem sonrası otomatik olarak temizleme yapar ve yeni kayıt ekleme moduna geçer</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Tüm gerekli alanları doldurduktan sonra butona fare ile tıklayın</li>
+                            <li>Eksik bilgi varsa sistem uyarı verecektir</li>
+                            <li>İşlem başarılı olduğunda alanlar temizlenir ve yeni kayıt için hazır hale gelir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sil Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Kaydet butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde "Sil" yazar ve bir çöp kutusu simgesi içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Ekranda görüntülenen sicil hareket tipi kaydını veritabanından siler</li>
+                            <li>İşlem öncesi onay ister ve geri dönüşü olmayan bir işlemdir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz kaydı ekranda görüntüledikten sonra butona fare ile tıklayın</li>
+                            <li>Sistem "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir</li>
+                            <li>"Evet" seçeneğini tıklarsanız kayıt silinecek, "Hayır" seçeneğini tıklarsanız işlem iptal edilecektir</li>
+                            <li>Silme işlemi tamamlandıktan sonra ekran temizlenir ve yeni kayıt ekleme moduna geçilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Alt satırın en sağında yer alır</li>
+                            <li>Üzerinde "Çıkış" yazar ve bir kapı/çıkış simgesi içerir</li>
+                            <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buton İşlevi:</strong>
+                        <ul>
+                            <li>Programı kapatır ve ana menüye döner</li>
+                            <li>Kaydedilmemiş değişiklikler varsa bunlar kaybedilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>ESC tuşuna basarak da aynı işlemi gerçekleştirebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonu yalnızca mevcut bir kaydı görüntülerken aktiftir</li>
+                    <li>Kaydet butonu yeni kayıt ve güncelleme işlemlerinin her ikisi için de kullanılır</li>
+                    <li>Silme işlemi geri alınamaz, onay vermeden önce dikkatli olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ALT + L tuş kombinasyonu ile Listele butonunu etkinleştirebilirsiniz</li>
+                    <li>ESC tuşu ile programdan hızlıca çıkabilirsiniz</li>
+                    <li>Herhangi bir arama yapmadan Önceki veya Sonraki butonlarını kullanarak kayıtlar arasında gezinebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-ekleme" class="section">
+        <h2>Adım Adım Sicil Hareket Tipi Ekleme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yeni Sicil Hareket Tipi Nasıl Eklenir?</h4>
+                <ol>
+                    <li><strong>Ekranı Hazırlama:</strong>
+                        <ul>
+                            <li>Programı açın, başlığın "Sicil Hareket Tipi Tanımları (Giriş)" olduğundan emin olun</li>
+                            <li>Eğer başka bir işlem yapıyorsanız, Temizle butonuna tıklayarak alanları temizleyin</li>
+                            <li>Sicil Hareket Tipi alanına imleç otomatik olarak konumlanacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgileri Girme:</strong>
+                        <ol>
+                            <li>Sicil Hareket Tipi:
+                                <ul>
+                                    <li>Benzersiz bir sicil hareket tipi kodu girin (1-99999 arasında bir sayı)</li>
+                                    <li>Önemli: Sıfır değeri giremezsiniz, sistem uyarı verecektir</li>
+                                    <li>TAB tuşuna basarak Açıklama alanına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Açıklama:
+                                <ul>
+                                    <li>Hareket tipini tanımlayan kısa bir açıklama yazın (Örn: "İşe Giriş", "Emeklilik", "Görev Değişikliği" vb.)</li>
+                                    <li>TAB tuşuna basarak Hizmet Cetvelinde Görüntülensin mi? alanına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Hizmet Cetvelinde Görüntülensin mi?:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>Bu hareket tipinin hizmet cetveli raporlarında görünmesini istiyorsanız "Evet"i seçin</li>
+                                    <li>Görünmesini istemiyorsanız "Hayır"ı seçin</li>
+                                    <li>TAB tuşuna basarak Sicile Etkisi alanına geçin</li>
+                                </ul>
+                            </li>
+                            <li>Sicile Etkisi:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>Hareketin tipine göre uygun seçeneği seçin:
+                                        <ul>
+                                            <li>"Giriş": Personelin işe başlama hareketleri için</li>
+                                            <li>"Çıkış": Personelin işten ayrılma hareketleri için</li>
+                                            <li>"Ara Hareket": Personelin çalışma sürecindeki diğer hareketler için</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ul>
+                            <li>Tüm bilgileri girdikten sonra, Kaydet butonuna tıklayın</li>
+                            <li>Sistem kontrolleri yapacak ve herhangi bir eksik veya hatalı bilgi varsa uyarı mesajı gösterecektir</li>
+                            <li>Başarılı kayıt durumunda, tüm alanlar temizlenir ve yeni bir kayıt için hazır hale gelir</li>
+                            <li>Başlık "Sicil Hareket Tipi Tanımları (Giriş)" olarak kalacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Olası Hatalar ve Çözümleri:</h4>
+                <ul>
+                    <li><strong>Sicil Hareket Tipi Girilmemiş!</strong> - Sicil Hareket Tipi alanını boş bıraktınız</li>
+                    <li><strong>Sicil Hareket Tipi Sıfır Olamaz!</strong> - 0 değerini girdiniz, başka bir numara kullanın</li>
+                    <li><strong>Bu sicil hareket tipi daha önce tanımlanmış!</strong> - Zaten var olan bir kod girdiniz, benzersiz bir kod kullanın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Başarılı Ekleme için İpuçları:</h4>
+                <ul>
+                    <li>Sistem son kayıt nosundan bir fazlasını otomatik önerir, bu genellikle en pratik yaklaşımdır</li>
+                    <li>Numaralarda atlama olması sorun değildir, ardışık olması gerekmez</li>
+                    <li>Açıklamalar kısa ve anlaşılır olmalıdır, çok uzun açıklamalardan kaçının</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-silme" class="section">
+        <h2>Adım Adım Sicil Hareket Tipi Silme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Bir Sicil Hareket Tipini Nasıl Silersiniz?</h4>
+                <ol>
+                    <li><strong>Kaydı Bulma:</strong>
+                        <ol>
+                            <li>Doğrudan Sicil Hareket Tipi ile Bulma:
+                                <ul>
+                                    <li>Sicil Hareket Tipi alanına silmek istediğiniz kaydın kodunu yazın</li>
+                                    <li>TAB veya ENTER tuşuna basın</li>
+                                    <li>Sistem otomatik olarak ilgili kaydı bulup tüm bilgilerini ekrana getirecektir</li>
+                                    <li>Başlık "Sicil Hareket Tipi Tanımları (Değişiklik)" olarak değişecektir</li>
+                                </ul>
+                            </li>
+                            <li>Liste Kullanarak Bulma:
+                                <ul>
+                                    <li>Listele butonuna tıklayın (üst satırdaki en sağdaki buton)</li>
+                                    <li>Açılan pencerede tüm sicil hareket tipleri listelenecektir</li>
+                                    <li>Silmek istediğiniz kaydı listeden bulup tıklayın</li>
+                                    <li>Seçilen kaydın bilgileri ana ekrana yüklenecektir</li>
+                                </ul>
+                            </li>
+                            <li>Önceki/Sonraki Butonları ile Bulma:
+                                <ul>
+                                    <li>Önceki veya Sonraki butonlarını kullanarak kayıtlar arasında gezinin</li>
+                                    <li>İstediğiniz kayıt ekrana geldiğinde durun</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydı Silme:</strong>
+                        <ol>
+                            <li>Sil Butonuna Tıklama:
+                                <ul>
+                                    <li>Silmek istediğiniz kayıt ekranda görüntülenirken Sil butonuna tıklayın</li>
+                                    <li>Sil butonu alt sıradaki butonların üçüncüsüdür (Kaydet butonunun sağında yer alır)</li>
+                                </ul>
+                            </li>
+                            <li>Onay Mesajını Yanıtlama:
+                                <ul>
+                                    <li>Sistem "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir</li>
+                                    <li>Silme işlemini gerçekleştirmek için "Evet" butonuna tıklayın</li>
+                                    <li>İşlemi iptal etmek için "Hayır" butonuna tıklayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Silme İşlemi Sonrası:</strong>
+                        <ul>
+                            <li>Başarılı silme durumunda tüm alanlar temizlenir</li>
+                            <li>Sistem otomatik olarak yeni bir kayıt ekleme moduna geçer</li>
+                            <li>Başlık "Sicil Hareket Tipi Tanımları (Giriş)" olarak değişecektir</li>
+                            <li>Silinen kayıt tamamen veritabanından çıkarılır ve geri getirilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz! Onay vermeden önce doğru kaydı sildiğinizden emin olun</li>
+                    <li>Sil butonu yalnızca bir kayıt görüntülenirken aktiftir, kayıt ekleme modunda çalışmaz</li>
+                    <li>Sistemde kullanımda olan bir sicil hareket tipini silmek hatalara neden olabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Güvenli Silme için İpuçları:</h4>
+                <ul>
+                    <li>Silmeden önce kaydın kullanımda olmadığından emin olun</li>
+                    <li>Emin olmadığınız durumlarda silmek yerine hareket tipini pasif duruma getirmeyi düşünün (Sicile Etkisi alanını boş bırakarak)</li>
+                    <li>Sistem yöneticinizden yardım isteyebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arama-listeleme" class="section">
+        <h2>Arama ve Listeleme İşlemleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sicil Hareket Tipi Kayıtlarını Nasıl Ararsınız?</h4>
+                <ol>
+                    <li><strong>Doğrudan Sicil Hareket Tipi ile Arama:</strong>
+                        <ol>
+                            <li>Sicil Hareket Tipi Alanını Kullanma:
+                                <ul>
+                                    <li>Sicil Hareket Tipi alanına aramak istediğiniz kaydın kodunu yazın</li>
+                                    <li>TAB veya ENTER tuşuna basın</li>
+                                    <li>Sistem otomatik olarak ilgili kaydı arar</li>
+                                    <li>Kayıt bulunursa bilgileri ekrana yüklenir ve başlık "Sicil Hareket Tipi Tanımları (Değişiklik)" olarak değişir</li>
+                                    <li>Kayıt bulunamazsa Sicil Hareket Tipi alanı aktif kalır ve sistem yeni kayıt ekleme moduna geçer</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Liste Üzerinden Arama ve Seçme:</strong>
+                        <ol>
+                            <li>Listele Butonunu Kullanma:
+                                <ul>
+                                    <li>Listele butonuna tıklayın (üst satırdaki en sağdaki buton)</li>
+                                    <li>Açılan pencerede tüm sicil hareket tipleri kod ve açıklamalarıyla birlikte listelenir</li>
+                                    <li>Liste penceresinde hareket tipinin koduna veya açıklamasına göre filtreleme yapabilirsiniz</li>
+                                    <li>İstediğiniz kaydı bulduğunuzda üzerine tıklayın</li>
+                                    <li>Seçilen kayıt ana ekrana yüklenir ve çalışmaya devam edebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Sıralı Kayıtlar Arasında Gezinme:</strong>
+                        <ol>
+                            <li>Önceki/Sonraki Butonlarını Kullanma:
+                                <ul>
+                                    <li>Önceki butonu: Mevcut sicil hareket tipinden daha küçük numaralı kayda geçer</li>
+                                    <li>Sonraki butonu: Mevcut sicil hareket tipinden daha büyük numaralı kayda geçer</li>
+                                    <li>Bu butonlar ekranda bir kayıt görüntülenirken kullanılabilir</li>
+                                    <li>Hiç kayıt görüntülenmiyorsa, Önceki butonu en yüksek numaralı kaydı, Sonraki butonu en düşük numaralı kaydı getirir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Liste Penceresini Etkin Kullanma:</h4>
+                <ol>
+                    <li><strong>Liste Penceresini Açma:</strong>
+                        <ul>
+                            <li>Listele butonuna tıklayın (üst satırdaki en sağdaki buton)</li>
+                            <li>Liste penceresi ekranın ortasında açılır</li>
+                            <li>Pencereyi hareket ettirmek için başlık çubuğundan tutup sürükleyebilirsiniz</li>
+                            <li>Pencere boyutunu değiştirmek için kenarlarından tutup sürükleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İçinde Arama Yapma:</strong>
+                        <ul>
+                            <li>Liste penceresinin üst kısmında arama kutuları bulunur</li>
+                            <li>Sütun başlıklarının altında yer alan bu kutulara filtreleme kriteri girebilirsiniz</li>
+                            <li>Arama yaparken joker karakter (*) kullanabilirsiniz</li>
+                            <li>Örnek: "1*" yazdığınızda 1 ile başlayan tüm sicil hareket tipleri listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Seçme ve Ana Ekrana Yükleme:</strong>
+                        <ul>
+                            <li>İstediğiniz kaydı listede bulduğunuzda üzerine çift tıklayın</li>
+                            <li>Liste penceresi kapanacak ve seçilen kayıt ana ekrana yüklenecektir</li>
+                            <li>İşlem modunuz otomatik olarak "Değişiklik" moduna geçecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Penceresini Kapatma:</strong>
+                        <ul>
+                            <li>Bir kayıt seçtikten sonra pencere otomatik kapanır</li>
+                            <li>Seçim yapmadan kapatmak için pencerenin sağ üst köşesindeki X düğmesine tıklayabilirsiniz</li>
+                            <li>Ya da ESC tuşuna basarak pencereyi kapatabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Sicil hareket tipi alanına sıfır (0) değeri girilemez</li>
+                    <li>Bir kayıt bulunamadığında sistem uyarı vermez, sadece boş ekran döndürür</li>
+                    <li>Liste penceresinde filtreleme yaparken büyük-küçük harf duyarlılığına dikkat edin</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Arama İşlemlerinde Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullandığınız sicil hareket tiplerinin kodlarını not almanız işinizi kolaylaştırır</li>
+                    <li>Liste penceresinde açıklamaya göre de arama yapabilirsiniz</li>
+                    <li>Önceki/Sonraki butonları ile tüm kayıtları hızlıca gözden geçirebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sistem Hata Mesajları ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sicil Hareket Tipi Girilmemiş!" Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna tıkladığınızda sicil hareket tipi alanını boş bıraktınız</li>
+                            <li>Çözüm: Sicil hareket tipi alanına geçerli bir numara girin (1-99999 arası)</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Sicil Hareket Tipi Sıfır Olamaz!" Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Sicil hareket tipi alanına 0 değeri girdiniz</li>
+                            <li>Çözüm: Farklı bir numara kullanın, sıfır değeri kabul edilmez</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İptal İşlemini Onaylıyor musunuz?" Mesajı:</strong>
+                        <ul>
+                            <li>Durum: Bu bir hata değil, Sil butonuna tıkladığınızda çıkan onay mesajıdır</li>
+                            <li>Tepki: Silme işlemine devam etmek için "Evet", iptal etmek için "Hayır" seçeneğine tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Genel Sorunlar ve Çözüm Yöntemleri:</h4>
+                <ol>
+                    <li><strong>Kayıt Bulunamıyor:</strong>
+                        <ul>
+                            <li>Sorun: Aradığınız sicil hareket tipi koduyla kayıt bulunamıyor</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>Kodu doğru girdiğinizden emin olun</li>
+                                    <li>Listele butonuna tıklayarak tüm kayıtları görüntüleyin ve aradığınız kaydın varlığını kontrol edin</li>
+                                    <li>Kayıt yoksa yeni bir kayıt olarak ekleyebilirsiniz</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Yaptığınız değişiklikler kaydedilmiyor</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>Değişiklikleri yaptıktan sonra mutlaka Kaydet butonuna tıklayın</li>
+                                    <li>Başka bir işleme geçmeden önce kaydettiğinizden emin olun</li>
+                                    <li>Çıkış yapmadan önce tüm değişiklikleri kaydedin</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sil Butonu Çalışmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Sil butonuna tıkladığınızda hiçbir şey olmuyor</li>
+                            <li>Çözüm: 
+                                <ol>
+                                    <li>Sil butonu yalnızca ekranda bir kayıt görüntülenirken aktiftir</li>
+                                    <li>Önce bir kaydı ekrana getirin, sonra Sil butonunu kullanın</li>
+                                    <li>Yeni kayıt ekleme modunda (Giriş) Sil butonu çalışmaz</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Kaybını Önleme İpuçları:</h4>
+                <ul>
+                    <li>İşlemlerinizi tamamladıktan sonra mutlaka Kaydet butonuna tıklayın</li>
+                    <li>Programdan çıkmadan önce kaydedilmemiş değişiklikleriniz olmadığından emin olun</li>
+                    <li>Silme işlemlerinde dikkatli olun, silinen kayıtlar geri getirilemez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Sorun Giderme İpuçları:</h4>
+                <ul>
+                    <li>Bilgisayarınızın tarih ve saat ayarlarının doğru olduğundan emin olun</li>
+                    <li>Program yanıt vermezse, kapatıp yeniden açmayı deneyin</li>
+                    <li>Önemli bir sorunla karşılaşırsanız sistem yöneticinizle iletişime geçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Klavye Kısayolları ve Verimli Çalışma Teknikleri:</h4>
+                <ol>
+                    <li><strong>Sık Kullanılan Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB tuşu: Sonraki alana geçer</li>
+                            <li>SHIFT+TAB: Önceki alana döner</li>
+                            <li>ENTER: TAB tuşu gibi çalışır, sonraki alana geçer</li>
+                            <li>ESC: Programdan çıkar veya açık pencereleri kapatır</li>
+                            <li>ALT+L: Listele butonunu etkinleştirir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Kolaylıkları:</strong>
+                        <ul>
+                            <li>Açılır listelerde ilk harfi yazarak ilgili seçeneğe hızlıca ulaşabilirsiniz</li>
+                            <li>TAB tuşu ile hızlıca alanlar arasında gezinebilirsiniz</li>
+                            <li>Tek bir kayıt için arama yaparken, sicil hareket tipini yazıp ENTER tuşuna basmanız yeterlidir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listele Penceresini Etkin Kullanma:</strong>
+                        <ul>
+                            <li>Filtreleme için joker karakter (*) kullanabilirsiniz</li>
+                            <li>Liste penceresinde sütun başlıklarına tıklayarak sıralama yapabilirsiniz</li>
+                            <li>Açıklamaya göre de arama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma için Öneriler:</h4>
+                <ol>
+                    <li><strong>Sicil Hareket Tipi Kodlarını Düzenli Kullanma:</strong>
+                        <ul>
+                            <li>Benzer işlevlerdeki hareket tiplerini benzer kod aralıklarında tanımlayın</li>
+                            <li>Örneğin: 1-10 arası işe giriş, 11-20 arası işten çıkış, 21-50 arası ara hareketler şeklinde</li>
+                            <li>Bu şekilde kodlar anlamlı hale gelir ve hatırlaması kolaylaşır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açıklamaları Standart Hale Getirme:</strong>
+                        <ul>
+                            <li>Açıklamaları kısa ve anlaşılır tutun</li>
+                            <li>Benzer hareket tipleri için benzer açıklama formatları kullanın</li>
+                            <li>Örneğin: "İşe Giriş - Normal", "İşe Giriş - Nakil" gibi</li>
+                        </ul>
+                    </li>
+                    <li><strong>Düzenli Bakım Yapma:</strong>
+                        <ul>
+                            <li>Belli aralıklarla tüm sicil hareket tiplerini gözden geçirin</li>
+                            <li>Kullanılmayan hareket tiplerini pasifleştirin veya silin</li>
+                            <li>Açıklamaları güncelleyin ve standart hale getirin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sık Yapılan İşlemlerde Zaman Kazanma:</h4>
+                <ol>
+                    <li><strong>Toplu Güncelleme İşlemleri:</strong>
+                        <ul>
+                            <li>Birden fazla sicil hareket tipini güncellerken, liste penceresini kullanarak hızlıca kayıtlar arasında gezinin</li>
+                            <li>Bir kaydı güncelledikten sonra hemen Kaydet butonuna tıklayın ve Listele butonuyla yeni bir kayda geçin</li>
+                            <li>Bu şekilde hızlıca kayıtlar arasında geçiş yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı Erişim için Not Tutma:</strong>
+                        <ul>
+                            <li>Sık kullandığınız sicil hareket tipi kodlarını bir yere not edin</li>
+                            <li>Böylece doğrudan kod girerek hızlıca kayıtlara erişebilirsiniz</li>
+                            <li>Örneğin: 1-Normal İşe Giriş, 11-Normal İşten Çıkış şeklinde</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Dikkat Edilmesi Gereken Noktalar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, dikkatli olun</li>
+                    <li>Değişikliklerinizi kaydetmeden programdan çıkmayın</li>
+                    <li>Önemli sicil hareket tiplerini silmekten kaçının</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Son İpuçları:</h4>
+                <ul>
+                    <li>Bu programı kullanırken keşfedeceğiniz yeni kısayollar ve yöntemler olabilir</li>
+                    <li>Kendi çalışma stilinize uygun kullanım alışkanlıkları geliştirin</li>
+                    <li>Deneyimli kullanıcılardan yardım almaktan çekinmeyin</li>
+                    <li>Aynı ekranı kullanan meslektaşlarınızla ipuçlarını paylaşın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc" class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, Sicil Hareket Tipi Tanımları programını etkili bir şekilde kullanmanız için gerekli temel bilgileri sunmaktadır. Programın sunduğu özellikler sayesinde personel sicil hareketlerini düzenli bir şekilde tanımlayabilir, düzenleyebilir ve yönetebilirsiniz.</p>
+            
+            <p>Bu kılavuzda şu konular ele alınmıştır:</p>
+            <ul>
+                <li>Programın genel yapısı ve ekran düzeni</li>
+                <li>Veri giriş alanları ve kullanımları</li>
+                <li>İşlem butonları ve işlevleri</li>
+                <li>Adım adım sicil hareket tipi ekleme</li>
+                <li>Adım adım sicil hareket tipi güncelleme</li>
+                <li>Adım adım sicil hareket tipi silme</li>
+                <li>Arama ve listeleme işlemleri</li>
+                <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+                <li>Pratik ipuçları</li>
+            </ul>
+            
+            <p>Kılavuzda anlatılan adımları takip ederek, Sicil Hareket Tipi Tanımları programını etkili bir şekilde kullanabilirsiniz. Sorularınız olduğunda bu kılavuza başvurabilir, çözüm bulamadığınız durumlarda sistem yöneticinizden destek alabilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Sicil hareket tiplerinin doğru tanımlanması, personel kayıtlarının düzgün yönetilmesi açısından kritik öneme sahiptir. Tanımlamaları yaparken özen gösterin ve benzer hareketler için standart bir yaklaşım geliştirin.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

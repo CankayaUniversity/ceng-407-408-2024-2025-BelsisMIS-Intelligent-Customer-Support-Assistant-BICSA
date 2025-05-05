@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşçi Bordro Detay Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>İşçi Bordro Detay Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+            <li><a href="#arama-kriterleri">Arama Kriterleri ve Veri Giriş</a></li>
+            <li><a href="#filtre-secenekleri">Filtre Seçenekleri</a></li>
+            <li><a href="#tarih-veri">Tarih ve Veri Formatları</a></li>
+            <li><a href="#raporlama">Raporlama ve Görüntüleme</a></li>
+            <li><a href="#butonlar">İşlem Butonları ve Kısayollar</a></li>
+            <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>İşçi Bordro Detay programı, işçi ücret bordrolarının yönetimi ve raporlanması için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>İşçilerin ücret bordrolarını görüntüleme ve yazdırma</li>
+            <li>Sicil numarası, bölüm, görev veya maaş tipine göre filtreleme</li>
+            <li>Belirli dönemler için bordro raporları oluşturma</li>
+            <li>Detaylı veya toplam raporlar alma</li>
+        </ul>
+        işlemlerini gerçekleştirebilirsiniz.
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>Sorgulamak istediğiniz sicil numarası aralığı</li>
+                <li>Hangi yıl ve ay için bordro görüntülemek istediğiniz</li>
+                <li>Hangi bölüm, görev veya maaş tiplerini filtrelemek istediğiniz</li>
+                <li>Rapor çıktısı için başlık bilgisi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "BORDRO DETAY" başlığı yer alır</li>
+                        <li>Bu başlık sabit olup değiştirilemez</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                        <li>Sicil No, Maaş Yıl/Ay gibi temel arama kriterlerini içerir</li>
+                        <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        <li>Maaş tipi, bölüm, görev ve sicil tipi için çoklu seçim listeleri yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında yer alır</li>
+                        <li>Listele ve Çıkış butonlarını içerir</li>
+                        <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Çoklu seçim listeleri (Maaş Tipi, Bölüm, Görev ve Sicil Tipi) tüm seçenekler seçili olarak gelir</li>
+                <li>Maaş yılı ve ayı sistem tarihindeki yıl ve ay olarak otomatik doldurulur</li>
+                <li>Bordro tarihi sistem tarihine göre ayarlanır</li>
+                <li>Rapor bölme değeri varsayılan olarak 1 gelir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="arama-kriterleri" class="section">
+    <h2>Arama Kriterleri ve Veri Giriş</h2>
+    <div class="info-box">
+        <h3>Temel Arama Kriterleri</h3>
+        
+        <div class="step">
+            <h4>Sicil Numarası ile Arama:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Ana ekranın üst kısmında, "Başlangıç" ve "Bitiş" etiketlerinin hemen altında</li>
+                        <li>"Sicil No" etiketi solda yer alır</li>
+                        <li>Etiketin yanında yan yana iki giriş kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir sicil numarası için:
+                            <ul>
+                                <li>Sol kutuya sicil numarasını yazın</li>
+                                <li>Sağ kutuyu boş bırakın (otomatik olarak en büyük değer kullanılacaktır)</li>
+                            </ul>
+                        </li>
+                        <li>Sicil numarası aralığı için:
+                            <ul>
+                                <li>Sol kutuya başlangıç sicil numarasını yazın</li>
+                                <li>Sağ kutuya bitiş sicil numarasını yazın</li>
+                                <li>Boş bırakıldığında varsayılan olarak 0-999999999 aralığı kullanılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Maaş Yıl ve Ay Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Sicil No alanının hemen altında yer alır</li>
+                        <li>"Maaş Yıl/Ay" etiketi solda yer alır</li>
+                        <li>Etiketin yanında yan yana iki giriş kutusu bulunur</li>
+                        <li>Maaş yılı için daha geniş, ayı için daha dar kutular kullanılır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Yıl ve Ay girişi:
+                            <ul>
+                                <li>Sol kutuya yıl bilgisini yazın (4 haneli olarak, örneğin 2025)</li>
+                                <li>Sağ kutuya ay bilgisini yazın (1-12 arası)</li>
+                                <li>İki kutu arasında "/" işareti yer alır</li>
+                            </ul>
+                        </li>
+                        <li>Özel durumlarda (örneğin 480400 belediye kodu için):
+                            <ul>
+                                <li>İlave başlangıç ve bitiş kutuları görüntülenir</li>
+                                <li>Sol taraf başlangıç, sağ taraf bitiş tarihini belirtir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Sicil numarası alanlarına sadece rakam girilebilir</li>
+                <li>Yıl ve ay değerleri geçerli bir tarihi temsil etmelidir</li>
+                <li>Aralık belirtirken başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>ENTER tuşu da bir sonraki alana geçiş için kullanılabilir</li>
+                <li>Boş bırakılan alanlarda varsayılan değerler kullanılır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="filtre-secenekleri" class="section">
+    <h2>Filtre Seçenekleri</h2>
+    <div class="info-box">
+        <h3>Çoklu Seçim Listeleri</h3>
+        <div class="step">
+            <h4>Maaş Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Maaş Yıl/Ay alanının hemen altında, sol kısımda yer alır</li>
+                        <li>"Maaş Tipi" etiketi alanın solunda bulunur</li>
+                        <li>Dikdörtgen çoklu seçim kutusu şeklindedir ve 4 satırlık görüntüleme alanı vardır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir maaş tipi seçmek için:
+                            <ul>
+                                <li>Listeden seçmek istediğiniz maaş tipine tıklayın</li>
+                                <li>Seçilen maaş tipi mavi renkle vurgulanır</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla maaş tipi seçmek için:
+                            <ul>
+                                <li>CTRL tuşuna basılı tutarak seçmek istediğiniz maaş tiplerine tıklayın</li>
+                                <li>Tüm maaş tiplerini seçmek için herhangi birine tıklayıp CTRL+A tuşlarına basın</li>
+                            </ul>
+                        </li>
+                        <li>Program açıldığında:
+                            <ul>
+                                <li>Varsayılan olarak tüm maaş tipleri seçili gelir</li>
+                                <li>Sistem bu seçimi otomatik olarak pencere yüklendiğinde yapar</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Bölüm Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Maaş Tipi alanının sağında yer alır</li>
+                        <li>"Bölüm" etiketi alanın solunda görünür</li>
+                        <li>Maaş Tipi listesiyle aynı boyutta 4 satırlık çoklu seçim kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir bölüm seçmek için:
+                            <ul>
+                                <li>Listeden seçmek istediğiniz bölüme tıklayın</li>
+                                <li>Seçilen bölüm mavi renkle vurgulanır</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla bölüm seçmek için:
+                            <ul>
+                                <li>CTRL tuşuna basılı tutarak seçmek istediğiniz bölümlere tıklayın</li>
+                                <li>Ardışık bölümleri seçmek için ilk bölüme tıklayın, SHIFT tuşuna basılı tutarak son bölüme tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Program açıldığında:
+                            <ul>
+                                <li>Varsayılan olarak tüm bölümler seçili gelir</li>
+                                <li>Bu ayarı değiştirmek isterseniz önce tüm seçimleri temizlemek için CTRL+tıklama yapabilirsiniz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Görev Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Bölüm alanının hemen altında yer alır (bazı belediye kodlarında bu alan gösterilmeyebilir)</li>
+                        <li>"Görev" etiketi alanın solunda görünür</li>
+                        <li>Bölüm listesiyle aynı boyutta 4 satırlık çoklu seçim kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir görev seçmek için:
+                            <ul>
+                                <li>Listeden seçmek istediğiniz göreve tıklayın</li>
+                                <li>Seçilen görev mavi renkle vurgulanır</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla görev seçmek için:
+                            <ul>
+                                <li>CTRL tuşuna basılı tutarak seçmek istediğiniz görevlere tıklayın</li>
+                                <li>Ardışık görevleri seçmek için SHIFT tuşunu kullanabilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>Program açıldığında:
+                            <ul>
+                                <li>Varsayılan olarak tüm görevler seçili gelir</li>
+                                <li>Belediye kodunuz 261100 veya 61702 ise bu alan görüntülenmeyebilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Sicil Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Görev alanının altında veya Maaş Tipi alanının altında yer alır (ekran düzenine göre değişebilir)</li>
+                        <li>"Sicil Tipi" etiketi alanın solunda görünür</li>
+                        <li>Diğer çoklu seçim kutularıyla benzer yapıda ancak 6 satır görüntüleyebilir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir sicil tipi seçmek için:
+                            <ul>
+                                <li>Listeden seçmek istediğiniz sicil tipine tıklayın</li>
+                                <li>Seçilen sicil tipi mavi renkle vurgulanır</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla sicil tipi seçmek için:
+                            <ul>
+                                <li>CTRL tuşuna basılı tutarak seçmek istediğiniz sicil tiplerine tıklayın</li>
+                                <li>Tüm sicil tiplerini seçmek için CTRL+A kullanabilirsiniz</li>
+                            </ul>
+                        </li>
+                        <li>Program açıldığında:
+                            <ul>
+                                <li>Varsayılan olarak tüm sicil tipleri seçili gelir</li>
+                                <li>Sicil tiplerini numaralarına göre seçebilirsiniz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Hiçbir seçim yapılmazsa rapor oluşturulamaz</li>
+                <li>Çok fazla seçim yapmak rapor oluşturma süresini uzatabilir</li>
+                <li>Belirli bir belediye koduna sahipseniz, bazı alanlar görüntülenmeyebilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Daha hızlı sonuç almak için seçimlerinizi daraltabilirsiniz</li>
+                <li>CTRL+tıklama ile tek tek seçim yapabilirsiniz</li>
+                <li>Seçimleri temizlemek için CTRL tuşuna basarak seçili öğelere tekrar tıklayabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="tarih-veri" class="section">
+    <h2>Tarih ve Veri Formatları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Bordro Tarihi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Sicil Tipi seçim kutusunun altında yer alır</li>
+                        <li>"Bordro Tarihi" etiketi alanın solunda görünür</li>
+                        <li>10 karakter genişliğinde bir tarih giriş kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tarih formatı:
+                            <ul>
+                                <li>GG.AA.YYYY şeklinde girilmelidir (örneğin: 25.02.2025)</li>
+                                <li>Noktalar (.) tarih bölümlerini ayırmak için kullanılır</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan değer:
+                            <ul>
+                                <li>Sistem tarihi otomatik olarak doldurulur</li>
+                                <li>Değiştirmek isterseniz, doğrudan yeni tarihi yazabilirsiniz</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Rapor Bölme Değeri:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Bordro Tarihi alanının altında yer alır</li>
+                        <li>"Rap.Böl.Değer" etiketi alanın solunda görünür</li>
+                        <li>5 karakter genişliğinde bir sayı giriş kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Değer girişi:
+                            <ul>
+                                <li>Sayısal bir değer girilmelidir</li>
+                                <li>Ondalık kısım için nokta (.) kullanılır</li>
+                                <li>Virgül (,) kullanılmamalıdır</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan değer:
+                            <ul>
+                                <li>Varsayılan olarak "1" değeri gösterilir</li>
+                                <li>Bu değer, rapordaki sayısal değerleri belirli bir sayıya bölmek için kullanılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Başlık:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Rapor Bölme Değeri alanının altında yer alır</li>
+                        <li>"Başlık" etiketi alanın solunda görünür</li>
+                        <li>35 karakter genişliğinde bir metin giriş kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Metin girişi:
+                            <ul>
+                                <li>İstediğiniz başlık metnini yazabilirsiniz</li>
+                                <li>Maksimum 50 karakter girilebilir</li>
+                                <li>Türkçe karakterler kullanılabilir</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan değer:
+                            <ul>
+                                <li>Varsayılan olarak "DÖNEMİ İŞÇİ ÜCRET BORDROSU" metni gösterilir</li>
+                                <li>Bu metin, rapor üzerindeki başlığı belirler</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Döküm Şekli (60200 Belediye Kodu İçin):</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Başlık alanının altında yer alır (yalnızca belediye kodu 60200 ise görüntülenir)</li>
+                        <li>"Döküm Şekli" etiketi alanın solunda görünür</li>
+                        <li>Açılır liste (dropdown) kutusu şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Seçim yapma:
+                            <ul>
+                                <li>Açılır listeye tıklayarak seçenekleri görüntüleyin</li>
+                                <li>İstediğiniz döküm şeklini tıklayarak seçin</li>
+                            </ul>
+                        </li>
+                        <li>Seçenekler:
+                            <ul>
+                                <li>Normal Detay Döküm: Varsayılan seçenek</li>
+                                <li>İşkur Döküm: İşkur formatında rapor</li>
+                                <li>İşçi A4 Döküm: A4 sayfa formatında rapor</li>
+                                <li>Stajyer Döküm: Stajyerler için özel format</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Kullanıcı Tarihi ve Saati (330001 Belediye Kodu İçin):</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Başlık alanının altında yer alır (yalnızca belediye kodu 330001 ise görüntülenir)</li>
+                        <li>"Kullanıcı Tarihi" ve "Kullanıcı Saati" etiketleri alanların solunda görünür</li>
+                        <li>Her biri için yan yana iki giriş kutusu bulunur (başlangıç ve bitiş)</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tarih formatı:
+                            <ul>
+                                <li>GG.AA.YYYY şeklinde girilmelidir (örneğin: 25.02.2025)</li>
+                                <li>Birinci kutu başlangıç, ikinci kutu bitiş tarihidir</li>
+                            </ul>
+                        </li>
+                        <li>Saat formatı:
+                            <ul>
+                                <li>SS:DD şeklinde girilmelidir (örneğin: 14:30)</li>
+                                <li>Birinci kutu başlangıç, ikinci kutu bitiş saatidir</li>
+                                <li>Bitiş saati boş bırakılırsa, varsayılan olarak 23:59 kullanılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Tarih formatı her zaman GG.AA.YYYY şeklinde olmalıdır</li>
+                <li>Saat formatı SS:DD şeklinde olmalıdır (24 saat formatı)</li>
+                <li>Belediye kodunuza göre bazı alanlar görünür veya gizli olabilir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Raporunuzun daha anlaşılır olması için anlamlı bir başlık girin</li>
+                <li>Rapor Bölme Değerini 1000 yaparak rakamlarda bin gösterimi sağlayabilirsiniz</li>
+                <li>Tarih girişlerinde TAB tuşu ile gün, ay ve yıl arasında kolayca geçiş yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="raporlama" class="section">
+    <h2>Raporlama ve Görüntüleme</h2>
+    <div class="info-box">
+        <h3>Rapor Oluşturma ve Görüntüleme Süreci</h3>
+        <div class="step">
+            <h4>Rapor Penceresi Özellikleri:</h4>
+            <ol>
+                <li><strong>Pencere Konumu ve Boyutu:</strong>
+                    <ul>
+                        <li>Rapor yeni bir pencerede açılır</li>
+                        <li>Pencere ekranın sol üst köşesinden başlar (0,0 koordinatları)</li>
+                        <li>Varsayılan yüksekliği 525 piksel, genişliği 792 pikseldir</li>
+                        <li>Pencere yeniden boyutlandırılabilir</li>
+                    </ul>
+                </li>
+                <li><strong>Pencere Kontrolleri:</strong>
+                    <ul>
+                        <li>Kaydırma çubukları aktiftir (scrollbars=yes)</li>
+                        <li>Araç çubuğu görüntülenmez (toolbar=no)</li>
+                        <li>Menü çubuğu görüntülenir (menubar=yes)</li>
+                        <li>Durum çubuğu görüntülenmez (status=no)</li>
+                    </ul>
+                </li>
+                <li><strong>Rapor İçeriği:</strong>
+                    <ul>
+                        <li>Üst kısımda belirttiğiniz başlık görünür</li>
+                        <li>Seçtiğiniz filtrelere göre bordro bilgileri listelenir</li>
+                        <li>Her sayfa bir bordro detayı içerir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Rapor Tipine Göre İçerik Değişimi:</h4>
+            <ol>
+                <li><strong>Normal Detay Döküm (Varsayılan):</strong>
+                    <ul>
+                        <li>Standart bordro detaylarını gösterir</li>
+                        <li>İşçi bilgileri, çalışma süreleri, kazançlar ve kesintiler detaylı olarak listelenir</li>
+                        <li>Tüm belediye kodları için kullanılabilir</li>
+                    </ul>
+                </li>
+                <li><strong>İşkur Döküm (60200 Belediye Kodu İçin):</strong>
+                    <ul>
+                        <li>İşkur formatına uygun özel bir rapor görüntüler</li>
+                        <li>Sadece "Döküm Şekli" seçeneğinde "İşkur Döküm" seçildiğinde kullanılabilir</li>
+                    </ul>
+                </li>
+                <li><strong>İşçi A4 Döküm (60200 Belediye Kodu İçin):</strong>
+                    <ul>
+                        <li>A4 sayfa boyutuna optimize edilmiş rapor formatı</li>
+                        <li>Yazdırmaya uygun şekilde düzenlenmiştir</li>
+                    </ul>
+                </li>
+                <li><strong>Stajyer Döküm (60200 Belediye Kodu İçin):</strong>
+                    <ul>
+                        <li>Stajyerler için özel olarak tasarlanmış bordro formatı</li>
+                        <li>Stajyerlere özgü alanlar ve hesaplamalar içerir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Sayfa Toplamlarını Görüntüleme:</h4>
+            <ol>
+                <li><strong>Toplam Raporu Seçimi:</strong>
+                    <ul>
+                        <li>Listele butonuna bastıktan sonra bir onay kutusu görüntülenir</li>
+                        <li>"Sayfa Toplamları Yeni Sayfada Görüntülensin mi?" sorusu sorulur</li>
+                    </ul>
+                </li>
+                <li><strong>Onay Verdikten Sonra:</strong>
+                    <ul>
+                        <li>Yeni bir pencere açılır (bordrodetaytoplam)</li>
+                        <li>Bu pencerede tüm sayfaların toplam değerleri görüntülenir</li>
+                        <li>Sadece toplam rakamlar ve özet bilgiler yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Toplam Raporu Özellikleri:</strong>
+                    <ul>
+                        <li>Pencere boyutu ve kontrolleri bordro detay penceresiyle aynıdır</li>
+                        <li>Genellikle tek sayfa halinde tüm toplamları gösterir</li>
+                        <li>Yazdırma ve çıktı almak için kullanışlıdır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Çok fazla kayıt içeren raporlar oluşturmak yavaşlamaya neden olabilir</li>
+                <li>Her iki pencereyi de (detay ve toplam) ayrı ayrı kapatmanız gerekir</li>
+                <li>Verileri güncellerseniz, raporları da yeniden oluşturmanız gerekir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Raporunuzu yazdırmak için tarayıcının yazdırma özelliğini kullanabilirsiniz</li>
+                <li>Toplam raporu genel bakış için, detay raporu ise ayrıntılı inceleme için kullanışlıdır</li>
+                <li>Daha iyi bir görünüm için rapor penceresini tam ekran yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="butonlar" class="section">
+    <h2>İşlem Butonları ve Kısayollar</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Listele Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, sol tarafta bulunur</li>
+                        <li>Üç boyutlu gri bir buton şeklindedir</li>
+                        <li>"Listele" yazısı ve yanında bir ikon içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Butona tıklandığında:
+                            <ul>
+                                <li>Tüm seçili kriterler işlenir</li>
+                                <li>Seçilen bölüm, görev, maaş tipi ve sicil tipi değerleri birleştirilerek rapor parametreleri oluşturulur</li>
+                                <li>Yeni bir pencerede bordro detay raporu açılır</li>
+                            </ul>
+                        </li>
+                        <li>Listele butonu işlemi:
+                            <ul>
+                                <li>Önce tüm çoklu seçim listelerindeki seçili değerler toplanır</li>
+                                <li>Bölüm, görev, maaş tipi ve sicil tipi seçimleri özel bir formatta birleştirilir</li>
+                                <li>Rapor parametreleri oluşturulur ve ilgili rapor formu açılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Listele butonunun sağında yer alır</li>
+                        <li>Üç boyutlu gri bir buton şeklindedir</li>
+                        <li>"Çıkış" yazısı ve yanında bir çıkış ikonu içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Butona tıklandığında:
+                            <ul>
+                                <li>Programdan tamamen çıkılır</li>
+                                <li>Açık olan pencere kapatılır</li>
+                                <li>Yapılmış ancak kaydedilmemiş değişiklikler kaybolur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Klavye Kısayolları:</h4>
+            <ol>
+                <li><strong>Genel Kısayollar:</strong>
+                    <ul>
+                        <li>TAB: Bir sonraki alana geçiş yapar</li>
+                        <li>SHIFT+TAB: Bir önceki alana geçiş yapar</li>
+                        <li>ENTER: TAB tuşu gibi bir sonraki alana geçiş yapar</li>
+                        <li>ESC: Programdan çıkmak için kullanılabilir</li>
+                    </ul>
+                </li>
+                <li><strong>Çoklu Seçim Listelerinde:</strong>
+                    <ul>
+                        <li>CTRL+Tıklama: Birden fazla öğe seçmek için</li>
+                        <li>SHIFT+Tıklama: Ardışık öğeleri seçmek için</li>
+                        <li>CTRL+A: Tüm öğeleri seçmek için</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Adım Adım Rapor Oluşturma:</h4>
+            <ol>
+                <li><strong>Adım 1: Temel Arama Kriterlerini Belirleyin</strong>
+                    <ul>
+                        <li>Sicil No aralığını girin (belirli işçiler için) veya boş bırakın (tüm işçiler için)</li>
+                        <li>Maaş yılını ve ayını belirleyin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Çoklu Seçim Listelerini Ayarlayın</strong>
+                    <ul>
+                        <li>Maaş Tipi listesinde ilgili tipleri seçin (varsayılan: tümü)</li>
+                        <li>Bölüm listesinde ilgili bölümleri seçin (varsayılan: tümü)</li>
+                        <li>Görev listesinde ilgili görevleri seçin (varsayılan: tümü)</li>
+                        <li>Sicil Tipi listesinde ilgili tipleri seçin (varsayılan: tümü)</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Diğer Parametreleri Ayarlayın</strong>
+                    <ul>
+                        <li>Bordro Tarihi girin (varsayılan: sistem tarihi)</li>
+                        <li>Rapor Bölme Değerini belirleyin (varsayılan: 1)</li>
+                        <li>Başlık metnini girin (varsayılan: "DÖNEMİ İŞÇİ ÜCRET BORDROSU")</li>
+                        <li>Özel belediye kodlarına göre ek seçenekleri ayarlayın (varsa)</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 4: Raporu Oluşturun</strong>
+                    <ul>
+                        <li>Listele butonuna tıklayın</li>
+                        <li>Yeni açılan pencerede detay raporunu inceleyin</li>
+                        <li>"Sayfa Toplamları Yeni Sayfada Görüntülensin mi?" sorusuna cevap verin</li>
+                        <li>Evet derseniz, toplam raporu yeni bir pencerede açılır</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 5: Raporu Kullanın</strong>
+                    <ul>
+                        <li>Rapor pencerelerinde gerekli incelemeyi yapın</li>
+                        <li>Gerekirse yazdırın (tarayıcının yazdırma özelliğini kullanarak)</li>
+                        <li>İşlem tamamlandığında pencereleri kapatın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Listele butonuna basmadan önce tüm kriterleri kontrol edin</li>
+                <li>Çok geniş aralıklar ve çok sayıda seçim yaparsanız, rapor oluşturma süresi uzayabilir</li>
+                <li>Rapor pencerelerini manuel olarak kapatmanız gerekir</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Önce dar kapsamlı bir rapor alıp sonra kriterleri genişletin</li>
+                <li>Sık kullandığınız kriterleri not alın</li>
+                <li>Klavye kısayollarını kullanarak daha hızlı çalışabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşmuyorsa:</strong>
+                        <ul>
+                            <li>Tarih alanlarındaki format doğru mu kontrol edin (GG.AA.YYYY)</li>
+                            <li>En az bir öğe seçili olduğundan emin olun (maaş tipi, bölüm, görev, sicil tipi)</li>
+                            <li>Sicil no aralığının doğru girildiğini kontrol edin</li>
+                            <li>Yıl ve ay değerlerinin geçerli olduğunu doğrulayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Eksik Bilgiler İçeriyorsa:</strong>
+                        <ul>
+                            <li>Seçilen filtrelerin doğru olduğunu kontrol edin</li>
+                            <li>Çoklu seçim listelerinde istediğiniz tüm öğelerin seçili olduğundan emin olun</li>
+                            <li>Tarih aralıklarının istediğiniz dönemi kapsadığını doğrulayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyorsa:</strong>
+                        <ul>
+                            <li>Seçilen kriterlerin çok geniş olup olmadığını kontrol edin</li>
+                            <li>Daha dar kapsamlı bir rapor almayı deneyin</li>
+                            <li>Programı yeniden başlatın ve tekrar deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Belediye kodunuza göre bazı alanlar görünmeyebilir veya farklı davranabilir</li>
+                    <li>Çok büyük raporlarda sistem yavaşlayabilir, sabırlı olun</li>
+                    <li>Programdan çıkmadan önce açık tüm pencereleri kapatın</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Filtrelerinizi mümkün olduğunca daraltın</li>
+                    <li>Her zaman önce test amaçlı küçük bir rapor almaya çalışın</li>
+                    <li>İşlemlerinizi adım adım yapın ve her adımı kontrol edin</li>
+                    <li>Karmaşık raporlar için notlar alın ve işlem sırasını takip edin</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Özel Durum ve Belediye Kodları:</h4>
+                <ol>
+                    <li><strong>330001 Belediye Kodu:</strong>
+                        <ul>
+                            <li>Ekstra "Kullanıcı Tarihi" ve "Kullanıcı Saati" alanları görüntülenir</li>
+                            <li>Bu alanlar tarih ve saat bazlı filtreleme sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>480400 Belediye Kodu:</strong>
+                        <ul>
+                            <li>Maaş Yıl/Ay alanı için başlangıç ve bitiş değerleri ayrı ayrı girilebilir</li>
+                            <li>Yıl ve ay aralığı belirleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>60200 Belediye Kodu:</strong>
+                        <ul>
+                            <li>Ekstra "Döküm Şekli" seçeneği görüntülenir</li>
+                            <li>Dört farklı formatta rapor alabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>550700 Belediye Kodu:</strong>
+                        <ul>
+                            <li>Ekstra "Bölüm Yetkilisi" alanı görüntülenir</li>
+                            <li>Yetkili adı soyadı girilebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>261100 veya 61702 Belediye Kodları:</strong>
+                        <ul>
+                            <li>"Görev" seçim listesi görüntülenmez</li>
+                            <li>Diğer tüm filtreler normal şekilde çalışır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzunda, İşçi Bordro Detay programının nasıl kullanılacağını adım adım öğrendiniz. Programın temel özellikleri şunlardır:</p>
+            <ul>
+                <li>Farklı kriterlere göre işçi bordro bilgilerini filtreleme</li>
+                <li>Detaylı ve toplam raporlar oluşturma</li>
+                <li>Çeşitli formatlarda çıktı alma (normal, İşkur, A4, stajyer)</li>
+                <li>Belediye koduna özgü özel işlemler yapabilme</li>
+            </ul>
+            <p>Daha fazla sorularınız veya karşılaştığınız sorunlar için lütfen sistem yöneticinize başvurun.</p>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Kesinti Matrah Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Özel Kesinti Matrah Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Temel Bileşenler</a></li>
+            <li><a href="#matrah-tanimi">Matrah Tanımı Seçimi</a></li>
+            <li><a href="#ozel-kesinti">Özel Kesinti İşlemleri</a>
+                <ul>
+                    <li><a href="#yeni-kesinti">Yeni Kesinti Ekleme</a></li>
+                    <li><a href="#kesinti-silme">Kesinti Silme</a></li>
+                    <li><a href="#oran-girisi">Oran Girişi</a></li>
+                    <li><a href="#memur-secimi">Memur Seçimi</a></li>
+                </ul>
+            </li>
+            <li><a href="#islem-butonlari">İşlem Butonları ve Kullanımları</a>
+                <ul>
+                    <li><a href="#kayit-islemleri">Kayıt İşlemleri (Kaydet, Sil)</a></li>
+                    <li><a href="#secim-islemleri">Seçim İşlemleri (Matrah Seçimi)</a></li>
+                    <li><a href="#diger-islemler">Diğer İşlemler (Kopyala, Temizle)</a></li>
+                </ul>
+            </li>
+            <li><a href="#ipuclari">Sorun Giderme ve Pratik İpuçları</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Özel Kesinti Matrah Tanımları programı, matrah tanımları ve bunlara bağlı özel kesintileri yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>Matrah tanımlarını görüntüleme ve seçme</li>
+            <li>Her matrah tanımı için özel kesintileri belirleme</li>
+            <li>Kesinti oranlarını ayarlama</li>
+            <li>Kesintilerin hangi memurlar için geçerli olacağını belirleme</li>
+        </ul>
+        işlemlerini gerçekleştirebilirsiniz.
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>Hangi matrah tanımı için işlem yapacağınız</li>
+                <li>Matrah tanımı için hangi özel kesintileri tanımlayacağınız</li>
+                <li>Kesinti oranlarının ne olacağı</li>
+                <li>Kesintilerin hangi memur grubu için geçerli olacağı</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Temel Bileşenler</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "Özel Kesinti Matrah Tanımları" başlığı yer alır</li>
+                        <li>Bu başlık sabit olup değiştirilemez</li>
+                    </ul>
+                </li>
+                <li><strong>Matrah Tanımı Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında, sol tarafta "Matrah Tanımı" etiketi ve yanında bir açılır liste kutusu bulunur</li>
+                        <li>Bu bölüm, üzerinde çalışacağınız matrah tanımını seçtiğiniz yerdir</li>
+                    </ul>
+                </li>
+                <li><strong>Kesintiler Tablosu Başlığı:</strong>
+                    <ul>
+                        <li>Matrah seçiminin hemen altında gri arka planlı bir satır yer alır</li>
+                        <li>Bu satırda "Kesintiler" ve "Oran" başlıkları bulunur</li>
+                        <li>Bu bölüm, aşağıdaki tabloda listelenen kesinti ve oran bilgilerinin başlığını oluşturur</li>
+                    </ul>
+                </li>
+                <li><strong>Kesintiler Tablosu Bölümü:</strong>
+                    <ul>
+                        <li>Başlık satırının altında, içinde kesinti ve oran bilgilerinin yer aldığı bir tablo bölümü bulunur</li>
+                        <li>Bu tablo içerisinde kesintileri silme, kesinti seçme, oran girişi ve memur seçimi yapabilirsiniz</li>
+                        <li>Tablo, kaydırma çubuğuna sahip bir alan içerisindedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en alt kısmında gri arka planlı bir şeritte butonlar yer alır</li>
+                        <li>Bu butonlar arasında Yeni Ekle, Kaydet, Çıkış, Formu Temizle, Seçim ve Sil butonları bulunur</li>
+                        <li>Ayrıca en sağda Kopyala butonu yer alır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Matrah Tanımı seçim kutusu boş olarak gelir</li>
+                <li>İlk olarak bir matrah tanımı seçmeniz veya matrah seçimi penceresini açmanız gerekmektedir</li>
+                <li>Matrah tanımı seçilene kadar kesinti işlemleri pasif durumdadır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="matrah-tanimi" class="section">
+    <h2>Matrah Tanımı Seçimi</h2>
+    <div class="info-box">
+        <h3>Matrah Tanımı ile Çalışma</h3>
+        <div class="step">
+            <h4>Matrah Tanımı Nasıl Seçilir:</h4>
+            <ol>
+                <li><strong>Doğrudan Seçim:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, "Matrah Tanımı" etiketinin yanındaki açılır liste kutusuna tıklayın</li>
+                        <li>Açılan listeden çalışmak istediğiniz matrah tanımını seçin</li>
+                        <li>Seçim yaptığınızda, o matrah tanımına ait kesintiler otomatik olarak tabloda görüntülenecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim Penceresi ile Seçim:</strong>
+                    <ul>
+                        <li>Alt kısımdaki işlem butonları içinde yer alan "Seçim" butonuna tıklayın</li>
+                        <li>Bu buton, matrah tanımı açılır listesinin sağındadır ve üzerinde bir belge simgesi bulunur</li>
+                        <li>Açılan pencerede matrah tanımlarının listesi görüntülenecektir</li>
+                        <li>İstediğiniz matrah tanımına çift tıklayarak seçebilirsiniz</li>
+                        <li>Seçiminiz ana ekrana aktarılacak ve ilgili kesintiler görüntülenecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim Sonrası İşlemler:</strong>
+                    <ul>
+                        <li>Matrah tanımı seçildiğinde, o matraha ait tüm özel kesintiler tabloda listelenir</li>
+                        <li>Kesinti yoksa tablo boş görünecektir</li>
+                        <li>Bu aşamada yeni kesinti ekleyebilir, mevcut kesintileri düzenleyebilir veya silebilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Matrah tanımı listesinde ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                <li>Sık kullanılan matrah tanımlarını not alarak daha hızlı bulabilirsiniz</li>
+                <li>Matrah tanımını değiştirmeden önce yaptığınız değişiklikleri kaydettiğinizden emin olun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ozel-kesinti" class="section">
+    <h2>Özel Kesinti İşlemleri</h2>
+    <div class="info-box">
+        <p>Bu bölümde, matrah tanımlarına bağlı özel kesintilerin nasıl yönetileceği anlatılmaktadır. Kesinti ekleme, silme, oran belirleme ve memur seçimi işlemlerini öğreneceksiniz.</p>
+        <div id="yeni-kesinti" class="step">
+            <h4>Yeni Kesinti Nasıl Eklenir:</h4>
+            <ol>
+                <li><strong>Yeni Ekle Butonunu Kullanma:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında yer alan işlem butonları arasından "Yeni Ekle" butonuna tıklayın</li>
+                        <li>Bu buton, üzerinde yeşil bir artı işareti olan ilk butondur</li>
+                        <li>Tıkladığınızda, kesintiler tablosuna yeni bir boş satır eklenecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Kesinti Seçme:</strong>
+                    <ul>
+                        <li>Eklenen yeni satırda, "Kesintiler" sütununda yer alan açılır liste kutusuna tıklayın</li>
+                        <li>Bu liste kutusu, satırın ikinci hücresinde ve en geniş olan sütundadır</li>
+                        <li>Açılan listeden eklemek istediğiniz kesinti türünü seçin</li>
+                        <li>Liste, sistemde tanımlı olan tüm özel kesintileri içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Oran Belirleme:</strong>
+                    <ul>
+                        <li>Kesinti seçildikten sonra, aynı satırda sağdaki "Oran" sütununa geçin</li>
+                        <li>Oran değeri varsayılan olarak 100 gelir, ancak istenirse değiştirilebilir</li>
+                        <li>Oran değerini girin veya varsayılan değeri kullanın</li>
+                    </ul>
+                </li>
+                <li><strong>Memur Türü Seçme:</strong>
+                    <ul>
+                        <li>Aynı satırın en sağındaki açılır liste kutusundan memur türünü seçin</li>
+                        <li>Üç seçenek vardır: "Tüm memurlar", "Sadece 5510 sayılı Kanun öncesi memurlar" veya "Sadece 5510 sayılı Kanun sonrası memurlar"</li>
+                        <li>Varsayılan olarak "Tüm memurlar" seçilidir</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme:</strong>
+                    <ul>
+                        <li>Tüm bilgileri girdikten sonra, ekranın alt kısmındaki "Kaydet" butonuna tıklayın</li>
+                        <li>Bu buton, Yeni Ekle butonunun hemen sağında, üzerinde bir disk simgesi olan butondur</li>
+                        <li>Kaydetme işlemi tamamlandığında kesinti matrah tanımına bağlanmış olacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div id="kesinti-silme" class="step">
+            <h4>Kesinti Nasıl Silinir:</h4>
+            <ol>
+                <li><strong>Silinecek Kesinti Satırını Belirleme:</strong>
+                    <ul>
+                        <li>Silmek istediğiniz kesintinin bulunduğu satırı tespit edin</li>
+                        <li>Bu satır, kesintiler tablosunda listelenen satırlardan biridir</li>
+                    </ul>
+                </li>
+                <li><strong>Satır Silme Butonunu Kullanma:</strong>
+                    <ul>
+                        <li>İlgili satırın en solundaki hücrede bulunan "Sil" butonuna tıklayın</li>
+                        <li>Bu buton, üzerinde kırmızı bir çarpı işareti bulunan küçük bir butondur</li>
+                        <li>Butona tıkladığınızda bir onay mesajı görüntülenecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemini Onaylama:</strong>
+                    <ul>
+                        <li>Açılan "Satir Iptal Edilecek, Onayliyor musunuz?" mesajına "Evet" yanıtını verin</li>
+                        <li>"Hayır" seçerseniz silme işlemi iptal edilecektir</li>
+                        <li>"Evet" seçerseniz ilgili satır tablodaki görünümden kaldırılacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ul>
+                        <li>Silme işlemini kalıcı hale getirmek için alt kısımdaki "Kaydet" butonuna tıklayın</li>
+                        <li>Kaydetmezseniz, sayfayı yenilediğinizde silinen kesinti tekrar görünecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div id="oran-girisi" class="step">
+            <h4>Oran Nasıl Girilir veya Değiştirilir:</h4>
+            <ol>
+                <li><strong>Oran Alanını Bulma:</strong>
+                    <ul>
+                        <li>Oranını değiştirmek istediğiniz kesintinin satırında, "Kesintiler" sütununun sağındaki "Oran" sütununa odaklanın</li>
+                        <li>Bu sütun tablonun üçüncü sütunudur ve ortada yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Oran Değerini Değiştirme:</strong>
+                    <ul>
+                        <li>Oran hücresine tıklayarak aktif hale getirin</li>
+                        <li>Mevcut değeri silin veya üzerine yazın</li>
+                        <li>Yeni oran değerini girin</li>
+                        <li>Ondalık sayılar için virgül (,) kullanılmalıdır (örneğin: 75,5)</li>
+                    </ul>
+                </li>
+                <li><strong>Oran Kontrolü:</strong>
+                    <ul>
+                        <li>Oran alanı boş bırakılamaz, bir uyarı mesajı görüntülenecektir</li>
+                        <li>Geçerli bir sayısal değer girilmelidir</li>
+                        <li>Genellikle oran değeri 100 veya daha düşük bir değer olmalıdır</li>
+                    </ul>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ul>
+                        <li>Oran değişikliğinden sonra alt kısımdaki "Kaydet" butonuna tıklayarak değişiklikleri kaydedin</li>
+                        <li>Oran değişikliği, ancak kaydetme işleminden sonra kalıcı olacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div id="memur-secimi" class="step">
+            <h4>Memur Seçimi Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Memur Seçim Alanını Bulma:</strong>
+                    <ul>
+                        <li>Memur seçimini değiştirmek istediğiniz kesintinin satırında, en sağdaki açılır liste kutusuna odaklanın</li>
+                        <li>Bu alan "Oran" sütununun sağında, satırın en son hücresinde yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Memur Türünü Seçme:</strong>
+                    <ul>
+                        <li>Açılır liste kutusuna tıklayarak seçenekleri görüntüleyin</li>
+                        <li>Üç seçenekten birini seçin:
+                            <ol>
+                                <li>Tüm memurlar (varsayılan)</li>
+                                <li>Sadece 5510 sayılı Kanun öncesi memurlar</li>
+                                <li>Sadece 5510 sayılı Kanun sonrası memurlar</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Seçim Kriterlerini Anlama:</strong>
+                    <ul>
+                        <li>"Tüm memurlar" seçilirse, kesinti tüm memurlara uygulanır</li>
+                        <li>"Sadece 5510 sayılı Kanun öncesi memurlar" seçilirse, kesinti yalnızca 5510 sayılı Kanun öncesinde işe başlayan memurlara uygulanır</li>
+                        <li>"Sadece 5510 sayılı Kanun sonrası memurlar" seçilirse, kesinti yalnızca 5510 sayılı Kanun sonrasında işe başlayan memurlara uygulanır</li>
+                    </ul>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ul>
+                        <li>Memur seçimini yaptıktan sonra alt kısımdaki "Kaydet" butonuna tıklayarak değişiklikleri kaydedin</li>
+                        <li>Seçim, ancak kaydetme işleminden sonra kalıcı olacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Aynı kesinti bir matrah tanımına birden fazla kez eklenemez</li>
+                <li>Bir kesinti seçmeye çalıştığınızda, eğer bu kesinti daha önce eklenmiş ise, "Bu Kesinti Önceden Seçilmiştir!" uyarısı alırsınız</li>
+                <li>Oran alanı boş bırakılamaz, mutlaka bir değer girilmelidir</li>
+                <li>Değişiklikleri kaydetmeden programdan çıkarsanız, tüm yaptığınız değişiklikler kaybolacaktır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="islem-butonlari" class="section">
+    <h2>İşlem Butonları ve Kullanımları</h2>
+    <div class="info-box">
+        <h3>Temel İşlem Butonları</h3>  
+        <div id="kayit-islemleri" class="step">
+            <h4>Kayıt İşlemleri Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Kaydet Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, "Yeni Ekle" butonunun sağında yer alır</li>
+                        <li>Görünüm: Üzerinde disk simgesi bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Yapılan tüm değişiklikleri (ekleme, silme, düzenleme) veritabanına kaydetmek için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Değişikliklerinizi tamamladıktan sonra butona tıklayın</li>
+                                <li>Hata yoksa işlem tamamlanacak ve veriler kaydedilecektir</li>
+                                <li>Hata durumunda ekranda bir hata mesajı görüntülenecektir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Sil Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, "Seçim" butonunun sağında yer alır</li>
+                        <li>Görünüm: Üzerinde çöp kutusu simgesi bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Seçili matrah tanımına ait tüm kesinti kayıtlarını toplu olarak silmek için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Özellikle birçok kesinti içeren matrah tanımını tamamen temizlemek istediğinizde kullanışlıdır</li>
+                                <li>Butona tıkladığınızda "İptal İşlemini Onaylıyor musunuz?" mesajı görüntülenir</li>
+                                <li>"Evet" seçerseniz, o matrah tanımına ait tüm kesintiler silinir</li>
+                                <li>"Hayır" seçerseniz işlem iptal edilir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div id="secim-islemleri" class="step">
+            <h4>Seçim İşlemleri Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Matrah Tanımı Seçimi:</strong>
+                    <ul>
+                        <li>Konum: Ekranın üst kısmında, "Matrah Tanımı" etiketinin yanında yer alan açılır liste kutusudur</li>
+                        <li>İşlevi: Çalışacağınız matrah tanımını doğrudan seçmek için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Liste kutusuna tıklayın ve açılan listeden bir matrah tanımı seçin</li>
+                                <li>Seçim yapıldığında o matrah tanımına ait kesintiler otomatik olarak tabloda görüntülenir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Seçim Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, "Formu Temizle" butonunun sağında yer alır</li>
+                        <li>Görünüm: Üzerinde belge simgesi bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Matrah tanımlarının listelendiği bir pencere açarak seçim yapmanızı sağlar</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Butona tıklayın, yeni bir pencere açılacaktır</li>
+                                <li>Bu pencerede tüm matrah tanımları liste halinde görüntülenir</li>
+                                <li>İstediğiniz tanıma çift tıklayarak seçim yapın</li>
+                                <li>Seçiminiz ana ekrana aktarılacak ve ilgili kesintiler görüntülenecektir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div id="diger-islemler" class="step">
+            <h4>Diğer İşlemler Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Yeni Ekle Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, en sol tarafta yer alır</li>
+                        <li>Görünüm: Üzerinde yeşil artı işareti bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Kesintiler tablosuna yeni bir boş satır eklemek için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Butona tıklayın, tabloya yeni bir boş satır eklenir</li>
+                                <li>Yeni satırda kesinti, oran ve memur seçimi yapabilirsiniz</li>
+                                <li>Tablodaki son satırdan sonra eklenir</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, "Kaydet" butonunun sağında yer alır</li>
+                        <li>Görünüm: Üzerinde kırmızı çarpı işareti bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Programdan çıkmak için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>İşlemlerinizi tamamladıktan sonra butona tıklayın</li>
+                                <li>Kaydedilmemiş değişiklikler varsa, çıkmadan önce kaydetmeniz önerilir</li>
+                                <li>Program penceresi kapanacaktır</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Formu Temizle Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, "Çıkış" butonunun sağında yer alır</li>
+                        <li>Görünüm: Üzerinde süpürge simgesi bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Formu başlangıç durumuna getirmek için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Butona tıkladığınızda form temizlenir ve başlangıç durumuna döner</li>
+                                <li>Matrah tanımı seçimi sıfırlanır ve kesintiler tablosu boşaltılır</li>
+                                <li>Kaydedilmemiş değişiklikler kaybolur, bu nedenle dikkatli kullanılmalıdır</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Kopyala Butonu:</strong>
+                    <ul>
+                        <li>Konum: Ekranın alt kısmında, en sağda yer alır</li>
+                        <li>Görünüm: Üzerinde "Kopyala" yazısı bulunan gri arka planlı butondur</li>
+                        <li>İşlevi: Bir matrah tanımındaki özel kesintileri başka bir matrah tanımına kopyalamak için kullanılır</li>
+                        <li>Kullanımı:
+                            <ol>
+                                <li>Butona tıkladığınızda yeni bir pencere açılır</li>
+                                <li>Bu pencerede kaynak ve hedef matrah tanımlarını seçebilirsiniz</li>
+                                <li>Seçimlerinizi yapıp işlemi onayladığınızda, kesinti tanımları bir matrahtan diğerine kopyalanır</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Yeni bir matrah tanımı seçmeden önce, mevcut değişiklikleri kaydettiğinizden emin olun</li>
+                <li>Benzer kesinti yapılarına sahip matrah tanımları için Kopyala butonunu kullanarak zaman kazanabilirsiniz</li>
+                <li>Bir matrah tanımındaki tüm kesintileri tek tek silmek yerine, Sil butonunu kullanarak hepsini birden silebilirsiniz</li>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>ENTER tuşu da TAB tuşu gibi çalışır ve sonraki alana geçmenizi sağlar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Sorun Giderme ve Pratik İpuçları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Aynı Kesinti Eklenemiyor:</strong>
+                    <ul>
+                        <li>Sorun: "Bu Kesinti Önceden Seçilmiştir!" uyarısı alıyorsunuz</li>
+                        <li>Neden: Bir matrah tanımına aynı kesinti birden fazla kez eklenemez</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Farklı bir kesinti seçin</li>
+                                <li>Eğer aynı kesinti için farklı bir memur grubu tanımlamak istiyorsanız, önce mevcut kesinti kaydını silin, sonra yeniden ekleyip farklı memur seçimini yapın</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Oran Değeri Kabul Edilmiyor:</strong>
+                    <ul>
+                        <li>Sorun: "Oran Değerini Girmelisiniz!" uyarısı alıyorsunuz</li>
+                        <li>Neden: Oran alanı boş bırakılamaz veya geçersiz bir değer girilmiştir</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Oran alanına mutlaka geçerli bir sayısal değer girin</li>
+                                <li>Ondalık sayılar için virgül (,) kullanın, nokta (.) değil</li>
+                                <li>Varsayılan değer olan 100'ü kullanabilirsiniz</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Matrah Tanımı Seçilemiyor:</strong>
+                    <ul>
+                        <li>Sorun: Matrah tanımı seçim kutusu devre dışı görünüyor</li>
+                        <li>Neden: Matrah tanımı alanı bazen program açılışında devre dışı kalabilir</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Formu Temizle butonuna tıklayarak formu sıfırlayın</li>
+                                <li>Eğer bu işe yaramazsa, programdan çıkıp tekrar girin</li>
+                                <li>Alternatif olarak Seçim butonunu kullanarak matrah seçim penceresinden seçim yapın</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                    <ul>
+                        <li>Sorun: Yaptığınız değişiklikler kaydedilmiyor gibi görünüyor</li>
+                        <li>Neden: Değişiklikler Kaydet butonuna basılmadığı sürece geçici olarak tutulur</li>
+                        <li>Çözüm: 
+                            <ol>
+                                <li>Her değişiklik sonrası mutlaka Kaydet butonuna tıklayın</li>
+                                <li>Çıkış yapmadan önce değişikliklerin kaydedildiğinden emin olun</li>
+                                <li>Bir matrah tanımından diğerine geçmeden önce değişiklikleri kaydedin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Verimli Çalışma Teknikleri:</h4>
+            <ol>
+                <li><strong>Hızlı Veri Girişi:</strong>
+                    <ul>
+                        <li>Klavye kısayollarını kullanın:
+                            <ol>
+                                <li>TAB: Sonraki alana geçer</li>
+                                <li>SHIFT + TAB: Önceki alana döner</li>
+                                <li>ENTER: TAB gibi çalışır, sonraki alana geçer</li>
+                                <li>ESC: Açık listeleri kapatır veya programdan çıkar</li>
+                                <li>ALT + L: Matrah listesi içinde ilk harfe göre filtreleme yapar</li>
+                            </ol>
+                        </li>
+                        <li>Çoklu kesinti eklerken:
+                            <ol>
+                                <li>Önce tüm kesintileri ekleyin, sonra hepsini tek seferde kaydedin</li>
+                                <li>Benzer oran ve memur seçimine sahip kesintileri art arda ekleyin</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Toplu İşlemler:</strong>
+                    <ul>
+                        <li>Kopyala butonunu kullanarak zaman kazanın:
+                            <ol>
+                                <li>Benzer kesinti yapısına sahip olacak matrah tanımları için önce bir tanesini tam olarak hazırlayın</li>
+                                <li>Sonra Kopyala butonu ile diğer matrah tanımlarına kopyalayın</li>
+                                <li>Gerekirse kopyalama sonrası küçük düzenlemeleri yapın</li>
+                            </ol>
+                        </li>
+                        <li>Kesintileri toplu silme:
+                            <ol>
+                                <li>Bir matrah tanımındaki tüm kesintileri silmek için tek tek silmek yerine, Sil butonunu kullanın</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Veri Doğruluğu Kontrolü:</strong>
+                    <ul>
+                        <li>Kaydetmeden önce girilen değerleri kontrol edin:
+                            <ol>
+                                <li>Doğru kesintilerin seçildiğinden emin olun</li>
+                                <li>Oran değerlerinin doğru girildiğini kontrol edin</li>
+                                <li>Memur seçimlerinin gereksinimlerinize uygun olduğunu doğrulayın</li>
+                            </ol>
+                        </li>
+                        <li>Kayıt sonrası kontrol:
+                            <ol>
+                                <li>Matrah tanımını tekrar seçerek veya sayfayı yenileyerek kayıtların düzgün şekilde oluşturulduğundan emin olun</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Dikkat Edilmesi Gereken Noktalar:</h4>
+            <ul>
+                <li>Aynı matrah tanımı için bir kesinti türü sadece bir kez eklenebilir</li>
+                <li>Yanlışlıkla Sil butonuna basarsanız, tüm matrah kesinti ilişkileri silinecektir</li>
+                <li>Kaydedilmemiş değişiklikler program kapatıldığında veya form temizlendiğinde kaybolur</li>
+                <li>Memur seçimi kritik bir alandır ve uygulanacak kesintilerde farklılıklara neden olur</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li>Sık kullanılan matrah tanımlarını ve kesintileri not alın</li>
+                <li>Önce bir matrah tanımını tam olarak hazırlayıp sonra diğerlerine kopyalayarak zaman kazanın</li>
+                <li>Tabloda birçok kesinti varsa, tablonun sağında bulunan kaydırma çubuğunu kullanarak tüm kayıtları görüntüleyin</li>
+                <li>Açılır listelerde, ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                <li>Sık yapılan işlemler için klavye kısayollarını öğrenin ve kullanın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="ozet" class="section">
+    <h2>Özet ve Hızlı Başvuru</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Temel İşlemler Özeti:</h4>
+            <ol>
+                <li><strong>Matrah Tanımı Seçimi:</strong>
+                    <ul>
+                        <li>Üst kısımdaki açılır listeden veya Seçim butonu aracılığıyla yapılır</li>
+                        <li>Matrah seçildiğinde o matraha ait kesintiler otomatik listelenir</li>
+                    </ul>
+                </li>
+                <li><strong>Yeni Kesinti Ekleme:</strong>
+                    <ul>
+                        <li>Yeni Ekle butonuna tıklayın</li>
+                        <li>Kesinti türünü, oranını ve uygulanacak memur grubunu belirleyin</li>
+                        <li>Kaydet butonuna tıklayarak değişiklikleri kaydedin</li>
+                    </ul>
+                </li>
+                <li><strong>Kesinti Silme:</strong>
+                    <ul>
+                        <li>İlgili satırın başındaki Sil butonuna tıklayın</li>
+                        <li>Onay mesajına "Evet" yanıtını verin</li>
+                        <li>Kaydet butonuna tıklayarak değişiklikleri kalıcı hale getirin</li>
+                    </ul>
+                </li>
+                <li><strong>Kesinti Bilgilerini Düzenleme:</strong>
+                    <ul>
+                        <li>İlgili satırdaki oran değerini veya memur seçimini değiştirin</li>
+                        <li>Kesinti türü değiştirilemez, değiştirmek için silip yeniden eklemeniz gerekir</li>
+                        <li>Değişiklikleri Kaydet butonuna tıklayarak kaydedin</li>
+                    </ul>
+                </li>
+                <li><strong>Tüm Kesintileri Silme:</strong>
+                    <ul>
+                        <li>Alt kısımdaki Sil butonuna tıklayın</li>
+                        <li>Onay mesajına "Evet" yanıtını verin</li>
+                        <li>O matrah tanımına ait tüm kesintiler silinecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Kesintileri Kopyalama:</strong>
+                    <ul>
+                        <li>Alt kısımdaki Kopyala butonuna tıklayın</li>
+                        <li>Açılan pencerede kaynak ve hedef matrah tanımlarını seçin</li>
+                        <li>İşlemi onaylayarak kopyalama işlemini tamamlayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="warning-box">
+            <h4>Unutulmaması Gereken Önemli Noktalar:</h4>
+            <ul>
+                <li>Değişiklikler Kaydet butonuna tıklanmadan kalıcı olmaz</li>
+                <li>Bir matrah tanımı için aynı kesinti birden fazla kez eklenemez</li>
+                <li>Oran alanı boş bırakılamaz, mutlaka bir değer girilmelidir</li>
+                <li>Memur seçimi, kesintinin kimlere uygulanacağını belirler ve önemli bir alandır</li>
+                <li>Programdan çıkmadan önce değişikliklerin kaydedildiğinden emin olun</li>
+            </ul>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Hızlı Klavye Kısayolları:</h4>
+            <ul>
+                <li>TAB: Sonraki alana geçer</li>
+                <li>SHIFT + TAB: Önceki alana döner</li>
+                <li>ENTER: Sonraki alana geçer (TAB gibi)</li>
+                <li>ESC: Açık listeleri kapatır veya programdan çıkar</li>
+                <li>Açılır listelerde ilk harf: Listeyi o harfle başlayan öğeye konumlandırır</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div id="sonuc" class="section">
+    <h2>Sonuç</h2>
+    <div class="info-box">
+        <p>Bu kullanıcı kılavuzu, Özel Kesinti Matrah Tanımları programının kullanımı konusunda detaylı bilgi sağlamak amacıyla hazırlanmıştır. Programı etkin bir şekilde kullanarak matrah tanımlarınıza uygun özel kesintileri kolayca tanımlayabilir ve yönetebilirsiniz.</p>
+        <p>Kılavuzda öğrendiğiniz adımları izleyerek:</p>
+    <ul>
+        <li>Matrah tanımlarını seçebilir</li>
+        <li>Özel kesintileri ekleyebilir</li>
+        <li>Kesinti oranlarını belirleyebilir</li>
+        <li>Kesintilerin hangi memur gruplarına uygulanacağını seçebilir</li>
+        <li>Kesintileri bir matrah tanımından diğerine kopyalayabilir</li>
+        <li>Gerektiğinde kesintileri silebilirsiniz</li>
+    </ul>
+    
+    <p>Sorularınız veya sorunlarınız olduğunda, bu kılavuzu referans olarak kullanabilir ve programı daha verimli bir şekilde kullanabilirsiniz.</p>
+</div>
+</div>
+</body>
+</html>

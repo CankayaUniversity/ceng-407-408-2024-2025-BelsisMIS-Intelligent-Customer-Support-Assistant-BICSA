@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engelli Dereceleri Tanımlama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Engelli Dereceleri Tanımlama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#veri-giris">Veri Giriş Alanları ve Kullanımı</a></li>
+                <li><a href="#kayit-islemleri">Kayıt İşlemleri (Ekleme, Güncelleme, Silme)</a></li>
+                <li><a href="#kayit-dolasma">Kayıt Dolaşma ve Tarama İşlemleri</a></li>
+                <li><a href="#hizli-arama">Hızlı Arama ve Win Butonu Kullanımı</a></li>
+                <li><a href="#kisayol-tuslari">Kısayol Tuşları ve Pratik İpuçları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Engelli Dereceleri Tanımlama ekranı (mem_sakatlikTanim), personel ve üyelerin engellilik derecelerini sisteme tanımlamanızı ve yönetmenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Yeni engellilik derecesi tanımları oluşturabilir</li>
+                <li>Mevcut engelli derece tanımlarını güncelleyebilir</li>
+                <li>Gereksiz tanımları silebilir</li>
+                <li>Tanımlı engelli dereceleri arasında dolaşabilir</li>
+                <li>Hızlı arama yapabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlanacak engelli derecesi numarası (1-9999 arası)</li>
+                    <li>Engelli derecesinin tam ve doğru tanımı</li>
+                    <li>Programı kullanma yetkisine sahip olduğunuz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Genel Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Engelli Dereceleri (Giriş)" veya "Engelli Dereceleri (Değişiklik)" başlığı yer alır</li>
+                            <li>Başlık, yeni kayıt ekleme veya mevcut kaydı değiştirme moduna göre otomatik olarak değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Alanda "Engelli Derecesi" ve "Engelli Tanımı" için etiketler ve veri giriş kutuları yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta sıralı şekilde bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümleri:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında iki satır halinde düzenlenmiş butonlar yer alır</li>
+                            <li>Üst sırada kayıt dolaşma butonları (İlk, Önceki, Sonraki, Son, Win) bulunur</li>
+                            <li>Alt sırada işlem butonları (Form Temizle, Kaydet, Sil, Çıkış) bulunur</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>"Engelli Dereceleri (Giriş)" başlığıyla yeni kayıt ekleme modunda açılır</li>
+                    <li>İmleç "Engelli Derecesi" alanında konumlanır</li>
+                    <li>Sistemdeki son kayıt numarasının bir fazlası otomatik olarak gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="veri-giris" class="section">
+        <h2>Veri Giriş Alanları ve Kullanımı</h2>
+        <div class="info-box">
+            <h3>Veri Giriş Alanları</h3>
+            
+            <div class="step">
+                <h4>Engelli Derecesi Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık şeridinin hemen altında, ekranın sol kısmında yer alır</li>
+                            <li>"Engelli Derecesi" etiketi ve yanında bir metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Yeni kayıt ekleme modunda:
+                                <ul>
+                                    <li>Sistem otomatik olarak bir sonraki numarayı önerir</li>
+                                    <li>İsterseniz farklı bir numara girebilirsiniz (1-9999 arası)</li>
+                                    <li>Girdiğiniz numara sistemde varsa, o kayıt otomatik yüklenir</li>
+                                </ul>
+                            </li>
+                            <li>Kayıt değiştirme modunda:
+                                <ul>
+                                    <li>Bu alan gri renkli olur ve değiştirilemez</li>
+                                    <li>Alan üzerinde sadece görüntüleme yapabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Veri giriş kuralları:
+                                <ul>
+                                    <li>Sadece sayısal değerler girebilirsiniz</li>
+                                    <li>En fazla 4 rakam girebilirsiniz</li>
+                                    <li>Boş bırakılamaz, zorunlu bir alandır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Engelli Tanımı Alanı:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Engelli Derecesi alanının bir alt satırında bulunur</li>
+                            <li>"Engelli Tanımı" etiketi ve yanında bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Veri giriş kutusu içine engellilik tanımını yazın</li>
+                            <li>Veri giriş kuralları:
+                                <ul>
+                                    <li>Hem sayısal değerler hem harfler kullanılabilir</li>
+                                    <li>En fazla 50 karakter girebilirsiniz</li>
+                                    <li>Türkçe karakterler kullanılabilir</li>
+                                </ul>
+                            </li>
+                            <li>Yeni kayıt veya değişiklik modunda:
+                                <ul>
+                                    <li>Her zaman değiştirilebilir durumdadır</li>
+                                    <li>TAB tuşuna basarak bir sonraki alana/işleme geçebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Engelli Derecesi alanına sadece rakam girilebilir</li>
+                    <li>Tanım alanları olabildiğince açıklayıcı ve net olmalıdır</li>
+                    <li>Aynı derece numarasına sahip iki farklı tanım olamaz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>ENTER tuşu da TAB tuşu gibi çalışır ve sonraki alana geçer</li>
+                    <li>ESC tuşuna basarak programdan çıkabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-islemleri" class="section">
+        <h2>Kayıt İşlemleri (Ekleme, Güncelleme, Silme)</h2>
+        <div class="info-box">
+            <h3>Yeni Kayıt Ekleme</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Yeni Engelli Derecesi Ekleme:</h4>
+                <ol>
+                    <li><strong>Form Temizleme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan butonlar arasından "Form Temizle" butonuna tıklayın</li>
+                            <li>Bu işlem, tüm alanları temizleyecek ve yeni kayıt ekleme moduna geçecektir</li>
+                            <li>Başlık şeridinde "Engelli Dereceleri (Giriş)" yazısı görünecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Engelli Derecesi Girişi:</strong>
+                        <ul>
+                            <li>İmleç "Engelli Derecesi" alanına otomatik olarak konumlanacaktır</li>
+                            <li>Sistem tarafından önerilen numara kullanılabilir veya farklı bir numara girilebilir</li>
+                            <li>Numara girdikten sonra TAB veya ENTER tuşuna basarak bir sonraki alana geçin</li>
+                            <li>Eğer girdiğiniz numara sistemde zaten varsa, o kayıt otomatik olarak yüklenir ve değişiklik moduna geçilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Engelli Tanımı Girişi:</strong>
+                        <ul>
+                            <li>İmleç "Engelli Tanımı" alanına geçer</li>
+                            <li>Tanım bilgisini girin (en fazla 50 karakter)</li>
+                            <li>Giriş tamamlandıktan sonra TAB veya ENTER tuşuna basın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt İşlemi:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ikinci sırada yer alan "Kaydet" butonuna tıklayın</li>
+                            <li>Alternatif olarak ALT+S kısayol tuşlarını kullanabilirsiniz</li>
+                            <li>Kayıt işlemi başarılı ise sistem otomatik olarak yeni kayıt ekleme moduna geçer ve yeni bir derece numarası önerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Mevcut Kayıt Güncelleme</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Kayıt Güncelleme:</h4>
+                <ol>
+                    <li><strong>Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Kayıt dolaşma butonlarını (İlk, Önceki, Sonraki, Son) kullanarak istediğiniz kaydı bulun</li>
+                            <li>Veya "Engelli Derecesi" alanına doğrudan değiştirmek istediğiniz kaydın numarasını girin</li>
+                            <li>TAB veya ENTER tuşuna basarak sistemin kaydı bulmasını bekleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Güncelleme Moduna Geçiş:</strong>
+                        <ul>
+                            <li>Kayıt yüklendiğinde, sistem otomatik olarak güncelleme moduna geçer</li>
+                            <li>Başlık şeridinde "Engelli Dereceleri (Değişiklik)" yazısı görünür</li>
+                            <li>"Engelli Derecesi" alanı gri renkli olur ve değiştirilemez</li>
+                            <li>İmleç "Engelli Tanımı" alanına konumlanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Güncelleme:</strong>
+                        <ul>
+                            <li>"Engelli Tanımı" alanındaki mevcut bilgileri silin veya düzenleyin</li>
+                            <li>Yeni tanım bilgisini girin</li>
+                            <li>TAB veya ENTER tuşuna basarak işlemi tamamlayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ikinci sırada yer alan "Kaydet" butonuna tıklayın</li>
+                            <li>Alternatif olarak ALT+S kısayol tuşlarını kullanabilirsiniz</li>
+                            <li>Güncelleme işlemi başarılı ise sistem, bir sonraki kayıt numarasını önerir ve yeni kayıt ekleme moduna döner</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Kayıt Silme</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Kayıt Silme:</h4>
+                <ol>
+                    <li><strong>Silinecek Kaydı Bulma:</strong>
+                        <ul>
+                            <li>Kayıt dolaşma butonlarını kullanarak silmek istediğiniz kaydı bulun</li>
+                            <li>Veya "Engelli Derecesi" alanına silmek istediğiniz kaydın numarasını girin</li>
+                            <li>TAB veya ENTER tuşuna basarak sistemin kaydı bulmasını bekleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ikinci sırada yer alan "Sil" butonuna tıklayın</li>
+                            <li>Sistem, silme işlemini onaylamanız için bir uyarı penceresi gösterir</li>
+                            <li>Uyarı penceresinde "İptal İşlemini Onaylıyor musunuz?" mesajı görünür</li>
+                            <li>Silme işlemini onaylamak için "Evet" butonuna tıklayın</li>
+                            <li>İşlemi iptal etmek için "Hayır" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Sonrası:</strong>
+                        <ul>
+                            <li>Silme işlemi başarılı olduğunda, sistem otomatik olarak bir sonraki kayıt numarasını önerir</li>
+                            <li>Yeni kayıt ekleme moduna geçilir</li>
+                            <li>Başlık şeridinde "Engelli Dereceleri (Giriş)" yazısı görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Silme işlemi geri alınamaz, tüm silme işlemlerinde dikkatli olun</li>
+                    <li>Sistemde başka tablolarda kullanılan engelli dereceleri silinemeyebilir</li>
+                    <li>Güncelleme yaparken derece numarası değiştirilemez, sadece tanım değiştirilebilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan dereceleri not alın</li>
+                    <li>İşlem öncesi kaydı doğru bulduğunuzdan emin olun</li>
+                    <li>Benzer tanımları tekrarlamaktan kaçının, tutarlı bir tanım listesi oluşturun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kayit-dolasma" class="section">
+        <h2>Kayıt Dolaşma ve Tarama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Kayıt Dolaşma Butonları</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Kayıt Dolaşma:</h4>
+                <ol>
+                    <li><strong>İlk Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, ilk sıranın en solunda yer alır</li>
+                            <li>Görünüm: Üzerinde çift sola ok (<<) işareti bulunan gri buton</li>
+                            <li>Kullanım:
+                                <ol>
+                                    <li>Butona tıklayın</li>
+                                    <li>Sistem, veri tabanındaki ilk engelli derece kaydını (en küçük derece numarasına sahip) ekrana getirir</li>
+                                    <li>Otomatik olarak güncelleme moduna geçilir</li>
+                                    <li>Başlık şeridinde "Engelli Dereceleri (Değişiklik)" yazısı görünür</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Önceki Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Konum: İlk Kayıt butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde tek sola ok (<) işareti bulunan gri buton</li>
+                            <li>Kullanım:
+                                <ol>
+                                    <li>Butona tıklayın</li>
+                                    <li>Sistem, ekranda görüntülenen kayıttan bir önceki kaydı (daha küçük derece numarasına sahip) getirir</li>
+                                    <li>Eğer görüntülenen kayıt zaten en küçük numaralı kayıt ise, aynı kayıt ekranda kalır</li>
+                                    <li>Otomatik olarak güncelleme moduna geçilir</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Sonraki Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Konum: Önceki Kayıt butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde tek sağa ok (>) işareti bulunan gri buton</li>
+                            <li>Kullanım:
+                                <ol>
+                                    <li>Butona tıklayın</li>
+                                    <li>Sistem, ekranda görüntülenen kayıttan bir sonraki kaydı (daha büyük derece numarasına sahip) getirir</li>
+                                    <li>Eğer görüntülenen kayıt zaten en büyük numaralı kayıt ise, aynı kayıt ekranda kalır</li>
+                                    <li>Otomatik olarak güncelleme moduna geçilir</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Son Kayıt Butonu:</strong>
+                        <ul>
+                            <li>Konum: Sonraki Kayıt butonunun hemen sağında yer alır</li>
+                            <li>Görünüm: Üzerinde çift sağa ok (>>) işareti bulunan gri buton</li>
+                            <li>Kullanım:
+                                <ol>
+                                    <li>Butona tıklayın</li>
+                                    <li>Sistem, veri tabanındaki son engelli derece kaydını (en büyük derece numarasına sahip) ekrana getirir</li>
+                                    <li>Otomatik olarak güncelleme moduna geçilir</li>
+                                    <li>Başlık şeridinde "Engelli Dereceleri (Değişiklik)" yazısı görünür</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kayıt dolaşma butonları sadece kayıtlı veri varsa çalışır</li>
+                    <li>Hiç kayıt yoksa veya tüm kayıtlar silinmişse, bu butonlar sonuç göstermez</li>
+                    <li>Kayıt dolaşma butonları kullanıldığında mevcut değişiklikler kaydedilmez, önce kaydetmeyi unutmayın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İlk ve Son butonları, sistemdeki tüm kayıtların aralığını hızlıca görmek için kullanılabilir</li>
+                    <li>Önceki ve Sonraki butonları, kayıtlar arasında adım adım ilerlemek için idealdir</li>
+                    <li>Kayıtlar arasında hızlıca dolaşmak için klavye kısayollarını da kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="butonlar-islemleri" class="section">
+        <h2>İşlem Butonları ve Kullanımları</h2>
+        <div class="info-box">
+            <h3>Butonların Konumları ve İşlevleri</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Form Temizle Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Form Temizle Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, ikinci sıranın en solunda yer alır</li>
+                            <li>Görünüm: Üzerinde "Form Temizle" yazan gri renkli, üç boyutlu buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonu Kullanma:</strong>
+                        <ul>
+                            <li>Butona fare ile tıklayın</li>
+                            <li>Alternatif olarak ALT+L kısayol tuşlarını kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>Sistem, ekrandaki tüm veri giriş alanlarını temizler</li>
+                            <li>Başlık şeridinde "Engelli Dereceleri (Giriş)" yazısı görünür</li>
+                            <li>"Engelli Derecesi" alanı aktif hale gelir ve imleç buraya konumlanır</li>
+                            <li>Sistem otomatik olarak bir sonraki derece numarasını önerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Adım Adım Kaydet Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Kaydet Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, ikinci sırada, Form Temizle butonunun sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Kaydet" yazan gri renkli, üç boyutlu buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonu Kullanma:</strong>
+                        <ul>
+                            <li>Gerekli bilgileri girdikten sonra butona fare ile tıklayın</li>
+                            <li>Alternatif olarak ALT+S kısayol tuşlarını kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>Yeni kayıt modunda: Sistem girilen bilgileri veritabanına kaydeder</li>
+                            <li>Güncelleme modunda: Sistem mevcut kaydı günceller</li>
+                            <li>İşlem başarılı ise, sistem temiz bir form açar ve bir sonraki derece numarasını önerir</li>
+                            <li>İşlem sırasında hata oluşursa, bir uyarı mesajı görüntülenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Adım Adım Sil Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Sil Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, ikinci sırada, Kaydet butonunun sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Sil" yazan gri renkli, üç boyutlu buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonu Kullanma:</strong>
+                        <ul>
+                            <li>Silmek istediğiniz kaydı ekranda görüntüledikten sonra butona fare ile tıklayın</li>
+                            <li>Alternatif olarak ALT+D kısayol tuşlarını kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>Sistem, silme işlemini onaylamanız için bir uyarı penceresi gösterir</li>
+                            <li>Uyarı penceresinde "İptal İşlemini Onaylıyor musunuz?" mesajı görünür</li>
+                            <li>"Evet" butonuna tıklarsanız, kayıt sistemden silinir</li>
+                            <li>"Hayır" butonuna tıklarsanız, silme işlemi iptal edilir</li>
+                            <li>Silme işlemi başarılı olduğunda, sistem yeni kayıt moduna geçer</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Adım Adım Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonunu Bulma:</strong>
+                        <ul>
+                            <li>Konum: Ekranın alt kısmında, ikinci sıranın en sağında yer alır</li>
+                            <li>Görünüm: Üzerinde "Çıkış" yazan gri renkli, üç boyutlu buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonu Kullanma:</strong>
+                        <ul>
+                            <li>Programdan çıkmak istediğinizde butona fare ile tıklayın</li>
+                            <li>Alternatif olarak ALT+C kısayol tuşlarını veya ESC tuşunu kullanabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>Program penceresi kapanır ve ana menüye dönersiniz</li>
+                            <li>Kaydetmediğiniz değişiklikler kaybolur, bu nedenle çıkmadan önce gerekli kaydetme işlemlerini yapın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonunu kullanırken dikkatli olun, silinen kayıtlar geri alınamaz</li>
+                    <li>Çıkış yapmadan önce tüm değişiklikleri kaydettiğinizden emin olun</li>
+                    <li>Form Temizle butonu mevcut ekrandaki bilgileri temizler, veritabanından silmez</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Butonları fareyle tıklamak yerine, daha hızlı işlem yapmak için klavye kısayollarını kullanabilirsiniz</li>
+                    <li>Altta yer alan butonların işlevlerini hatırlamak için butonun üzerine fare imlecini getirdiğinizde açıklayıcı bilgi görebilirsiniz</li>
+                    <li>Birden fazla kayıt eklerken, her kayıt sonrası Form Temizle butonuna basarak yeni bir kayıt eklemeye hazır hale gelebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="temel-akislar" class="section">
+        <h2>Temel İş Akışları</h2>
+        <div class="info-box">
+            <h3>Tipik Kullanım Senaryoları</h3>
+            
+            <div class="step">
+                <h4>Senaryo 1: Toplu Yeni Engelli Derecesi Ekleme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Sistem otomatik olarak yeni kayıt ekleme modunda açılacaktır</li>
+                    <li>Önerilen engelli derecesi numarasını kabul edin veya yeni bir numara girin</li>
+                    <li>Engelli tanımını girin</li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>Bir sonraki kayıt için, önerilen numara ile yeni tanım girin</li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında Çıkış butonuna tıklayın</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Senaryo 2: Mevcut Kayıtları Gözden Geçirme ve Güncelleme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>İlk Kayıt butonuna tıklayarak ilk kaydı görüntüleyin</li>
+                    <li>Sonraki Kayıt butonuna tıklayarak kayıtlar arasında ilerleyin</li>
+                    <li>Değişiklik yapmak istediğiniz kaydı bulduğunuzda, engelli tanımını düzenleyin</li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında Çıkış butonuna tıklayın</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Senaryo 3: Belirli Bir Engelli Derecesini Arama ve Silme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Form Temizle butonuna tıklayın</li>
+                    <li>Engelli Derecesi alanına silmek istediğiniz derece numarasını girin</li>
+                    <li>TAB veya ENTER tuşuna basarak kaydı arayın</li>
+                    <li>Kayıt bulunduğunda, Sil butonuna tıklayın</li>
+                    <li>Onay penceresinde "Evet" butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında Çıkış butonuna tıklayın</li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Senaryo 4: Win Butonu ile Kayıt Arama ve Güncelleme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Win butonuna tıklayın</li>
+                    <li>Açılan pencerede değiştirmek istediğiniz kaydı bulun</li>
+                    <li>Kaydın üzerine çift tıklayın</li>
+                    <li>Ana formda kayıt bilgileri görüntülenir</li>
+                    <li>Engelli tanımını düzenleyin</li>
+                    <li>Kaydet butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında Çıkış butonuna tıklayın</li>
+                </ol>
+            </div>
+    
+            <div class="tip-box">
+                <h4>İş Akışı İpuçları:</h4>
+                <ul>
+                    <li>Benzer tanımlar için birbiri ardına numaralar kullanmak düzeni sağlar</li>
+                    <li>Engelli derecelerini belirli kategorilere göre gruplayabilirsiniz</li>
+                    <li>Günlük iş akışınıza uygun kısayol tuşlarını öğrenerek zaman kazanabilirsiniz</li>
+                    <li>Win butonu, tüm kayıtların genel bir listesini görmek için ideal bir araçtır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Sonuç ve Öneriler</h2>
+        <div class="info-box">
+            <p>Bu kullanıcı kılavuzu, Engelli Dereceleri Tanımlama ekranının tüm özelliklerini ve işlevlerini detaylı olarak açıklamaktadır. Programı etkin kullanmanız için şu önerileri dikkate almanızı tavsiye ederiz:</p>
+            
+            <ul>
+                <li>Her yeni engelli derecesi tanımlamadan önce, sistemde benzer bir tanımın olup olmadığını kontrol edin</li>
+                <li>Engelli tanımlarında tutarlı bir terminoloji kullanın</li>
+                <li>Düzenli olarak kullanılmayan tanımları sistemden temizleyin</li>
+                <li>Sık yapılan işlemler için klavye kısayollarını öğrenin ve kullanın</li>
+                <li>Sorun yaşadığınızda bu kılavuzdaki "Sorun Giderme" bölümüne başvurun</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Son Öneri:</h4>
+                <p>Engelli Dereceleri Tanımlama ekranı, personel yönetim sisteminin önemli bir parçasıdır. Burada yapılacak tanımlamalar diğer modüllerde kullanılacağından, tanımları dikkatli ve tutarlı bir şekilde yapmanız önemlidir.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Belgeler ve Referanslar</h2>
+        <div class="info-box">
+            <h3>İlgili Diğer Dokümanlar</h3>
+            <ul>
+                <li>Personel Yönetim Sistemi Ana Kullanıcı Kılavuzu</li>
+                <li>Personel Bilgi Giriş Ekranı Kullanıcı Kılavuzu</li>
+                <li>Raporlama Sistemi Kullanıcı Kılavuzu</li>
+            </ul>
+            
+            <h3>Destek ve Yardım</h3>
+            <p>Bu kılavuzda cevabını bulamadığınız sorular için aşağıdaki yollarla destek alabilirsiniz:</p>
+            <ul>
+                <li>Sistem Yöneticiniz</li>
+                <li>IT Destek Ekibi</li>
+                <li>Kullanıcı Eğitim Dokümanları</li>
+                <li>Dahili Yardım Masası: Dahili Hat: 1234</li>
+            </ul>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Ödeme Matrah Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yan Ödeme Matrah Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#matrah-tanimi">Matrah Tanımı Kullanımı</a></li>
+                <li><a href="#yan-odeme">Yan Ödeme Ekleme ve Düzenleme</a></li>
+                <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>"Yan Ödeme Matrah Tanımları" programı, personele yapılacak yan ödemelerin hangi matrah tanımlarına göre hesaplanacağını belirlemek için kullanılan bir araçtır. Bu program sayesinde:</p>
+            <ul>
+                <li>Farklı matrah tanımları için yan ödeme tanımlarını belirleyebilirsiniz</li>
+                <li>Her yan ödeme için oran bilgisi girebilirsiniz</li>
+                <li>Matrah tanımlarını kolayca seçebilirsiniz</li>
+                <li>Yan ödeme-matrah ilişkilerini hızlıca yönetebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlamak istediğiniz matrah bilgisi</li>
+                    <li>Yan ödemelerin listesi</li>
+                    <li>Her yan ödeme için uygulanacak oran</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Yan Ödeme Matrah Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Matrah Tanımı Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>Sol tarafta "Matrah Tanımı" etiketi bulunur</li>
+                            <li>Sağ tarafta ise matrah tanımlarının seçilebileceği bir açılır liste kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Başlık Satırı:</strong>
+                        <ul>
+                            <li>Matrah tanımı bölümünün altında yer alır</li>
+                            <li>Gri arka planlı bir satır bulunur</li>
+                            <li>Bu satırda "Yan Ödeme" ve "Oran" başlıkları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yan Ödeme Giriş Alanı:</strong>
+                        <ul>
+                            <li>Başlık satırının altında bir kaydırılabilir alan bulunur</li>
+                            <li>Bu alanda yan ödeme ve oran bilgileri girilir</li>
+                            <li>Her satırın başında bir silme butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında gri arka planlı bir alanda butonlar yer alır</li>
+                            <li>Yeni Kayıt, Temizle, Kaydet, Ara, Sil, Kopyala ve Çıkış butonları bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Matrah Tanımı alanı boş olarak gelir</li>
+                    <li>Yan ödeme listesi boş olarak gösterilir</li>
+                    <li>İlk olarak bir matrah tanımı seçmeniz veya aramanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="matrah-tanimi" class="section">
+        <h2>Matrah Tanımı Kullanımı</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Matrah Tanımı Seçme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlık şeridinin hemen altında yer alır</li>
+                            <li>Solda "Matrah Tanımı" etiketi, sağında açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusu yaklaşık 6 cm genişliğindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Matrah tanımını seçmek için:
+                                <ul>
+                                    <li>Açılır liste kutusuna tıklayın; tanımlar listesi açılacaktır</li>
+                                    <li>Listeden istediğiniz matrah tanımına tıklayarak seçin</li>
+                                    <li>Seçim yaptığınızda sistem otomatik olarak bu matrah tanımına ait yan ödemeleri yükleyecektir</li>
+                                </ul>
+                            </li>
+                            <li>Matrah tanımını aramak için:
+                                <ul>
+                                    <li>Listeyi açıp ilk birkaç harfini yazarak hızlıca bulabilirsiniz</li>
+                                    <li>Veya "Ara" butonunu kullanarak arama ekranını açabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yeni Matrah Tanımı Kullanımı:</h4>
+                <ol>
+                    <li><strong>Yeni bir matrah tanımı için yan ödeme tanımlamak:</strong>
+                        <ul>
+                            <li>Matrah tanımı açılır listesinden istediğiniz tanımı seçin</li>
+                            <li>Eğer daha önce bu matrah tanımı için yan ödeme tanımlanmamışsa, boş bir tablo gelecektir</li>
+                            <li>Yan ödeme eklemek için "Yeni Kayıt" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Matrah tanımı aramak:</strong>
+                        <ul>
+                            <li>"Ara" butonuna tıklayın</li>
+                            <li>Açılan pencereden istediğiniz matrah tanımını seçin</li>
+                            <li>Seçim yapıldığında ana ekrana dönecek ve seçilen matrah tanımı yüklenecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Matrah tanımı seçilmeden yan ödeme eklenemez</li>
+                    <li>Matrah tanımı değiştirildiğinde, kaydedilmemiş değişiklikler kaybolabilir</li>
+                    <li>Kaydetmeden önce doğru matrah tanımını seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile matrah tanımı listesinden yan ödemeler tablosuna hızlıca geçiş yapabilirsiniz</li>
+                    <li>Matrah tanımı listesinde ilk harfleri yazarak hızlı arama yapabilirsiniz</li>
+                    <li>İşlem yapmadan önce doğru matrah tanımını seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yan-odeme" class="section">
+        <h2>Yan Ödeme Ekleme ve Düzenleme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yan Ödeme Ekleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yan ödeme tablosu matrah tanımı alanının altında yer alır</li>
+                            <li>Tabloda "Yan Ödeme" ve "Oran" başlıklı sütunlar bulunur</li>
+                            <li>Her satırın başında bir silme butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Eklenir:</strong>
+                        <ol>
+                            <li>Yeni bir yan ödeme eklemek için:
+                                <ul>
+                                    <li>Ekranın alt kısmındaki "Yeni Kayıt" butonuna tıklayın</li>
+                                    <li>Tabloya yeni bir satır eklenecektir</li>
+                                    <li>Yan Ödeme sütunundaki açılır listeden ödeme türünü seçin</li>
+                                    <li>Oran sütununa yüzde olarak oranı girin (varsayılan değer 100'dür)</li>
+                                    <li>Tüm düzenlemeleri yaptıktan sonra "Kaydet" butonuna tıklayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yan Ödeme Seçme:</h4>
+                <ol>
+                    <li><strong>Yan Ödeme Sütunu:</strong>
+                        <ul>
+                            <li>Tablonun ortasında, silme butonunun sağında yer alır</li>
+                            <li>Yaklaşık 6.4 cm genişliğinde bir açılır liste kutusudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Yan ödeme seçmek için:
+                                <ul>
+                                    <li>Açılır liste kutusuna tıklayın</li>
+                                    <li>Listeden istediğiniz yan ödeme türünü seçin</li>
+                                    <li>Not: Aynı yan ödeme bir matrah tanımı için birden fazla kez seçilemez</li>
+                                </ul>
+                            </li>
+                            <li>Yan ödeme değiştirmek için:
+                                <ul>
+                                    <li>Mevcut seçimi değiştirmek istediğinizde açılır listeye tıklayın</li>
+                                    <li>Farklı bir yan ödeme seçin</li>
+                                    <li>Sistem daha önce aynı yan ödeme seçilmişse sizi uyaracaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Oran Girme ve Değiştirme:</h4>
+                <ol>
+                    <li><strong>Oran Sütunu:</strong>
+                        <ul>
+                            <li>Tablonun sağ tarafında, yan ödeme sütununun yanında yer alır</li>
+                            <li>Yaklaşık 3 cm genişliğinde bir metin kutusudur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Oran değeri girmek için:
+                                <ul>
+                                    <li>Metin kutusuna tıklayın</li>
+                                    <li>Yüzde cinsinden oran değerini yazın (örn: 100, 75.5, 50 gibi)</li>
+                                    <li>Oran boş bırakılamaz, mutlaka bir değer girilmelidir</li>
+                                    <li>Varsayılan değer 100'dür</li>
+                                </ul>
+                            </li>
+                            <li>Oran değerini değiştirmek için:
+                                <ul>
+                                    <li>Mevcut değerin üzerine tıklayın</li>
+                                    <li>Yeni değeri girin</li>
+                                    <li>TAB tuşuna basarak bir sonraki alana geçebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yan Ödeme Silme:</h4>
+                <ol>
+                    <li><strong>Silme Butonu:</strong>
+                        <ul>
+                            <li>Her satırın en solunda yer alır</li>
+                            <li>Üzerinde çöp kutusu simgesi olan küçük bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Bir yan ödemeyi silmek için:
+                                <ul>
+                                    <li>Silmek istediğiniz satırın başındaki silme butonuna tıklayın</li>
+                                    <li>Onay penceresi açılacaktır</li>
+                                    <li>"Evet" seçeneğini tıklayarak silme işlemini onaylayın</li>
+                                    <li>Satır tablodan kaldırılacaktır</li>
+                                    <li>Değişikliklerin kalıcı olması için "Kaydet" butonuna tıklamayı unutmayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Aynı yan ödeme bir matrah tanımı için birden fazla kez seçilemez</li>
+                    <li>Oran değeri boş bırakılamaz, mutlaka bir değer girilmelidir</li>
+                    <li>Değişiklikler "Kaydet" butonuna basılmadan kalıcı olmaz</li>
+                    <li>Silme işlemi onaylandıktan sonra geri alınamaz (kaydedilmediği sürece)</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Enter tuşu TAB tuşu gibi çalışır, bir sonraki alana geçmenizi sağlar</li>
+                    <li>Yan ödeme açılır listesinde ilk harfleri yazarak hızlı arama yapabilirsiniz</li>
+                    <li>Birden fazla yan ödeme ekleyecekseniz, tümünü ekledikten sonra bir kere "Kaydet" butonuna tıklayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="butonlar" class="section">
+        <h2>Butonlar ve İşlevleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Yeni Kayıt Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, gri arka plan üzerinde yer alır</li>
+                            <li>En soldaki butondur</li>
+                            <li>Üzerinde "Yeni Kayıt" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Yeni bir yan ödeme satırı eklemek için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Yan ödeme tablosuna yeni bir satır eklenecektir</li>
+                                    <li>Eklenen satırda yan ödeme seçimi için imleç otomatik olarak konumlanacaktır</li>
+                                    <li>Oran alanı varsayılan olarak 100 değeri ile doldurulur</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Temizle Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Yeni Kayıt butonunun sağında yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan ikinci butondur</li>
+                            <li>Üzerinde "Temizle" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Ekrandaki tüm verileri temizlemek için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Matrah tanımı alanı ve yan ödeme tablosu boşaltılacaktır</li>
+                                    <li>Programın ilk açılış haline geri dönecektir</li>
+                                    <li>Matrah tanımı seçimi yapabilir hale gelecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Temizle butonunun sağında yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan üçüncü butondur</li>
+                            <li>Üzerinde "Kaydet" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Yapılan değişiklikleri kaydetmek için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Yapılan tüm değişiklikler (ekleme, çıkarma, değiştirme) kalıcı olarak kaydedilecektir</li>
+                                    <li>Matrah tanımı belirtilmemişse veya tanımsız yan ödeme varsa uyarı alırsınız</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ara Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan dördüncü butondur</li>
+                            <li>Üzerinde "Ara" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Matrah tanımlarını aramak için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Yeni bir pencere açılacaktır</li>
+                                    <li>Bu pencerede matrah tanımlarının listesi görüntülenir</li>
+                                    <li>İstediğiniz matrah tanımını seçin</li>
+                                    <li>Seçim yapıldığında otomatik olarak ana ekrana dönecek ve seçilen matrah tanımına ait bilgiler yüklenecektir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sil Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Ara butonunun sağında yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan beşinci butondur</li>
+                            <li>Üzerinde "Sil" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Seçili matrah tanımına ait tüm yan ödemeleri silmek için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Onay penceresi açılacaktır</li>
+                                    <li>"Evet" seçeneğiyle onaylarsanız, seçili matrah tanımına ait tüm yan ödemeler silinecektir</li>
+                                    <li>Not: Bu işlem geri alınamaz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kopyala Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Sil butonunun sağında yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan altıncı butondur</li>
+                            <li>Üzerinde "Kopyala" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Bir matrah tanımının yan ödeme bilgilerini başka bir matrah tanımına kopyalamak için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Yeni bir pencere açılacaktır</li>
+                                    <li>Bu pencerede kopyalama işlemini yapabilirsiniz</li>
+                                    <li>Kaynak ve hedef matrah tanımlarını seçebilirsiniz</li>
+                                    <li>İşlemi onayladığınızda, kaynak matrah tanımının yan ödemeleri hedef matrah tanımına kopyalanacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, en sağda yer alır</li>
+                            <li>Gri arka plan üzerinde yer alan son butondur</li>
+                            <li>Üzerinde "Çıkış" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Programdan çıkmak için:
+                                <ul>
+                                    <li>Butona tıklayın</li>
+                                    <li>Program kapatılacaktır</li>
+                                    <li>Kaydedilmemiş değişiklikler kaybolacaktır, çıkmadan önce kaydettiğinizden emin olun</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonu kullanıldığında tüm yan ödemeler kayıtlı matrah tanımından silinir</li>
+                    <li>Kaydet butonuna basılmadan yapılan değişiklikler kalıcı olmaz</li>
+                    <li>Temizle butonu kaydedilmemiş değişiklikleri siler</li>
+                    <li>Çıkış yapmadan önce kaydettiğinizden emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ESC tuşu çıkış butonuyla aynı işlevi görür</li>
+                    <li>TAB tuşu bir sonraki alana, SHIFT+TAB bir önceki alana geçmenizi sağlar</li>
+                    <li>Matrah tanımını değiştirmeden önce kaydetmeyi unutmayın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Kısayollar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Klavye Kısayolları:</h4>
+                <ol>
+                    <li><strong>Temel Kısayollar:</strong>
+                        <ul>
+                            <li>TAB: Bir sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Bir önceki alana geçer</li>
+                            <li>ENTER: TAB gibi bir sonraki alana geçer</li>
+                            <li>ESC: Programdan çıkış yapar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Açılır Listelerde Hızlı Arama:</strong>
+                        <ul>
+                            <li>Matrah tanımı veya yan ödeme açılır listelerinde, ilk birkaç harfi yazarak hızlı arama yapabilirsiniz</li>
+                            <li>Örnek: "GE" yazarak "GENEL" ile başlayan tanımları bulabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ol>
+                    <li><strong>Aynı Yan Ödemeleri Birden Çok Matrah Tanımına Uygulamak:</strong>
+                        <ul>
+                            <li>Bir matrah tanımı için yan ödemeleri tanımlayın</li>
+                            <li>Kaydedin</li>
+                            <li>Kopyala butonunu kullanarak diğer matrah tanımlarına kopyalayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı Matrah Tanımı Seçimi:</strong>
+                        <ul>
+                            <li>Açılır listede doğrudan seçim yapmak yerine Ara butonunu kullanın</li>
+                            <li>Açılan pencerede matrah tanımlarını daha rahat görüntüleyebilir ve seçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu İşlemlerde Verimlilik:</strong>
+                        <ul>
+                            <li>Birden fazla yan ödeme ekleyecekseniz, hepsini ekleyin ve en son kaydedin</li>
+                            <li>Böylece her ekleme için ayrı ayrı kaydetmek zorunda kalmazsınız</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Matrah Tanımı Araması Adım Adım:</h4>
+                <ol>
+                    <li><strong>Ara Butonuyla Arama:</strong>
+                        <ol>
+                            <li>Ekranın alt kısmındaki "Ara" butonuna tıklayın</li>
+                            <li>Açılan pencerede matrah tanımlarının listesi görüntülenecektir</li>
+                            <li>Bu listede matrah tanımları kayıt numarası ve açıklamalarıyla birlikte gösterilir</li>
+                            <li>İstediğiniz matrah tanımını listeden seçin</li>
+                            <li>Seçiminiz yapıldığında otomatik olarak ana ekrana dönecek ve seçilen matrah tanımına ait bilgiler yüklenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Açılır Listeyle Arama:</strong>
+                        <ol>
+                            <li>Matrah tanımı açılır listesine tıklayın</li>
+                            <li>Liste açıldığında, aranacak matrah tanımının ilk birkaç harfini yazın</li>
+                            <li>Liste otomatik olarak bu harflerle başlayan tanımlara gidecektir</li>
+                            <li>İstediğiniz matrah tanımını listeden seçin</li>
+                            <li>Seçim yapıldığında, bu matrah tanımına ait yan ödemeler otomatik olarak yüklenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yan Ödeme Kopyalama Adım Adım:</h4>
+                <ol>
+                    <li><strong>Yan Ödemeleri Başka Bir Matrah Tanımına Kopyalama:</strong>
+                        <ol>
+                            <li>Kaynak olarak kullanacağınız matrah tanımını seçin (açılır listeden veya ara butonu ile)</li>
+                            <li>Ekranın alt kısmındaki "Kopyala" butonuna tıklayın</li>
+                            <li>Açılan pencerede kopyalama işlemini yapabilirsiniz:</li>
+                            <li>Kaynak matrah tanımı genellikle otomatik olarak seçili gelir</li>
+                            <li>Hedef matrah tanımını seçin</li>
+                            <li>Kopyalama işlemini onaylayın</li>
+                            <li>İşlem tamamlandığında kaynak matrah tanımının yan ödemeleri, hedef matrah tanımına kopyalanmış olacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Uzman İpuçları:</h4>
+                <ul>
+                    <li>Sık kullanılan matrah tanımlarını bir yere not edin, böylece hızlıca bulabilirsiniz</li>
+                    <li>Benzer matrah tanımları için şablon oluşturun ve kopyala özelliğini kullanarak zaman kazanın</li>
+                    <li>Oran değerleri girerken ondalık ayırıcı olarak virgül (,) kullanın</li>
+                    <li>Programı kullanırken herhangi bir anda Temizle butonuna basarak baştan başlayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Bir Matrah Tanımı Girmelisiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Matrah tanımı seçmeden kaydetmeye çalıştığınızda bu uyarıyı alırsınız</li>
+                            <li><strong>Çözüm:</strong> Matrah tanımı açılır listesinden bir matrah tanımı seçin veya Ara butonunu kullanarak bir matrah tanımı bulun</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu Yan Ödeme Önceden Seçilmiştir!" Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Aynı matrah tanımı için aynı yan ödemeyi birden fazla kez seçmeye çalıştığınızda bu uyarıyı alırsınız</li>
+                            <li><strong>Çözüm:</strong> Her yan ödeme bir matrah tanımı için yalnızca bir kez kullanılabilir. Farklı bir yan ödeme seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Oran Değerini Girmelisiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Oran alanını boş bıraktığınızda bu uyarıyı alırsınız</li>
+                            <li><strong>Çözüm:</strong> Oran alanına mutlaka bir değer girin (varsayılan değer 100'dür)</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Satır İptal Edilecek, Onaylıyor musunuz?" Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Açıklama:</strong> Bir satırı silmek istediğinizde onay istemek için bu uyarı gösterilir</li>
+                            <li><strong>İşlem:</strong> Silmek istiyorsanız "Evet", vazgeçmek istiyorsanız "Hayır" seçeneğini tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İptal İşlemini Onaylıyor musunuz?" Uyarısı:</strong>
+                        <ul>
+                            <li><strong>Açıklama:</strong> Sil butonuna tıkladığınızda, seçili matrah tanımına ait tüm yan ödemeleri silmek istediğinizi onaylamak için gösterilir</li>
+                            <li><strong>İşlem:</strong> Tüm yan ödemeleri silmek istiyorsanız "Evet", vazgeçmek istiyorsanız "Hayır" seçeneğini tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Genel Sorun Giderme Adımları:</h4>
+                <ol>
+                    <li><strong>Program Açılmıyor veya Hata Veriyor:</strong>
+                        <ul>
+                            <li>Programı kapatıp tekrar açmayı deneyin</li>
+                            <li>Bilgisayarınızı yeniden başlatın</li>
+                            <li>Sistem yöneticinizle iletişime geçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Kaydet butonuna bastığınızdan emin olun</li>
+                            <li>Matrah tanımı seçilmiş olduğundan emin olun</li>
+                            <li>Tüm yan ödemelerin doğru girildiğinden emin olun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Matrah Tanımı veya Yan Ödeme Listesi Görünmüyor:</strong>
+                        <ul>
+                            <li>Program ayarlarınızın doğru olduğundan emin olun</li>
+                            <li>Sistem yöneticinizle iletişime geçin, yetki sorunları olabilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Veri Kaybını Önlemek İçin Dikkat Edilmesi Gerekenler:</h4>
+                <ul>
+                    <li>Değişiklik yapmadan önce doğru matrah tanımını seçtiğinizden emin olun</li>
+                    <li>Değişiklikleri yaptıktan sonra mutlaka kaydedin</li>
+                    <li>Programdan çıkmadan önce kaydedilmemiş değişiklik olmadığından emin olun</li>
+                    <li>Silme işlemini yapmadan önce doğru matrah tanımı üzerinde çalıştığınızdan emin olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yardım Alma:</h4>
+                <p>Program kullanımıyla ilgili sorularınız veya sorunlarınız için:</p>
+                <ul>
+                    <li>Bu kullanıcı kılavuzunu baştan sona okuyun</li>
+                    <li>Biriminizin sistem destek personeli ile iletişime geçin</li>
+                    <li>Teknik destek için BT departmanınızla iletişime geçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="son" class="section">
+        <h2>Sonuç</h2>
+        <div class="info-box">
+            <p>"Yan Ödeme Matrah Tanımları" programı, personel yan ödemelerinin matrah tanımlarıyla ilişkilendirilmesini sağlayan kullanışlı bir araçtır. Bu kılavuzda, programın temel işlevleri ve kullanımı hakkında bilgiler verilmiştir.</p>
+            
+            <p>Programı etkin bir şekilde kullanarak:</p>
+            <ul>
+                <li>Personel yan ödemelerini matrah tanımlarıyla kolayca ilişkilendirebilirsiniz</li>
+                <li>Her yan ödeme için farklı oran belirleyebilirsiniz</li>
+                <li>Aynı yan ödeme tanımlarını farklı matrah tanımlarına kopyalayabilirsiniz</li>
+                <li>Gerektiğinde hızlıca değişiklik yapabilirsiniz</li>
+            </ul>
+            
+            <p>Bu kılavuzdaki adımları izleyerek "Yan Ödeme Matrah Tanımları" programını kolaylıkla kullanabilir ve personel yan ödemelerini etkin bir şekilde yönetebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Son Öneriler:</h4>
+                <ul>
+                    <li>Programı düzenli olarak kullanmak için pratik yapın</li>
+                    <li>Değişiklikleri yapmadan önce planınızı oluşturun</li>
+                    <li>Sık kullanılan matrah ve yan ödeme tanımlarını not edin</li>
+                    <li>Sorun yaşadığınızda bu kılavuzun ilgili bölümlerini tekrar inceleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ornek-senaryolar" class="section">
+        <h2>Örnek Senaryolar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Senaryo 1: Yeni Bir Matrah Tanımı İçin Yan Ödeme Ekleme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Matrah tanımı açılır listesinden kullanmak istediğiniz matrah tanımını seçin</li>
+                    <li>"Yeni Kayıt" butonuna tıklayın</li>
+                    <li>Açılan yeni satırda yan ödeme türünü seçin</li>
+                    <li>Yan ödeme için oran değerini girin (örneğin 85)</li>
+                    <li>Daha fazla yan ödeme eklemek için tekrar "Yeni Kayıt" butonuna tıklayın</li>
+                    <li>Her yan ödeme için ilgili türü ve oranı seçin</li>
+                    <li>Tüm girişleri tamamladıktan sonra "Kaydet" butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında, eklediğiniz yan ödemeler matrah tanımıyla ilişkilendirilmiş olacaktır</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Senaryo 2: Mevcut Bir Matrah Tanımının Yan Ödemelerini Düzenleme</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Matrah tanımı açılır listesinden düzenlemek istediğiniz matrah tanımını seçin</li>
+                    <li>Mevcut yan ödemeler ve oranlar listede görüntülenecektir</li>
+                    <li>Değiştirmek istediğiniz oran değerinin üzerine tıklayın</li>
+                    <li>Yeni oran değerini girin</li>
+                    <li>Bir yan ödemeyi silmek için satırın başındaki silme butonuna tıklayın ve onaylayın</li>
+                    <li>Yeni yan ödeme eklemek için "Yeni Kayıt" butonuna tıklayın ve bilgileri girin</li>
+                    <li>Tüm değişiklikleri tamamladıktan sonra "Kaydet" butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında, güncellenen yan ödemeler matrah tanımıyla ilişkilendirilmiş olacaktır</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Senaryo 3: Yan Ödemeleri Bir Matrah Tanımından Başka Birine Kopyalama</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Matrah tanımı açılır listesinden kaynak olarak kullanacağınız matrah tanımını seçin</li>
+                    <li>Ekranın alt kısmındaki "Kopyala" butonuna tıklayın</li>
+                    <li>Açılan pencerede hedef matrah tanımını seçin</li>
+                    <li>Kopyalama işlemini onaylayın</li>
+                    <li>İşlem tamamlandığında, kaynak matrah tanımının yan ödemeleri hedef matrah tanımına kopyalanmış olacaktır</li>
+                    <li>Hedef matrah tanımının yan ödemelerini görmek için matrah tanımı listesinden hedef tanımı seçin</li>
+                    <li>Gerekirse kopyalanan yan ödemelerde değişiklik yapın</li>
+                    <li>Değişiklikleri kaydetmek için "Kaydet" butonuna tıklayın</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="sikca-sorulan-sorular" class="section">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Temel Sorular</h4>
+                <ol>
+                    <li>
+                        <strong>Soru:</strong> Aynı yan ödemeyi bir matrah tanımında birden fazla kez kullanabilir miyim?<br>
+                        <strong>Cevap:</strong> Hayır, her yan ödeme bir matrah tanımı için yalnızca bir kez kullanılabilir. Aynı yan ödemeyi tekrar seçmeye çalıştığınızda sistem sizi uyaracaktır.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Yanlışlıkla bir yan ödemeyi sildim, geri alabilir miyim?<br>
+                        <strong>Cevap:</strong> Eğer henüz kaydetmediyseniz, ekranı temizleyip yeniden yükleyebilirsiniz. Ancak kaydettiyseni, yan ödemeyi yeniden eklemeniz gerekecektir.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Oran değeri için ondalık sayı girebilir miyim?<br>
+                        <strong>Cevap:</strong> Evet, oran alanına ondalık sayı girebilirsiniz. Ondalık ayırıcı olarak virgül (,) kullanın.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Tüm matrah tanımlarını aynı anda görebilir miyim?<br>
+                        <strong>Cevap:</strong> Bu programda tüm matrah tanımlarını aynı anda göremezsiniz. Ancak Ara butonunu kullanarak matrah tanımları listesine erişebilirsiniz.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Oran için minimum ve maksimum değerler nelerdir?<br>
+                        <strong>Cevap:</strong> Program için belirli bir sınır yoktur, ancak genellikle 0 ile 999.99 arasında değerler kullanılır.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Gelişmiş Sorular</h4>
+                <ol>
+                    <li>
+                        <strong>Soru:</strong> Bir matrah tanımını tamamen silmek mümkün mü?<br>
+                        <strong>Cevap:</strong> Bu programda matrah tanımlarını silemezsiniz. Sadece matrah tanımı ile ilişkilendirilmiş yan ödemeleri silebilirsiniz.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Birden fazla matrah tanımını toplu olarak değiştirebilir miyim?<br>
+                        <strong>Cevap:</strong> Doğrudan toplu değişiklik yapılamaz, ancak kopyalama özelliğini kullanarak bir matrah tanımının yan ödemelerini diğerlerine kopyalayabilirsiniz.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Program, değişiklikleri otomatik olarak kaydeder mi?<br>
+                        <strong>Cevap:</strong> Hayır, tüm değişiklikleri "Kaydet" butonuna tıklayarak manuel olarak kaydetmeniz gerekir.
+                    </li>
+                    <li>
+                        <strong>Soru:</strong> Sistemde olmayan bir yan ödeme türü ekleyebilir miyim?<br>
+                        <strong>Cevap:</strong> Hayır, yalnızca sistemde tanımlı olan yan ödeme türlerini kullanabilirsiniz. Yeni bir yan ödeme türü eklemek için sistem yöneticinize başvurmanız gerekir.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="detayli-islemler" class="section">
+        <h2>Detaylı İşlem Adımları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Bir Matrah Tanımının Tüm Yan Ödemelerini Silme Adım Adım:</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Matrah tanımı açılır listesinden yan ödemelerini silmek istediğiniz matrah tanımını seçin</li>
+                    <li>Mevcut yan ödemeler ve oranlar listede görüntülenecektir</li>
+                    <li>Ekranın alt kısmındaki "Sil" butonuna tıklayın</li>
+                    <li>"İptal İşlemini Onaylıyor musunuz?" mesajı görüntülenecektir</li>
+                    <li>Silme işlemini onaylamak için "Evet" seçeneğini tıklayın</li>
+                    <li>Tüm yan ödemeler silinecektir</li>
+                    <li>Matrah tanımı sistemde kalacak, ancak yan ödemeleri silinmiş olacaktır</li>
+                    <li>İsterseniz aynı matrah tanımı için yeni yan ödemeler ekleyebilirsiniz</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yan Ödeme Arama Penceresini Kullanma Adım Adım:</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Ekranın alt kısmındaki "Ara" butonuna tıklayın</li>
+                    <li>Yeni bir pencere açılacaktır</li>
+                    <li>Bu pencerede matrah tanımlarının listesi görüntülenecektir</li>
+                    <li>Liste aşağıdaki bilgileri içerir:
+                        <ul>
+                            <li>Kayıt No: Matrah tanımının sistem kayıt numarası</li>
+                            <li>Matrah Tanımı: Matrah tanımının açıklaması</li>
+                        </ul>
+                    </li>
+                    <li>Listede aşağı/yukarı hareket ederek matrah tanımlarını inceleyebilirsiniz</li>
+                    <li>Listedeki matrah tanımı sayısı fazlaysa, sayfalar arasında geçiş yapabilirsiniz</li>
+                    <li>İstediğiniz matrah tanımını bulduğunuzda üzerine tıklayarak seçin</li>
+                    <li>Seçim yaptığınızda otomatik olarak ana ekrana dönecek ve seçilen matrah tanımına ait bilgiler yüklenecektir</li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kopyalama İşlemini Kullanma Adım Adım:</h4>
+                <ol>
+                    <li>Programı açın</li>
+                    <li>Matrah tanımı açılır listesinden kaynak olarak kullanacağınız matrah tanımını seçin</li>
+                    <li>Seçilen matrah tanımının yan ödemeleri yüklenecektir</li>
+                    <li>Ekranın alt kısmındaki "Kopyala" butonuna tıklayın</li>
+                    <li>Yeni bir pencere açılacaktır</li>
+                    <li>Bu pencerede:
+                        <ul>
+                            <li>Kaynak matrah tanımı otomatik olarak gösterilecektir</li>
+                            <li>Hedef matrah tanımını seçmeniz gerekecektir</li>
+                        </ul>
+                    </li>
+                    <li>Hedef matrah tanımını seçin (kaynak olarak kullandığınız tanımdan farklı olmalıdır)</li>
+                    <li>Kopyalama işlemini onaylamak için "Tamam" veya "Kopyala" butonuna tıklayın</li>
+                    <li>İşlem tamamlandığında onay mesajı gösterilecektir</li>
+                    <li>Ana ekrana döndüğünüzde, kaynak matrah tanımı hala seçili olacaktır</li>
+                    <li>Hedef matrah tanımının yan ödemelerini görmek için matrah tanımı listesinden hedef tanımı seçebilirsiniz</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Kopyalama İşlemi Uyarıları:</h4>
+                <ul>
+                    <li>Eğer hedef matrah tanımında zaten yan ödemeler varsa, kopyalama işlemi bu yan ödemeleri etkilemez, sadece yeni yan ödemeleri ekler</li>
+                    <li>Eğer aynı yan ödeme hem kaynak hem de hedef matrah tanımında varsa, bu yan ödeme kopyalanmaz</li>
+                    <li>Kopyalama işlemi geri alınamaz, bu nedenle doğru hedef matrah tanımını seçtiğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+
+</body>
+</html>

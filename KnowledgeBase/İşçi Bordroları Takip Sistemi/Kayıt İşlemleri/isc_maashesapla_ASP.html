@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşçi Bordro Toplu Maaş Hesaplama Kullanıcı Dokümanı</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İşçi Bordro Toplu Maaş Hesaplama</h1>
+        <img src="/api/placeholder/150/50" alt="Belediye Logo">
+    </div>
+
+    <div class="section">
+        <h1>İşçi Bordro Toplu Maaş Hesaplama Kullanıcı Kılavuzu</h1>
+        
+        <div class="info-box">
+            Bu doküman, İşçi Bordro Toplu Maaş Hesaplama ekranının nasıl kullanılacağını anlatmaktadır. Puantaj bilgilerinin girişinden sonra tüm sicillerin toplu olarak maaş hesabının yapılmasını sağlayan bu ekran sayesinde, seçtiğiniz kriterlere göre personellerin maaşlarını hızlı bir şekilde hesaplayabilirsiniz.
+        </div>
+
+        <h2>1. Ekrana Erişim</h2>
+        <p>İşçi Bordro Toplu Maaş Hesaplama ekranına erişmek için menüden ilgili seçeneği tıklayın. Bu ekran açıldığında, yukarıda "İşçi Bordro Toplu Maaş Hesaplaması" başlığını göreceksiniz.</p>
+        
+        <div class="tip-box">
+            <p><strong>Not:</strong> Ekran ilk açıldığında, bölüm ve sicil tipi seçim kutularındaki tüm seçenekler otomatik olarak seçili durumda gelecektir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Ekran Bileşenleri ve Veri Girişi</h2>
+        
+        <div class="step">
+            <h3>Yıl/Dönem Alanları</h3>
+            <p>Ekranın üst kısmında solda "Yıl/Dönem" başlığının karşısında:</p>
+            <ul>
+                <li><strong>Yıl Alanı:</strong> Bu alana hesaplama yapmak istediğiniz yılı (örneğin 2023) giriniz. Bu alan en fazla 4 rakam içerebilir ve boş bırakılamaz.</li>
+                <li><strong>Dönem Alanı:</strong> Bu alana hesaplama yapmak istediğiniz ay bilgisini (1-12 arası) giriniz. Bu alan en fazla 2 rakam içerebilir ve boş bırakılamaz.</li>
+            </ul>
+            <div class="info-box">
+                <p>Bu alanlar sadece sayı kabul eder. Harf veya özel karakter giremezsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Maaş Tipi Seçimi</h3>
+            <p>"Maaş Tipi" başlığının karşısında bulunan açılır listeden (dropdown) maaş tipini seçiniz. Maaş tipi seçimi, hesaplanacak maaşın türünü belirler (normal maaş, ikramiye, vs.).</p>
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Maaş tipi seçimi yapmadan hesaplama yapılamaz. Mutlaka bir maaş tipi seçmelisiniz. Açılır liste içerisinde, sistemde tanımlı olan tüm maaş tipleri görüntülenir.</p>
+            </div>
+            <div class="warning-box">
+                <p><strong>Uyarı:</strong> Seçilen maaş tipine ait aylık parametre tanımlanmamış veya kilitlenmiş olabilir. Bu durumda "Maaş Kilitli" uyarısı alırsınız.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Bölüm Seçimi</h3>
+            <p>"Bölüm" başlığının karşısında bulunan çoklu seçim kutusu, hesaplama yapılacak bölümleri seçmenizi sağlar. Bölüm seçim kutusu ekranın sol tarafında, "Maaş Tipi" seçeneğinin hemen altında yer alır.</p>
+            <ul>
+                <li>Bu kutuda birden fazla bölüm seçebilirsiniz.</li>
+                <li>Birden fazla bölüm seçmek için klavyenizden CTRL tuşunu basılı tutarak istediğiniz bölümleri tıklayın.</li>
+                <li>Tüm bölümleri seçmek için, sistem otomatik olarak açılışta tüm bölümleri seçili hale getirir.</li>
+                <li>Seçim kutusunun yüksekliği 50 piksel, genişliği 150 pikseldir ve aynı anda birden fazla seçim yapabilirsiniz (multiple).</li>
+            </ul>
+            <div class="warning-box">
+                <p><strong>Uyarı:</strong> En az bir bölüm seçilmelidir, aksi halde maaş hesaplama işlemi yapılamaz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Sicil Tipi Seçimi</h3>
+            <p>"Sicil Tipi" başlığının karşısında bulunan çoklu seçim kutusu, hesaplama yapılacak sicil tiplerini seçmenizi sağlar. Sicil tipi seçim kutusu, "Bölüm" seçim kutusunun hemen altında yer alır.</p>
+            <ul>
+                <li>Bu kutuda birden fazla sicil tipi seçebilirsiniz.</li>
+                <li>Birden fazla sicil tipi seçmek için klavyenizden CTRL tuşunu basılı tutarak istediğiniz sicil tiplerini tıklayın.</li>
+                <li>Tüm sicil tiplerini seçmek için, sistem otomatik olarak açılışta tüm sicil tiplerini seçili hale getirir.</li>
+                <li>Seçim kutusunun yüksekliği 50 piksel, genişliği 150 pikseldir ve aynı anda birden fazla seçim yapabilirsiniz (multiple).</li>
+            </ul>
+            <div class="warning-box">
+                <p><strong>Uyarı:</strong> En az bir sicil tipi seçilmelidir, aksi halde maaş hesaplama işlemi yapılamaz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Sicil No Aralığı</h3>
+            <p>"Sicil No" başlığının karşısında iki giriş kutusu bulunur. Bu kutular "Sicil Tipi" seçeneğinin hemen altında yer alır:</p>
+            <ul>
+                <li><strong>İlk Sicil No:</strong> Hesaplamanın başlayacağı sicil numarasını girmeniz gereken sol taraftaki kutudur. Bu alan boş bırakılamaz ve sadece rakam kabul eder. En fazla 8 rakam girebilirsiniz.</li>
+                <li><strong>Son Sicil No:</strong> Hesaplamanın biteceği sicil numarasını girmeniz gereken sağ taraftaki kutudur. Bu alan da sadece rakam kabul eder ve en fazla 8 rakam girebilirsiniz. Eğer bu alanı boş bırakırsanız, sistem otomatik olarak "99999999" değerini kullanır, yani tüm sicil numaralarını hesaplar.</li>
+            </ul>
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Sadece belirli bir sicil için hesaplama yapmak istiyorsanız, her iki kutuya da aynı sicil numarasını girin.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Kesinti/Yardımlar Sicilden Alınsın Seçeneği</h3>
+            <p>"Kesinti/Yardımlar Sicilden Alınsın" başlığının karşısında bir onay kutusu (checkbox) bulunur. Bu seçenek, sicil no alanlarının hemen altında yer alır:</p>
+            <ul>
+                <li>Bu kutuyu işaretlerseniz, sistem maaş hesaplarken personelin sicil bilgilerinde tanımlı olan özel yardım kesintilerini dikkate alır.</li>
+                <li>İşaretlemezseniz, bu bilgiler hesaplamada kullanılmaz.</li>
+            </ul>
+            <div class="info-box">
+                <p>Bu özellik özellikle Odunpazarı için eklenen bir fonksiyondur (12.05.2005 tarihinde eklenmiştir).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. İşlem Butonları</h2>
+        
+        <div class="step">
+            <h3>Kaydet Butonu</h3>
+            <p>Ekranın alt kısmında yer alan "Kaydet" butonu, girilen bilgilere göre maaş hesaplama işlemini başlatır. Bu buton ekranın altında ortada yer alır. Bu butona tıkladığınızda:</p>
+            <ol>
+                <li>Sistem girdiğiniz bilgileri kontrol eder.</li>
+                <li>Eksik veya hatalı bilgi varsa uyarı mesajı gösterir.</li>
+                <li>Tüm bilgiler doğruysa, "Lütfen Bekleyiniz..." mesajı görüntülenir ve hesaplama işlemi başlar.</li>
+                <li>Hesaplama tamamlandığında "Maaş Hesaplama İşlemi Tamamlandı." mesajı görüntülenir.</li>
+            </ol>
+            <div class="warning-box">
+                <p><strong>Önemli:</strong> Maaş hesaplama işlemi, seçilen kriter ve personel sayısına bağlı olarak zaman alabilir. "Lütfen Bekleyiniz..." mesajı görüntülenirken sistemin çalışmasını engellemeyiniz ve bekleyiniz. Sistem bu işlem için maksimum 3600 saniye (1 saat) süre tanımıştır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Çıkış Butonu</h3>
+            <p>Ekranın alt kısmında yer alan "Çıkış" butonu, "Kaydet" butonunun hemen sağında yer alır. İşçi Bordro Toplu Maaş Hesaplama ekranını kapatır. Bu butona tıkladığınızda ekran kapanır ve önceki menüye dönülür.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Klavye Kullanımı</h2>
+        
+        <div class="info-box">
+            <p>Sistem, form üzerinde daha hızlı ilerleyebilmeniz için bazı klavye özellikleri sunar:</p>
+            <ul>
+                <li><strong>Enter Tuşu:</strong> Herhangi bir alanda enter tuşuna bastığınızda, imleç bir sonraki alana otomatik olarak geçer (Tab tuşu görevi görür).</li>
+                <li><strong>CTRL Tuşu:</strong> Bölüm ve Sicil Tipi seçim kutularında birden fazla seçim yapmak için CTRL tuşunu basılı tutarken istediğiniz seçenekleri tıklayabilirsiniz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Maaş Hesaplama Adımları</h2>
+        
+        <div class="info-box">
+            <p>Maaş hesaplama işlemi için aşağıdaki adımları takip ediniz:</p>
+        </div>
+
+        <ol>
+            <li>Hesaplama yapmak istediğiniz Yıl ve Dönem (ay) bilgilerini girin.</li>
+            <li>Açılır listeden Maaş Tipini seçin.</li>
+            <li>Hesaplamanın yapılacağı Bölümleri seçin (birden fazla seçim yapabilirsiniz).</li>
+            <li>Hesaplamanın yapılacağı Sicil Tiplerini seçin (birden fazla seçim yapabilirsiniz).</li>
+            <li>İlk Sicil No ve Son Sicil No alanlarını doldurarak hesaplama yapılacak sicil aralığını belirleyin.</li>
+            <li>Eğer sicil bilgilerindeki özel yardım ve kesintilerin dikkate alınmasını istiyorsanız "Kesinti/Yardımlar Sicilden Alınsın" kutusunu işaretleyin.</li>
+            <li>Tüm bilgileri girdikten sonra "Kaydet" butonuna tıklayın.</li>
+            <li>"Lütfen Bekleyiniz..." mesajı göründüğünde işlemin tamamlanmasını bekleyin.</li>
+            <li>İşlem tamamlandığında "Maaş Hesaplama İşlemi Tamamlandı." mesajı görüntülenecektir.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>6. Maaş Kilitleme Kontrolü</h2>
+        
+        <div class="info-box">
+            <p>"Kaydet" butonuna bastığınızda, sistem otomatik olarak seçilen yıl, dönem ve maaş tipine ait aylık parametrenin kilitli olup olmadığını kontrol eder. Bu kontrol, hesaplama yapmadan önce gerçekleştirilir.</p>
+            <ul>
+                <li>Eğer maaş kilitliyse, sistem "[Yıl]/[Dönem] Aylık parametresi Bulunamadı veya Maaş Kilitli" uyarısı verir ve işleme devam etmez.</li>
+                <li>Maaş kilitli değilse, hesaplama işlemi başlar.</li>
+            </ul>
+            <p>Bu özellik 29.06.2006 tarihinde eklenmiştir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. Hata Mesajları ve Çözümleri</h2>
+        
+        <table>
+            <tr>
+                <th>Hata Mesajı</th>
+                <th>Nedeni</th>
+                <th>Çözümü</th>
+            </tr>
+            <tr>
+                <td>"Yıl Giriniz"</td>
+                <td>Yıl alanı boş bırakılmış.</td>
+                <td>Yıl alanına geçerli bir yıl değeri girin (örneğin 2023).</td>
+            </tr>
+            <tr>
+                <td>"Dönem Giriniz"</td>
+                <td>Dönem (ay) alanı boş bırakılmış.</td>
+                <td>Dönem alanına 1-12 arasında bir değer girin.</td>
+            </tr>
+            <tr>
+                <td>"Başlangıç Sicil No Giriniz"</td>
+                <td>İlk Sicil No alanı boş bırakılmış.</td>
+                <td>İlk Sicil No alanına geçerli bir sicil numarası girin.</td>
+            </tr>
+            <tr>
+                <td>"Bitiş Sicil No Giriniz"</td>
+                <td>Son Sicil No alanı boş bırakılmış ve sistem otomatik değer atayamadı.</td>
+                <td>Son Sicil No alanına geçerli bir sicil numarası girin (veya boş bırakın, sistem otomatik olarak 99999999 değerini kullanacaktır).</td>
+            </tr>
+            <tr>
+                <td>"Maaş Tipi Seçiniz"</td>
+                <td>Maaş Tipi seçilmemiş veya 0 değeri seçilmiş.</td>
+                <td>Açılır listeden bir Maaş Tipi seçin.</td>
+            </tr>
+            <tr>
+                <td>"Bölüm Seçiniz"</td>
+                <td>Hiçbir bölüm seçilmemiş.</td>
+                <td>En az bir bölüm seçin.</td>
+            </tr>
+            <tr>
+                <td>"Sicil tipi seçiniz"</td>
+                <td>Hiçbir sicil tipi seçilmemiş.</td>
+                <td>En az bir sicil tipi seçin.</td>
+            </tr>
+            <tr>
+                <td>"[Yıl]/[Dönem] Aylık parametresi Bulunamadı veya Maaş Kilitli"</td>
+                <td>Seçilen yıl ve döneme ait aylık parametre bulunamadı veya maaş kilitlenmiş.</td>
+                <td>Farklı bir yıl/dönem seçin veya sistem yöneticinizle iletişime geçin.</td>
+            </tr>
+            <tr>
+                <td>"Maaş Hesaplanamadı! Hata: [Hata Açıklaması]"</td>
+                <td>Hesaplama sırasında bir sorun oluştu.</td>
+                <td>Hata açıklamasını not alın ve sistem yöneticinizle paylaşın.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>8. Özel Durumlar</h2>
+        
+        <div class="info-box">
+            <h3>Yıldırım Belediyesi İçin Özel İşlem</h3>
+            <p>Belediye kodu 160300 olan (Yıldırım Belediyesi) kullanıcılar için, hesaplama başlamadan önce sistem otomatik olarak puantaj tablosundaki yevmiye bilgilerini günceller. Bu özellik 05.03.2007 tarihinde eklenmiştir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Sık Sorulan Sorular</h2>
+        
+        <div class="info-box">
+            <h3>Maaş hesaplama işlemi ne kadar sürer?</h3>
+            <p>Maaş hesaplama süresi, seçilen kriterlere ve hesaplanacak personel sayısına göre değişiklik gösterir. Çok sayıda personel için hesaplama yapılıyorsa işlem daha uzun sürebilir. Sistem bu işlem için maksimum 1 saat süre tanımlamıştır.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Sadece bir personel için maaş hesaplama yapabilir miyim?</h3>
+            <p>Evet, İlk Sicil No ve Son Sicil No alanlarına aynı sicil numarasını girerek sadece bir personel için maaş hesaplayabilirsiniz.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Ekranda "Maaş Kilitli" hatası alıyorum, ne yapmalıyım?</h3>
+            <p>Bu hata, seçilen dönem için maaş işlemlerinin kilitlendiğini gösterir. Sistem yöneticinizle iletişime geçerek kilidi kaldırmasını isteyebilirsiniz.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>"Kesinti/Yardımlar Sicilden Alınsın" seçeneği ne işe yarar?</h3>
+            <p>Bu seçenek işaretlendiğinde, personelin sicil bilgilerinde tanımlı olan özel yardım ve kesinti bilgileri maaş hesaplamasında dikkate alınır. İşaretlenmediğinde bu bilgiler hesaplamada kullanılmaz. Bu özellik özellikle Odunpazarı için 12.05.2005 tarihinde eklenmiştir.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Bütün bölüm ve sicil tiplerini nasıl kolayca seçebilirim?</h3>
+            <p>Ekran ilk açıldığında, tüm bölümler ve sicil tipleri otomatik olarak seçili durumda gelir. Eğer bu seçimlerden bazılarını kaldırıp tekrar tümünü seçmek isterseniz, CTRL+A tuş kombinasyonunu kullanarak tüm seçenekleri seçebilirsiniz.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Enter tuşu ile bir sonraki alana geçemiyorum, neden?</h3>
+            <p>Sistem, Enter tuşunu Tab tuşu olarak yapılandırmıştır. Ancak bazı durumlarda bu özellik tarayıcı veya sistem ayarlarınıza bağlı olarak çalışmayabilir. Bu durumda Tab tuşunu kullanarak bir sonraki alana geçebilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. İpuçları ve Öneriler</h2>
+        
+        <div class="tip-box">
+            <h3>Verimlilik İçin İpuçları</h3>
+            <ul>
+                <li>Toplu hesaplama yapmadan önce, puantaj bilgilerinin tam ve doğru girildiğinden emin olun.</li>
+                <li>Çok sayıda personel için hesaplama yapacaksanız, işlem süresi uzayabilir. "Lütfen Bekleyiniz..." mesajı görüntülendiğinde sabırla bekleyin.</li>
+                <li>Hesaplama sonuçlarını kontrol etmek için rastgele birkaç personelin maaş hesaplarını inceleyebilirsiniz.</li>
+                <li>Yeni bir hesaplama yapmadan önce, önceki hesaplamanın tamamlandığından emin olun.</li>
+                <li>Sıklıkla kullandığınız sicil aralıklarını ve bölümleri not alın, bu sayede bir sonraki işlemde daha hızlı veri girişi yapabilirsiniz.</li>
+                <li>Maaş hesaplama işlemini mümkünse mesai saatleri dışında veya sistem yoğunluğunun az olduğu zamanlarda yapın, böylece işlem daha hızlı tamamlanabilir.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>11. Sistem Gereksinimleri ve Performans</h2>
+        
+        <div class="info-box">
+            <p>İşçi Bordro Toplu Maaş Hesaplama modülü, özellikle yüksek sayıda personel için hesaplama yapıldığında sistemi yoğun şekilde kullanır. Bu nedenle:</p>
+            <ul>
+                <li>İşlem sırasında başka yoğun işlemler yapmaktan kaçının.</li>
+                <li>Hesaplama işleminin kesintisiz tamamlanabilmesi için bilgisayarınızın uyku moduna geçmesini engelleyin.</li>
+                <li>İnternet bağlantınızın kesintisiz olduğundan emin olun.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>12. İletişim ve Destek</h2>
+        
+        <div class="info-box">
+            <p>Sistemle ilgili sorun yaşamanız durumunda:</p>
+            <ul>
+                <li>Bilgi İşlem Departmanı ile iletişime geçin.</li>
+                <li>Hata mesajlarını not alın ve iletişim sırasında belirtin.</li>
+                <li>Hangi adımları izlediğinizi ve hangi verileri girdiğinizi ayrıntılı olarak açıklayın.</li>
+                <li>Mümkünse ekran görüntüsü alıp destek ekibine iletebilirsiniz.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

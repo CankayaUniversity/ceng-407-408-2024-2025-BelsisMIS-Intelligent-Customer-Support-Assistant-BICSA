@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banka Listesi (İcmal) Kullanım Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Banka Listesi (İcmal) Kullanım Kılavuzu</h1>
+        <img src="/api/placeholder/200/50" alt="Kurum Logosu">
+    </div>
+
+    <div class="section">
+        <h1>Banka Listesi (İcmal) Uygulaması Nedir?</h1>
+        <p>Bu uygulama, personel maaş bilgilerinin banka ödemelerine ait detaylı ve özet (icmal) listelerini oluşturmanızı sağlar. Sicil numarası, SSK sicil numarası, maaş dönemi, bölüm ve diğer kriterlere göre filtreleme yapabilir, ödeme listelerini farklı sıralama düzenlerinde görüntüleyebilirsiniz.</p>
+    </div>
+
+    <div class="section">
+        <h2>Ekran Yerleşimi</h2>
+        <p>Banka Listesi (İcmal) ekranı iki ana bölümden oluşmaktadır:</p>
+        <ol>
+            <li><strong>Filtre Alanları:</strong> Ekranın üst kısmında yer alır ve raporunuzu oluşturmak için gerekli kriterleri seçmenizi sağlar.</li>
+            <li><strong>Sonuç Alanı:</strong> Filtreler uygulandıktan sonra, ekranın alt kısmında rapor sonuçları görüntülenir.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Filtre Alanları ve Nasıl Kullanılır</h2>
+        
+        <div class="step">
+            <h3>1. Sicil Numarası Aralığı</h3>
+            <p>Ekranın sol üst kısmında bulunan "Sicil No" alanına başlangıç ve bitiş sicil numaralarını girerek, belirli bir sicil numarası aralığındaki personelleri listeleyebilirsiniz.</p>
+            <ul>
+                <li><strong>Başlangıç:</strong> İlk kutucuğa listelemek istediğiniz aralığın başlangıç sicil numarasını giriniz.</li>
+                <li><strong>Bitiş:</strong> Sağdaki kutuya listelemek istediğiniz aralığın son sicil numarasını giriniz.</li>
+            </ul>
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Tüm personelleri listelemek istiyorsanız, başlangıç kutusuna "0", bitiş kutusuna "9999999999" yazabilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>2. SSK Sicil Numarası Aralığı</h3>
+            <p>"Sicil No" alanının hemen altında bulunan "SSK Sicil No" alanı, personelleri SSK sicil numarası aralığına göre filtrelemenizi sağlar.</p>
+            <ul>
+                <li><strong>Başlangıç:</strong> Sol kutucuğa listelemek istediğiniz aralığın ilk SSK sicil numarasını giriniz.</li>
+                <li><strong>Bitiş:</strong> Sağdaki kutuya listelemek istediğiniz aralığın son SSK sicil numarasını giriniz.</li>
+            </ul>
+            <div class="tip-box">
+                <p><strong>İpucu:</strong> Eğer SSK sicil numarasına göre filtreleme yapmak istemiyorsanız, bu alanları boş bırakabilirsiniz. Sistem otomatik olarak bitiş alanını "zzzzzzzzzzzzzzz" değeri ile dolduracaktır, böylece tüm SSK sicil numaralarını kapsayacaktır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>3. Maaş Yıl / Ay</h3>
+            <p>SSK Sicil No alanının altında bulunan "Maaş Yıl / Ay" alanında, listelemek istediğiniz maaş dönemini belirleyebilirsiniz.</p>
+            <ul>
+                <li><strong>Yıl:</strong> Sol kutucuğa 4 haneli olarak yıl bilgisini giriniz (örn. 2025).</li>
+                <li><strong>Ay:</strong> Sağdaki küçük kutuya ay bilgisini rakam olarak giriniz (1-12 arası).</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Bilgi:</strong> Sistem otomatik olarak içinde bulunduğunuz yıl ve ayı gösterir. İhtiyacınıza göre değiştirebilirsiniz. Girilen ay numarasına göre sistem otomatik olarak ay adını belirleyecektir (örneğin 1 girildiğinde "Ocak").</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>4. Maaş Tipi</h3>
+            <p>"Maaş Yıl / Ay" alanının altında bulunan "Maaş Tipi" çoklu seçim kutusunda, hangi maaş tiplerine ait personellerin listeleneceğini seçebilirsiniz.</p>
+            <ul>
+                <li>Listeden birden fazla maaş tipi seçmek için CTRL tuşunu basılı tutarak seçim yapabilirsiniz.</li>
+                <li>Maaş tipi seçimi yapmadan listeyi çalıştırırsanız, sistem sizi uyaracaktır.</li>
+                <li>Varsayılan olarak, ilk girişte tüm maaş tipleri seçili olarak gelir.</li>
+            </ul>
+            <div class="warning-box">
+                <p><strong>Dikkat:</strong> En az bir maaş tipi seçmeniz gerekmektedir. Aksi halde sistem "Seçili Maaş Tipi yok" uyarısı verecektir.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>5. Sicil Tipi</h3>
+            <p>"Maaş Tipi" alanının altındaki "Sicil Tipi" çoklu seçim kutusunda, hangi sicil tipine ait personellerin listeleneceğini seçebilirsiniz.</p>
+            <ul>
+                <li>Listeden birden fazla sicil tipi seçmek için CTRL tuşunu basılı tutarak seçim yapabilirsiniz.</li>
+                <li>Varsayılan olarak tüm sicil tipleri seçilidir.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Bilgi:</strong> Sicil tipi, personelin istihdam şeklini (memur, işçi, sözleşmeli vb.) belirtir. İhtiyacınıza göre belirli sicil tiplerini seçebilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>6. Bölüm No</h3>
+            <p>"Sicil Tipi" alanının altındaki "Bölüm No" çoklu seçim kutusunda, hangi bölümlere ait personellerin listeleneceğini seçebilirsiniz.</p>
+            <ul>
+                <li>Listeden birden fazla bölüm seçmek için CTRL tuşunu basılı tutarak seçim yapabilirsiniz.</li>
+                <li>Varsayılan olarak tüm bölümler seçilidir.</li>
+                <li>Bazı kurumlarda "TÜM BİRİMLER" seçeneği de bulunmaktadır.</li>
+            </ul>
+            <div class="warning-box">
+                <p><strong>Dikkat:</strong> En az bir bölüm seçmeniz gerekmektedir. Aksi halde sistem "Seçili bölüm yok" uyarısı verecektir.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>7. İndex Tipi</h3>
+            <p>"Bölüm No" alanının altındaki "İndex Tipi" açılır listesinde, rapor sonuçlarının hangi sıralama düzeninde gösterileceğini seçebilirsiniz.</p>
+            <ul>
+                <li><strong>1-Sicil No Sıralı:</strong> Personeller sicil numarasına göre sıralanır.</li>
+                <li><strong>2-SSK Sicil No Sıralı:</strong> Personeller SSK sicil numarasına göre sıralanır.</li>
+                <li><strong>3-Bölüm No + Sicil No Sıralı:</strong> Önce bölüme göre, sonra her bölüm içinde sicil numarasına göre sıralanır.</li>
+                <li><strong>4-Ad + Soyad Sıralı:</strong> Personeller isim ve soyisimlerine göre alfabetik olarak sıralanır.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Bilgi:</strong> Sıralama seçimi, raporun daha düzenli ve okunabilir olmasını sağlar. İhtiyacınıza göre en uygun sıralama türünü seçebilirsiniz.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>8. Banka Listesi</h3>
+            <p>"İndex Tipi" alanının altındaki "Banka Listesi" açılır listesinde, rapor türünü seçebilirsiniz.</p>
+            <ul>
+                <li><strong>1-Detay:</strong> Her personel için detaylı bilgileri içeren liste oluşturur.</li>
+                <li><strong>2-İcmal:</strong> Özet bilgileri içeren liste oluşturur.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Bilgi:</strong> Detay rapor her personelin ayrıntılı maaş bilgilerini gösterirken, İcmal raporu toplu ödeme bilgilerini özet olarak gösterir. Bankaya toplu ödeme talimatı vermek için genellikle İcmal raporu kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>9. Rap.Böl.Değer</h3>
+            <p>"Banka Listesi" alanının altındaki "Rap.Böl.Değer" kutusuna, raporda gösterilecek rakamsal değerlerin bölüneceği sayıyı girebilirsiniz.</p>
+            <ul>
+                <li>Örneğin "1" girerseniz, tutarlar olduğu gibi gösterilir.</li>
+                <li>"1000" girerseniz, tutarlar bin TL cinsinden gösterilir.</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>Bilgi:</strong> Büyük miktarlı ödemelerde daha okunaklı bir rapor için bu değeri artırabilirsiniz. Varsayılan değer "1"dir, yani tutarlar herhangi bir dönüşüm yapılmadan olduğu gibi gösterilir.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Rapor Oluşturma İşlemi</h2>
+        <p>Tüm filtreleri ayarladıktan sonra, ekranın alt kısmında bulunan düğmelerle aşağıdaki işlemleri yapabilirsiniz:</p>
+        
+        <div class="step">
+            <h3>Listeyi Çalıştırma</h3>
+            <p>Listele düğmesi, ekranın alt kısmında sol tarafta bulunur. Tüm filtre seçimlerinizi tamamladıktan sonra bu düğmeye tıklayarak raporu oluşturabilirsiniz.</p>
+            <ol>
+                <li>Tüm gerekli filtre alanlarını doldurun.</li>
+                <li>Ekranın alt kısmındaki "Listele" düğmesine tıklayın.</li>
+                <li>Sistem seçimlerinize göre raporu oluşturacak ve ekranın alt kısmında gösterecektir.</li>
+            </ol>
+            <div class="warning-box">
+                <p><strong>Dikkat:</strong> Filtrelerinizi uygulamadan önce, en az bir maaş tipi ve en az bir bölüm seçtiğinizden emin olun. Aksi takdirde sistem hata mesajı gösterecektir.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>Ekrandan Çıkış</h3>
+            <p>"Listele" düğmesinin yanında bulunan "Çıkış" düğmesine tıklayarak uygulamadan çıkabilirsiniz. Bu düğme, ekranın alt kısmında sağ tarafta yer alır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Rapor Sonuçlarını Görüntüleme</h2>
+        <p>Listeyi çalıştırdıktan sonra, rapor sonuçları ekranın alt kısmında görüntülenecektir. İşte rapor çıktısıyla ilgili bilmeniz gerekenler:</p>
+        
+        <div class="info-box">
+            <h3>Rapor İçeriği</h3>
+            <p>Oluşturulan rapor, seçtiğiniz "Banka Listesi" türüne göre değişiklik gösterecektir:</p>
+            <ul>
+                <li><strong>Detay Raporu:</strong> Her personel için ayrı bir satır içerir ve detaylı ödeme bilgilerini gösterir.</li>
+                <li><strong>İcmal Raporu:</strong> Bölüm/birim bazında toplam ödeme bilgilerini gösterir.</li>
+            </ul>
+            <p>Raporda görüntülenen tutarlar, "Rap.Böl.Değer" alanında belirlediğiniz değere göre bölünmüş olarak gösterilir.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Sıra Numaraları</h3>
+            <p>Raporda görüntülenen her kayıt, otomatik olarak bir sıra numarası alacaktır. Bu sıra numaraları, "İndex Tipi" seçiminize göre belirlenen sıralamaya uygun olarak atanır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Rapor Sonuçlarını Yazdırma</h2>
+        <p>Rapor oluşturulduktan sonra, ekranın üst kısmında beliren yazdırma araç çubuğu ile raporunuzu yazdırabilirsiniz.</p>
+        <ul>
+            <li><strong>Yazdırma:</strong> Yazdırma düğmesine tıklayarak raporunuzu doğrudan yazıcıya gönderebilirsiniz.</li>
+            <li><strong>Önizleme:</strong> Önizleme seçeneği ile yazdırmadan önce raporun nasıl görüneceğini kontrol edebilirsiniz.</li>
+        </ul>
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Yazdırmadan önce raporun tamamını gözden geçirmeniz önerilir. Önizleme seçeneğini kullanarak kağıt boyutu, yönlendirme ve diğer yazdırma ayarlarının doğru olduğundan emin olabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Klavye Kısayolları ve Kolaylaştırıcı İşlevler</h2>
+        
+        <div class="tip-box">
+            <h3>Alanlar Arası Hızlı Geçiş</h3>
+            <p>Ekrandaki alanlar arasında hızlıca gezinmek için:</p>
+            <ul>
+                <li><strong>Tab Tuşu:</strong> Bir sonraki alana geçmenizi sağlar.</li>
+                <li><strong>Enter Tuşu:</strong> Tab tuşu gibi çalışır, bir sonraki alana geçmenizi sağlar.</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Çoklu Seçim Yaparken</h3>
+            <p>Maaş Tipi, Sicil Tipi ve Bölüm No gibi çoklu seçim kutularında birden fazla öğe seçmek için:</p>
+            <ul>
+                <li><strong>CTRL Tuşu + Tıklama:</strong> CTRL tuşunu basılı tutarak istediğiniz öğeleri tek tek seçebilirsiniz.</li>
+                <li><strong>İlk Girişte Otomatik Seçim:</strong> Uygulamaya ilk girişte, çoklu seçim kutularındaki tüm öğeler otomatik olarak seçilidir. İhtiyacınıza göre bu seçimleri değiştirebilirsiniz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Sık Karşılaşılan Hatalar ve Çözümleri</h2>
+        
+        <table>
+            <tr>
+                <th>Hata Mesajı</th>
+                <th>Olası Sebep</th>
+                <th>Çözüm</th>
+            </tr>
+            <tr>
+                <td>"Seçili Maaş Tipi yok."</td>
+                <td>Maaş Tipi alanında hiçbir seçim yapılmamış.</td>
+                <td>En az bir maaş tipi seçin.</td>
+            </tr>
+            <tr>
+                <td>"Seçili bölüm yok."</td>
+                <td>Bölüm No alanında hiçbir seçim yapılmamış.</td>
+                <td>En az bir bölüm seçin.</td>
+            </tr>
+            <tr>
+                <td>Sonuç listesi boş geliyor.</td>
+                <td>Belirlediğiniz kriterlere uygun personel bulunmuyor olabilir.</td>
+                <td>Filtre kriterlerinizi genişletin veya değiştirin.</td>
+            </tr>
+            <tr>
+                <td>Sayfada karakter sorunları görünüyor (örn. "Þubat" yerine "Şubat").</td>
+                <td>Karakterset sorunu olabilir.</td>
+                <td>Bu normal bir durumdur ve sistem tarafında düzeltilecektir.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Pratik İpuçları</h2>
+        
+        <div class="tip-box">
+            <h3>Tüm Personelleri Listeleme</h3>
+            <p>Tüm personelleri listelemek için:</p>
+            <ul>
+                <li>Sicil No başlangıç: 0</li>
+                <li>Sicil No bitiş: 9999999999</li>
+                <li>Tüm maaş tiplerini seçin</li>
+                <li>Tüm sicil tiplerini seçin</li>
+                <li>Tüm bölümleri seçin veya varsa "TÜM BİRİMLER" seçeneğini işaretleyin</li>
+                <li>SSK Sicil No alanlarını boş bırakın (sistem otomatik olarak tüm SSK sicil numaralarını kapsayacaktır)</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Tek Bir Personeli Listeleme</h3>
+            <p>Sadece belirli bir personelin bilgilerini listelemek için:</p>
+            <ul>
+                <li>Sicil No başlangıç ve bitiş alanlarına aynı sicil numarasını girin</li>
+                <li>Diğer filtre alanlarında geniş seçimler yapın ki personelin kriterleri dışında kalmasın</li>
+                <li>O personelin bölümünü ve maaş tipini mutlaka seçtiğinizden emin olun</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h3>Belirli Bir Bölümün Personellerini Listeleme</h3>
+            <p>Sadece belirli bir bölümdeki personelleri listelemek için:</p>
+            <ul>
+                <li>Bölüm No alanında sadece o bölümü seçin (diğer bölümlerin seçimini kaldırın)</li>
+                <li>Diğer filtre alanlarında geniş seçimler yaparak tüm personellerin kapsanmasını sağlayın</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Teknik Özellikler</h2>
+        
+        <div class="info-box">
+            <h3>Ay İsimleri</h3>
+            <p>Maaş Yıl/Ay alanına ay numarası girdiğinizde, sistem otomatik olarak ay adını belirleyecektir:</p>
+            <ul>
+                <li>1: Ocak</li>
+                <li>2: Şubat</li>
+                <li>3: Mart</li>
+                <li>4: Nisan</li>
+                <li>5: Mayıs</li>
+                <li>6: Haziran</li>
+                <li>7: Temmuz</li>
+                <li>8: Ağustos</li>
+                <li>9: Eylül</li>
+                <li>10: Ekim</li>
+                <li>11: Kasım</li>
+                <li>12: Aralık</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Bölüm Seçimi Özelliği</h3>
+            <p>Bazı kurumlarda (örneğin belediye kodu 330001 olanlar) "TÜM BİRİMLER" seçeneği de bulunmaktadır. Bu seçenek, tüm bölümlerdeki personelleri tek seferde listelemek için kullanılabilir.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3>Teknik Destek</h3>
+        <p>Bu uygulamayla ilgili sorularınız veya sorunlarınız olursa, lütfen BT Destek ekibiyle iletişime geçin.</p>
+        <p>Dahili Telefon: xxxx</p>
+        <p>E-posta: destek@kurumadi.com</p>
+    </div>
+
+</body>
+</html>

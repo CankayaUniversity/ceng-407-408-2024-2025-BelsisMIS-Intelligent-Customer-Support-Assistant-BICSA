@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaş Tipleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Maaş Tipleri Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Yerleşim</a></li>
+            <li><a href="#kayit-islemleri">Kayıt İşlemleri</a></li>
+            <li><a href="#gezinme">Gezinme ve Kayıt Bulma</a></li>
+            <li><a href="#alan-aciklamalari">Alan Açıklamaları ve Veri Giriş Kuralları</a></li>
+            <li><a href="#sik-karsilasilan">Sık Karşılaşılan Durumlar ve Çözümleri</a></li>
+            <li><a href="#kisayollar">Kısayollar ve İpuçları</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>"Maaş Tipleri" modülü, personel maaş tiplerini tanımlamak, düzenlemek ve yönetmek için kullanılan bir ekrandır. Bu modül sayesinde:</p>
+        <ul>
+            <li>Yeni maaş tipleri oluşturabilir</li>
+            <li>Var olan maaş tiplerini düzenleyebilir</li>
+            <li>Maaş tiplerini silebilir</li>
+            <li>Maaş tipleri arasında gezinebilir</li>
+            <li>Maaş kodlarını tanımlayabilir</li>
+            <li>Fark maaş tiplerini belirleyebilir</li>
+            <li>Kümülatif gelir vergisi matrahına dahil edilme durumunu ayarlayabilirsiniz</li>
+        </ul>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Maaş tipleri, personel maaş hesaplamalarında kullanılır. Doğru yapılandırılmış maaş tipleri, maaş hesaplamalarının düzgün yapılmasını sağlar. Burada yapacağınız değişiklikler, maaş hesaplama işlemlerini doğrudan etkileyecektir.</p>
+            <p>Hesaplanacak olan maaş için, Maaş Kodu değeri 0 olmalıdır.</p>
+        </div>
+    </div>
+</div>
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Yerleşim</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        <div class="step">
+            <h4>Genel Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte "Maaş Tipleri (Giriş)" veya "Maaş Tipleri (Değişiklik)" başlığı yer alır</li>
+                        <li>Başlık metninin görünümü, ekranın kullanım moduna göre değişir (ekleme veya güncelleme)</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlık şeridinin hemen altında ana çalışma alanı bulunur</li>
+                        <li>Bu bölüm, tüm veri giriş alanlarını ve seçim kutularını içerir</li>
+                        <li>Her alan etiketiyle birlikte açık bir şekilde düzenlenmiştir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Veri giriş alanlarının altında, ekranın alt kısmında yer alır</li>
+                        <li>İki satır halinde düzenlenmiş butonlar mevcuttur</li>
+                        <li>İlk satırda gezinme butonları (İlk Kayıt, Önceki, Sonraki, Son Kayıt, Kayıt Penceresi)</li>
+                        <li>İkinci satırda işlem butonları (Formu Temizle, Kaydet, Sil, Çıkış)</li>
+                    </ul>
+                </li>
+                <li><strong>Gizli Alanlar Bölümü:</strong>
+                    <ul>
+                        <li>Ekranda görünmeyen, sistem için gerekli gizli alanları içerir</li>
+                        <li>Kullanıcının doğrudan etkileşime girmediği alanları barındırır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Veri Giriş Alanları:</h4>
+            <ol>
+                <li><strong>Maaş Tipi:</strong>
+                    <ul>
+                        <li>Veri giriş bölümünün en üstünde, sol tarafta bulunur</li>
+                        <li>Kısa bir metin kutusu şeklindedir</li>
+                        <li>Sağ tarafı boş bırakılmıştır</li>
+                    </ul>
+                </li>
+                <li><strong>Açıklama:</strong>
+                    <ul>
+                        <li>Maaş Tipi alanının hemen altında konumlanır</li>
+                        <li>Daha geniş bir metin kutusu içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Fark Maaş Tipi:</strong>
+                    <ul>
+                        <li>Açıklama alanının altında yer alır</li>
+                        <li>Açılır liste (dropdown) şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Küm.Gel. Vergisine Dahil:</strong>
+                    <ul>
+                        <li>Fark Maaş Tipi alanının altında bulunur</li>
+                        <li>Açılır liste (dropdown) şeklindedir ve "Evet" veya "Hayır" seçeneklerini içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Maaş Kodu:</strong>
+                    <ul>
+                        <li>Küm.Gel. Vergisine Dahil alanının altında yer alır</li>
+                        <li>Kısa bir metin kutusu içerir</li>
+                    </ul>
+                </li>
+                <li><strong>Bilgi Notu:</strong>
+                    <ul>
+                        <li>Tüm veri giriş alanlarının altında, ince bir çizgi ile ayrılmış bir bölümde</li>
+                        <li>Koyu mavi renkli yazı ile "Hesaplanacak Olan Maas Için, Maas Kodu 0 olmalidir." ifadesi bulunur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Ekran "Maaş Tipleri (Giriş)" başlığıyla yeni kayıt modunda açılır</li>
+                <li>İmleç Maaş Tipi alanına konumlanır</li>
+                <li>Tüm alanlar boş olarak başlar</li>
+                <li>Mevcut kayıt açılırsa, başlık "Maaş Tipleri (Değişiklik)" olarak değişir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="kayit-islemleri" class="section">
+    <h2>Kayıt İşlemleri</h2>
+    <div class="info-box">
+        <h3>Yeni Kayıt Ekleme</h3>
+        <div class="step">
+            <h4>Yeni Maaş Tipi Nasıl Eklenir:</h4>
+            <ol>
+                <li><strong>Formu Temizleme:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, sol tarafta bulunan "Formu Temizle" butonuna tıklayın</li>
+                        <li>Bu işlem ekrandaki tüm alanları temizler ve yeni kayıt girişi için hazır hale getirir</li>
+                        <li>Başlık "Maaş Tipleri (Giriş)" olarak değişir</li>
+                    </ul>
+                </li>
+                <li><strong>Maaş Tipi Girişi:</strong>
+                    <ul>
+                        <li>İlk alan olan "Maaş Tipi" alanına benzersiz bir sayısal değer girin</li>
+                        <li>Bu alan zorunludur ve boş bırakılamaz</li>
+                        <li>TAB tuşu ile bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Açıklama Girişi:</strong>
+                    <ul>
+                        <li>Maaş tipinin ne için kullanılacağını açıklayan bir metin girin</li>
+                        <li>Bu alan, maaş tipinin ne işe yaradığını anlamanızı sağlar</li>
+                        <li>TAB tuşu ile bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Fark Maaş Tipi Seçimi:</strong>
+                    <ul>
+                        <li>Açılır listeden ilgili fark maaş tipini seçin</li>
+                        <li>Eğer fark maaş tipi yoksa "Seçiniz" seçeneğini bırakın</li>
+                        <li>TAB tuşu ile bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Küm.Gel. Vergisine Dahil Seçimi:</strong>
+                    <ul>
+                        <li>Açılır listeden "Evet" veya "Hayır" seçeneğini belirleyin</li>
+                        <li>Bu seçim, maaş tipinin kümülatif gelir vergisi matrahına dahil edilip edilmeyeceğini belirler</li>
+                        <li>TAB tuşu ile bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Maaş Kodu Girişi:</strong>
+                    <ul>
+                        <li>İlgili maaş kodunu girin</li>
+                        <li>Eğer bu maaş tipi hesaplanacak maaş ise, "0" değerini girin</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme:</strong>
+                    <ul>
+                        <li>Tüm alanları doldurduktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                        <li>Veya klavyeden ALT+S tuş kombinasyonunu kullanın</li>
+                        <li>Kaydın başarıyla oluşturulduğunu gösteren bir onay mesajı görünecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Maaş Tipi alanı mutlaka doldurulmalıdır, aksi halde "Maaş Tipi Girilmemiş!" uyarısı alırsınız</li>
+                <li>Aynı Maaş Tipi numarasına sahip başka bir kayıt varsa, yeni kayıt oluşturulamaz</li>
+                <li>Hesaplanacak maaş için Maaş Kodu değeri mutlaka 0 olmalıdır</li>
+            </ul>
+        </div>
+    
+        <h3>Kayıt Güncelleme</h3>
+        
+        <div class="step">
+            <h4>Mevcut Maaş Tipi Nasıl Güncellenir:</h4>
+            <ol>
+                <li><strong>Kaydı Bulma:</strong>
+                    <ul>
+                        <li>Güncellemek istediğiniz maaş tipini bulmak için:</li>
+                        <li>Ya "Maaş Tipi" alanına numarasını yazıp TAB tuşuna basın</li>
+                        <li>Ya da ekranın alt kısmında, gezinme butonları bölümünde bulunan "Kayıt Penceresi" butonuna tıklayarak kayıt listesini açın</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Listesinden Seçim:</strong>
+                    <ul>
+                        <li>Kayıt Penceresi butonu ile açılan listede tüm kayıtlar görüntülenir</li>
+                        <li>İstediğiniz kaydı bulun ve üzerine çift tıklayın</li>
+                        <li>Seçilen kayıt ana ekrana yüklenecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Bilgileri Güncelleme:</strong>
+                    <ul>
+                        <li>Güncellenmesini istediğiniz alanlara yeni değerleri girin</li>
+                        <li>Maaş Tipi alanı değiştirilemez (devre dışı bırakılmıştır)</li>
+                        <li>TAB tuşu ile alanlar arasında geçiş yapabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Değişiklikleri Kaydetme:</strong>
+                    <ul>
+                        <li>Değişiklikleri tamamladıktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                        <li>Güncellemenin başarıyla tamamlandığını gösteren bir onay mesajı görünecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <h3>Kayıt Silme</h3>
+        
+        <div class="step">
+            <h4>Maaş Tipi Nasıl Silinir:</h4>
+            <ol>
+                <li><strong>Kaydı Bulma:</strong>
+                    <ul>
+                        <li>Silmek istediğiniz maaş tipini bulmak için yukarıda anlatılan yöntemleri kullanın</li>
+                        <li>Kayıt ekrana yüklendiğinde bilgileri kontrol edin</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemini Başlatma:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Kaydet" butonunun sağında bulunan "Sil" butonuna tıklayın</li>
+                        <li>Silme işlemini onaylamanızı isteyen bir uyarı penceresi açılacaktır</li>
+                        <li>"İptal İşlemini Onaylıyor musunuz?" sorusuna "Evet" cevabını verin</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşlemini Tamamlama:</strong>
+                    <ul>
+                        <li>Onay verdiğinizde kayıt kalıcı olarak silinecektir</li>
+                        <li>İşlem sonrasında ekran temizlenir ve yeni kayıt moduna geçer</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Dikkat!</h4>
+            <p>Silinen kayıtlar geri alınamaz. Silme işlemi öncesinde, kaydın gerçekten silinmesi gerektiğinden ve başka işlemlerde kullanılmadığından emin olun.</p>
+        </div>
+    </div>
+</div>
+<div id="gezinme" class="section">
+    <h2>Gezinme ve Kayıt Bulma</h2>
+    <div class="info-box">
+        <h3>Kayıtlar Arasında Gezinme</h3>
+        <div class="step">
+            <h4>Gezinme Butonları Nasıl Kullanılır:</h4>
+            <ol>
+                <li><strong>İlk Kayıt Butonu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, sol tarafta bulunan ilk butondur</li>
+                        <li>Üzerinde çift ok işareti vardır (&lt;&lt;)</li>
+                        <li>Bu butona tıkladığınızda sistemdeki ilk maaş tipi kaydına gidersiniz</li>
+                        <li>İlk kayıt, en küçük Maaş Tipi numarasına sahip olan kayıttır</li>
+                    </ul>
+                </li>
+                <li><strong>Önceki Kayıt Butonu:</strong>
+                    <ul>
+                        <li>İlk Kayıt butonunun hemen sağında bulunur</li>
+                        <li>Üzerinde tek ok işareti vardır (&lt;)</li>
+                        <li>Bu butona tıkladığınızda, mevcut kayıttan bir önceki kayıta geçersiniz</li>
+                        <li>Önceki kayıt, mevcut kayıttan daha küçük Maaş Tipi numarasına sahip olandır</li>
+                    </ul>
+                </li>
+                <li><strong>Sonraki Kayıt Butonu:</strong>
+                    <ul>
+                        <li>Önceki Kayıt butonunun hemen sağında bulunur</li>
+                        <li>Üzerinde tek ok işareti vardır (&gt;)</li>
+                        <li>Bu butona tıkladığınızda, mevcut kayıttan bir sonraki kayıta geçersiniz</li>
+                        <li>Sonraki kayıt, mevcut kayıttan daha büyük Maaş Tipi numarasına sahip olandır</li>
+                    </ul>
+                </li>
+                <li><strong>Son Kayıt Butonu:</strong>
+                    <ul>
+                        <li>Sonraki Kayıt butonunun hemen sağında bulunur</li>
+                        <li>Üzerinde çift ok işareti vardır (&gt;&gt;)</li>
+                        <li>Bu butona tıkladığınızda sistemdeki son maaş tipi kaydına gidersiniz</li>
+                        <li>Son kayıt, en büyük Maaş Tipi numarasına sahip olan kayıttır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Belirli Bir Kaydı Bulma:</h4>
+            <ol>
+                <li><strong>Doğrudan Maaş Tipi Numarası ile Bulma:</strong>
+                    <ul>
+                        <li>Maaş Tipi alanına, aramak istediğiniz maaş tipinin numarasını yazın</li>
+                        <li>TAB tuşuna basın veya başka bir alana tıklayın</li>
+                        <li>Eğer bu numaraya sahip bir kayıt varsa, ekrana yüklenecektir</li>
+                        <li>Yoksa, boş bir form ile devam edecektir (yeni kayıt modunda)</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Penceresi Kullanarak Bulma:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Son Kayıt butonunun sağında bulunan "Kayıt Penceresi" butonuna tıklayın</li>
+                        <li>Açılan pencerede tüm maaş tipi kayıtları listelenir</li>
+                        <li>Liste, Kayıt No, Açıklama, Fark Maas Tipi, Maas Kodu ve Küm.Gel.Ver. Dahil sütunlarını içerir</li>
+                        <li>İstediğiniz kaydı bulun ve üzerine çift tıklayın</li>
+                        <li>Seçilen kayıt ana ekrana yüklenecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Eğer belirli bir açıklamaya sahip maaş tipini arıyorsanız, Kayıt Penceresi'ni kullanmak daha kolaydır</li>
+                <li>Maaş Tipi numarasını biliyorsanız, doğrudan bu numarayı girmek en hızlı yöntemdir</li>
+                <li>Kayıt Penceresi'nde sütun başlıklarına tıklayarak listeyi sıralayabilirsiniz</li>
+                <li>Kayıt Penceresi'nde tüm kayıtları görebilmek için dikey kaydırma çubuğunu kullanabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id="alan-aciklamalari" class="section">
+        <h2>Alan Açıklamaları ve Veri Giriş Kuralları</h2>
+        <div class="info-box">
+            <h3>Veri Alanları ve Kullanım Kuralları</h3>
+            <div class="step">
+                <h4>Maaş Tipi Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Veri giriş bölümünün en üstünde, sol tarafta</li>
+                    <li><strong>İşlevi:</strong> Her bir maaş tipini benzersiz olarak tanımlar</li>
+                    <li><strong>Veri Tipi:</strong> Sayısal değer (en fazla 5 basamaklı)</li>
+                    <li><strong>Zorunluluk:</strong> Zorunlu alan, boş bırakılamaz</li>
+                    <li><strong>Kısıtlamalar:</strong>
+                        <ul>
+                            <li>Sadece rakam girişine izin verilir</li>
+                            <li>Aynı numaraya sahip başka bir maaş tipi olamaz</li>
+                            <li>Güncelleme modunda değiştirilemez (devre dışı bırakılır)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Açıklama Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Maaş Tipi alanının hemen altında</li>
+                    <li><strong>İşlevi:</strong> Maaş tipinin ne için kullanıldığını açıklar</li>
+                    <li><strong>Veri Tipi:</strong> Metin (en fazla 50 karakter)</li>
+                    <li><strong>Zorunluluk:</strong> İsteğe bağlı, ancak doldurulması önerilir</li>
+                    <li><strong>Örnek Kullanım:</strong> "Aylık Temel Maaş", "Ek Mesai Ücreti", "İkramiye" vb.</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Fark Maaş Tipi Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Açıklama alanının hemen altında</li>
+                    <li><strong>İşlevi:</strong> İlgili maaş tipinin bağlı olduğu fark maaş tipini belirtir</li>
+                    <li><strong>Veri Tipi:</strong> Açılır liste (drop-down menu)</li>
+                    <li><strong>Seçenekler:</strong> "Seçiniz" ve sistemde tanımlı diğer maaş tipleri</li>
+                    <li><strong>Zorunluluk:</strong> İsteğe bağlı</li>
+                    <li><strong>Not:</strong> Eğer bir maaş tipi fark maaş tipi olarak kullanılmıyorsa, bu alan boş bırakılabilir</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Küm.Gel. Vergisine Dahil Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Fark Maaş Tipi alanının hemen altında</li>
+                    <li><strong>İşlevi:</strong> Maaş tipinin kümülatif gelir vergisi matrahına dahil edilip edilmeyeceğini belirler</li>
+                    <li><strong>Veri Tipi:</strong> Açılır liste (drop-down menu)</li>
+                    <li><strong>Seçenekler:</strong> "Evet" (0 değeri) veya "Hayır" (1 değeri)</li>
+                    <li><strong>Zorunluluk:</strong> Zorunlu alan, bir seçenek mutlaka seçilmelidir</li>
+                    <li><strong>Varsayılan:</strong> Evet</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Maaş Kodu Alanı:</h4>
+                <ul>
+                    <li><strong>Konum:</strong> Küm.Gel. Vergisine Dahil alanının hemen altında</li>
+                    <li><strong>İşlevi:</strong> Maaş tipinin kodunu belirler</li>
+                    <li><strong>Veri Tipi:</strong> Sayısal veya alfanümerik değer</li>
+                    <li><strong>Zorunluluk:</strong> İsteğe bağlı</li>
+                    <li><strong>Özel Durum:</strong> Eğer bu maaş tipi hesaplanacak maaş ise, değeri mutlaka "0" olmalıdır</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>Veri giriş alanlarının altında, mavi renkli bir uyarı mesajı vardır: "<strong>Hesaplanacak Olan Maas Için, Maas Kodu 0 olmalidir.</strong>" Bu uyarıyı dikkate alın. Eğer tanımladığınız maaş tipi hesaplanacak bir maaş ise, Maaş Kodu alanına mutlaka 0 değerini girin.</p>
+            </div>
+        </div>
+    </div>
+    <div id="sik-karsilasilan" class="section">
+        <h2>Sık Karşılaşılan Durumlar ve Çözümleri</h2>
+        <div class="info-box">
+            <h3>Hata Mesajları ve Çözümleri</h3>
+            <div class="step">
+                <h4>Hata: "Maaş Tipi Girilmemiş!"</h4>
+                <ul>
+                    <li><strong>Neden:</strong> Maaş Tipi alanı boş bırakılmış</li>
+                    <li><strong>Çözüm:</strong> Maaş Tipi alanına geçerli bir sayısal değer girin</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Hata: "Bu Maaş Tipi Zaten Var"</h4>
+                <ul>
+                    <li><strong>Neden:</strong> Girdiğiniz Maaş Tipi numarasına sahip başka bir kayıt zaten mevcut</li>
+                    <li><strong>Çözüm:</strong> 
+                        <ul>
+                            <li>Farklı bir Maaş Tipi numarası kullanın</li>
+                            <li>Veya var olan kaydı güncellemek istiyorsanız, önce o kaydı açın, sonra değişiklikleri yapın</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Durum: Kayıt Bulunamadı</h4>
+                <ul>
+                    <li><strong>Belirti:</strong> Maaş Tipi numarası girip TAB'a bastığınızda hiçbir kayıt yüklenmez</li>
+                    <li><strong>Neden:</strong> Girdiğiniz numaraya sahip bir kayıt sistemde yoktur</li>
+                    <li><strong>Çözüm:</strong> 
+                        <ul>
+                            <li>Numarayı doğru girdiğinizden emin olun</li>
+                            <li>Kayıt Penceresi butonunu kullanarak tüm kayıtları görüntüleyin</li>
+                            <li>Veya bu numarada yeni bir kayıt oluşturmak istiyorsanız, bilgileri doldurup kaydedin</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Durum: Maaş Hesaplaması Yanlış</h4>
+                <ul>
+                    <li><strong>Belirti:</strong> Maaş hesaplamaları doğru sonuçlar vermiyor</li>
+                    <li><strong>Olası Nedenler ve Çözümler:</strong> 
+                        <ul>
+                            <li><strong>Hesaplanacak maaşın kodu 0 değil:</strong> Hesaplanacak maaş tipinin Maaş Kodu değerinin 0 olduğundan emin olun</li>
+                            <li><strong>Küm.Gel. Vergisine Dahil ayarı yanlış:</strong> Vergilendirme gereksinimlerine göre bu seçeneği doğru ayarlayın</li>
+                            <li><strong>Fark Maaş Tipi yanlış seçilmiş:</strong> Doğru fark maaş tipini seçtiğinizden emin olun</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <h3>Teknik Sorunlar</h3>
+            
+            <div class="step">
+                <h4>Durum: Form Yanıt Vermiyor</h4>
+                <ul>
+                    <li><strong>Belirti:</strong> Butonlara tıkladığınızda veya veri girişi yaptığınızda form yanıt vermiyor</li>
+                    <li><strong>Çözüm:</strong> 
+                        <ul>
+                            <li>Formu kapatıp yeniden açın</li>
+                            <li>Tarayıcınızı yenileyin</li>
+                            <li>Eğer sorun devam ederse, sistem yöneticinize başvurun</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kisayollar" class="section">
+        <h2>Kısayollar ve İpuçları</h2>
+        <div class="info-box">
+            <h3>Klavye Kısayolları</h3>
+            <div class="step">
+                <h4>Temel Klavye Kısayolları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçer</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana döner</li>
+                    <li><strong>ENTER:</strong> TAB tuşu gibi çalışır, bir sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Formu kapatır (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>İşlem Kısayolları:</h4>
+                <ul>
+                    <li><strong>ALT + S:</strong> Kaydet butonunu çalıştırır</li>
+                    <li><strong>ALT + L:</strong> Formu Temizle butonunu çalıştırır</li>
+                    <li><strong>ALT + D:</strong> Sil butonunu çalıştırır</li>
+                    <li><strong>ALT + E:</strong> Çıkış butonunu çalıştırır</li>
+                </ul>
+            </div>
+        
+            <h3>Verimli Çalışma İpuçları</h3>
+            
+            <div class="step">
+                <h4>Zaman Kazandıran İpuçları:</h4>
+                <ul>
+                    <li><strong>Kopya Maaş Tipi Oluşturma:</strong>
+                        <ul>
+                            <li>Benzer bir maaş tipi oluşturmak için, mevcut bir kaydı açın</li>
+                            <li>Maaş Tipi alanını değiştirin (yeni bir numara verin)</li>
+                            <li>Gerekli diğer değişiklikleri yapın</li>
+                            <li>Kaydet butonuna basın</li>
+                            <li>Bu yöntem, tüm alanları yeniden doldurmaktan daha hızlıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sık Kullanılan Maaş Tipleri:</strong>
+                        <ul>
+                            <li>Sık kullandığınız maaş tiplerinin numaralarını not alın</li>
+                            <li>Böylece hızlıca erişebilir ve güncelleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fark Maaş Tipi Seçimi:</strong>
+                        <ul>
+                            <li>Açılır listede ilk harfini yazarak istediğiniz maaş tipine hızlıca ulaşabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıt Listesi Kullanımı:</strong>
+                        <ul>
+                            <li>Eğer sistemde çok sayıda maaş tipi varsa, Kayıt Penceresi butonunu kullanmak daha hızlıdır</li>
+                            <li>Açılan pencerede, sütun başlıklarına göre sıralama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Kullanışlı Bilgiler:</h4>
+                <ul>
+                    <li>Maaş tipi numaraları için belirli bir düzen kullanın (örneğin, benzer maaş tipleri için benzer numaralar)</li>
+                    <li>Açıklama alanını olabildiğince açık ve anlaşılır doldurun, bu ileride hangi maaş tipinin ne için kullanıldığını anlamanızı kolaylaştırır</li>
+                    <li>Bir maaş tipini silmeden önce, başka yerlerde kullanılmadığından emin olun</li>
+                    <li>Maaş tiplerinde yapılan değişiklikler, gelecekteki maaş hesaplamalarını etkileyecektir, ancak geçmiş hesaplamaları etkilemez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ozet" class="section">
+        <h2>Özet</h2>
+        <div class="info-box">
+            <p>"Maaş Tipleri" modülü, personel maaş tiplerini yönetmek için kullanılan önemli bir araçtır. Bu kılavuzda:</p>
+            <ul>
+                <li>Maaş tipi ekleme, güncelleme ve silme işlemlerini</li>
+                <li>Kayıtlar arasında gezinmeyi</li>
+                <li>Alan açıklamalarını ve veri giriş kurallarını</li>
+                <li>Sık karşılaşılan durumları ve çözümlerini</li>
+                <li>Kısayolları ve verimli çalışma ipuçlarını</li>
+            </ul>
+            <p>inceledik.</p>
+            <p>Maaş tipleri, doğru maaş hesaplaması için kritik öneme sahiptir. Özellikle "Hesaplanacak Olan Maas Için, Maas Kodu 0 olmalidir" kuralını hatırlamanız önemlidir.</p>
+    
+    <p>Bu kılavuzdaki bilgileri kullanarak, "Maaş Tipleri" modülünü etkili bir şekilde kullanabilir ve personel maaşlarını doğru yönetebilirsiniz.</p>
+</div>
+    </div>
+</body>
+</html>

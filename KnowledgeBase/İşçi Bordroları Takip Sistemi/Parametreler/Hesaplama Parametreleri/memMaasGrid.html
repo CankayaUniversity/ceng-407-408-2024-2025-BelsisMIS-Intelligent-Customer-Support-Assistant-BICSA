@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaş ve Kesinti Matrisi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Maaş ve Kesinti Matrisi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni</a></li>
+                <li><a href="#maas-tanimlari">Maaş Tanımları Tablosu</a></li>
+                <li><a href="#hakedisler">Hakedişlerin Kullanımı</a></li>
+                <li><a href="#kesintiler">Kesintilerin Kullanımı</a></li>
+                <li><a href="#ozel-yardimlar">Özel Yardımların Kullanımı</a></li>
+                <li><a href="#ozel-kesintiler">Özel Kesintilerin Kullanımı</a></li>
+                <li><a href="#kayit-islemleri">Kayıt İşlemleri</a></li>
+                <li><a href="#ekran-kontrolu">Ekran Kontrolü ve Görünüm Yönetimi</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Maaş ve Kesinti Matrisi programı, farklı maaş tipleri için hakedişlerin, kesintilerin, özel yardımların ve özel kesintilerin ilişkisini yönetmenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Farklı maaş tipleri için geçerli hakedişleri belirleyebilirsiniz</li>
+                <li>Hangi maaş tipinde hangi kesintilerin yapılacağını ayarlayabilirsiniz</li>
+                <li>Özel yardım ve kesintileri maaş tiplerine bağlayabilirsiniz</li>
+                <li>Tek bir ekrandan tüm bu ilişkileri toplu olarak görebilir ve düzenleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce, şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Hangi maaş tiplerini düzenlemek istediğiniz</li>
+                    <li>Her bir maaş tipi için geçerli olması gereken hakediş ve kesinti bilgileri</li>
+                    <li>Özel yardım ve kesinti tanımları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında "Maaş Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık açık gri renkli bir tablonun üst hücresi içinde görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında "Kaydet" butonu bulunur</li>
+                            <li>Aynı buton ekranın en altında da tekrar eder</li>
+                            <li>Her iki kaydet butonu da aynı işlevi görür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tipleri Sütun Başlıkları:</strong>
+                        <ul>
+                            <li>İlk sütunda boş bir hücre, sonraki sütunlarda seçili maaş tiplerinin isimleri görünür</li>
+                            <li>Koyu renkte ve sütun başlığı formatında listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana Tablo Bölümleri:</strong>
+                        <ul>
+                            <li>Tablo dört ana bölüme ayrılmıştır: Hakedişler, Kesintiler, Özel Yardımlar ve Özel Kesintiler</li>
+                            <li>Her bölüm koyu gri zemin üzerinde belirgin başlıklarla ayrılmıştır</li>
+                            <li>Her bölümün başında bir genişletme/daraltma butonu (+/-) bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Seçilen maaş tiplerine göre tablo otomatik oluşturulur</li>
+                    <li>Tüm bölümler varsayılan olarak açık görünür</li>
+                    <li>Her bölümün solundaki butonlar "-" olarak görünür</li>
+                    <li>Tablodaki işaretli alanlar (onay kutuları), veritabanında kaydedilmiş ilişkileri gösterir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="maas-tanimlari" class="section">
+        <h2>Maaş Tanımları Tablosu</h2>
+        <div class="info-box">
+            <h3>Tablonun Genel Yapısı ve Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Tablo Yapısı:</h4>
+                <ol>
+                    <li><strong>Sütun Yapısı:</strong>
+                        <ul>
+                            <li>İlk sütun: Kategori ve özelliklerin adları bulunur</li>
+                            <li>Diğer sütunlar: Seçilen maaş tipleri için onay kutuları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Yapısı:</strong>
+                        <ul>
+                            <li>Kategori başlıkları: Koyu gri zemin üzerinde, yanlarında +/- butonlarıyla birlikte</li>
+                            <li>Özellik satırları: Açık zeminde, sıralı olarak listelenir (zebra stili - bir açık bir koyu)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onay Kutuları:</strong>
+                        <ul>
+                            <li>Her bir maaş tipi ve özellik kesişiminde onay kutuları bulunur</li>
+                            <li>İşaretli kutular buğday rengi arka planla belirginleştirilir</li>
+                            <li>İşaretlenmemiş kutular normal satır rengiyle görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Maaş Tipleri Seçimi:</h4>
+                <p>Ekranda görünen maaş tipleri, sayfaya gelmeden önce yapılan seçime göre belirlenir. Bu seçim işlemi şu şekilde yapılır:</p>
+                <ol>
+                    <li>Önceki ekranda maaş tipleri listesinden seçim yapılır</li>
+                    <li>Seçilen maaş tipleri, bu sayfanın açılır açılmaz ekranın en üstünde görünen tablonun sütun başlıklarına dönüşür</li>
+                    <li>Seçilmiş maaş tipleri, sayfanın gizli bir alanında tutulur (strMaas ve maas değişkenleri)</li>
+                </ol>
+                <p>Ekranda sadece seçilmiş maaş tipleri için sütunlar görünür. Seçim yapmadan önce tüm maaş tipleri varsayılan olarak seçilidir.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Bilgiler:</h4>
+                <ul>
+                    <li>Maaş tiplerini değiştirmek için bu ekrandan çıkıp önceki ekrana dönmeniz gerekir</li>
+                    <li>Tablo sütunları, seçilen maaş tiplerine göre dinamik olarak oluşturulur</li>
+                    <li>Her maaş tipi için tüm hakedişler, kesintiler ve özel tanımlar tek ekranda görünür</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="hakedisler" class="section">
+        <h2>Hakedişlerin Kullanımı</h2>
+        <div class="info-box">
+            <h3>Hakediş Bölümünün Yapısı ve Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Hakediş Bölümünün Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Bölüm Başlığı:</strong>
+                        <ul>
+                            <li>Maaş tipleri sütun başlıklarının hemen altında bulunur</li>
+                            <li>Koyu gri (aaaaaa) zemin üzerinde, kalın ve büyük harflerle "HAKEDİŞLER" yazısı görünür</li>
+                            <li>Başlığın sol tarafında genişletme/daraltma butonu (-/+) bulunur</li>
+                            <li>Başlık satırının diğer hücreleri, maaş tipleri için boş bırakılmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Listesi:</strong>
+                        <ul>
+                            <li>Başlık satırının altında, hakediş tanımları satır satır listelenir</li>
+                            <li>Satırlar, görsel ayrım için dönüşümlü olarak açık (ffffff) ve koyu (eeeeee) renkte arka plana sahiptir</li>
+                            <li>Her hakediş satırının ilk hücresinde hakediş adı kalın (bold) olarak yazılıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hakediş Bölümünü Genişletme/Daraltma:</h4>
+                <p>Hakediş listesini görüntülemek veya gizlemek için şu adımları takip edin:</p>
+                <ol>
+                    <li>Hakediş başlığının sol tarafındaki butona tıklayın
+                        <ul>
+                            <li>Buton "-" gösteriyorsa: Tıkladığınızda liste daraltılacak ve hakedişler gizlenecektir</li>
+                            <li>Buton "+" gösteriyorsa: Tıkladığınızda liste genişletilecek ve hakedişler görünecektir</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında görünümü değişir (+ ise - olur, - ise + olur)</li>
+                    <li>Bu işlemle hakediş listesinin görünürlüğünü kontrol edebilirsiniz</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hakediş Bilgilerini Görüntüleme:</h4>
+                <p>Her hakediş hakkında detaylı bilgi görmek için:</p>
+                <ol>
+                    <li>Fare imlecini hakediş adının üzerine getirin
+                        <ul>
+                            <li>İmleç hakediş adının üzerinde durduğunda, sarı arka planlı bir pop-up bilgi kutusu görünecektir</li>
+                            <li>Bu bilgi kutusunda hakediş kodu ve hakediş hesaplama formülü görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li>Bilgi kutusundan çıkmak için fare imlecini başka bir alana taşıyın
+                        <ul>
+                            <li>İmleç hakediş adının üzerinden ayrıldığında bilgi kutusu otomatik olarak kaybolur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hakedişleri Maaş Tiplerine Bağlama:</h4>
+                <p>Bir hakedişi belirli maaş tiplerine bağlamak için şu adımları izleyin:</p>
+                <ol>
+                    <li>Hakediş listesinde, ilgili hakediş satırını bulun</li>
+                    <li>Bağlamak istediğiniz maaş tipine karşılık gelen sütundaki onay kutusuna tıklayın
+                        <ul>
+                            <li>Onay kutusu boşsa: Tıkladığınızda işaretlenecek ve hücre arka planı buğday (wheat) rengine dönüşecektir</li>
+                            <li>Onay kutusu işaretliyse: Tıkladığınızda işaret kaldırılacak ve hücre arka planı normal satır rengine dönecektir</li>
+                        </ul>
+                    </li>
+                    <li>İşaretleme veya işareti kaldırma işleminin geçerli olması için ekranın altındaki "Kaydet" butonuna tıklamanız gerekir</li>
+                </ol>
+                <p>Bu işlemle, seçtiğiniz hakediş ilgili maaş tipi için aktif hale gelecek veya devre dışı bırakılacaktır.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Hakediş hesapları üzerinde fare ile durduğunuzda görünen formüller, sistem tarafından kullanılan gerçek hesaplama kodlarıdır, bu nedenle teknik görünebilir</li>
+                    <li>Değişiklikleriniz "Kaydet" butonuna basılmadıkça sistemde saklanmaz</li>
+                    <li>İşaretlenen hakedişler, ilgili maaş tipine sahip personele uygulanacaktır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir hakediş için tüm maaş tiplerini hızlıca işaretlemek istiyorsanız, her sütundaki onay kutusunu sırayla tıklayabilirsiniz</li>
+                    <li>Fare imlecini hakediş adının üzerinde tutarak hesaplama detaylarını görebilirsiniz</li>
+                    <li>Ekranı daha düzenli görmek için kullanmadığınız bölümleri "+" butonuyla daraltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="kesintiler" class="section">
+        <h2>Kesintilerin Kullanımı</h2>
+        <div class="info-box">
+            <h3>Kesinti Bölümünün Yapısı ve Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Kesinti Bölümünün Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Bölüm Başlığı:</strong>
+                        <ul>
+                            <li>Hakediş bölümünün hemen altında yer alır</li>
+                            <li>Koyu gri (aaaaaa) zemin üzerinde, kalın ve büyük harflerle "KESİNTİLER" yazısı görünür</li>
+                            <li>Başlığın sol tarafında genişletme/daraltma butonu (-/+) bulunur</li>
+                            <li>Bu buton "btnKes" olarak isimlendirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesinti Listesi:</strong>
+                        <ul>
+                            <li>Başlık satırının altında, kesinti tanımları satır satır listelenir</li>
+                            <li>Satırlar, görsel ayrım için dönüşümlü olarak açık (ffffff) ve koyu (eeeeee) renkte arka plana sahiptir</li>
+                            <li>Her kesinti satırının ilk hücresinde kesinti adı kalın (bold) olarak yazılıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kesinti Bölümünü Genişletme/Daraltma:</h4>
+                <p>Kesinti listesini görüntülemek veya gizlemek için şu adımları takip edin:</p>
+                <ol>
+                    <li>Kesinti başlığının sol tarafındaki butona tıklayın
+                        <ul>
+                            <li>Buton "-" gösteriyorsa: Tıkladığınızda liste daraltılacak ve kesintiler gizlenecektir</li>
+                            <li>Buton "+" gösteriyorsa: Tıkladığınızda liste genişletilecek ve kesintiler görünecektir</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında görünümü değişir (+ ise - olur, - ise + olur)</li>
+                    <li>Bu işlemle kesinti listesinin görünürlüğünü kontrol edebilirsiniz</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kesinti Bilgilerini Görüntüleme:</h4>
+                <p>Her kesinti hakkında detaylı bilgi görmek için:</p>
+                <ol>
+                    <li>Fare imlecini kesinti adının üzerine getirin
+                        <ul>
+                            <li>İmleç kesinti adının üzerinde durduğunda, sarı arka planlı bir pop-up bilgi kutusu görünecektir</li>
+                            <li>Bu bilgi kutusunda kesinti kodu ve kesinti hesaplama formülü görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li>Bilgi kutusundan çıkmak için fare imlecini başka bir alana taşıyın
+                        <ul>
+                            <li>İmleç kesinti adının üzerinden ayrıldığında bilgi kutusu otomatik olarak kaybolur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kesintileri Maaş Tiplerine Bağlama:</h4>
+                <p>Bir kesintiyi belirli maaş tiplerine bağlamak için şu adımları izleyin:</p>
+                <ol>
+                    <li>Kesinti listesinde, ilgili kesinti satırını bulun</li>
+                    <li>Bağlamak istediğiniz maaş tipine karşılık gelen sütundaki onay kutusuna tıklayın
+                        <ul>
+                            <li>Onay kutusu boşsa: Tıkladığınızda işaretlenecek ve hücre arka planı buğday (wheat) rengine dönüşecektir</li>
+                            <li>Onay kutusu işaretliyse: Tıkladığınızda işaret kaldırılacak ve hücre arka planı normal satır rengine dönecektir</li>
+                        </ul>
+                    </li>
+                    <li>İşaretleme veya işareti kaldırma işleminin geçerli olması için ekranın altındaki "Kaydet" butonuna tıklamanız gerekir</li>
+                </ol>
+                <p>Bu işlemle, seçtiğiniz kesinti ilgili maaş tipi için aktif hale gelecek veya devre dışı bırakılacaktır.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kesinti hesapları üzerinde fare ile durduğunuzda görünen formüller, sistem tarafından kullanılan gerçek hesaplama kodlarıdır</li>
+                    <li>Değişiklikleriniz "Kaydet" butonuna basılmadıkça sistemde saklanmaz</li>
+                    <li>İşaretlenen kesintiler, ilgili maaş tipine sahip personelden kesilecektir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir kesinti için tüm maaş tiplerini hızlıca işaretlemek istiyorsanız, her sütundaki onay kutusunu sırayla tıklayabilirsiniz</li>
+                    <li>Fare imlecini kesinti adının üzerinde tutarak hesaplama detaylarını görebilirsiniz</li>
+                    <li>Ekranı daha düzenli görmek için kullanmadığınız bölümleri "+" butonuyla daraltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ozel-yardimlar" class="section">
+        <h2>Özel Yardımların Kullanımı</h2>
+        <div class="info-box">
+            <h3>Özel Yardım Bölümünün Yapısı ve Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Özel Yardım Bölümünün Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Bölüm Başlığı:</strong>
+                        <ul>
+                            <li>Kesintiler bölümünün hemen altında yer alır</li>
+                            <li>Koyu gri (aaaaaa) zemin üzerinde, kalın ve büyük harflerle "ÖZEL YARDIMLAR" yazısı görünür</li>
+                            <li>Başlığın sol tarafında genişletme/daraltma butonu (-/+) bulunur</li>
+                            <li>Bu buton "btnYar" olarak isimlendirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özel Yardım Listesi:</strong>
+                        <ul>
+                            <li>Başlık satırının altında, özel yardım tanımları satır satır listelenir</li>
+                            <li>Satırlar, görsel ayrım için dönüşümlü olarak açık (ffffff) ve koyu (eeeeee) renkte arka plana sahiptir</li>
+                            <li>Her özel yardım satırının ilk hücresinde yardım adı kalın (bold) olarak yazılıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Özel Yardım Bölümünü Genişletme/Daraltma:</h4>
+                <p>Özel yardım listesini görüntülemek veya gizlemek için şu adımları takip edin:</p>
+                <ol>
+                    <li>Özel Yardımlar başlığının sol tarafındaki butona tıklayın
+                        <ul>
+                            <li>Buton "-" gösteriyorsa: Tıkladığınızda liste daraltılacak ve özel yardımlar gizlenecektir</li>
+                            <li>Buton "+" gösteriyorsa: Tıkladığınızda liste genişletilecek ve özel yardımlar görünecektir</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında görünümü değişir (+ ise - olur, - ise + olur)</li>
+                    <li>Bu işlemle özel yardım listesinin görünürlüğünü kontrol edebilirsiniz</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Özel Yardımları Maaş Tiplerine Bağlama:</h4>
+                <p>Bir özel yardımı belirli maaş tiplerine bağlamak için şu adımları izleyin:</p>
+                <ol>
+                    <li>Özel yardım listesinde, ilgili yardım satırını bulun</li>
+                    <li>Bağlamak istediğiniz maaş tipine karşılık gelen sütundaki onay kutusuna tıklayın
+                        <ul>
+                            <li>Onay kutusu boşsa: Tıkladığınızda işaretlenecek ve hücre arka planı buğday (wheat) rengine dönüşecektir</li>
+                            <li>Onay kutusu işaretliyse: Tıkladığınızda işaret kaldırılacak ve hücre arka planı normal satır rengine dönecektir</li>
+                        </ul>
+                    </li>
+                    <li>İşaretleme veya işareti kaldırma işleminin geçerli olması için ekranın altındaki "Kaydet" butonuna tıklamanız gerekir</li>
+                </ol>
+                <p>Bu işlemle, seçtiğiniz özel yardım ilgili maaş tipi için aktif hale gelecek veya devre dışı bırakılacaktır.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Özel yardımlar için hakediş ve kesintilerde olduğu gibi fare ile üzerine gelindiğinde açılan bilgi kutusu bulunmamaktadır</li>
+                    <li>Değişiklikleriniz "Kaydet" butonuna basılmadıkça sistemde saklanmaz</li>
+                    <li>İşaretlenen özel yardımlar, ilgili maaş tipine sahip personele uygulanacaktır</li>
+                    <li>Özel yardımların tanımlanması başka bir ekranda yapılır, bu ekranda sadece maaş tiplerine bağlantıları yapılır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir özel yardım için tüm maaş tiplerini hızlıca işaretlemek istiyorsanız, her sütundaki onay kutusunu sırayla tıklayabilirsiniz</li>
+                    <li>Aynı anda hem özel yardım hem de normal hakediş için ödeme yapılması gerekiyorsa, her ikisini de ilgili maaş tipi için işaretlemeyi unutmayın</li>
+                    <li>Ekranı daha düzenli görmek için kullanmadığınız bölümleri "+" butonuyla daraltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ozel-kesintiler" class="section">
+        <h2>Özel Kesintilerin Kullanımı</h2>
+        <div class="info-box">
+            <h3>Özel Kesinti Bölümünün Yapısı ve Özellikleri</h3>
+            
+            <div class="step">
+                <h4>Özel Kesinti Bölümünün Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Bölüm Başlığı:</strong>
+                        <ul>
+                            <li>Özel Yardımlar bölümünün hemen altında yer alır</li>
+                            <li>Koyu gri (aaaaaa) zemin üzerinde, kalın ve büyük harflerle "ÖZEL KESİNTİLER" yazısı görünür</li>
+                            <li>Başlığın sol tarafında genişletme/daraltma butonu (-/+) bulunur</li>
+                            <li>Bu buton "btnOzkes" olarak isimlendirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özel Kesinti Listesi:</strong>
+                        <ul>
+                            <li>Başlık satırının altında, özel kesinti tanımları satır satır listelenir</li>
+                            <li>Satırlar, görsel ayrım için dönüşümlü olarak açık (ffffff) ve koyu (eeeeee) renkte arka plana sahiptir</li>
+                            <li>Her özel kesinti satırının ilk hücresinde kesinti adı kalın (bold) olarak yazılıdır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Özel Kesinti Bölümünü Genişletme/Daraltma:</h4>
+                <p>Özel kesinti listesini görüntülemek veya gizlemek için şu adımları takip edin:</p>
+                <ol>
+                    <li>Özel Kesintiler başlığının sol tarafındaki butona tıklayın
+                        <ul>
+                            <li>Buton "-" gösteriyorsa: Tıkladığınızda liste daraltılacak ve özel kesintiler gizlenecektir</li>
+                            <li>Buton "+" gösteriyorsa: Tıkladığınızda liste genişletilecek ve özel kesintiler görünecektir</li>
+                        </ul>
+                    </li>
+                    <li>Buton tıklandığında görünümü değişir (+ ise - olur, - ise + olur)</li>
+                    <li>Bu işlemle özel kesinti listesinin görünürlüğünü kontrol edebilirsiniz</li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Özel Kesintileri Maaş Tiplerine Bağlama:</h4>
+                <p>Bir özel kesintiyi belirli maaş tiplerine bağlamak için şu adımları izleyin:</p>
+                <ol>
+                    <li>Özel kesinti listesinde, ilgili kesinti satırını bulun</li>
+                    <li>Bağlamak istediğiniz maaş tipine karşılık gelen sütundaki onay kutusuna tıklayın
+                        <ul>
+                            <li>Onay kutusu boşsa: Tıkladığınızda işaretlenecek ve hücre arka planı buğday (wheat) rengine dönüşecektir</li>
+                            <li>Onay kutusu işaretliyse: Tıkladığınızda işaret kaldırılacak ve hücre arka planı normal satır rengine dönecektir</li>
+                        </ul>
+                    </li>
+                    <li>İşaretleme veya işareti kaldırma işleminin geçerli olması için ekranın altındaki "Kaydet" butonuna tıklamanız gerekir</li>
+                </ol>
+                <p>Bu işlemle, seçtiğiniz özel kesinti ilgili maaş tipi için aktif hale gelecek veya devre dışı bırakılacaktır.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Özel kesintiler için hakediş ve normal kesintilerde olduğu gibi fare ile üzerine gelindiğinde açılan bilgi kutusu bulunmamaktadır</li>
+                    <li>Değişiklikleriniz "Kaydet" butonuna basılmadıkça sistemde saklanmaz</li>
+                    <li>İşaretlenen özel kesintiler, ilgili maaş tipine sahip personelden kesilecektir</li>
+                    <li>Özel kesintilerin tanımlanması başka bir ekranda yapılır, bu ekranda sadece maaş tiplerine bağlantıları yapılır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bir özel kesinti için tüm maaş tiplerini hızlıca işaretlemek istiyorsanız, her sütundaki onay kutusunu sırayla tıklayabilirsiniz</li>
+                    <li>Aynı anda hem özel kesinti hem de normal kesinti için kesinti yapılması gerekiyorsa, her ikisini de ilgili maaş tipi için işaretlemeyi unutmayın</li>
+                    <li>Ekranı daha düzenli görmek için kullanmadığınız bölümleri "+" butonuyla daraltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayit-islemleri" class="section">
+        <h2>Kayıt İşlemleri</h2>
+        <div class="info-box">
+            <h3>Değişikliklerin Kaydedilmesi ve Kayıt İşlem Adımları</h3>
+            
+            <div class="step">
+                <h4>Kaydet Butonunun Konumu ve Görünümü:</h4>
+                <ol>
+                    <li><strong>Üst Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Maaş Tanımları başlığının hemen altında bulunur</li>
+                            <li>Açık gri arka planlı bir hücre içinde, standart düğme görünümündedir</li>
+                            <li>"Kaydet" yazılı butona tıklanarak kullanılır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Kaydet Butonu:</strong>
+                        <ul>
+                            <li>Tablonun en altında, tüm bölümlerden sonra yer alır</li>
+                            <li>Üst kaydet butonu ile aynı görünüm ve işlevi vardır</li>
+                            <li>Uzun tablolarda aşağı kaydırarak işlemleri tamamladıktan sonra kolay erişim sağlar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Değişiklikleri Kaydetme Adımları:</h4>
+                <p>Yaptığınız değişiklikleri kaydetmek için aşağıdaki adımları izleyin:</p>
+                <ol>
+                    <li>Hakediş, kesinti, özel yardım ve özel kesinti bölümlerinde gerekli onay kutularını işaretleyin veya işaretleri kaldırın</li>
+                    <li>Tüm değişikliklerinizi tamamladıktan sonra, ekrandaki kaydet butonlarından birine tıklayın
+                        <ul>
+                            <li>Üst taraftaki "Kaydet" butonunu kullanabilirsiniz</li>
+                            <li>Veya alt taraftaki "Kaydet" butonunu kullanabilirsiniz</li>
+                            <li>Her iki buton da aynı işlevi görür</li>
+                        </ul>
+                    </li>
+                    <li>Butona tıklandığında sistem aşağıdaki işlemleri gerçekleştirir:
+                        <ul>
+                            <li>Önce ilgili maaş tipleri için önceki tüm ilişkilendirmeler silinir</li>
+                            <li>Ardından işaretlediğiniz tüm onay kutuları için yeni ilişkilendirmeler oluşturulur</li>
+                            <li>İşlem tamamlandığında sayfa otomatik olarak yenilenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kaydet butonuna basmadan sayfadan çıkarsanız, tüm değişiklikleriniz kaybolacaktır</li>
+                    <li>Kaydetme işlemi, ekrandaki tüm bölümlerdeki değişiklikleri tek seferde kaydeder</li>
+                    <li>Kaydetme sırasında sistemin işlemleri tamamlaması için birkaç saniye bekleyin</li>
+                    <li>İşlem başarıyla tamamlandıktan sonra sayfa yenilenir ve güncel verileri gösterir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda değişiklik yapıyorsanız, her bölümü tamamladıktan sonra ara ara kaydetmeniz önerilir</li>
+                    <li>Uzun tablolarda çalışırken, alt kısımdaki kaydet butonu daha kolay erişilebilirdir</li>
+                    <li>Herhangi bir hata durumunda sayfayı yenileyip işlemleri tekrarlayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-kontrolu" class="section">
+        <h2>Ekran Kontrolü ve Görünüm Yönetimi</h2>
+        <div class="info-box">
+            <h3>Bölümlerin Görünürlüğünü Kontrol Etme</h3>
+            
+            <div class="step">
+                <h4>Kategori Bölümlerini Genişletme ve Daraltma:</h4>
+                <p>Ekrandaki dört ana bölümün (Hakedişler, Kesintiler, Özel Yardımlar, Özel Kesintiler) görünürlüğünü kontrol etmek için:</p>
+                <ol>
+                    <li><strong>Hakedişler Bölümü Kontrolü:</strong>
+                        <ul>
+                            <li>HAKEDİŞLER yazısının sol tarafındaki "btnHak" butonuna tıklayın</li>
+                            <li>Buton "-" gösteriyorsa, tıkladığınızda hakedişler bölümü gizlenecek ve buton "+" olarak değişecektir</li>
+                            <li>Buton "+" gösteriyorsa, tıkladığınızda hakedişler bölümü görünecek ve buton "-" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesintiler Bölümü Kontrolü:</strong>
+                        <ul>
+                            <li>KESİNTİLER yazısının sol tarafındaki "btnKes" butonuna tıklayın</li>
+                            <li>Buton "-" gösteriyorsa, tıkladığınızda kesintiler bölümü gizlenecek ve buton "+" olarak değişecektir</li>
+                            <li>Buton "+" gösteriyorsa, tıkladığınızda kesintiler bölümü görünecek ve buton "-" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özel Yardımlar Bölümü Kontrolü:</strong>
+                        <ul>
+                            <li>ÖZEL YARDIMLAR yazısının sol tarafındaki "btnYar" butonuna tıklayın</li>
+                            <li>Buton "-" gösteriyorsa, tıkladığınızda özel yardımlar bölümü gizlenecek ve buton "+" olarak değişecektir</li>
+                            <li>Buton "+" gösteriyorsa, tıkladığınızda özel yardımlar bölümü görünecek ve buton "-" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özel Kesintiler Bölümü Kontrolü:</strong>
+                        <ul>
+                            <li>ÖZEL KESİNTİLER yazısının sol tarafındaki "btnOzkes" butonuna tıklayın</li>
+                            <li>Buton "-" gösteriyorsa, tıkladığınızda özel kesintiler bölümü gizlenecek ve buton "+" olarak değişecektir</li>
+                            <li>Buton "+" gösteriyorsa, tıkladığınızda özel kesintiler bölümü görünecek ve buton "-" olarak değişecektir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Pop-up Bilgi Kutularını Kullanma:</h4>
+                <p>Ekranda özellikle hakediş ve kesinti bilgilerini daha detaylı görüntülemek için:</p>
+                <ol>
+                    <li><strong>Bilgi Kutusunu Görüntüleme:</strong>
+                        <ul>
+                            <li>Hakediş veya kesinti adının üzerine fare imlecini getirin</li>
+                            <li>Fare imleci hakediş/kesinti adının üzerinde durduğunda, sarı arka planlı bir pop-up bilgi kutusu belirecektir</li>
+                            <li>Bilgi kutusunda ilgili öğenin kodu ve hesaplama formülü görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Kutusunu Kapatma:</strong>
+                        <ul>
+                            <li>Fare imlecini hakediş/kesinti adının üzerinden başka bir alana taşıyın</li>
+                            <li>Fare imleci hareket ettirildiğinde bilgi kutusu otomatik olarak kaybolur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Bölümleri gizleme/gösterme işlemleri sadece görünüm için geçerlidir, verileri etkilemez</li>
+                    <li>Sayfayı yenilediğinizde tüm bölümler varsayılan olarak görünür duruma dönecektir</li>
+                    <li>Pop-up bilgi kutuları sadece hakediş ve kesinti bölümlerinde kullanılabilir</li>
+                    <li>Gizlenen bölümlerdeki değişiklikler de Kaydet butonuna basıldığında kaydedilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sadece belirli bir bölümle çalışırken, diğer bölümleri gizleyerek ekranı daha düzenli kullanabilirsiniz</li>
+                    <li>Bir hakediş/kesinti formülünü anlayamazsanız, bilgi yöneticinizden yardım isteyebilirsiniz</li>
+                    <li>İşlem yapmadığınız bölümleri gizleyerek yanlışlıkla değişiklik yapma riskini azaltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Kaydet butonuna bastığınızdan emin olun</li>
+                            <li>İşlem sırasında sayfayı kapatmadığınızdan emin olun</li>
+                            <li>Tarayıcınızın güncel olduğunu kontrol edin</li>
+                            <li>Sayfayı yenileyip tekrar deneyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maaş Tiplerini Değiştiremiyorum:</strong>
+                        <ul>
+                            <li>Maaş tiplerini bu sayfadan değiştiremezsiniz, önceki sayfaya dönmeniz gerekir</li>
+                            <li>Önce mevcut değişiklikleri kaydedin, sonra önceki sayfaya dönün</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bilgi Kutuları Görünmüyor:</strong>
+                        <ul>
+                            <li>Tarayıcınızın pop-up engelleyici ayarlarını kontrol edin</li>
+                            <li>Fare imlecini hakediş/kesinti adının tam üzerine getirin</li>
+                            <li>Tarayıcınızı güncelleyin veya farklı bir tarayıcı deneyin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Kullanım İpuçları:</h4>
+                <ol>
+                    <li><strong>Toplu İşlem Yapma:</strong>
+                        <ul>
+                            <li>Aynı anda birden fazla maaş tipini göstererek karşılaştırma yapabilirsiniz</li>
+                            <li>Toplu değişiklik yapmak için önce bir maaş tipini ayarlayıp sonra diğerlerinde aynı ayarları yapabilirsiniz</li>
+                            <li>Benzer maaş tiplerini bir arada seçerek işlemleri hızlandırabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ekran Düzeni İyileştirmeleri:</strong>
+                        <ul>
+                            <li>Tarayıcınızı tam ekran modunda kullanarak daha fazla içerik görüntüleyebilirsiniz</li>
+                            <li>Çalıştığınız bölüm dışındaki bölümleri daraltarak odaklanmayı artırabilirsiniz</li>
+                            <li>Onay kutuları, buğday rengi arka planla daha kolay görünür olduğu için değişiklik yapmadan önce mevcut ayarları dikkatlice inceleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB tuşunu kullanarak onay kutuları arasında hızlıca geçiş yapabilirsiniz</li>
+                            <li>ENTER tuşu, seçili onay kutusunu işaretler veya işareti kaldırır</li>
+                            <li>SHIFT+TAB kombinasyonu, önceki onay kutusuna dönmenizi sağlar</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Maaş tiplerinde yapılan değişiklikler, personel maaş hesaplamalarını doğrudan etkiler</li>
+                    <li>Bir hakediş veya kesintinin tüm maaş tiplerinden kaldırılması, o hakediş veya kesintinin hiçbir personele uygulanmamasına neden olabilir</li>
+                    <li>Toplu değişiklikler yapmadan önce mutlaka bir yedek alın veya mevcut durumu not edin</li>
+                    <li>Karmaşık değişiklikler için sistem yöneticinize danışmanız önerilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Son Öneriler:</h4>
+                <ul>
+                    <li>Yeni bir maaş tipi veya hakediş/kesinti tanımlandığında, matris ekranını güncellemek için bu sayfayı kullanın</li>
+                    <li>Dönemsel değişiklikler öncesinde tüm maaş tiplerini gözden geçirin</li>
+                    <li>Değişikliklerin etkisini görmek için test ortamında önizleme yapın</li>
+                    <li>Karmaşık maaş ve kesinti yapılandırmaları için basılı bir şema oluşturmak faydalı olabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

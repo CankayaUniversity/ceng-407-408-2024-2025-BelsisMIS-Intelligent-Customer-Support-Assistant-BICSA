@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ücret Ödeme Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ücret Ödeme Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bölümler</a></li>
+            <li><a href="#arama-kriterleri">Temel Arama Kriterleri</a></li>
+            <li><a href="#bolum-maas">Bölüm ve Maaş Tipi Seçimleri</a></li>
+            <li><a href="#sicil-tipi">Sicil Tipi Seçimi</a></li>
+            <li><a href="#index-rapor">İndex ve Rapor Bölen Değer Ayarları</a></li>
+            <li><a href="#butonlar">İşlem Butonları ve Kullanımları</a></li>
+            <li><a href="#rapor-olusturma">Rapor Oluşturma Adım Adım Kılavuzu</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları ve Sorun Giderme</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Ücret Ödeme Listesi programı, personel maaş ödemelerinin yönetimi ve raporlanması için kullanılan kapsamlı bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>Personel ücret ödemelerini görüntüleme ve raporlama</li>
+            <li>Sicil numarasına göre sorgulamalar yapma</li>
+            <li>Belirli bir yıl ve aya ait ücret bilgilerini listeleme</li>
+            <li>Bölüm bazlı veya maaş tipine göre filtreleme</li>
+            <li>Farklı sıralama seçenekleri ile düzenli raporlar oluşturma</li>
+        </ul>
+        işlemlerini gerçekleştirebilirsiniz.
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>Sorgulamak istediğiniz sicil numarası aralığı</li>
+                <li>Raporlamak istediğiniz yıl ve ay bilgisi</li>
+                <li>Personelin bağlı olduğu bölüm bilgisi</li>
+                <li>Ücret tipi bilgisi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Ana Bölümler</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "ÜCRET ÖDEME LİSTESİ" başlığı yer alır</li>
+                        <li>Bu başlık ekranın merkezinde yer alır ve sabit konumdadır</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlık şeridinin hemen altında ana çalışma alanı bulunur</li>
+                        <li>Sol sütunda alan etiketleri (Sicil No, Bölüm No, Yıl / Ay gibi)</li>
+                        <li>Sağ sütunda veri giriş alanları (metin kutuları, açılır listeler)</li>
+                        <li>İlk sırada Sicil No alanı, altında Bölüm No ve devamında diğer alanlar sıralanır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, form alanlarının altında yer alır</li>
+                        <li>Listele ve Çıkış butonlarını içerir</li>
+                        <li>Butonlar yan yana dizilmiştir, Listele butonu solda, Çıkış butonu sağdadır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Yıl alanına içinde bulunduğunuz yıl değeri gelir</li>
+                <li>Ay alanına içinde bulunduğunuz ay değeri gelir</li>
+                <li>Liste Tarihi alanına sistem tarihi otomatik doldurulur</li>
+                <li>İmleç ilk veri giriş alanında (Sicil No) konumlanır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="arama-kriterleri" class="section">
+    <h2>Temel Arama Kriterleri</h2>
+    <div class="info-box">
+        <h3>Sicil Numarası ve Diğer Temel Alanlar</h3>
+        
+        <div class="step">
+            <h4>Sicil Numarası ile Arama:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, başlık şeridinin hemen altında yer alır</li>
+                        <li>Sol tarafta "Sicil No" etiketi bulunur</li>
+                        <li>Etiketin yanında yan yana iki giriş kutusu yer alır</li>
+                        <li>Sol kutu başlangıç, sağ kutu bitiş sicil numarası içindir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir sicil numarası için:
+                            <ul>
+                                <li>Sol kutuya sicil numarasını yazın</li>
+                                <li>Sağ kutuyu boş bırakın veya aynı sicil numarasını yazın</li>
+                            </ul>
+                        </li>
+                        <li>Sicil numarası aralığı için:
+                            <ul>
+                                <li>Sol kutuya başlangıç sicil numarasını yazın</li>
+                                <li>Sağ kutuya bitiş sicil numarasını yazın</li>
+                                <li>Boş bırakıldığında varsayılan olarak 0-9999999999 aralığı kullanılır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Bölüm No Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Sicil No alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Bölüm No" etiketi bulunur</li>
+                        <li>Etiketin karşısında çoklu seçim listesi (listbox) yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir bölüm seçmek için:
+                            <ul>
+                                <li>Listeden ilgili bölümü tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla bölüm seçmek için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak istediğiniz bölümleri tıklayın</li>
+                                <li>Program açıldığında tüm bölümler otomatik olarak seçili gelir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Yıl ve Ay Bilgisi Giriş:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Bölüm No alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Yıl / Ay" etiketi bulunur</li>
+                        <li>Etiketin karşısında iki metin kutusu yan yana bulunur</li>
+                        <li>İlk kutu yıl, ikinci kutu ay bilgisi içindir</li>
+                        <li>İki kutunun arasında "/" işareti yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Yıl kutusuna 4 haneli yıl bilgisini girin (örn. 2025)</li>
+                        <li>Ay kutusuna 1 veya 2 haneli ay bilgisini girin (örn. 2 veya 02)</li>
+                        <li>TAB tuşu ile alanlar arasında geçiş yapabilirsiniz</li>
+                        <li>Boş bırakıldığında sistem otomatik olarak içinde bulunduğunuz yıl ve ayı kullanır</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Maaş Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Yıl / Ay alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Maaş Tipi" etiketi bulunur</li>
+                        <li>Etiketin karşısında çoklu seçim listesi (listbox) bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir maaş tipi seçmek için:
+                            <ul>
+                                <li>Listeden ilgili maaş tipini tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla maaş tipi seçmek için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak istediğiniz maaş tiplerini tıklayın</li>
+                                <li>Program açıldığında tüm maaş tipleri otomatik olarak seçili gelir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Sicil numarası alanlarına sadece rakam girilebilir</li>
+                <li>Yıl alanına 4 haneli, ay alanına 1-2 haneli değer girilmelidir</li>
+                <li>Maaş tipi seçilmemesi durumunda rapor oluşturulamaz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>SHIFT + TAB kombinasyonu ile bir önceki alana dönebilirsiniz</li>
+                <li>Çoklu seçim listelerinde CTRL tuşunu kullanmayı unutmayın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="sicil-tipi" class="section">
+    <h2>Sicil Tipi ve Liste Tarihi Bilgileri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Sicil Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Maaş Tipi alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Sicil Tipi" etiketi bulunur</li>
+                        <li>Etiketin karşısında çoklu seçim listesi (listbox) bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tek bir sicil tipi seçmek için:
+                            <ul>
+                                <li>Listeden ilgili sicil tipini tıklayın</li>
+                            </ul>
+                        </li>
+                        <li>Birden fazla sicil tipi seçmek için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak istediğiniz sicil tiplerini tıklayın</li>
+                                <li>Program açıldığında tüm sicil tipleri otomatik olarak seçili gelir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Liste Tarihi Bilgisi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Sicil Tipi alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Liste Tarihi" etiketi bulunur</li>
+                        <li>Etiketin karşısında tarih giriş kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tarih kutusuna GG.AA.YYYY formatında tarih girin</li>
+                        <li>Tarihi elle yazabilir veya takvim simgesini tıklayarak seçebilirsiniz</li>
+                        <li>Boş bırakıldığında sistem tarihi otomatik olarak kullanılır</li>
+                        <li>Bu tarih, raporun üst kısmında liste tarihi olarak görünecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 25.02.2025)</li>
+                <li>Geçersiz tarih girişi hata mesajına neden olabilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="index-rapor" class="section">
+    <h2>İndeks Tipi ve Rapor Bölen Değer</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>İndeks Tipi Seçimi:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Liste Tarihi alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "İndeks Tipi" etiketi bulunur</li>
+                        <li>Etiketin karşısında açılır liste (dropdown) kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Açılır liste kutusunu tıklayarak seçenekleri görüntüleyin</li>
+                        <li>İki seçenek bulunmaktadır:
+                            <ul>
+                                <li>1-Sicil No Sıralı: Raporu sicil numarasına göre sıralar</li>
+                                <li>2-SSK.Sicil No Sıralı: Raporu SSK sicil numarasına göre sıralar</li>
+                            </ul>
+                        </li>
+                        <li>İstediğiniz sıralama tipini tıklayarak seçin</li>
+                        <li>Varsayılan olarak "1-Sicil No Sıralı" seçeneği seçilidir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Rapor Bölen Değer Ayarı:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>İndeks Tipi alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Rap.Böl.Değer" etiketi bulunur</li>
+                        <li>Etiketin karşısında sayısal değer giriş kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Metin kutusuna bir sayısal değer girin</li>
+                        <li>Bu değer, raporda "ödenecek" tutarları bölerek göstermek için kullanılır</li>
+                        <li>Örneğin:
+                            <ul>
+                                <li>Değer 1 olursa: Tutarlar olduğu gibi gösterilir</li>
+                                <li>Değer 1000 olursa: Tutarlar 1000'e bölünerek gösterilir (bin TL cinsinden)</li>
+                            </ul>
+                        </li>
+                        <li>Varsayılan değer 1'dir</li>
+                        <li>0 veya negatif değer girilirse otomatik olarak 1 kabul edilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Rapor Bölen Değer, raporunuzdaki tutarların görünümünü değiştirir, gerçek değerleri değiştirmez</li>
+                <li>Büyük miktarları daha okunaklı hale getirmek için kullanışlıdır</li>
+                <li>Ondalık sayı kullanabilirsiniz (örn. 1.5)</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Binlerce liranın olduğu raporlarda Rapor Bölen Değeri 1000 yaparak bin TL cinsinden gösterebilirsiniz</li>
+                <li>Milyonlarca liranın olduğu raporlarda Rapor Bölen Değeri 1000000 yaparak milyon TL cinsinden gösterebilirsiniz</li>
+                <li>Büyük değerleri daha okunaklı hale getirmek için en uygun bölen değeri seçin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="butonlar" class="section">
+    <h2>İşlem Butonları ve Kullanımları</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Listele Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, tüm form alanlarının altında yer alır</li>
+                        <li>Sol tarafta konumlanmıştır</li>
+                        <li>Çıkış butonunun solunda bulunur</li>
+                        <li>Gri zeminli, üç boyutlu görünümlü bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Tüm istediğiniz filtreleme ve arama kriterlerini girdikten sonra</li>
+                        <li>Listele butonuna tıklayın</li>
+                        <li>Alternatif olarak ALT + L tuş kombinasyonunu kullanabilirsiniz</li>
+                        <li>Buton tıklandığında:
+                            <ul>
+                                <li>Sistem belirlediğiniz kriterlere göre raporu oluşturur</li>
+                                <li>Rapor yeni bir pencerede açılır</li>
+                                <li>Raporun oluşturulması, veri miktarına bağlı olarak birkaç saniye sürebilir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, tüm form alanlarının altında yer alır</li>
+                        <li>Listele butonunun sağında bulunur</li>
+                        <li>Gri zeminli, üç boyutlu görünümlü bir butondur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Programdan çıkmak istediğinizde Çıkış butonuna tıklayın</li>
+                        <li>Buton tıklandığında program penceresi kapanır</li>
+                        <li>Açık raporlarınız varsa, önce onları kapatmanız önerilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Listele butonuna basmadan önce tüm filtreleme kriterlerinizi kontrol edin</li>
+                <li>Maaş Tipi seçilmeden Listele butonuna basılırsa uyarı mesajı görüntülenir</li>
+                <li>Çıkış butonuna basmadan önce açık raporlarınızı kapatmayı unutmayın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="rapor-olusturma" class="section">
+    <h2>Adım Adım Rapor Oluşturma Kılavuzu</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Temel Ücret Ödeme Listesi Oluşturma:</h4>
+            <ol>
+                <li><strong>Adım 1: Sicil Numarası Aralığı Belirleyin</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında bulunan Sicil No alanına tıklayın</li>
+                        <li>Başlangıç sicil numarasını sol kutuya yazın</li>
+                        <li>Bitiş sicil numarasını sağ kutuya yazın</li>
+                        <li>Tüm personel için boş bırakabilirsiniz (varsayılan: 0-9999999999)</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Bölüm Seçimi Yapın</strong>
+                    <ul>
+                        <li>Sicil No alanının hemen altındaki Bölüm No listesine tıklayın</li>
+                        <li>CTRL tuşunu kullanarak istediğiniz bölümleri seçin</li>
+                        <li>Tüm bölümler için varsayılan seçimi değiştirmeyin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Yıl ve Ay Bilgisini Girin</strong>
+                    <ul>
+                        <li>Bölüm No alanının altındaki Yıl / Ay kutularına tıklayın</li>
+                        <li>Yıl kutusuna raporlamak istediğiniz yılı yazın (örn. 2025)</li>
+                        <li>Ay kutusuna raporlamak istediğiniz ayı yazın (örn. 2)</li>
+                        <li>TAB tuşuna basarak bir sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 4: Maaş Tipi Seçin</strong>
+                    <ul>
+                        <li>Yıl / Ay alanının altındaki Maaş Tipi listesine tıklayın</li>
+                        <li>CTRL tuşunu kullanarak istediğiniz maaş tiplerini seçin</li>
+                        <li>En az bir maaş tipi seçilmelidir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 5: Sicil Tipi Seçin</strong>
+                    <ul>
+                        <li>Maaş Tipi alanının altındaki Sicil Tipi listesine tıklayın</li>
+                        <li>CTRL tuşunu kullanarak istediğiniz sicil tiplerini seçin</li>
+                        <li>Varsayılan olarak tüm sicil tipleri seçilidir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 6: Liste Tarihini Belirleyin</strong>
+                    <ul>
+                        <li>Sicil Tipi alanının altındaki Liste Tarihi kutusuna tıklayın</li>
+                        <li>GG.AA.YYYY formatında rapor tarihini girin</li>
+                        <li>Varsayılan olarak sistem tarihi kullanılır</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 7: İndeks Tipini Seçin</strong>
+                    <ul>
+                        <li>Liste Tarihi alanının altındaki İndeks Tipi açılır listesine tıklayın</li>
+                        <li>İstediğiniz sıralama tipini seçin:
+                            <ul>
+                                <li>1-Sicil No Sıralı</li>
+                                <li>2-SSK.Sicil No Sıralı</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Adım 8: Rapor Bölen Değeri Belirleyin</strong>
+                    <ul>
+                        <li>İndeks Tipi alanının altındaki Rap.Böl.Değer kutusuna tıklayın</li>
+                        <li>İstediğiniz bölen değeri girin (örn. 1, 1000, 1000000)</li>
+                        <li>Varsayılan değer 1'dir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 9: Listele Butonuna Tıklayın</strong>
+                    <ul>
+                        <li>Tüm alanları doldurduktan sonra ekranın alt kısmındaki Listele butonuna tıklayın</li>
+                        <li>Rapor yeni bir pencerede açılacaktır</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 10: Raporu İnceleyin</strong>
+                    <ul>
+                        <li>Açılan rapor penceresinde sonuçları inceleyin</li>
+                        <li>Gerekirse raporu yazdırın veya kaydedin</li>
+                        <li>Rapor penceresini kapatmak için sağ üst köşedeki X simgesine tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Belirli Bir Bölüme Ait Ödeme Listesi Oluşturma:</h4>
+            <ol>
+                <li><strong>Adım 1: Bölüm Seçimine Odaklanın</strong>
+                    <ul>
+                        <li>Ekranın üst kısmındaki Bölüm No listesine tıklayın</li>
+                        <li>CTRL tuşuna basarak tüm seçimleri kaldırın (bu tüm seçili öğeleri temizler)</li>
+                        <li>Sadece raporlamak istediğiniz bölümü tıklayarak seçin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Diğer Kriterleri Ayarlayın</strong>
+                    <ul>
+                        <li>Yıl ve Ay bilgilerini girin</li>
+                        <li>Maaş Tipi ve Sicil Tipi seçimlerini yapın</li>
+                        <li>İndeks Tipi ve Rapor Bölen Değeri ayarlayın</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Listele Butonuna Tıklayın</strong>
+                    <ul>
+                        <li>Tüm alanları doldurduktan sonra ekranın alt kısmındaki Listele butonuna tıklayın</li>
+                        <li>Sadece seçtiğiniz bölüme ait personel ücret bilgilerini içeren rapor oluşturulacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Belirli Maaş Tiplerine Göre Rapor Oluşturma:</h4>
+            <ol>
+                <li><strong>Adım 1: Maaş Tipi Seçimine Odaklanın</strong>
+                    <ul>
+                        <li>Ekranın orta kısmındaki Maaş Tipi listesine tıklayın</li>
+                        <li>CTRL tuşuna basarak tüm seçimleri kaldırın</li>
+                        <li>Sadece raporlamak istediğiniz maaş tiplerini CTRL tuşu ile seçin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Diğer Kriterleri Ayarlayın</strong>
+                    <ul>
+                        <li>Sicil numarası aralığını belirleyin</li>
+                        <li>Bölüm seçimini yapın</li>
+                        <li>Yıl ve Ay bilgilerini girin</li>
+                        <li>Sicil Tipi, İndeks Tipi ve diğer ayarları yapın</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Listele Butonuna Tıklayın</strong>
+                    <ul>
+                        <li>Tüm alanları doldurduktan sonra ekranın alt kısmındaki Listele butonuna tıklayın</li>
+                        <li>Sadece seçtiğiniz maaş tiplerine ait ücret bilgilerini içeren rapor oluşturulacaktır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sorun Giderme</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Rapor Oluşturulmuyor:</strong>
+                    <ul>
+                        <li>Maaş tipi seçildiğinden emin olun, en az bir maaş tipi seçilmelidir</li>
+                        <li>Yıl ve ay bilgilerinin doğru girildiğini kontrol edin</li>
+                        <li>Sicil numarası aralığının doğru olduğunu kontrol edin (başlangıç değeri bitiş değerinden küçük olmalıdır)</li>
+                        <li>Rapor Bölen Değeri'nin 0'dan büyük olduğunu kontrol edin</li>
+                    </ul>
+                </li>
+                <li><strong>"Maaş tipi seçmelisiniz..!" Uyarısı:</strong>
+                    <ul>
+                        <li>Maaş Tipi listesinde en az bir seçenek seçilmelidir</li>
+                        <li>CTRL tuşunu kullanarak bir veya daha fazla maaş tipi seçin</li>
+                    </ul>
+                </li>
+                <li><strong>Program Yanıt Vermiyor:</strong>
+                    <ul>
+                        <li>Büyük veri miktarları için raporun oluşturulması zaman alabilir</li>
+                        <li>Daha dar bir sicil numarası aralığı veya daha az bölüm/maaş tipi seçin</li>
+                        <li>Sistemin yanıt vermesini bekleyin, büyük raporlar için bu normal bir durumdur</li>
+                    </ul>
+                </li>
+                <li><strong>Raporda Veriler Eksik Görünüyor:</strong>
+                    <ul>
+                        <li>Seçilen yıl ve ay bilgilerinin doğru olduğunu kontrol edin</li>
+                        <li>Bölüm, sicil tipi ve maaş tipi seçimlerini kontrol edin</li>
+                        <li>Veri tabanında ilgili dönem için kayıt olduğundan emin olun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Verimli Çalışma İpuçları:</h4>
+            <ol>
+                <li><strong>Klavye Kısayolları:</strong>
+                    <ul>
+                        <li>TAB: Sonraki alana geçer</li>
+                        <li>SHIFT+TAB: Önceki alana döner</li>
+                        <li>CTRL+Tıklama: Çoklu seçim listelerinde birden fazla öğe seçer</li>
+                        <li>ALT+L: Listele butonunu çalıştırır</li>
+                        <li>ENTER: Metin kutularında bir sonraki alana geçer (TAB gibi çalışır)</li>
+                    </ul>
+                </li>
+                <li><strong>Rapor Hazırlama Stratejileri:</strong>
+                    <ul>
+                        <li>Önce küçük veri setiyle test yapın sonra kriterleri genişletin</li>
+                        <li>Sık kullandığınız kriter kombinasyonlarını not alın</li>
+                        <li>Büyük raporlar için Rapor Bölen Değeri'ni uygun şekilde ayarlayın (bin veya milyon cinsinden)</li>
+                        <li>Raporları mesai saatleri dışında veya sistem yoğunluğunun az olduğu zamanlarda hazırlamayı tercih edin</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Girişi İpuçları:</strong>
+                    <ul>
+                        <li>Sicil numarası aralığını belirlerken, önce başlangıç değerini girin, sonra TAB tuşuna basarak bitiş değerine geçin</li>
+                        <li>Tarih alanlarında GG.AA.YYYY formatını kullanın (örn. 25.02.2025)</li>
+                        <li>Çoklu seçim listelerinde ilk harfleri yazarak hızlı bir şekilde ilgili öğelere gidebilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Raporları oluşturduktan sonra kontrol edin ve gerektiğinde kriterleri değiştirerek yeniden çalıştırın</li>
+                <li>Yoğun kullanım saatlerinde büyük raporları oluşturmaktan kaçının</li>
+                <li>Çalışmanızı düzenli olarak kaydedin veya raporları yazdırın</li>
+                <li>Programdan çıkmadan önce açık rapor pencerelerini kapatın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Rapor Özelleştirme İpuçları:</h4>
+            <ul>
+                <li><strong>Farklı Sıralama Seçenekleri:</strong> Farklı ihtiyaçlara göre İndeks Tipi'ni değiştirin:
+                    <ul>
+                        <li>İsme göre arama yapacaksanız: Sicil No Sıralı seçeneğini kullanın</li>
+                        <li>SSK işlemleri için: SSK.Sicil No Sıralı seçeneğini kullanın</li>
+                    </ul>
+                </li>
+                <li><strong>Rapor Bölen Değerinin Etkili Kullanımı:</strong>
+                    <ul>
+                        <li>Kuruş detayları için: 1 değerini kullanın</li>
+                        <li>TL cinsinden gösterim için: 1 değerini kullanın</li>
+                        <li>Bin TL cinsinden gösterim için: 1000 değerini kullanın</li>
+                        <li>Milyon TL cinsinden gösterim için: 1000000 değerini kullanın</li>
+                    </ul>
+                </li>
+                <li><strong>Bölümlere Göre Raporlama:</strong>
+                    <ul>
+                        <li>Tek bölüm için: Sadece o bölümü seçin</li>
+                        <li>Birbiriyle ilişkili bölümler için: CTRL tuşu ile birden fazla bölüm seçin</li>
+                        <li>Tüm bölümler için: Varsayılan seçimi kullanın (tüm bölümler seçili)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ozel-durumlar" class="section">
+    <h2>Özel Durum Senaryoları ve Çözümleri</h2>
+    <div class="info-box">
+        <div class="step">
+            <h4>Tarih Dönemi Değişimlerinde Dikkat Edilecek Hususlar:</h4>
+            <ol>
+                <li><strong>Yıl Sonu İşlemleri:</strong>
+                    <ul>
+                        <li>Aralık ayı raporlarını oluştururken yıl değerini doğru girdiğinizden emin olun</li>
+                        <li>Ocak ayı raporlarında yeni yıl değerini kullanmayı unutmayın</li>
+                    </ul>
+                </li>
+                <li><strong>Geriye Dönük Raporlama:</strong>
+                    <ul>
+                        <li>Geçmiş dönemlere ait raporları oluştururken ilgili yıl ve ay değerlerini doğru girin</li>
+                        <li>Eski dönemlerde kullanılan maaş tiplerini seçtiğinizden emin olun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Özel Rapor Örnekleri:</h4>
+            <ol>
+                <li><strong>Tek Bir Personelin Ücret Bilgisi:</strong>
+                    <ul>
+                        <li>Başlangıç ve bitiş sicil numarası alanlarına aynı sicil numarasını girin</li>
+                        <li>Diğer kriterleri normal şekilde ayarlayın</li>
+                        <li>Listele butonuna tıklayarak sadece o personele ait raporu oluşturun</li>
+                    </ul>
+                </li>
+                <li><strong>Belirli Bir Sicil Tipi İçin Rapor:</strong>
+                    <ul>
+                        <li>Sicil Tipi listesinde CTRL tuşu ile tüm seçimleri kaldırın</li>
+                        <li>Sadece istediğiniz sicil tipini seçin</li>
+                        <li>Diğer kriterleri normal şekilde ayarlayın</li>
+                        <li>Listele butonuna tıklayarak seçilen sicil tipine ait personel ücretlerini görüntüleyin</li>
+                    </ul>
+                </li>
+                <li><strong>Karşılaştırmalı Aylık Rapor:</strong>
+                    <ul>
+                        <li>İlk olarak bir ay için rapor oluşturun</li>
+                        <li>Raporu inceleyin ve gerekirse yazdırın</li>
+                        <li>Sonra ay değerini değiştirip diğer ay için rapor oluşturun</li>
+                        <li>İki raporu yan yana karşılaştırın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önlemler ve Dikkat Edilecek Hususlar:</h4>
+            <ul>
+                <li>Raporlardaki hassas ücret bilgilerinin gizliliğine dikkat edin</li>
+                <li>Rapor içeriğini kullanmadan önce doğruluğunu kontrol edin</li>
+                <li>Yazdırma işlemi öncesinde yazıcı ayarlarınızı kontrol edin</li>
+                <li>Büyük raporlarda kağıt israfını önlemek için önizleme yapın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Son Kullanıcı Notları:</h4>
+            <p>Ücret Ödeme Listesi programı ile ilgili sorularınız veya özel rapor ihtiyaçlarınız için lütfen sistem yöneticinizle iletişime geçiniz. Program size özel olarak yapılandırılabilir ve ek özellikler eklenebilir.</p>
+        </div>
+    </div>
+</div>
+
+<div id="ozet" class="section">
+    <h2>Özet ve Hatırlatmalar</h2>
+    <div class="info-box">
+        <h3>Önemli Noktalar:</h3>
+        <ul>
+            <li>Ücret Ödeme Listesi programı, personel ücret ödemelerini görüntülemek ve raporlamak için kullanılır</li>
+            <li>Program açıldığında, içinde bulunulan yıl ve ay bilgileri otomatik olarak gelir</li>
+            <li>Rapor oluşturmak için en az bir maaş tipi seçilmelidir</li>
+            <li>Sicil numarası, bölüm, yıl/ay, maaş tipi, sicil tipi gibi kriterler kullanarak raporlar oluşturabilirsiniz</li>
+            <li>İndeks Tipi seçeneği ile raporun sıralama düzenini belirleyebilirsiniz</li>
+            <li>Rapor Bölen Değer ile ödenecek tutarların gösterim şeklini ayarlayabilirsiniz</li>
+            <li>Listele butonu ile belirtilen kriterlere göre rapor oluşturulur</li>
+            <li>Çıkış butonu ile programdan çıkabilirsiniz</li>
+        </ul>
+
+        <h3>Kısayollar ve Pratik İpuçları:</h3>
+        <ul>
+            <li>TAB: Sonraki alana geçer</li>
+            <li>SHIFT+TAB: Önceki alana döner</li>
+            <li>CTRL+Tıklama: Çoklu seçim listelerinde birden fazla öğe seçer</li>
+            <li>ALT+L: Listele butonunu çalıştırır</li>
+            <li>Önce küçük veri setiyle test yapın, sonra kriterleri genişletin</li>
+            <li>Rapor Bölen Değerini kullanarak tutarları daha okunaklı hale getirin</li>
+            <li>Sık kullandığınız kriter kombinasyonlarını not alın</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

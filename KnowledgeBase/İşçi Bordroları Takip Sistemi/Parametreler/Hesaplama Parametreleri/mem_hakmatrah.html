@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakediş Matrah Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hakediş Matrah Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Temel Öğeler</a></li>
+                <li><a href="#matrah-tanimi">Matrah Tanımı Seçimi</a></li>
+                <li><a href="#hakedis-bilgileri">Hakediş Bilgileri Ekleme ve Düzenleme</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları ve Kullanımları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Hakediş Matrah Tanımları ekranı, maaş ve hakediş hesaplamalarında kullanılan matrah ve hakediş ilişkilerini tanımlamanızı sağlayan bir programdır. Bu program ile:</p>
+            <ul>
+                <li>Matrahlara bağlı hakedişleri tanımlama</li>
+                <li>Her hakediş için oran belirleme</li>
+                <li>Kanun tiplerine göre memur seçimi yapma</li>
+                <li>Tanımları kaydetme, silme ve kopyalama</li>
+            </ul>
+            <p>işlemlerini gerçekleştirebilirsiniz.</p>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Tanımlamak istediğiniz matrah bilgisi</li>
+                    <li>Matraha bağlı olarak tanımlanacak hakediş türleri</li>
+                    <li>Her hakediş için uygulanacak oran değerleri</li>
+                    <li>Hangi kanun tipindeki memurlara uygulanacağı bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Temel Öğeler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Hakediş Matrah Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Matrah Tanımı Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında "Matrah Tanımı" etiketi ve yanında açılır liste kutusu bulunur</li>
+                            <li>Bu bölüm ile işlem yapılacak matrahı seçebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hakediş Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Matrah tanımı bölümünün hemen altında yer alır</li>
+                            <li>Gri renkli bir başlık şeridi üzerinde "Hakedişler", "Oran" ve "Kanun Tipi" etiketleri bulunur</li>
+                            <li>Bu bölümde seçilen matraha ait hakediş kayıtları listelenir</li>
+                            <li>Kaydırma çubuğu ile tüm kayıtlara erişebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Gri zemin üzerinde Yeni Kayıt, Kaydet, Çıkış gibi butonları içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Matrah Tanımı alanı seçili olmaz (boş gelir)</li>
+                    <li>Hakediş bilgileri bölümü boş olarak görüntülenir</li>
+                    <li>İmleç Matrah Tanımı seçim kutusunda konumlanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="matrah-tanimi" class="section">
+        <h2>Matrah Tanımı Seçimi</h2>
+        <div class="info-box">
+            <h3>Matrah Tanımı ile Çalışma</h3>
+            
+            <div class="step">
+                <h4>Matrah Tanımı Seçme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlığın hemen altında sol tarafta "Matrah Tanımı" etiketi bulunur</li>
+                            <li>Etiketin yanında açılır liste kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır liste kutusuna tıklayın
+                                <ul>
+                                    <li>Açılan listede sistemde tanımlı tüm matrah tanımları görüntülenir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden çalışmak istediğiniz matrah tanımını seçin
+                                <ul>
+                                    <li>Seçtiğiniz matrah tanımı liste kutusunda görünür hale gelir</li>
+                                    <li>Seçim yapıldığında ekran otomatik olarak yenilenir</li>
+                                </ul>
+                            </li>
+                            <li>Matrah seçildikten sonra
+                                <ul>
+                                    <li>Alttaki hakediş bilgileri tablosu seçilen matraha ait kayıtlarla doldurulur</li>
+                                    <li>İmleç otomatik olarak hakediş alanına geçer</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Matrah Tanımı Seçiminde Arama Yapma:</h4>
+                <ol>
+                    <li><strong>Win Butonu Kullanımı:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında bulunan "Win" butonuna tıklayın (büyüteç simgesi olan buton)</li>
+                            <li>Açılan pencerede matrah tanımları listelenir</li>
+                            <li>Listeden istediğiniz matrah tanımını bulup çift tıklayın</li>
+                            <li>Seçilen matrah, ana ekranda otomatik olarak seçili hale gelir ve ilgili hakediş bilgileri yüklenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Matrah tanımı değiştirildiğinde ekrandaki mevcut değişiklikler kaydedilmez</li>
+                    <li>Değişiklik yapmadan önce Kaydet butonuna basarak mevcut bilgileri kaydetmeniz önerilir</li>
+                    <li>Matrah seçilmeden hakediş bilgileri eklenemez veya düzenlenemez</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Matrah açılır listesinde alfabetik sırayla arama yapabilirsiniz</li>
+                    <li>Listede ilk harfini yazarak hızlı arama yapabilirsiniz</li>
+                    <li>TAB tuşu ile matrah seçiminden hakedişler alanına hızlıca geçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hakedis-bilgileri" class="section">
+        <h2>Hakediş Bilgileri Ekleme ve Düzenleme</h2>
+        <div class="info-box">
+            <h3>Hakediş Tablosu ile Çalışma</h3>
+            
+            <div class="step">
+                <h4>Hakediş Tablosunun Yapısı:</h4>
+                <ol>
+                    <li><strong>Tablo Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Matrah tanımı seçim kutusunun altında, ekranın ortasında geniş bir alan kaplar</li>
+                            <li>Tablonun üstünde gri renkli bir başlık şeridi bulunur</li>
+                            <li>Başlık şeridinde soldan sağa doğru sırasıyla "Hakedişler", "Oran" ve "Kanun Tipi" etiketleri yer alır</li>
+                            <li>Tablo beyaz zemin üzerinde siyah kenarlıklı olarak görüntülenir</li>
+                            <li>Tablo kaydırılabilir yapıdadır, çok sayıda kayıt olduğunda sağ taraftaki kaydırma çubuğu ile aşağı-yukarı hareket edebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sütun Yapısı:</strong>
+                        <ul>
+                            <li>İlk sütun: Silme butonu (kırmızı çarpı simgesi) içerir</li>
+                            <li>İkinci sütun: Hakediş seçim listesi</li>
+                            <li>Üçüncü sütun: Oran giriş kutusu</li>
+                            <li>Dördüncü sütun: Kanun tipi seçim listesi</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yeni Hakediş Kaydı Ekleme:</h4>
+                <ol>
+                    <li><strong>Adım Adım Yeni Kayıt Ekleme:</strong>
+                        <ol>
+                            <li>Öncelikle ekranın alt kısmında bulunan "Yeni Kayıt" butonuna tıklayın
+                                <ul>
+                                    <li>Butonda yeşil artı simgesi bulunur</li>
+                                    <li>Tabloya yeni bir boş satır eklenir</li>
+                                </ul>
+                            </li>
+                            <li>Hakediş sütunundaki açılır listeye tıklayın
+                                <ul>
+                                    <li>Sistemdeki tüm hakedişlerin listelendiği bir menü açılır</li>
+                                    <li>Listeden eklemek istediğiniz hakediş türünü seçin</li>
+                                </ul>
+                            </li>
+                            <li>Oran sütununa oran değerini girin
+                                <ul>
+                                    <li>Varsayılan olarak "100" değeri gelir</li>
+                                    <li>İhtiyacınıza göre değiştirebilirsiniz</li>
+                                    <li>Oran alanı boş bırakılamaz</li>
+                                </ul>
+                            </li>
+                            <li>Kanun Tipi sütunundaki açılır listeye tıklayın
+                                <ul>
+                                    <li>Açılan listeden uygun seçeneği belirleyin:</li>
+                                    <li>"Tüm memurlar", "Sadece 5510 sayılı Kanun öncesi memurlar" veya "Sadece 5510 sayılı Kanun sonrası memurlar" seçeneklerinden birini seçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div id="hakedis-duzenleme" class="section">
+        <h2>Hakediş Bilgilerini Düzenleme ve Silme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Mevcut Hakediş Bilgisini Düzenleme:</h4>
+                <ol>
+                    <li><strong>Hakediş Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz hakediş satırında, hakediş adının bulunduğu açılır listeye tıklayın
+                                <ul>
+                                    <li>Liste, tablonun ikinci sütununda yer alır</li>
+                                    <li>Açılan menüden yeni bir hakediş seçin</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat! Sistem aynı hakedişin tekrar seçilmesine izin vermez
+                                <ul>
+                                    <li>Eğer seçtiğiniz hakediş zaten tabloda var ise, sistem sizi uyarır: "Bu Hakediş Önceden Seçilmiştir!"</li>
+                                    <li>Bu durumda eski hakediş seçimine geri dönülür</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Oran Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz satırın oran sütunundaki değere tıklayın
+                                <ul>
+                                    <li>Oran alanı, tablonun üçüncü sütununda yer alır</li>
+                                    <li>Mevcut değer seçili hale gelir</li>
+                                </ul>
+                            </li>
+                            <li>Yeni oran değerini yazın
+                                <ul>
+                                    <li>Oran değeri sadece rakamlardan oluşmalıdır</li>
+                                    <li>Oran alanını boş bırakamazsınız</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat! Oran alanı boş bırakılırsa sistem uyarı verir:
+                                <ul>
+                                    <li>"Oran Değerini Girmelisiniz!"</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Kanun Tipi Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz satırın kanun tipi sütunundaki açılır listeye tıklayın
+                                <ul>
+                                    <li>Kanun tipi alanı, tablonun dördüncü sütununda yer alır</li>
+                                    <li>Açılan listeden yeni bir kanun tipi seçin:</li>
+                                    <li>"Tüm memurlar", "Sadece 5510 sayılı Kanun öncesi memurlar" veya "Sadece 5510 sayılı Kanun sonrası memurlar"</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Hakediş Satırını Silme:</h4>
+                <ol>
+                    <li><strong>Adım Adım Silme İşlemi:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırın en solundaki silme butonuna tıklayın
+                                <ul>
+                                    <li>Silme butonu kırmızı çarpı simgesi içerir</li>
+                                </ul>
+                            </li>
+                            <li>Sistem onay sorar: "Satır İptal Edilecek, Onaylıyor musunuz?"
+                                <ul>
+                                    <li>"Evet" seçeneğine tıklarsanız, satır tablodaki listeden kaldırılır</li>
+                                    <li>"Hayır" seçeneğine tıklarsanız, silme işlemi iptal edilir</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat! Silme işlemi yapıldıktan sonra, değişikliklerin kalıcı olması için Kaydet butonuna basmanız gerekir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yapılan değişiklikler Kaydet butonuna basılana kadar veritabanına kaydedilmez</li>
+                    <li>Aynı hakediş birden fazla kez seçilemez</li>
+                    <li>Oran alanı mutlaka doldurulmalıdır</li>
+                    <li>Değişiklik yaparken TAB tuşu ile alanlar arasında geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>ENTER tuşu ile satırlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Oran değerleri için ondalık sayı girmek isterseniz nokta (.) kullanın</li>
+                    <li>Silme işleminden önce doğru satırı sildiğinizden emin olun</li>
+                    <li>Hakediş değişikliği yaparken aynı hakediş seçilmemesine dikkat edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları ve Kullanımları</h2>
+        <div class="info-box">
+            <h3>Ekranın Alt Kısmındaki Butonlar</h3>
+            
+            <div class="step">
+                <h4>Yeni Kayıt Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, gri renkli şerit üzerinde en solda yer alır</li>
+                            <li>Üzerinde yeşil artı (+) simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda:
+                                <ul>
+                                    <li>Hakediş tablosuna yeni bir boş satır eklenir</li>
+                                    <li>Eklenen satırın Oran alanına otomatik olarak "100" değeri atanır</li>
+                                    <li>İmleç, yeni eklenen satırın hakediş seçim listesine konumlanır</li>
+                                </ul>
+                            </li>
+                            <li>Yeni eklenen satırda veri girişi yapabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kaydet Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Yeni Kayıt butonunun hemen sağında yer alır</li>
+                            <li>Üzerinde disk simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Tüm değişikliklerinizi yaptıktan sonra Kaydet butonuna tıklayın
+                                <ul>
+                                    <li>Sistem girilen bilgileri veritabanına kaydeder</li>
+                                    <li>Kayıt işlemi tamamlandığında hakediş tablosu güncellenir</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat! Kaydet butonuna basmadan önce:
+                                <ul>
+                                    <li>Bir matrah tanımı seçili olmalıdır</li>
+                                    <li>Eğer matrah tanımı seçili değilse, sistem uyarı verir: "Bir Matrah Tanımı Girmelisiniz!"</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="section">
+        <h2>Diğer İşlem Butonları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun sağında yer alır</li>
+                            <li>Üzerinde kapı/çıkış simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamladıktan sonra Çıkış butonuna tıklayın
+                                <ul>
+                                    <li>Program penceresi kapatılır</li>
+                                    <li>Kaydedilmemiş değişiklikler varsa kaybolacaktır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Formu Temizle Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Çıkış butonunun sağında yer alır</li>
+                            <li>Üzerinde süpürge/silme simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda:
+                                <ul>
+                                    <li>Ekrandaki tüm seçimler ve girilen veriler temizlenir</li>
+                                    <li>Matrah Tanımı seçim kutusu boş hale gelir</li>
+                                    <li>Hakediş tablosu boşaltılır</li>
+                                    <li>İmleç Matrah Tanımı alanına konumlanır</li>
+                                </ul>
+                            </li>
+                            <li>Bu buton yeni bir işleme başlamak istediğinizde kullanışlıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Win Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Formu Temizle butonunun sağında yer alır</li>
+                            <li>Üzerinde büyüteç/arama simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda:
+                                <ul>
+                                    <li>Yeni bir pencere açılır</li>
+                                    <li>Bu pencerede tüm matrah tanımları listelenir</li>
+                                    <li>Liste Kayıt No ve Matrah Tanımı sütunlarını içerir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden bir matrah tanımı bulmak için:
+                                <ul>
+                                    <li>Arama yapabilir veya listede gezinebilirsiniz</li>
+                                    <li>İstediğiniz matrah tanımına çift tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Seçim yapıldığında:
+                                <ul>
+                                    <li>Arama penceresi kapanır</li>
+                                    <li>Seçilen matrah tanımı ana ekranda aktif hale gelir</li>
+                                    <li>İlgili hakediş bilgileri otomatik olarak yüklenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Sil Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Win butonunun sağında yer alır</li>
+                            <li>Üzerinde çöp kutusu/silme simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Seçili olan matrahın tüm hakediş kayıtlarını silmek için kullanılır</li>
+                            <li>Butona tıkladığınızda:
+                                <ul>
+                                    <li>Sistem onay sorar: "İptal İşlemini Onaylıyor musunuz?"</li>
+                                </ul>
+                            </li>
+                            <li>Onay verirseniz:
+                                <ul>
+                                    <li>Seçili matrahın tüm hakediş kayıtları silinir</li>
+                                    <li>Hakediş tablosu boşaltılır</li>
+                                </ul>
+                            </li>
+                            <li>Dikkat! Bu işlem geri alınamaz. Tüm hakediş ilişkileri tamamen silinir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kopyala Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Sil butonunun sağında en sonda yer alır</li>
+                            <li>Üzerinde "Kopyala" yazısı ve kopya/çoğaltma simgesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adım Adım Kullanımı:</strong>
+                        <ol>
+                            <li>Butona tıkladığınızda:
+                                <ul>
+                                    <li>Yeni bir pencere açılır</li>
+                                    <li>Bu pencerede mevcut matrah tanımlarını başka bir matraha kopyalayabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>Kopyalama penceresinde:
+                                <ul>
+                                    <li>Kaynak matrah olarak mevcut seçili matrah gelir</li>
+                                    <li>Hedef matrah olarak kopyalamak istediğiniz matrahı seçin</li>
+                                    <li>Kopyala butonuna tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>İşlem tamamlandığında:
+                                <ul>
+                                    <li>Seçili matrahın tüm hakediş kayıtları hedef matraha kopyalanır</li>
+                                    <li>Kopyalama penceresi kapanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sil butonu kullanıldığında tüm hakediş kayıtları kalıcı olarak silinir, bu işlem geri alınamaz</li>
+                    <li>Kopyalama işlemi öncesinde hedef matrahta var olan hakediş kayıtları korunur</li>
+                    <li>Aynı hakediş için hedef matrahta zaten kayıt varsa, bu kayıtlar tekrar oluşturulmaz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Benzer hakediş yapılandırması olan matrahlar için kopyalama özelliğini kullanarak zaman kazanabilirsiniz</li>
+                    <li>Win butonu ile hızlı matrah araması yapabilirsiniz</li>
+                    <li>Formu Temizle butonunu yeni bir işleme başlamadan önce kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="klavye-kisayollari" class="section">
+        <h2>Klavye Kısayolları ve Hızlı Veri Girişi</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Temel Klavye Kısayolları:</h4>
+                <ol>
+                    <li><strong>TAB Tuşu:</strong>
+                        <ul>
+                            <li>Bir sonraki alana geçiş yapar</li>
+                            <li>Matrah Tanımı → Hakediş → Oran → Kanun Tipi sıralamasında ilerler</li>
+                        </ul>
+                    </li>
+                    <li><strong>SHIFT + TAB:</strong>
+                        <ul>
+                            <li>Bir önceki alana geçiş yapar</li>
+                            <li>Ters sıralamada ilerler: Kanun Tipi → Oran → Hakediş → Matrah Tanımı</li>
+                        </ul>
+                    </li>
+                    <li><strong>ENTER Tuşu:</strong>
+                        <ul>
+                            <li>TAB tuşu gibi çalışır, bir sonraki alana geçer</li>
+                            <li>Ayrıca liste kutularında seçim yapmak için de kullanılabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>ESC Tuşu:</strong>
+                        <ul>
+                            <li>Açık olan liste kutularını kapatır</li>
+                            <li>Programdan çıkmayı sağlar (Çıkış butonu ile aynı işlevi görür)</li>
+                        </ul>
+                    </li>
+                    <li><strong>ALT + L:</strong>
+                        <ul>
+                            <li>Yeni Kayıt butonunu aktif eder</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Veri Girişi İpuçları:</h4>
+                <ol>
+                    <li><strong>Açılır Liste Kutuları:</strong>
+                        <ul>
+                            <li>Liste kutusuna tıklayarak veya ALT + Aşağı Ok tuşlarını kullanarak açabilirsiniz</li>
+                            <li>İlk birkaç harfini yazarak hızlı arama yapabilirsiniz</li>
+                            <li>Liste açıkken aşağı/yukarı ok tuşları ile gezinebilirsiniz</li>
+                            <li>ENTER tuşu ile seçim yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oran Alanı:</strong>
+                        <ul>
+                            <li>Sadece rakam girişi yapabilirsiniz</li>
+                            <li>Ondalık sayı için nokta (.) kullanın</li>
+                            <li>Varsayılan değer 100'dür, ihtiyaca göre değiştirebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Verimli Çalışma İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda hakediş girmek için önce tüm hakediş kayıtlarını ekleyin, sonra toplu kaydet yapın</li>
+                    <li>Benzer matrahlar için kopyalama özelliğini kullanarak veri girişini hızlandırın</li>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yaparak fare kullanımını azaltın</li>
+                    <li>Win butonu ile hızlıca matrah araması yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Sık Yapılan İşlemler</h3>
+            
+            <div class="step">
+                <h4>Adım Adım Yeni Matrah-Hakediş İlişkisi Oluşturma:</h4>
+                <ol>
+                    <li>Matrah Tanımı açılır listesinden çalışmak istediğiniz matrahı seçin
+                        <ul>
+                            <li>Açılır liste ekranın üst kısmında, etiketin yanında yer alır</li>
+                            <li>Önceden tanımlanmış matrahlar listede görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li>Yeni Kayıt butonuna tıklayın
+                        <ul>
+                            <li>Buton, ekranın alt kısmında yeşil artı simgesi ile gösterilir</li>
+                            <li>Hakediş tablosuna yeni bir satır eklenir</li>
+                        </ul>
+                    </li>
+                    <li>Hakediş açılır listesinden bir hakediş türü seçin
+                        <ul>
+                            <li>İkinci sütunda yer alan liste kutusundan seçim yapın</li>
+                            <li>Sistemde tanımlı tüm hakedişler listelenir</li>
+                        </ul>
+                    </li>
+                    <li>Oran değerini girin
+                        <ul>
+                            <li>Üçüncü sütunda yer alan oran kutusuna değer girin</li>
+                            <li>Varsayılan olarak "100" değeri gelir</li>
+                            <li>İhtiyaca göre değiştirebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li>Kanun Tipi açılır listesinden uygun seçeneği belirleyin
+                        <ul>
+                            <li>Dördüncü sütunda yer alan liste kutusundan seçim yapın</li>
+                            <li>Üç seçenek mevcuttur: "Tüm memurlar", "Sadece 5510 sayılı Kanun öncesi memurlar" veya "Sadece 5510 sayılı Kanun sonrası memurlar"</li>
+                        </ul>
+                    </li>
+                    <li>Kaydet butonuna tıklayarak değişiklikleri kaydedin
+                        <ul>
+                            <li>Buton ekranın alt kısmında, disk simgesi ile gösterilir</li>
+                            <li>Tüm değişiklikler veritabanına kaydedilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım Adım Matrah-Hakediş İlişkilerini Kopyalama:</h4>
+                <ol>
+                    <li>Kopyalamak istediğiniz matrah tanımını seçin
+                        <ul>
+                            <li>Matrah Tanımı açılır listesinden kaynak matrahı seçin</li>
+                        </ul>
+                    </li>
+                    <li>Ekranın alt kısmındaki Kopyala butonuna tıklayın
+                        <ul>
+                            <li>Buton, en sağda "Kopyala" yazısı ve kopya simgesi ile gösterilir</li>
+                        </ul>
+                    </li>
+                    <li>Açılan kopyalama penceresinde:
+                        <ul>
+                            <li>Kaynak matrah olarak seçili matrah görüntülenir</li>
+                            <li>Hedef matrah açılır listesinden kopyalama yapmak istediğiniz matrahı seçin</li>
+                        </ul>
+                    </li>
+                    <li>Kopyalama penceresindeki Kopyala butonuna tıklayın
+                        <ul>
+                            <li>Kaynak matrahın tüm hakediş kayıtları, hedef matraha kopyalanır</li>
+                            <li>İşlem tamamlandığında kopyalama penceresi kapanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım Adım Var Olan Matrah-Hakediş İlişkilerini Düzenleme:</h4>
+                <ol>
+                    <li>Düzenlemek istediğiniz matrah tanımını seçin
+                        <ul>
+                            <li>Matrah Tanımı açılır listesinden matrah seçin</li>
+                            <li>Hakediş tablosu seçilen matraha ait kayıtlarla doldurulur</li>
+                        </ul>
+                    </li>
+                    <li>Değiştirmek istediğiniz hakediş satırında ilgili alana tıklayın
+                        <ul>
+                            <li>Hakediş değiştirmek için ikinci sütundaki açılır listeye tıklayın</li>
+                            <li>Oran değiştirmek için üçüncü sütundaki değere tıklayın</li>
+                            <li>Kanun tipi değiştirmek için dördüncü sütundaki açılır listeye tıklayın</li>
+                        </ul>
+                    </li>
+                    <li>Gerekli değişiklikleri yapın
+                        <ul>
+                            <li>Hakediş için yeni bir seçim yapın</li>
+                            <li>Oran için yeni bir değer girin</li>
+                            <li>Kanun tipi için yeni bir seçim yapın</li>
+                        </ul>
+                    </li>
+                    <li>Kaydet butonuna tıklayarak değişiklikleri kaydedin
+                        <ul>
+                            <li>Ekranın alt kısmındaki disk simgeli butona tıklayın</li>
+                            <li>Değişiklikler veritabanına kaydedilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Adım Adım Matrah-Hakediş İlişkilerini Silme:</h4>
+                <ol>
+                    <li>Silme işlemi için iki yöntem vardır:
+                        <ul>
+                            <li>Tek bir hakediş kaydını silme</li>
+                            <li>Tüm hakediş kayıtlarını silme</li>
+                        </ul>
+                    </li>
+                    <li>Tek bir hakediş kaydını silmek için:
+                        <ul>
+                            <li>Silmek istediğiniz satırın en solundaki silme butonuna (kırmızı çarpı simgesi) tıklayın</li>
+                            <li>Onay ekranında "Evet" seçeneğini tıklayın</li>
+                            <li>Kaydet butonuna basarak değişikliği kaydedin</li>
+                        </ul>
+                    </li>
+                    <li>Bir matrahın tüm hakediş kayıtlarını silmek için:
+                        <ul>
+                            <li>Silmek istediğiniz matrah tanımını seçin</li>
+                            <li>Ekranın alt kısmındaki Sil butonuna (çöp kutusu simgesi) tıklayın</li>
+                            <li>Onay ekranında "Evet" seçeneğini tıklayın</li>
+                            <li>Tüm hakediş kayıtları silinir ve işlem otomatik olarak kaydedilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ul>
+                    <li><strong>"Bir Matrah Tanımı Girmelisiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Kaydet butonuna basmadan önce matrah tanımı seçilmemiş</li>
+                            <li>Çözüm: Matrah Tanımı açılır listesinden bir matrah seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Oran Değerini Girmelisiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oran alanı boş bırakılmış</li>
+                            <li>Çözüm: Oran alanına bir değer girin (varsayılan 100)</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Bu Hakediş Önceden Seçilmiştir!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Aynı hakediş bir matrah için birden fazla kez eklenmeye çalışılıyor</li>
+                            <li>Çözüm: Her hakediş bir matrah için yalnızca bir kez tanımlanabilir, farklı bir hakediş seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Sütunlarının Genişliğiyle İlgili Sorunlar:</strong>
+                        <ul>
+                            <li>Sorun: Uzun hakediş adları tam görüntülenemiyor</li>
+                            <li>Çözüm: Program penceresini genişletin veya açılır liste kutusundan seçim yaparken daha rahat görebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değişiklikler Kaydedilmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Yapılan değişiklikler görünmüyor</li>
+                            <li>Çözüm: Değişiklik yaptıktan sonra mutlaka Kaydet butonuna basın</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Genel İpuçları:</h4>
+                <ul>
+                    <li>Birden fazla hakediş eklemek için, her satır ekleme sonrası Kaydet butonuna basmadan önce tüm satırları ekleyin, sonra tek seferde kaydedin</li>
+                    <li>Benzer matrahlar için kopyalama özelliğini kullanarak zaman kazanın</li>
+                    <li>Oran değeri için sadece rakam kullanın, yüzde işareti koymayın</li>
+                    <li>Hakediş listesinde ilk harflerini yazarak hızlı arama yapabilirsiniz</li>
+                    <li>TAB tuşu ile alanlar arasında geçiş yaparak fare kullanımını azaltın</li>
+                    <li>Karmaşık matrah-hakediş ilişkilerinde, işlem yapmadan önce kağıt üzerinde planlama yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sonuc" class="section">
+        <h2>Sonuç ve Özet</h2>
+        <div class="info-box">
+            <p>Hakediş Matrah Tanımları ekranı ile ilgili en temel işlemleri ve kullanım adımlarını bu kılavuzda anlatmaya çalıştık. Bu ekran, maaş ve hakediş hesaplamalarında önemli bir rol oynayan matrah-hakediş ilişkilerini tanımlamanızı ve yönetmenizi sağlar.</p>
+            
+            <p>Özetlemek gerekirse:</p>
+            <ul>
+                <li>Matrah Tanımı seçimi ile işleme başlanır</li>
+                <li>Hakediş listesinden matrah için geçerli hakedişler seçilir</li>
+                <li>Her hakediş için oran ve kanun tipi belirlenir</li>
+                <li>Kaydet butonu ile değişiklikler veritabanına kaydedilir</li>
+                <li>Kopyalama özelliği ile benzer matrahlar hızlıca oluşturulabilir</li>
+                <li>Silme butonları ile istenmeyen kayıtlar kaldırılabilir</li>
+            </ul>
+            
+            <p>Bu programı kullanırken karşılaştığınız sorunlarda, öncelikle bu kılavuzdaki ipuçları ve çözüm önerilerine bakabilirsiniz. Daha detaylı sorunlarda sistem yöneticinizle iletişime geçmeniz önerilir.</p>
+            
+            <div class="tip-box">
+                <h4>Son İpucu:</h4>
+                <p>Hakediş Matrah Tanımları ekranındaki değişiklikler, maaş hesaplama sürecini doğrudan etkileyebilir. Bu nedenle, özellikle büyük değişiklikler yapmadan önce mutlaka bir yedek alınması ve değişikliklerin test ortamında denenmesi önerilir.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGİ Fatura Listesi Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>OGİ Fatura Listesi Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#arama-kriterleri">Arama Kriterleri ve Veri Giriş</a></li>
+                <li><a href="#sicil-bolum">Sicil Tipi ve Bölüm Seçimleri</a></li>
+                <li><a href="#siralama">Sıralama Seçenekleri</a></li>
+                <li><a href="#raporlama">Raporlama ve Çıktı Alma</a></li>
+                <li><a href="#butonlar">İşlem Butonları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>OGİ Fatura Listesi programı, işçi bordro sisteminde yer alan bir araçtır. Bu program sayesinde:</p>
+            <ul>
+                <li>İşçi bilgilerini sicil numarasına göre sorgulayabilir</li>
+                <li>Ad ve soyad bilgilerine göre filtreleme yapabilir</li>
+                <li>Görev başlangıç ve çıkış tarihlerine göre arama yapabilir</li>
+                <li>Farklı sicil tiplerini ve bölümleri filtreleyebilir</li>
+                <li>Sonuçları farklı sıralama seçenekleriyle listeleyebilir</li>
+                <li>Özel rapor oluşturabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Sorgulamak istediğiniz sicil numarası aralığı</li>
+                    <li>Personelin adı veya soyadı (varsa)</li>
+                    <li>Görev başlangıç tarihi ve/veya çıkış tarihi bilgileri (varsa)</li>
+                    <li>Hangi sicil tiplerini ve bölümleri incelemek istediğiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "OGİ FATURA LİSTESİ" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez ve ekranın ortasında hizalanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>İndex Tipi (Sıralama) seçeneğiyle başlar</li>
+                            <li>Sicil no, ad-soyad gibi arama kriterlerini içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                            <li>Sicil Tipi, Bölüm ve Çalışan Bölüm alanları için çoklu seçim kutuları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Listele ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>İndex Tipi seçeneği "Sicil No Sıralı" olarak gelir</li>
+                    <li>Sicil Tipi ve Bölüm seçim kutularında tüm seçenekler işaretli olarak gelir</li>
+                    <li>İmleç ilk veri giriş alanında konumlanır</li>
+                    <li>Rapor Bölen Değeri alanında "1" değeri hazır olarak gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arama-kriterleri" class="section">
+        <h2>Arama Kriterleri ve Veri Giriş</h2>
+        <div class="info-box">
+            <h3>Temel Arama Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Sicil Numarası ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İndex Tipi (Sıralama) seçeneğinin hemen altında, bir satır boşluktan sonra yer alır</li>
+                            <li>"Sicil No" etiketi solda, yanında ise yan yana iki metin kutusu yer alır</li>
+                            <li>Sol kutu başlangıç, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir sicil numarası için:
+                                <ul>
+                                    <li>Sol kutuya sicil numarasını yazın</li>
+                                    <li>Sağ kutuyu boş bırakabilirsiniz (sistem maksimum değeri otomatik doldurur)</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarası aralığı için:
+                                <ul>
+                                    <li>Sol kutuya başlangıç sicil numarasını yazın</li>
+                                    <li>Sağ kutuya bitiş sicil numarasını yazın</li>
+                                    <li>Boş bırakıldığında, sol kutu için 0, sağ kutu için 9999999999 varsayılan değerler olarak kullanılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Ad ve Soyad ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanının hemen altında sırayla "Adı" ve "Soyadı" alanları yer alır</li>
+                            <li>Her biri için yan yana iki metin kutusu bulunur</li>
+                            <li>Sol kutular başlangıç, sağ kutular bitiş değerleri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir isim için:
+                                <ul>
+                                    <li>İlgili sol kutuya adı veya soyadı yazın</li>
+                                    <li>Sağ kutuyu boş bırakabilirsiniz (sistem "zzzzzzzzzz" değerini otomatik doldurur)</li>
+                                </ul>
+                            </li>
+                            <li>İsim aralığı için:
+                                <ul>
+                                    <li>Sol kutuya başlangıç değerini yazın (örn: "A" ile başlayan isimler)</li>
+                                    <li>Sağ kutuya bitiş değerini yazın (örn: "K" ile başlayan isimler)</li>
+                                    <li>Boş bırakıldığında tüm isimler listelenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Görev Başlangıç ve Çıkış Tarihi ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Soyadı alanının hemen altında önce "Gör.Baş.Tarihi" sonra "Çıkış Tarihi" alanları yer alır</li>
+                            <li>Her biri için yan yana iki tarih giriş kutusu bulunur</li>
+                            <li>Sol kutular başlangıç, sağ kutular bitiş tarihlerini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tarih girişi yapılırken:
+                                <ul>
+                                    <li>Tarihleri GG.AA.YYYY formatında girin (örn: 01.01.2023)</li>
+                                    <li>Sol kutuya başlangıç tarihini yazın</li>
+                                    <li>Sağ kutuya bitiş tarihini yazın</li>
+                                    <li>Sağ kutu boş bırakılırsa, sistem tarihi otomatik olarak bitiş tarihi kabul edilir</li>
+                                </ul>
+                            </li>
+                            <li>Örnek kullanım:
+                                <ul>
+                                    <li>Belirli bir tarihten sonra göreve başlayanları bulmak için sadece sol kutuya o tarihi girin</li>
+                                    <li>Belirli bir tarih aralığında işten çıkanları bulmak için her iki çıkış tarihi kutusunu da doldurun</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor Bölen Değer:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Çıkış Tarihi alanının hemen altında yer alır</li>
+                            <li>"Rap.Böl.Deger" etiketi solda, yanında bir metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Raporda kullanılacak bölen değeri buraya girin</li>
+                            <li>Varsayılan değer "1" olarak gelir</li>
+                            <li>Raporun ölçeklendirmesini etkiler</li>
+                            <li>Sayısal bir değer olmalıdır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası alanlarına sadece rakam girilebilir</li>
+                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn: 15.03.2023)</li>
+                    <li>İsim aramalarında büyük-küçük harf ayrımı yoktur</li>
+                    <li>Aralık belirtirken başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>SHIFT + TAB kombinasyonu ile bir önceki alana dönebilirsiniz</li>
+                    <li>Boş bırakılan alanlar aramaya dahil edilmez</li>
+                    <li>Daha hızlı sonuç almak için mümkün olduğunca çok arama kriteri belirleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="sicil-bolum" class="section">
+        <h2>Sicil Tipi ve Bölüm Seçimleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sicil Tipi Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Rapor Bölen Değer alanının altında yer alır</li>
+                            <li>"Sicil Tipi" etiketi solda, sağında ise çoklu seçim kutusu bulunur</li>
+                            <li>Seçim kutusu yaklaşık 5 satır yüksekliğindedir ve tüm sicil tiplerini listeler</li>
+                            <li>Ekranın orta kısmına yakın bir bölgede bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Sicil tipleri arasında seçim yapmak için:
+                                <ul>
+                                    <li>Program ilk açıldığında tüm sicil tipleri otomatik olarak seçili gelir</li>
+                                    <li>Tek bir sicil tipini seçmek için fare ile o seçeneğe tıklayın</li>
+                                    <li>Birden fazla sicil tipini seçmek için CTRL tuşunu basılı tutarak seçeneklere tıklayın</li>
+                                    <li>Bir seçeneği listeden çıkarmak için CTRL tuşu basılıyken seçili olan seçeneğe tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Örnek kullanım:
+                                <ul>
+                                    <li>Sadece belirli sicil tipleri (örneğin, kadrolu çalışanlar) için rapor oluşturmak istiyorsanız, sadece o sicil tipini seçin</li>
+                                    <li>Birkaç sicil tipini bir arada görmek istiyorsanız, CTRL tuşu ile birden fazla seçim yapın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Bölüm Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil Tipi seçim kutusunun hemen altında yer alır</li>
+                            <li>"Bölüm" etiketi solda, sağında ise çoklu seçim kutusu bulunur</li>
+                            <li>Seçim kutusu yaklaşık 5 satır yüksekliğindedir ve sistemde tanımlı tüm bölümleri listeler</li>
+                            <li>Sicil Tipi ile Çalışan Bölüm alanları arasında orta kısımda konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Bölüm seçimi yapmak için:
+                                <ul>
+                                    <li>Program ilk açıldığında tüm bölümler otomatik olarak seçili gelir</li>
+                                    <li>Tek bir bölümü seçmek için fare ile o seçeneğe tıklayın</li>
+                                    <li>Birden fazla bölümü seçmek için CTRL tuşunu basılı tutarak istediğiniz bölümlere tıklayın</li>
+                                    <li>Bir bölümü seçimden çıkarmak için CTRL tuşu basılıyken seçili olan bölüme tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Örnek kullanım:
+                                <ul>
+                                    <li>Sadece belirli bir bölümdeki çalışanları görmek istiyorsanız, sadece o bölümü seçin</li>
+                                    <li>Belirli bir grup bölümü görüntülemek istiyorsanız, CTRL tuşu ile birden fazla bölüm seçebilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çalışan Bölüm Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm seçim kutusunun hemen altında, ekranın alt kısmına yakın bir yerde bulunur</li>
+                            <li>"Çal. Bölüm" etiketi solda, sağında ise çoklu seçim kutusu bulunur</li>
+                            <li>Seçim kutusu yaklaşık 5 satır yüksekliğindedir ve tüm çalışma bölümlerini listeler</li>
+                            <li>İşlem butonlarının üstünde, formun alt bölümünde yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Çalışan bölüm seçimi yapmak için:
+                                <ul>
+                                    <li>Program ilk açıldığında tüm çalışan bölümleri otomatik olarak seçili gelir</li>
+                                    <li>Tek bir çalışan bölümünü seçmek için fare ile o seçeneğe tıklayın</li>
+                                    <li>Birden fazla çalışan bölümünü seçmek için CTRL tuşunu basılı tutarak seçeneklere tıklayın</li>
+                                    <li>Bir çalışan bölümünü listeden çıkarmak için CTRL tuşu basılıyken seçili olan seçeneğe tıklayın</li>
+                                </ul>
+                            </li>
+                            <li>Örnek kullanım:
+                                <ul>
+                                    <li>Personelin asıl çalıştığı bölüme göre filtreleme yapmak istiyorsanız bu seçeneği kullanın</li>
+                                    <li>Bu seçim, personelin kadrolu olduğu bölümden ziyade fiilen çalıştığı bölüme göre filtreleme yapar</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program ilk açıldığında tüm sicil tipleri ve bölümler otomatik olarak seçilidir</li>
+                    <li>Hiçbir seçim yapılmazsa veya tüm seçimler kaldırılırsa, sistem bir hata mesajı gösterebilir</li>
+                    <li>Çok fazla bölüm ve sicil tipi seçmek rapor oluşturma süresini uzatabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm seçenekleri hızlıca seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                    <li>Liste içinde belirli bir öğeyi bulmak için, liste seçiliyken ilk harfini yazabilirsiniz</li>
+                    <li>Tek bir seçimi kaldırmak için CTRL tuşu ile birlikte tıklayın</li>
+                    <li>Çok sayıda seçim yapmanız gerekiyorsa önce tüm seçimleri kaldırıp (hiçbir seçim yapmayarak), sonra sadece istediğiniz öğeleri seçmek daha kolay olabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="siralama" class="section">
+        <h2>Sıralama Seçenekleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İndex Tipi (Sıralama) Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlık şeridinin hemen altında yer alır</li>
+                            <li>"İndex Tipi" etiketi solda, sağında açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusu, formun ilk interaktif alanıdır</li>
+                            <li>Tüm diğer veri giriş alanlarının üstünde konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Sıralama tipini değiştirmek için:
+                                <ul>
+                                    <li>Açılır liste kutusunun sağındaki ok işaretine tıklayın</li>
+                                    <li>Açılan seçenekler arasından istediğiniz sıralama tipini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Mevcut sıralama seçenekleri:
+                                <ul>
+                                    <li><strong>Sicil No Sıralı:</strong> (Varsayılan) Raporları sicil numarasına göre artan şekilde sıralar</li>
+                                    <li><strong>Soyadı+Adı Sıralı:</strong> Raporları önce soyada göre, soyadları aynı olanları ise ada göre sıralar</li>
+                                    <li><strong>Adı+Soyadı Sıralı:</strong> Raporları önce ada göre, adları aynı olanları ise soyada göre sıralar</li>
+                                    <li><strong>Emekli Sicil No Sıralı:</strong> Raporları emekli sicil numarasına göre sıralar</li>
+                                    <li><strong>Çalışan Bölüm No Sıralı:</strong> Raporları çalışanların bölüm numaralarına göre sıralar</li>
+                                </ul>
+                            </li>
+                            <li>Örnek kullanım:
+                                <ul>
+                                    <li>Alfabetik bir liste oluşturmak için "Soyadı+Adı Sıralı" seçeneğini kullanın</li>
+                                    <li>Bölüm bazlı bir rapor oluşturmak için "Çalışan Bölüm No Sıralı" seçeneğini tercih edin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Sıralama ile İlgili Önemli Notlar:</h4>
+                <ul>
+                    <li>Sıralama seçeneği, oluşturulacak raporun görünümünü tamamen değiştirir</li>
+                    <li>Rapor içerisindeki gruplandırmalar da seçilen sıralama tipine göre şekillenir</li>
+                    <li>Program açıldığında varsayılan olarak "Sicil No Sıralı" seçeneği seçilidir</li>
+                    <li>Sıralama seçimi, rapor oluşturulduktan sonra değiştirilemez; yeni bir rapor almanız gerekir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Büyük raporlarda belirli bir kişiyi bulmak için "Soyadı+Adı Sıralı" seçeneği daha kullanışlıdır</li>
+                    <li>Bölüm bazlı karşılaştırmalar yapmak istiyorsanız "Çalışan Bölüm No Sıralı" seçeneğini tercih edin</li>
+                    <li>Standart raporlar için "Sicil No Sıralı" seçeneği en uygundur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="raporlama" class="section">
+        <h2>Raporlama ve Çıktı Alma</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Rapor Oluşturma Adımları:</h4>
+                <ol>
+                    <li><strong>Ön Hazırlık:</strong>
+                        <ul>
+                            <li>Tüm arama kriterlerini belirleyin (sicil numarası, ad-soyad, tarih aralıkları vb.)</li>
+                            <li>İndex tipini (sıralama düzenini) seçin</li>
+                            <li>Sicil tipi, bölüm ve çalışan bölüm seçimlerini yapın</li>
+                            <li>Rapor bölen değerini kontrol edin (varsayılan olarak 1'dir)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Oluşturma:</strong>
+                        <ol>
+                            <li>Tüm seçimlerinizi yaptıktan sonra, ekranın alt kısmında bulunan Listele butonuna tıklayın</li>
+                            <li>Sistem raporu hazırlarken kısa bir süre bekleyin</li>
+                            <li>Rapor yeni bir pencerede açılacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Rapor Penceresini Kullanma:</h4>
+                <ol>
+                    <li><strong>Rapor Penceresi Özellikleri:</strong>
+                        <ul>
+                            <li>Rapor penceresi 792x525 piksel boyutunda açılır</li>
+                            <li>Pencere başlık çubuğunda "ogifatura" yazar</li>
+                            <li>Rapor penceresi yeniden boyutlandırılabilir (sağ alt köşeden tutup sürükleyerek)</li>
+                            <li>Kaydırma çubukları ile rapor içeriğinde gezinebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor İçeriği:</strong>
+                        <ul>
+                            <li>Rapor üst kısmında belediye adı, rapor tarihi ve saat bilgisi bulunur</li>
+                            <li>Rapor içeriği seçilen sıralama tipine göre düzenlenir</li>
+                            <li>Her personel için OGİ fatura bilgileri satır halinde listelenir</li>
+                            <li>Rapor alt kısmında toplam değerler ve sayfa numarası bulunur</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Raporu Yazdırma veya Kaydetme:</h4>
+                <ol>
+                    <li><strong>Raporu Yazdırma:</strong>
+                        <ul>
+                            <li>Rapor üzerinde sağ tıklayın</li>
+                            <li>Açılan menüden "Yazdır" seçeneğini seçin</li>
+                            <li>Yazıcı ayarlarını yapın ve Yazdır düğmesine tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Kaydetme:</strong>
+                        <ul>
+                            <li>Rapor üzerinde sağ tıklayın</li>
+                            <li>Açılan menüden "Farklı Kaydet" seçeneğini seçin</li>
+                            <li>Dosya adını, kayıt yerini ve formatını belirleyin</li>
+                            <li>Kaydet düğmesine tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok geniş arama kriterleri kullanıldığında rapor oluşturma süresi uzayabilir</li>
+                    <li>Büyük raporlar yazdırılırken kağıt boyutuna ve yönüne dikkat edin</li>
+                    <li>Rapor penceresi kapatıldığında veriler kaybolur, bu nedenle önce kaydedin veya yazdırın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İlk kez rapor alırken daha dar kapsamlı kriterler kullanın</li>
+                    <li>Rapor penceresini tam ekran yaparak daha fazla veriyi bir arada görüntüleyebilirsiniz</li>
+                    <li>Rapor üzerinde CTRL+F tuş kombinasyonu ile metin araması yapabilirsiniz</li>
+                    <li>Farklı sıralama seçeneklerini deneyerek raporun en kullanışlı halini bulabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>İşlem Butonları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Listele Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, sol tarafta yer alır</li>
+                            <li>Gri renkte, 3 boyutlu görünüme sahiptir</li>
+                            <li>Üzerinde bir liste simgesi ve "Listele" yazısı bulunur</li>
+                            <li>Çıkış butonunun solunda yer almaktadır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tüm arama kriterleri ve seçimlerinizi yaptıktan sonra:
+                                <ul>
+                                    <li>Butona fare ile tıklayın</li>
+                                    <li>Veya ALT+L tuş kombinasyonunu kullanın</li>
+                                </ul>
+                            </li>
+                            <li>Buton tıklandığında:
+                                <ul>
+                                    <li>Sistem tüm seçilen kriterleri işler</li>
+                                    <li>Yeni bir pencerede rapor oluşturulur</li>
+                                    <li>Rapor penceresi açılana kadar bekleyin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çıkış Butonu:</h4>
+                <ol>
+                    <li><strong>Buton Konumu ve Görünümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, Listele butonunun sağında yer alır</li>
+                            <li>Gri renkte, 3 boyutlu görünüme sahiptir</li>
+                            <li>Üzerinde bir çıkış simgesi ve "Çıkış" yazısı bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Programdan çıkmak için:
+                                <ul>
+                                    <li>Butona fare ile tıklayın</li>
+                                    <li>Veya ESC tuşuna basın</li>
+                                </ul>
+                            </li>
+                            <li>Buton tıklandığında:
+                                <ul>
+                                    <li>Program penceresi kapatılır</li>
+                                    <li>Yapılmış olan seçimler kaydedilmez</li>
+                                    <li>Açık olan rapor pencereleri etkilenmez, onları ayrıca kapatmanız gerekir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Rapor oluşturulmadan önce tüm arama kriterlerinizi kontrol edin</li>
+                    <li>Listele butonuna basıldıktan sonra, rapor oluşturulurken programı kapatmayın</li>
+                    <li>Programdan çıkmadan önce açık olan rapor pencerelerini kapatmayı unutmayın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Klavye Kısayolları:</h4>
+                <ul>
+                    <li><strong>ALT+L:</strong> Listele butonunu çalıştırır</li>
+                    <li><strong>ESC:</strong> Programdan çıkış yapar</li>
+                    <li><strong>TAB:</strong> Alanlar arasında ileri doğru gezinir</li>
+                    <li><strong>SHIFT+TAB:</strong> Alanlar arasında geriye doğru gezinir</li>
+                    <li><strong>ENTER:</strong> Bir sonraki alana geçer (TAB gibi çalışır)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sorun Giderme</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Rapor Oluşturulmuyor
+                        <ul>
+                            <li><strong>Sorun:</strong> Listele butonuna tıkladıktan sonra rapor penceresi açılmıyor</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Çok geniş arama kriterlerini daraltın</li>
+                                    <li>Daha az sayıda sicil tipi veya bölüm seçin</li>
+                                    <li>Tarih aralığını küçültün</li>
+                                    <li>Rapor bölen değerini kontrol edin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Beklenmeyen Sonuçlar:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Rapor beklediğiniz verileri içermiyor</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Arama kriterlerini kontrol edin</li>
+                                    <li>Tarih formatının doğru olduğunu doğrulayın (GG.AA.YYYY)</li>
+                                    <li>Sicil numarası aralıklarını kontrol edin</li>
+                                    <li>Ad ve soyad kutularında yazım hatası olmadığından emin olun</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Program Yanıt Vermiyor:</strong>
+                        <ul>
+                            <li><strong>Sorun:</strong> Listele butonuna tıkladıktan sonra program donuyor</li>
+                            <li><strong>Çözüm:</strong>
+                                <ul>
+                                    <li>Büyük sorgularda biraz beklemek normaldir, sabırlı olun</li>
+                                    <li>Diğer açık uygulamaları kapatarak sistem kaynaklarını serbest bırakın</li>
+                                    <li>Programı kapatıp yeniden açın ve daha dar kapsamlı kriterler kullanın</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Çoklu Seçim Listelerini Etkili Kullanma:</h4>
+                <ol>
+                    <li><strong>Tüm Öğeleri Seçme:</strong>
+                        <ul>
+                            <li>Liste kutusuna tıkladıktan sonra CTRL+A tuş kombinasyonunu kullanın</li>
+                            <li>Program ilk açıldığında tüm öğeler zaten seçilidir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Belirli Öğeleri Seçme:</strong>
+                        <ul>
+                            <li>Tüm seçimleri kaldırmak için önce bir öğeye tıklayın, sonra ESC tuşuna basın</li>
+                            <li>CTRL tuşunu basılı tutarak istediğiniz öğelere tek tek tıklayın</li>
+                            <li>Ardışık öğeleri seçmek için bir öğeye tıklayın, SHIFT tuşunu basılı tutun ve son öğeye tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hızlı Arama:</strong>
+                        <ul>
+                            <li>Liste içinde bir öğeyi bulmak için listeye tıklayın ve öğenin ilk harfini yazın</li>
+                            <li>Ardışık karakterleri hızlıca yazarak liste içinde daha spesifik aramalar yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Daha Verimli Raporlar Oluşturma:</h4>
+                <ol>
+                    <li><strong>Adım Adım Raporlama Süreci:</strong>
+                        <ol>
+                            <li>Önce çok dar bir kriter kümesiyle test raporu alın (örneğin tek bir sicil numarası veya tek bir bölüm)</li>
+                            <li>Raporun formatını ve içeriğini kontrol edin</li>
+                            <li>Kriterleri kademeli olarak genişletin ve her adımda raporu kontrol edin</li>
+                            <li>En uygun sıralama seçeneğini belirleyin</li>
+                            <li>Gereksiz alanları filtreleyerek raporda sadece ihtiyacınız olan bilgileri görüntüleyin</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sık Kullanılan Arama Kriterlerini Belgeleme:</strong>
+                        <ul>
+                            <li>Sık kullandığınız arama kriterlerini not edin</li>
+                            <li>Yaygın sicil tipleri ve bölüm kombinasyonlarını hatırlayın</li>
+                            <li>Standart tarih aralıklarını (örneğin ayın ilk günü ve son günü) not edin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Rapor penceresini kapatmadan önce gerekli bilgileri kaydedin veya yazdırın</li>
+                    <li>Geniş tarih aralıkları ve çok sayıda sicil tipi/bölüm seçimi işlemi yavaşlatabilir</li>
+                    <li>Çok büyük raporlarda bilgisayarınızın bellek kapasitesine dikkat edin</li>
+                    <li>Kritik raporları mesai saatleri dışında almayı tercih edin</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Zaman Kazandıran İpuçları:</h4>
+                <ul>
+                    <li>Klavye kısayollarını öğrenerek işlemlerinizi hızlandırın (TAB, ENTER, ALT+L, ESC)</li>
+                    <li>Aynı anda birden fazla rapor penceresi açarak karşılaştırma yapabilirsiniz</li>
+                    <li>Rapor sonuçlarını dijital ortamda saklayarak tekrar kullanabilirsiniz</li>
+                    <li>Program ilk açıldığında varsayılan olarak seçili gelen tüm sicil tipleri ve bölümler yerine, sadece ihtiyacınız olanları seçin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ozet" class="section">
+        <h2>OGİ Fatura Listesi Kullanımı Özet Adımlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Hızlı Başlangıç Rehberi:</h4>
+                <ol>
+                    <li><strong>Programa Erişim:</strong>
+                        <ul>
+                            <li>İşçi Bordro menüsünden OGİ Fatura Listesi seçeneğine tıklayın</li>
+                            <li>Program yüklendikten sonra ana ekran görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçimi:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında bulunan "İndex Tipi" açılır listesinden uygun sıralama düzenini seçin</li>
+                            <li>Varsayılan seçenek "Sicil No Sıralı" olarak gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Kriterlerini Belirleyin:</strong>
+                        <ul>
+                            <li>Sicil Numarası, Ad, Soyad alanlarını ihtiyacınıza göre doldurun</li>
+                            <li>Görev Başlangıç ve Çıkış tarihleri için tarih aralıklarını belirleyin</li>
+                            <li>Rapor Bölen Değeri alanını kontrol edin (varsayılan olarak 1'dir)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Tipi ve Bölüm Seçimleri:</strong>
+                        <ul>
+                            <li>Tüm sicil tipleri ve bölümler varsayılan olarak seçilidir</li>
+                            <li>İhtiyacınıza göre CTRL tuşu ile belirli sicil tipleri veya bölümleri seçin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Oluşturun:</strong>
+                        <ul>
+                            <li>Tüm seçimlerinizi yaptıktan sonra ekranın alt kısmındaki Listele butonuna tıklayın</li>
+                            <li>Rapor yeni bir pencerede açılacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Kullanın:</strong>
+                        <ul>
+                            <li>Açılan rapor penceresinde içeriği inceleyin</li>
+                            <li>Gerekirse raporu yazdırın veya kaydedin</li>
+                            <li>İşiniz bittiğinde rapor penceresini kapatın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış:</strong>
+                        <ul>
+                            <li>Tüm işlemleriniz tamamlandığında ekranın alt kısmındaki Çıkış butonuna tıklayın</li>
+                            <li>Açık olan tüm rapor pencerelerini de kapatmayı unutmayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Tarih formatı her zaman GG.AA.YYYY şeklinde olmalıdır (örn: 01.01.2023)</li>
+                    <li>Çok geniş arama kriterleri rapor oluşturma süresini uzatabilir</li>
+                    <li>Rapor penceresi kapatıldığında veriler kaybolur, gerekirse önce kaydedin veya yazdırın</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yaygın Klavye Kısayolları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Alanlar arasında ileri doğru gezinir</li>
+                    <li><strong>SHIFT+TAB:</strong> Alanlar arasında geriye doğru gezinir</li>
+                    <li><strong>CTRL+tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için kullanılır</li>
+                    <li><strong>ALT+L:</strong> Listele butonunu çalıştırır</li>
+                    <li><strong>ESC:</strong> Programdan çıkış yapar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p>Bu kullanıcı kılavuzunun önceki bölümlerinde daha detaylı bilgiler bulabilirsiniz:</p>
+        <ul>
+            <li><strong>Bölüm 1:</strong> Giriş, Ekran Düzeni ve Arama Kriterleri</li>
+            <li><strong>Bölüm 2:</strong> Sicil Tipi, Bölüm Seçimleri ve Sıralama Seçenekleri</li>
+            <li><strong>Bölüm 3:</strong> Raporlama, İşlem Butonları ve Pratik İpuçları</li>
+        </ul>
+        <p>Sorunlarınız devam ederse lütfen Sistem Yöneticinizle iletişime geçin.</p>
+    </div>
+</body>
+</html>

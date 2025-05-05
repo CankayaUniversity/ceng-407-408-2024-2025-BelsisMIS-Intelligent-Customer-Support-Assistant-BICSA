@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesinti Bordrosu Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kesinti Bordrosu Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Temel Öğeler</a></li>
+                <li><a href="#sicil-arama">Sicil Numarası ile Arama</a></li>
+                <li><a href="#bolum-secimi">Bölüm Numarası Seçimi</a></li>
+                <li><a href="#yil-ay">Yıl ve Ay ile Arama</a></li>
+                <li><a href="#maas-tipi">Maaş Tipi Seçimi</a></li>
+                <li><a href="#sicil-tipi">Sicil Tipi Seçimi</a></li>
+                <li><a href="#bordro-tarihi">Bordro Tarihi İşlemleri</a></li>
+                <li><a href="#butonlar">İşlem Butonları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları</a></li>
+                <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Kesinti Bordrosu programı, personel maaşlarından yapılan kesintilerin listelenmesi ve raporlanması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Personel kesinti bilgilerini görüntüleme ve raporlama</li>
+                <li>Sicil numarasına göre sorgulama</li>
+                <li>Bölüm numarasına göre filtreleme</li>
+                <li>Belirli bir ay ve yıla ait kesinti verilerini listeleme</li>
+                <li>Maaş tiplerine göre filtreleme</li>
+                <li>Sicil tiplerine göre filtreleme</li>
+                <li>Bordro tarihine göre raporlama</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>Sorgulamak istediğiniz sicil numarası aralığı</li>
+                    <li>Hangi bölüme ait kesinti verilerini görmek istediğiniz</li>
+                    <li>Hangi yıl ve aya ait kesinti verilerini görmek istediğiniz</li>
+                    <li>Hangi maaş tipini veya tiplerini sorgulamak istediğiniz</li>
+                    <li>Hangi sicil tipini veya tiplerini sorgulamak istediğiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Temel Öğeler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "KESİNTİ BORDROSU" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Sol tarafta "Başlangıç" ve "Bitiş" sütun başlıkları yer alır</li>
+                            <li>Sicil No, Bölüm No, Yıl/Ay, Maaş Tipi, Sicil Tipi ve Bordro Tarihi gibi arama kriterlerini içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Listele ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar alt kısımdaki çizgili bölmenin hemen altında yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>Sicil numarası başlangıç değeri "0" olarak gelir</li>
+                    <li>Sicil numarası bitiş değeri "9999999999" olarak gelir</li>
+                    <li>Yıl değeri sistem tarihindeki yıl olarak gelir</li>
+                    <li>Ay değeri sistem tarihindeki ay olarak gelir</li>
+                    <li>Bordro tarihi sistem tarihindeki tarih olarak gelir</li>
+                    <li>Maaş tipi ve sicil tipi alanlarındaki tüm seçenekler seçili olarak gelir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-arama" class="section">
+        <h2>Sicil Numarası ile Arama</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Arama Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Sicil Numarası Nasıl Aranır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlangıç ve Bitiş sütun başlıklarının hemen altında "Sicil No" etiketi bulunur</li>
+                            <li>Etiketin yanında yan yana iki metin kutusu yer alır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir sicil numarası için:
+                                <ul>
+                                    <li>Sol kutuya (başlangıç) sicil numarasını yazın</li>
+                                    <li>Sağ kutuya (bitiş) aynı sicil numarasını yazın veya boş bırakın</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarası aralığı için:
+                                <ul>
+                                    <li>Sol kutuya başlangıç sicil numarasını yazın</li>
+                                    <li>Sağ kutuya bitiş sicil numarasını yazın</li>
+                                    <li>Boş bırakıldığında varsayılan olarak başlangıç için "0", bitiş için "9999999999" değerleri kullanılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası alanlarına sadece rakam girilebilir</li>
+                    <li>Başlangıç sicil numarası, bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Sicil numaraları sistem içinde kayıtlı olmalıdır, aksi halde sonuç bulunamayabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Tüm personel kayıtlarını listelemek için her iki alanı da boş bırakabilirsiniz</li>
+                    <li>Belirli bir sicil numarasından başlayarak tüm kayıtları görmek için sadece başlangıç alanını doldurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bolum-secimi" class="section">
+        <h2>Bölüm Numarası Seçimi</h2>
+        <div class="info-box">
+            <h3>Bölüm Numarası Seçim Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Bölüm Numarası Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanının hemen altında "Bölüm No" etiketi bulunur</li>
+                            <li>Etiketin yanında açılır liste kutusu (dropdown) yer alır</li>
+                            <li>Açılır liste kutusu, sistemde tanımlı tüm bölümleri içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir bölüm seçmek için:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>Listeden istediğiniz bölümü seçin</li>
+                                    <li>Seçilen bölüm mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Birden fazla bölüm seçmek için:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>CTRL tuşunu basılı tutarak istediğiniz bölümleri tek tek seçin</li>
+                                    <li>Her seçilen bölüm mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Aradığınız bölümü hızlıca bulmak için açılır listede klavye ile ilk harfini yazabilirsiniz</li>
+                    <li>Seçimlerinizi temizlemek için CTRL tuşu basılıyken seçili olan bir bölüme tıklayabilirsiniz</li>
+                    <li>Birbirine yakın sırada bulunan bölümleri seçmek için ilk bölüme tıklayıp, SHIFT tuşunu basılı tutarak son bölüme tıklayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-ay" class="section">
+        <h2>Yıl ve Ay ile Arama</h2>
+        <div class="info-box">
+            <h3>Yıl ve Ay Arama Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Yıl ve Ay Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Bölüm No alanının hemen altında "Yıl / Ay" etiketi bulunur</li>
+                            <li>Etiketin yanında yan yana iki metin kutusu yer alır</li>
+                            <li>Sol kutu yıl, sağ kutu ay değeri içindir</li>
+                            <li>İki kutu arasında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Yıl değeri için:
+                                <ul>
+                                    <li>Sol kutuya dört haneli yıl değerini yazın (örn. 2023)</li>
+                                    <li>Varsayılan değer sistem tarihindeki yıldır</li>
+                                </ul>
+                            </li>
+                            <li>Ay değeri için:
+                                <ul>
+                                    <li>Sağ kutuya iki haneli ay değerini yazın (1-12 arası)</li>
+                                    <li>Tek haneli aylar için başına sıfır eklemenize gerek yoktur (örn. 1, 2, ... 9)</li>
+                                    <li>Varsayılan değer sistem tarihindeki aydır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl değeri dört haneli olmalıdır (örn. 2023)</li>
+                    <li>Ay değeri 1 ile 12 arasında olmalıdır</li>
+                    <li>Bu alanlar program için zorunludur, boş bırakılamaz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile yıl kutusundan ay kutusuna hızlıca geçiş yapabilirsiniz</li>
+                    <li>Sayısal değerler dışında bir karakter girildiğinde sistem uyarı verecektir</li>
+                    <li>Geçmiş dönemlere ait kesinti bordroları için istediğiniz yıl ve ayı seçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="maas-tipi" class="section">
+        <h2>Maaş Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Maaş Tipi Seçim Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Maaş Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl / Ay alanının hemen altında "Maaş Tipi" etiketi bulunur</li>
+                            <li>Etiketin yanında dikey olarak uzanan bir çoklu seçim listesi kutusu yer alır</li>
+                            <li>Liste kutusu, sistemde tanımlı tüm maaş tiplerini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir maaş tipi seçmek için:
+                                <ul>
+                                    <li>Liste kutusunda istediğiniz maaş tipine tıklayın</li>
+                                    <li>Seçilen maaş tipi mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Birden fazla maaş tipi seçmek için:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak istediğiniz maaş tiplerini tek tek seçin</li>
+                                    <li>Her seçilen maaş tipi mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Tüm maaş tiplerini seçmek için:
+                                <ul>
+                                    <li>Program ilk açıldığında tüm maaş tipleri otomatik olarak seçilidir</li>
+                                    <li>Tekrar tüm maaş tiplerini seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>En az bir maaş tipi seçilmelidir, aksi halde sistem uyarı verecektir</li>
+                    <li>Seçilen maaş tiplerine göre listeleme sonuçları değişecektir</li>
+                    <li>Maaş tipi seçimi yapılmadığında, Listele butonuna basıldığında "Maaş tipi seçmelisiniz..!" şeklinde bir uyarı alacaksınız</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Aradığınız maaş tipini hızlıca bulmak için liste kutusunda ilk harfini yazabilirsiniz</li>
+                    <li>Seçiminizi temizlemek için CTRL tuşu basılıyken seçili olan bir maaş tipine tıklayabilirsiniz</li>
+                    <li>Birbirine yakın sırada bulunan maaş tiplerini seçmek için ilk maaş tipine tıklayıp, SHIFT tuşunu basılı tutarak son maaş tipine tıklayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-tipi" class="section">
+        <h2>Sicil Tipi Seçimi</h2>
+        <div class="info-box">
+            <h3>Sicil Tipi Seçim Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Sicil Tipi Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Maaş Tipi alanının hemen altında "Sicil Tipi" etiketi bulunur</li>
+                            <li>Etiketin yanında dikey olarak uzanan bir çoklu seçim listesi kutusu yer alır</li>
+                            <li>Liste kutusu, sistemde tanımlı tüm sicil tiplerini içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tek bir sicil tipi seçmek için:
+                                <ul>
+                                    <li>Liste kutusunda istediğiniz sicil tipine tıklayın</li>
+                                    <li>Seçilen sicil tipi mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Birden fazla sicil tipi seçmek için:
+                                <ul>
+                                    <li>CTRL tuşunu basılı tutarak istediğiniz sicil tiplerini tek tek seçin</li>
+                                    <li>Her seçilen sicil tipi mavi renkle vurgulanır</li>
+                                </ul>
+                            </li>
+                            <li>Tüm sicil tiplerini seçmek için:
+                                <ul>
+                                    <li>Program ilk açıldığında tüm sicil tipleri otomatik olarak seçilidir</li>
+                                    <li>Tekrar tüm sicil tiplerini seçmek için CTRL+A tuş kombinasyonunu kullanabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Seçilen sicil tiplerine göre listeleme sonuçları değişecektir</li>
+                    <li>En az bir sicil tipi seçili olmalıdır</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Aradığınız sicil tipini hızlıca bulmak için liste kutusunda ilk harfini yazabilirsiniz</li>
+                    <li>Seçiminizi temizlemek için CTRL tuşu basılıyken seçili olan bir sicil tipine tıklayabilirsiniz</li>
+                    <li>Birbirine yakın sırada bulunan sicil tiplerini seçmek için ilk sicil tipine tıklayıp, SHIFT tuşunu basılı tutarak son sicil tipine tıklayabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="bordro-tarihi" class="section">
+        <h2>Bordro Tarihi İşlemleri</h2>
+        <div class="info-box">
+            <h3>Bordro Tarihi Giriş Kriterleri</h3>
+            
+            <div class="step">
+                <h4>Bordro Tarihi Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil Tipi alanının hemen altında "Bordro Tarihi" etiketi bulunur</li>
+                            <li>Etiketin yanında bir tarih giriş kutusu yer alır</li>
+                            <li>Tarih giriş kutusu varsayılan olarak sistem tarihini gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tarih değeri için:
+                                <ul>
+                                    <li>Kutuya GG.AA.YYYY formatında tarih değerini yazın</li>
+                                    <li>Örneğin: 15.06.2023 (15 Haziran 2023)</li>
+                                    <li>Varsayılan değer sistem tarihidir</li>
+                                </ul>
+                            </li>
+                            <li>Tarih seçimi yapmak için:
+                                <ul>
+                                    <li>Tarih kutusuna tıklayın ve klavyeden istediğiniz tarihi girin</li>
+                                    <li>Gün, ay ve yıl arasında nokta (.) kullanın</li>
+                                    <li>Günler ve aylar tek haneli olduğunda başına sıfır eklemenize gerek yoktur (örn. 5.6.2023)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır</li>
+                    <li>Geçersiz bir tarih (örn. 32.13.2023) girildiğinde sistem uyarı verecektir</li>
+                    <li>Bordro tarihi, oluşturulacak kesinti bordrosunun üzerinde görünecek tarih bilgisidir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile tarih kutusuna hızlıca geçiş yapabilirsiniz</li>
+                    <li>Genellikle bordro tarihi olarak ay sonu tarihi kullanılır</li>
+                    <li>Tarihi elle yazmak yerine sistem tarafından otomatik olarak getirilen değeri kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="butonlar" class="section">
+        <h2>İşlem Butonları</h2>
+        <div class="info-box">
+            <h3>Butonlar ve İşlevleri</h3>
+            
+            <div class="step">
+                <h4>Listele Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ince çizgi ile ayrılmış bölümün altında sol tarafta yer alır</li>
+                            <li>"Listele" yazısı bulunan gri renkli butondur</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi ve Kullanımı:</strong>
+                        <ol>
+                            <li>Belirlediğiniz tüm kriterlere göre kesinti bordrosu raporu oluşturur:
+                                <ul>
+                                    <li>Butona tıklayın veya ALT + L tuş kombinasyonunu kullanın</li>
+                                    <li>Tüm alanlar kontrol edilir ve kriterlere uygun rapor yeni bir pencerede açılır</li>
+                                    <li>Rapor oluşturulurken kısa bir bekleyiş süresi olabilir</li>
+                                </ul>
+                            </li>
+                            <li>Rapor çıktısı:
+                                <ul>
+                                    <li>Rapor yeni bir pencerede açılır</li>
+                                    <li>Pencerenin boyutu 792x525 piksel olarak ayarlanır</li>
+                                    <li>Rapor üzerinde, seçtiğiniz kriterlere göre filtrelenmiş kesinti bilgileri görünür</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, ince çizgi ile ayrılmış bölümün altında sağ tarafta yer alır</li>
+                            <li>"Çıkış" yazısı bulunan gri renkli butondur</li>
+                            <li>Listele butonunun sağında konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlevi ve Kullanımı:</strong>
+                        <ul>
+                            <li>Kesinti Bordrosu programını kapatır ve pencereyi kapatır</li>
+                            <li>Butona tıklayın veya ESC tuşunu kullanın</li>
+                            <li>Açık olan raporlar varsa önce onları kapatmanız önerilir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Listele butonuna basmadan önce tüm gerekli kriterleri doğru şekilde girdiğinizden emin olun</li>
+                    <li>Maaş tipi seçilmediğinde, Listele butonuna basıldığında "Maaş tipi seçmelisiniz..!" şeklinde bir uyarı alacaksınız</li>
+                    <li>Çıkış butonuna basmadan önce açık olan tüm rapor pencerelerini kapatmanız önerilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Listele butonu için ALT + L kısayolunu kullanabilirsiniz</li>
+                    <li>Çıkış butonu için ESC tuşunu kullanabilirsiniz</li>
+                    <li>Rapor penceresini tam ekran yapmak için sağ üst köşedeki tam ekran butonunu kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Kısayollar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İpuçları</h3>
+            
+            <div class="step">
+                <h4>Klavye Kısayolları:</h4>
+                <ol>
+                    <li><strong>Genel Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB: Sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Önceki alana döner</li>
+                            <li>ENTER: TAB tuşu gibi sonraki alana geçer</li>
+                            <li>ESC: Açık olan menüleri kapatır veya programdan çıkar</li>
+                            <li>ALT + L: Listele butonunu çalıştırır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Kutuları için Kısayollar:</strong>
+                        <ul>
+                            <li>CTRL + tıklama: Çoklu seçim yapar</li>
+                            <li>SHIFT + tıklama: Aralık seçimi yapar</li>
+                            <li>İlk harf yazma: O harfle başlayan ilk öğeye gider</li>
+                            <li>CTRL + A: Tüm öğeleri seçer</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Hızlı Veri Girişi Teknikleri:</h4>
+                <ol>
+                    <li><strong>Sicil Numarası Arama:</strong>
+                        <ul>
+                            <li>Tek bir sicil için başlangıç alanına sicil numarasını yazın, bitiş alanına aynı numarayı tekrar yazmak yerine TAB tuşuna basın</li>
+                            <li>Tüm sicilleri listelemek için her iki alanı da boş bırakın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bölüm Seçimi:</strong>
+                        <ul>
+                            <li>Birden fazla bölüm seçmek için CTRL tuşunu basılı tutarak tıklayın</li>
+                            <li>İlk harfi yazarak istediğiniz bölüme hızlıca ulaşın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Girişi:</strong>
+                        <ul>
+                            <li>Günler ve aylar için tek haneli sayılarda başa sıfır koymak zorunlu değildir (örn. 5.6.2023)</li>
+                            <li>Bordro tarihi için genellikle ay sonu tarihini kullanın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Zaman Kazandıran İpuçları:</h4>
+                <ul>
+                    <li>Sık kullandığınız arama kriterlerini not alın</li>
+                    <li>Önce dar kapsamlı bir rapor alıp sonra gerekirse kriterleri genişletin</li>
+                    <li>Maaş tipi ve sicil tipi alanlarında varsayılan olarak tüm seçenekler seçilidir, ihtiyacınıza göre daraltın</li>
+                    <li>Rapor penceresini tam ekran yaparak daha rahat çalışın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sorun-giderme" class="section">
+        <h2>Sorun Giderme</h2>
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+            
+            <div class="step">
+                <h4>Rapor Oluşturma Sorunları:</h4>
+                <ol>
+                    <li><strong>"Maaş tipi seçmelisiniz..!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Maaş tipi seçilmeden Listele butonuna basıldığında</li>
+                            <li>Çözüm: Maaş tipi alanında en az bir seçenek seçin</li>
+                            <li>Program ilk açıldığında tüm maaş tipleri seçili olacaktır, ancak seçimleri temizlediyseniz en az bir tanesini tekrar seçmelisiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Boş Rapor Oluşması:</strong>
+                        <ul>
+                            <li>Sorun: Kriterlere uygun veri bulunamadığında</li>
+                            <li>Çözüm: Seçtiğiniz kriterleri genişletin (daha geniş sicil no aralığı, daha fazla maaş tipi, daha fazla sicil tipi seçin)</li>
+                            <li>Yıl ve ay bilgisinin doğru olduğundan emin olun</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rapor Uzun Süre Yüklenmiyor:</strong>
+                        <ul>
+                            <li>Sorun: Çok geniş kapsamlı sorgularda sistem yanıt verme süresi uzayabilir</li>
+                            <li>Çözüm: Kriterleri daraltın, özellikle sicil no aralığını küçültün</li>
+                            <li>Daha az sayıda maaş tipi ve sicil tipi seçin</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Veri Giriş Sorunları:</h4>
+                <ol>
+                    <li><strong>Tarih Formatı Hataları:</strong>
+                        <ul>
+                            <li>Sorun: Tarih doğru formatta girilmediğinde</li>
+                            <li>Çözüm: GG.AA.YYYY formatını kullanın (örn. 15.06.2023)</li>
+                            <li>Gün ve ay değerlerinin geçerli olduğundan emin olun (gün: 1-31, ay: 1-12)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Seçim Sorunları:</strong>
+                        <ul>
+                            <li>Sorun: Çoklu seçim yapamama</li>
+                            <li>Çözüm: CTRL tuşunu basılı tutarken fare ile tıklayın</li>
+                            <li>Çoklu seçimleri temizlemek için CTRL tuşu basılıyken seçili öğelere tekrar tıklayın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Program kullanımı sırasında herhangi bir sorunla karşılaşırsanız, önce tüm kriterleri kontrol edin</li>
+                    <li>Sorun devam ederse programı kapatıp yeniden açmayı deneyin</li>
+                    <li>Veri girişlerinde hata yaparsanız, alanı tamamen temizleyip yeniden giriş yapabilirsiniz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Yerleşik Hata Kontrolleri:</h4>
+                <ul>
+                    <li>Program, sayısal alanlara (sicil no, yıl, ay) harf girildiğinde otomatik olarak engeller</li>
+                    <li>Tarih formatı kontrolü yapılır ve geçersiz tarihler kabul edilmez</li>
+                    <li>Maaş tipi seçilmediğinde rapor oluşturulmadan önce uyarı verilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ozet" class="section">
+        <h2>Program Kullanım Özeti</h2>
+        <div class="info-box">
+            <h3>Kesinti Bordrosu Programı Temel Kullanım Adımları</h3>
+            
+            <div class="step">
+                <h4>Hızlı Kullanım Özeti:</h4>
+                <ol>
+                    <li><strong>Programı Açın:</strong>
+                        <ul>
+                            <li>Program ana ekranı açılır ve varsayılan değerler gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Kriterlerini Belirleyin:</strong>
+                        <ul>
+                            <li>Sicil No aralığını girin (isteğe bağlı)</li>
+                            <li>Bölüm Numarası seçin (isteğe bağlı)</li>
+                            <li>Yıl ve Ay bilgisini kontrol edin</li>
+                            <li>Maaş Tiplerini seçin (en az bir tane)</li>
+                            <li>Sicil Tiplerini seçin (isteğe bağlı)</li>
+                            <li>Bordro Tarihini kontrol edin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu Alın:</strong>
+                        <ul>
+                            <li>Listele butonuna tıklayın veya ALT + L tuş kombinasyonunu kullanın</li>
+                            <li>Raporun yeni pencerede açılmasını bekleyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Raporu İnceleyin:</strong>
+                        <ul>
+                            <li>Açılan penceredeki kesinti bordrosu raporunu inceleyin</li>
+                            <li>Gerekirse yazdırın veya rapor penceresindeki diğer işlevleri kullanın</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkın:</strong>
+                        <ul>
+                            <li>İşiniz bittiğinde açık rapor pencerelerini kapatın</li>
+                            <li>Çıkış butonuna tıklayarak programdan çıkın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4>Son Öneriler:</h4>
+                <ul>
+                    <li>Kullanım kolaylığı için bu kılavuzu elinizin altında bulundurun</li>
+                    <li>Sık kullandığınız kriterleri not alın</li>
+                    <li>Yeni başlayan kullanıcılar için önce dar kapsamlı raporlar almayı tercih edin</li>
+                    <li>Program kullanımında alıştırma yapmak için test raporları oluşturun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

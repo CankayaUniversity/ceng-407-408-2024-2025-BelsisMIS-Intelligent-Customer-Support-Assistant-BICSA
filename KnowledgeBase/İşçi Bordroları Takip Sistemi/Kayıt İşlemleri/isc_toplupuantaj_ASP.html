@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toplu Puantaj Girişi Kullanıcı Dokümanı</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Toplu Puantaj Girişi</h1>
+        <img src="/api/placeholder/150/50" alt="Şirket Logosu" />
+    </div>
+
+    <div class="section">
+        <h1>Toplu Puantaj Girişi Kullanıcı Dokümanı</h1>
+        
+        <div class="info-box">
+            <p><strong>Bu doküman nedir?</strong> Bu doküman, Personel/Bordro sisteminde Toplu Puantaj Girişi ekranının nasıl kullanılacağını anlatmaktadır. Toplu Puantaj Girişi, birden fazla personelin çalışma sürelerini ve diğer ödemelerini toplu olarak girebilmenizi sağlar.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. Toplu Puantaj Girişi Ekranına Erişim ve Temel Bilgiler</h2>
+        <p>Toplu Puantaj Girişi ekranını açtığınızda, aşağıdaki bilgilerin girileceği bir form karşınıza gelecektir. Form başlığı "TOPLU PUANTAJ GİRİŞİ" şeklinde turkuaz renkli bir başlık çubuğu içinde yer alacaktır.</p>
+        
+        <div class="info-box">
+            <h3>Ekranın Amacı</h3>
+            <p>Toplu Puantaj Girişi ekranı, benzer özelliklere sahip birden fazla personel için puantaj (çalışma süresi ve ödeme) bilgilerini tek seferde girmenizi sağlar. Bu işlem, her personel için ayrı ayrı puantaj girişi yapmak yerine, filtreleme yaparak seçilen personeller için toplu olarak değerleri ayarlamanıza olanak tanır.</p>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Ne Zaman Kullanılır?</h3>
+            <p>Bu ekranı şu durumlarda kullanabilirsiniz:</p>
+            <ul>
+                <li>Aynı bölümde çalışan tüm personellerin benzer puantaj değerlerini tek seferde ayarlamak</li>
+                <li>Belirli bir vardiyada, görevde veya sendikada olan personellerin puantaj bilgilerini toplu olarak girmek</li>
+                <li>Özel durumlarda (bayram, tatil, fazla mesai vb.) çalışan personellerin ek ödemelerini toplu olarak ayarlamak</li>
+                <li>Maaş dönemi başında tüm personel için temel değerleri belirlemek</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h3>Ön Koşullar</h3>
+            <p>Toplu puantaj işlemi yapabilmek için aşağıdaki koşulların sağlanması gerekir:</p>
+            <ul>
+                <li>İlgili maaş dönemi (yıl ve ay) için aylık parametrelerin tanımlanmış olması</li>
+                <li>Maaş döneminin kilitli olmaması</li>
+                <li>Yeterli kullanıcı yetkisine sahip olmanız</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Ana Ekran Bilgilerinin Doldurulması</h2>
+        
+        <div class="step">
+            <h3>Adım 2.1: Maaş Tipi Seçimi</h3>
+            <p>Ekranın sol üst köşesinde "<strong>Maaş Tipi</strong>" yanında bir açılır liste (dropdown) bulunmaktadır. Buradan uygun maaş tipini seçiniz.</p>
+        </div>
+
+        <div class="step">
+            <h3>Adım 2.2: Yıl ve Ay Bilgilerinin Girilmesi</h3>
+            <p>Formun orta üst kısmında "<strong>Yıl / Ay</strong>" bölümü bulunmaktadır:</p>
+            <ul>
+                <li>Yıl kutusuna 4 haneli yılı giriniz (örn: 2025)</li>
+                <li>Ay kutusuna 1 veya 2 haneli ay numarasını giriniz (örn: 2 veya 02 şeklinde Şubat ayı için)</li>
+            </ul>
+            <p><strong>Önemli:</strong> Girdiğiniz yıl ve ay değeri, Aylık Parametreler tablosunda tanımlı olmalıdır ve maaş dönemi kilitli olmamalıdır. Aksi takdirde "Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!" uyarı mesajı alacaksınız.</p>
+        </div>
+
+        <div class="step">
+            <h3>Adım 2.3: Bölüm Seçimi</h3>
+            <p>Formun sağ üst kısmında "<strong>Bölüm No</strong>" yanında çoklu seçime olanak tanıyan bir liste kutusu bulunmaktadır:</p>
+            <ul>
+                <li>Birden fazla bölüm seçebilirsiniz (çoklu seçim için CTRL tuşunu basılı tutarak tıklayabilirsiniz)</li>
+                <li>Toplu puantaj işlemi seçmiş olduğunuz bölümlerdeki personeller için yapılacaktır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Sekme Yapısının Kullanımı</h2>
+        <p>Ana bilgiler girildikten sonra, ekranın altında üç farklı sekme göreceksiniz. Bu sekmeler arasında geçiş yapmak için sekme başlıklarına tıklayabilirsiniz:</p>
+        
+        <div class="info-box">
+            <ol>
+                <li><strong>Filtre Aralığı</strong> - Personel seçimi ve filtreleme yapılır</li>
+                <li><strong>Puantaj Bilgileri</strong> - Çalışma süreleri ve diğer ödeme bilgileri girilir</li>
+                <li><strong>Puan Bilgileri</strong> - Puan tabanlı ödemeler için bilgiler girilir</li>
+            </ol>
+        </div>
+        
+        <p>Her sekmeye tıkladığınızda, ilgili sekmenin içeriği görüntülenir ve diğer sekmelerin içeriği gizlenir. Aktif sekme düğmesi koyu gri, diğer sekmeler açık gri renkte görünür.</p>
+        
+        <div class="warning-box">
+            <p><strong>Sekme Geçişleri:</strong> Sekmeler arasında geçiş yaparken klavye tuşlarını değil, sadece ekrandaki düğmeleri kullanmalısınız. Sekme değişikliği yaptığınızda, önceki sekmedeki bilgiler kaybolmaz, sadece görünüm değişir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Filtre Aralığı Sekmesi</h2>
+        <p>Bu sekmede, toplu puantaj işlemini hangi personeller için yapacağınızı belirtebilirsiniz.</p>
+        
+        <div class="step">
+            <h3>Adım 4.1: Sicil No Aralığı Belirleme</h3>
+            <p>Ekranın üst kısmında "<strong>Sicil No</strong>" yanında iki kutu bulunmaktadır:</p>
+            <ul>
+                <li>Sol taraftaki kutuya başlangıç sicil numarasını giriniz</li>
+                <li>Sağ taraftaki kutuya bitiş sicil numarasını giriniz</li>
+                <li>Eğer bu değerler boş bırakılırsa, sistem otomatik olarak tüm sicil numaralarını kapsayacaktır</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Adım 4.2: Ek Filtreler</h3>
+            <p>Ekranda sicil numarası aralığının altında çeşitli filtre kriterleri bulunmaktadır. Bu listelerden çoklu seçim yapabilirsiniz (CTRL tuşuna basılı tutarak):</p>
+            
+            <table>
+                <tr>
+                    <th>Filtre Adı</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Vardiya Kodu</td>
+                    <td>Belirli vardiyalardaki personelleri filtrelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Sorumluluk Kodu</td>
+                    <td>Belirli sorumlulukları olan personelleri filtrelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Sendika Kodu</td>
+                    <td>Belirli sendikalara üye personelleri filtrelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Görev Kodu</td>
+                    <td>Belirli görevlerdeki personelleri filtrelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>Sicil Tipi</td>
+                    <td>Belirli sicil tipindeki personelleri filtrelemek için kullanılır</td>
+                </tr>
+                <tr>
+                    <td>SGK Kodu</td>
+                    <td>Belirli SGK kodlarına sahip personelleri filtrelemek için kullanılır (Normal, Çırak, Yabancı, Emekli, Diğer)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="step">
+            <h3>Adım 4.3: Mevcut Kayıtları Güncelleme Seçeneği</h3>
+            <p>Ekranın alt kısmında kırmızı renkli yazıyla "<strong>Mevcut Kayıtları Güncelle</strong>" seçeneği bulunmaktadır:</p>
+            <ul>
+                <li>Bu onay kutusunu işaretlerseniz, sistemde var olan puantaj kayıtları güncellenecektir</li>
+                <li>İşaretlemezseniz, yeni kayıtlar oluşturulacaktır</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>5. Puantaj Bilgileri Sekmesi</h2>
+        <p>Bu sekmede, seçilen personellere uygulanacak çalışma süresi ve diğer ödeme bilgilerini girebilirsiniz. Ekran, sol ve sağ olmak üzere iki bölüme ayrılmıştır. Her alana istediğiniz değeri girerek, seçilen tüm personeller için bu değerlerin geçerli olmasını sağlayabilirsiniz.</p>
+        
+        <div class="warning-box">
+            <p><strong>Dikkat:</strong> Tüm sayısal değerler, virgül veya nokta ile ondalık basamakları içerebilir. Örneğin "22,5" veya "22.5" şeklinde giriş yapabilirsiniz. Sistem girilen değeri otomatik olarak düzenleyecektir.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Adım 5.1: Sol Taraftaki Bilgiler</h3>
+            <p>Sol tarafta aşağıdaki bilgileri doldurabilirsiniz:</p>
+            
+            <table>
+                <tr>
+                    <th>Alan Adı</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Normal Gün</td>
+                    <td>Normal çalışma günü sayısı - personelin ay içinde normal mesai yaptığı günleri belirtir</td>
+                </tr>
+                <tr>
+                    <td>Cumartesi Pazar Tatili</td>
+                    <td>Hafta sonu tatil günü sayısı - personelin hafta sonlarında çalışmadığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Çalışılan Cumartesi</td>
+                    <td>Çalışılan cumartesi günü sayısı - personelin cumartesi günleri çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Çalışılan Pazar</td>
+                    <td>Çalışılan pazar günü sayısı - personelin pazar günleri çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Ücretli İzin</td>
+                    <td>Ücretli izin günü sayısı - personelin yıllık izin, idari izin gibi ücretli izinlerde olduğu gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>SGK Günü</td>
+                    <td>SGK'ya bildirilecek prim gün sayısı (30'dan fazla olamaz) - Normal Gün ve Cumartesi Pazar Tatili toplamına göre hesaplanır</td>
+                </tr>
+                <tr>
+                    <td>Çalışılan Bayram</td>
+                    <td>Çalışılan resmi bayram günü sayısı - personelin resmi bayram günlerinde çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Çalışılan Tatil</td>
+                    <td>Çalışılan genel tatil günü sayısı (Not: Bazı belediyelerde "Fazla Mesai (%100)" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Yemek Günü</td>
+                    <td>Yemek ücreti ödenecek gün sayısı - personelin yemek ücreti alacağı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Ek Gıda Günü</td>
+                    <td>Ek gıda ücreti ödenecek gün sayısı (Not: Bazı belediyelerde "Koku Günü" veya "Sendika Ödeneği" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Fiili Çalışma Günü</td>
+                    <td>Fiilen çalışılan toplam gün sayısı - personelin izin ve tatil olmadan fiilen çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Vardiya Günü</td>
+                    <td>Vardiyalı çalışılan gün sayısı - personelin vardiya sistemi içinde çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Sorumluluk Günü</td>
+                    <td>Sorumluluk primi ödenecek gün sayısı (Not: Bazı belediyelerde "İş Riski Günü" veya "Havlu/Sabun Günü" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Çalışılan Gece</td>
+                    <td>Gece vardiyasında çalışılan gün sayısı - personelin gece çalışması yaptığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Fiili Hizmet Günü</td>
+                    <td>Fiili hizmet süresi zammı (yıpranma) uygulanacak gün sayısı</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="step">
+            <h3>Adım 5.2: Sağ Taraftaki Bilgiler</h3>
+            <p>Sağ tarafta aşağıdaki bilgileri doldurabilirsiniz:</p>
+            
+            <table>
+                <tr>
+                    <th>Alan Adı</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Toplam Gün</td>
+                    <td>Toplam çalışma günü sayısı - ay içindeki toplam çalışma ve izin günlerinin toplamı</td>
+                </tr>
+                <tr>
+                    <td>Geçici Görev Günü</td>
+                    <td>Geçici görevde bulunulan gün sayısı - personelin asıl görev yeri dışında çalıştığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>İzin Avans Günü</td>
+                    <td>İzin avansı alınan gün sayısı - personelin henüz hak etmediği izinlerden kullandığı gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Kıdem Yılı</td>
+                    <td>Kıdem tazminatı hesaplamalarında kullanılacak yıl sayısı - personelin kurumda çalıştığı yıl</td>
+                </tr>
+                <tr>
+                    <td>Özel Sigorta Tutarı</td>
+                    <td>Özel sigorta için ödenecek tutar - personelin özel sağlık veya hayat sigortası için ödenen miktar</td>
+                </tr>
+                <tr>
+                    <td>İzin Parası</td>
+                    <td>İzin parası tutarı - personelin kullanmadığı izinler için ödenen para veya yol ücreti</td>
+                </tr>
+                <tr>
+                    <td>Ek Gıda Ücreti</td>
+                    <td>Ek gıda için ödenecek tutar (Not: Bazı belediyelerde "Koku Ücreti" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Yemek Ücreti</td>
+                    <td>Yemek için ödenecek tutar - personele ödenen günlük yemek parası</td>
+                </tr>
+                <tr>
+                    <td>Eşinin Aldığı Çocuk Yardımı</td>
+                    <td>Personelin eşinin aldığı çocuk yardımı tutarı - mükerrer ödeme olmaması için takip edilen tutar</td>
+                </tr>
+                <tr>
+                    <td>Fazla Mesai Gün/Saat</td>
+                    <td>Fazla mesai çalışma gün veya saat sayısı (Not: Bazı belediyelerde "Fazla Mesai (%200)" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Rapor Günü</td>
+                    <td>Raporlu (istirahatli) olarak geçirilen gün sayısı (Not: Bazı belediyelerde "Doğum/Ölüm Günü" olarak adlandırılır)</td>
+                </tr>
+                <tr>
+                    <td>Yol Günü</td>
+                    <td>Yol ücreti ödenecek gün sayısı - personelin ulaşım ücreti alacağı gün sayısı (Not: Bazı belediyelerde Normal Gün ile otomatik aynı değere ayarlanır)</td>
+                </tr>
+                <tr>
+                    <td>Ücretsiz İzin</td>
+                    <td>Ücretsiz izinli gün sayısı - personelin ücret almadan izinli olduğu gün sayısı</td>
+                </tr>
+                <tr>
+                    <td>Kanuni İkramiye Günü</td>
+                    <td>Kanuni ikramiye hesaplanacak gün sayısı - yasal olarak verilmesi gereken ikramiye günü</td>
+                </tr>
+                <tr>
+                    <td>Sözleşme İkramiye Günü</td>
+                    <td>Sözleşme ikramiyesi hesaplanacak gün sayısı - toplu sözleşme gereği verilen ikramiye günü</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Önemli Not:</strong> Normal gün sayısı veya gün toplamı 30'dan fazla ise, SGK günü değeri sistem tarafından otomatik olarak 30 olarak ayarlanacaktır.</p>
+        </div>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> "Normal Gün" ve "Cumartesi Pazar Tatili" değerlerini girdiğinizde SGK günü otomatik olarak hesaplanacaktır. Bu değer 30'dan büyük olursa, sistem otomatik olarak 30'a düşürecektir.</p>
+            <p><strong>Önemli Not:</strong> Bazı belediyelerde "Normal Gün" değerini girdiğinizde "Yol Günü" otomatik olarak aynı değere ayarlanır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>6. Puan Bilgileri Sekmesi</h2>
+        <p>Bu sekmede, personele uygulanacak puan bazlı ödemeleri girebilirsiniz. Puan bilgileri, personelin ek ücret alacağı özel durumları belirtmek için kullanılır.</p>
+        
+        <div class="step">
+            <h3>Adım 6.1: Puan Bilgilerinin Girilmesi</h3>
+            <p>Ekranda bir tablo bulunur ve bu tabloda:</p>
+            <ul>
+                <li>Açıklama sütununda, tanımlı puan türleri listelenir (değiştirilemez) - her kurumun kendi puan tipleri olabilir</li>
+                <li>Gün sütununda, ilgili puan için kaç gün ödeme yapılacağını girebilirsiniz</li>
+                <li>Puan bilgileri giriş alanı, ekranın alt kısmında açık gri bir arka plan üzerinde gösterilir</li>
+            </ul>
+            <p>Her bir puan satırı için gün sayısını girerek, o puan türünün kaç gün için ödeneceğini belirtmiş olursunuz. Sistem her puan tipinin katsayısına göre ödeme hesaplayacaktır.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Puan Bilgilerinin Yapısı</h3>
+            <p>Puan tablosu aşağıdaki sütunlardan oluşur:</p>
+            <ul>
+                <li><strong>Açıklama:</strong> Puan tipinin adı (örneğin: Mesai Puanı, Eğitim Puanı, vb.)</li>
+                <li><strong>Gün:</strong> Puanın kaç gün için uygulanacağı</li>
+            </ul>
+            <p>Sistem, girilen gün sayısı ve sisteme tanımlı puan katsayılarını kullanarak hesaplama yapar. Puan katsayıları kurumunuza göre farklılık gösterebilir.</p>
+        </div>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Puan bilgileri, genellikle özel durumlar veya ek ödemeler için kullanılır. Örneğin, zor koşullarda çalışma, tehlikeli iş, uzman personel gibi durumlarda puan uygulaması yapılabilir.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>7. İşlemlerin Kaydedilmesi ve Çıkış</h2>
+        
+        <div class="step">
+            <h3>Adım 7.1: Kaydetme İşlemi</h3>
+            <p>Tüm gerekli bilgileri girdikten sonra, ekranın alt kısmındaki "<strong>Kaydet</strong>" düğmesine tıklayarak işlemi başlatabilirsiniz:</p>
+            <ul>
+                <li>Kaydet düğmesine tıkladığınızda sistem arka planda çeşitli işlemler yapacaktır</li>
+                <li>Bu işlem sırasında "Lütfen Bekleyiniz..." mesajı görünecek, diğer tüm form elemanları gizlenecektir</li>
+                <li>İşlem tamamlandığında "Toplu Puantaj Ataması Tamamlandı..." uyarısı alacaksınız</li>
+                <li>Eğer bir hata oluşursa, hata mesajı ekranda görüntülenecektir (örneğin: "Maaş Hesaplanamadı! Hata: [hata açıklaması]")</li>
+            </ul>
+            <p>Kaydetme işlemi, seçilen filtrelere göre birden çok personel için aynı anda puantaj bilgilerini güncelleyecektir. İşlem, personel sayısına bağlı olarak biraz zaman alabilir.</p>
+        </div>
+
+        <div class="step">
+            <h3>Adım 7.2: Çıkış</h3>
+            <p>İşleminizi tamamladıktan sonra "<strong>Kapat</strong>" düğmesine basarak ekrandan çıkabilirsiniz. Ayrıca klavyeden ESC tuşuna basarak da ekranı kapatabilirsiniz.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>8. Önemli Notlar ve İpuçları</h2>
+        
+        <div class="info-box">
+            <h3>Kısayollar</h3>
+            <ul>
+                <li><strong>Enter tuşu:</strong> Bir sonraki alana geçer</li>
+                <li><strong>ESC tuşu:</strong> Ekranı kapatır</li>
+                <li><strong>CTRL + tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmenizi sağlar</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h3>Önemli Uyarılar</h3>
+            <ul>
+                <li>Yıl ve ay değerlerinin aylık parametrelerde tanımlı olduğundan emin olun</li>
+                <li>Maaş döneminin kilitli olmadığından emin olun</li>
+                <li>SGK günü değeri 30'dan fazla olamaz</li>
+                <li>İşlem tamamlanana kadar "Lütfen Bekleyiniz..." mesajı ekranda kalabilir, işlemin tamamlanmasını bekleyin</li>
+                <li>Çok sayıda personel için işlem yapıyorsanız, işlemin tamamlanması zaman alabilir</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Verimli Kullanım İpuçları</h3>
+            <ul>
+                <li>Filtre seçeneklerini kullanarak işlem yapacağınız personel sayısını sınırlandırabilirsiniz</li>
+                <li>Tüm değerleri girmek zorunda değilsiniz, sadece değiştirmek istediğiniz alanları doldurun</li>
+                <li>"Mevcut Kayıtları Güncelle" seçeneğini kullanarak, önceden girilmiş verilerin üzerine yazabilirsiniz</li>
+                <li>Çok sayıda personel için işlem yapıyorsanız, işlemi daha küçük gruplara bölerek gerçekleştirmek daha hızlı sonuç almanızı sağlayabilir</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>9. Sorun Giderme</h2>
+        
+        <div class="info-box">
+            <h3>Sık Karşılaşılan Hatalar ve Çözümleri</h3>
+            
+            <table>
+                <tr>
+                    <th>Hata/Sorun</th>
+                    <th>Olası Çözüm</th>
+                </tr>
+                <tr>
+                    <td>"Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!" mesajı</td>
+                    <td>Girdiğiniz yıl ve ayın sistemde tanımlı olduğundan emin olun. Ayrıca bu dönem için maaş hesaplama işleminin kilitli olmadığını kontrol edin.</td>
+                </tr>
+                <tr>
+                    <td>"Yıl Değerini Girmelisiniz!" mesajı</td>
+                    <td>Yıl alanını boş bırakmayın, geçerli bir yıl değeri girin.</td>
+                </tr>
+                <tr>
+                    <td>"Ay Değerini Girmelisiniz!" mesajı</td>
+                    <td>Ay alanını boş bırakmayın, 1-12 arasında bir ay değeri girin.</td>
+                </tr>
+                <tr>
+                    <td>"Maaş Hesaplanamadı! Hata:" mesajı</td>
+                    <td>Girdiğiniz değerleri kontrol edin. Sayısal alanlara geçersiz karakterler girmiş olabilirsiniz.</td>
+                </tr>
+                <tr>
+                    <td>İşlemin uzun sürmesi</td>
+                    <td>Çok sayıda personel için işlem yapıyorsanız bu normaldir. "Lütfen Bekleyiniz..." mesajı kaybolana kadar bekleyin.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>10. Özel Durumlar ve Belediye Farklılıkları</h2>
+        
+        <div class="info-box">
+            <h3>Belediyeye Özel Durumlar</h3>
+            <p>Çalıştığınız belediyeye göre bazı alanların isimleri ve işlevleri farklılık gösterebilir:</p>
+            
+            <table>
+                <tr>
+                    <th>Bazı Belediyelerde</th>
+                    <th>Diğer Belediyelerde</th>
+                </tr>
+                <tr>
+                    <td>Çalışılan Tatil</td>
+                    <td>Fazla Mesai (%100)</td>
+                </tr>
+                <tr>
+                    <td>Ek Gıda Günü</td>
+                    <td>Koku Günü veya Sendika Ödeneği</td>
+                </tr>
+                <tr>
+                    <td>Sorumluluk Günü</td>
+                    <td>İş Riski Günü veya Havlu/Sabun Günü</td>
+                </tr>
+                <tr>
+                    <td>Ek Gıda Ücreti</td>
+                    <td>Koku Ücreti</td>
+                </tr>
+                <tr>
+                    <td>Fazla Mesai Gün/Saat</td>
+                    <td>Fazla Mesai (%200)</td>
+                </tr>
+                <tr>
+                    <td>Rapor Günü</td>
+                    <td>Doğum/Ölüm Günü</td>
+                </tr>
+            </table>
+            <p>Bazı belediyelerde, "Normal Gün" değeri girildiğinde "Yol Günü" değeri otomatik olarak aynı değere ayarlanır.</p>
+        </div>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Çalıştığınız belediyeye özel alan isimlerini bilmiyorsanız, Sistem Yöneticinize danışabilirsiniz. Alan isimleri farklı olabilir, ancak işlevleri aynıdır.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>11. Hesaplama Mantığı ve Önemli Noktalar</h2>
+        
+        <div class="info-box">
+            <h3>SGK Günü Hesaplama</h3>
+            <p>SGK günü, Normal Gün ve Cumartesi Pazar Tatili toplamı olarak hesaplanır. Ancak bu toplam 30'dan büyük olursa, otomatik olarak 30'a düşürülür.</p>
+            <p>Örnek: Normal Gün = 22, Cumartesi Pazar Tatili = 8 ise, SGK Günü = 30 olur.<br>
+            Örnek: Normal Gün = 22, Cumartesi Pazar Tatili = 10 ise, SGK Günü yine 30 olarak ayarlanır (32 > 30).</p>
+        </div>
+        
+        <div class="warning-box">
+            <h3>Maaş Kilitleme</h3>
+            <p>Maaş dönemi kilitlenmiş ise, o dönem için toplu puantaj girişi yapamazsınız. Kilitleme işlemi genellikle maaş hesaplama işlemi tamamlandıktan sonra yapılır ve yanlışlıkla değiştirilmesini önler.</p>
+            <p>Kilitli bir dönem için puantaj girişi yapmaya çalıştığınızda "Yıl ve Ay Değeri Aylık Parametreler Tablosunda Tanımlı Değil veya Maaş Dönemi Kilitli!" uyarısı alırsınız.</p>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Verimli Çalışma İpuçları</h3>
+            <ul>
+                <li><strong>İş akışı:</strong> Önce filtreleri ayarlayın, ardından puantaj bilgilerini girin ve son olarak puan bilgilerini girin.</li>
+                <li><strong>Toplu değişiklikler:</strong> Filtre kriterlerini daraltarak sadece belirli gruplardaki personeller için değişiklik yapabilirsiniz.</li>
+                <li><strong>Veri doğrulama:</strong> Özellikle SGK günü gibi kritik alanlarda değerlerin doğru olduğundan emin olun.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>12. Veri Girişi Sonrası İşlemler</h2>
+        
+        <div class="info-box">
+            <h3>Maaş Hesaplama</h3>
+            <p>Toplu puantaj girişi tamamlandıktan sonra, bu verilere dayanarak maaş hesaplama işlemi yapılacaktır. Puantaj bilgilerinin doğruluğu, maaş hesaplamasının doğruluğunu doğrudan etkileyecektir.</p>
+        </div>
+        
+        <div class="tip-box">
+            <h3>Kontrol ve Onay</h3>
+            <p>Toplu puantaj girişi tamamlandıktan sonra, maaş hesaplama yapılmadan önce girilen verilerin doğruluğunu kontrol etmek için raporlar alabilirsiniz. Bu, olası hataları erkenden tespit etmenizi sağlar.</p>
+        </div>
+        
+        <div class="warning-box">
+            <h3>Veri Güvenliği</h3>
+            <p>Maaş verileri hassas bilgilerdir. İşlem tamamlandıktan sonra ekrandan çıktığınızdan ve yetkisiz kişilerin bilgisayarınıza erişemeyeceğinden emin olun.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>13. Özet</h2>
+        <p>Toplu Puantaj Girişi ekranı, birden fazla personel için aynı anda puantaj bilgilerinin girilmesini sağlar. Bu ekran sayesinde:</p>
+        <ul>
+            <li>Belirli kriterlere uyan personelleri filtreleyebilirsiniz</li>
+            <li>Çalışma günleri, izin günleri, ek ödeme bilgilerini toplu olarak girebilirsiniz</li>
+            <li>Puan bazlı ödemeleri tanımlayabilirsiniz</li>
+            <li>Mevcut kayıtları güncelleyebilir veya yeni kayıtlar oluşturabilirsiniz</li>
+        </ul>
+        <p>Bu işlemleri doğru bir şekilde tamamlayarak, personel maaş hesaplamalarının temelini oluşturan puantaj bilgilerini hızlı ve verimli bir şekilde sisteme girebilirsiniz.</p>
+    </div>
+    
+    <div class="section">
+        <h2>14. Sık Sorulan Sorular (SSS)</h2>
+        
+        <div class="info-box">
+            <h3>Soru: Birden fazla maaş tipi için aynı anda toplu puantaj girişi yapabilir miyim?</h3>
+            <p><strong>Cevap:</strong> Hayır, her seferinde tek bir maaş tipi için işlem yapabilirsiniz. Farklı maaş tipleri için işlemi tekrarlamanız gerekir.</p>
+            
+            <h3>Soru: "Mevcut Kayıtları Güncelle" seçeneğini işaretlemezsem ne olur?</h3>
+            <p><strong>Cevap:</strong> Bu durumda, seçtiğiniz kriterlere uyan personeller için yeni puantaj kayıtları oluşturulur. Aynı kişi için aynı dönemde birden fazla kayıt olmaması için, güncellemek istediğinizde bu seçeneği işaretlemeniz önerilir.</p>
+            
+            <h3>Soru: Tüm alanları doldurmak zorunda mıyım?</h3>
+            <p><strong>Cevap:</strong> Hayır, sadece değer girmek istediğiniz alanları doldurabilirsiniz. Boş bırakılan alanlar için herhangi bir değişiklik yapılmayacaktır.</p>
+            
+            <h3>Soru: İşlem ne kadar sürer?</h3>
+            <p><strong>Cevap:</strong> İşlem süresi, seçilen personel sayısına ve sistemin yoğunluğuna bağlı olarak değişir. Az sayıda personel için saniyeler içinde tamamlanırken, çok sayıda personel için birkaç dakika sürebilir.</p>
+            
+            <h3>Soru: Yanlış bilgi girdim, nasıl düzeltebilirim?</h3>
+            <p><strong>Cevap:</strong> "Mevcut Kayıtları Güncelle" seçeneğini işaretleyerek aynı işlemi tekrar yapabilir ve doğru değerleri girebilirsiniz.</p>
+            
+            <h3>Soru: Normal gün sayısı 31 girildiğinde SGK günü neden 30 oluyor?</h3>
+            <p><strong>Cevap:</strong> SGK günü hesaplaması için maksimum 30 gün kabul edilir. Bu nedenle, toplam gün sayısı 30'u aştığında SGK günü otomatik olarak 30'a düşürülür.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Ödeme Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .header h1 {
+        margin: 0;
+    }
+
+    .header img {
+        height: 50px;
+        width: auto;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #333;
+    }
+
+    h1 {
+        color: #004d99;
+        border-bottom: 2px solid #004d99;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        color: #1976D2;
+        margin-top: 30px;
+    }
+
+    .info-box {
+        background-color: #f0f8ff;
+        border: 1px solid #4682b4;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .tip-box {
+        background-color: #e6ffe6;
+        border-left: 5px solid #33cc33;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .step {
+        background-color: #f5f5f5;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yan Ödeme Tanımları Kullanıcı Kılavuzu</h1>
+    </div>
+    <div id="icerik" class="section">
+    <h2>İçindekiler</h2>
+    <div class="info-box">
+        <ol>
+            <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+            <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+            <li><a href="#veri-giris">Veri Giriş Alanları</a></li>
+            <li><a href="#kod-arama">Yan Ödeme Kodu Arama ve Bulma</a></li>
+            <li><a href="#kayit-islemleri">Kayıt Ekleme, Değiştirme ve Silme İşlemleri</a></li>
+            <li><a href="#butonlar">Butonlar ve İşlevleri</a></li>
+            <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+            <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+        </ol>
+    </div>
+</div>
+
+<div id="giris" class="section">
+    <h2>Giriş ve Genel Bilgiler</h2>
+    <div class="info-box">
+        <p>Yan Ödeme Tanımları programı, personel yan ödemelerinin tanımlanması, değiştirilmesi ve iptal edilmesi için kullanılan bir araçtır. Bu program ile:</p>
+        <ul>
+            <li>Yeni yan ödeme tanımlarını sisteme giriş yapabilir</li>
+            <li>Mevcut yan ödeme tanımlarını güncelleyebilir</li>
+            <li>Yan ödeme tanımlarını silebilir</li>
+            <li>Yan ödeme kodlarına göre arama yapabilir</li>
+        </ul>
+        <p>Bu işlemleri gerçekleştirebilirsiniz.</p>
+        
+        <div class="tip-box">
+            <h4>Önemli Not:</h4>
+            <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+            <ul>
+                <li>Eklemek veya değiştirmek istediğiniz yan ödeme kodu</li>
+                <li>Yan ödeme için gerekli kod tanımı</li>
+                <li>Yan ödeme için gerekli açıklama bilgisi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ekran-duzeni" class="section">
+    <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+    <div class="info-box">
+        <h3>Ana Ekran Bölümleri</h3>
+        
+        <div class="step">
+            <h4>Ekran Yerleşimi:</h4>
+            <ol>
+                <li><strong>Başlık Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın en üstünde turkuaz renkli bir şeritte ekran başlığı yer alır</li>
+                        <li>Bu başlık sabit olup, "Yan Ödeme Tanımları (Giriş)" veya "Yan Ödeme Tanımları (Değişiklik)" şeklinde görünür</li>
+                        <li>Yapılan işleme göre (Ekleme veya Değiştirme) başlık otomatik olarak değişir</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Giriş Bölümü:</strong>
+                    <ul>
+                        <li>Başlığın hemen altında ana çalışma alanı yer alır</li>
+                        <li>Bu bölümde Yan Öd.Kodu, Kod ve Açıklama alanları bulunur</li>
+                        <li>Her alan etiketiyle birlikte sol tarafta sıralanmıştır</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Bölümü:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, veri giriş alanlarının altında yer alır</li>
+                        <li>İki satır halinde düzenlenmiş butonlar vardır</li>
+                        <li>Üst satırda Önceki, Sonraki ve Ara butonları bulunur</li>
+                        <li>Alt satırda Temizle, Kaydet, Sil ve Çıkış butonları bulunur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatma:</h4>
+            <p>Program açıldığında otomatik olarak:</p>
+            <ul>
+                <li>Ekran başlığı "Yan Ödeme Tanımları (Giriş)" olarak gelir</li>
+                <li>İmleç "Yan Öd.Kodu" alanında konumlanır</li>
+                <li>Tüm alanlar boş olarak başlar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="veri-giris" class="section">
+    <h2>Veri Giriş Alanları</h2>
+    <div class="info-box">
+        <h3>Temel Veri Giriş Alanları</h3>
+        
+        <div class="step">
+            <h4>Yan Öd.Kodu:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında, başlığın hemen altında yer alır</li>
+                        <li>Soldaki ilk etiket ve metin kutusudur</li>
+                        <li>Etiketin yanında beyaz bir metin kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Yan ödeme kodunu girmek için:
+                            <ul>
+                                <li>Metin kutusuna 1 ile 999 arasında bir sayı yazın</li>
+                                <li>Her yan ödeme kodunun benzersiz olması gerekir</li>
+                                <li>Sıfır (0) kodlama yapılamaz, sistem uyarı verecektir</li>
+                            </ul>
+                        </li>
+                        <li>Mevcut bir kaydı aramak için:
+                            <ul>
+                                <li>Aramak istediğiniz yan ödeme kodunu yazın</li>
+                                <li>TAB tuşuna basarak veya diğer alana geçerek sistemin kaydı kontrol etmesini sağlayın</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kod:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Kod" etiketi, yanında metin kutusu bulunur</li>
+                        <li>Metin kutusu diğer alanlara göre daha geniştir</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Kod bilgisini girmek için:
+                            <ul>
+                                <li>Yan ödemeye ait kod bilgisini metin kutusuna yazın</li>
+                                <li>En fazla 50 karakter kullanabilirsiniz</li>
+                                <li>Kod alanı boş bırakılabilir, zorunlu bir alan değildir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Açıklama:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Kod alanının hemen altında yer alır</li>
+                        <li>Sol tarafta "Açıklama" etiketi, yanında metin kutusu bulunur</li>
+                        <li>Veri giriş bölümünün en alt satırıdır</li>
+                    </ul>
+                </li>
+                <li><strong>Nasıl Kullanılır:</strong>
+                    <ol>
+                        <li>Açıklama bilgisini girmek için:
+                            <ul>
+                                <li>Yan ödemeyle ilgili açıklamayı metin kutusuna yazın</li>
+                                <li>En fazla 30 karakter kullanabilirsiniz</li>
+                                <li>Açıklama alanı boş bırakılabilir, zorunlu bir alan değildir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Yan Öd.Kodu alanı kırmızı çerçeve ile vurgulanmıştır, bu zorunlu alan olduğunu gösterir</li>
+                <li>Yan Öd.Kodu alanına sadece rakam girilebilir</li>
+                <li>Yan Öd.Kodu sıfır (0) olamaz, girmeye çalıştığınızda sistem uyarı verecektir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                <li>ENTER tuşu da TAB tuşu gibi çalışır, sonraki alana geçmenizi sağlar</li>
+                <li>Kod ve Açıklama alanlarında Türkçe karakterler kullanabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="kod-arama" class="section">
+    <h2>Yan Ödeme Kodu Arama ve Bulma</h2>
+    <div class="info-box">
+        <h3>Arama Yöntemleri</h3>
+        
+        <div class="step">
+            <h4>Yan Ödeme Kodunu Doğrudan Arama:</h4>
+            <ol>
+                <li><strong>Adım 1: Kod Numarasını Girme</strong>
+                    <ul>
+                        <li>İmleç Yan Öd.Kodu alanındayken, aramak istediğiniz kod numarasını yazın</li>
+                        <li>Örneğin "15" yazarak 15 numaralı yan ödeme kodunu arayabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Arama İşlemini Başlatma</strong>
+                    <ul>
+                        <li>Kod numarasını girdikten sonra TAB tuşuna basın veya fare ile başka bir alana tıklayın</li>
+                        <li>Sistem otomatik olarak girilen kod numarasını kontrol edecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Sonuçların Görüntülenmesi</strong>
+                    <ul>
+                        <li>Eğer girilen kod numarası sistemde varsa, ilgili kaydın tüm bilgileri ekrana gelecektir</li>
+                        <li>Kod ve Açıklama alanları otomatik olarak doldurulacaktır</li>
+                        <li>Ekran başlığı "Yan Ödeme Tanımları (Değişiklik)" olarak değişecektir</li>
+                        <li>Eğer kod sistemde yoksa, ekran temiz kalır ve yeni kayıt girişi için hazır hale gelir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Yan Ödeme Listesinden Arama:</h4>
+            <ol>
+                <li><strong>Adım 1: Listele Butonunu Kullanma</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst sıradaki butonlar arasında ortada yer alan "..." (üç nokta) butonuna tıklayın</li>
+                        <li>Bu buton fare ile üzerine gelindiğinde "Liste" olarak görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Liste Ekranını Kullanma</strong>
+                    <ul>
+                        <li>Tıkladığınızda "Yan Ödeme Tanımları Listesi" başlıklı yeni bir pencere açılacaktır</li>
+                        <li>Bu pencerede tüm yan ödeme kayıtları liste halinde görüntülenir</li>
+                        <li>Liste iki sütundan oluşur: Yan Öd.Kodu ve Açıklama</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Listeden Kayıt Seçme</strong>
+                    <ul>
+                        <li>İstediğiniz kaydın üzerine tıklayarak seçin</li>
+                        <li>Seçtiğiniz kayıt vurgulanacaktır</li>
+                        <li>Kaydı seçtikten sonra liste ekranı otomatik olarak kapanacaktır</li>
+                        <li>Ana ekrana döndüğünüzde, seçtiğiniz kaydın bilgileri ekranda görüntülenecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Önceki/Sonraki Kayıtları Görüntüleme:</h4>
+            <ol>
+                <li><strong>Adım 1: Gezinme Butonlarını Kullanma</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst sıradaki ilk iki buton Önceki ve Sonraki butonlarıdır</li>
+                        <li>Önceki butonu (sol ok işareti) mevcut koddan daha küçük kodlu kayıtları gösterir</li>
+                        <li>Sonraki butonu (sağ ok işareti) mevcut koddan daha büyük kodlu kayıtları gösterir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Kayıtlar Arasında Gezinme</strong>
+                    <ul>
+                        <li>Önceki butonuna tıkladığınızda, mevcut koddan bir önceki kod numarasına sahip kayıt görüntülenir</li>
+                        <li>Sonraki butonuna tıkladığınızda, mevcut koddan bir sonraki kod numarasına sahip kayıt görüntülenir</li>
+                        <li>Eğer ekranda herhangi bir kayıt yoksa, Önceki butonu en büyük kodlu kaydı, Sonraki butonu en küçük kodlu kaydı getirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Yan Öd.Kodu alanına sadece rakam girebilirsiniz</li>
+                <li>Eğer aradığınız kod sistemde yoksa ve yeni kayıt eklemek istiyorsanız, diğer alanlara bilgileri girmeye devam edebilirsiniz</li>
+                <li>Liste ekranı açıkken ana ekrana herhangi bir işlem yapamazsınız, önce liste ekranını kapatmanız gerekir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Kayıtlar arasında hızlı gezinmek için Önceki ve Sonraki butonlarını kullanabilirsiniz</li>
+                <li>Belirli bir kaydı doğrudan bulmak için Liste butonunu kullanmak daha hızlı olabilir</li>
+                <li>Liste ekranında kayıtlar kod numarasına göre sıralanmıştır</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="kayit-islemleri" class="section">
+    <h2>Kayıt Ekleme, Değiştirme ve Silme İşlemleri</h2>
+    <div class="info-box">
+        <h3>Yeni Kayıt Ekleme</h3>
+        
+        <div class="step">
+            <h4>Yeni Yan Ödeme Tanımı Ekleme:</h4>
+            <ol>
+                <li><strong>Adım 1: Ekranı Hazırlama</strong>
+                    <ul>
+                        <li>Eğer ekranda daha önce bir kayıt açıksa, alt sıradaki "Temizle" butonuna tıklayarak ekranı temizleyin</li>
+                        <li>Ekran başlığı "Yan Ödeme Tanımları (Giriş)" olarak değişecektir</li>
+                        <li>İmleç otomatik olarak Yan Öd.Kodu alanına gelecektir</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Yan Ödeme Kodu Girme</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına 1 ile 999 arasında bir sayı girin</li>
+                        <li>TAB tuşuna basarak sonraki alana geçin</li>
+                        <li>Sistem bu aşamada kod numarasının daha önce kullanılıp kullanılmadığını kontrol eder</li>
+                        <li>Eğer girilen kod zaten mevcutsa, o kodun bilgileri ekrana gelir ve Değişiklik moduna geçilir</li>
+                        <li>Eğer yeni bir kodsa, bir sonraki alana geçersiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Kod Bilgisi Girme</strong>
+                    <ul>
+                        <li>Kod alanına yan ödeme için kullanılacak kod bilgisini girin</li>
+                        <li>Bu alan en fazla 50 karakter uzunluğunda olabilir</li>
+                        <li>Bu alan isteğe bağlıdır, boş bırakabilirsiniz</li>
+                        <li>TAB tuşuna basarak sonraki alana geçin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 4: Açıklama Girme</strong>
+                    <ul>
+                        <li>Açıklama alanına yan ödemenin açıklamasını girin</li>
+                        <li>Bu alan en fazla 30 karakter uzunluğunda olabilir</li>
+                        <li>Bu alan isteğe bağlıdır, boş bırakabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 5: Kaydetme</strong>
+                    <ul>
+                        <li>Tüm bilgileri girdikten sonra, alt sıradaki "Kaydet" butonuna tıklayın</li>
+                        <li>Kaydet butonu ekranın alt kısmında, alt sıradaki ikinci butondur</li>
+                        <li>Sistem kaydı veritabanına ekleyecek ve ekranı temizleyecektir</li>
+                        <li>Yeni kayıt için ekran hazır hale gelecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Değiştirme:</h4>
+            <ol>
+                <li><strong>Adım 1: Değiştirilecek Kaydı Bulma</strong>
+                    <ul>
+                        <li>Değiştirmek istediğiniz kaydı bulmak için Yan Öd.Kodu alanına ilgili kod numarasını girin veya</li>
+                        <li>Liste butonuna tıklayarak açılan listeden ilgili kaydı seçin veya</li>
+                        <li>Önceki/Sonraki butonlarını kullanarak kayıtlar arasında gezinin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Değişiklikleri Yapma</strong>
+                    <ul>
+                        <li>Kaydı bulduğunuzda, ekranda mevcut bilgiler görüntülenecektir</li>
+                        <li>Ekran başlığı "Yan Ödeme Tanımları (Değişiklik)" olarak değişecektir</li>
+                        <li>Kod ve Açıklama alanlarında değişiklik yapabilirsiniz</li>
+                        <li>Yan Öd.Kodu alanı değişiklik modunda kilitlenir, değiştirilemez</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Değişiklikleri Kaydetme</strong>
+                    <ul>
+                        <li>Değişiklikleri tamamladıktan sonra, alt sıradaki "Kaydet" butonuna tıklayın</li>
+                        <li>Sistem değişiklikleri veritabanına kaydedecek ve ekranı temizleyecektir</li>
+                        <li>Yeni kayıt için ekran hazır hale gelecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Silme:</h4>
+            <ol>
+                <li><strong>Adım 1: Silinecek Kaydı Bulma</strong>
+                    <ul>
+                        <li>Silmek istediğiniz kaydı bulmak için Yan Öd.Kodu alanına ilgili kod numarasını girin veya</li>
+                        <li>Liste butonuna tıklayarak açılan listeden ilgili kaydı seçin veya</li>
+                        <li>Önceki/Sonraki butonlarını kullanarak kayıtlar arasında gezinin</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 2: Silme İşlemini Başlatma</strong>
+                    <ul>
+                        <li>Kaydı bulduğunuzda, ekranda mevcut bilgiler görüntülenecektir</li>
+                        <li>Ekran başlığı "Yan Ödeme Tanımları (Değişiklik)" olarak değişecektir</li>
+                        <li>Alt sıradaki "Sil" butonuna tıklayın (Kaydet butonunun sağındaki buton)</li>
+                    </ul>
+                </li>
+                <li><strong>Adım 3: Onaylama ve Silme</strong>
+                    <ul>
+                        <li>Sistem "İptal İşlemini Onaylıyor musunuz?" şeklinde bir onay mesajı gösterecektir</li>
+                        <li>Silme işlemini onaylamak için "Evet" (Yes) butonuna tıklayın</li>
+                        <li>İşlemi iptal etmek için "Hayır" (No) butonuna tıklayın</li>
+                        <li>"Evet" seçeneğini seçerseniz, kayıt sistemden tamamen silinecektir</li>
+                        <li>Silme işleminden sonra ekran temizlenecek ve yeni kayıt için hazır hale gelecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Silinen kayıtlar geri alınamaz, silme işlemini dikkatle yapın</li>
+                <li>Yeni kayıt eklerken Yan Öd.Kodu alanı boş bırakılamaz, kırmızı çerçeve zorunlu alan olduğunu belirtir</li>
+                <li>Yan Öd.Kodu olarak sıfır (0) girmeye çalıştığınızda sistem "Yan Ödeme Kodu Sıfır Olamaz!.." uyarısı verecektir</li>
+                <li>Silme işlemi yalnızca değişiklik modunda (bir kayıt açıkken) yapılabilir, boş ekranda Sil butonu çalışmaz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Benzer bilgilere sahip birden fazla kayıt girecekseniz, bir kaydı ekledikten sonra Temizle butonuna basıp sadece değişecek bilgileri güncelleyerek yeni kayıt ekleyebilirsiniz</li>
+                <li>Değişiklik modunda Yan Öd.Kodu alanı kilitlenir. Farklı bir kayıt üzerinde çalışmak için önce Temizle butonuna tıklayarak ekranı temizleyin</li>
+                <li>Eğer yanlışlıkla Sil butonuna tıklarsanız, çıkan onay mesajında "Hayır" seçeneğini seçerek işlemi iptal edebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="butonlar" class="section">
+    <h2>Butonlar ve İşlevleri</h2>
+    <div class="info-box">
+        <h3>Yan Ödeme Tanımları Ekranındaki Butonlar</h3>
+        
+        <div class="step">
+            <h4>Önceki Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst sıradaki ilk butondur</li>
+                        <li>Sol ok işareti (◄) şeklindedir</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Mevcut kayıttan bir önceki kayda (daha küçük kod numarasına sahip) geçmenizi sağlar</li>
+                        <li>Eğer mevcut kayıt en küçük kod numarasına sahipse, en büyük kod numaralı kayda geçer</li>
+                        <li>Eğer ekranda hiçbir kayıt açık değilse, en büyük kod numaralı kaydı getirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Sonraki Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst sırada Önceki butonunun sağında yer alır</li>
+                        <li>Sağ ok işareti (►) şeklindedir</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Mevcut kayıttan bir sonraki kayda (daha büyük kod numarasına sahip) geçmenizi sağlar</li>
+                        <li>Eğer mevcut kayıt en büyük kod numarasına sahipse, en küçük kod numaralı kayda geçer</li>
+                        <li>Eğer ekranda hiçbir kayıt açık değilse, en küçük kod numaralı kaydı getirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Liste Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, üst sırada Sonraki butonunun sağında yer alır</li>
+                        <li>Üç nokta (...) şeklindedir, fare ile üzerine gelindiğinde "Liste" yazısı görünür</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Tüm yan ödeme kayıtlarını listeleyen bir pencere açar</li>
+                        <li>Bu pencereden kayıt seçebilir ve ana ekrana getirebilirsiniz</li>
+                        <li>Listede kayıtlar kod numarasına göre sıralanmıştır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Temizle Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, alt sıradaki ilk butondur</li>
+                        <li>Üzerinde "Temizle" yazar</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Ekrandaki tüm bilgileri temizler</li>
+                        <li>Ekran başlığını "Yan Ödeme Tanımları (Giriş)" olarak değiştirir</li>
+                        <li>İmleci Yan Öd.Kodu alanına konumlandırır</li>
+                        <li>Yeni bir kayıt girişi için ekranı hazır hale getirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kaydet Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, alt sırada Temizle butonunun sağında yer alır</li>
+                        <li>Üzerinde "Kaydet" yazar</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Ekrandaki bilgileri veritabanına kaydeder</li>
+                        <li>Eğer yeni bir kayıt giriliyorsa (Giriş modu), kaydı ekler</li>
+                        <li>Eğer mevcut bir kayıt üzerinde değişiklik yapılıyorsa (Değişiklik modu), kaydı günceller</li>
+                        <li>Kaydetme işleminden sonra ekranı temizler ve yeni kayıt için hazır hale getirir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Sil Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, alt sırada Kaydet butonunun sağında yer alır</li>
+                        <li>Üzerinde "Sil" yazar</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Ekranda açık olan kaydı veritabanından siler</li>
+                        <li>Silme işlemi öncesinde onay mesajı gösterir</li>
+                        <li>Silme işlemi tamamlandıktan sonra ekranı temizler</li>
+                        <li>Yalnızca değişiklik modunda (bir kayıt açıkken) çalışır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Konum ve Görünüm:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, alt sırada Sil butonunun sağında yer alır</li>
+                        <li>Üzerinde "Çıkış" yazar</li>
+                        <li>Gri arka plan üzerinde üç boyutlu görünümdedir</li>
+                    </ul>
+                </li>
+                <li><strong>İşlevi:</strong>
+                    <ul>
+                        <li>Yan Ödeme Tanımları programından çıkmanızı sağlar</li>
+                        <li>Program penceresi kapanır</li>
+                        <li>Kaydedilmemiş değişiklikler varsa, bunlar kaydedilmeden pencere kapanır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Sil butonu yalnızca değişiklik modunda (bir kayıt açıkken) çalışır</li>
+                <li>Kaydetmeden Çıkış butonuna basarsanız, son değişiklikleriniz kaydedilmez</li>
+                <li>Liste penceresinden bir kayıt seçtiğinizde, değişiklik moduna geçersiniz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>ESC tuşu ile hızlıca programdan çıkabilirsiniz (Çıkış butonuna basmak gibi)</li>
+                <li>Hızlı kayıt aramak için Liste butonunu kullanabilirsiniz</li>
+                <li>Değişiklikleri kaydetmek istemiyorsanız, Kaydet butonuna basmadan Temizle butonuna veya Çıkış butonuna basabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>  
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Kısayollar</h2>
+    <div class="info-box">
+        <h3>Klavye Kısayolları ve Verimli Çalışma Teknikleri</h3>
+        
+        <div class="step">
+            <h4>Temel Klavye Kısayolları:</h4>
+            <ol>
+                <li><strong>Alanlar Arası Gezinme Kısayolları:</strong>
+                    <ul>
+                        <li>TAB: Sonraki alana geçer</li>
+                        <li>SHIFT + TAB: Önceki alana döner</li>
+                        <li>ENTER: TAB tuşu gibi çalışır, sonraki alana geçer</li>
+                    </ul>
+                </li>
+                <li><strong>Program Kontrol Kısayolları:</strong>
+                    <ul>
+                        <li>ESC: Programdan çıkış yapar (Çıkış butonuna basmak gibi)</li>
+                        <li>ALT + L: Liste butonuna basmak gibi çalışır, kayıt listesini açar</li>
+                        <li>ALT + K: Kaydet butonuna basmak gibi çalışır, mevcut kaydı kaydeder</li>
+                        <li>ALT + S: Sil butonuna basmak gibi çalışır, mevcut kaydı silme işlemini başlatır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Hızlı Kayıt İşlemleri:</h4>
+            <ol>
+                <li><strong>Hızlı Kayıt Arama:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına doğrudan kod numarasını yazıp TAB tuşuna basarak ilgili kaydı hızlıca bulabilirsiniz</li>
+                        <li>Liste butonuna tıklayıp açılan pencerede listeden seçim yaparak istediğiniz kaydı bulabilirsiniz</li>
+                        <li>Liste penceresinde ilk harfi yazarak o harfle başlayan açıklamaya sahip kayıtlara hızlıca gidebilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Hızlı Kayıt Girişi:</strong>
+                    <ul>
+                        <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                        <li>Benzer kayıtlar girecekseniz, son kaydettikten sonra Temizle butonuna basıp sadece değişen alanları güncelleyebilirsiniz</li>
+                        <li>Kod ve Açıklama alanlarında kopyala-yapıştır (CTRL+C, CTRL+V) kullanabilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Verimli Çalışma Teknikleri:</h4>
+            <ol>
+                <li><strong>Toplu Kayıt İşlemleri:</strong>
+                    <ul>
+                        <li>Yeni kayıtları eklerken, kod numaralarını sıralı (ardışık) kullanmak sonradan bulma ve gezinmeyi kolaylaştırır</li>
+                        <li>Çok sayıda kayıt girecekseniz, önce tüm kayıtları ekleyip sonra düzenlemek daha verimli olabilir</li>
+                        <li>Benzer açıklamalı kayıtlar için bir standart belirleyin ve tutarlı olun</li>
+                    </ul>
+                </li>
+                <li><strong>Hata Önleme Teknikleri:</strong>
+                    <ul>
+                        <li>Yeni bir kayıt eklemeden önce kod numarasının daha önce kullanılmadığından emin olun</li>
+                        <li>Silme işlemi öncesinde doğru kaydı sildiğinizden emin olun, kod ve açıklama alanlarını kontrol edin</li>
+                        <li>Önemli değişiklikler yapmadan önce kayıtları kontrol edin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Kaydetmediğiniz değişiklikler kaybolacaktır, işlem bitmeden Çıkış butonuna basmamaya dikkat edin</li>
+                <li>Silinen kayıtlar geri alınamaz, silme işlemini dikkatle yapın</li>
+                <li>Yan Öd.Kodu sıfır (0) olamaz, bu numarayı kullanmaya çalışmayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Zaman Kazandıran İpuçları:</h4>
+            <ul>
+                <li>Sık kullandığınız yan ödeme kodlarını bir yere not alın ve hızlı erişim için kullanın</li>
+                <li>Önceki ve Sonraki butonlarını kullanarak tüm kayıtları hızlıca gözden geçirebilirsiniz</li>
+                <li>Liste penceresini kullanarak tüm kayıtları toplu halde görüntüleyebilirsiniz</li>
+                <li>TAB tuşu ile alanlar arasında hızlıca geçiş yaparak fare kullanımını azaltabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="sorun-giderme" class="section">
+    <h2>Sorun Giderme</h2>
+    <div class="info-box">
+        <h3>Sık Karşılaşılan Sorunlar ve Çözümleri</h3>
+        
+        <div class="step">
+            <h4>"Yan Ödeme Kodu Sıfır Olamaz!.." Uyarısı:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına sıfır (0) girdiğinizde sistem uyarı verir</li>
+                        <li>Uyarı penceresi kapandıktan sonra alan temizlenir</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına 1 ile 999 arasında bir değer girin</li>
+                        <li>Sıfır (0) değerini kullanmayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Bulunamadı:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına bir kod girdiğinizde sistem kaydı bulamıyor</li>
+                        <li>Alanlar boş kalıyor</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Doğru kod numarasını girdiğinizden emin olun</li>
+                        <li>Liste butonuna tıklayarak tüm kayıtları görüntüleyin ve kodun gerçekten var olup olmadığını kontrol edin</li>
+                        <li>Eğer kayıt yoksa ve eklemek istiyorsanız, diğer alanlara bilgileri girip Kaydet butonuna tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Sil Butonu Çalışmıyor:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Sil butonuna tıkladığınızda hiçbir şey olmuyor</li>
+                        <li>Herhangi bir onay mesajı çıkmıyor</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Sil butonu yalnızca değişiklik modunda (bir kayıt açıkken) çalışır</li>
+                        <li>Önce bir kayıt bulun veya açın (ekran başlığı "Yan Ödeme Tanımları (Değişiklik)" olmalıdır)</li>
+                        <li>Ardından Sil butonuna tıklayın</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kaydet Butonu Çalışmıyor:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Kaydet butonuna tıkladığınızda sistem tepki vermiyor veya hata mesajı gösteriyor</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanının doldurulmuş olduğundan emin olun (zorunlu alandır)</li>
+                        <li>Eğer değişiklik modundaysanız, geçerli bir kayıt üzerinde çalıştığınızdan emin olun</li>
+                        <li>Kod ve Açıklama alanlarının karakter sınırlarını aşmadığından emin olun (sırasıyla 50 ve 30 karakter)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Yan Öd.Kodu Alanı Kilitli:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Yan Öd.Kodu alanına tıkladığınızda veya yazmaya çalıştığınızda değişiklik yapamıyorsunuz</li>
+                        <li>Alan gri renkte görünüyor ve değiştirilemez durumda</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>Bu durum değişiklik modunda normaldir, Yan Öd.Kodu değiştirilemez</li>
+                        <li>Yeni bir kayıt eklemek için Temizle butonuna tıklayarak ekranı temizleyin</li>
+                        <li>Ekran başlığı "Yan Ödeme Tanımları (Giriş)" olacak ve Yan Öd.Kodu alanı tekrar aktif hale gelecektir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Program Yanıt Vermiyor:</h4>
+            <ol>
+                <li><strong>Sorun:</strong>
+                    <ul>
+                        <li>Program donuyor veya butonlara tıkladığınızda tepki vermiyor</li>
+                    </ul>
+                </li>
+                <li><strong>Çözüm:</strong>
+                    <ul>
+                        <li>ESC tuşuna basarak programdan çıkmayı deneyin</li>
+                        <li>Eğer bu işe yaramazsa, pencereyi kapatın ve programı yeniden başlatın</li>
+                        <li>Sorun devam ederse, sistem yöneticinize başvurun</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Hatırlatmalar:</h4>
+            <ul>
+                <li>Yaşadığınız sorunları ve çözümleri not almanız, benzer sorunlarla karşılaştığınızda size yardımcı olacaktır</li>
+                <li>Tekrarlayan sorunlar yaşıyorsanız, sistem yöneticinizi bilgilendirin</li>
+                <li>Program kullanımı sırasında yaşadığınız veri kaybı veya sistem hataları, veri bütünlüğünü etkileyebilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Verimli Sorun Çözme İpuçları:</h4>
+            <ul>
+                <li>Bir hata ile karşılaştığınızda, ekrandaki hata mesajını dikkatle okuyun</li>
+                <li>Sorun yaşadığınızda hangi adımları izlediğinizi hatırlamaya çalışın, bu sorunun tespitinde yardımcı olabilir</li>
+                <li>Sorun çözülemiyorsa, programı kapatıp yeniden açmak genellikle en basit çözümdür</li>
+                <li>Önemli veri girişlerinden önce kayıt kontrolü yaparak olası sorunları önceden tespit edebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ozet" class="section">
+    <h2>Özet ve Kapanış</h2>
+    <div class="info-box">
+        <h3>Yan Ödeme Tanımları Programı Özeti</h3>
+        
+        <div class="step">
+            <h4>Programın Temel İşlevleri:</h4>
+            <ul>
+                <li>Yan ödeme kodlarını tanımlama, değiştirme ve silme</li>
+                <li>Yan ödeme kayıtları arasında gezinme ve arama</li>
+                <li>Yan ödeme bilgilerini yönetme</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Temel Çalışma Adımları:</h4>
+            <ol>
+                <li>Yeni kayıt eklemek için:
+                    <ul>
+                        <li>Yan Öd.Kodu, Kod ve Açıklama bilgilerini girin</li>
+                        <li>Kaydet butonuna tıklayın</li>
+                    </ul>
+                </li>
+                <li>Kayıt değiştirmek için:
+                    <ul>
+                        <li>Kaydı bulun (Yan Öd.Kodu girin veya Liste butonunu kullanın)</li>
+                        <li>Kod ve Açıklama alanlarında değişiklik yapın</li>
+                        <li>Kaydet butonuna tıklayın</li>
+                    </ul>
+                </li>
+                <li>Kayıt silmek için:
+                    <ul>
+                        <li>Kaydı bulun (Yan Öd.Kodu girin veya Liste butonunu kullanın)</li>
+                        <li>Sil butonuna tıklayın</li>
+                        <li>Onay mesajında "Evet" seçeneğini seçin</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Son Hatırlatmalar:</h4>
+            <ul>
+                <li>Değişiklikleri kaydetmeden programdan çıkarsanız, değişiklikleriniz kaybolacaktır</li>
+                <li>Silinen kayıtlar geri alınamaz</li>
+                <li>Yan Öd.Kodu alanı zorunludur ve sıfır (0) olamaz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Son İpuçları:</h4>
+            <ul>
+                <li>Klavye kısayollarını kullanarak işlemlerinizi hızlandırabilirsiniz</li>
+                <li>Yan ödeme kodlarını anlamlı ve tutarlı bir şekilde kullanın</li>
+                <li>Herhangi bir sorunla karşılaştığınızda bu kılavuzun Sorun Giderme bölümüne başvurabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
