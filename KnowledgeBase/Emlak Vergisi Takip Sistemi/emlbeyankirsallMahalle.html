@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kırsal Mahalle Muafiyet İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kırsal Mahalle Muafiyet İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Ana Bileşenler</a></li>
+                <li><a href="#islem-sicil">İşlem Tarihi ve Sicil Bilgileri ile Arama</a></li>
+                <li><a href="#beyan-ada">Beyan Yılı ve Ada/Parsel Bilgileri</a></li>
+                <li><a href="#mahalle-tur">Mahalle ve Beyan Türü Seçimleri</a></li>
+                <li><a href="#beyan-listesi">Beyan Listesi ve Detayları</a></li>
+                <li><a href="#muafiyet">Muafiyet İşlemleri</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Kırsal Mahalle Muafiyet İşlemleri programı, beyanların kırsal mahalle muafiyet işlemlerini yönetmenizi sağlayan kapsamlı bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Beyanların kırsal mahalle indirim oranlarını görüntüleme ve güncelleme</li>
+                <li>Toplu muafiyet işlemleri yapma</li>
+                <li>Muafiyet iptal işlemleri gerçekleştirme</li>
+                <li>Beyan detaylarını inceleme</li>
+            </ul>
+            işlemlerini gerçekleştirebilirsiniz.
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şu bilgilere sahip olduğunuzdan emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz sicil numarası</li>
+                    <li>İlgili beyanların ada/parsel bilgileri</li>
+                    <li>Mahalle bilgisi</li>
+                    <li>Beyan türü (Bina, Arazi, Arsa)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Ana Bileşenler</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "Kırsal Mahalle Muafiyet İşlemleri" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>İşlem tarihi ile başlar</li>
+                            <li>Sicil no, beyan yılı, ada/parsel gibi arama kriterlerini içerir</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Beyan Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş alanlarının altında geniş bir liste alanı bulunur</li>
+                            <li>Seçilen kriterlere göre beyanlar bu alanda listelenir</li>
+                            <li>Beyanlar üzerinde çift tıklama ile detay görüntülenebilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında yer alır</li>
+                            <li>Kaydet, İptal ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar gri zeminde ve üç boyutlu görünümdedir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında otomatik olarak:</p>
+                <ul>
+                    <li>İşlem tarihi sistem tarihi olarak gelir</li>
+                    <li>İmleç işlem tarihi alanında konumlanır</li>
+                    <li>Beyan listesi boş olarak başlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-sicil" class="section">
+        <h2>İşlem Tarihi ve Sicil Bilgileri ile Arama</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>İşlem Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, ilk veri giriş alanıdır</li>
+                            <li>"İşlem Tarihi" etiketi ve yanında tarih giriş kutusu bulunur</li>
+                            <li>Etiket koyu renkte (bold) görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Tarih girişi için:
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak günün tarihi gelir</li>
+                                    <li>Tarihi GG.AA.YYYY formatında girin</li>
+                                    <li>Alandan çıkıldığında beyan listesi otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Sicil Numarası Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem tarihi alanının hemen altında yer alır</li>
+                            <li>"Sicil Numarası" etiketi ve yanında numara giriş kutusu bulunur</li>
+                            <li>Giriş kutusunun sağında küçük bir arama butonu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Doğrudan sicil numarası girişi için:
+                                <ul>
+                                    <li>Sicil numarasını yazın</li>
+                                    <li>Alan değiştiğinde sicil bilgileri otomatik yüklenir</li>
+                                    <li>Beyan listesi otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                            <li>Arama butonu ile sicil bulma:
+                                <ul>
+                                    <li>Ana arama butonu (Find ikonu) ile arama:
+                                        <ul>
+                                            <li>Arama butonuna tıklayın</li>
+                                            <li>Açılan pencerede sicil arama kriterlerini girin</li>
+                                            <li>İstediğiniz sicili seçin</li>
+                                            <li>Seçilen sicilin bilgileri otomatik olarak forma yüklenir</li>
+                                        </ul>
+                                    </li>
+                                    <li>ModSicilWin ile detaylı arama:
+                                        <ul>
+                                            <li>Sicil numarası kutusunun yanındaki ikinci arama butonuna tıklayın</li>
+                                            <li>Açılan pencerede "Modül No: 2" seçili olarak gelir</li>
+                                            <li>Arama kriterlerini girdikten sonra "Tamam" butonuna basın</li>
+                                            <li>Yeni bir pencerede sonuçlar listelenir</li>
+                                            <li>Listeden sicil seçtiğinizde ana forma otomatik aktarılır</li>
+                                            <li>İşlem sonrası pencereler otomatik kapanır</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Adı Soyadı Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil numarası alanının hemen altında yer alır</li>
+                            <li>"Adı Soyadı" etiketi ile başlar</li>
+                            <li>Sadece görüntüleme amaçlıdır, manuel giriş yapılamaz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Görüntülenir:</strong>
+                        <ul>
+                            <li>Sicil numarası girildiğinde otomatik olarak doldurulur</li>
+                            <li>Sicil arama ile kişi seçildiğinde otomatik güncellenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil numarası girilmeden beyan listesi görüntülenemez</li>
+                    <li>Tarih formatına dikkat edilmelidir (GG.AA.YYYY)</li>
+                    <li>Geçersiz sicil numarası girildiğinde uyarı mesajı alırsınız</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Sicil numarasını bilmiyorsanız arama butonunu kullanın</li>
+                    <li>İşlem tarihi değiştirildiğinde tüm liste otomatik yenilenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="beyan-ada" class="section">
+        <h2>Beyan Yılı ve Ada/Parsel Bilgileri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Beyan Yılı Aralığı Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Adı Soyadı alanının altında yer alır</li>
+                            <li>"Beyan Yılı" etiketi yanında iki giriş kutusu bulunur</li>
+                            <li>Kutular yan yana yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Başlangıç yılı için:
+                                <ul>
+                                    <li>Soldaki kutuya yılı girin</li>
+                                    <li>Boş bırakılırsa 1900 olarak kabul edilir</li>
+                                </ul>
+                            </li>
+                            <li>Bitiş yılı için:
+                                <ul>
+                                    <li>Sağdaki kutuya yılı girin</li>
+                                    <li>Boş bırakılırsa sistem tarihi yılı kullanılır</li>
+                                    <li>Alan değiştirildiğinde beyan listesi otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Ada/Parsel Bilgileri Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Beyan yılı alanının hemen altında bulunur</li>
+                            <li>"Ada/Parsel" etiketi yanında iki ayrı giriş kutusu yer alır</li>
+                            <li>Kutular arasında "/" işareti bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Ada numarası için:
+                                <ul>
+                                    <li>Soldaki kutuya ada numarasını girin</li>
+                                    <li>Sadece rakam girişi yapılabilir</li>
+                                </ul>
+                            </li>
+                            <li>Parsel numarası için:
+                                <ul>
+                                    <li>Sağdaki kutuya parsel numarasını girin</li>
+                                    <li>Sadece rakam girişi yapılabilir</li>
+                                    <li>Alan değiştirildiğinde beyan listesi otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Başlangıç yılı bitiş yılından büyük olamaz</li>
+                    <li>Ada ve parsel numaraları sadece rakam içerebilir</li>
+                    <li>Her alan değişikliğinde liste otomatik güncellenir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm yılları görüntülemek için yıl alanlarını boş bırakabilirsiniz</li>
+                    <li>Tek bir yıla ait beyanları görmek için başlangıç ve bitiş yılını aynı girin</li>
+                    <li>Ada/Parsel alanlarından herhangi birini doldurduğunuzda diğerini de doldurmanız önerilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mahalle-tur" class="section">
+        <h2>Mahalle ve Beyan Türü Seçimleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Mahalle Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ada/Parsel alanının altında yer alır</li>
+                            <li>"Mahalle" etiketi ve yanında açılır liste kutusu bulunur</li>
+                            <li>Liste kutusu koyu bordo renkli yazı ve daha büyük font ile görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Mahalle seçmek için:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>Varsayılan olarak "--Mahalle Seçiniz--" seçili gelir</li>
+                                    <li>Listeden istediğiniz mahalleyi seçin</li>
+                                    <li>Seçim yapıldığında beyan listesi otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Beyan Türü Seçimi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle seçim alanının hemen altında bulunur</li>
+                            <li>"Beyan Türü" etiketi ve yanında açılır liste kutusu yer alır</li>
+                            <li>Liste koyu bordo renkli yazı ile görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ol>
+                            <li>Beyan türü seçmek için:
+                                <ul>
+                                    <li>Açılır listeye tıklayın</li>
+                                    <li>Dört seçenek bulunur:
+                                        <ul>
+                                            <li>Hepsi (varsayılan seçenek)</li>
+                                            <li>Bina</li>
+                                            <li>Arazi</li>
+                                            <li>Arsa</li>
+                                        </ul>
+                                    </li>
+                                    <li>Seçim yapıldığında liste otomatik güncellenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Sıra No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Beyan türü seçiminin altında yer alır</li>
+                            <li>"Sıra No" etiketi yanında giriş kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nasıl Kullanılır:</strong>
+                        <ul>
+                            <li>Kutuya istenen sıra numarasını girin</li>
+                            <li>Sadece rakam girişi yapılabilir</li>
+                            <li>Alan değiştirildiğinde beyan listesi güncellenir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Hatırlatmalar:</h4>
+                <ul>
+                    <li>Mahalle seçimi yapmadan tüm mahalleler listelenir</li>
+                    <li>Beyan türü seçilmezse tüm beyan türleri görüntülenir</li>
+                    <li>Her seçim değişikliğinde liste otomatik yenilenir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Liste kutularında ilk harfi yazarak hızlı seçim yapabilirsiniz</li>
+                    <li>Filtreleri temizlemek için varsayılan seçenekleri kullanın</li>
+                    <li>Birden fazla filtreyi birlikte kullanarak aramayı daraltabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="beyan-listesi" class="section">
+        <h2>Beyan Listesi ve Detayları</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Beyan Listesi Alanı:</h4>
+                <ol>
+                    <li><strong>Konum ve Görünüm:</strong>
+                        <ul>
+                            <li>Tüm arama kriterlerinin altında, ekranın orta kısmında geniş bir alan olarak yer alır</li>
+                            <li>Açık mavi kenarlıklı bir çerçeve içinde görüntülenir</li>
+                            <li>Üst kısmında "Listelenen Kayıt Sayısı" bilgisi yer alır</li>
+                            <li>Liste kaydırma çubuğuna sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Sütunları:</strong>
+                        <ol>
+                            <li>Ada/Parsel: Beyanın ada ve parsel bilgileri</li>
+                            <li>Mahalle-CSBM: Mahalle ve cadde/sokak bilgileri</li>
+                            <li>Kapı/İç Kapı No/Daire No: Detaylı adres bilgileri</li>
+                            <li>Arsa Oran: Beyanın arsa oranı</li>
+                            <li>Bina Oran: Beyanın bina oranı</li>
+                            <li>Rayiç Bedel: Beyanın rayiç bedeli</li>
+                            <li>Mevcut Kırsal İnd. Oran: Mevcut indirim oranı</li>
+                            <li>Mevcut Kırsal İnd. Tutar: Mevcut indirim tutarı</li>
+                            <li>Muafiyet Bitiş Yıl: Muafiyetin bittiği yıl</li>
+                            <li>Muaf Türü: Muafiyet türü seçimi</li>
+                            <li>Yeni Kırsal İnd. Oran: Uygulanacak yeni indirim oranı</li>
+                            <li>Seçim: İşlem yapılacak beyanları seçme kutusu</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="step">
+                <h4>Tahakkuk Listesi İşlemleri:</h4>
+                <ol>
+                    <li><strong>Tahakkuk Listesi Kontrolü:</strong>
+                        <ul>
+                            <li>Beyan listesi yüklendiğinde sistem otomatik tahakkuk kontrolü yapar</li>
+                            <li>Özellikle 061900 belediye kodu için gün içi tahsilat kontrolü yapılır</li>
+                            <li>Tahsilat varsa kullanıcıya bilgi mesajı gösterilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahsilat Uyarısı ile Karşılaşıldığında:</strong>
+                        <ul>
+                            <li>Sistem "Günün içinde Tahsilat yapılmış devam etmek istiyor musunuz?" mesajı gösterir</li>
+                            <li>"Evet" seçeneği ile işleme devam edilebilir</li>
+                            <li>"Hayır" seçeneği ile program kapanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Beyan Detaylarını Görüntüleme:</h4>
+                <ol>
+                    <li><strong>Detay Penceresini Açma:</strong>
+                        <ul>
+                            <li>Liste üzerinde görüntülemek istediğiniz beyana çift tıklayın</li>
+                            <li>Detay penceresi ekranın ortasında açılır</li>
+                            <li>Pencere boyutu 650x470 pikseldir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detay Penceresini Kapatma:</strong>
+                        <ul>
+                            <li>Pencerenin sağ üst köşesindeki çarpı işaretine tıklayın</li>
+                            <li>Veya ESC tuşuna basın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Toplu Seçim İşlemleri:</h4>
+                <ol>
+                    <li><strong>Tümünü Seçme:</strong>
+                        <ul>
+                            <li>Sütun başlıklarının en sağında yer alan seçim kutusuna tıklayın</li>
+                            <li>Bu işlem sadece indirim oranı olan beyanları seçer</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tekli Seçim:</strong>
+                        <ul>
+                            <li>Her beyanın sağındaki seçim kutusunu işaretleyin</li>
+                            <li>İndirim oranı olmayan beyanlar seçilemez</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mevcut indirim oranı olmayan beyanlara işlem yapılamaz</li>
+                    <li>Yeni indirim oranı girilmemiş beyanlar seçilemez</li>
+                    <li>En fazla 500 beyan listelenebilir</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Liste üzerinde sütunlara göre sıralama yapılabilir</li>
+                    <li>Arama kriterlerini değiştirdiğinizde liste otomatik yenilenir</li>
+                    <li>Beyan detaylarını incelemek için mutlaka çift tıklama yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="muafiyet" class="section">
+        <h2>Muafiyet İşlemleri</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Muafiyet Kaydetme İşlemi:</h4>
+                <ol>
+                    <li><strong>Kaydetme Butonunun Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, soldan ilk buton olarak yer alır</li>
+                            <li>"Kaydet" yazılı gri renkli, üç boyutlu görünümlü buton</li>
+                            <li>İptal ve Çıkış butonlarının solunda bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydetme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Beyanları Seçme:
+                                <ul>
+                                    <li>Listeden işlem yapılacak beyanları seçim kutularını işaretleyerek seçin</li>
+                                    <li>En az bir beyan seçilmiş olmalıdır</li>
+                                    <li>Seçilen beyanların yeni indirim oranı girilmiş olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>Onay İşlemi:
+                                <ul>
+                                    <li>Kaydet butonuna basın</li>
+                                    <li>Seçilen beyan sayısını gösteren onay mesajı görüntülenir</li>
+                                    <li>Onaylamak için "Evet" seçeneğini tıklayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Muafiyet İptal İşlemi:</h4>
+                <ol>
+                    <li><strong>İptal Butonunun Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Kaydet butonunun hemen sağında yer alır</li>
+                            <li>"İptal" yazılı gri renkli, üç boyutlu görünümlü buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Beyanları Seçme:
+                                <ul>
+                                    <li>İptal edilecek beyanları listeden seçin</li>
+                                    <li>En az bir beyan seçilmiş olmalıdır</li>
+                                    <li>Seçilen beyanların mevcut indirim oranı olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>İptal Onayı:
+                                <ul>
+                                    <li>İptal butonuna tıklayın</li>
+                                    <li>Seçilen beyan sayısını içeren onay mesajı görüntülenir</li>
+                                    <li>Onaylamak için "Evet" seçeneğini tıklayın</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Programdan Çıkış:</h4>
+                <ol>
+                    <li><strong>Çıkış Butonunun Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, en sağda yer alır</li>
+                            <li>"Çıkış" yazılı gri renkli, üç boyutlu görünümlü buton</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çıkış İşlemi:</strong>
+                        <ul>
+                            <li>İşlemlerinizi tamamladıktan sonra Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Muafiyet işlemi öncesi beyanların yeni indirim oranlarını kontrol edin</li>
+                    <li>İptal işlemi geri alınamaz, dikkatli olun</li>
+                    <li>İşlem yapmadan önce seçili beyan sayısını kontrol edin</li>
+                    <li>Mevcut indirim oranı olmayan beyanlara işlem yapılamaz</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Toplu işlemlerde "Tümünü Seç" kutusunu kullanabilirsiniz</li>
+                    <li>İşlem öncesi beyan listesini güncelleyin</li>
+                    <li>İşlem sonrası beyan listesi otomatik yenilenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="ipuclari-sorunlar" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>Beyan Listesi Görüntülenmiyor:</strong>
+                        <ul>
+                            <li>Tarih aralığını kontrol edin</li>
+                            <li>Sicil numarasının doğru girildiğinden emin olun</li>
+                            <li>Mahalle seçimini temizleyip tekrar deneyin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Muafiyet İşlemi Yapılamıyor:</strong>
+                        <ul>
+                            <li>Seçilen beyanda indirim oranı olduğunu kontrol edin</li>
+                            <li>Yeni indirim oranının girildiğinden emin olun</li>
+                            <li>En az bir beyan seçili olmalıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahsilat Kontrolü Uyarısı:</strong>
+                        <ul>
+                            <li>Gün içinde tahsilat yapılmış beyanlar için uyarı alırsınız</li>
+                            <li>Uyarıyı onaylayarak devam edebilir veya işlemi iptal edebilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Hızlı Giriş İpuçları:</h4>
+                <ol>
+                    <li><strong>Klavye Kısayolları:</strong>
+                        <ul>
+                            <li>TAB: Sonraki alana geçer</li>
+                            <li>SHIFT + TAB: Önceki alana döner</li>
+                            <li>ESC: Açık pencereyi kapatır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Arama:</strong>
+                        <ul>
+                            <li>Sicil numarasını bilmiyorsanız arama butonunu kullanın</li>
+                            <li>Arama penceresinde ad/soyad ile de arama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste İşlemleri:</strong>
+                        <ul>
+                            <li>Tümünü seç kutusu sadece işlem yapılabilir beyanları seçer</li>
+                            <li>Beyan detayları için çift tıklama yapın</li>
+                            <li>Liste başlıklarına tıklayarak sıralama yapabilirsiniz</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ol>
+                    <li><strong>İşlem Öncesi Kontroller:</strong>
+                        <ul>
+                            <li>Doğru sicile işlem yaptığınızdan emin olun</li>
+                            <li>Beyan listesini güncel tutun</li>
+                            <li>İşlem yapacağınız beyanları önceden kontrol edin</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme İpuçları:</strong>
+                        <ul>
+                            <li>Önce geniş kriterleri kullanın, sonra daraltın</li>
+                            <li>Mahalle ve beyan türü seçimlerini birlikte kullanın</li>
+                            <li>Ada/parsel bilgisi ile hızlı arama yapın</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+    
+            <div class="warning-box">
+                <h4>Unutulmaması Gerekenler:</h4>
+                <ul>
+                    <li>İptal edilen muafiyet işlemleri geri alınamaz</li>
+                    <li>Her işlem öncesi seçili beyan sayısını kontrol edin</li>
+                    <li>İşlem yapılamayan beyanlar için indirim oranlarını kontrol edin</li>
+                </ul>
+            </div>
+    
+            <div class="tip-box">
+                <h4>Ekstra İpuçları:</h4>
+                <ul>
+                    <li>Program ilk açıldığında sistem tarihi otomatik gelir</li>
+                    <li>Beyan listesi maksimum 500 kayıt gösterir</li>
+                    <li>İşlemler sırasında açılan uyarı mesajlarını dikkatlice okuyun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
