@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira KDV İndirim İşlemleri Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kira KDV İndirim İşlemleri Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#sicil-no">Sicil No Aralığı Girişi</a></li>
+                <li><a href="#listele">Kayıtları Listeleme</a></li>
+                <li><a href="#kayitlari-inceleme">Kayıtları İnceleme ve Seçim Yapma</a></li>
+                <li><a href="#islem-baslatma">İşlemi Başlatma</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Kira KDV İndirim İşlemleri programı, kiracılara uygulanan KDV tutarlarında indirim yapabilmenizi sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Sicil numarası aralığına göre kayıtları listeleyebilirsiniz</li>
+                <li>Eski ve yeni KDV tutarlarını görebilirsiniz</li>
+                <li>İşyerlerine toplu olarak KDV indirimi uygulayabilirsiniz</li>
+                <li>İndirim yapılacak işyerlerini tek tek veya toplu olarak seçebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>KDV indirimi yapılacak sicil numarası aralığı</li>
+                    <li>Hangi işyerlerine KDV indirimi uygulanacağı</li>
+                    <li>Eski ve yeni KDV tutarları arasındaki fark</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi (pastel) renkte "KİRA KDV İNDİRİM İŞLEMLERİ" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta, yanında iki metin kutusu bulunur</li>
+                            <li>İlk kutu başlangıç sicil numarası, ikinci kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Üst Buton Bölümü:</strong>
+                        <ul>
+                            <li>Sicil No alanının altında, ortada "LİSTELE" butonu yer alır</li>
+                            <li>Bu buton parlak gri tonda ve 3 boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Görünüm Bölümü:</strong>
+                        <ul>
+                            <li>LİSTELE butonunun altında, ekranın büyük kısmını kaplayan boş bir alan bulunur</li>
+                            <li>Bu alan başlangıçta boştur, LİSTELE butonuna tıklandıktan sonra kayıtlar burada görüntülenir</li>
+                            <li>Açık mavi kenarlı bir çerçeve içinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alt Buton Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında, yan yana iki buton yer alır: "İŞLEME BAŞLA" ve "VAZGEÇ"</li>
+                            <li>Butonlar parlak gri tonda ve 3 boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Sicil No alanlarında varsayılan değerler bulunur (0 - 9999999)</li>
+                    <li>Liste görünüm bölümü boştur, kayıtlar LİSTELE butonuna tıklandıktan sonra görüntülenir</li>
+                    <li>İşlem yapmadan önce listeleme yapıp, indirim uygulanacak kayıtları seçmeniz gerekmektedir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-no" class="section">
+        <h2>Sicil No Aralığı Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil No Aralığı Nasıl Girilir</h3>
+            <div class="step">
+                <h4>Sicil No Alanı Kullanım Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi koyu yazı tipi ile sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Metin kutuları açık mavi tonda ve hafif kabartmalı görünümdedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>İlk (sol) metin kutusuna tıklayın veya Tab tuşu ile bu alana geçiş yapın</li>
+                            <li>Başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan en fazla 8 haneli bir sayı alabilir</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>Varsayılan değer "0" olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>Tab tuşuna basarak veya fare ile ikinci (sağ) kutuya tıklayarak geçiş yapın</li>
+                            <li>Bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da en fazla 8 haneli bir sayı alabilir</li>
+                                    <li>Sadece rakam kabul eder</li>
+                                    <li>Varsayılan değer "9999999" olarak gelir</li>
+                                </ul>
+                            </li>
+                            <li>Sicil numarası aralığı girişini tamamladıktan sonra, LİSTELE butonuna tıklayarak veya Enter tuşuna basarak listeleme işlemini başlatabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Başlangıç sicil numarası, bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Varsayılan değerler (0-9999999) tüm sicil numaralarını kapsar</li>
+                    <li>Sadece belirli bir sicil numarası için işlem yapmak istiyorsanız, her iki kutuya da aynı numarayı girin</li>
+                    <li>Çok geniş sicil numarası aralığı belirlerseniz, listeleme işlemi uzun sürebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir sicil numarası aralığını filtrelemek, listeleme işleminin daha hızlı tamamlanmasını sağlar</li>
+                    <li>Sık kullandığınız sicil numaralarını not edebilirsiniz</li>
+                    <li>Tab tuşunu kullanarak kutular arasında hızlıca geçiş yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="listele" class="section">
+        <h2>Kayıtları Listeleme</h2>
+        <div class="info-box">
+            <h3>Listeleme İşlemi Nasıl Yapılır</h3>
+            <div class="step">
+                <h4>Listeleme Adımları:</h4>
+                <ol>
+                    <li><strong>Sicil No Aralığı Girişi:</strong>
+                        <ul>
+                            <li>İlk olarak, listelemek istediğiniz sicil numarası aralığını girin</li>
+                            <li>Varsayılan değerleri (0-9999999) kullanabilir veya daha dar bir aralık belirleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>LİSTELE Butonuna Tıklama:</strong>
+                        <ol>
+                            <li>Sicil numarası aralığını girdikten sonra, sicil numarası alanlarının altında bulunan "LİSTELE" butonuna tıklayın</li>
+                            <li>Buton parlak gri renkte ve 3 boyutlu görünümdedir, üzerinde büyük harflerle "LİSTELE" yazılıdır</li>
+                            <li>Butona tıkladığınızda, sistem belirlediğiniz sicil numarası aralığındaki kayıtları listelemek için sorgu çalıştıracaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Listeleme Sonuçlarının Görüntülenmesi:</strong>
+                        <ul>
+                            <li>Listeleme işlemi tamamlandığında, sonuçlar LİSTELE butonunun altındaki geniş alan içinde görüntülenecektir</li>
+                            <li>Bu alan açık mavi kenarlı bir çerçeve içindedir</li>
+                            <li>Liste ağaç yapısında görüntülenir, her satır bir işyerine ait bilgileri içerir</li>
+                            <li>Ekranın üst kısmında sütun başlıkları yer alır: "Adı Soyadı/Son Öd.Trh.", "İşyeri No/Taksit", "Eski KDV Tutarı", "Yeni KDV Tutarı" ve seçim için kutucuk</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Çok geniş sicil numarası aralığı belirlerseniz, listeleme işlemi uzun sürebilir</li>
+                    <li>Listeleme işlemi sırasında program yanıt vermiyor gibi görünebilir, sabırla bekleyin</li>
+                    <li>Belirlediğiniz aralıkta hiç kayıt bulunmuyorsa, liste boş görüntülenecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Daha hızlı sonuç almak için, mümkün olduğunca dar bir sicil numarası aralığı belirleyin</li>
+                    <li>Eğer bir sicil numarasını tam olarak bilmiyorsanız, geniş bir aralık belirleyip listeleme yaptıktan sonra kayıtlar içinde arama yapabilirsiniz</li>
+                    <li>Listeleme işlemi tamamlandıktan sonra, listeyi dikey kaydırma çubuğu ile aşağı-yukarı kaydırarak tüm kayıtları görebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kayitlari-inceleme" class="section">
+        <h2>Kayıtları İnceleme ve Seçim Yapma</h2>
+        <div class="info-box">
+            <h3>Listelenen Kayıtları İnceleme ve Seçme</h3>
+            <div class="step">
+                <h4>Kayıtları İnceleme Adımları:</h4>
+                <ol>
+                    <li><strong>Liste Yapısını Anlama:</strong>
+                        <ul>
+                            <li>Listeleme işlemi tamamlandıktan sonra, kayıtlar bir ağaç yapısında görüntülenir</li>
+                            <li>Her satırda bir işyerine ait bilgiler yer alır</li>
+                            <li>Sütun başlıkları şunlardır:
+                                <ul>
+                                    <li>"Adı Soyadı/Son Öd.Trh.": İşyeri sahibinin adı, soyadı ve son ödeme tarihi</li>
+                                    <li>"İşyeri No/Taksit": İşyerinin numarası ve taksit bilgisi</li>
+                                    <li>"Eski KDV Tutarı": İşyerine uygulanan mevcut KDV tutarı</li>
+                                    <li>"Yeni KDV Tutarı": İndirim yapıldıktan sonra uygulanacak KDV tutarı</li>
+                                    <li>En sağda seçim için bir onay kutusu (checkbox) bulunur</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Kayıtları Kaydırma:</strong>
+                        <ol>
+                            <li>Listelenen kayıtlar çok sayıda ise, sağ taraftaki dikey kaydırma çubuğunu kullanarak listeyi aşağı-yukarı kaydırabilirsiniz</li>
+                            <li>Fare tekerleği ile de listeyi kaydırabilirsiniz</li>
+                            <li>Kaydırma yaparken her satırdaki bilgileri inceleyerek hangi işyerlerine KDV indirimi uygulanacağına karar verebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kayıt Seçimi Yapma:</strong>
+                        <ol>
+                            <li>KDV indirimi uygulamak istediğiniz işyerlerini seçmek için, her satırın en sağında bulunan onay kutusuna tıklayın</li>
+                            <li>Onay kutusu işaretlendiğinde, o işyeri KDV indirimi uygulanacak kayıtlar listesine eklenmiş olur</li>
+                            <li>İşaretlediğiniz kayıt sayısı kadar işyerine KDV indirimi uygulanacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tümünü Seçme:</strong>
+                        <ol>
+                            <li>Listelenen tüm işyerlerine KDV indirimi uygulamak istiyorsanız, sütun başlıklarının en sağında bulunan "Tümünü Seç" onay kutusuna tıklayabilirsiniz</li>
+                            <li>Bu onay kutusu işaretlendiğinde, listedeki tüm kayıtlar otomatik olarak seçilecektir</li>
+                            <li>İşaretlemeyi kaldırmak isterseniz, aynı onay kutusuna tekrar tıklayarak tüm seçimleri iptal edebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>KDV indirimi işlemi sadece seçilen (işaretlenen) kayıtlar için uygulanacaktır</li>
+                    <li>Hiçbir kayıt seçilmeden "İŞLEME BAŞLA" butonuna tıklandığında sistem uyarı mesajı gösterecektir</li>
+                    <li>"Tümünü Seç" onay kutusunu kullanırken dikkatli olun, çok sayıda işyerine aynı anda indirim uygulanacaktır</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Eski ve yeni KDV tutarlarını karşılaştırarak indirim miktarını kontrol edebilirsiniz</li>
+                    <li>Belirli işyeri grupları için işlem yapmak istiyorsanız, önce dar bir sicil numarası aralığı belirleyip sonra "Tümünü Seç" özelliğini kullanabilirsiniz</li>
+                    <li>Tek tek seçim yaparken, yanlışlıkla seçilen bir kaydı iptal etmek için, o kaydın onay kutusuna tekrar tıklayarak işareti kaldırabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-baslatma" class="section">
+        <h2>İşlemi Başlatma</h2>
+        <div class="info-box">
+            <h3>KDV İndirim İşlemini Nasıl Başlatırsınız</h3>
+            <div class="step">
+                <h4>İşlemi Başlatma Adımları:</h4>
+                <ol>
+                    <li><strong>Kayıt Seçimi Yapma:</strong>
+                        <ul>
+                            <li>İşlem yapmadan önce, KDV indirimi uygulanacak işyerlerini seçtiğinizden emin olun</li>
+                            <li>Her satırın en sağındaki onay kutusunu işaretleyerek veya sütun başlıklarının en sağındaki "Tümünü Seç" onay kutusunu işaretleyerek seçim yapabilirsiniz</li>
+                            <li>Seçilen her işyeri için yeni KDV tutarı uygulanacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İŞLEME BAŞLA Butonuna Tıklama:</strong>
+                        <ol>
+                            <li>Kayıt seçimini tamamladıktan sonra, ekranın alt kısmında bulunan "İŞLEME BAŞLA" butonuna tıklayın</li>
+                            <li>Buton parlak gri renkte ve 3 boyutlu görünümdedir, sol tarafta yer alır</li>
+                            <li>Butona tıkladığınızda, seçilen kayıtlar için KDV indirimi işlemi başlatılacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Onay Mesajı:</strong>
+                        <ol>
+                            <li>İŞLEME BAŞLA butonuna tıkladıktan sonra, sistem bir onay mesajı gösterecektir: "İşyerlerine KDV indirimi yapılacak, devam etmek istiyor musunuz?"</li>
+                            <li>Bu mesaj kutusunda "Evet" seçeneğine tıklayarak işlemi onaylayabilir veya "Hayır" seçeneğine tıklayarak işlemi iptal edebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>İşlemi onayladıktan sonra, sistem seçilen işyerleri için KDV indirimi işlemini gerçekleştirecektir</li>
+                            <li>İşlem tamamlandığında "İndirim işlemi tamamlandı!" bilgi mesajı gösterilecektir</li>
+                            <li>Bu bilgi mesajını kapatmak için "Tamam" butonuna tıklayın</li>
+                            <li>İşlem tamamlandıktan sonra form yenilenecek ve yeni bir işlem için hazır olacaktır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İŞLEME BAŞLA butonuna tıklamadan önce, seçilen işyerlerini ve KDV tutarlarını dikkatli bir şekilde kontrol edin</li>
+                    <li>Hiçbir kayıt seçilmeden İŞLEME BAŞLA butonuna tıklandığında "Devam etmek için işyeri kaydı seçmelisiniz!" uyarı mesajı gösterilecektir</li>
+                    <li>İşlem onaylandıktan sonra geri alınamaz, bu nedenle onay mesajını dikkatlice okuyun</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda işyeri için işlem yapmadan önce, küçük bir grup üzerinde test yapabilirsiniz</li>
+                    <li>İşlem tamamlandıktan sonra, değişikliği kontrol etmek için aynı sicil numarası aralığı için yeniden listeleme yapabilirsiniz</li>
+                    <li>İşlem sırasında program yanıt vermiyor gibi görünebilir, bu normaldir, işlem tamamlanana kadar bekleyin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>LİSTELE, İŞLEME BAŞLA ve VAZGEÇ Butonları</h3>
+            <div class="step">
+                <h4>LİSTELE Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanlarının hemen altında, orta kısımda yer alır</li>
+                            <li>Parlak gri renkte ve 3 boyutlu görünümdedir</li>
+                            <li>Üzerinde büyük harflerle "LİSTELE" yazılıdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Sicil numarası aralığını girin</li>
+                            <li>LİSTELE butonuna tıklayın</li>
+                            <li>Sistem belirlediğiniz sicil numarası aralığındaki kayıtları listeleyecektir</li>
+                            <li>Listeleme işlemi tamamlandığında, sonuçlar butonun altındaki liste görünüm alanında görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>İŞLEME BAŞLA Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, sol tarafta yer alır</li>
+                            <li>Parlak gri renkte ve 3 boyutlu görünümdedir</li>
+                            <li>Üzerinde büyük harflerle "İŞLEME BAŞLA" yazılıdır</li>
+                            <li>VAZGEÇ butonunun sol tarafında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>Önce listeleme yapın ve KDV indirimi uygulanacak işyerlerini seçin</li>
+                            <li>İŞLEME BAŞLA butonuna tıklayın</li>
+                            <li>Onay mesajında "Evet" seçeneğine tıklayarak işlemi onaylayın</li>
+                            <li>İşlem tamamlandığında "İndirim işlemi tamamlandı!" bilgi mesajı görüntülenecektir</li>
+                            <li>Bilgi mesajını kapatmak için "Tamam" butonuna tıklayın</li>
+                            <li>Form yenilenecek ve yeni bir işlem için hazır olacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>VAZGEÇ Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, sağ tarafta yer alır</li>
+                            <li>Parlak gri renkte ve 3 boyutlu görünümdedir</li>
+                            <li>Üzerinde büyük harflerle "VAZGEÇ" yazılıdır</li>
+                            <li>İŞLEME BAŞLA butonunun sağ tarafında bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kullanım Adımları:</strong>
+                        <ol>
+                            <li>İşlemi iptal etmek veya programdan çıkmak istediğinizde VAZGEÇ butonuna tıklayın</li>
+                            <li>Butona tıkladığınızda program penceresi kapanacak ve önceki ekrana döneceksiniz</li>
+                            <li>Yapılan seçimler veya değişiklikler kaydedilmeden iptal edilecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>LİSTELE butonuna tıkladığınızda, önceki liste temizlenir ve yeni sicil numarası aralığındaki kayıtlar listelenir</li>
+                    <li>İŞLEME BAŞLA butonuna tıklamadan önce, seçilen işyerlerini ve KDV tutarlarını kontrol edin</li>
+                    <li>VAZGEÇ butonuna tıkladığınızda, yapılan tüm seçimler ve değişiklikler iptal edilecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>LİSTELE butonuna basarak aynı sicil numarası aralığını tekrar listeleyebilir ve önceki işlemlerin sonuçlarını kontrol edebilirsiniz</li>
+                    <li>Fare imlecinizi butonların üzerine getirdiğinizde, butonlar hafif renk değiştirir ve vurgulanır, bu da hangi butona tıklamak üzere olduğunuzu kolayca görmenizi sağlar</li>
+                    <li>İşlem yapmak istediğinizden emin değilseniz, önce listeleme yapıp sonuçları inceleyebilir, gerekirse VAZGEÇ butonuna tıklayarak programdan çıkabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Aktif butonu çalıştırmak için</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Devam etmek için işyeri kaydı seçmelisiniz!" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: İŞLEME BAŞLA butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Listeden en az bir işyeri seçtiğinizden emin olun. Onay kutularını işaretleyerek işyerlerini seçin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Liste Boş Görünüyor:</strong>
+                        <ul>
+                            <li>Sorun: LİSTELE butonuna tıklamanıza rağmen liste alanı boş kalıyor.</li>
+                            <li>Çözüm: Belirttiğiniz sicil numarası aralığında kayıt olmayabilir. Daha geniş bir sicil numarası aralığı deneyin veya varsayılan değerleri (0-9999999) kullanın.</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Uzun Sürüyor:</strong>
+                        <ul>
+                            <li>Sorun: LİSTELE veya İŞLEME BAŞLA butonlarına tıkladıktan sonra işlem çok uzun sürüyor.</li>
+                            <li>Çözüm: Çok geniş bir sicil numarası aralığı seçmiş olabilirsiniz. Daha dar bir aralık belirleyin. Ayrıca, sistem yoğunluğuna bağlı olarak işlem süresi değişebilir, sabırla bekleyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tümünü Seç Çalışmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Tümünü Seç onay kutusuna tıklamanıza rağmen tüm kayıtlar seçilmiyor.</li>
+                            <li>Çözüm: Listeleme işlemi tam olarak tamamlanmamış olabilir. Listeleme işleminin tamamlandığından emin olduktan sonra tekrar deneyin.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce doğru sicil numarası aralığını belirlediğinizden emin olun</li>
+                    <li>Eski ve yeni KDV tutarlarını karşılaştırarak indirim miktarını kontrol edin</li>
+                    <li>Çok sayıda işyeri için işlem yapmadan önce, küçük bir grup üzerinde test yapın</li>
+                    <li>Sık kullandığınız sicil numarası aralıklarını not alın</li>
+                    <li>İşlem tamamlandıktan sonra, değişikliği kontrol etmek için aynı sicil numarası aralığı için yeniden listeleme yapın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Kira KDV İndirim İşlemleri programı, işyerlerine uygulanan KDV tutarlarında toplu olarak indirim yapmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Sicil numarası aralığı belirleme</li>
+                <li>Kayıtları listeleme</li>
+                <li>Kayıtları inceleme ve seçim yapma</li>
+                <li>KDV indirim işlemini başlatma</li>
+                <li>İşlem butonlarının kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

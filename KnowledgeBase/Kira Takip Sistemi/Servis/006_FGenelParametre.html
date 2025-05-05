@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kira Genel Parametre Tanımları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kira Genel Parametre Tanımları</h1>
+        <img src="logo.png" alt="Belsis Logo">
+    </div>
+
+    <div class="section">
+        <h1>1. Giriş ve Genel Bakış</h1>
+        <p>Bu doküman, Belsis-Net uygulamasındaki "Kira Genel Parametre Tanımları" modülünün kullanımını açıklamaktadır. Bu modül, kira işlemleriyle ilgili genel parametrelerin tanımlanması ve düzenlenmesi için kullanılmaktadır.</p>
+        
+        <div class="info-box">
+            <p><strong>Dikkat:</strong> Bu modülde yapılan değişiklikler, sistem genelindeki tüm kira işlemlerini etkileyecektir. Değişiklik yapmadan önce parametrelerin ne anlama geldiğini anladığınızdan emin olun.</p>
+        </div>
+        
+        <h2>1.1. Modül Hakkında</h2>
+        <p>Kira Genel Parametre Tanımları modülü, kiralarla ilgili işlemlerde kullanılan hesaplama parametrelerini, zaman sınırlarını ve diğer önemli değerleri tanımlamak için kullanılır. Bu modül üzerinden tanımlanan değerler, kira hesaplamalarında, tahakkuk işlemlerinde ve diğer kira işlemlerinde kullanılır.</p>
+        
+        <h2>1.2. Modüle Erişim</h2>
+        <p>Kira Genel Parametre Tanımları modülüne erişmek için Belsis-Net uygulamasında ilgili menüyü kullanmanız gerekmektedir. Bu modül genellikle yönetici yetkisine sahip kullanıcılar tarafından kullanılmaktadır.</p>
+    </div>
+
+    <div class="section">
+        <h1>2. Arayüz Tanıtımı</h1>
+        <p>Kira Genel Parametre Tanımları ekranı, parametrelerin düzenlenebileceği bir form şeklinde tasarlanmıştır. Ekran açıldığında, mevcut parametre değerleri otomatik olarak yüklenir.</p>
+
+        <h2>2.1. Ekran Yapısı</h2>
+        <p>Ekran başlığı, sayfanın en üst kısmında yer alır ve "KIRA GENEL PARAMETRELER" şeklinde gösterilir. Form, farklı parametre alanlarını içeren satırlardan oluşur. Her satırda, parametre adı sol tarafta, değer alanı ise sağ tarafta bulunur.</p>
+        
+        <div class="info-box">
+            <p>Ekranın üst kısmında "KIRA GENEL PARAMETRELER" başlığı turkuaz renkli bir zemin üzerinde beyaz yazı ile görüntülenir. Bu başlık, hangi modülde olduğunuzu belirtir.</p>
+        </div>
+        
+        <h2>2.2. Form Alanları</h2>
+        <p>Form alanları, ekranın orta kısmında yer alan bir tablo içerisinde bulunur. Her satırda bir parametre ve onun değerini girebileceğiniz bir alan bulunur.</p>
+        
+        <h2>2.3. İşlem Butonları</h2>
+        <p>Formun alt kısmında yer alan butonlar ile şu işlemleri gerçekleştirebilirsiniz:</p>
+        <ul>
+            <li><strong>Formu Temizle:</strong> Formdaki tüm değerleri temizler.</li>
+            <li><strong>Kaydet:</strong> Yapılan değişiklikleri kaydeder.</li>
+            <li><strong>Çıkış:</strong> Formdan çıkış yapar.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h1>3. Kira Genel Parametreler Ekranı'nın Kullanımı</h1>
+        <p>Bu ekran, sistemdeki tüm kira işlemlerinde kullanılan parametreleri belirlemek için kullanılır. Bu bölümde, ekranın nasıl kullanılacağı ve parametrelerin nasıl ayarlanacağı anlatılmaktadır.</p>
+
+        <h2>3.1. Ekranı Açma</h2>
+        <p>Kira Genel Parametreler ekranını açmak için aşağıdaki adımları izleyin:</p>
+        
+        <div class="step">
+            <ol>
+                <li>Belsis-Net uygulamasını açın.</li>
+                <li>Ana menüden "Kira Modülü"nü seçin.</li>
+                <li>Açılan alt menüden "Genel Parametreler"i tıklayın.</li>
+            </ol>
+        </div>
+        
+        <h2>3.2. Parametreleri Görüntüleme</h2>
+        <p>Ekran açıldığında, sistemde kayıtlı en son parametre değerleri otomatik olarak yüklenir. Tüm parametreler ve mevcut değerleri ekranda görüntülenir.</p>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Ekran ilk açıldığında, ilk alan olan "Ceza Alt Sınırı" alanına odaklanır. Tab tuşunu kullanarak alanlar arasında kolayca geçiş yapabilirsiniz.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h1>4. Parametre Alanları ve Açıklamaları</h1>
+        <p>Bu bölümde, Kira Genel Parametreler ekranındaki tüm alanlar ve bu alanların ne anlama geldikleri açıklanmaktadır.</p>
+        
+        <h2>4.1. Parasal Değer Parametreleri</h2>
+        
+        <table>
+            <tr>
+                <th>Parametre Adı</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Ceza Alt Sınırı</td>
+                <td>Kira cezası uygulanacak minimum tutarı belirtir. Bu değerin altındaki tutarlar için ceza uygulanmaz.</td>
+            </tr>
+            <tr>
+                <td>Gecikme Zammı Alt Sınırı</td>
+                <td>Gecikme zammı uygulanacak minimum tutarı belirtir. Bu değerin altındaki tutarlar için gecikme zammı uygulanmaz.</td>
+            </tr>
+            <tr>
+                <td>Gecikme Faizi Alt Sınırı</td>
+                <td>Gecikme faizi uygulanacak minimum tutarı belirtir. Bu değerin altındaki tutarlar için gecikme faizi uygulanmaz.</td>
+            </tr>
+            <tr>
+                <td>Yuvarlama Oranı</td>
+                <td>Kira hesaplamalarında kullanılacak yuvarlama oranını belirtir.</td>
+            </tr>
+            <tr>
+                <td>Faiz Oranı</td>
+                <td>Kira hesaplamalarında kullanılacak faiz oranını belirtir.</td>
+            </tr>
+            <tr>
+                <td>KDV Oranı</td>
+                <td>Hesaplamalarda uygulanacak KDV oranını belirtir.</td>
+            </tr>
+            <tr>
+                <td>Damga Vergisi Oranı (Binde)</td>
+                <td>Kira sözleşmelerinde uygulanacak damga vergisi oranını binde cinsinden belirtir.</td>
+            </tr>
+        </table>
+        
+        <h2>4.2. Süre ve Zaman Parametreleri</h2>
+        
+        <table>
+            <tr>
+                <th>Parametre Adı</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Başvuru Süresi / Tipi</td>
+                <td>Kira başvuruları için tanımlanan süre limitini ve bu sürenin gün mü ay mı cinsinden olduğunu belirtir.</td>
+            </tr>
+            <tr>
+                <td>Tespit Süresi</td>
+                <td>Kira tespiti için belirlenen süreyi belirtir.</td>
+            </tr>
+            <tr>
+                <td>Son Ödeme Günü</td>
+                <td>Kira ödemelerinin yapılması gereken son günü belirtir.</td>
+            </tr>
+        </table>
+        
+        <h2>4.3. Kira Hesaplama Parametreleri</h2>
+        
+        <table>
+            <tr>
+                <th>Parametre Adı</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Yuvarlama Tipi</td>
+                <td>Hesaplamalarda kullanılacak yuvarlama tipini belirtir. (Alta, Üste veya Serbest)</td>
+            </tr>
+            <tr>
+                <td>Tahakkuk Dilimleri</td>
+                <td>Kira tahakkuklarının kaç dilim halinde yapılacağını belirtir.</td>
+            </tr>
+            <tr>
+                <td>KDV</td>
+                <td>KDV'nin hesaplamalara nasıl dahil edileceğini belirtir. (Dahil, Hariç veya Artı)</td>
+            </tr>
+            <tr>
+                <td>Tahakkuk Makbuzu Nüsha Sayısı</td>
+                <td>Kira tahakkuk makbuzlarının kaç nüsha basılacağını belirtir.</td>
+            </tr>
+        </table>
+        
+        <h2>4.4. Diğer Parametreler</h2>
+        
+        <table>
+            <tr>
+                <th>Parametre Adı</th>
+                <th>Açıklama</th>
+            </tr>
+            <tr>
+                <td>Sözleşme Sonu Kontrolü</td>
+                <td>Sözleşme sonu kontrolünün yapılıp yapılmayacağını belirtir. (Var veya Yok)</td>
+            </tr>
+            <tr>
+                <td>Terk İşleminde Otomatik Azaltan Yapılmasın</td>
+                <td>Terk işlemlerinde otomatik azaltan işlemi yapılıp yapılmayacağını belirtir. (Evet veya Hayır)</td>
+            </tr>
+            <tr>
+                <td>Taksit No Son Ödeme Tarihinin Ayı ile Aynı Olsun</td>
+                <td>Taksit numarasının son ödeme tarihinin ayı ile aynı olup olmayacağını belirtir. (Evet veya Hayır)</td>
+            </tr>
+            <tr>
+                <td>Ecrimisil Peşin Ödeme İndirimi Uygulansın</td>
+                <td>Ecrimisil ödemelerinde peşin ödeme indirimi uygulanıp uygulanmayacağını belirtir. (Evet veya Hayır)</td>
+            </tr>
+            <tr>
+                <td>Ecrimisil Peşin Ödeme İndirim Günü</td>
+                <td>Ecrimisil peşin ödeme indiriminin kaç gün içinde yapılırsa geçerli olacağını belirtir.</td>
+            </tr>
+            <tr>
+                <td>Ecrimisil Peşin Ödeme İndirim Oranı (%)</td>
+                <td>Ecrimisil peşin ödemelerde uygulanacak indirim oranını yüzde cinsinden belirtir.</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h1>5. Adım Adım Kira Genel Parametre Güncelleme</h1>
+        <p>Bu bölümde, kira genel parametrelerini nasıl güncelleyeceğiniz adım adım anlatılmaktadır.</p>
+        
+        <h2>5.1. Parametreleri İnceleme</h2>
+        <div class="step">
+            <ol>
+                <li>Kira Genel Parametreler ekranını açın. Ekran açıldığında mevcut parametreler otomatik olarak yüklenir.</li>
+                <li>Ekranın üst kısmında "KIRA GENEL PARAMETRELER" başlığını göreceksiniz.</li>
+                <li>Mevcut parametre değerlerini incelemek için sayfayı aşağı kaydırın. Tüm parametre alanları ve mevcut değerleri görüntülenecektir.</li>
+            </ol>
+        </div>
+        
+        <div class="tip-box">
+            <p><strong>İpucu:</strong> Alanlar arasında gezinmek için Tab tuşunu kullanabilirsiniz. Tab tuşuna her bastığınızda bir sonraki alana geçiş yaparsınız.</p>
+        </div>
+        
+        <h2>5.2. Ceza ve Gecikme Sınırlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Kira Genel Parametreler ekranında, en üstteki alan olan "Ceza Alt Sınırı" alanına tıklayın. Bu alan, ekranın üst kısmında, sol tarafta "Ceza Alt Sınırı" etiketi yanında bulunur.</li>
+                <li>İstediğiniz değeri girin. Parasal değer girişlerinde, ondalık kısım için virgül (,) kullanın. Örneğin: 1000,50</li>
+                <li>Tab tuşuna basarak bir sonraki alan olan "Gecikme Zammı Alt Sınırı" alanına geçin. Bu alan, "Ceza Alt Sınırı" alanının hemen altında yer alır.</li>
+                <li>Gecikme zammı için alt sınır değerini girin.</li>
+                <li>Tab tuşuna basarak "Gecikme Faizi Alt Sınırı" alanına geçin. Bu alan da "Gecikme Zammı Alt Sınırı" alanının hemen altında yer alır.</li>
+                <li>Gecikme faizi için alt sınır değerini girin.</li>
+            </ol>
+        </div>
+        
+        <h2>5.3. Yuvarlama Ayarlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Yuvarlama Oranı" alanına gelin. Bu alan, "Gecikme Faizi Alt Sınırı" alanının altında yer alır.</li>
+                <li>Hesaplamalarda kullanılacak yuvarlama oranını girin.</li>
+                <li>Tab tuşuyla "Yuvarlama Tipi" açılır listesine gelin. Bu liste, "Yuvarlama Oranı" alanının altında yer alır.</li>
+                <li>Açılır listeden yuvarlamanın nasıl yapılacağını seçin:
+                    <ul>
+                        <li>"Alta" - Hesaplamalar aşağı yuvarlanır</li>
+                        <li>"Üste" - Hesaplamalar yukarı yuvarlanır</li>
+                        <li>"Serbest" - Matematiksel yuvarlama kuralları uygulanır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <h2>5.4. Başvuru ve Tespit Sürelerini Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Başvuru Süresi" alanına gelin. Bu alan, "Yuvarlama Tipi" alanının altında, ekranın orta kısmında yer alır.</li>
+                <li>Başvuru süresi değerini girin. Bu sadece sayısal bir değer olmalıdır.</li>
+                <li>Tab tuşuyla yanındaki "Başvuru Tipi" açılır listesine gelin. Bu liste, "Başvuru Süresi" alanının hemen sağında yer alır.</li>
+                <li>Açılır listeden sürenin birimini seçin:
+                    <ul>
+                        <li>"Gün" - Süre gün cinsinden hesaplanır</li>
+                        <li>"Ay" - Süre ay cinsinden hesaplanır</li>
+                    </ul>
+                </li>
+                <li>Tab tuşuyla "Tespit Süresi" alanına gelin. Bu alan, "Başvuru Süresi/Tipi" alanının altında yer alır.</li>
+                <li>Tespit süresi değerini girin.</li>
+            </ol>
+        </div>
+        
+        <h2>5.5. Tahakkuk ve Ödeme Parametrelerini Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Tahakkuk Dilimleri" alanına gelin. Bu alan, "Tespit Süresi" alanının altında yer alır.</li>
+                <li>Tahakkukların kaç dilim halinde yapılacağını belirten değeri girin. Bu alan boş bırakılamaz ve değeri 0 olamaz.</li>
+                <li>Tab tuşuyla "Son Ödeme Günü" alanına gelin. Bu alan, "Tahakkuk Dilimleri" alanının altında yer alır.</li>
+                <li>Ödemelerin yapılması gereken son günü belirten sayısal değeri girin.</li>
+                <li>Tab tuşuyla "Faiz Oranı" alanına gelin. Bu alan, "Son Ödeme Günü" alanının altında yer alır.</li>
+                <li>Hesaplamalarda kullanılacak faiz oranını girin.</li>
+            </ol>
+        </div>
+    </div>
+    <div class="section">
+        <h2>5.6. KDV ve Makbuz Ayarlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "KDV Oranı" alanına gelin. Bu alan, "Faiz Oranı" alanının altında yer alır.</li>
+                <li>Hesaplamalarda uygulanacak KDV oranını girin.</li>
+                <li>Tab tuşuyla "Tahakkuk Makbuzu Nüsha Sayısı" alanına gelin. Bu alan, "KDV Oranı" alanının altında yer alır.</li>
+                <li>Tahakkuk makbuzlarının kaç nüsha basılacağını belirten sayısal değeri girin.</li>
+                <li>Tab tuşuyla "KDV" açılır listesine gelin. Bu liste, "Tahakkuk Makbuzu Nüsha Sayısı" alanının altında yer alır.</li>
+                <li>Açılır listeden KDV'nin hesaplamalara nasıl dahil edileceğini seçin:
+                    <ul>
+                        <li>"Dahil" - KDV tutara dahildir</li>
+                        <li>"Yok" - KDV hesaplanmaz</li>
+                        <li>"Artı" - KDV tutar üzerine eklenir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <h2>5.7. Sözleşme ve Terk İşlemleri Ayarlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Sözleşme Sonu Kontrolü" açılır listesine gelin. Bu liste, "KDV" alanının altında yer alır.</li>
+                <li>Açılır listeden sözleşme sonu kontrolünün yapılıp yapılmayacağını seçin:
+                    <ul>
+                        <li>"Var" - Sözleşme sonu kontrolü yapılır</li>
+                        <li>"Yok" - Sözleşme sonu kontrolü yapılmaz</li>
+                    </ul>
+                </li>
+                <li>Tab tuşuyla "Terk İşleminde Otomatik Azaltan Yapılmasın" açılır listesine gelin. Bu liste, "Sözleşme Sonu Kontrolü" alanının altında yer alır.</li>
+                <li>Açılır listeden terk işlemlerinde otomatik azaltan yapılıp yapılmayacağını seçin:
+                    <ul>
+                        <li>"Hayır" - Otomatik azaltan yapılır</li>
+                        <li>"Evet" - Otomatik azaltan yapılmaz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <h2>5.8. Damga Vergisi ve Taksit Ayarlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Damga Vergisi Oranı (Binde)" alanına gelin. Bu alan, "Terk İşleminde Otomatik Azaltan Yapılmasın" alanının altında yer alır.</li>
+                <li>Kira sözleşmelerinde uygulanacak damga vergisi oranını binde cinsinden girin.</li>
+                <li>Tab tuşuyla "Taksit No Son Ödeme Tarihinin Ayı ile Aynı Olsun" açılır listesine gelin. Bu liste, "Damga Vergisi Oranı" alanının altında yer alır.</li>
+                <li>Açılır listeden taksit numarasının son ödeme tarihinin ayı ile aynı olup olmayacağını seçin:
+                    <ul>
+                        <li>"Hayır" - Taksit numarası ve son ödeme tarihi ayı aynı olmaz</li>
+                        <li>"Evet" - Taksit numarası son ödeme tarihi ayı ile aynı olur</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <h2>5.9. Ecrimisil İndirim Ayarlarını Güncelleme</h2>
+        <div class="step">
+            <ol>
+                <li>Tab tuşuyla "Ecrimisil Peşin Ödeme İndirimi Uygulansın" açılır listesine gelin. Bu liste, "Taksit No Son Ödeme Tarihinin Ayı ile Aynı Olsun" alanının altında yer alır.</li>
+                <li>Açılır listeden ecrimisil peşin ödeme indirimi uygulanıp uygulanmayacağını seçin:
+                    <ul>
+                        <li>"Hayır" - İndirim uygulanmaz</li>
+                        <li>"Evet" - İndirim uygulanır</li>
+                    </ul>
+                </li>
+                <li>Tab tuşuyla "Ecrimisil Peşin Ödeme İndirim Günü" alanına gelin. Bu alan, "Ecrimisil Peşin Ödeme İndirimi Uygulansın" alanının altında yer alır.</li>
+                <li>Ecrimisil peşin ödeme indiriminin kaç gün içinde yapılırsa geçerli olacağını belirten sayısal değeri girin.</li>
+                <li>Tab tuşuyla "Ecrimisil Peşin Ödeme İndirim Oranı (%)" alanına gelin. Bu alan, "Ecrimisil Peşin Ödeme İndirim Günü" alanının altında, formun en alt kısmında yer alır.</li>
+                <li>Ecrimisil peşin ödemelerde uygulanacak indirim oranını yüzde cinsinden girin.</li>
+            </ol>
+        </div>
+        
+        <h2>5.10. Değişiklikleri Kaydetme</h2>
+        <div class="step">
+            <ol>
+                <li>Tüm parametre değişikliklerini yaptıktan sonra, formun alt kısmındaki "Kaydet" butonuna tıklayın. Bu buton, formun en alt kısmında, "Formu Temizle" butonunun yanında ve "Çıkış" butonunun solunda yer alır.</li>
+                <li>Sistem, değişiklikleri kontrol edecek ve hata yoksa kaydedecektir.</li>
+                <li>Kaydetme işlemi başarılı olduğunda, değişiklikler sisteme uygulanacak ve mevcut değerler güncellenecektir.</li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Uyarı:</strong> Parametre değişiklikleri, tüm kira işlemlerini etkiler. Değişiklik yapmadan önce parametrelerin anlamını ve etkilerini anladığınızdan emin olun.</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h1>6. İşlem Butonları</h1>
+        <p>Kira Genel Parametreler ekranının alt kısmında üç işlem butonu bulunmaktadır. Bu butonların işlevleri aşağıda açıklanmıştır.</p>
+        
+        <h2>6.1. Formu Temizle Butonu</h2>
+        <p>Bu buton, formun sol alt köşesinde yer alır. Bu butona tıkladığınızda, formda yapılmış değişiklikler temizlenir ve en son kaydedilen parametre değerleri yüklenir. Eğer henüz kaydetmediğiniz değişiklikler varsa, bu buton ile bu değişiklikler iptal edilir.</p>
+        
+        <div class="step">
+            <p><strong>Formu Temizle Butonunu Kullanmak İçin:</strong></p>
+            <ol>
+                <li>Formun alt kısmında, en soldaki "Formu Temizle" butonuna tıklayın.</li>
+                <li>Form temizlenecek ve en son kaydedilen değerler yeniden yüklenecektir.</li>
+            </ol>
+        </div>
+        
+        <h2>6.2. Kaydet Butonu</h2>
+        <p>Bu buton, formun alt kısmında, "Formu Temizle" butonunun sağında yer alır. Bu butona tıkladığınızda, formda yapılan tüm değişiklikler kaydedilir ve sistem genelinde uygulanır.</p>
+        
+        <div class="step">
+            <p><strong>Kaydet Butonunu Kullanmak İçin:</strong></p>
+            <ol>
+                <li>Formda gerekli değişiklikleri yapın.</li>
+                <li>Formun alt kısmında, ortada yer alan "Kaydet" butonuna tıklayın.</li>
+                <li>Sistem, değişiklikleri kontrol edecek ve zorunlu alanların doldurulduğundan emin olacaktır.</li>
+                <li>Eğer bir hata yoksa, değişiklikler kaydedilecek ve bir sonraki sayfada güncel değerler gösterilecektir.</li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <p><strong>Uyarı:</strong> Bazı alanlar kırmızı kenarlıkla işaretlenmiştir. Bunlar zorunlu alanlardır ve boş bırakılamazlar. Kaydet butonuna basmadan önce bu alanların doldurulduğundan emin olun.</p>
+        </div>
+        
+        <h2>6.3. Çıkış Butonu</h2>
+        <p>Bu buton, formun sağ alt köşesinde yer alır. Bu butona tıkladığınızda, formdan çıkış yaparsınız ve değişiklikler kaydedilmez.</p>
+        
+        <div class="step">
+            <p><strong>Çıkış Butonunu Kullanmak İçin:</strong></p>
+            <ol>
+                <li>Formun alt kısmında, en sağda yer alan "Çıkış" butonuna tıklayın.</li>
+                <li>Sistem, çıkış yapmak istediğinizi onaylamanızı isteyecektir.</li>
+                <li>Onayladığınızda, form kapatılacak ve değişiklikler kaydedilmeyecektir.</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h1>7. Sık Karşılaşılan Sorunlar ve Çözümleri</h1>
+        <p>Bu bölümde, Kira Genel Parametreler ekranını kullanırken karşılaşabileceğiniz yaygın sorunlar ve bunların çözümleri açıklanmaktadır.</p>
+        
+        <h2>7.1. Kaydetme Hatası</h2>
+        <div class="info-box">
+            <p><strong>Sorun:</strong> "Kaydet" butonuna bastığınızda hata mesajı alıyorsunuz.</p>
+            <p><strong>Çözüm:</strong> Aşağıdaki adımları izleyin:</p>
+            <ol>
+                <li>Zorunlu alanların (kırmızı kenarlıkla işaretlenmiş) doldurulduğundan emin olun.</li>
+                <li>Başvuru Tipi alanının boş olmadığından emin olun.</li>
+                <li>Tahakkuk Dilimleri alanının boş olmadığından ve değerinin 0'dan büyük olduğundan emin olun.</li>
+                <li>KDV seçeneğinin seçildiğinden emin olun.</li>
+                <li>Tüm sayısal alanlara geçerli değerler girdiğinizden emin olun. Parasal değerlerde ondalık kısım için virgül (,) kullanın.</li>
+            </ol>
+        </div>
+        
+        <h2>7.2. Form Açılmıyor veya Yüklenmiyor</h2>
+        <div class="info-box">
+            <p><strong>Sorun:</strong> Kira Genel Parametreler ekranı açılmıyor veya yüklenmiyor.</p>
+            <p><strong>Çözüm:</strong> Aşağıdaki adımları izleyin:</p>
+            <ol>
+                <li>Belsis-Net uygulamasını yeniden başlatın.</li>
+                <li>Uygulamaya doğru kullanıcı adı ve şifre ile giriş yaptığınızdan emin olun.</li>
+                <li>Bu modüle erişim yetkinizin olduğundan emin olun. Eğer emin değilseniz, sistem yöneticinizle iletişime geçin.</li>
+            </ol>
+        </div>
+        
+        <h2>7.3. Değişiklikler Uygulanmıyor</h2>
+        <div class="info-box">
+            <p><strong>Sorun:</strong> Değişiklikleri kaydettiniz ancak sistem genelinde uygulanmıyor.</p>
+            <p><strong>Çözüm:</strong> Aşağıdaki adımları izleyin:</p>
+            <ol>
+                <li>Değişiklikleri kaydettiğinizden emin olun. Sadece formu doldurmak değişiklikleri kaydetmez, mutlaka "Kaydet" butonuna basmanız gerekir.</li>
+                <li>Bazı değişiklikler, sistemin yeniden başlatılmasını gerektirebilir. Belsis-Net uygulamasını kapatıp yeniden açmayı deneyin.</li>
+                <li>Eğer sorun devam ederse, sistem yöneticinizle iletişime geçin.</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h1>8. Pratik İpuçları</h1>
+        <p>Bu bölümde, Kira Genel Parametreler ekranını daha etkili kullanmanıza yardımcı olacak pratik ipuçları bulunmaktadır.</p>
+        
+        <h2>8.1. Klavye Kısayolları</h2>
+        <div class="tip-box">
+            <p><strong>Tab Tuşu:</strong> Alanlar arasında ileri doğru geçiş yapmak için Tab tuşunu kullanabilirsiniz.</p>
+            <p><strong>Shift+Tab:</strong> Alanlar arasında geriye doğru geçiş yapmak için Shift+Tab tuş kombinasyonunu kullanabilirsiniz.</p>
+            <p><strong>Enter Tuşu:</strong> Formda doldurulacak alanlarda, Enter tuşuna basarak bir sonraki alana geçebilirsiniz.</p>
+            <p><strong>Esc Tuşu:</strong> Formdan çıkmak için Esc tuşunu kullanabilirsiniz. Bu durumda sistem, çıkmak istediğinizi onaylamanızı isteyecektir.</p>
+        </div>
+        
+        <h2>8.2. Parametre Değişikliklerinin Etkileri</h2>
+        <div class="info-box">
+            <p>Kira Genel Parametrelerinde yapılan değişiklikler, tüm kira işlemlerini etkileyebilir. Özellikle aşağıdaki durumları göz önünde bulundurun:</p>
+            <ul>
+                <li><strong>KDV ve Vergi Oranları:</strong> Bu değerlerdeki değişiklikler, tüm kira hesaplamalarını doğrudan etkiler. Yasal düzenlemelere uygun olduğundan emin olun.</li>
+                <li><strong>Tahakkuk Dilimleri:</strong> Bu değer, kira tahakkuklarının kaç dilim halinde yapılacağını belirler. Değiştirilmesi, tüm kira tahakkuklarının yapısını etkileyebilir.</li>
+                <li><strong>Son Ödeme Günü:</strong> Bu değer, kira ödemelerinin yapılması gereken son günü belirler. Değiştirilmesi, müşterilerin ödeme alışkanlıklarını etkileyebilir.</li>
+            </ul>
+        </div>
+        
+        <h2>8.3. Değişikliklerden Önce Yedekleme</h2>
+        <div class="tip-box">
+            <p>Önemli parametre değişikliklerinden önce, mevcut değerleri not almanız önerilir. Böylece, bir sorun yaşanması durumunda orijinal değerlere dönebilirsiniz.</p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h1>9. Özet</h1>
+        <p>Kira Genel Parametreler ekranı, kira işlemlerinde kullanılan temel parametreleri tanımlamanıza ve düzenlemenize olanak sağlar. Bu ekran üzerinden yapılan değişiklikler, tüm kira işlemlerini etkiler.</p>
+        
+        <p>Bu kılavuzda, Kira Genel Parametreler ekranının nasıl kullanılacağı, parametrelerin ne anlama geldiği ve yaygın işlemler için adım adım talimatlar verilmiştir.</p>
+        
+        <p>Ekranın temel bileşenleri şunlardır:</p>
+        <ul>
+            <li>Parasal değer parametreleri (Ceza Alt Sınırı, Gecikme Zammı Alt Sınırı, vb.)</li>
+            <li>Süre ve zaman parametreleri (Başvuru Süresi, Tespit Süresi, vb.)</li>
+            <li>Kira hesaplama parametreleri (Yuvarlama Tipi, Tahakkuk Dilimleri, vb.)</li>
+            <li>Diğer parametreler (Sözleşme Sonu Kontrolü, Ecrimisil İndirim Ayarları, vb.)</li>
+        </ul>
+        
+        <p>Parametreleri güncellemek için, ilgili alanlara yeni değerleri girin ve "Kaydet" butonuna tıklayın. Zorunlu alanların (kırmızı kenarlıkla işaretlenmiş) doldurulduğundan emin olun.</p>
+        
+        <p>Herhangi bir sorunla karşılaşırsanız, bu kılavuzun "Sık Karşılaşılan Sorunlar ve Çözümleri" bölümüne başvurabilirsiniz.</p>
+    </div>
+    </body>
+    </html>
+</body>
+</html>
