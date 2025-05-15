@@ -15,7 +15,7 @@ public class ChatModel : PageModel
     public string AssistantResponse { get; set; }
 
     private string apiUrl = "https://api.openai.com/v1"; // API URL
-    private string apiKey = "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"; // API Key
+    private string apiKey = "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"; // API Key
     private string assistantId = "asst_L3HHeWRaKijE0VZofrRFcEaM"; // Assistant ID
 
     // Constructor

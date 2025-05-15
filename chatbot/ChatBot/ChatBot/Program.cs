@@ -5,8 +5,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 var app = builder.Build();
 
-VectorDBHandler db = new VectorDBHandler();
-//db.FillDb();
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();
