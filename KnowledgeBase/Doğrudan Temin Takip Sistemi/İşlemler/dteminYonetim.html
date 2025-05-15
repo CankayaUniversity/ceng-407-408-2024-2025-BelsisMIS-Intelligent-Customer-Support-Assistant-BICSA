@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğrudan Temin Yönetim Konsolu Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Doğrudan Temin Yönetim Konsolu Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#filtreleme">Filtreleme İşlemleri</a></li>
+                <li><a href="#dosya-islemleri">Dosya İşlemleri</a></li>
+                <li><a href="#teklif-islemleri">Teklif İşlemleri</a></li>
+                <li><a href="#sozlesme-islemleri">Sözleşme İşlemleri</a></li>
+                <li><a href="#detay-gorunum">Detay Görüntüleme ve Navigasyon</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Kısayollar</a></li>
+                <li><a href="#sorunlar">Sık Karşılaşılan Sorunlar ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Doğrudan Temin Yönetim Konsolu, doğrudan temin yoluyla yapılan alımların yönetilmesi, takibi ve raporlanması için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Doğrudan temin yoluyla yapılan alımları kaydedebilir ve takip edebilirsiniz</li>
+                <li>Firmaların vermiş olduğu teklifleri girebilir ve yönetebilirsiniz</li>
+                <li>Alım türlerine ve bend kodlarına göre işlemleri filtreleyebilirsiniz</li>
+                <li>Teklif onaylama işlemlerini gerçekleştirebilirsiniz</li>
+                <li>Çeşitli raporlar alabilir ve sözleşme oluşturabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi yıl ve dönem için işlem yapmak istediğiniz</li>
+                    <li>Doğrudan temin dosya numaraları ve tarihleri</li>
+                    <li>Alım türleri ve bend kodları</li>
+                    <li>Firma bilgileri</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde "Doğrudan Temin Yönetim Ekranı" başlığı yer alır</li>
+                            <li>Başlık, mavi renkte ve ortalanmış olarak görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında yer alır</li>
+                            <li>Yıl, ay, dosya kodu, dosya tarihi, işin tanımı gibi filtreleme seçeneklerini içerir</li>
+                            <li>Birim, alım türü, bend, firma adı, teklif tarihi, onay durumu ve süre alanlarını içerir</li>
+                            <li>Filtreleme ve temizleme butonları sağ tarafta bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Görüntüleme Bölümü:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün altında yer alan ana tablo alanıdır</li>
+                            <li>Dosya ve teklif bilgilerini satırlar halinde gösterir</li>
+                            <li>Her dosya satırı genişletilebilir/daraltılabilir özelliktedir</li>
+                            <li>Satır detaylarında dosya ve teklif bilgilerini görüntüleyebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Her satırın en sağında yer alır</li>
+                            <li>Dosyayı Aç, Yeni Teklif Oluştur, Raporlar gibi işlem butonlarını içerir</li>
+                            <li>Onaylama durumuna göre Teklif Onaylama ve Sözleşme Word Transfer butonları görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Toplam Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Toplam dosya sayısı, teklif verilen dosya sayısı, onaylanan ve onaylanmayan dosya sayılarını gösterir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İlk olarak "Lütfen Bekleyiniz" mesajı görüntülenir</li>
+                    <li>Veriler yüklendikten sonra ana tablo görünür hale gelir</li>
+                    <li>Varsayılan olarak içinde bulunulan yıl seçili gelir</li>
+                    <li>Ayrıntılı bir arama yapmak için filtreleme seçeneklerini kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme" class="section">
+        <h2>Filtreleme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Filtreleme Kriterleri ve Kullanımı</h3>
+            
+            <div class="step">
+                <h4>Yıl ve Ay Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün en üst kısmında, sol tarafta yer alır</li>
+                            <li>Yıl açılır listesi (dropdown) ve hemen yanında Ay açılır listesi bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl Seçimi:</strong>
+                        <ol>
+                            <li>Yıl açılır listesine tıklayın</li>
+                            <li>Listeden işlem yapmak istediğiniz yılı seçin
+                                <ul>
+                                    <li>Listenin en üstünde "Tümü" seçeneği bulunur</li>
+                                    <li>Tüm yıllar için arama yapmak isterseniz "Tümü" seçeneğini seçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Ay Seçimi:</strong>
+                        <ol>
+                            <li>Ay açılır listesine tıklayın</li>
+                            <li>Listeden işlem yapmak istediğiniz ayı seçin
+                                <ul>
+                                    <li>Ocak'tan Aralık'a kadar tüm aylar listelenmiştir</li>
+                                    <li>Listenin en altında "Tümü" seçeneği bulunur</li>
+                                    <li>Tüm aylar için arama yapmak isterseniz "Tümü" seçeneğini seçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Dosya Kodu ve Tarihi ile Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Yıl ve Ay seçim kutularının hemen sağında yer alır</li>
+                            <li>İlk olarak "Dosya Kodu" metin kutusu, sonra "Dosya Tarihi" metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dosya Kodu Filtreleme:</strong>
+                        <ol>
+                            <li>Dosya Kodu metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz dosya kodunu veya kodun bir kısmını girin
+                                <ul>
+                                    <li>Sadece kodun başlangıç kısmını girerek, o kısımla başlayan tüm kodları arayabilirsiniz</li>
+                                    <li>Örneğin, "2023" yazarsanız, kodu 2023 ile başlayan tüm dosyalar listelenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Dosya Tarihi Filtreleme:</strong>
+                        <ol>
+                            <li>Dosya Tarihi metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz tarihi "GG.AA.YYYY" formatında girin
+                                <ul>
+                                    <li>Örneğin, "15.05.2023" şeklinde bir tarih girebilirsiniz</li>
+                                    <li>Tarih seçmek için kutunun yanındaki takvim simgesine de tıklayabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İşin Tanımı ile Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Dosya Tarihi metin kutusunun hemen sağında yer alır</li>
+                            <li>"İşin Tanımı" metin kutusu olarak görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Adımları:</strong>
+                        <ol>
+                            <li>İşin Tanımı metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz işin tanımını veya tanımın bir kısmını yazın
+                                <ul>
+                                    <li>En az 3 karakter girmeniz gerekmektedir</li>
+                                    <li>Girdiğiniz metin, işin tanımı içinde herhangi bir yerde geçiyorsa sonuçlar listelenir</li>
+                                    <li>Örneğin, "bilgisayar" yazarsanız, içinde "bilgisayar" kelimesi geçen tüm işler listelenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Birim Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme satırının ikinci sütununda, İşin Tanımı alanının alt kısmında yer alır</li>
+                            <li>Açılır liste (dropdown) şeklinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim Adımları:</strong>
+                        <ol>
+                            <li>Birim açılır listesine tıklayın</li>
+                            <li>Listeden filtrelemek istediğiniz birimi seçin
+                                <ul>
+                                    <li>Birimler "xx.Birim Adı" formatında listelenir (örneğin "03.İnsan Kaynakları")</li>
+                                    <li>Listede sadece yetkiniz olan birimler görünür</li>
+                                    <li>Boş bırakırsanız, tüm birimler için arama yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme-2" class="section">
+        <h2>Filtreleme İşlemleri (Devam)</h2>
+        <div class="info-box">
+            <div class="step">
+                <h4>Alım Türü ve Bend Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Alım Türü alanı, filtreleme satırının üçüncü sütununda yer alır</li>
+                            <li>Bend alanı, filtreleme satırının dördüncü sütununda, Alım Türü'nün hemen sağında bulunur</li>
+                            <li>Her ikisi de açılır liste (dropdown) şeklinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alım Türü Seçimi:</strong>
+                        <ol>
+                            <li>Alım Türü açılır listesine tıklayın</li>
+                            <li>Listeden filtrelemek istediğiniz alım türünü seçin
+                                <ul>
+                                    <li>Örneğin: "Mal Alımı", "Hizmet Alımı", "Yapım İşi" vb.</li>
+                                    <li>Boş bırakırsanız, tüm alım türleri için arama yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Bend Seçimi:</strong>
+                        <ol>
+                            <li>Bend açılır listesine tıklayın</li>
+                            <li>Listeden filtrelemek istediğiniz bend'i seçin
+                                <ul>
+                                    <li>Bendler kanun maddesi numarası ile birlikte listelenir (örneğin "22/a", "22/d" vb.)</li>
+                                    <li>Boş bırakırsanız, tüm bendler için arama yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Firma Bilgisi ile Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme satırının beşinci sütununda, Bend alanının sağında yer alır</li>
+                            <li>Metin kutusu şeklinde görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Adımları:</strong>
+                        <ol>
+                            <li>Firma metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz firma adını veya adın bir kısmını yazın
+                                <ul>
+                                    <li>Yazarken, sistem otomatik olarak uygun firmaları önerecektir</li>
+                                    <li>Önerilen firmalardan birini seçebilir veya klavyeden yazmaya devam edebilirsiniz</li>
+                                    <li>Girdiğiniz metin, firma adı içinde herhangi bir yerde geçiyorsa sonuçlar listelenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Teklif Tarihi ve Onay Durumu ile Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Teklif Tarihi alanı, filtreleme satırının altıncı sütununda, Firma alanının sağında yer alır</li>
+                            <li>Onay Durumu alanı, Teklif Tarihi'nin sağında, yedinci sütunda bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Teklif Tarihi Filtreleme:</strong>
+                        <ol>
+                            <li>Teklif Tarihi metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz tarihi "GG.AA.YYYY" formatında girin
+                                <ul>
+                                    <li>Örneğin, "15.05.2023" şeklinde bir tarih girebilirsiniz</li>
+                                    <li>Tarih seçmek için kutunun yanındaki takvim simgesine de tıklayabilirsiniz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Onay Durumu Seçimi:</strong>
+                        <ol>
+                            <li>Onay Durumu açılır listesine tıklayın</li>
+                            <li>Listeden filtrelemek istediğiniz onay durumunu seçin
+                                <ul>
+                                    <li>"Onaylanmayanlar" veya "Onaylananlar" seçeneklerinden birini seçebilirsiniz</li>
+                                    <li>Boş bırakırsanız, tüm onay durumları için arama yapılır</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Süre ile Filtreleme ve Filtreleme İşlemlerini Tamamlama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Süre alanı, filtreleme satırının sekizinci sütununda, Onay Durumu alanının sağında yer alır</li>
+                            <li>Filtrele ve Temizle butonları, en sağdaki dokuzuncu sütunda bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Süre Filtreleme:</strong>
+                        <ol>
+                            <li>Süre metin kutusuna tıklayın</li>
+                            <li>Arama yapmak istediğiniz teslim süresini gün cinsinden girin
+                                <ul>
+                                    <li>Örneğin, "30" yazarsanız, teslim süresi 30 gün olan dosyalar listelenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Filtreleme İşlemini Tamamlama:</strong>
+                        <ol>
+                            <li>Tüm filtreleme kriterlerini girdikten sonra, sağ taraftaki "Filtrele" butonuna tıklayın
+                                <ul>
+                                    <li>Filtrele butonu gri renklidir ve üzerine geldiğinizde rengi koyulaşır</li>
+                                    <li>Tıkladığınızda, girdiğiniz kriterlere göre arama yapılır ve sonuçlar listelenir</li>
+                                </ul>
+                            </li>
+                            <li>Filtreleme kriterlerini temizlemek için, "Temizle" butonuna tıklayın
+                                <ul>
+                                    <li>Temizle butonu, Filtrele butonunun hemen yanında, sağ tarafta yer alır</li>
+                                    <li>Tıkladığınızda, tüm filtreleme alanları temizlenir ve varsayılan değerlere döner</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşin tanımı alanına en az 3 karakter girmeniz gerekmektedir</li>
+                    <li>Tarih alanlarında "GG.AA.YYYY" formatını kullanın</li>
+                    <li>Filtreleme kriterlerinin hepsini doldurmak zorunda değilsiniz, sadece ihtiyacınız olan kriterleri kullanabilirsiniz</li>
+                    <li>Birden fazla filtreleme kriteri kullandığınızda, tümüne uyan kayıtlar listelenir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Daha spesifik sonuçlar için birden fazla filtreleme kriteri kullanın</li>
+                    <li>Firma adlarını yazarken, sistemin önerilerinden seçim yaparak daha doğru sonuçlar elde edebilirsiniz</li>
+                    <li>Yıl ve ay filtreleri, büyük veri setlerinde arama hızını artırmak için kullanışlıdır</li>
+                    <li>Tüm filtreleri temizleyip yeniden başlamak için "Temizle" butonunu kullanın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div id="dosya-islemleri" class="section">
+   <h2>Dosya İşlemleri</h2>
+   <div class="info-box">
+       <h3>Dosya Açma, Yeni Teklif ve Raporlar</h3>
+       
+       <div class="step">
+           <h4>Dosya Açma İşlemi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en sağında yer alan işlem butonları içinde bulunur</li>
+                       <li>İlk sıradaki "Dosyayı Aç" simgesi (klasör simgesi) olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Dosya Açma Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en sağındaki işlem butonları kısmında yer alan klasör simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Dosyayı Aç" açıklaması görünür</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede dosya detay ekranı açılır</li>
+                       <li>Bu ekranda dosya bilgilerini görüntüleyebilir ve düzenleyebilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Yeni Teklif Oluşturma İşlemi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en sağında yer alan işlem butonları içinde bulunur</li>
+                       <li>"Dosyayı Aç" simgesinin hemen sağındaki "Yeni Teklif Oluştur" simgesi (artı/yeni belge simgesi) olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Yeni Teklif Oluşturma Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en sağındaki işlem butonları kısmında yer alan artı/yeni belge simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Dosyaya Yeni Teklif Oluştur" açıklaması görünür</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede teklif giriş ekranı açılır</li>
+                       <li>Bu ekranda seçilen dosya için yeni bir teklif girebilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Raporlar Menüsünü Kullanma:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en sağında yer alan işlem butonları içinde bulunur</li>
+                       <li>"Yeni Teklif Oluştur" simgesinin hemen sağındaki "Raporlar" simgesi (rapor/belge simgesi) olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Rapor Alma Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en sağındaki işlem butonları kısmında yer alan rapor/belge simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Raporlar" açıklaması görünür</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, ekranın ortasında bir rapor menüsü açılır</li>
+                       <li>Menüden almak istediğiniz rapor türünü seçin:
+                           <ul>
+                               <li>Rapor menüsünde, sistemde tanımlı olan tüm raporlar listelenir</li>
+                               <li>İhtiyacınız olan rapora tıklayarak o raporu oluşturabilirsiniz</li>
+                               <li>Menüyü kapatmak için en alttaki "Kapat" seçeneğine tıklayın</li>
+                           </ul>
+                       </li>
+                       <li>Rapor seçtiğinizde, yeni bir pencerede seçilen rapor görüntülenir</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Dosya ve teklif işlemleri yeni pencerede açılır, işlem bittiğinde bu pencereleri kapatmayı unutmayın</li>
+               <li>Rapor menüsü açıldığında ekranın geri kalanı karartılır ve diğer alanlara erişemezsiniz</li>
+               <li>Rapor pencerelerinde, tarayıcının kendi araç çubuğunu kullanarak yazdırma işlemi yapabilirsiniz</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Dosya üzerinde işlem yapmak yerine sadece detayları görmek istiyorsanız, satır başındaki "+" simgesine tıklayarak detayları görüntüleyebilirsiniz</li>
+               <li>Sık kullandığınız rapor türlerinin yerlerini öğrenerek, rapor menüsünde daha hızlı seçim yapabilirsiniz</li>
+               <li>Raporları almadan önce filtreleme yaparak, sadece ilgilendiğiniz dosyalar üzerinde işlem yapabilirsiniz</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="teklif-islemleri" class="section">
+   <h2>Teklif İşlemleri</h2>
+   <div class="info-box">
+       <h3>Teklif Açma, Onaylama ve Rapor Alma</h3>
+       
+       <div class="step">
+           <h4>Teklif Açma İşlemi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda, dosya detaylarını genişlettiğinizde (satır başındaki "+" simgesine tıklayarak) göreceğiniz teklif satırlarının en sağında bulunur</li>
+                       <li>İlk sıradaki "Teklifi Aç" simgesi (klasör simgesi) olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Teklif Açma Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun ve genişletin (satır başındaki "+" simgesine tıklayarak)</li>
+                       <li>Açılan detay bölümünde teklif satırlarını göreceksiniz</li>
+                       <li>İlgilendiğiniz teklif satırının en sağındaki klasör simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Teklifi Aç" açıklaması görünür</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede teklif detay ekranı açılır</li>
+                       <li>Bu ekranda teklif bilgilerini görüntüleyebilir ve düzenleyebilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Teklif Onaylama İşlemi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en sağında yer alan işlem butonları içinde bulunur</li>
+                       <li>"Teklif Onaylama" simgesi (onay/tik işareti simgesi) olarak görünür</li>
+                       <li>Not: Bu buton, sadece dosyaya teklif girilmiş ve henüz onaylanmamış teklifler varsa görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Teklif Onaylama Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en sağındaki işlem butonları kısmında onay/tik işareti simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Teklif Onaylama" açıklaması görünür</li>
+                               <li>Eğer bu simge görünmüyorsa, ya dosyaya hiç teklif girilmemiş ya da zaten bir teklif onaylanmış demektir</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede teklif onaylama ekranı açılır</li>
+                       <li>Bu ekranda dosyaya ait tüm teklifleri görebilir ve onaylamak istediğiniz teklifi seçebilirsiniz</li>
+                       <li>Onaylama işlemini tamamladıktan sonra, ana ekrana döndüğünüzde ilgili dosya bilgileri güncellenmiş olacaktır</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Teklif Raporu Alma:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda, dosya detaylarını genişlettiğinizde göreceğiniz teklif satırlarının en sağında bulunur</li>
+                       <li>"Teklifi Aç" simgesinin hemen sağındaki "Piyasa Kesin Fiyat Formu" simgesi (rapor/belge simgesi) olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Teklif Raporu Alma Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun ve genişletin (satır başındaki "+" simgesine tıklayarak)</li>
+                       <li>Açılan detay bölümünde teklif satırlarını göreceksiniz</li>
+                       <li>İlgilendiğiniz teklif satırının en sağındaki rapor/belge simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Piyasa Kesin Fiyat Formu" açıklaması görünür</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede teklif raporu görüntülenir</li>
+                       <li>Bu raporu görüntüleyebilir, yazdırabilir veya kaydedebilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Bir dosyada onaylanmış bir teklif varsa, başka bir teklifi onaylayamazsınız</li>
+               <li>Teklif onaylama işlemi geri alınamaz, onaylamadan önce teklif detaylarını dikkatle kontrol edin</li>
+               <li>Onaylanan teklif bilgileri, ana tablodaki dosya satırında gösterilir (firma adı, teklif tutarı ve teslim süresi)</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Teklif detaylarını görmek için önce dosyayı genişletin, ardından ilgili teklifin üzerine tıklayın</li>
+               <li>Teklif onaylama ekranında birden fazla teklif arasından ekonomik açıdan en uygun olanı seçebilirsiniz</li>
+               <li>Piyasa Kesin Fiyat Formu, teklif bilgilerini resmi bir rapor formatında gösterdiğinden, belge olarak kullanılabilir</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="sozlesme-islemleri" class="section">
+   <h2>Sözleşme İşlemleri</h2>
+   <div class="info-box">
+       <h3>Sözleşme Word Transfer İşlemi</h3>
+       
+       <div class="step">
+           <h4>Sözleşme Word Transfer İşlemi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en sağında yer alan işlem butonları içinde bulunur</li>
+                       <li>"Sözleşme Word Transfer" simgesi (Word/belge simgesi) olarak görünür</li>
+                       <li>Not: Bu buton, sadece dosyada onaylanmış bir teklif varsa ve sözleşme kaydı oluşturulmuşsa görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Sözleşme Word Transfer Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en sağındaki işlem butonları kısmında Word/belge simgesine tıklayın
+                           <ul>
+                               <li>Simgenin üzerine fare ile geldiğinizde "Sözleşme Word Transfer" açıklaması görünür</li>
+                               <li>Eğer bu simge görünmüyorsa, ya dosyada onaylanmış teklif yok ya da henüz sözleşme kaydı oluşturulmamış demektir</li>
+                           </ul>
+                       </li>
+                       <li>Tıkladığınızda, yeni bir pencerede sözleşme şablonu Word formatında görüntülenir</li>
+                       <li>Bu şablonda, dosya ve teklif bilgileri otomatik olarak doldurulmuştur</li>
+                       <li>Word belgesini düzenleyebilir, kaydedebilir veya yazdırabilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Sözleşme Word Transfer butonu, sadece sözleşme kaydı oluşturulmuş dosyalarda görünür</li>
+               <li>Word belgesini düzenlerken yapılan değişiklikler sisteme otomatik olarak kaydedilmez</li>
+               <li>Düzenlediğiniz sözleşmeyi kendi bilgisayarınıza kaydetmeniz gerekir</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Sözleşme şablonunda otomatik doldurulan bilgileri kontrol edin ve gerekirse manuel olarak düzeltin</li>
+               <li>Word belgesini kaydetmeden önce sözleşmenin içeriğini dikkatlice okuyun</li>
+               <li>Yasal gerekliliklere uygunluk için sözleşmenin son halini hukuk biriminize kontrol ettirin</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="detay-gorunum" class="section">
+   <h2>Detay Görüntüleme ve Navigasyon</h2>
+   <div class="info-box">
+       <h3>Dosya Detaylarını Genişletme ve Daraltma</h3>
+       
+       <div class="step">
+           <h4>Dosya Detaylarını Görüntüleme Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Detay Açma/Kapama Düğmesi Konumu:</strong>
+                   <ul>
+                       <li>Ana tabloda her dosya satırının en solunda bulunur</li>
+                       <li>Artı (+) işareti şeklinde bir simge olarak görünür</li>
+                   </ul>
+               </li>
+               <li><strong>Detay Görüntüleme Adımları:</strong>
+                   <ol>
+                       <li>İlgili dosya satırını bulun</li>
+                       <li>Satırın en solundaki artı (+) simgesine veya satırın herhangi bir yerine tıklayın
+                           <ul>
+                               <li>Tıkladığınızda, dosya satırı kalın yazı tipine dönüşür</li>
+                               <li>Artı (+) simgesi eksi (-) simgesine dönüşür</li>
+                               <li>Dosya satırının hemen altında detay bilgileri görüntülenir</li>
+                           </ul>
+                       </li>
+                       <li>Detay bölümünde şu bilgileri görebilirsiniz:
+                           <ul>
+                               <li>Sol tarafta: Dosya tarihi, işin konusu, işin tanımı ve teslim süresi</li>
+                               <li>Sağ tarafta: Dosyaya ait tekliflerin listesi (firma adı, teklif tarihi, teklif tutarı ve teslim süresi)</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+               <li><strong>Detay Kapatma Adımları:</strong>
+                   <ol>
+                       <li>Genişletilmiş durumdaki dosya satırını bulun</li>
+                       <li>Satırın en solundaki eksi (-) simgesine veya satırın herhangi bir yerine tıklayın
+                           <ul>
+                               <li>Tıkladığınızda, dosya satırı normal yazı tipine döner</li>
+                               <li>Eksi (-) simgesi artı (+) simgesine dönüşür</li>
+                               <li>Detay bilgileri gizlenir</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Birden fazla dosya satırını aynı anda genişletebilirsiniz</li>
+               <li>Dosya detaylarında gösterilen teklif listesi, o dosyaya ait tüm teklifleri içerir</li>
+               <li>Onaylanmış teklifler genellikle dosya ana satırında gösterilir, ancak tüm teklifleri görmek için detayları genişletin</li>
+               <li>Ekran küçükse veya çok sayıda dosya görüntülüyorsanız, inceleyeceğiniz dosyaları filtreleyerek daha rahat çalışabilirsiniz</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="ipuclari" class="section">
+   <h2>Pratik İpuçları ve Kısayollar</h2>
+   <div class="info-box">
+       <h3>Verimli Çalışma İçin İpuçları</h3>
+       
+       <div class="step">
+           <h4>Hızlı Tuş Kombinasyonları:</h4>
+           <ul>
+               <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+               <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+               <li><strong>ENTER:</strong> Bazı durumlarda TAB gibi davranır ve sonraki alana geçer</li>
+               <li><strong>ESC:</strong> Açık menüleri kapatmak için (örneğin rapor menüsü)</li>
+               <li><strong>ALT + K:</strong> Filtreleme butonunu aktif etmek için</li>
+               <li><strong>CTRL + Tıklama:</strong> Açılır listelerde çoklu seçim yapmak için</li>
+           </ul>
+       </div>
+       
+       <div class="step">
+           <h4>Verimli Filtreleme İpuçları:</h4>
+           <ul>
+               <li>Önce yıl ve ay filtrelerini kullanarak veri setini daraltın, daha sonra diğer filtreleri ekleyin</li>
+               <li>Firma adı girerken, listenin otomatik tamamlama özelliğinden yararlanın</li>
+               <li>İşin tanımında arama yaparken, en az 3 karakter kullanın</li>
+               <li>Sık kullandığınız filtre kombinasyonlarını not alın</li>
+               <li>Tüm filtreleri temizlemek yerine, sadece değiştirmek istediğiniz filtreleri güncelleyin</li>
+           </ul>
+       </div>
+       
+       <div class="step">
+           <h4>Dosya ve Teklif İşlemleri İpuçları:</h4>
+           <ul>
+               <li>Bir dosyaya ait tüm teklifleri görmek için dosya satırını genişletin</li>
+               <li>Rapor almadan önce, ilgili dosya veya teklifi bularak işlem yapın</li>
+               <li>Sık kullanılan raporları belirleyip, rapor menüsünde yerlerini öğrenin</li>
+               <li>Onaylama işlemlerini yapmadan önce tüm bilgileri kontrol edin</li>
+               <li>Açtığınız yeni pencereleri işiniz bittiğinde kapatın</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="sorunlar" class="section">
+   <h2>Sık Karşılaşılan Sorunlar ve Çözümleri</h2>
+   <div class="info-box">
+       <h3>Olası Sorunlar ve Çözüm Yolları</h3>
+       
+       <div class="step">
+           <h4>Filtreleme Sorunları:</h4>
+           <ol>
+               <li><strong>"İşin Tanımı" ile Filtreleme Çalışmıyor:</strong>
+                   <ul>
+                       <li>Sorun: İşin tanımı alanına metin girmenize rağmen filtreleme çalışmıyor.</li>
+                       <li>Çözüm: En az 3 karakter girdiğinizden emin olun. Daha az karakter girdiğinizde sistem sizi uyaracaktır.</li>
+                   </ul>
+               </li>
+               <li><strong>Filtre Kriterlerine Uygun Sonuç Bulunamadı:</strong>
+                   <ul>
+                       <li>Sorun: Filtreleme yaptıktan sonra sonuç görüntülenmiyor.</li>
+                       <li>Çözüm: Filtre kriterlerini daha geniş tutun veya bazı filtreleri kaldırın. "Temizle" butonuna tıklayarak tüm filtreleri sıfırlayın ve daha az kriterleri uygulayın.</li>
+                   </ul>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Dosya ve Teklif İşlemi Sorunları:</h4>
+           <ol>
+               <li><strong>Teklif Onaylama Butonu Görünmüyor:</strong>
+                   <ul>
+                       <li>Sorun: Dosyaya teklif girdim ancak teklif onaylama butonu görünmüyor.</li>
+                       <li>Çözüm: Dosyada zaten onaylanmış bir teklif olabilir. Dosya detaylarını genişleterek mevcut teklifleri kontrol edin.</li>
+                   </ul>
+               </li>
+               <li><strong>Sözleşme Word Transfer Butonu Görünmüyor:</strong>
+                   <ul>
+                       <li>Sorun: Teklifi onayladım ancak sözleşme butonu görünmüyor.</li>
+                       <li>Çözüm: Sözleşme kaydı henüz oluşturulmamış olabilir. Dosyayı açarak sözleşme kaydı oluşturun.</li>
+                   </ul>
+               </li>
+               <li><strong>Yeni Açılan Pencereler Yüklenmiyor:</strong>
+                   <ul>
+                       <li>Sorun: Dosya veya teklif açmak istediğinizde yeni pencere açılıyor ancak içerik yüklenmiyor.</li>
+                       <li>Çözüm: Tarayıcınızın açılır pencere engelleyici ayarlarını kontrol edin ve programa izin verin.</li>
+                   </ul>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Rapor Sorunları:</h4>
+           <ol>
+               <li><strong>Rapor Menüsü Açılmıyor:</strong>
+                   <ul>
+                       <li>Sorun: Rapor simgesine tıkladığınızda menü açılmıyor.</li>
+                       <li>Çözüm: Sayfayı yenileyin ve tekrar deneyin. Sorun devam ederse, sisteme yeniden giriş yapın.</li>
+                   </ul>
+               </li>
+               <li><strong>Raporda Bilgiler Eksik Görünüyor:</strong>
+                   <ul>
+                       <li>Sorun: Oluşturulan raporda bazı bilgiler eksik görünüyor.</li>
+                       <li>Çözüm: Dosya ve teklif bilgilerinin tam olarak girildiğinden emin olun. Eksik bilgileri tamamlamak için dosyayı veya teklifi açıp düzenleyin.</li>
+                   </ul>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Genel Çözüm Önerileri:</h4>
+           <ul>
+               <li>Sorunlarla karşılaştığınızda önce sayfayı yenileyin</li>
+               <li>Tarayıcınızın önbelleğini temizlemeyi deneyin</li>
+               <li>Farklı bir tarayıcı kullanmayı deneyin (Chrome, Firefox veya Edge gibi)</li>
+               <li>Sistemden çıkış yapıp tekrar giriş yapın</li>
+               <li>Sorun devam ederse sistem yöneticinizle iletişime geçin</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="ozet" class="section">
+   <h2>Özet ve Sonuç</h2>
+   <div class="info-box">
+       <p>Doğrudan Temin Yönetim Konsolu, doğrudan temin yoluyla yapılan alımların yönetilmesi için kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+       <ul>
+           <li>Program arayüzünü ve ekran düzenini tanıma</li>
+           <li>Filtreleme seçeneklerini kullanarak arama yapma</li>
+           <li>Dosya ve teklif işlemlerini gerçekleştirme</li>
+           <li>Raporlar alma ve sözleşme oluşturma</li>
+           <li>Detay görüntüleme ve navigasyon</li>
+           <li>Pratik ipuçları ve klavye kısayolları</li>
+            <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+       </ul>
+       
+       <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Sık Karşılaşılan Sorunlar ve Çözümleri" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+       
+    
+
+</body>
+</html>

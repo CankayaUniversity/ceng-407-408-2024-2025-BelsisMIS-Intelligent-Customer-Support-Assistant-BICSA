@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alım Tür Kodları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Alım Tür Kodları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#alim-tur-kodlari-tablosu">Alım Tür Kodları Tablosu Kullanımı</a></li>
+                <li><a href="#yeni-alim-tur-ekleme">Yeni Alım Tür Kodu Ekleme</a></li>
+                <li><a href="#kaydetme">Kaydetme İşlemi</a></li>
+                <li><a href="#form-temizleme">Form Temizleme</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Alım Tür Kodları yönetim ekranı, kurum içinde kullanılan alım türleri ve ilişkili hesap kodlarını tanımlamak ve yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Alım türleri ve bunlara ait hesap kodlarını görüntüleyebilirsiniz</li>
+                <li>Yeni alım türü ve hesap kodu eşleşmeleri ekleyebilirsiniz</li>
+                <li>Mevcut kayıtları güncelleyebilirsiniz</li>
+                <li>Kayıtları silebilirsiniz</li>
+                <li>Form üzerinde değişiklik yapmadan çıkabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Alım türünün ne olduğu ve hangi alım türlerini kullanacağınız</li>
+                    <li>Alım türlerine karşılık gelen hesap kodlarını</li>
+                    <li>Kurum içinde kullanılan alım tür ve hesap kodu standartlarını</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi renkli bir şeritte "ALIM TÜRLERİ" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tablo Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında beyaz arka planlı bir tablo bulunur</li>
+                            <li>Tabloda "Alım Tür Kodları" ve "Hesap Kodları" başlıklı iki sütun vardır</li>
+                            <li>Her satırın en solunda bir silme butonu bulunur</li>
+                            <li>Tablo içerisinde mevcut alım tür kodları ve hesap kodları listelenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kaydırma Alanı:</strong>
+                        <ul>
+                            <li>Tablo, içerisinde ekrana sığan kayıtlardan fazlası olduğunda sağ tarafında bir kaydırma çubuğu görüntüler</li>
+                            <li>Kaydırma çubuğu ile aşağı-yukarı kaydırarak tüm kayıtları görebilirsiniz</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yan yana dört adet buton yer alır</li>
+                            <li>Bu butonlar soldan sağa: "Ekle", "Kayıt", "Form Temizle" ve "Çıkış" butonlarıdır</li>
+                            <li>Butonlar gri arka plan üzerindedir ve üzerlerine gelince renklerı değişir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak tablonun ilk satırındaki alım türü alanına konumlanır</li>
+                    <li>Tabloda mevcut kayıtlar görüntülenir</li>
+                    <li>Tablonun altındaki butonlar kullanıma hazırdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="alim-tur-kodlari-tablosu" class="section">
+        <h2>Alım Tür Kodları Tablosu Kullanımı</h2>
+        <div class="info-box">
+            <h3>Tablo Yapısı ve Satır İşlemleri</h3>
+            <div class="step">
+                <h4>Tablo Yapısı:</h4>
+                <ol>
+                    <li><strong>Tablo Başlığı Satırı:</strong>
+                        <ul>
+                            <li>En üstte beyaz arka planlı başlık satırı bulunur</li>
+                            <li>Başlık satırında üç sütun vardır: İlk sütunda silme butonu (başlık yok), "Alım Tür Kodları" ve "Hesap Kodları"</li>
+                            <li>Başlıklar koyu renkli ve ortaya hizalanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Satırları:</strong>
+                        <ul>
+                            <li>Başlık satırının altında veri satırları yer alır</li>
+                            <li>Her satır üç sütundan oluşur: Silme butonu, Alım Tür Kodu seçim kutusu ve Hesap Kodu seçim kutusu</li>
+                            <li>Satırlar beyaz arka planlı ve satırlar arasında ince çizgiler vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme Butonu:</strong>
+                        <ul>
+                            <li>Her satırın en solunda kırmızı X ikonlu bir silme butonu bulunur</li>
+                            <li>Bu buton üzerine geldiğinizde "Satırı İptal Et" açıklaması görünür</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Tabloda Gezinme:</h4>
+                <ol>
+                    <li><strong>Fare ile Seçim:</strong>
+                        <ul>
+                            <li>Tabloda istediğiniz hücreye tıklayarak o hücreyi seçebilirsiniz</li>
+                            <li>Herhangi bir hücreye tıkladığınızda, o hücrenin içindeki seçim kutusu aktif hale gelir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Klavye ile Gezinme:</strong>
+                        <ol>
+                            <li>TAB tuşuna basarak soldan sağa ve yukarıdan aşağıya doğru hücreler arasında geçiş yapabilirsiniz</li>
+                            <li>SHIFT+TAB tuşlarına basarak geriye doğru (sağdan sola ve aşağıdan yukarıya) hücreler arasında geçiş yapabilirsiniz</li>
+                            <li>ENTER tuşu da TAB gibi bir sonraki hücreye geçmenizi sağlar</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydırma Çubuğu Kullanımı:</strong>
+                        <ol>
+                            <li>Tabloda çok sayıda kayıt olduğunda, sağ taraftaki kaydırma çubuğunu kullanarak yukarı-aşağı kaydırabilirsiniz</li>
+                            <li>Fare tekerleğini kullanarak da tabloyu yukarı-aşağı kaydırabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Kayıt Silme:</h4>
+                <ol>
+                    <li><strong>Silme Butonunun Konumu:</strong>
+                        <ul>
+                            <li>Her satırın en solunda kırmızı X ikonlu silme butonu bulunur</li>
+                            <li>Buton küçük bir kare içinde çarpı işareti şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Silme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Silmek istediğiniz satırın en solundaki silme butonuna tıklayın</li>
+                            <li>"Satır İptal Edilecek, Onaylıyor musunuz?" şeklinde bir onay mesajı görüntülenecektir</li>
+                            <li>Mesajda "Evet" seçeneğine tıklarsanız, ilgili satır tablodan silinecektir</li>
+                            <li>Mesajda "Hayır" seçeneğine tıklarsanız, silme işlemi iptal edilecek ve satır tabloda kalacaktır</li>
+                            <li>Silinen satır yalnızca geçici olarak tablodan kaldırılır. Kalıcı olarak silmek için daha sonra Kayıt butonuna basmanız gerekecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Alım Tür Kodu Değiştirme:</h4>
+                <ol>
+                    <li><strong>Alım Tür Kodu Alanı Konumu:</strong>
+                        <ul>
+                            <li>Her satırın ortasında yer alan seçim kutusudur</li>
+                            <li>"Alım Tür Kodları" sütun başlığının altında bulunur</li>
+                            <li>Açılır liste (dropdown) şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değiştirme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz satırdaki alım tür kodu seçim kutusuna tıklayın</li>
+                            <li>Açılan listeden yeni alım tür kodunu seçin</li>
+                            <li>Listede mevcut tüm alım türleri görüntülenir</li>
+                            <li>Seçim yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz alım tür kodu görüntülenecektir</li>
+                            <li>Değişikliği kaydetmek için daha sonra Kayıt butonuna basmanız gerekecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Hesap Kodu Değiştirme:</h4>
+                <ol>
+                    <li><strong>Hesap Kodu Alanı Konumu:</strong>
+                        <ul>
+                            <li>Her satırın sağında yer alan seçim kutusudur</li>
+                            <li>"Hesap Kodları" sütun başlığının altında bulunur</li>
+                            <li>Açılır liste (dropdown) şeklindedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Değiştirme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz satırdaki hesap kodu seçim kutusuna tıklayın</li>
+                            <li>Açılan listeden yeni hesap kodunu seçin</li>
+                            <li>Listede mevcut tüm hesap kodları görüntülenir</li>
+                            <li>Hesap kodları "00.05.XXXXX" formatında ve açıklamalarıyla birlikte görüntülenir</li>
+                            <li>Seçim yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz hesap kodu görüntülenecektir</li>
+                            <li>Değişikliği kaydetmek için daha sonra Kayıt butonuna basmanız gerekecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Satır silme işlemi, Kayıt butonuna basmadan önce iptal edilebilir</li>
+                    <li>Sildiğiniz satırları geri getirmek için, formu kaydetmeden Form Temizle butonuna basabilirsiniz</li>
+                    <li>Değişikliklerinizin kalıcı olması için mutlaka Kayıt butonuna basmanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yeni-alim-tur-ekleme" class="section">
+        <h2>Yeni Alım Tür Kodu Ekleme</h2>
+        <div class="info-box">
+            <h3>Yeni Satır Ekleme ve Doldurma</h3>
+            <div class="step">
+                <h4>Ekle Butonunun Konumu ve Kullanımı:</h4>
+                <ol>
+                    <li><strong>Ekle Butonu Konumu:</strong>
+                        <ul>
+                            <li>Tablonun altında, ekranın alt kısmında en solda yer alan butondur</li>
+                            <li>Üzerinde "Ekle" yazan gri renkli bir butondur</li>
+                            <li>Kayıt, Form Temizle ve Çıkış butonlarının solunda bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yeni Satır Ekleme Adımları:</strong>
+                        <ol>
+                            <li>Ekle butonuna tıklayın</li>
+                            <li>Tablonun en altına yeni bir boş satır eklenecektir</li>
+                            <li>Yeni eklenen satır, tablonun görünür alanının dışında kalıyorsa, kaydırma çubuğunu kullanarak tablonun en altına inin</li>
+                            <li>İmleç otomatik olarak yeni satırın Alım Tür Kodu seçim kutusuna konumlanacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Yeni Satırı Doldurma:</h4>
+                <ol>
+                    <li><strong>Alım Tür Kodu Seçme:</strong>
+                        <ol>
+                            <li>Yeni satırın Alım Tür Kodu seçim kutusuna tıklayın (otomatik olarak seçili gelir)</li>
+                            <li>Açılan listeden uygun alım tür kodunu seçin</li>
+                            <li>Alım tür kodu seçim kutusunun olduğu hücre, tabloda ortada bulunur ve "Alım Tür Kodları" sütun başlığının altındadır</li>
+                            <li>Seçimi yaptıktan sonra TAB tuşuna basarak bir sonraki alana (Hesap Kodu) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Hesap Kodu Seçme:</strong>
+                        <ol>
+                            <li>Hesap Kodu seçim kutusuna tıklayın veya TAB tuşuyla bu alana geçin</li>
+                            <li>Açılan listeden uygun hesap kodunu seçin</li>
+                            <li>Hesap kodu seçim kutusunun olduğu hücre, tabloda en sağda bulunur ve "Hesap Kodları" sütun başlığının altındadır</li>
+                            <li>Hesap kodları listede "00.05.XXXXX - Açıklama" formatında görüntülenir</li>
+                            <li>Seçiminizi yaptıktan sonra ENTER tuşuna basarak seçimi onaylayabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="step">
+                <h4>Birden Fazla Satır Ekleme:</h4>
+                <ol>
+                    <li>İlk yeni satırı ekleyip doldurduktan sonra tekrar Ekle butonuna tıklayabilirsiniz</li>
+                    <li>Bu şekilde istediğiniz kadar yeni satır ekleyebilirsiniz</li>
+                    <li>Her yeni satır tablonun en altına eklenir</li>
+                    <li>Eklediğiniz tüm satırlar, Kayıt butonuna basana kadar geçici olarak tabloda görüntülenir</li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Eklediğiniz satırları kalıcı hale getirmek için mutlaka Kayıt butonuna basmanız gerekir</li>
+                    <li>Aynı alım tür kodu ve hesap kodu kombinasyonunu birden fazla kez eklemeyin, sistem hata verebilir</li>
+                    <li>Yeni satır eklediğinizde tablonun en altına inmeniz gerekebilir, kaydırma çubuğunu kullanarak tablonun altına indiğinizden emin olun</li>
+                    <li>Satırları eklemeden vazgeçmek isterseniz, Form Temizle butonuna basarak eklediğiniz satırları iptal edebilirsiniz</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Çok sayıda satır ekleyecekseniz, önce tüm satırları ekleyin, sonra hepsini bir defada kaydedin</li>
+                    <li>TAB ve ENTER tuşlarını kullanarak hücreler arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Benzer hesap kodları ile çok sayıda satır ekleyecekseniz, ilk satırı ekledikten sonra kopyala-yapıştır işlemi kullanabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="kaydetme" class="section">
+    <h2>Kaydetme İşlemi</h2>
+    <div class="info-box">
+        <h3>Değişiklikleri Kaydetme</h3>
+        <div class="step">
+            <h4>Kaydet Butonunun Konumu ve Kullanımı:</h4>
+            <ol>
+                <li><strong>Kaydet Butonu Konumu:</strong>
+                    <ul>
+                        <li>Tablonun altında, ekranın alt kısmında yer alan ikinci butondur</li>
+                        <li>Üzerinde "Kayıt" yazan gri renkli bir butondur</li>
+                        <li>Ekle butonunun sağında, Form Temizle butonunun solunda bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Kaydetme İşlemi Adımları:</strong>
+                    <ol>
+                        <li>Tabloda gerekli tüm değişiklikleri yapın (satır ekleme, silme, güncelleme)</li>
+                        <li>Tüm değişikliklerinizi kontrol edin</li>
+                        <li>Kayıt butonuna tıklayın</li>
+                        <li>Sistem tüm değişikliklerinizi veritabanına kaydedecektir</li>
+                        <li>İşlem başarılı olursa herhangi bir hata mesajı görünmeyecektir</li>
+                        <li>Hata durumunda ekranda bir hata mesajı görüntülenecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kaydetme İşlemi Sonrası:</h4>
+            <ol>
+                <li>Kaydetme işlemi tamamlandıktan sonra, tabloda kaydedilen değişiklikler kalıcı hale gelir</li>
+                <li>Silinen satırlar tamamen kaldırılır</li>
+                <li>Eklenen yeni satırlar artık resmi kayıtlardır</li>
+                <li>Güncellenmiş satırlar yeni değerleriyle görüntülenir</li>
+                <li>Tablo güncel haliyle ekranda kalır, işleme devam edebilirsiniz</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Kaydetme işlemi geri alınamaz, bu nedenle kaydetmeden önce değişikliklerinizi dikkatlice kontrol edin</li>
+                <li>Aynı alım tür kodu ve hesap kodu kombinasyonunu kaydetmeye çalışırsanız hata alabilirsiniz</li>
+                <li>Zorunlu alanlar (Alım Tür Kodu ve Hesap Kodu) boş bırakılırsa kaydetme işlemi başarısız olacaktır</li>
+                <li>Uzun süren işlemler sırasında Kaydet butonuna birden fazla kez tıklamayın, sistem yanıt verene kadar bekleyin</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Büyük değişiklikler yapmadan önce, mevcut verilerinizi not alın veya bir yere kaydedin</li>
+                <li>Kaydetme işlemini düzenli aralıklarla yapın, böylece büyük miktarda değişikliği bir seferde kaydetmeye çalışmak zorunda kalmazsınız</li>
+                <li>Kaydetme işlemi sırasında bir hata mesajı alırsanız, hata mesajını dikkatlice okuyun ve sorunu giderin</li>
+                <li>Klavye kısayolu olarak ALT+K tuş kombinasyonu ile Kaydet butonunu aktif edebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="form-temizleme" class="section">
+    <h2>Form Temizleme</h2>
+    <div class="info-box">
+        <h3>Değişiklikleri İptal Etme ve Formu Yenileme</h3>
+        <div class="step">
+            <h4>Form Temizle Butonunun Konumu ve Kullanımı:</h4>
+            <ol>
+                <li><strong>Form Temizle Butonu Konumu:</strong>
+                    <ul>
+                        <li>Tablonun altında, ekranın alt kısmında yer alan üçüncü butondur</li>
+                        <li>Üzerinde "Form Temizle" yazan gri renkli bir butondur</li>
+                        <li>Kayıt butonunun sağında, Çıkış butonunun solunda bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Form Temizleme İşlemi Adımları:</strong>
+                    <ol>
+                        <li>Form Temizle butonuna tıklayın</li>
+                        <li>Sistem formu orijinal haline getirir ve veritabanından güncel verileri yeniden yükler</li>
+                        <li>Henüz kaydedilmemiş tüm değişiklikler (ekleme, silme, güncelleme) iptal edilir</li>
+                        <li>Tablo, son kaydedilen haliyle yeniden görüntülenir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Form Temizleme İşlemi Sonrası:</h4>
+            <ol>
+                <li>Form temizlendikten sonra, tablodaki tüm değişiklikler kaybolur ve son kaydedilen verilere geri dönülür</li>
+                <li>Eklediğiniz yeni satırlar kaybolur</li>
+                <li>Sildiğiniz satırlar tekrar görünür hale gelir</li>
+                <li>Güncellediğiniz satırlar orijinal değerlerine geri döner</li>
+                <li>İmleç genellikle tablonun ilk satırında konumlanır</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Form Temizle işlemi geri alınamaz, tüm kaydedilmemiş değişiklikleriniz kaybolacaktır</li>
+                <li>Eğer büyük değişiklikler yaptıysanız ve bunları kaybetmek istemiyorsanız, Form Temizle butonuna basmadan önce Kaydet butonuna basın</li>
+                <li>Form Temizle işlemi sadece henüz kaydedilmemiş değişiklikleri etkiler, daha önce kaydedilmiş verilere dokunmaz</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Yanlış değişiklikler yaptığınızda veya tablonun durumundan emin olmadığınızda Form Temizle butonunu kullanabilirsiniz</li>
+                <li>Form Temizle işlemi, tabloyu temiz bir şekilde yeniden yükler, bu nedenle performans sorunları yaşadığınızda da kullanışlı olabilir</li>
+                <li>Büyük değişiklikler yapmadan önce, yaptığınız değişiklikleri not alın, böylece gerekirse Form Temizle işleminden sonra bunları yeniden yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="islem-butonlari" class="section">
+    <h2>İşlem Butonları Kullanımı</h2>
+    <div class="info-box">
+        <h3>Ekle, Kayıt, Form Temizle ve Çıkış Butonları</h3>
+        <div class="step">
+            <h4>Butonların Konumları ve Görünümleri:</h4>
+            <ul>
+                <li><strong>Butonların Genel Konumu:</strong>
+                    <ul>
+                        <li>Tüm butonlar tablonun altında, ekranın alt kısmında yan yana sıralanmıştır</li>
+                        <li>Butonlar soldan sağa: "Ekle", "Kayıt", "Form Temizle" ve "Çıkış" şeklinde dizilmiştir</li>
+                        <li>Tüm butonlar aynı boyutta, aynı gri renkte ve aynı stilde tasarlanmıştır</li>
+                        <li>Butonların üzerine gelince renkleri hafifçe değişerek vurgulanır</li>
+                    </ul>
+                </li>
+                <li><strong>Ekle Butonu:</strong>
+                    <ul>
+                        <li>En solda yer alan butondur</li>
+                        <li>Üzerinde "Ekle" yazısı vardır</li>
+                        <li>Tabloya yeni satır eklemek için kullanılır</li>
+                    </ul>
+                </li>
+                <li><strong>Kayıt Butonu:</strong>
+                    <ul>
+                        <li>Ekle butonunun sağında yer alan ikinci butondur</li>
+                        <li>Üzerinde "Kayıt" yazısı vardır</li>
+                        <li>Yapılan tüm değişiklikleri kaydetmek için kullanılır</li>
+                    </ul>
+                </li>
+                <li><strong>Form Temizle Butonu:</strong>
+                    <ul>
+                        <li>Kayıt butonunun sağında yer alan üçüncü butondur</li>
+                        <li>Üzerinde "Form Temizle" yazısı vardır</li>
+                        <li>Kaydedilmemiş değişiklikleri iptal etmek ve formu yenilemek için kullanılır</li>
+                    </ul>
+                </li>
+                <li><strong>Çıkış Butonu:</strong>
+                    <ul>
+                        <li>En sağda yer alan dördüncü ve son butondur</li>
+                        <li>Üzerinde "Çıkış" yazısı vardır</li>
+                        <li>Programdan çıkmak için kullanılır</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Çıkış Butonu Kullanımı:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, en sağdaki butondur</li>
+                        <li>Üzerinde "Çıkış" yazan gri renkli bir butondur</li>
+                        <li>Form Temizle butonunun sağında bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Programdan Çıkış Adımları:</strong>
+                    <ol>
+                        <li>İşlemlerinizi tamamlayın</li>
+                        <li>Kaydetmek istediğiniz değişiklikler varsa, önce Kayıt butonuna tıklayın</li>
+                        <li>Çıkış butonuna tıklayın</li>
+                        <li>Program penceresi kapanacak ve sizi önceki menüye veya ekrana geri döndürecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Çıkış butonuna basmadan önce, kaydetmek istediğiniz değişiklikleri kaydettiğinizden emin olun</li>
+                <li>Kaydedilmemiş değişiklikler varken Çıkış butonuna basarsanız, bu değişiklikler kaybolacaktır</li>
+                <li>Program bazen Çıkış butonuna bastığınızda bir onay mesajı göstermeden direk kapanabilir, bu nedenle önce kaydetmeyi unutmayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Klavye Kısayolları:</h4>
+            <ul>
+                <li>ESC tuşu: Çıkış butonuna basmak ile aynı etkiye sahiptir, programı kapatır</li>
+                <li>ALT + E: Ekle butonunu aktif eder</li>
+                <li>ALT + K: Kayıt butonunu aktif eder</li>
+                <li>ALT + F: Form Temizle butonunu aktif eder</li>
+                <li>ALT + C: Çıkış butonunu aktif eder</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                <li><strong>ALT + E:</strong> Ekle butonunu aktif etmek için</li>
+                <li><strong>ALT + K:</strong> Kayıt butonunu aktif etmek için</li>
+                <li><strong>ALT + F:</strong> Form Temizle butonunu aktif etmek için</li>
+                <li><strong>ALT + C:</strong> Çıkış butonunu aktif etmek için</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Kaydetme Hatası:</strong>
+                    <ul>
+                        <li>Sorun: Kayıt butonuna tıkladığınızda bir hata mesajı alıyorsunuz.</li>
+                        <li>Çözüm: Alım Tür Kodu ve Hesap Kodu alanlarının boş olmadığından emin olun. Aynı alım tür kodu ve hesap kodu kombinasyonunu tekrar eklemeye çalışmayın.</li>
+                    </ul>
+                </li>
+                <li><strong>Eklenen Satır Görünmüyor:</strong>
+                    <ul>
+                        <li>Sorun: Ekle butonuna bastınız ancak yeni satır görünmüyor.</li>
+                        <li>Çözüm: Tablo çok sayıda kayıt içeriyorsa, yeni satır tablonun en altına eklenmiş olabilir. Kaydırma çubuğunu kullanarak tablonun en altına inin.</li>
+                    </ul>
+                </li>
+                <li><strong>Değişikliklerin Kaydedilmemesi:</strong>
+                    <ul>
+                        <li>Sorun: Yaptığınız değişiklikler kaydedilmiyor veya kayboldu.</li>
+                        <li>Çözüm: Değişiklikleri yaptıktan sonra mutlaka Kayıt butonuna basın. Form Temizle butonuna basmış olabilirsiniz, bu durumda tüm kaydedilmemiş değişiklikler kaybolur.</li>
+                    </ul>
+                </li>
+                <li><strong>Silme İşleminin Geri Alınamaması:</strong>
+                    <ul>
+                        <li>Sorun: Yanlışlıkla bir satırı sildiniz ve geri almak istiyorsunuz.</li>
+                        <li>Çözüm: Eğer henüz Kayıt butonuna basmadıysanız, Form Temizle butonuna basarak kaydedilmemiş değişiklikleri iptal edebilirsiniz. Eğer Kayıt butonuna bastıysanız, silinen satırı yeniden manuel olarak eklemeniz gerekecektir.</li>
+                    </ul>
+                </li>
+                <li><strong>Açılır Listelerin Yüklenmemesi:</strong>
+                    <ul>
+                        <li>Sorun: Alım Tür Kodu veya Hesap Kodu açılır listeleri boş veya yüklenmiyor.</li>
+                        <li>Çözüm: Form Temizle butonuna basarak formu yenileyin. Sorun devam ederse, programdan çıkıp tekrar girin veya sistem yöneticinize başvurun.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Büyük miktarda veri girerken, önce tüm verileri girin ve sonra tek seferde kaydedin</li>
+                <li>Benzer kayıtlar eklerken, mevcut bir satırı seçip değiştirerek işinizi hızlandırabilirsiniz</li>
+                <li>Hesap kodlarının anlamlarını öğrenerek daha hızlı ve doğru seçimler yapabilirsiniz</li>
+                <li>Düzenli olarak Kayıt butonuna basarak çalışmanızı kaybetrisk etmeyin</li>
+                <li>Herhangi bir sorunla karşılaştığınızda Form Temizle butonunu kullanarak temiz bir başlangıç yapabilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Alım tür kodları ve hesap kodları kurumsal muhasebe sisteminde kritik öneme sahiptir, doğru eşleşmeler yapıldığından emin olun</li>
+                <li>Şüpheli durumlarda değişiklik yapmadan önce yetkili kişilere danışın</li>
+                <li>Uzun süre çalıştıktan sonra düzenli olarak değişikliklerinizi kaydedin</li>
+                <li>Herhangi bir ciddi sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Alım Tür Kodları yönetim ekranı, kurum içinde kullanılan alım türleri ve ilişkili hesap kodlarını tanımlamak ve yönetmek için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Alım Tür Kodları tablosunun yapısı ve kullanımı</li>
+            <li>Tabloda gezinme ve veri görüntüleme</li>
+            <li>Yeni kayıt ekleme</li>
+            <li>Mevcut kayıtları güncelleme</li>
+            <li>Kayıt silme</li>
+            <li>Değişiklikleri kaydetme</li>
+            <li>Formu temizleme ve yenileme</li>
+            <li>Programdan çıkış</li>
+            <li>Klavye kısayolları ve verimli çalışma ipuçları</li>
+            <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+    </div>
+</div>
+</body>
+</html>
