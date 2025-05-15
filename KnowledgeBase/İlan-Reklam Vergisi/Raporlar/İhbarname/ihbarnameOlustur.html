@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İhbarname Oluşturma Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>İhbarname Oluşturma Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#tanzim-tarihi">Tanzim Tarihi Girişi</a></li>
+                <li><a href="#sicil-no">Sicil No Aralığı Girişi</a></li>
+                <li><a href="#beyan-sekli">Beyan Şekli Seçimi</a></li>
+                <li><a href="#mahalle">Mahalle Seçimi</a></li>
+                <li><a href="#borc-yili">Borç Yılı Aralığı Girişi</a></li>
+                <li><a href="#son-odeme">Son Ödeme Tarihi Girişi</a></li>
+                <li><a href="#diger-secenekler">Diğer Seçenekler</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#dokum-islemleri">Döküm İşlemleri Ekranı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>İhbarname Oluşturma programı, belirli kriterlere göre vergi borçları için ihbarname oluşturmak amacıyla kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli sicil numarası aralığındaki mükellefler için ihbarname oluşturabilirsiniz</li>
+                <li>Belirli borç yıllarına ait borçlar için ihbarname oluşturabilirsiniz</li>
+                <li>Belirlediğiniz tarihe kadar ödenmemiş (vadesi geçmiş) borçlar için ihbarname oluşturabilirsiniz</li>
+                <li>İhbarnameleri belirli beyan şekline veya mahalleye göre filtreleyebilirsiniz</li>
+                <li>Daha önce ihbarname oluşturulmuş borçları dahil etmeme seçeneğini kullanabilirsiniz</li>
+                <li>Oluşturulan ihbarnameleri ve zarfları yazdırabilirsiniz</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h4>Dikkat!</h4>
+                <p>İhbarname oluşturma işlemi, mükelleflere resmi bildirim yapılmasını sağlar ve yasal süreçleri başlatabilir. İşlem yapmadan önce doğru kriterleri seçtiğinizden emin olun.</p>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İhbarname oluşturmak istediğiniz sicil numarası aralığı</li>
+                    <li>İhbarname oluşturmak istediğiniz borç yılları</li>
+                    <li>Son ödeme tarihi olarak belirlemek istediğiniz tarih</li>
+                    <li>Filtreleme yapmak istiyorsanız, beyan şekli veya mahalle bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi (pastel) renkli bir şeritte "İhbarname Oluşturma" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında açık mavi kenarlıklı bir çerçeve içinde ana çalışma alanı bulunur</li>
+                            <li>Bu alanda yukarıdan aşağıya doğru sırasıyla Tanzim Tarihi, Sicil No, Beyan Şekli, Mahalle, Borç Yılı, Son Ödeme Tarihi ve Diğer Seçenekler alanları yer alır</li>
+                            <li>Her alan etiketiyle birlikte sol tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün en altında yer alır</li>
+                            <li>"Oluştur" ve "Çıkış" butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Tanzim Tarihi alanı otomatik olarak günün tarihiyle doldurulur</li>
+                    <li>Sicil No alanları otomatik olarak "0" ve "999999999" değerleriyle doldurulur</li>
+                    <li>Borç Yılı alanları otomatik olarak "1900" ve içinde bulunulan yıl değerleriyle doldurulur</li>
+                    <li>Son Ödeme Tarihi alanı otomatik olarak günün tarihiyle doldurulur</li>
+                    <li>İmleç otomatik olarak Tanzim Tarihi alanına konumlanır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tanzim-tarihi" class="section">
+        <h2>Tanzim Tarihi Girişi</h2>
+        <div class="info-box">
+            <h3>Tanzim Tarihi Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Tanzim Tarihi Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Veri giriş bölümünün en üst kısmında yer alır</li>
+                            <li>"Tanzim Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu vardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusundaki tanzim tarihini kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak günün tarihiyle doldurulur</li>
+                                    <li>Bu alan tarih formatında (GG.AA.YYYY) veri kabul eder</li>
+                                    <li>Tanzim tarihi alanı açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                            <li>Tarihi değiştirmek için:
+                                <ul>
+                                    <li>Mevcut tarihi silin ve yeni tarihi girin</li>
+                                    <li>veya mevcut tarih üzerinde değişiklik yapın</li>
+                                    <li>Tarih GG.AA.YYYY formatında olmalıdır (örneğin: 15.05.2023)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tanzim Tarihi alanı boş bırakılamaz. Boş bırakırsanız "Tanzim Tarihi Boş Geçilemez" uyarısı alırsınız</li>
+                    <li>Tarih GG.AA.YYYY formatında girilmelidir (örneğin: 15.05.2023)</li>
+                    <li>Tanzim tarihi, ihbarnamenin oluşturulduğu tarihi belirtir ve ihbarnamede görünür</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Genellikle günün tarihini kullanmak en doğru yaklaşımdır, bu nedenle varsayılan değeri değiştirmenize gerek olmayabilir</li>
+                    <li>Tarih girişinde gün ve ay için tek haneli sayılar kullanabilirsiniz (örneğin: 1.5.2023)</li>
+                    <li>Tarih alanları için klavyeden tarih seçici açılmaz, tarihi manuel olarak girmeniz gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sicil-no" class="section">
+        <h2>Sicil No Aralığı Girişi</h2>
+        <div class="info-box">
+            <h3>Sicil Numarası Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Sicil No Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tanzim Tarihi alanının hemen altında yer alır</li>
+                            <li>"Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutudaki başlangıç sicil numarasını kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak "0" olarak doldurulur</li>
+                                    <li>Bu alan sadece rakam kabul eder ve en fazla 10 haneli olabilir</li>
+                                    <li>İlk sicil numarası alanı açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ metin kutusuna geçin</li>
+                            <li>Sağ kutudaki bitiş sicil numarasını kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak "999999999" olarak doldurulur</li>
+                                    <li>Bu alan da sadece rakam kabul eder ve en fazla 10 haneli olabilir</li>
+                                    <li>Son sicil numarası alanı da açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Sicil No alanları boş bırakılamaz. Boş bırakırsanız "İlk Sicil No Boş Geçilemez" veya "Son Sicil No Boş Geçilemez" uyarısı alırsınız</li>
+                    <li>Başlangıç sicil numarası, bitiş sicil numarasından büyük olmamalıdır</li>
+                    <li>Sadece belirli bir sicil numarası için ihbarname oluşturmak istiyorsanız, başlangıç ve bitiş kutularına aynı numarayı girin</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm sicil numaraları için işlem yapmak istiyorsanız, varsayılan değerleri (0 - 999999999) kullanabilirsiniz</li>
+                    <li>Belirli bir aralıktaki sicil numaralarına ait borçlar için ihbarname oluşturmak için, başlangıç ve bitiş değerlerini o aralığa göre ayarlayın</li>
+                    <li>Çok sayıda mükellef için ihbarname oluşturulacaksa, işlem süresi uzayabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="beyan-sekli" class="section">
+        <h2>Beyan Şekli Seçimi</h2>
+        <div class="info-box">
+            <h3>Beyan Şekli Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Beyan Şekli Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Sicil No alanının hemen altında yer alır</li>
+                            <li>"Beyan Şekli" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) menüsü vardır</li>
+                            <li>Açılır liste menüsü, mavi arka planlı ve açık renk yazılı olarak görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut beyan şekilleri listesi açılacaktır
+                                <ul>
+                                    <li>Liste ilk açıldığında "Hepsi" seçeneği seçili olarak gelir</li>
+                                    <li>Diğer seçenekler: Elden, Tespit, Resen, Banka, Mobil</li>
+                                </ul>
+                            </li>
+                            <li>Listeden filtrelemek istediğiniz beyan şeklini seçin
+                                <ul>
+                                    <li>Tüm beyan şekilleri için ihbarname oluşturmak istiyorsanız "Hepsi" seçeneğini seçin</li>
+                                    <li>Sadece belirli bir beyan şekline ait borçlar için ihbarname oluşturmak istiyorsanız, o beyan şeklini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz beyan şekli görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Beyan şekli seçimi zorunlu değildir, varsayılan olarak "Hepsi" seçeneği seçili gelir</li>
+                    <li>Beyan şekli seçimi, oluşturulacak ihbarnamelerin hangi tür beyan kayıtlarından geleceğini belirler</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm beyan şekilleri için ihbarname oluşturmak istiyorsanız, varsayılan "Hepsi" seçeneğini kullanabilirsiniz</li>
+                    <li>Belirli bir beyan şekline göre filtreleme yapmak, işlem süresini kısaltabilir ve daha spesifik sonuçlar almanızı sağlar</li>
+                    <li>Aşağı/Yukarı ok tuşlarını kullanarak da seçenekler arasında gezinebilir ve ENTER tuşuna basarak seçim yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="mahalle" class="section">
+        <h2>Mahalle Seçimi</h2>
+        <div class="info-box">
+            <h3>Mahalle Nasıl Seçilir</h3>
+            
+            <div class="step">
+                <h4>Mahalle Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Beyan Şekli alanının hemen altında yer alır</li>
+                            <li>"Mahalle :" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) menüsü vardır</li>
+                            <li>Açılır liste menüsü, mavi arka planlı ve açık renk yazılı olarak görünür</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut mahalle listesi açılacaktır
+                                <ul>
+                                    <li>Liste ilk açıldığında "Seçiniz" seçeneği seçili olarak gelir</li>
+                                    <li>Bunun altında sistem tarafından tanımlı mahalleler alfabetik sırayla listelenir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden filtrelemek istediğiniz mahalleyi seçin
+                                <ul>
+                                    <li>Tüm mahalleler için ihbarname oluşturmak istiyorsanız "Seçiniz" seçeneğini bırakın</li>
+                                    <li>Sadece belirli bir mahalleye ait borçlar için ihbarname oluşturmak istiyorsanız, o mahalleyi seçin</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra liste otomatik olarak kapanacak ve seçtiğiniz mahalle görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Mahalle seçimi zorunlu değildir, varsayılan olarak "Seçiniz" seçeneği seçili gelir ve bu tüm mahalleleri kapsar</li>
+                    <li>Mahalle seçimi, oluşturulacak ihbarnamelerin hangi mahallelerdeki mükellefler için oluşturulacağını belirler</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm mahalleler için ihbarname oluşturmak istiyorsanız, varsayılan "Seçiniz" seçeneğini bırakabilirsiniz</li>
+                    <li>Belirli bir mahalleye göre filtreleme yapmak, işlem süresini kısaltabilir ve daha spesifik sonuçlar almanızı sağlar</li>
+                    <li>Mahalle listesi uzunsa, klavyeden mahallenin ilk harfini yazarak o harfle başlayan mahallelere hızlıca gidebilirsiniz</li>
+                    <li>Mahallelerin alfabetik sıralanması, aradığınız mahalleyi daha kolay bulmanızı sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="borc-yili" class="section">
+        <h2>Borç Yılı Aralığı Girişi</h2>
+        <div class="info-box">
+            <h3>Borç Yılı Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Borç Yılı Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Mahalle alanının hemen altında yer alır</li>
+                            <li>"Borç Yılı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol kutu başlangıç borç yılı, sağ kutu bitiş borç yılı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutudaki başlangıç borç yılını kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak "1900" olarak doldurulur</li>
+                                    <li>Bu alan sadece rakam kabul eder ve tam olarak 4 haneli olmalıdır</li>
+                                    <li>İlk borç yılı alanı açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ metin kutusuna geçin</li>
+                            <li>Sağ kutudaki bitiş borç yılını kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak içinde bulunulan yıl değeriyle doldurulur</li>
+                                    <li>Bu alan da sadece rakam kabul eder ve tam olarak 4 haneli olmalıdır</li>
+                                    <li>Son borç yılı alanı da açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Borç Yılı alanları boş bırakılamaz ve tam olarak 4 haneli olmalıdır</li>
+                    <li>Borç yılı 4 haneli değilse "İlk Borç Yılı Geçerli Değil" veya "Son Borç Yılı Geçerli Değil" uyarısı alırsınız</li>
+                    <li>Başlangıç borç yılı, bitiş borç yılından büyük olmamalıdır</li>
+                    <li>Sadece belirli bir yıla ait borçlar için ihbarname oluşturmak istiyorsanız, başlangıç ve bitiş kutularına aynı yılı girin</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tüm yıllara ait borçlar için işlem yapmak istiyorsanız, varsayılan değerleri (1900 - günümüz) kullanabilirsiniz</li>
+                    <li>Belirli bir yıl aralığındaki borçlar için ihbarname oluşturmak için, başlangıç ve bitiş değerlerini o aralığa göre ayarlayın</li>
+                    <li>Son birkaç yıla ait borçlar için ihbarname oluşturmak istiyorsanız, başlangıç yılını uygun şekilde ayarlayın (örneğin 2020 - 2023)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="son-odeme" class="section">
+        <h2>Son Ödeme Tarihi Girişi</h2>
+        <div class="info-box">
+            <h3>Son Ödeme Tarihi Nasıl Girilir</h3>
+            
+            <div class="step">
+                <h4>Son Ödeme Tarihi Alanı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Borç Yılı alanının hemen altında yer alır</li>
+                            <li>"Son Ödeme Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu ve bilgi notu vardır</li>
+                            <li>Bilgi notu: "Sadece bu tarih itibariyle vadesi geçmiş borçlar alınır"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusundaki son ödeme tarihini kontrol edin veya değiştirin
+                                <ul>
+                                    <li>Program açıldığında otomatik olarak günün tarihiyle doldurulur</li>
+                                    <li>Bu alan tarih formatında (GG.AA.YYYY) veri kabul eder</li>
+                                    <li>Son ödeme tarihi alanı açık mavi arka planlı olarak görünür</li>
+                                </ul>
+                            </li>
+                            <li>Tarihi değiştirmek için:
+                                <ul>
+                                    <li>Mevcut tarihi silin ve yeni tarihi girin</li>
+                                    <li>veya mevcut tarih üzerinde değişiklik yapın</li>
+                                    <li>Tarih GG.AA.YYYY formatında olmalıdır (örneğin: 15.05.2023)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak bir sonraki alana geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Son Ödeme Tarihi alanı boş bırakılamaz. Boş bırakırsanız "Son Ödeme Tarihi Boş Geçilemez" uyarısı alırsınız</li>
+                    <li>Tarih GG.AA.YYYY formatında girilmelidir (örneğin: 15.05.2023)</li>
+                    <li>Bu tarih, hangi borçlar için ihbarname oluşturulacağını belirler: sadece bu tarihe kadar ödenmemiş (vadesi geçmiş) borçlar için ihbarname oluşturulur</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Genellikle günün tarihini kullanmak yaygın bir uygulamadır, böylece bugün itibariyle vadesi geçmiş tüm borçlar için ihbarname oluşturulur</li>
+                    <li>Belirli bir tarihten önceki vadesi geçmiş borçlar için ihbarname oluşturmak istiyorsanız, o tarihi manuel olarak girin</li>
+                    <li>Tarih girişinde gün ve ay için tek haneli sayılar kullanabilirsiniz (örneğin: 1.5.2023)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="diger-secenekler" class="section">
+        <h2>Diğer Seçenekler</h2>
+        <div class="info-box">
+            <h3>Diğer Seçenekler Nasıl Kullanılır</h3>
+            
+            <div class="step">
+                <h4>Daha Önce İhbarname Oluşturulmuş Borçlar Seçeneği:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Son Ödeme Tarihi alanının hemen altında yer alır</li>
+                            <li>"Diğer Seçenekler" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir onay kutusu (checkbox) ve açıklama metni vardır</li>
+                            <li>Açıklama metni: "Daha önce ihbarname oluşturulmuş borçlar dahil <u>edilmesin</u>"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Onay kutusuna tıklayarak seçeneği aktif hale getirin (işaretleyin) veya pasif hale getirin (işareti kaldırın)
+                                <ul>
+                                    <li>Program açıldığında bu seçenek işaretlenmemiş olarak gelir</li>
+                                    <li>İşaretlendiğinde, daha önce ihbarname oluşturulmuş borçlar için tekrar ihbarname oluşturulmaz</li>
+                                    <li>İşaretlenmediğinde, daha önce ihbarname oluşturulmuş borçlar da dahil edilir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu seçenek işaretlendiğinde, daha önce ihbarname oluşturulmuş borçlar için tekrar ihbarname oluşturulmaz</li>
+                    <li>İşaretlenmediğinde, daha önce ihbarname oluşturulmuş borçlar da yeniden ihbarname kapsamına alınır</li>
+                    <li>Borçlar için daha önce ihbarname oluşturulmuş olup olmadığını sistem otomatik olarak kontrol eder</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Mükerrer ihbarname göndermek istemiyorsanız, bu seçeneği işaretleyebilirsiniz</li>
+                    <li>Daha önce ihbarname oluşturulmuş ancak hala ödenmemiş borçlar için yeniden ihbarname göndermek istiyorsanız, bu seçeneği işaretlemeden bırakın</li>
+                    <li>Bu seçeneği işaretlemek, oluşturulacak ihbarname sayısını azaltabilir ve işlem süresini kısaltabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Oluştur ve Çıkış Butonları</h3>
+            
+            <div class="step">
+                <h4>Oluştur Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Diğer Seçenekler alanının altındaki buton çubuğunda sol tarafta yer alır</li>
+                            <li>Parlak gri renkli, üç boyutlu görünümlü bir butondur</li>
+                            <li>Üzerinde "Oluştur" yazar</li>
+                            <li>Çıkış butonunun sol tarafında bulunur</li>
+                            <li>Genişliği yaklaşık 75 pikseldir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İhbarname Oluşturma İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Tanzim Tarihi, Sicil No aralığı, Beyan Şekli, Mahalle, Borç Yılı aralığı, Son Ödeme Tarihi ve diğer seçenekleri ayarlayın</li>
+                            <li>Oluştur butonuna tıklayın</li>
+                            <li>Sistem, girdiğiniz kriterleri kontrol eder ve bir onay mesajı gösterir:
+                                <ul>
+                                    <li>"Bu İşlem Sonunda Belirttiğiniz Filtre Aralığındaki Borçlar İçin İhbarname Kaydı Oluşturulacaktır. Devam Etmek İstiyor Musunuz?"</li>
+                                </ul>
+                            </li>
+                            <li>Bu mesajda "Evet" seçeneğini tıklarsanız, ihbarname oluşturma işlemi başlar</li>
+                            <li>"Hayır" seçeneğini tıklarsanız, işlem iptal edilir</li>
+                            <li>İhbarname oluşturma işlemi tamamlandıktan sonra:
+                                <ul>
+                                    <li>Eğer ihbarname oluşturulduysa, "Döküm İşlemleri" penceresi açılır</li>
+                                    <li>Eğer hiç ihbarname oluşturulmadıysa, "İşlem Sonucunda Hiçbir İhbarname Oluşturulmadı" mesajı görüntülenir</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Çıkış Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, Diğer Seçenekler alanının altındaki buton çubuğunda sağ tarafta yer alır</li>
+                            <li>Parlak gri renkli, üç boyutlu görünümlü bir butondur</li>
+                            <li>Üzerinde "Çıkış" yazar</li>
+                            <li>Oluştur butonunun sağ tarafında bulunur</li>
+                            <li>Genişliği yaklaşık 75 pikseldir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Oluştur butonuna tıklamadan önce tüm kriterleri dikkatlice kontrol edin</li>
+                    <li>İhbarname oluşturma işlemi, girilen kriterlere bağlı olarak biraz zaman alabilir</li>
+                    <li>İşlem sırasında program penceresini kapatmayın veya başka işlemlere geçmeyin</li>
+                    <li>Çıkış butonuna tıkladığınızda program direkt olarak kapanır, herhangi bir onay sormaz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İhbarname oluşturmadan önce kriterleri dar tutarak test yapabilirsiniz</li>
+                    <li>Oluştur butonuna fare ile tıklamak yerine, buton üzerindeyken ENTER tuşuna basarak da işlemi başlatabilirsiniz</li>
+                    <li>Çıkış butonuna tıklamak yerine, ESC tuşuna basarak da programdan çıkabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="dokum-islemleri" class="section">
+        <h2>Döküm İşlemleri Ekranı</h2>
+        <div class="info-box">
+            <h3>Döküm İşlemleri Nasıl Yapılır</h3>
+            
+            <div class="step">
+                <h4>Döküm İşlemleri Ekranı Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Ekran Açılışı:</strong>
+                        <ul>
+                            <li>Bu ekran, ihbarname oluşturma işlemi başarıyla tamamlandıktan sonra otomatik olarak açılır</li>
+                            <li>Küçük bir modal pencere olarak ana ekranın üzerinde görüntülenir</li>
+                            <li>Pencere başlığında "Döküm İşlemleri" yazar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ekran Yerleşimi:</strong>
+                        <ul>
+                            <li>Üst kısımda açık sarı renkli bir bilgi alanı bulunur</li>
+                            <li>Bilgi alanında "Bu işlem sonucunda oluşmuş olan ihbarnameleri ve bu ihbarnamelere ait zarfları yazdırmak için döküm türünü seçiniz" yazısı yer alır</li>
+                            <li>Orta kısımda bir açılır liste (dropdown) menüsü vardır</li>
+                            <li>Alt kısımda "Yazdır" ve "Kapat" butonları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Döküm Türü Seçimi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, mevcut döküm türleri listesi açılacaktır
+                                <ul>
+                                    <li>Liste ilk açıldığında "--Döküm Türü Seçiniz--" yazısı görünür</li>
+                                    <li>Bunun altında "İhbarname Dökümü" ve "Zarf Dökümü" seçenekleri listelenir</li>
+                                </ul>
+                            </li>
+                            <li>Listeden yazdırmak istediğiniz döküm türünü seçin
+                                <ul>
+                                    <li>İhbarnameleri yazdırmak için "İhbarname Dökümü" seçeneğini seçin</li>
+                                    <li>İhbarname zarflarını yazdırmak için "Zarf Dökümü" seçeneğini seçin</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Yazdır Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Döküm İşlemleri ekranının alt kısmında, sol tarafta yer alır</li>
+                            <li>Parlak gri renkli, üç boyutlu görünümlü bir butondur</li>
+                            <li>Üzerinde "Yazdır" yazar</li>
+                            <li>Kapat butonunun sol tarafında bulunur</li>
+                            <li>Genişliği yaklaşık 75 pikseldir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yazdırma İşlemi Adımları:</strong>
+                        <ol>
+                            <li>Döküm türünü seçin (İhbarname Dökümü veya Zarf Dökümü)</li>
+                            <li>Yazdır butonuna tıklayın</li>
+                            <li>Eğer döküm türü seçilmediyse, "Döküm Türü Seçiniz" uyarısı alırsınız</li>
+                            <li>Döküm türü seçiliyse, sistem yeni bir pencerede seçilen döküm türüne ait formu açacaktır
+                                <ul>
+                                    <li>Bu pencere tam ekran olmayacak şekilde, 792x525 piksel boyutunda açılır</li>
+                                    <li>Pencere yeniden boyutlandırılabilir özelliktedir</li>
+                                    <li>Pencerenin alt kısmında kaydırma çubukları vardır</li>
+                                </ul>
+                            </li>
+                            <li>Açılan formda ihbarname veya zarf görüntüsünü inceleyebilirsiniz</li>
+                            <li>Formun üst kısmındaki yazdırma butonları ile çıktı alabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kapat Butonu Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Döküm İşlemleri ekranının alt kısmında, sağ tarafta yer alır</li>
+                            <li>Parlak gri renkli, üç boyutlu görünümlü bir butondur</li>
+                            <li>Üzerinde "Kapat" yazar</li>
+                            <li>Yazdır butonunun sağ tarafında bulunur</li>
+                            <li>Genişliği yaklaşık 75 pikseldir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kapatma İşlemi Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Kapat butonuna tıklayın</li>
+                            <li>Döküm İşlemleri penceresi kapanacak ve ana ekrana döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yazdır butonuna tıklamadan önce mutlaka bir döküm türü seçmelisiniz</li>
+                    <li>Yazdırma işlemi yeni bir pencerede açılır, bu pencere ile işiniz bittiğinde pencereyi manuel olarak kapatmanız gerekir</li>
+                    <li>Döküm İşlemleri penceresini kapatırsanız, yazdırma işlemini daha sonra tekrarlayamazsınız (yeniden ihbarname oluşturmanız gerekir)</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Genellikle önce ihbarname dökümünü alıp kontrol ettikten sonra, zarf dökümünü almak daha uygundur</li>
+                    <li>Yazdırma penceresi açıldığında, pencerenin sağ alt köşesinden tutup sürükleyerek boyutunu büyütebilirsiniz</li>
+                    <li>Açılan yazdırma penceresini kapatmadan önce tüm içeriği kontrol edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> Aktif buton veya seçeneği onaylamak için</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    <li><strong>Aşağı/Yukarı Oklar:</strong> Açılır listelerde seçenekler arasında gezinmek için</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Tanzim Tarihi Boş Geçilemez" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oluştur butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Tanzim Tarihi alanının dolu olduğundan emin olun. Program açıldığında otomatik olarak günün tarihi atanır, ancak siz silmiş olabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İlk/Son Sicil No Boş Geçilemez" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oluştur butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Sicil No alanlarının dolu olduğundan emin olun. Program açıldığında otomatik olarak değerler atanır, ancak siz silmiş olabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İlk/Son Borç Yılı Geçerli Değil" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oluştur butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Borç Yılı alanlarında tam olarak 4 haneli bir yıl girildiğinden emin olun. Program açıldığında otomatik olarak değerler atanır, ancak siz değiştirmiş olabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Son Ödeme Tarihi Boş Geçilemez" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Oluştur butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Son Ödeme Tarihi alanının dolu olduğundan emin olun. Program açıldığında otomatik olarak günün tarihi atanır, ancak siz silmiş olabilirsiniz.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"İşlem Sonucunda Hiçbir İhbarname Oluşturulmadı" Mesajı:</strong>
+                        <ul>
+                            <li>Sorun: İhbarname oluşturma işlemi tamamlandı ancak hiç ihbarname oluşturulmadı.</li>
+                            <li>Çözüm: Girdiğiniz kriterlere uyan borç kaydı olmayabilir. Kriterleri genişletin veya farklı kriterler deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>"Döküm Türü Seçiniz" Uyarısı:</strong>
+                        <ul>
+                            <li>Sorun: Döküm İşlemleri ekranında Yazdır butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                            <li>Çözüm: Açılır listeden bir döküm türü (İhbarname Dökümü veya Zarf Dökümü) seçtiğinizden emin olun.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>Büyük aralıklarda ihbarname oluşturmadan önce, dar bir aralıkta test yapın</li>
+                    <li>İhbarnameleri belirli gruplar halinde oluşturmak (örneğin mahalle bazında veya borç yılı bazında) işlem süresini kısaltabilir</li>
+                    <li>"Daha önce ihbarname oluşturulmuş borçlar dahil <u>edilmesin</u>" seçeneğini işaretlemek, mükerrer ihbarnameyi önler</li>
+                    <li>Belirli bir tarih aralığındaki borçlar için ihbarname oluşturmak istiyorsanız, Borç Yılı alanlarını o aralığa göre ayarlayın</li>
+                    <li>İhbarname ve zarf dökümlerini ihbarname oluşturma işleminin hemen ardından alın</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>İhbarname oluşturma işlemi, mükelleflere resmi bildirim yapılmasını sağlar ve yasal süreçleri başlatabilir</li>
+                    <li>İhbarname oluşturmadan önce, doğru kriterleri girdiğinizden emin olun</li>
+                    <li>Yazdırma işlemi başlatıldıktan sonra ana programı kapatmayın, yazdırma penceresi ana programa bağlıdır</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>İhbarname Oluşturma programı, vergi borçları için ihbarname oluşturmak ve yazdırmak için kullanılan önemli bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Tanzim Tarihi, Sicil No aralığı ve Borç Yılı aralığı girişi</li>
+                <li>Beyan Şekli ve Mahalle seçimi</li>
+                <li>Son Ödeme Tarihi ve diğer seçeneklerin ayarlanması</li>
+                <li>İhbarname oluşturma işleminin başlatılması</li>
+                <li>İhbarname ve zarf dökümlerinin yazdırılması</li>
+                <li>Program üzerindeki butonların ve alanların kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+            
+            <div class="tip-box">
+                <h4>Hatırlatma:</h4>
+                <p>İhbarname oluşturma, mükelleflere resmi bildirim yapılmasını sağlayan önemli bir işlemdir. İşlem yapmadan önce tüm kriterleri dikkatlice kontrol edin ve oluşturma işleminin ardından dökümünü alın.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+                            

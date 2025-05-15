@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sicil Listesi (Detay) Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sicil Listesi (Detay) Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#siralama">Sıralama Seçenekleri</a></li>
+                <li><a href="#sicil-filtreleme">Sicil Numarası ve Modül Sicil Filtreleme</a></li>
+                <li><a href="#tarih-filtreleme">Doğum ve Tarih Bilgileri Filtreleme</a></li>
+                <li><a href="#adres-filtreleme">Adres Bilgileri Filtreleme</a></li>
+                <li><a href="#meslek-cinsiyet">Meslek, Cinsiyet ve Kan Grubu Seçimi</a></li>
+                <li><a href="#ilce-kurum">İlçe ve Kurum/Şahıs Filtreleme</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Sicil Listesi (Detay) ekranı, sicil kayıtlarını çeşitli kriterlere göre filtreleyerek detaylı rapor oluşturmanızı sağlayan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Sicil numarası, modül sicil numarası veya kişisel bilgilere göre filtreleme yapabilirsiniz</li>
+                <li>Meslek, cinsiyet ve kan grubu gibi kriterlere göre kayıtları seçebilirsiniz</li>
+                <li>Ev ve iş adres bilgilerini kullanarak sorgulama yapabilirsiniz</li>
+                <li>Doğum, emeklilik ve ölüm tarihlerine göre sicil kayıtlarını arayabilirsiniz</li>
+                <li>Soyad ve ad bilgilerine göre filtreleme yapabilirsiniz</li>
+                <li>Detaylı raporlar oluşturabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu ekranı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi kriterlere göre filtreleme yapmak istediğiniz</li>
+                    <li>Rapor sayfa başına gösterilecek kayıt sayısı</li>
+                    <li>Nasıl bir sıralama istediğiniz (GTT Sicil No, Soyadı-Adı veya Adı-Soyadı)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz renkli bir şeritte "SİCİL LİSTESİ (DETAY)" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Üst kısımda sıralama seçenekleri yer alır</li>
+                            <li>Sonrasında Sicil No, Modül Sicil No, Doğum, Emeklilik, Ölüm Tarihleri, Adres bilgileri ve diğer filtreleme alanları bulunur</li>
+                            <li>Her filtre alanının sol tarafında etiket, sağ tarafında ise giriş alanları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Çoklu Seçim Listeleri Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında Meslek, Cinsiyet, Kan Grubu, Ev İlçe, İş İlçe ve Kurum/Şahıs çoklu seçim listeleri bulunur</li>
+                            <li>Bu listeler yan yana iki sıra halinde düzenlenmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Satır Sayısı ve İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında Satır Sayısı seçimi bulunur</li>
+                            <li>En altta Listele ve Çıkış butonları yer alır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Ekran açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Sıralama alanına konumlanır</li>
+                    <li>Bazı filtre alanları varsayılan değerlerle doldurulur</li>
+                    <li>Çoklu seçim listelerindeki tüm öğeler otomatik olarak seçili durumda gelir</li>
+                    <li>Filtreleme yapmadan önce görüntülemek istediğiniz verilere uygun kriterleri belirlediğinizden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="siralama" class="section">
+        <h2>Sıralama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Sonuçların Nasıl Sıralanacağını Belirleme</h3>
+            
+            <div class="step">
+                <h4>Sıralama Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlık çizgisinin hemen altında yer alır</li>
+                            <li>Açılır liste (dropdown) olarak sol tarafta bulunur</li>
+                            <li>Liste kutusu gri ile beyaz arası bir renktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçenekleri:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, üç farklı sıralama seçeneği görünecektir:
+                                <ul>
+                                    <li>"GTT Sicil No Sıralı" - Sicil numarasına göre artan sıralama yapar</li>
+                                    <li>"Soyadı ve Adına Göre Sıralı" - Önce soyadı, sonra ad bilgisine göre sıralar</li>
+                                    <li>"Adı ve Soyadına Göre Sıralı" - Önce ad, sonra soyad bilgisine göre sıralar</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğine tıklayarak seçin</li>
+                            <li>Varsayılan olarak "GTT Sicil No Sıralı" seçeneği seçilidir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İsme göre arama yapıyorsanız, "Soyadı ve Adına Göre Sıralı" veya "Adı ve Soyadına Göre Sıralı" seçeneklerini kullanmak daha mantıklıdır</li>
+                    <li>Sicil numarasına göre arama yapıyorsanız, "GTT Sicil No Sıralı" seçeneği tercih edilmelidir</li>
+                    <li>Büyük veri kümelerinde ad veya soyada göre sıralama yapmak, aradığınız kişileri daha kolay bulmanızı sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="adres-filtreleme" class="section">
+   <h2>Adres Bilgileri Filtreleme</h2>
+   <div class="info-box">
+       <h3>Ev ve İş Adresi Bilgileri ile Filtreleme</h3>
+       
+       <div class="step">
+           <h4>Ev Adres Bilgileri Filtreleme:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>Tarih bilgileri alanlarının altında yer alan bölüm</li>
+                       <li>Sol tarafta "Ev Mahalle", "Ev Cadde", "Ev Sokak", "Ev Site", "Ev Blok" ve "Ev Apartman" etiketleri bulunur</li>
+                       <li>Her etiketin yanında yan yana iki giriş kutusu vardır</li>
+                   </ul>
+               </li>
+               <li><strong>Filtreleme İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Ev Mahalle:
+                           <ul>
+                               <li>Sol kutuya başlangıç değerini girin (örn. "Atatürk")</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş değerini girin (varsayılan olarak "zzzzzzzzzzzzzzz" gelir)</li>
+                           </ul>
+                       </li>
+                       <li>Ev Cadde:
+                           <ul>
+                               <li>Sol kutuya başlangıç cadde adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş cadde adını girin</li>
+                           </ul>
+                       </li>
+                       <li>Ev Sokak:
+                           <ul>
+                               <li>Sol kutuya başlangıç sokak adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş sokak adını girin</li>
+                           </ul>
+                       </li>
+                       <li>Ev Site:
+                           <ul>
+                               <li>Sol kutuya başlangıç site adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş site adını girin</li>
+                           </ul>
+                       </li>
+                       <li>Ev Blok:
+                           <ul>
+                               <li>Sol kutuya başlangıç blok bilgisini girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş blok bilgisini girin</li>
+                           </ul>
+                       </li>
+                       <li>Ev Apartman:
+                           <ul>
+                               <li>Sol kutuya başlangıç apartman adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş apartman adını girin</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>İş Adres Bilgileri Filtreleme:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>Ev adres bilgilerinin altında yer alan bölüm</li>
+                       <li>Sol tarafta "İş Mahalle", "İş Cadde", "İş Sokak", "İş Site", "İş Blok" ve "İş Apartman" etiketleri bulunur</li>
+                       <li>Her etiketin yanında yan yana iki giriş kutusu vardır</li>
+                   </ul>
+               </li>
+               <li><strong>Filtreleme İşlemi Adımları:</strong>
+                   <ol>
+                       <li>İş Mahalle:
+                           <ul>
+                               <li>Sol kutuya başlangıç değerini girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş değerini girin</li>
+                           </ul>
+                       </li>
+                       <li>İş Cadde:
+                           <ul>
+                               <li>Sol kutuya başlangıç cadde adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş cadde adını girin</li>
+                           </ul>
+                       </li>
+                       <li>İş Sokak:
+                           <ul>
+                               <li>Sol kutuya başlangıç sokak adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş sokak adını girin</li>
+                           </ul>
+                       </li>
+                       <li>İş Site:
+                           <ul>
+                               <li>Sol kutuya başlangıç site adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş site adını girin</li>
+                           </ul>
+                       </li>
+                       <li>İş Blok:
+                           <ul>
+                               <li>Sol kutuya başlangıç blok bilgisini girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş blok bilgisini girin</li>
+                           </ul>
+                       </li>
+                       <li>İş Apartman:
+                           <ul>
+                               <li>Sol kutuya başlangıç apartman adını girin</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş apartman adını girin</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+
+       <div class="step">
+           <h4>Ad ve Soyad Bilgileri Filtreleme:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>İş adres bilgilerinin altında yer alan bölüm</li>
+                       <li>Sol tarafta "Ad" ve "Soyad" etiketleri bulunur</li>
+                       <li>Her etiketin yanında yan yana iki giriş kutusu vardır</li>
+                   </ul>
+               </li>
+               <li><strong>Filtreleme İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Ad alanı:
+                           <ul>
+                               <li>Sol kutuya başlangıç adını girin (örn. "Ali")</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş adını girin (varsayılan olarak "zzzzzzzzzzzzzzz" gelir)</li>
+                           </ul>
+                       </li>
+                       <li>Soyad alanı:
+                           <ul>
+                               <li>Sol kutuya başlangıç soyadını girin (örn. "Yılmaz")</li>
+                               <li>TAB tuşuna basarak sağ kutuya geçin</li>
+                               <li>Sağ kutuya bitiş soyadını girin (varsayılan olarak "zzzzzzzzzzzzzzz" gelir)</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Tüm adres alanları metinsel değer kabul eder ve alfabetik sıralamaya göre değerlendirilir</li>
+               <li>Adres alanlarında giriş yaparken, büyük-küçük harf duyarlılığına dikkat edin</li>
+               <li>Boş bırakılan adres alanları için sistem varsayılan değerleri kullanır</li>
+               <li>Başlangıç ve bitiş değerleri birbiriyle alfabetik olarak tutarlı olmalıdır</li>
+               <li>Soyad ve Ad alanları Türkçe karakterlere duyarlıdır</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Tek bir mahalle, cadde veya sokakta oturanları bulmak için, başlangıç ve bitiş kutularına aynı değeri girin</li>
+               <li>Adres bilgilerini girerken kısmi eşleştirme yapabilirsiniz (örn. "Çan" yazarak "Çankaya", "Çankırı" gibi değerleri bulabilirsiniz)</li>
+               <li>Tam eşleştirme yapmak için, tam adres bilgisini girin</li>
+               <li>Türkçe karakterler kullanırken dikkatli olun (İ/I, Ğ, Ş, Ç, Ö, Ü)</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="meslek-cinsiyet" class="section">
+   <h2>Meslek, Cinsiyet ve Kan Grubu Seçimi</h2>
+   <div class="info-box">
+       <h3>Çoklu Seçim Listeleri ile Filtreleme</h3>
+       
+       <div class="step">
+           <h4>Meslek Seçimi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>Adres bilgileri alanlarının altında, ekranın sol tarafında yer alır</li>
+                       <li>"Meslek" etiketi yanında çoklu seçim listesi (multiple select list) bulunur</li>
+                       <li>Liste kutusu dikdörtgen şeklinde, gri çerçeve içerisindedir</li>
+                   </ul>
+               </li>
+               <li><strong>Seçim İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Ekran ilk açıldığında tüm meslek seçenekleri otomatik olarak seçilidir</li>
+                       <li>Belirli mesleklere göre filtreleme yapmak için:
+                           <ul>
+                               <li>CTRL tuşunu basılı tutarak, istediğiniz meslek değerlerini tıklayın</li>
+                               <li>Seçilen meslekler mavi ile vurgulanacaktır</li>
+                               <li>Seçimden kaldırmak istediğiniz mesleği, yine CTRL tuşu basılıyken tıklayın</li>
+                           </ul>
+                       </li>
+                       <li>Ardışık meslekleri seçmek için:
+                           <ul>
+                               <li>İlk mesleği tıklayın</li>
+                               <li>SHIFT tuşunu basılı tutup son mesleği tıklayın</li>
+                               <li>Aradaki tüm meslekler otomatik olarak seçilecektir</li>
+                           </ul>
+                       </li>
+                       <li>Liste içinde "boş" seçeneği de bulunur, veri girişi yapılmamış kayıtlar için bu seçeneği kullanabilirsiniz</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Cinsiyet Seçimi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>Meslek alanının sağ tarafında yer alır</li>
+                       <li>"Cinsiyet" etiketi yanında çoklu seçim listesi bulunur</li>
+                   </ul>
+               </li>
+               <li><strong>Seçim İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Ekran ilk açıldığında tüm cinsiyet seçenekleri otomatik olarak seçilidir</li>
+                       <li>Cinsiyet listesinde 3 seçenek bulunur:
+                           <ul>
+                               <li>"Erkek" (değer: 0)</li>
+                               <li>"Kadın" (değer: 1)</li>
+                               <li>"Diğer" (değer: 2)</li>
+                           </ul>
+                       </li>
+                       <li>Belirli cinsiyetlere göre filtreleme yapmak için:
+                           <ul>
+                               <li>CTRL tuşunu basılı tutarak, istediğiniz cinsiyet değerlerini tıklayın</li>
+                               <li>Seçilen cinsiyetler mavi ile vurgulanacaktır</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Kan Grubu Seçimi Nasıl Yapılır:</h4>
+           <ol>
+               <li><strong>Alan Konumu:</strong>
+                   <ul>
+                       <li>Cinsiyet alanının sağ tarafında yer alır</li>
+                       <li>"Kan Grubu" etiketi yanında çoklu seçim listesi bulunur</li>
+                   </ul>
+               </li>
+               <li><strong>Seçim İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Ekran ilk açıldığında tüm kan grubu seçenekleri otomatik olarak seçilidir</li>
+                       <li>Kan grubu listesinde 9 seçenek bulunur:
+                           <ul>
+                               <li>"boş" (değer girişi yapılmamış kayıtlar için)</li>
+                               <li>"0(+)"</li>
+                               <li>"0(-)"</li>
+                               <li>"A(+)"</li>
+                               <li>"A(-)"</li>
+                               <li>"B(+)"</li>
+                               <li>"B(-)"</li>
+                               <li>"AB(+)"</li>
+                               <li>"AB(-)"</li>
+                           </ul>
+                       </li>
+                       <li>Belirli kan gruplarına göre filtreleme yapmak için:
+                           <ul>
+                               <li>CTRL tuşunu basılı tutarak, istediğiniz kan grubu değerlerini tıklayın</li>
+                               <li>Seçilen kan grupları mavi ile vurgulanacaktır</li>
+                           </ul>
+                       </li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Çoklu seçim listelerinde en az bir değer seçili olmalıdır, aksi halde filtreleme işlemi düzgün çalışmayabilir</li>
+               <li>Ekran ilk açıldığında tüm değerler otomatik olarak seçilidir</li>
+               <li>CTRL tuşu ile birden fazla, SHIFT tuşu ile ardışık seçimler yapılabilir</li>
+               <li>Listedeki hiçbir değer seçili değilse, o kritere göre filtreleme yapılmaz</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>Belirli bir meslek grubunu aramak için, önce tüm seçimleri kaldırıp (CTRL+A ile tüm seçimleri seçin, sonra tekrar CTRL+A ile tüm seçimleri kaldırın), ardından sadece istediğiniz mesleği seçin</li>
+               <li>Cinsiyete göre filtreleme yapmak için, sadece filtrelemek istediğiniz cinsiyet seçeneğini bırakıp diğerlerini kaldırın</li>
+               <li>Kan grubu girilmemiş kayıtları bulmak için, sadece "boş" seçeneğini seçin</li>
+               <li>Çoklu seçim listelerinde klavye ile gezinmek için, yukarı-aşağı ok tuşlarını kullanabilirsiniz</li>
+           </ul>
+       </div>
+   </div>
+</div>
+<div id="ilce-kurum" class="section">
+    <h2>İlçe ve Kurum/Şahıs Filtreleme</h2>
+    <div class="info-box">
+        <h3>İlçe ve Kurum/Şahıs Bilgileri ile Filtreleme</h3>
+        
+        <div class="step">
+            <h4>Ev İlçe Seçimi Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Meslek/Cinsiyet/Kan Grubu seçimlerinin altında, sol tarafta yer alır</li>
+                        <li>"Ev İlçe" etiketi yanında çoklu seçim listesi bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim İşlemi Adımları:</strong>
+                    <ol>
+                        <li>Ekran ilk açıldığında tüm ilçe seçenekleri otomatik olarak seçilidir</li>
+                        <li>İlçe listesinde "boş" seçeneği ve sistemde kayıtlı tüm ilçeler bulunur</li>
+                        <li>İlçeler listede "İl adı + İlçe adı" formatında görüntülenir (örn. "İstanbul Bakırköy")</li>
+                        <li>Belirli ilçelere göre filtreleme yapmak için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak, istediğiniz ilçe değerlerini tıklayın</li>
+                                <li>Seçilen ilçeler mavi ile vurgulanacaktır</li>
+                            </ul>
+                        </li>
+                        <li>Aynı ildeki ardışık ilçeleri seçmek için:
+                            <ul>
+                                <li>İlk ilçeyi tıklayın</li>
+                                <li>SHIFT tuşunu basılı tutup son ilçeyi tıklayın</li>
+                                <li>Aradaki tüm ilçeler otomatik olarak seçilecektir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>İş İlçe Seçimi Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Ev İlçe alanının sağında yer alır</li>
+                        <li>"İş İlçe" etiketi yanında çoklu seçim listesi bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim İşlemi Adımları:</strong>
+                    <ol>
+                        <li>Ekran ilk açıldığında tüm ilçe seçenekleri otomatik olarak seçilidir</li>
+                        <li>İlçe listesinde "boş" seçeneği ve sistemde kayıtlı tüm ilçeler bulunur</li>
+                        <li>İlçeler listede "İl adı + İlçe adı" formatında görüntülenir</li>
+                        <li>Belirli ilçelere göre filtreleme yapmak için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak, istediğiniz ilçe değerlerini tıklayın</li>
+                                <li>Seçilen ilçeler mavi ile vurgulanacaktır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Kurum/Şahıs Seçimi Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>İş İlçe alanının sağında yer alır</li>
+                        <li>"Kurum/Şahıs" etiketi yanında çoklu seçim listesi bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Seçim İşlemi Adımları:</strong>
+                    <ol>
+                        <li>Ekran ilk açıldığında tüm kurum/şahıs seçenekleri otomatik olarak seçilidir</li>
+                        <li>Listede "boş" seçeneği ve sistemde kayıtlı tüm kurum türleri bulunur</li>
+                        <li>Belirli kurum/şahıs türlerine göre filtreleme yapmak için:
+                            <ul>
+                                <li>CTRL tuşunu basılı tutarak, istediğiniz kurum/şahıs değerlerini tıklayın</li>
+                                <li>Seçilen değerler mavi ile vurgulanacaktır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Satır Sayısı Belirleme:</h4>
+            <ol>
+                <li><strong>Alan Konumu:</strong>
+                    <ul>
+                        <li>Çoklu seçim listelerinin altında, sol tarafta yer alır</li>
+                        <li>"Satır Sayısı:" etiketi yanında sayısal giriş kutusu bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Veri Girişi Adımları:</strong>
+                    <ol>
+                        <li>Raporda her sayfada görüntülenecek satır sayısını girin</li>
+                        <li>Varsayılan değer "40" olarak gelir</li>
+                        <li>Daha fazla kayıt görmek için değeri artırabilir, daha az kayıt görmek için azaltabilirsiniz</li>
+                        <li>Bu alan sayısal değer kabul eder ve maksimum 4 haneli olabilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Çoklu seçim listelerinde en az bir değer seçili olmalıdır</li>
+                <li>İlçe listelerinde çok sayıda kayıt olabilir, bu nedenle doğru seçim yapmak için dikkatli olun</li>
+                <li>Satır sayısının çok yüksek değerlere ayarlanması, raporun yavaş oluşmasına neden olabilir</li>
+                <li>"boş" seçeneği, veri girişi yapılmamış kayıtları filtrelemek için kullanılır</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Belirli bir ildeki tüm ilçeleri seçmek için, aynı il adı ile başlayan ilçeleri SHIFT tuşu ile toplu olarak seçebilirsiniz</li>
+                <li>Listedeki ilk değere hızlıca gitmek için, listenin herhangi bir yerine tıklayıp klavyeden Home tuşuna basın</li>
+                <li>Listedeki son değere hızlıca gitmek için, listenin herhangi bir yerine tıklayıp klavyeden End tuşuna basın</li>
+                <li>İl adının ilk harfini yazarak, o harfle başlayan ilk il/ilçeye hızlıca ulaşabilirsiniz</li>
+                <li>Satır sayısını rapor içeriğine göre optimize edin - çok detaylı raporlarda daha az satır, özet raporlarda daha fazla satır kullanabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div id="islem-butonlari" class="section">
+   <h2>İşlem Butonları Kullanımı</h2>
+   <div class="info-box">
+       <h3>Listele ve Çıkış Butonları</h3>
+       
+       <div class="step">
+           <h4>Listele Butonu Kullanımı:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ekranın en alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                       <li>Üzerinde bir liste ikonu ve "Listele" yazısı bulunur</li>
+                       <li>Gri çerçeve içerisinde, üç boyutlu görünüme sahiptir</li>
+                   </ul>
+               </li>
+               <li><strong>Listeleme İşlemi Adımları:</strong>
+                   <ol>
+                       <li>Tüm filtreleme kriterlerini istediğiniz şekilde ayarlayın:
+                           <ul>
+                               <li>Sıralama seçimini yapın</li>
+                               <li>Sicil ve modül sicil numarası aralığını belirleyin</li>
+                               <li>Gerekirse doğum yeri ve tarih bilgilerini girin</li>
+                               <li>Adres bilgilerini girin (ev ve iş)</li>
+                               <li>Ad ve soyad bilgilerini girin</li>
+                               <li>Çoklu seçim listelerinden meslek, cinsiyet, kan grubu seçimlerini yapın</li>
+                               <li>İlçe ve kurum/şahıs seçimlerini yapın</li>
+                               <li>Satır sayısı belirleme</li>
+                           </ul>
+                       </li>
+                       <li>Listele butonuna tıklayın</li>
+                       <li>Sistem kriterlere uygun kayıtları arayacak ve sonuçları ekranın alt kısmında görüntüleyecektir</li>
+                       <li>Sonuçlar tabloda gösterilir ve belirtilen satır sayısına göre sayfalandırılır</li>
+                       <li>Rapor sonuçları ayrıca yazdırılabilir formatta da hazırlanır</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Çıkış Butonu Kullanımı:</h4>
+           <ol>
+               <li><strong>Buton Konumu:</strong>
+                   <ul>
+                       <li>Ekranın en alt kısmında, Listele butonunun sağında yer alır</li>
+                       <li>Üzerinde bir çıkış/kapı ikonu ve "Çıkış" yazısı bulunur</li>
+                       <li>Gri çerçeve içerisinde, üç boyutlu görünüme sahiptir</li>
+                   </ul>
+               </li>
+               <li><strong>Programdan Çıkış Adımları:</strong>
+                   <ol>
+                       <li>İşlemlerinizi tamamlayın</li>
+                       <li>Çıkış butonuna tıklayın</li>
+                       <li>Ekran kapatılacak ve ana menüye dönülecektir</li>
+                   </ol>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Önemli Uyarılar:</h4>
+           <ul>
+               <li>Listele butonuna tıklamadan önce tüm filtreleme kriterlerini doğru ayarladığınızdan emin olun</li>
+               <li>Çok genel kriterler kullanırsanız, çok sayıda kayıt listelenebilir ve bu işlem zaman alabilir</li>
+               <li>Çok spesifik kriterler kullanırsanız, hiç sonuç bulamayabilirsiniz</li>
+               <li>Çıkış butonuna tıklamadan önce, gerekirse raporunuzu kaydedin veya yazdırın</li>
+           </ul>
+       </div>
+       
+       <div class="tip-box">
+           <h4>Pratik İpuçları:</h4>
+           <ul>
+               <li>ALT + L tuş kombinasyonu ile Listele butonunu aktif edebilirsiniz</li>
+               <li>ESC tuşuna basarak Çıkış butonunu aktif edebilirsiniz</li>
+               <li>Filtreleme kriterlerini belirlerken önce genel bir arama yapıp, sonuçlara göre daha spesifik kriterler belirleyebilirsiniz</li>
+               <li>Sık kullandığınız kriterleri not edin, böylece benzer raporları daha hızlı oluşturabilirsiniz</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div id="ipuclari" class="section">
+   <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+   <div class="info-box">
+       <h3>Verimli Çalışma İçin İpuçları</h3>
+       <div class="step">
+           <h4>Hızlı Tuş Kombinasyonları:</h4>
+           <ul>
+               <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+               <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+               <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+               <li><strong>ALT + L:</strong> Listele butonunu aktif etmek için</li>
+               <li><strong>ESC:</strong> Ekrandan çıkmak için</li>
+               <li><strong>CTRL + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+               <li><strong>SHIFT + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+               <li><strong>CTRL + A:</strong> Bir listede tüm öğeleri seçmek veya seçimi kaldırmak için</li>
+           </ul>
+       </div>
+       
+       <div class="step">
+           <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+           <ol>
+               <li><strong>"Kayıt Bulunamadı" Mesajı:</strong>
+                   <ul>
+                       <li>Sorun: Listele butonuna tıkladıktan sonra bu mesajı alıyorsunuz.</li>
+                       <li>Çözüm: Filtreleme kriterlerinizi gözden geçirin, çok spesifik olabilir. Kriterleri genişletin veya bazı filtreleri kaldırın.</li>
+                   </ul>
+               </li>
+               <li><strong>"Çok Fazla Kayıt" Uyarısı:</strong>
+                   <ul>
+                       <li>Sorun: Listeleme işlemi çok uzun sürüyor veya çok fazla kayıt getiriyor.</li>
+                       <li>Çözüm: Daha spesifik filtreler kullanın. Sicil numarası aralığını daraltın, belirli ilçeler seçin veya tarih aralıklarını sınırlayın.</li>
+                   </ul>
+               </li>
+               <li><strong>Türkçe Karakter Sorunu:</strong>
+                   <ul>
+                       <li>Sorun: Türkçe karakterler içeren aramalar doğru sonuç vermiyor.</li>
+                       <li>Çözüm: Türkçe karakter kullanırken dikkatli olun, büyük-küçük harf duyarlılığını dikkate alın. Gerekirse, Türkçe karakter içermeyen alternatif kelimelerle arama yapın.</li>
+                   </ul>
+               </li>
+               <li><strong>Tarih Formatı Hatası:</strong>
+                   <ul>
+                       <li>Sorun: Tarih girişlerinde hata mesajı alıyorsunuz.</li>
+                       <li>Çözüm: Tarihleri GG.AA.YYYY formatında girdiğinizden emin olun (örn. 15.06.2023). Nokta (.) işaretini kullanmayı unutmayın.</li>
+                   </ul>
+               </li>
+               <li><strong>Çoklu Seçim Listesi Sorunları:</strong>
+                   <ul>
+                       <li>Sorun: Çoklu seçim listelerinde istediğiniz seçimleri yapamıyorsunuz.</li>
+                       <li>Çözüm: CTRL tuşunu basılı tutarak seçim yapın. Tüm seçimleri kaldırmak için önce CTRL+A ile tümünü seçin, sonra tekrar CTRL+A ile seçimi kaldırın, ardından istediğiniz değerleri seçin.</li>
+                   </ul>
+               </li>
+           </ol>
+       </div>
+       
+       <div class="step">
+           <h4>Etkili Rapor Oluşturma İpuçları:</h4>
+           <ul>
+               <li>Önce genel bir arama yapıp kaç kayıt olduğunu görün, ardından kriterleri daraltın</li>
+               <li>Sıralama seçeneğini amacınıza uygun seçin - isim araması yapıyorsanız Ad veya Soyad sıralaması, sicil araması yapıyorsanız Sicil No sıralaması kullanın</li>
+               <li>Çok fazla kayıt olan raporlarda Satır Sayısını azaltarak daha hızlı sonuç alın</li>
+               <li>Adres araması yaparken, tam eşleştirme yerine kısmi eşleştirme kullanın (örn. "Can" yazarak "Cankaya", "Canakkale" gibi değerleri bulabilirsiniz)</li>
+               <li>Meslek, Cinsiyet, Kan Grubu gibi alanlarda spesifik seçimler yaparak raporu daha odaklı hale getirin</li>
+               <li>Ad ve Soyad alanlarında büyük-küçük harf kullanımına dikkat edin</li>
+           </ul>
+       </div>
+       
+       <div class="warning-box">
+           <h4>Son Uyarılar:</h4>
+           <ul>
+               <li>Çok büyük veri kümeleri için rapor oluşturmak sistem kaynaklarını zorlayabilir</li>
+               <li>Arama kriterlerini mümkün olduğunca spesifik tutun</li>
+               <li>Önemli raporları yazdırın veya kaydedin, ekrandan çıktıktan sonra rapor verileri kaybolabilir</li>
+               <li>Doğru sıralama seçeneği kullanarak sonuçları daha anlamlı hale getirin</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<div class="section">
+   <h2>Özet ve Sonuç</h2>
+   <div class="info-box">
+       <p>Sicil Listesi (Detay) ekranı, sicil kayıtlarını çeşitli kriterlere göre filtreleyerek detaylı raporlar oluşturmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+       <ul>
+           <li>Sıralama seçeneklerinin kullanımı</li>
+           <li>Sicil numarası ve modül sicil numarası filtreleme</li>
+           <li>Doğum, emeklilik ve ölüm tarihleri ile filtreleme</li>
+           <li>Ev ve iş adresi bilgileri ile filtreleme</li>
+           <li>Meslek, cinsiyet ve kan grubu seçimleri</li>
+           <li>İlçe ve kurum/şahıs filtreleri</li>
+           <li>İşlem butonlarının kullanımı</li>
+           <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+       </ul>
+       
+       <p>Bu ekranı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+       
+       <p>Sicil Listesi (Detay) ekranını verimli bir şekilde kullanarak, ihtiyacınız olan detaylı sicil raporlarını kolayca oluşturabilirsiniz.</p>
+   </div>
+</div>
+
+</body>
+</html>
