@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pazaryeri Pazarcı Tanımlama Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Pazaryeri Pazarcı Tanımlama Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#pazarci-bilgileri">Pazarcı Bilgileri Ekleme ve Düzenleme</a></li>
+                <li><a href="#pazarci-arama">Pazarcı Kaydı Arama ve Görüntüleme</a></li>
+                <li><a href="#tezgah-islemleri">Tezgah Atama ve Yönetme</a></li>
+                <li><a href="#oda-islemleri">Oda Bilgileri Yönetimi</a></li>
+                <li><a href="#fotograf-islemleri">Pazarcı Fotoğrafı Ekleme ve Düzenleme</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Pazaryeri Pazarcı Tanımlama programı, belediyeniz bünyesindeki pazarlarda faaliyet gösteren pazarcıların kayıtlarını tutmak, tezgah atamalarını yapmak ve oda bağlantılarını yönetmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Pazarcı bilgilerini ekleyebilir ve düzenleyebilirsiniz</li>
+                <li>Pazarcılara tezgah ataması yapabilirsiniz</li>
+                <li>Pazarcıları odalara bağlayabilirsiniz</li>
+                <li>Pazarcıların fotoğraflarını kaydedebilirsiniz</li>
+                <li>Mevcut kayıtlar arasında arama yapabilirsiniz</li>
+                <li>Pazarcılara ait notları görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Kayıt yapmak istediğiniz pazarcının sicil numarası</li>
+                    <li>Hangi pazaryerine veya tezgaha atama yapacağınız</li>
+                    <li>Pazarcının bağlı olması gereken oda bilgisi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde gri renkli şeritte "Pazaryeri Pazarcı Tanımları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup, program boyunca değişmez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pazarcı Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında bulunan üst bölümde pazarcının temel bilgilerinin girileceği alanlar yer alır</li>
+                            <li>Bu alanda Kayıt Kodu, Sicil Numarası, TC Kimlik Numarası, Adı, Soyadı ve Fotoğraf bilgileri bulunur</li>
+                            <li>Her alan etiketi ile birlikte sol tarafta yer alır, veri giriş kutuları sağ tarafta bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Oda Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Pazarcı bilgilerinin altında yer alır</li>
+                            <li>Pazarcının bağlı olduğu odayı seçmek ve göstermek için kullanılır</li>
+                            <li>Açılır bir listeden oda seçimi yapılabilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tezgah Bilgileri Bölümü:</strong>
+                        <ul>
+                            <li>Oda bilgilerinin altında yer alır</li>
+                            <li>Pazarcıya atanmış tezgahları görmek ve yeni tezgah eklemek için kullanılır</li>
+                            <li>"Tezgah Seçip Ekle" ve "Tezgah Sil" butonları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ağaç Görünümü Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın orta kısmında yer alan geniş bir alandır</li>
+                            <li>Sol tarafta "Pazar Ve Tezgah Bilgileri" ve sağ tarafta "Bağlı Olduğu Oda Bilgileri" başlıkları altında iki ağaç görünümü bulunur</li>
+                            <li>Pazarcıya ait tezgah ve oda bilgilerini hiyerarşik olarak gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Önceki, Sonraki, Kayıtlar, Notlar, Kaydet, Form Temizle, Kayıt Sil ve Kapat butonlarını içerir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak Kayıt Kodu alanına konumlanır</li>
+                    <li>Yeni bir kayıt için Form Temizle butonunu kullanarak tüm alanları temizleyebilirsiniz</li>
+                    <li>Var olan bir kayıt üzerinde işlem yapmak için önce o kaydı Kayıt Kodu ile açmanız veya Kayıtlar butonuyla aramanız gerekir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="pazarci-bilgileri" class="section">
+        <h2>Pazarcı Bilgileri Ekleme ve Düzenleme</h2>
+        <div class="info-box">
+            <h3>Yeni Pazarcı Kaydetme ve Mevcut Pazarcı Bilgilerini Güncelleme</h3>
+            <div class="step">
+                <h4>Yeni Pazarcı Kaydı Oluşturma:</h4>
+                <ol>
+                    <li><strong>Form Temizleme:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları arasında bulunan "Form Temizle" butonuna tıklayın</li>
+                            <li>Bu işlem, tüm alanları temizleyerek yeni bir kayıt oluşturmaya hazır hale getirir</li>
+                            <li>Sistem otomatik olarak yeni bir Kayıt Kodu oluşturacaktır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil Numarası Girişi:</strong>
+                        <ol>
+                            <li>Kayıt Kodu alanının hemen altında bulunan "Sicil Numarası" alanına tıklayın</li>
+                            <li>Pazarcının sicil numarasını girin</li>
+                            <li>Sicil numarası alanı yalnızca rakam kabul eder</li>
+                            <li>Alternatif olarak, alanın sağındaki büyüteç ikonlu butona tıklayarak sicil kaydını aramak için yeni bir pencere açabilirsiniz</li>
+                        </ol>
+                    </li>
+                    <li><strong>Sicil Araması Yapma:</strong>
+                        <ol>
+                            <li>Sicil Numarası alanının yanındaki büyüteç ikonlu butona tıklayın</li>
+                            <li>Açılan pencerede sicil arama kriterlerini belirleyin</li>
+                            <li>Arama sonuçlarından istediğiniz kişiyi seçin</li>
+                            <li>Seçilen kişinin bilgileri (TC Kimlik Numarası, Adı, Soyadı) otomatik olarak ilgili alanlara aktarılacaktır</li>
+                        </ol>
+                    </li>
+                    <li><strong>Kaydetme:</strong>
+                        <ol>
+                            <li>Tüm bilgileri girdikten sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Sistem, bilgileri kontrol edecek ve herhangi bir eksik veya hatalı alan varsa uyarı verecektir</li>
+                            <li>Tüm bilgiler doğru ise, yeni pazarcı kaydı oluşturulacaktır</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Mevcut Pazarcı Bilgilerini Güncelleme:</h4>
+                <ol>
+                    <li><strong>Pazarcı Kaydını Açma:</strong>
+                        <ol>
+                            <li>Kayıt Kodu alanına güncellemek istediğiniz pazarcının kayıt kodunu girin ve Enter tuşuna basın veya</li>
+                            <li>Ekranın alt kısmındaki "Kayıtlar" butonuna tıklayarak açılan pencereden istediğiniz pazarcıyı seçin</li>
+                            <li>Seçilen pazarcının tüm bilgileri ekrana yüklenecektir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Bilgileri Değiştirme:</strong>
+                        <ol>
+                            <li>Değiştirmek istediğiniz bilgileri ilgili alanlarda güncelleyin</li>
+                            <li>TC Kimlik Numarası, Adı ve Soyadı alanları salt okunur olduğu için değiştirilemez</li>
+                            <li>Bu bilgileri değiştirmek için, önce farklı bir sicil numarası girmeniz veya sicil araması yapmanız gerekir</li>
+                        </ol>
+                    </li>
+                    <li><strong>Değişiklikleri Kaydetme:</strong>
+                        <ol>
+                            <li>Tüm değişiklikleri yaptıktan sonra, ekranın alt kısmında bulunan "Kaydet" butonuna tıklayın</li>
+                            <li>Sistem, bilgileri kontrol edecek ve herhangi bir eksik veya hatalı alan varsa uyarı verecektir</li>
+                            <li>Tüm bilgiler doğru ise, pazarcı kaydı güncellenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Kayıt Kodu ve Sicil Numarası alanları boş bırakılamaz</li>
+                    <li>TC Kimlik Numarası, Adı ve Soyadı alanları sistem tarafından sicil kaydından otomatik olarak doldurulur ve manuel olarak değiştirilemez</li>
+                    <li>Kaydetmeden önce tüm bilgilerin doğruluğunu kontrol edin</li>
+                    <li>Kayıt silme işlemi geri alınamaz, bu nedenle bu işlemi yapmadan önce dikkatli olun</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Sicil araması yapmak, manuel veri girişinden daha hızlı ve hatasızdır</li>
+                    <li>Kayıt Kodu alanına bir değer girer girmez Enter tuşuna basarak kaydı hızlıca açabilirsiniz</li>
+                    <li>Bir kaydı açtıktan sonra, Önceki ve Sonraki butonlarını kullanarak kayıtlar arasında gezinebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="pazarci-arama" class="section">
+        <h2>Pazarcı Kaydı Arama ve Görüntüleme</h2>
+        <div class="info-box">
+            <h3>Kayıtlar Arasında Arama Yapma ve Gezinme</h3>
+            <div class="step">
+                <h4>Kayıt Kodu ile Arama:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ekranın üst kısmında, başlığın hemen altında yer alır</li>
+                            <li>"Kayıt Kodu" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir metin kutusu yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Metin kutusuna aramak istediğiniz pazarcının kayıt kodunu girin</li>
+                            <li>Enter tuşuna basın veya kutunun dışına tıklayın</li>
+                            <li>Eğer girilen kayıt kodu ile bir pazarcı kaydı varsa, bu pazarcının tüm bilgileri ekrana yüklenecektir</li>
+                            <li>Eğer girilen kayıt kodu ile bir pazarcı kaydı yoksa, sistem bir uyarı mesajı gösterecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Kayıtlar Butonunu Kullanarak Arama:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, işlem butonları arasında yer alır</li>
+                            <li>Üzerinde "Kayıtlar" yazısı bulunur</li>
+                            <li>"Sonraki" butonunun sağında, "Notlar" butonunun solunda yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arama Adımları:</strong>
+                        <ol>
+                            <li>Kayıtlar butonuna tıklayın</li>
+                            <li>Açılan pencerede tüm kayıtlı pazarcıların listesi görüntülenecektir</li>
+                            <li>Bu listede Kayıt Kodu, Sicil No, Adı, Soyadı ve TC Kimlik No sütunları bulunur</li>
+                            <li>Listeden istediğiniz pazarcıyı seçin ve üzerine çift tıklayın veya listedeki seçim butonuna basın</li>
+                            <li>Seçilen pazarcının tüm bilgileri ana ekrana yüklenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Önceki/Sonraki Butonlarını Kullanarak Gezinme:</h4>
+                <ol>
+                    <li><strong>Buton Konumları:</strong>
+                        <ul>
+                            <li>Ekranın alt kısmında, en solda yer alan iki butondur</li>
+                            <li>"Önceki" butonu en solda, "Sonraki" butonu onun sağında yer alır</li>
+                            <li>Üzerlerinde ok simgeleri ve "Önceki", "Sonraki" yazıları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gezinme Adımları:</strong>
+                        <ol>
+                            <li>Mevcut bir pazarcı kaydını açtıktan sonra, "Önceki" butonuna tıklayarak bir önceki kayıt koduna sahip pazarcıya geçebilirsiniz</li>
+                            <li>"Sonraki" butonuna tıklayarak bir sonraki kayıt koduna sahip pazarcıya geçebilirsiniz</li>
+                            <li>Kayıtlar arasında bu şekilde gezinerek tüm pazarcıları inceleyebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bir kayıt üzerinde değişiklik yaptıysanız, başka bir kayda geçmeden önce "Kaydet" butonuna basarak değişiklikleri kaydetmeyi unutmayın</li>
+                    <li>Kayıt Kodu ile arama yaparken, doğru kayıt kodunu girdiğinizden emin olun</li>
+                    <li>Önceki/Sonraki butonları kayıt kodlarına göre sıralı olarak çalışır, bu nedenle silinen kayıtlar nedeniyle bazı kodlar atlanabilir</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Kayıtlar penceresinde, herhangi bir sütun başlığına tıklayarak listeyi o sütuna göre sıralayabilirsiniz</li>
+                    <li>Kayıtlar penceresinde çok sayıda kayıt varsa, klavyeden ilk birkaç harfi yazarak ilgili isme hızlıca geçiş yapabilirsiniz</li>
+                    <li>Son eklenen pazarcıyı görmek için "Kayıtlar" butonunu kullandıktan sonra listenin en altına inebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tezgah-islemleri" class="section">
+    <h2>Tezgah Atama ve Yönetme</h2>
+    <div class="info-box">
+        <h3>Pazarcıya Tezgah Ekleme ve Çıkarma</h3>
+        <div class="step">
+            <h4>Pazarcıya Tezgah Atama:</h4>
+            <ol>
+                <li><strong>Önkoşullar:</strong>
+                    <ul>
+                        <li>Öncelikle bir pazarcı kaydı açmış olmanız gerekir</li>
+                        <li>Atama yapmak için pazarcının Kayıt Kodu, Adı ve Soyadı alanlarının dolu olması gerekir</li>
+                    </ul>
+                </li>
+                <li><strong>Tezgah Bilgisi Bölümüne Erişim:</strong>
+                    <ul>
+                        <li>Pazarcı kaydını açtığınızda, ekranın orta kısmında "Tezgah Bilgisi" başlığı ve yanında "Tezgah Seçip Ekle" butonu görünür</li>
+                        <li>Bu bölüm Oda Bilgileri bölümünün altında ve Ağaç Görünümü bölümünün üstünde yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Tezgah Seçme ve Ekleme Adımları:</strong>
+                    <ol>
+                        <li>"Tezgah Seçip Ekle" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, gri renkli ve üç boyutlu görünüme sahiptir</li>
+                                <li>Tezgah Bilgisi etiketinin sağında yer alır</li>
+                            </ul>
+                        </li>
+                        <li>Açılan "Tezgah Pazarcı Filtre" penceresinde filtreleme kriterleri belirleyin (isteğe bağlı)</li>
+                        <li>Ardından görüntülenen tezgah listesi penceresinde, atamak istediğiniz tezgahı seçin
+                            <ul>
+                                <li>Bu pencerede tezgah kodu, pazar adı, tezgah adı, grup açıklaması, boyutlar ve adres bilgileri listelenir</li>
+                                <li>Yalnızca henüz başka pazarcılara atanmamış tezgahlar görüntülenir</li>
+                            </ul>
+                        </li>
+                        <li>Tezgahı seçtikten sonra onaylayın</li>
+                        <li>Sistem, seçilen tezgahı pazarcıya atamak istediğinizi onaylamanız için bir uyarı mesajı gösterecektir
+                            <ul>
+                                <li>Mesajda pazarcının adı soyadı ve tezgah numarası bilgileri yer alır</li>
+                                <li>"Evet" seçeneğini tıklayarak atama işlemini onaylayın</li>
+                            </ul>
+                        </li>
+                        <li>Atama tamamlandıktan sonra, yeni tezgah bilgisi otomatik olarak ekranın ortasındaki ağaç görünümünde "Pazar Ve Tezgah Bilgileri" başlığı altında görüntülenecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Pazarcıdan Tezgah Çıkarma:</h4>
+            <ol>
+                <li><strong>Tezgah Seçme:</strong>
+                    <ol>
+                        <li>Ekranın orta kısmındaki ağaç görünümünde, "Pazar Ve Tezgah Bilgileri" başlığı altındaki listeden çıkarmak istediğiniz tezgahı seçin
+                            <ul>
+                                <li>Tezgahların bulunduğu bu ağaç görünümü, ekranın orta alt kısmında geniş bir alan olarak yer alır</li>
+                                <li>Önce ilgili pazarın üzerine tıklayarak açın, sonra silmek istediğiniz tezgahın üzerine tıklayın</li>
+                                <li>Seçilen tezgah vurgulanacaktır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><strong>Tezgah Silme Adımları:</strong>
+                    <ol>
+                        <li>"Tezgah Sil" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, "Tezgah Seçip Ekle" butonunun sağında yer alır</li>
+                                <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                            </ul>
+                        </li>
+                        <li>Sistem, tezgahı pazarcıdan çıkarmak istediğinizi onaylamanız için bir uyarı mesajı gösterecektir
+                            <ul>
+                                <li>Mesajda pazarcının adı soyadı ve tezgah numarası bilgileri yer alır</li>
+                                <li>"Evet" seçeneğini tıklayarak silme işlemini onaylayın</li>
+                            </ul>
+                        </li>
+                        <li>İşlem tamamlandıktan sonra, sistem "İşlem Başarılı" mesajı gösterecek ve tezgah ağaç görünümünden kaldırılacaktır</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Tezgah Ağacını Görüntüleme ve Kullanma:</h4>
+            <ol>
+                <li><strong>Ağaç Görünümü Konumu:</strong>
+                    <ul>
+                        <li>Ekranın orta alt kısmında geniş bir alan olarak yer alır</li>
+                        <li>"Pazar Ve Tezgah Bilgileri" başlığı altında görüntülenir</li>
+                        <li>Bu alan içinde pazarlar, tezgahlar ve ürünler hiyerarşik bir yapıda görüntülenir</li>
+                    </ul>
+                </li>
+                <li><strong>Ağaç Görünümünü Kullanma:</strong>
+                    <ol>
+                        <li>Bir pazarın yanındaki + işaretine tıklayarak o pazarın altındaki tezgahları görebilirsiniz</li>
+                        <li>Bir tezgahın yanındaki + işaretine tıklayarak o tezgahta satılan ürünleri görebilirsiniz</li>
+                        <li>Tezgah seçmek için, silmek istediğiniz tezgahın üzerine tıklayın (seçili tezgah vurgulanacaktır)</li>
+                        <li>Seçilen tezgah, "Tezgah Sil" butonu ile pazarcıdan çıkarılabilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Bir pazarcıya tezgah atamadan önce, pazarcı kaydının oluşturulmuş ve kaydedilmiş olması gerekir</li>
+                <li>Sadece henüz başka pazarcılara atanmamış tezgahlar atanabilir</li>
+                <li>Tezgah silme işlemi geri alınamaz, bu nedenle bu işlemi yapmadan önce dikkatli olun</li>
+                <li>Tezgah silmek için önce ağaç görünümünden bir tezgah seçmeniz gerekir, aksi halde sistem "Lütfen çıkarmak istediğiniz tezgahı seçiniz" uyarısı verecektir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Bir tezgah atadıktan hemen sonra başka bir tezgah atamak için tekrar "Tezgah Seçip Ekle" butonuna tıklayabilirsiniz</li>
+                <li>Ağaç görünümünde tezgahların kodları köşeli parantez içinde gösterilir (örn. [123] Numaralı Tezgah)</li>
+                <li>Tezgah listesi penceresinde istediğiniz tezgahı bulamıyorsanız, filtre penceresinde daha geniş arama kriterleri belirleyin</li>
+                <li>Ağaç görünümü alanı küçükse, kenarlarından tutup genişletebilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="oda-islemleri" class="section">
+    <h2>Oda Bilgileri Yönetimi</h2>
+    <div class="info-box">
+        <h3>Pazarcıyı Odaya Bağlama ve Odadan Çıkarma</h3>
+        <div class="step">
+            <h4>Pazarcıyı Odaya Bağlama:</h4>
+            <ol>
+                <li><strong>Önkoşullar:</strong>
+                    <ul>
+                        <li>Öncelikle bir pazarcı kaydı açmış olmanız gerekir</li>
+                        <li>Odaya bağlama yapmak için pazarcının Kayıt Kodu, Adı ve Soyadı alanlarının dolu olması gerekir</li>
+                    </ul>
+                </li>
+                <li><strong>Oda Seçim Alanına Erişim:</strong>
+                    <ul>
+                        <li>Pazarcı kaydını açtığınızda, ekranın orta üst kısmında "Kayıtlı Odalar" başlığı ve yanında bir açılır liste kutusu görünür</li>
+                        <li>Bu bölüm pazarcı bilgileri formunun hemen altında yer alır</li>
+                        <li>Açılır liste kutusunun sağında "Ekle" ve "Sil" butonları bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Oda Seçme ve Bağlama Adımları:</strong>
+                    <ol>
+                        <li>Açılır liste kutusuna tıklayarak mevcut odaların listesini görüntüleyin
+                            <ul>
+                                <li>Bu liste kutusu, "Kayıtlı Odalar" etiketinin sağında yer alır</li>
+                                <li>Liste kutusunda, henüz bu pazarcıya bağlanmamış odalar görüntülenir</li>
+                                <li>En üstte "Seçiniz" seçeneği bulunur</li>
+                            </ul>
+                        </li>
+                        <li>Listeden pazarcıyı bağlamak istediğiniz odayı seçin</li>
+                        <li>"Ekle" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, açılır liste kutusunun hemen sağında yer alır</li>
+                                <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                            </ul>
+                        </li>
+                        <li>Bağlama işlemi tamamlandıktan sonra:
+                            <ul>
+                                <li>Seçilen oda, açılır listeden kaldırılacaktır (çünkü artık pazarcıya bağlanmıştır)</li>
+                                <li>Oda bilgisi, ekranın orta kısmındaki ağaç görünümünde "Bağlı Olduğu Oda Bilgileri" başlığı altında görüntülenecektir</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Pazarcıyı Odadan Çıkarma:</h4>
+            <ol>
+                <li><strong>Oda Seçme:</strong>
+                    <ol>
+                        <li>Ekranın orta kısmındaki ağaç görünümünde, "Bağlı Olduğu Oda Bilgileri" başlığı altındaki listeden çıkarmak istediğiniz odayı seçin
+                            <ul>
+                                <li>Odaların bulunduğu bu ağaç görünümü, "Pazar Ve Tezgah Bilgileri" ağaç görünümünün sağında yer alır</li>
+                                <li>Seçmek istediğiniz odanın üzerine tıklayın</li>
+                                <li>Seçilen oda vurgulanacaktır</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li><strong>Odadan Çıkarma Adımları:</strong>
+                    <ol>
+                        <li>"Sil" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, "Ekle" butonunun sağında yer alır</li>
+                                <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                            </ul>
+                        </li>
+                        <li>İşlem tamamlandıktan sonra:
+                            <ul>
+                                <li>Seçilen oda, ağaç görünümünden kaldırılacaktır</li>
+                                <li>Oda, açılır liste kutusuna yeniden eklenecektir (artık tekrar seçilebilir)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Oda Ağacını Görüntüleme ve Kullanma:</h4>
+            <ol>
+                <li><strong>Ağaç Görünümü Konumu:</strong>
+                    <ul>
+                        <li>Ekranın orta alt kısmında, "Pazar Ve Tezgah Bilgileri" ağaç görünümünün sağında yer alır</li>
+                        <li>"Bağlı Olduğu Oda Bilgileri" başlığı altında görüntülenir</li>
+                        <li>Bu alanda pazarcının bağlı olduğu odalar listelenir</li>
+                    </ul>
+                </li>
+                <li><strong>Ağaç Görünümünü Kullanma:</strong>
+                    <ol>
+                        <li>Oda seçmek için, çıkarmak istediğiniz odanın üzerine tıklayın (seçili oda vurgulanacaktır)</li>
+                        <li>Seçilen oda, "Sil" butonu ile pazarcıdan çıkarılabilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Bir pazarcıyı odaya bağlamadan önce, pazarcı kaydının oluşturulmuş ve kaydedilmiş olması gerekir</li>
+                <li>Açılır listede "Seçiniz" seçeneği seçili iken "Ekle" butonuna basarsanız, sistem "Lütfen, açılır listeden bir oda seçiniz" uyarısı verecektir</li>
+                <li>Oda silme işlemi için önce ağaç görünümünden bir oda seçmeniz gerekir, aksi halde sistem "Ürün seçmediniz! Lütfen, silinecek bir ürün seçiniz" uyarısı verecektir</li>
+                <li>Bir pazarcı birden fazla odaya bağlanabilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Bir oda bağladıktan hemen sonra başka bir oda bağlamak için tekrar açılır listeden seçim yapabilirsiniz</li>
+                <li>Eğer açılır listede hiçbir oda görünmüyorsa, pazarcı tüm mevcut odalara zaten bağlanmış demektir</li>
+                <li>Odalar arasında gezinmek için ağaç görünümünü kullanabilirsiniz</li>
+                <li>Pazarcı kaydı silinirken, eğer pazarcı bir odaya bağlıysa sistem önce odadan çıkarma işlemi yapmanızı isteyecektir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="fotograf-islemleri" class="section">
+    <h2>Pazarcı Fotoğrafı Ekleme ve Düzenleme</h2>
+    <div class="info-box">
+        <h3>Pazarcıya Fotoğraf Ekleme, Görüntüleme ve Değiştirme</h3>
+        <div class="step">
+            <h4>Pazarcı Fotoğrafı Görüntüleme:</h4>
+            <ol>
+                <li><strong>Fotoğraf Butonu Konumu:</strong>
+                    <ul>
+                        <li>Pazarcı bilgileri formunda, "Pazarcı Fotoğrafı" etiketi ve sağında "Fotoğraf" butonu bulunur</li>
+                        <li>Bu alan, Soyadı alanının hemen altında, formun en alt kısmında yer alır</li>
+                    </ul>
+                </li>
+                <li><strong>Fotoğrafı Görüntüleme Adımları:</strong>
+                    <ol>
+                        <li>Bir pazarcı kaydını açın (Kayıt Kodu ile veya Kayıtlar butonunu kullanarak)</li>
+                        <li>"Fotoğraf" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, "Pazarcı Fotoğrafı" etiketinin sağında yer alır</li>
+                                <li>Standart bir düğme görünümündedir</li>
+                            </ul>
+                        </li>
+                        <li>Ekranın ortasında yeni bir pencere açılacak ve pazarcının fotoğrafı (varsa) görüntülenecektir
+                            <ul>
+                                <li>Bu pencere sayfa içinde açılır ve arka plan hafif karartılır</li>
+                                <li>Pencerenin alt kısmında "Fotoğraf Ekle/Değiştir" ve "Kapat" butonları bulunur</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Pazarcıya Fotoğraf Ekleme veya Değiştirme:</h4>
+            <ol>
+                <li><strong>Fotoğraf Ekleme Penceresine Erişim:</strong>
+                    <ol>
+                        <li>Önce yukarıdaki "Fotoğrafı Görüntüleme Adımları" bölümünde anlatıldığı gibi fotoğraf penceresini açın</li>
+                        <li>Açılan pencerede "Fotoğraf Ekle/Değiştir" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, pencerenin alt kısmında sol tarafta yer alır</li>
+                                <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                            </ul>
+                        </li>
+                        <li>Fotoğraf görüntüleme penceresi kapanacak ve fotoğraf ekleme penceresi açılacaktır</li>
+                    </ol>
+                </li>
+                <li><strong>Fotoğraf Seçme ve Yükleme Adımları:</strong>
+                    <ol>
+                        <li>Açılan pencerede "Gözat" düğmesini kullanarak bilgisayarınızdaki bir fotoğraf dosyasını seçin
+                            <ul>
+                                <li>Bu düğme, pencerenin orta kısmında yer alır</li>
+                                <li>Düğmeye tıkladığınızda standart dosya seçme penceresi açılacaktır</li>
+                            </ul>
+                        </li>
+                        <li>Dosya seçimi tamamlandıktan sonra "Yükle" butonuna tıklayın
+                            <ul>
+                                <li>Bu buton, Gözat düğmesinin altında yer alır</li>
+                                <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                            </ul>
+                        </li>
+                        <li>Sistem fotoğrafı yükleyecek ve işlem tamamlandığında bir onay mesajı gösterecektir</li>
+                        <li>Fotoğraf ekleme penceresinin alt kısmındaki "Fotoğraf" butonuna tıklayarak fotoğraf görüntüleme penceresine dönebilir ve yeni fotoğrafı görebilirsiniz</li>
+                        <li>Veya "Kapat" butonuna tıklayarak tüm fotoğraf penceresini kapatabilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Fotoğraf eklemeden önce pazarcı kaydının oluşturulmuş ve kaydedilmiş olması gerekir</li>
+                <li>Eğer kayıt kodu girilmemiş bir pazarcıya fotoğraf eklemeye çalışırsanız, sistem "Pazarcı Seçmediniz!" uyarısı verecektir</li>
+                <li>Desteklenen fotoğraf formatları JPEG, PNG ve BMP formatlarıdır</li>
+                <li>Çok büyük boyutlu fotoğraflar sistem performansını etkileyebilir, bu nedenle makul boyutlarda fotoğraflar kullanın</li>
+                <li>Mevcut bir fotoğrafı değiştirdiğinizde, eski fotoğraf silinir ve yerine yeni fotoğraf kaydedilir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Fotoğraf yükleme işlemi başarıyla tamamlandığında "Kayıt Başarıyla Eklendi" mesajı görünecektir</li>
+                <li>Yüklenen fotoğrafı görüntülemek için tekrar "Fotoğraf" butonuna tıklayabilirsiniz</li>
+                <li>Fotoğraf penceresini kapatmak için her zaman "Kapat" butonunu kullanın, pencereyi çarpı işaretinden kapatmayın</li>
+                <li>Fotoğrafın başarıyla yüklendiğinden emin olmak için, yükleme işleminden sonra fotoğrafı tekrar görüntüleyin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="islem-butonlari" class="section">
+    <h2>İşlem Butonları Kullanımı</h2>
+    <div class="info-box">
+        <h3>Önceki, Sonraki, Kayıtlar, Notlar, Kaydet, Form Temizle, Kayıt Sil ve Kapat Butonları</h3>
+        <div class="step">
+            <h4>Önceki ve Sonraki Butonları:</h4>
+            <ol>
+                <li><strong>Butonların Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, işlem butonları bölümünün en solunda yer alırlar</li>
+                        <li>"Önceki" butonu en solda, "Sonraki" butonu onun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptirler</li>
+                    </ul>
+                </li>
+                <li><strong>Butonların İşlevleri:</strong>
+                    <ol>
+                        <li>"Önceki" butonu, mevcut kayıttan bir önceki kayıt koduna sahip pazarcı kaydını açar</li>
+                        <li>"Sonraki" butonu, mevcut kayıttan bir sonraki kayıt koduna sahip pazarcı kaydını açar</li>
+                        <li>Bu butonlar sayesinde kayıtlar arasında sırayla gezinebilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Kayıtlar Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Sonraki" butonunun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, tüm kayıtlı pazarcıların listelendiği bir pencere açılır</li>
+                        <li>Bu listeden istediğiniz pazarcıyı seçerek kaydını açabilirsiniz</li>
+                        <li>Liste, Kayıt Kodu, Sicil No, Adı, Soyadı ve TC Kimlik No sütunlarını içerir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Notlar Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Kayıtlar" butonunun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, mevcut pazarcıya ait notların gösterildiği ve yeni not ekleyebileceğiniz bir pencere açılır</li>
+                        <li>Bu pencerede pazarcıya ait tüm notları görüntüleyebilir, düzenleyebilir ve yeni notlar ekleyebilirsiniz</li>
+                        <li>Not eklemek için bir pazarcı seçilmiş olması gerekir, aksi halde sistem "Lütfen bir pazarcı seçiniz" uyarısı verecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kaydet Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Notlar" butonunun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, formda girilen veya değiştirilen tüm bilgiler kaydedilir</li>
+                        <li>Yeni bir kayıt oluşturuyorsanız, sistem yeni bir pazarcı kaydı oluşturur</li>
+                        <li>Mevcut bir kaydı düzenliyorsanız, sistem değişiklikleri günceller</li>
+                        <li>Kaydetme işlemi başarılı olduğunda, form yeni veya güncellenmiş bilgilerle doldurulur</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="step">
+            <h4>Form Temizle Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Kaydet" butonunun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, formda görüntülenen tüm bilgiler temizlenir</li>
+                        <li>Sistem, bir sonraki yeni kayıt için hazır hale gelir</li>
+                        <li>Yeni bir kayıt oluşturmak istediğinizde önce bu butonu kullanmanız önerilir</li>
+                        <li>Form temizlenirken, sistem otomatik olarak yeni bir Kayıt Kodu oluşturur</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kayıt Sil Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, "Form Temizle" butonunun sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, mevcut görüntülenen pazarcı kaydını silme işlemi başlatılır</li>
+                        <li>Sistem, kaydı silmek istediğinizi onaylamanız için bir uyarı mesajı gösterecektir</li>
+                        <li>Silme işlemini onayladığınızda:
+                            <ul>
+                                <li>Eğer pazarcıya bağlı tezgahlar varsa, sistem önce bu bağlantıları kaldırmak isteyip istemediğinizi soracaktır</li>
+                                <li>Eğer pazarcı bir odaya bağlıysa, sistem önce bu bağlantıyı kaldırmak isteyip istemediğinizi soracaktır</li>
+                                <li>Tüm bağlantılar kaldırıldıktan sonra, pazarcı kaydı silinecektir</li>
+                            </ul>
+                        </li>
+                        <li>Silme işlemi tamamlandıktan sonra, form otomatik olarak temizlenecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Kapat Butonu:</h4>
+            <ol>
+                <li><strong>Butonun Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, tüm butonların en sağında yer alır</li>
+                        <li>Gri renkli ve üç boyutlu görünüme sahiptir</li>
+                    </ul>
+                </li>
+                <li><strong>Butonun İşlevi:</strong>
+                    <ol>
+                        <li>Bu butona tıkladığınızda, programdan çıkmak istediğinizi onaylamanız için bir uyarı mesajı gösterilir</li>
+                        <li>Çıkışı onayladığınızda, Pazaryeri Pazarcı Tanımlama programı kapanır ve ana menüye dönülür</li>
+                        <li>Çıkış yapmadan önce, kaydedilmemiş değişiklikleriniz varsa, bunları kaydetmeniz önerilir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Kaydet butonuna basmadan programı kapatırsanız, yaptığınız değişiklikler kaydedilmez</li>
+                <li>Kayıt silme işlemi geri alınamaz, bu nedenle bu işlemi yapmadan önce dikkatli olun</li>
+                <li>Önceki ve Sonraki butonlarını kullanırken, kaydedilmemiş değişiklikleriniz varsa, sistem bir uyarı mesajı göstererek önce kaydetmenizi isteyebilir</li>
+                <li>Notlar butonunu kullanmadan önce bir pazarcı kaydı seçilmiş olmalıdır</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Sık kullanılan butonlar için klavye kısayollarını öğrenerek işlemlerinizi hızlandırabilirsiniz</li>
+                <li>Yeni bir kayıt oluşturmadan önce her zaman Form Temizle butonunu kullanın</li>
+                <li>Kaydetme işlemi tamamlandıktan sonra, kaydın başarıyla oluşturulduğundan emin olmak için Kayıtlar butonunu kullanarak listede kontrol edebilirsiniz</li>
+                <li>Bir pazarcıyı silmeden önce, bu pazarcıya bağlı tüm tezgah ve oda bilgilerini kontrol edin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>ENTER:</strong> Birçok durumda TAB tuşu gibi bir sonraki alana geçer veya butonları aktif eder</li>
+                <li><strong>ESC:</strong> Bazı açılır pencereleri kapatmak için kullanılabilir</li>
+                <li><strong>CTRL + Tıklama:</strong> Ağaç görünümünde birden fazla öğe seçmek için (desteklendiği durumlarda)</li>
+            </ul>
+        </div>
+    
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>"Pazarcı Seçmediniz!" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Fotoğraf eklemek veya not görüntülemek istediğinizde bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Önce bir pazarcı kaydı açın veya oluşturun. Kayıt Kodu alanının dolu olduğundan emin olun.</li>
+                    </ul>
+                </li>
+                <li><strong>"Lütfen çıkarmak istediğiniz tezgahı seçiniz" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Tezgah Sil butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Önce ağaç görünümünden çıkarmak istediğiniz tezgahı seçin, sonra Tezgah Sil butonuna tıklayın.</li>
+                    </ul>
+                </li>
+                <li><strong>"Lütfen, açılır listeden bir oda seçiniz" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Oda Ekle butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Oda açılır listesinden bir oda seçin, "Seçiniz" seçeneğini kullanmayın.</li>
+                    </ul>
+                </li>
+                <li><strong>"Bu Pazarcının kayıtlı olduğu Oda bulunmaktadır. Bu Pazarcıyı kayıtlı olduğu Odadan çıkarmayı istiyor musunuz?" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Bir pazarcıyı silmek istediğinizde bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Pazarcıyı silmeden önce odadan çıkarmak için "Evet" seçeneğini tıklayın. Veya işlemi iptal etmek için "Hayır" seçeneğini tıklayın.</li>
+                    </ul>
+                </li>
+                <li><strong>"Bu Pazarcıya kayıtlı tezgahlar bulunmaktadır. Bu tezgahları pazarcıdan almak istiyor musunuz?" Uyarısı:</strong>
+                    <ul>
+                        <li>Sorun: Bir pazarcıyı silmek istediğinizde bu uyarıyı alıyorsunuz.</li>
+                        <li>Çözüm: Pazarcıyı silmeden önce tezgahları çıkarmak için "Evet" seçeneğini tıklayın. Veya işlemi iptal etmek için "Hayır" seçeneğini tıklayın.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>İşlem yapmadan önce doğru pazarcı kaydını açtığınızdan emin olun</li>
+                <li>Yeni kayıt oluşturmadan önce Form Temizle butonunu kullanın</li>
+                <li>Değişiklik yaptıktan sonra hemen Kaydet butonuna tıklayın</li>
+                <li>Tezgah ve oda işlemlerini eksiksiz yapın, boşta tezgah veya oda bırakmamaya çalışın</li>
+                <li>Pazarcı fotoğrafı eklerken uygun boyut ve formatta görüntüler kullanın</li>
+                <li>Önemli notları kaydetmek için Notlar butonunu kullanmayı alışkanlık haline getirin</li>
+                <li>Kayıtlar penceresinde sütun başlıklarını kullanarak istediğiniz sıralamada listeyi görüntüleyin</li>
+                <li>Bir pazarcıyı silmeden önce, tüm bağlantılarını (tezgah, oda) kontrol edin</li>
+            </ul>
+        </div>
+    
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Kayıt silme işlemi geri alınamaz, bu nedenle işlem başlatmadan önce tüm seçimlerinizi kontrol edin</li>
+                <li>Sistem üzerinde birden fazla kullanıcı çalışıyorsa, aynı anda aynı kayıt üzerinde işlem yapmaktan kaçının</li>
+                <li>İşlem sırasında program penceresini kapatmayın veya başka işlemlere geçmeyin</li>
+                <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Pazaryeri Pazarcı Tanımlama programı, belediyeniz bünyesindeki pazarlarda faaliyet gösteren pazarcıların kayıtlarını yönetmenizi sağlayan kapsamlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Pazarcı kaydı oluşturma ve düzenleme</li>
+            <li>Tezgah atama ve çıkarma işlemleri</li>
+            <li>Oda bağlantılarını yönetme</li>
+            <li>Pazarcı fotoğrafı ekleme ve görüntüleme</li>
+            <li>İşlem butonlarının kullanımı</li>
+            <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        
+        <p>Program, pazaryeri ve pazarcı yönetimini kolaylaştırmak için tasarlanmıştır. Doğru ve eksiksiz kayıt tutulması, belediyenizin pazaryeri yönetimini daha verimli ve düzenli hale getirecektir.</p>
+    </div>
+</div>
+        
+</body>
+</html>

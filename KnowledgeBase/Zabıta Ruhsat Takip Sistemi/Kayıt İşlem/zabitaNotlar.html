@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabıta İşyeri ve Pazaryeri Notları Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Zabıta İşyeri ve Pazaryeri Notları Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#not-turu">Not Türü Seçimi</a></li>
+                <li><a href="#filtreleme">İşyeri/Pazarcı No Filtreleme</a></li>
+                <li><a href="#islem-turu">İşlem Türü Seçimi</a></li>
+                <li><a href="#durum-filtreleme">Durum Filtreleme</a></li>
+                <li><a href="#not-listesi">Not Listesi ve Tablo Alanları</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#not-ekleme">Not Ekleme ve Düzenleme</a></li>
+                <li><a href="#yonlendirme">Yönlendirme İşlemi</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Zabıta İşyeri ve Pazaryeri Notları programı, zabıta ekiplerinin işyerleri ve pazaryerleri ile ilgili notlarını kaydetmek, takip etmek ve yönetmek için kullanılan bir sistemdir. Bu program ile:</p>
+            <ul>
+                <li>İşyerleri ve pazaryerleri hakkında notlar tutabilirsiniz</li>
+                <li>Farklı işlem türlerine göre notlar oluşturabilirsiniz</li>
+                <li>Notların durumlarını (devam eden, tamamlandı) takip edebilirsiniz</li>
+                <li>İşyeri veya pazarcı numarasına göre filtreleme yapabilirsiniz</li>
+                <li>İşlem türüne göre notlarınızı gruplandırabilirsiniz</li>
+                <li>Notlarınızı doğrudan ilgili işyeri veya pazarcı formuna yönlendirebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz işyeri veya pazarcı numarası</li>
+                    <li>Hangi tür notlar (işyeri veya pazaryeri) ile çalışacağınız</li>
+                    <li>Not ile ilgili işlem türü</li>
+                    <li>Notun durumu (devam eden mi yoksa tamamlandı mı)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde açık mavi renkli başlık alanında "Zabıta İşyeri ve Pazaryeri Notları" başlığı yer alır</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında filtreleme seçenekleri bulunur</li>
+                            <li>Bu bölümde Not Türü, İşyeri/Pazarcı No, İşlem Türü ve Durum filtreleme alanları yan yana sıralanmıştır</li>
+                            <li>Her alan etiketi ve ilgili seçim kutusu veya metin giriş alanı birlikte yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Not Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün altında, ekranın orta kısmında geniş bir alanda not listesi yer alır</li>
+                            <li>Bu bölüm açık mavi kenarlıkla çevrilidir ve sütunlarla düzenlenmiş bir tablo formatındadır</li>
+                            <li>Sütun başlıkları koyu renkte belirtilmiştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Tamamlandı, Devam Ediyor, Yönlendir ve Çıkış butonlarını içerir</li>
+                            <li>Butonlar yan yana, eşit aralıklarla yerleştirilmiştir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>Not listesi varsayılan olarak boş ya da belirli bir filtreyle yüklenir</li>
+                    <li>İşlem butonları (Tamamlandı, Devam Ediyor, Yönlendir) başlangıçta devre dışıdır. Listeden bir not seçtiğinizde aktif hale gelirler</li>
+                    <li>Listeden herhangi bir öğeye tıklayarak seçim yapabilir ve işlem yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="not-turu" class="section">
+        <h2>Not Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>Not Türünü Belirleme</h3>
+            <div class="step">
+                <h4>Not Türü Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün en solunda yer alır</li>
+                            <li>"Not Türü:" etiketi yanında bir açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusu, diğer filtreleme seçeneklerinin başlangıcında yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçenekler:</strong>
+                        <ul>
+                            <li>İş Yeri Notları: İşyerleriyle ilgili notlar için</li>
+                            <li>Pazar Yeri Notları: Pazaryerleri ve pazarcılarla ilgili notlar için</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Listeden çalışmak istediğiniz not türünü seçin</li>
+                            <li>Seçiminizi yaptıktan sonra, seçtiğiniz not türüne uygun olan veriler liste bölümünde görüntülenecektir</li>
+                            <li>Not türü değiştiğinde "İşyeri No" veya "Pazarcı No" etiketi otomatik olarak güncellenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Not türü değiştirildiğinde, filtre alanındaki "İşyeri No" etiketi "Pazarcı No" olarak (veya tersi) değişecektir</li>
+                    <li>Not türü değişikliği yapıldığında, numara filtresi otomatik olarak temizlenir</li>
+                    <li>Not türü seçimi, tablo içeriğini ve sütun başlıklarını tamamen değiştirir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İşyeri notları ve pazaryeri notları arasında sık geçiş yapmanız gerekiyorsa, ilgili numaraları önceden not edin</li>
+                    <li>Hangi not türünde olduğunuzu tablo başlığından da kontrol edebilirsiniz ("İş Yeri Ünvanı" veya "Pazarcı İsmi")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme" class="section">
+        <h2>İşyeri/Pazarcı No Filtreleme</h2>
+        <div class="info-box">
+            <h3>Numara ile Filtreleme</h3>
+            <div class="step">
+                <h4>İşyeri No veya Pazarcı No ile Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Not Türü seçim kutusunun hemen sağında yer alır</li>
+                            <li>"İşyeri No:" veya "Pazarcı No:" etiketi (not türüne bağlı olarak değişir) ve yanında bir metin kutusu bulunur</li>
+                            <li>Metin kutusu beyaz arka planla görünür ve veri girişi için hazırdır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme İşlemi:</strong>
+                        <ol>
+                            <li>Metin kutusuna filtrelemek istediğiniz işyeri veya pazarcı numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Numara bilgisini tam olarak girmeniz gerekir</li>
+                                </ul>
+                            </li>
+                            <li>Numarayı girdikten sonra Enter tuşuna basın veya kutunun dışına tıklayın</li>
+                            <li>Liste otomatik olarak güncellenecek ve sadece girdiğiniz numaraya sahip kayıtlar görüntülenecektir</li>
+                            <li>Numarayı temizlemek ve tüm kayıtları görmek için metin kutusunu boşaltıp Enter tuşuna basın</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Not türü değiştirildiğinde, numara filtresi otomatik olarak temizlenir</li>
+                    <li>Program URL parametresi ile başlatıldığında, ilgili numara otomatik olarak doldurulabilir</li>
+                    <li>Numara filtresini kullandığınızda, sadece o numaraya ait notlar görüntülenecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir işyeri veya pazarcıya ait tüm notları hızlıca görmek için bu filtreyi kullanabilirsiniz</li>
+                    <li>Diğer filtreleme seçenekleriyle (İşlem Türü, Durum) birlikte kullanarak daha spesifik sonuçlar elde edebilirsiniz</li>
+                    <li>Numara filtresi boş bırakıldığında, not türüne göre tüm kayıtlar listelenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-turu" class="section">
+        <h2>İşlem Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>İşlem Türüne Göre Filtreleme</h3>
+            <div class="step">
+                <h4>İşlem Türü Seçimi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşyeri/Pazarcı No filtresinin hemen sağında yer alır</li>
+                            <li>"İşlem Türü Seçin:" etiketi yanında bir açılır liste kutusu bulunur</li>
+                            <li>Açılır liste kutusu filtreleme bölümünün orta kısmında konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçenekler:</strong>
+                        <ul>
+                            <li>Tümünü Listele: Varsayılan seçenek, tüm işlem türlerini gösterir</li>
+                            <li>Diğer işlem türleri: Sistemde tanımlı tüm işlem türleri (örneğin: Denetim, Şikayet, Uyarı vb.)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Listeden filtrelemek istediğiniz işlem türünü seçin
+                                <ul>
+                                    <li>Tüm işlem türlerini görmek için "Tümünü Listele" seçeneğini seçin</li>
+                                    <li>Belirli bir işlem türüne odaklanmak için o işlem türünü seçin</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra, liste otomatik olarak güncellenecek ve sadece seçtiğiniz işlem türüne ait kayıtlar görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşlem türü seçimi, listedeki kayıtları anında filtreler</li>
+                    <li>İşlem türü listesi, sistemde tanımlı tüm işlem türlerini içerir ve yöneticiler tarafından güncellenebilir</li>
+                    <li>Program ilk açıldığında "Tümünü Listele" seçeneği otomatik olarak seçilidir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir işlem türüne odaklanmanız gerektiğinde bu filtreyi kullanabilirsiniz</li>
+                    <li>Filtre açılır listesinde ilk harfini yazarak hızlıca istediğiniz işlem türüne gidebilirsiniz</li>
+                    <li>İşyeri/Pazarcı No filtresiyle birlikte kullanarak daha spesifik sonuçlar elde edebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="durum-filtreleme" class="section">
+        <h2>Durum Filtreleme</h2>
+        <div class="info-box">
+            <h3>Not Durumuna Göre Filtreleme</h3>
+            <div class="step">
+                <h4>Durum Filtresi Nasıl Kullanılır:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün en sağında yer alır</li>
+                            <li>"Durumu:" etiketi yanında bir açılır liste kutusu bulunur</li>
+                            <li>İşlem Türü seçim kutusunun hemen sağında konumlanmıştır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçenekler:</strong>
+                        <ul>
+                            <li>Devam Eden: Henüz tamamlanmamış, aktif olan notları gösterir</li>
+                            <li>Tamamlandı: İşlemi bitmiş, arşive kaldırılmış notları gösterir</li>
+                            <li>Tümünü Göster: Hem devam eden hem de tamamlanmış tüm notları gösterir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Seçim İşlemi:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Listeden görmek istediğiniz durum türünü seçin
+                                <ul>
+                                    <li>Aktif notları görmek için "Devam Eden" seçeneğini seçin</li>
+                                    <li>Tamamlanmış notları görmek için "Tamamlandı" seçeneğini seçin</li>
+                                    <li>Tüm notları görmek için "Tümünü Göster" seçeneğini seçin</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptıktan sonra, liste otomatik olarak güncellenecek ve duruma göre filtrelenmiş kayıtlar görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Program ilk açıldığında varsayılan olarak "Devam Eden" durum filtresi seçilidir</li>
+                    <li>Durum değişikliği, listedeki kayıtları anında filtreler</li>
+                    <li>Durum bilgisi "Tamamlandı" veya "Devam Ediyor" butonları ile değiştirilebilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Genellikle aktif olan "Devam Eden" notlarla çalışmanız tavsiye edilir</li>
+                    <li>Geçmiş kayıtları kontrol etmek için "Tamamlandı" seçeneğini kullanabilirsiniz</li>
+                    <li>Tüm geçmişi görmek ve kapsamlı bir rapor almak istediğinizde "Tümünü Göster" seçeneği faydalıdır</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="not-listesi" class="section">
+    <h2>Not Listesi ve Tablo Alanları</h2>
+    <div class="info-box">
+        <h3>Notları Görüntüleme ve Seçme</h3>
+        <div class="step">
+            <h4>Not Listesi Ekranı:</h4>
+            <ol>
+                <li><strong>Liste Konumu:</strong>
+                    <ul>
+                        <li>Not listesi, filtreleme bölümünün hemen altında, ekranın orta kısmında geniş bir alanı kaplar</li>
+                        <li>Açık mavi kenarlıkla çevrilmiş, sayfa yüksekliğinin büyük bir kısmını dolduran dikdörtgen bir alandır</li>
+                        <li>Liste alanı dikey kaydırma çubuğuna sahiptir, böylece çok sayıda not varsa aşağı kaydırabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Liste Başlıkları:</strong>
+                    <ul>
+                        <li>Listenin en üstünde koyu renkli sütun başlıkları yer alır</li>
+                        <li>İşyeri Notları için ana başlık "İş Yeri Ünvanı", Pazaryeri Notları için "Pazarcı İsmi" şeklindedir</li>
+                        <li>Diğer sütun başlıkları: "İşlem Türü", "Not Açıklaması(Özet)", "İşlem Yapan Kullanıcı", "Başlangıç Tarihi", "Bitiş Tarihi" ve "Durumu" şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Not Bilgileri:</strong>
+                    <ul>
+                        <li>Her satır bir notu temsil eder</li>
+                        <li>İlk sütunda işyeri ünvanı veya pazarcı ismi görüntülenir</li>
+                        <li>İşlem Türü sütununda notun hangi işlem için oluşturulduğu (Denetim, Şikayet vb.) gösterilir</li>
+                        <li>Not Açıklaması sütununda notun kısa bir özeti (ilk 40 karakter) görüntülenir</li>
+                        <li>İşlem Yapan Kullanıcı sütununda notu oluşturan kullanıcının adı gösterilir</li>
+                        <li>Başlangıç Tarihi ve Bitiş Tarihi sütunlarında notun oluşturulma ve tamamlanma tarihleri gösterilir</li>
+                        <li>Durumu sütununda notun tamamlanıp tamamlanmadığı bir onay kutusuyla gösterilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Not Seçme ve Görüntüleme İşlemi:</h4>
+            <ol>
+                <li><strong>Not Seçimi:</strong>
+                    <ol>
+                        <li>Listeden bir nota tıklayarak o notu seçebilirsiniz</li>
+                        <li>Seçilen not satırı vurgulanır (genellikle mavi veya gri bir arka plan ile)</li>
+                        <li>Bir not seçildiğinde, alttaki işlem butonları (Tamamlandı, Devam Ediyor, Yönlendir) aktif hale gelir</li>
+                    </ol>
+                </li>
+                <li><strong>Not Detaylarını Görüntüleme:</strong>
+                    <ol>
+                        <li>Not detaylarını görüntülemek için seçilen nota çift tıklayabilirsiniz</li>
+                        <li>Çift tıkladığınızda, notun tüm detaylarını içeren "Not Giriş" ekranı açılır</li>
+                        <li>Bu ekranda notun tam açıklamasını ve diğer ayrıntıları görebilirsiniz</li>
+                    </ol>
+                </li>
+                <li><strong>Liste Kaydırma:</strong>
+                    <ol>
+                        <li>Çok sayıda not varsa, sağ taraftaki kaydırma çubuğunu kullanarak listeyi aşağı veya yukarı kaydırabilirsiniz</li>
+                        <li>Fare tekerleğini kullanarak da listeyi kaydırabilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Not listesi, uygulanan filtrelere göre değişecektir. Doğru filtreleri uyguladığınızdan emin olun</li>
+                <li>Not Açıklaması sütununda notun sadece kısa bir özeti görüntülenir. Tam açıklamayı görmek için notu açmanız gerekir</li>
+                <li>Durumu sütunundaki onay kutuları sadece gösterge amaçlıdır, bu onay kutularını doğrudan değiştiremezsiniz. Durumu değiştirmek için işlem butonlarını kullanmalısınız</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Listenin sütun başlıklarını kontrol ederek hangi not türünde (İşyeri veya Pazaryeri) olduğunuzu hızlıca anlayabilirsiniz</li>
+                <li>Listeyi daha kolay taramak için sütun başlıklarına göre sıralama özelliği olabilir (sistem özelliklerine göre değişebilir)</li>
+                <li>Bir nota çift tıklamak, tek tıklama ve ardından işlem butonu kullanmaktan daha hızlı bir şekilde not detaylarına erişmenizi sağlar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="islem-butonlari" class="section">
+    <h2>İşlem Butonları Kullanımı</h2>
+    <div class="info-box">
+        <h3>Butonların İşlevleri ve Kullanımı</h3>
+        <div class="step">
+            <h4>Tamamlandı Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, en soldaki butondur</li>
+                        <li>Üzerinde "Tamamlandı" yazar ve üç boyutlu görünüme sahiptir</li>
+                        <li>Gri arka planla dikdörtgen şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Listeden bir not seçin (seçilen not vurgulanacaktır)</li>
+                        <li>Tamamlandı butonuna tıklayın</li>
+                        <li>Buton tıklandığında seçilen notun durumu "Tamamlandı" olarak değişir</li>
+                        <li>İşlem başarılı olduğunda, liste otomatik olarak yenilenir ve notun durumu güncellenmiş olarak görüntülenir</li>
+                        <li>Eğer "Devam Eden" durumu filtrelenmiş ise, not listeden kaybolabilir</li>
+                    </ol>
+                </li>
+                <li><strong>Buton Durumu:</strong>
+                    <ul>
+                        <li>Başlangıçta devre dışıdır (gri ve tıklanamaz)</li>
+                        <li>Listeden bir not seçildiğinde, notun durumu "Devam Ediyor" ise aktif hale gelir</li>
+                        <li>Notun durumu zaten "Tamamlandı" ise buton devre dışı kalır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Devam Ediyor Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Tamamlandı butonunun sağında yer alır</li>
+                        <li>Üzerinde "Devam Ediyor" yazar ve üç boyutlu görünüme sahiptir</li>
+                        <li>Gri arka planla dikdörtgen şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Listeden bir not seçin (seçilen not vurgulanacaktır)</li>
+                        <li>Devam Ediyor butonuna tıklayın</li>
+                        <li>Buton tıklandığında seçilen notun durumu "Devam Ediyor" olarak değişir</li>
+                        <li>İşlem başarılı olduğunda, liste otomatik olarak yenilenir ve notun durumu güncellenmiş olarak görüntülenir</li>
+                        <li>Eğer "Tamamlandı" durumu filtrelenmiş ise, not listeden kaybolabilir</li>
+                    </ol>
+                </li>
+                <li><strong>Buton Durumu:</strong>
+                    <ul>
+                        <li>Başlangıçta devre dışıdır (gri ve tıklanamaz)</li>
+                        <li>Listeden bir not seçildiğinde, notun durumu "Tamamlandı" ise aktif hale gelir</li>
+                        <li>Notun durumu zaten "Devam Ediyor" ise buton devre dışı kalır</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Yönlendir Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, Devam Ediyor butonunun sağında yer alır</li>
+                        <li>Üzerinde "Yönlendir" yazar ve üç boyutlu görünüme sahiptir</li>
+                        <li>Gri arka planla dikdörtgen şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Listeden bir not seçin (seçilen not vurgulanacaktır)</li>
+                        <li>Yönlendir butonuna tıklayın</li>
+                        <li>Buton tıklandığında seçilen not ile ilişkili işyeri veya pazaryeri detay ekranı yeni bir pencerede açılır:
+                            <ul>
+                                <li>İşyeri notları için "İşyeri Giriş" ekranı açılır</li>
+                                <li>Pazaryeri notları için "Pazaryeri Pazarcı" ekranı açılır</li>
+                            </ul>
+                        </li>
+                        <li>Açılan ekranda ilgili işyeri veya pazarcının tüm detaylarını görebilir ve güncellemeler yapabilirsiniz</li>
+                    </ol>
+                </li>
+                <li><strong>Buton Durumu:</strong>
+                    <ul>
+                        <li>Başlangıçta devre dışıdır (gri ve tıklanamaz)</li>
+                        <li>Listeden bir not seçildiğinde aktif hale gelir</li>
+                        <li>Durumundan bağımsız olarak herhangi bir not seçildiğinde kullanılabilir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Çıkış Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Ekranın alt kısmında, en sağdaki butondur</li>
+                        <li>Üzerinde "Çıkış" yazar ve üç boyutlu görünüme sahiptir</li>
+                        <li>Gri arka planla dikdörtgen şeklindedir</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>İşlemlerinizi tamamladıktan sonra Çıkış butonuna tıklayın</li>
+                        <li>Buton tıklandığında program penceresi kapanır ve ana menüye dönülür</li>
+                    </ol>
+                </li>
+                <li><strong>Buton Durumu:</strong>
+                    <ul>
+                        <li>Her zaman aktiftir ve tıklanabilir</li>
+                        <li>Not seçimi veya filtreleme durumundan etkilenmez</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>İşlem butonları (Tamamlandı, Devam Ediyor, Yönlendir) listeden bir not seçilmeden önce devre dışıdır</li>
+                <li>Tamamlandı ve Devam Ediyor butonları, notun mevcut durumuna göre aktif veya devre dışı olabilir</li>
+                <li>Yönlendir butonu ile açılan pencere, farklı bir program sayfasıdır ve burada yapılan değişiklikler not listesini etkilemeyebilir</li>
+                <li>Çıkış butonu programdan tamamen çıkmanızı sağlar, kaydedilmemiş değişiklikleriniz varsa bunları önce kaydetmeyi unutmayın</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Bir notun durumunu hızlıca değiştirmek için ilgili butonu kullanmak, not detaylarını açıp düzenlemekten daha hızlıdır</li>
+                <li>İşyeri veya pazarcı hakkında daha fazla bilgi almak için Yönlendir butonunu kullanabilirsiniz</li>
+                <li>ESC tuşu, Çıkış butonu ile aynı işlevi görür ve programdan çıkmanızı sağlar</li>
+                <li>Bir notu Tamamlandı olarak işaretledikten sonra, onu tekrar görmek için Durum filtresini "Tamamlandı" veya "Tümünü Göster" olarak değiştirmeniz gerekebilir</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="not-ekleme" class="section">
+    <h2>Not Ekleme ve Düzenleme</h2>
+    <div class="info-box">
+        <h3>Notları Oluşturma ve Güncelleme</h3>
+        <div class="step">
+            <h4>Not Ekleme ve Düzenleme Ekranına Erişim:</h4>
+            <ol>
+                <li><strong>Yeni Not Ekleme:</strong>
+                    <ul>
+                        <li>Not listesindeki boş bir alana çift tıklayarak yeni not ekleme ekranını açabilirsiniz</li>
+                        <li>Alternatif olarak, not listesinde herhangi bir yere sağ tıklayıp açılan menüden "Yeni Not Ekle" seçeneğini de kullanabilirsiniz (sistem özelliklerine göre değişebilir)</li>
+                    </ul>
+                </li>
+                <li><strong>Mevcut Notu Düzenleme:</strong>
+                    <ul>
+                        <li>Düzenlemek istediğiniz nota çift tıklayarak not düzenleme ekranını açabilirsiniz</li>
+                        <li>Bu işlem, listeden bir not seçip Enter tuşuna basarak da yapılabilir</li>
+                    </ul>
+                </li>
+                <li><strong>Not Giriş Ekranı:</strong>
+                    <ul>
+                        <li>Not ekleme veya düzenleme işlemi başlatıldığında, bir modal pencere (pop-up) açılır</li>
+                        <li>Bu pencere, ana ekranın ortasında açılır ve diğer ekran öğeleri üzerinde yer alır</li>
+                        <li>Pencere genellikle "Zabıta Not Giriş" başlığına sahiptir</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Not Giriş Ekranını Kullanma:</h4>
+            <ol>
+                <li><strong>Not Giriş Ekranı Düzeni:</strong>
+                    <ul>
+                        <li>Ekranın üst kısmında başlık alanı bulunur</li>
+                        <li>Orta kısımda form alanları yer alır</li>
+                        <li>Alt kısımda kaydet ve iptal butonları bulunur</li>
+                    </ul>
+                </li>
+                <li><strong>Form Alanları:</strong>
+                    <ol>
+                        <li>İşyeri/Pazarcı Bilgisi: Not ilişkilendirilmiş işyeri veya pazarcı bilgisi gösterilir (salt okunur)</li>
+                        <li>İşlem Türü: Açılır listeden not ile ilgili işlem türünü seçebilirsiniz</li>
+                        <li>Başlangıç Tarihi: Notun başlangıç tarihini seçebilirsiniz (genellikle otomatik olarak günün tarihi gelir)</li>
+                        <li>Bitiş Tarihi: Notun bitiş tarihini seçebilirsiniz (opsiyonel)</li>
+                        <li>Durum: Notun durumunu belirleyen onay kutusu (işaretli = Tamamlandı, işaretsiz = Devam Ediyor)</li>
+                        <li>Not Açıklaması: Geniş bir metin alanı, notunuzun detaylarını yazabileceğiniz alan</li>
+                    </ol>
+                </li>
+                <li><strong>İşlem Adımları:</strong>
+                    <ol>
+                        <li>İşlem Türü açılır listesinden ilgili işlem türünü seçin</li>
+                        <li>Başlangıç tarihini kontrol edin ve gerekirse değiştirin</li>
+                        <li>Not tamamlandıysa bitiş tarihini girin ve durum onay kutusunu işaretleyin</li>
+                        <li>Not açıklaması alanına notunuzun detaylarını yazın</li>
+                        <li>Tüm bilgileri kontrol edin</li>
+                        <li>Bilgiler tam ise Kaydet butonuna, vazgeçmek isterseniz İptal butonuna tıklayın</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Not açıklaması boş bırakılamaz, mutlaka bilgi girmelisiniz</li>
+                <li>İşlem türü seçilmeden not kaydedilemez</li>
+                <li>Durumu "Tamamlandı" olarak işaretlerseniz, Bitiş Tarihi otomatik olarak günün tarihi olarak doldurulabilir</li>
+                <li>Mevcut bir notu düzenlerken, önceki bilgiler form alanlarında görüntülenir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Not açıklamasını mümkün olduğunca detaylı yazın, bu gelecekte notun anlaşılmasını kolaylaştıracaktır</li>
+                <li>İşlem tamamlandığında, durumu "Tamamlandı" olarak işaretlemeyi unutmayın</li>
+                <li>Sık kullanılan işlem türlerini ve açıklamaları önceden hazırlayarak daha hızlı not girişi yapabilirsiniz</li>
+                <li>TAB tuşu ile form alanları arasında hızlıca geçiş yapabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="yonlendirme" class="section">
+    <h2>Yönlendirme İşlemi</h2>
+    <div class="info-box">
+        <h3>İşyeri veya Pazaryeri Detaylarına Erişim</h3>
+        <div class="step">
+            <h4>Yönlendirme İşlemi Nasıl Yapılır:</h4>
+            <ol>
+                <li><strong>Yönlendirme Başlatma:</strong>
+                    <ol>
+                        <li>Not listesinden yönlendirmek istediğiniz işyeri veya pazaryerine ait bir notu seçin</li>
+                        <li>Ekranın alt kısmında bulunan Yönlendir butonuna tıklayın</li>
+                        <li>Buton tıklandığında, seçilen notun bağlı olduğu işyeri veya pazaryeri formuna yönlendirilirsiniz</li>
+                    </ol>
+                </li>
+                <li><strong>İşyeri Detay Ekranı:</strong>
+                    <ul>
+                        <li>İşyeri notları için yönlendirme yapıldığında "İşyeri Giriş" ekranı yeni bir pencerede açılır</li>
+                        <li>Bu ekranda işyeri hakkında tüm bilgileri (adres, faaliyet alanı, sahip bilgisi vb.) görebilirsiniz</li>
+                        <li>İşyeri bilgilerini bu ekrandan güncelleyebilirsiniz</li>
+                        <li>İşyerine ait diğer işlemleri (ruhsat, denetim, ceza vb.) bu ekrandan yönetebilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Pazaryeri Detay Ekranı:</strong>
+                    <ul>
+                        <li>Pazaryeri notları için yönlendirme yapıldığında "Pazaryeri Pazarcı" ekranı yeni bir pencerede açılır</li>
+                        <li>Bu ekranda pazarcı hakkında tüm bilgileri (kimlik bilgileri, tezgah bilgisi, ödemeler vb.) görebilirsiniz</li>
+                        <li>Pazarcı bilgilerini bu ekrandan güncelleyebilirsiniz</li>
+                        <li>Pazarcıya ait diğer işlemleri (tahsis, denetim, ceza vb.) bu ekrandan yönetebilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h4>Detay Ekranlarıyla Çalışma:</h4>
+            <ol>
+                <li><strong>Bilgileri Görüntüleme:</strong>
+                    <ul>
+                        <li>Detay ekranları açıldığında, ilgili işyeri veya pazarcıya ait tüm bilgiler form alanlarında görüntülenir</li>
+                        <li>Form alanları genellikle kategorilere ayrılmış ve sekmeler halinde düzenlenmiştir</li>
+                        <li>Farklı bilgi gruplarına erişmek için sekmeleri kullanabilirsiniz</li>
+                    </ul>
+                </li>
+                <li><strong>Bilgileri Güncelleme:</strong>
+                    <ul>
+                        <li>Form alanlarını düzenleyerek bilgileri güncelleyebilirsiniz</li>
+                        <li>Değişikliklerinizi kaydetmek için ekranın alt kısmındaki Kaydet butonuna tıklamanız gerekir</li>
+                        <li>Bazı alanlar salt okunur olabilir ve değiştirilemeyebilir</li>
+                    </ul>
+                </li>
+                <li><strong>Pencereler Arası Geçiş:</strong>
+                    <ul>
+                        <li>Detay ekranı ve Not listesi ekranı aynı anda açık kalır</li>
+                        <li>İki pencere arasında geçiş yapmak için Windows görev çubuğunu veya Alt+Tab tuş kombinasyonunu kullanabilirsiniz</li>
+                        <li>İşlem tamamlandığında detay ekranını X düğmesine tıklayarak kapatabilirsiniz</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Detay ekranında yapılan değişiklikler, kaydedilmeden önce iptal edilirse kaybedilir</li>
+                <li>Detay ekranında yapılan değişiklikler, Not listesini otomatik olarak güncellemeyebilir</li>
+                <li>Detay ekranında değişiklik yaptıktan sonra Not listesine döndüğünüzde, listeyi yenilemek için filtreleri tekrar uygulayabilirsiniz</li>
+                <li>Detay ekranları, Not listesi ekranından bağımsız olarak çalışır ve ayrı pencerelerdir</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Yönlendirme özelliği, notla ilgili işyeri veya pazarcı hakkında daha fazla bilgi almanın en hızlı yoludur</li>
+                <li>İşyeri veya pazarcıyla ilgili bilgileri güncellemek için önce not listesinden bir not seçip Yönlendir butonunu kullanabilirsiniz</li>
+                <li>Detay ekranları genellikle daha karmaşıktır ve daha fazla işlev içerir, bu nedenle kullanmadan önce ilgili kılavuzları incelemeniz faydalı olabilir</li>
+                <li>İşlem tamamlandığında her iki pencereyi de kapatmayı unutmayın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="ipuclari" class="section">
+    <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+    <div class="info-box">
+        <h3>Verimli Çalışma İçin İpuçları</h3>
+        <div class="step">
+            <h4>Hızlı Tuş Kombinasyonları:</h4>
+            <ul>
+                <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                <li><strong>ENTER:</strong> Form alanlarında sonraki alana geçer</li>
+                <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                <li><strong>Alt + Tab:</strong> Açık pencereler arasında geçiş yapmak için</li>
+                <li><strong>Çift Tıklama:</strong> Bir notu açmak veya düzenlemek için</li>
+                <li><strong>Tek Tıklama:</strong> Bir notu seçmek için</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+            <ol>
+                <li><strong>Not Listesi Yüklenmiyor:</strong>
+                    <ul>
+                        <li>Sorun: Program açıldığında not listesi boş görünüyor.</li>
+                        <li>Çözüm: Durum filtresini "Tümünü Göster" olarak değiştirin. Mevcut filtre sadece belirli durumları gösteriyor olabilir. İşyeri/Pazarcı No filtresini kontrol edin, belki yanlış bir numara girilmiştir.</li>
+                    </ul>
+                </li>
+                <li><strong>İşlem Butonları Devre Dışı:</strong>
+                    <ul>
+                        <li>Sorun: Tamamlandı, Devam Ediyor ve Yönlendir butonları gri renkte ve tıklanamaz durumda.</li>
+                        <li>Çözüm: Listeden bir not seçtiğinizden emin olun. Butonlar sadece bir not seçildiğinde aktif hale gelir. Listede herhangi bir nota tek tıklayın.</li>
+                    </ul>
+                </li>
+                <li><strong>Tamamlandı/Devam Ediyor Butonu Etkin Değil:</strong>
+                    <ul>
+                        <li>Sorun: Listeden not seçildiği halde Tamamlandı veya Devam Ediyor butonu aktif değil.</li>
+                        <li>Çözüm: Seçilen notun mevcut durumunu kontrol edin. Not zaten tamamlanmışsa Tamamlandı butonu, zaten devam ediyorsa Devam Ediyor butonu devre dışı olacaktır.</li>
+                    </ul>
+                </li>
+                <li><strong>Not Seçilemiyor:</strong>
+                    <ul>
+                        <li>Sorun: Listedeki notlara tıklamak etkisiz kalıyor.</li>
+                        <li>Çözüm: Sayfayı yenileyin veya programı yeniden başlatın. Bazen tarayıcı önbelleği veya sistem durumu bu soruna neden olabilir.</li>
+                    </ul>
+                </li>
+                <li><strong>Yönlendirilen Sayfa Açılmıyor:</strong>
+                    <ul>
+                        <li>Sorun: Yönlendir butonuna basıldığında yeni pencere açılmıyor.</li>
+                        <li>Çözüm: Tarayıcınızın açılır pencere engelleyici ayarlarını kontrol edin. Programın açılır pencerelere izin verildiğinden emin olun. Alternatif olarak, seçilen notun doğru bir işyeri veya pazarcı numarasına sahip olduğunu kontrol edin.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Verimli Çalışma Önerileri:</h4>
+            <ul>
+                <li>Not türünü (İşyeri veya Pazaryeri) iş akışınıza göre seçin ve gereksiz geçişleri en aza indirgeyin</li>
+                <li>Sık kullandığınız işyeri ve pazarcı numaralarını not alın</li>
+                <li>Devam eden işlemleri tamamlayarak not listesini daha yönetilebilir tutun</li>
+                <li>Uzun notlar yerine kısa ve öz notlar yazarak listenin daha anlaşılır olmasını sağlayın</li>
+                <li>İşyeri veya pazarcı detaylarını güncelledikten sonra not listesine dönerek notları da güncelleyin</li>
+                <li>Farklı işlem türlerini kullanarak notları kategorize edin</li>
+                <li>Ekranı maksimize ederek daha geniş bir görüntüleme alanı elde edin</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Son Uyarılar:</h4>
+            <ul>
+                <li>Programdan çıkmadan önce tüm değişiklikleri kaydettiğinizden emin olun</li>
+                <li>Aynı anda çok fazla pencere açmak sistem performansını etkileyebilir</li>
+                <li>Çok sayıda not bulunan listelerle çalışırken uygun filtreleri kullanarak işinizi kolaylaştırın</li>
+                <li>Sistem güncellemeleri sırasında programı kullanmayın</li>
+                <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticiniz veya destek ekibinizle iletişime geçin</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>Zabıta İşyeri ve Pazaryeri Notları programı, zabıta birimlerinin işyerleri ve pazaryerleri hakkında not almasını, bu notları takip etmesini ve yönetmesini sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Not türleri arasında geçiş yapma</li>
+            <li>İşyeri/Pazarcı numarası ile filtreleme</li>
+            <li>İşlem türüne göre notları sınıflandırma</li>
+            <li>Not durumlarını takip etme ve değiştirme</li>
+            <li>Notları görüntüleme ve düzenleme</li>
+            <li>İşyeri ve pazaryeri detay ekranlarına hızlı erişim</li>
+            <li>Hızlı tuş kombinasyonlarını ve pratik ipuçlarını kullanma</li>
+        </ul>
+        
+        <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        
+        <p>Zabıta İşyeri ve Pazaryeri Notları programını kullanarak işlerinizi daha düzenli ve verimli bir şekilde yönetebilirsiniz.</p>
+    </div>
+</div>
+</body>
+</html>
