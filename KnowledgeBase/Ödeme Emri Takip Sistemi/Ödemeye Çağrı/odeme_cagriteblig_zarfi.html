@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Çağrı Tebliğ Zarfı Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ödeme Çağrı Tebliğ Zarfı Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#odeme-cagri-no">Ödeme Çağrı Numarası Girişi</a></li>
+                <li><a href="#gtt-sicil-no">GTT Sicil Numarası Girişi</a></li>
+                <li><a href="#tarih-girisi">İşlem ve Tebliğ Tarihi Girişi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ödeme Çağrı Tebliğ Zarfı programı, ödeme çağrılarına ait tebliğ zarflarını döküm halinde almak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli bir ödeme çağrı numarası aralığına göre tebliğ zarfı dökümü alabilirsiniz</li>
+                <li>GTT (Genel Tahsilat Takip) sicil numarası aralığına göre filtreleme yapabilirsiniz</li>
+                <li>İşlem tarihi veya tebliğ tarihine göre belirli dönemler için döküm alabilirsiniz</li>
+                <li>Döküm sonuçlarını ekranda görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi ödeme çağrı numaralarına ait tebliğ zarfı dökümü almak istediğiniz</li>
+                    <li>Hangi tarihlere ait işlemleri görüntülemek istediğiniz</li>
+                    <li>GTT sicil numarası aralığı (isteğe bağlı)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Ödeme Çağrı Tebliğ Zarfı - Döküm" başlığı yer alır</li>
+                            <li>Başlık beyaz renkli, kalın yazı tipiyle ortalanmış olarak görünür</li>
+                            <li>Başlık çubuğu ekranın genişliğini kaplar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altında ana çalışma alanı bulunur</li>
+                            <li>Bu alanda dört satırlık veri giriş bölümü yer alır</li>
+                            <li>Her satır bir bilgi tipi içerir: Ödeme Çağrı No, GTT Sicil No, İşlem Tarihi ve Tebliğ Tarihi</li>
+                            <li>Her satırda sol tarafta etiket, sağ tarafta ise biri başlangıç diğeri bitiş için olmak üzere iki adet metin kutusu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, veri giriş alanlarının altında yer alır</li>
+                            <li>Burada "Listele" ve "Çıkış" butonları yan yana dizilmiştir</li>
+                            <li>Butonlar gri tonlu, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak "Ödeme Çağrı No" alanına konumlanır</li>
+                    <li>Tüm alanlar boş olarak başlar</li>
+                    <li>En az bir filtreleme kriteri girmeniz önerilir</li>
+                    <li>Enter tuşu, Tab tuşu gibi davranır ve bir sonraki alana geçiş yapar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="odeme-cagri-no" class="section">
+        <h2>Ödeme Çağrı Numarası Girişi</h2>
+        <div class="info-box">
+            <h3>Ödeme Çağrı Numarası Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Ödeme Çağrı Numarası Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çubuğunun hemen altında, formun ilk satırında yer alır</li>
+                            <li>"Ödeme Çağrı No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Solda başlangıç numarası, sağda bitiş numarası için kutular bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç ödeme çağrı numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuğa bitiş ödeme çağrı numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (GTT Sicil No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir ödeme çağrı numarası için döküm almak istiyorsanız, aynı numarayı hem başlangıç hem de bitiş kutucuğuna girin</li>
+                    <li>Geniş bir aralık belirlemek yerine, daha dar aralıklarla çalışmak daha hızlı sonuç almanızı sağlar</li>
+                    <li>Sol kutucuğa değer girdikten sonra sağ kutucuğa otomatik olarak aynı değer kopyalanır, ihtiyaç duyarsanız değiştirebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="gtt-sicil-no" class="section">
+        <h2>GTT Sicil Numarası Girişi</h2>
+        <div class="info-box">
+            <h3>GTT Sicil Numarası Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>GTT Sicil Numarası Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ödeme Çağrı No satırının hemen altında, formun ikinci satırında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Solda başlangıç sicil numarası, sağda bitiş sicil numarası için kutular bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç GTT sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuğa bitiş GTT sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (İşlem Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>GTT sicil numarası, mükelleflere ait benzersiz tanımlayıcıdır</li>
+                    <li>Belirli bir mükellef grubuna ait tebliğ zarflarını dökmek için GTT sicil numarası aralığını kullanabilirsiniz</li>
+                    <li>Sol kutucuğa değer girdikten sonra sağ kutucuğa otomatik olarak aynı değer kopyalanır, ihtiyaç duyarsanız değiştirebilirsiniz</li>
+                    <li>Bu alanları boş bırakarak, tüm GTT sicil numaraları için filtreleme yapabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tarih-girisi" class="section">
+        <h2>İşlem ve Tebliğ Tarihi Girişi</h2>
+        <div class="info-box">
+            <h3>Tarih Aralıkları Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>İşlem Tarihi Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No satırının hemen altında, formun üçüncü satırında yer alır</li>
+                            <li>"İşlem Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Solda başlangıç tarihi, sağda bitiş tarihi için kutular bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç işlem tarihini girin
+                                <ul>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuğa bitiş işlem tarihini girin
+                                <ul>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Tebliğ Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tebliğ Tarihi Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Tarihi satırının hemen altında, formun dördüncü satırında yer alır</li>
+                            <li>"Tebliğ Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Solda başlangıç tebliğ tarihi, sağda bitiş tebliğ tarihi için kutular bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç tebliğ tarihini girin
+                                <ul>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuğa bitiş tebliğ tarihini girin
+                                <ul>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak işlem butonları bölümüne geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tarih girişlerinde GG.AA.YYYY formatını kullanın (örn. 15.04.2023)</li>
+                    <li>Gün ve ay için tek haneli değerlerde başa sıfır eklemeyi unutmayın (örn. 01.05.2023)</li>
+                    <li>Başlangıç tarihi, bitiş tarihinden daha sonraki bir tarih olmamalıdır</li>
+                    <li>Tarih alanlarını boş bırakırsanız, sistem tarih filtresi uygulamadan tüm kayıtları getirecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir güne ait döküm almak istiyorsanız, hem başlangıç hem de bitiş tarihine aynı tarihi girin</li>
+                    <li>Sol kutucuğa tarih girdikten sonra, aynı tarih otomatik olarak sağ kutucuğa kopyalanır</li>
+                    <li>Tarih alanlarını boş bırakırsanız, diğer filtre kriterlerine göre tüm tarihleri içeren sonuçlar görüntülenecektir</li>
+                    <li>Genel olarak, tarih aralığı daha dar olduğunda sonuçlar daha hızlı yüklenir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Listele ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Listele Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Tebliğ Tarihi satırının altında, ekranın alt orta kısmında yer alır</li>
+                            <li>"Listele" yazısı ve yanında küçük bir liste simgesi bulunur</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                            <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeleme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>İlgili filtreleme kriterlerini girin:
+                                <ul>
+                                    <li>Ödeme Çağrı No aralığı (isteğe bağlı)</li>
+                                    <li>GTT Sicil No aralığı (isteğe bağlı)</li>
+                                    <li>İşlem Tarihi aralığı (isteğe bağlı)</li>
+                                    <li>Tebliğ Tarihi aralığı (isteğe bağlı)</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>Listele butonuna tıklayın</li>
+                            <li>Sistem girdiğiniz kriterlere göre tebliğ zarfı dökümünü yeni bir pencerede gösterecektir</li>
+                            <li>Açılan pencerede sonuçlar tablo formatında görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Tebliğ Tarihi satırının altında, ekranın alt orta kısmında yer alır</li>
+                            <li>"Çıkış" yazısı ve yanında küçük bir kapı/çıkış simgesi bulunur</li>
+                            <li>Listele butonunun sağında konumlanmıştır</li>
+                            <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Listele butonuna tıklamadan önce en az bir filtreleme kriteri girmeniz önerilir</li>
+                    <li>Hiçbir kriter girmezseniz, sistem tüm kayıtları getirecektir ve bu işlem uzun sürebilir</li>
+                    <li>Döküm sonuçlarının gösterildiği yeni pencere tam ekran olarak açılabilir</li>
+                    <li>Döküm penceresinin altında bulunan sayfa gezinti düğmeleri ile çok sayıda kayıt arasında gezinebilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sonuçlar çok geniş bir aralık için çok fazla kayıt içeriyorsa, filtreleme kriterlerinizi daraltın</li>
+                    <li>Açılan pencerede listelenen sonuçları yazdırmak için tarayıcınızın yazdırma özelliğini kullanabilirsiniz</li>
+                    <li>Döküm penceresi açıkken, ana pencereye dönmek için döküm penceresini kapatmanız yeterlidir</li>
+                    <li>Ana pencereyi kapatmak için mutlaka Çıkış butonunu kullanın, pencere köşesindeki X'e tıklamak önerilmez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sonuç Bulunamadı" Mesajı:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda sonuç görüntülenmiyor.</li>
+                            <li>Çözüm: Filtreleme kriterlerinizi genişletin veya farklı kriterler deneyin. Tarih formatının doğru olduğundan emin olun (GG.AA.YYYY).</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Yükleme Süresi Çok Uzun:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladıktan sonra sonuçların yüklenmesi çok uzun sürüyor.</li>
+                            <li>Çözüm: Daha dar bir filtreleme aralığı belirleyin. Özellikle tarih aralıklarını daraltmak işlem süresini kısaltacaktır. Tüm kriterler yerine sadece bir veya iki kriter kullanmayı deneyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Formatı Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Tarihleri girdikten sonra sistem kabul etmiyor veya hatalı sonuçlar gösteriyor.</li>
+                            <li>Çözüm: Tarihleri GG.AA.YYYY formatında girdiğinizden emin olun (örn. 01.05.2023). Nokta (.) işaretini kullanmayı unutmayın ve tek haneli gün/ay değerlerinde başa sıfır eklemeyi ihmal etmeyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Döküm Penceresi Açılmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda döküm penceresi açılmıyor.</li>
+                            <li>Çözüm: Tarayıcınızın açılır pencere engelleme ayarlarını kontrol edin. Programın tarayıcınızda açılır pencerelere izin vermesini sağlayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                    <li>Çok geniş tarih aralıkları yerine, daha dar ve spesifik tarih aralıkları kullanın</li>
+                    <li>Tebliğ zarfı dökümü almadan önce hangi filtreleme kriterini kullanacağınıza karar verin</li>
+                    <li>Tek bir günün dökümünü almak için, başlangıç ve bitiş tarihlerini aynı gün olarak ayarlayın</li>
+                    <li>Sık kullandığınız filtreleme kriterlerini not edin, böylece tekrar kullanmak istediğinizde kolayca erişebilirsiniz</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Döküm penceresinde görüntülenen sonuçları kaydetmek istiyorsanız, tarayıcınızın yazdırma veya PDF olarak kaydetme özelliğini kullanın</li>
+                    <li>Yoğun kullanım saatlerinde çok geniş filtreleme kriterleri kullanmaktan kaçının</li>
+                    <li>İşlem sırasında program penceresini kapatmayın</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Ödeme Çağrı Tebliğ Zarfı programı, belirli kriterlere göre tebliğ zarflarının dökümünü almanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Ödeme çağrı numarası aralığı girişi</li>
+                <li>GTT sicil numarası aralığı girişi</li>
+                <li>İşlem tarihi ve tebliğ tarihi aralığı girişi</li>
+                <li>Listele ve Çıkış butonlarının kullanımı</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+</body>
+</html>

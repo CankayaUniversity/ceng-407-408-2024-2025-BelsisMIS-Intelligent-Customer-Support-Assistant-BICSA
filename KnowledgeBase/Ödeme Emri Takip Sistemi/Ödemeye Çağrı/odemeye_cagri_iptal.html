@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödemeye Çağrı İptal Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ödemeye Çağrı İptal Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#filtre-kriterleri">Filtreleme Kriterleri Girişi</a></li>
+                <li><a href="#iptal-islemi">İptal İşleminin Gerçekleştirilmesi</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ödemeye Çağrı İptal programı, tahsilat takip sisteminde daha önce oluşturulmuş ödemeye çağrı kayıtlarını iptal etmek için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli ödeme çağrı numarası aralığına göre kayıtları iptal edebilirsiniz</li>
+                <li>GTT (Genel Tahsilat Takip) sicil numarası aralığına göre filtreleme yapabilirsiniz</li>
+                <li>İşlem ve tebliğ tarihlerine göre kayıtları iptal edebilirsiniz</li>
+                <li>Seçilen kriterlere uygun tüm ödemeye çağrı kayıtlarını ve bunlara ait PTT tahakkuklarını tek seferde iptal edebilirsiniz</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarı:</h4>
+                <p>Bu program, seçilen kriterlere uygun tüm ödemeye çağrı kayıtlarını geri dönüşü olmayacak şekilde iptal eder. İptal işleminden önce:</p>
+                <ul>
+                    <li>İptal etmek istediğiniz kayıtları doğru belirlediğinizden emin olun</li>
+                    <li>Sadece iptal edilmesi gereken kayıtları kapsayacak şekilde kriterleri daraltın</li>
+                    <li>Gerekli yetkilere sahip olduğunuzdan emin olun</li>
+                    <li>İptal işleminin muhasebesel etkilerini göz önünde bulundurun</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi ödeme çağrı numaralarını iptal etmek istediğiniz</li>
+                    <li>Hangi GTT sicil numarası aralığını filtrelemek istediğiniz</li>
+                    <li>Hangi tarih aralığındaki işlemleri iptal etmek istediğiniz</li>
+                    <li>İptal işleminin sonuçlarının ve etkilerinin neler olacağı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Ödemeye Çağrı - İptal" başlığı yer alır</li>
+                            <li>Başlık beyaz renkli, kalın yazı tipiyle ortalanmış olarak görünür</li>
+                            <li>Başlık çubuğu formun genişliğini kaplar ve dikdörtgen bir görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altından başlayarak formun orta bölümünü kaplayan filtreleme kriterleri giriş alanı bulunur</li>
+                            <li>Bu bölümde sırasıyla şu alanlar yer alır:
+                                <ul>
+                                    <li>Ödemeye Çağrı No (başlangıç-bitiş)</li>
+                                    <li>GTT Sicil No (başlangıç-bitiş)</li>
+                                    <li>İşlem Tarihi (başlangıç-bitiş)</li>
+                                    <li>Tebliğ Tarihi (başlangıç-bitiş)</li>
+                                </ul>
+                            </li>
+                            <li>Her alan satır şeklinde düzenlenmiştir; sol kısımda etiket, sağ kısımda ise veri giriş kutuları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, veri giriş alanlarının altında yer alır</li>
+                            <li>Bu bölümde "İptal" ve "Çıkış" butonları yan yana dizilmiştir</li>
+                            <li>İptal butonu kırmızı bir silme simgesi içerir</li>
+                            <li>Butonlar gri tonlu, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak "Ödemeye Çağrı No" alanındaki ilk metin kutusuna konumlanır</li>
+                    <li>Tüm alanlar varsayılan değerlerle doldurulmuş olarak gelir:
+                        <ul>
+                            <li>Ödemeye Çağrı No: 0 - 99999999</li>
+                            <li>GTT Sicil No: 0 - 99999999</li>
+                            <li>İşlem Tarihi: Günün tarihi - Günün tarihi</li>
+                            <li>Tebliğ Tarihi: Günün tarihi - Günün tarihi</li>
+                        </ul>
+                    </li>
+                    <li>Varsayılan değerler sistemin o gün içinde yapılan tüm işlemleri kapsayacak şekilde ayarlanmıştır</li>
+                    <li>Enter tuşu, Tab tuşu gibi davranır ve bir sonraki alana geçiş yapar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtre-kriterleri" class="section">
+        <h2>Filtreleme Kriterleri Girişi</h2>
+        <div class="info-box">
+            <h3>İptal Edilecek Kayıtlar İçin Filtreleme Kriterleri</h3>
+            <div class="step">
+                <h4>Ödemeye Çağrı No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çubuğunun hemen altında, formun ilk satırında yer alır</li>
+                            <li>"Ödemeye Çağrı No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç değeri, sağ metin kutusu bitiş değeri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucukta varsayılan olarak "0" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir başlangıç değeri girebilirsiniz</li>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucukta varsayılan olarak "99999999" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir bitiş değeri girebilirsiniz</li>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (GTT Sicil No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>GTT Sicil No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ödemeye Çağrı No satırının hemen altında, formun ikinci satırında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç değeri, sağ metin kutusu bitiş değeri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucukta varsayılan olarak "0" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir başlangıç değeri girebilirsiniz</li>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucukta varsayılan olarak "99999999" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir bitiş değeri girebilirsiniz</li>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (İşlem Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İşlem Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No satırının hemen altında, formun üçüncü satırında yer alır</li>
+                            <li>"İşlem Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç tarihi, sağ metin kutusu bitiş tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucukta varsayılan olarak günün tarihi bulunur (örn. 08.05.2025)
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir başlangıç tarihi girebilirsiniz</li>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucukta da varsayılan olarak günün tarihi bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir bitiş tarihi girebilirsiniz</li>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Tebliğ Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Tebliğ Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Tarihi satırının hemen altında, formun dördüncü satırında yer alır</li>
+                            <li>"Tebliğ Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç tebliğ tarihi, sağ metin kutusu bitiş tebliğ tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucukta varsayılan olarak günün tarihi bulunur (örn. 08.05.2025)
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir başlangıç tarihi girebilirsiniz</li>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucukta da varsayılan olarak günün tarihi bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir bitiş tarihi girebilirsiniz</li>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak işlem butonları bölümüne geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Varsayılan kriterleri değiştirmeden işlem yaparsanız, o gün içinde yapılan tüm ödemeye çağrı kayıtları iptal edilecektir</li>
+                    <li>Kriterleri daraltarak, sadece iptal etmek istediğiniz kayıtları hedefleyin</li>
+                    <li>Tarih girişlerinde GG.AA.YYYY formatını kullanın (örn. 15.04.2023)</li>
+                    <li>Gün ve ay için tek haneli değerlerde başa sıfır eklemeyi unutmayın (örn. 01.05.2023)</li>
+                    <li>Başlangıç değeri, bitiş değerinden daha büyük olmamalıdır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir ödeme çağrı numarasını iptal etmek istiyorsanız, hem başlangıç hem de bitiş alanlarına aynı numarayı girin</li>
+                    <li>Tek bir GTT sicil numarası için iptal işlemi yapmak istiyorsanız, hem başlangıç hem de bitiş alanlarına aynı sicil numarasını girin</li>
+                    <li>Tek bir güne ait kayıtları iptal etmek için, hem başlangıç hem de bitiş tarihlerine aynı tarihi girin</li>
+                    <li>Filtreleri ne kadar spesifik hale getirirseniz, istenmeyen kayıt iptallerini önleme şansınız o kadar artar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="iptal-islemi" class="section">
+        <h2>İptal İşleminin Gerçekleştirilmesi</h2>
+        <div class="info-box">
+            <h3>Ödemeye Çağrı Kayıtlarını İptal Etme</h3>
+            <div class="step">
+                <h4>İptal İşlemi Adımları:</h4>
+                <ol>
+                    <li><strong>Filtreleme Kriterlerini Belirleme:</strong>
+                        <ul>
+                            <li>İptal etmek istediğiniz kayıtları kapsayacak filtreleme kriterlerini belirleyin:
+                                <ul>
+                                    <li>Ödemeye Çağrı No aralığı</li>
+                                    <li>GTT Sicil No aralığı</li>
+                                    <li>İşlem Tarihi aralığı</li>
+                                    <li>Tebliğ Tarihi aralığı</li>
+                                </ul>
+                            </li>
+                            <li>Varsayılan değerleri ihtiyacınıza göre değiştirin</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal Butonuna Tıklama:</strong>
+                        <ul>
+                            <li>Tüm filtreleme kriterlerini belirledikten sonra, ekranın alt kısmındaki "İptal" butonuna tıklayın</li>
+                            <li>Bu buton, kırmızı bir silme simgesi ve "İptal" yazısı içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Onay İletişim Kutusu:</strong>
+                        <ul>
+                            <li>İptal butonuna tıkladığınızda bir onay iletişim kutusu açılacaktır</li>
+                            <li>İletişim kutusunda şu mesaj görüntülenir: "Kriterlere uygun tüm ödemeye çağrı kayıtları ve (varsa) bunlara ait PTT tahakkukları iptal edilecek, emin misiniz?"</li>
+                            <li>İşlemi onaylamak için "Evet" butonuna, iptal etmek için "Hayır" butonuna tıklayın</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Sonucu:</strong>
+                        <ul>
+                            <li>"Evet" butonuna tıkladıktan sonra sistem işlemi gerçekleştirir</li>
+                            <li>İşlem tamamlandığında ekranda bir bilgi mesajı görüntülenir</li>
+                            <li>Mesaj, işlemin başarılı olup olmadığını ve kaç kaydın iptal edildiğini belirtir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İptal işlemi geri alınamaz. Bu nedenle işlem öncesi kriterleri dikkatlice kontrol edin</li>
+                    <li>İptal işlemi, seçilen kriterlere uygun tüm kayıtları ve bunlara ait PTT tahakkuklarını etkiler</li>
+                    <li>Çok geniş kriter aralıkları belirlemek, istenmeyen kayıtların da iptal edilmesine neden olabilir</li>
+                    <li>İptal işlemi tamamlandıktan sonra, iptal edilen kayıtlar sistemde görüntülenmez veya raporlarda yer almaz</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Büyük miktarda kayıt iptal etmeden önce, daha dar bir kriter aralığı ile test yapın</li>
+                    <li>İptal etmek istediğiniz kayıtları önceden "Ödemeye Çağrı - Döküm" ekranında kontrol edin</li>
+                    <li>İptal işlemini mesai saatleri dışında veya sistemin yoğun olmadığı zamanlarda gerçekleştirmeye çalışın</li>
+                    <li>İptal işleminden sonra mutlaka sonuç mesajını okuyun ve beklediğiniz sayıda kaydın iptal edildiğinden emin olun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>İptal ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>İptal Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Formun en alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                            <li>Kırmızı renkli bir silme simgesi ve "İptal" yazısı içerir</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                            <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>İptal İşlemi Adımları:</strong>
+                        <ol>
+                            <li>İlgili filtreleme kriterlerini belirleyin:
+                                <ul>
+                                    <li>Ödemeye Çağrı No aralığı</li>
+                                    <li>GTT Sicil No aralığı</li>
+                                    <li>İşlem Tarihi aralığı</li>
+                                    <li>Tebliğ Tarihi aralığı</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>İptal butonuna tıklayın</li>
+                            <li>Açılan onay iletişim kutusunda "Evet" butonuna tıklayarak işlemi onaylayın</li>
+                            <li>İşlem sonuç mesajını okuyun</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                
+                    <ol>
+                        <li><strong>Buton Konumu:</strong>
+                            <ul>
+                                <li>Formun en alt kısmında, orta bölümde, sağ tarafta yer alır</li>
+                                <li>"Çıkış" yazısı ve yanında küçük bir kapı/çıkış simgesi bulunur</li>
+                                <li>İptal butonunun sağında konumlanmıştır</li>
+                                <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                            </ul>
+                        </li>
+                        <li><strong>Programdan Çıkış Adımları:</strong>
+                            <ol>
+                                <li>İşlemlerinizi tamamlayın veya iptal etmek istiyorsanız</li>
+                                <li>Çıkış butonuna tıklayın</li>
+                                <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="warning-box">
+                    <h4>Önemli Uyarılar:</h4>
+                    <ul>
+                        <li>İptal butonuna tıkladıktan ve onay verildikten sonra işlem geri alınamaz</li>
+                        <li>İşlem sırasında kriterlerin doğruluğundan emin olun</li>
+                        <li>İptal işlemi sırasında program penceresini kapatmayın veya başka uygulamalara geçmeyin</li>
+                        <li>İşlem sonuç mesajını mutlaka okuyun ve anladığınızdan emin olun</li>
+                    </ul>
+                </div>
+            
+                <div class="tip-box">
+                    <h4>Pratik İpuçları:</h4>
+                    <ul>
+                        <li>İptal işlemi yapmadan önce, etkilenecek kayıtları "Ödemeye Çağrı - Döküm" ekranından kontrol edin</li>
+                        <li>Sadece çıkış yapmak istiyorsanız ve herhangi bir işlem yapmadıysanız doğrudan Çıkış butonunu kullanabilirsiniz</li>
+                        <li>Yanlışlıkla İptal butonuna tıkladıysanız, onay iletişim kutusunda "Hayır" butonuna tıklayarak işlemi iptal edebilirsiniz</li>
+                        <li>İptal işlemi tamamlandıktan sonra, işlemin başarılı olduğunu doğrulamak için "Ödemeye Çağrı - Döküm" ekranını kullanarak iptal edilen kayıtların artık listelenmediğinden emin olun</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     
+        <div id="ipuclari" class="section">
+            <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+            <div class="info-box">
+                <h3>Verimli Çalışma İçin İpuçları</h3>
+                <div class="step">
+                    <h4>Hızlı Tuş Kombinasyonları:</h4>
+                    <ul>
+                        <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                        <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                        <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                        <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                    </ul>
+                </div>
+            
+                <div class="step">
+                    <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                    <ol>
+                        <li><strong>"Kayıt Bulunamadı" Mesajı:</strong>
+                            <ul>
+                                <li>Sorun: İptal butonuna tıkladığınızda "Kayıt Bulunamadı" veya benzer bir mesaj alıyorsunuz.</li>
+                                <li>Çözüm: Filtreleme kriterlerinizi genişletin veya farklı kriterler deneyin. Tarih formatının doğru olduğundan emin olun (GG.AA.YYYY). İptal etmek istediğiniz kayıtların sistemde var olduğundan emin olmak için önce "Ödemeye Çağrı - Döküm" ekranını kullanarak kontrol edin.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tarih Formatı Hatası:</strong>
+                            <ul>
+                                <li>Sorun: Tarihleri girdikten sonra sistem kabul etmiyor veya hatalı sonuçlar gösteriyor.</li>
+                                <li>Çözüm: Tarihleri GG.AA.YYYY formatında girdiğinizden emin olun (örn. 01.05.2023). Nokta (.) işaretini kullanmayı unutmayın ve tek haneli gün/ay değerlerinde başa sıfır eklemeyi ihmal etmeyin.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Onay İletişim Kutusu Açılmıyor:</strong>
+                            <ul>
+                                <li>Sorun: İptal butonuna tıkladığınızda onay iletişim kutusu açılmıyor.</li>
+                                <li>Çözüm: Tarayıcınızın pop-up engelleme ayarlarını kontrol edin. Programın tarayıcınızda açılır pencerelere izin vermesini sağlayın. Gerekirse sayfayı yenileyin veya programı yeniden başlatın.</li>
+                            </ul>
+                        </li>
+                        <li><strong>İptal İşlemi Tamamlanmıyor:</strong>
+                            <ul>
+                                <li>Sorun: İptal işlemi başlatıldıktan sonra uzun süre bekliyor veya tamamlanmıyor.</li>
+                                <li>Çözüm: Sistemin yoğun olduğu zamanlar olabilir. Daha az kayıt içeren daha dar bir kriter aralığı belirleyin. İşlemin tamamlanması için biraz daha bekleyin. Sorun devam ederse, sistem yöneticinize başvurun.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Yanlış Kayıtlar İptal Edildi:</strong>
+                            <ul>
+                                <li>Sorun: İptal işlemi sonrası iptal etmek istemediğiniz kayıtların da iptal edildiğini fark ettiniz.</li>
+                                <li>Çözüm: Ne yazık ki iptal işlemi geri alınamaz. Gelecekte daha spesifik filtreleme kriterleri kullanın ve işlem öncesi "Ödemeye Çağrı - Döküm" ekranını kullanarak etkilenecek kayıtları kontrol edin. Sistem yöneticinize durumu bildirin, bazı durumlarda teknik müdahale ile kayıtlar kurtarılabilir.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            
+                <div class="step">
+                    <h4>Verimli Çalışma Önerileri:</h4>
+                    <ul>
+                        <li>İptal işlemi yapmadan önce, etkilenecek kayıtları "Ödemeye Çağrı - Döküm" ekranından kontrol edin</li>
+                        <li>Çok geniş tarih aralıkları yerine, daha dar ve spesifik tarih aralıkları kullanın</li>
+                        <li>Tek bir kaydı iptal etmek istiyorsanız, ödeme çağrı numarasını kullanarak filtreleme yapın</li>
+                        <li>İptal işlemlerini genellikle mesai saatleri sonunda veya sistem yoğunluğunun az olduğu zamanlarda gerçekleştirin</li>
+                        <li>İptal işlemi sonrası mutlaka "Ödemeye Çağrı - Döküm" ekranını kullanarak işlemin başarılı olduğunu doğrulayın</li>
+                        <li>Yetkiniz dahilinde olmayan kayıtları iptal etmeye çalışmayın</li>
+                    </ul>
+                </div>
+            
+                <div class="warning-box">
+                    <h4>Son Uyarılar:</h4>
+                    <ul>
+                        <li>İptal işlemi geri alınamaz, bu nedenle işlem öncesi çok dikkatli olun</li>
+                        <li>Yoğun kullanım saatlerinde çok geniş kriterlerde iptal işlemi yapmaktan kaçının</li>
+                        <li>İşlem sırasında program penceresini kapatmayın veya başka uygulamalara geçmeyin</li>
+                        <li>Çok sayıda kaydı iptal etmeden önce sistem yöneticinize danışın</li>
+                        <li>İptal işlemlerini düzenli olarak kaydedin ve gerektiğinde referans olarak kullanın</li>
+                        <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     
+        <div class="section">
+            <h2>Özet ve Sonuç</h2>
+            <div class="info-box">
+                <p>Ödemeye Çağrı İptal programı, tahsilat takip sisteminde daha önce oluşturulmuş ödemeye çağrı kayıtlarını ve bunlara ait PTT tahakkuklarını iptal etmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+                <ul>
+                    <li>Ödemeye çağrı numarası ve GTT sicil numarası ile filtreleme yapma</li>
+                    <li>İşlem tarihi ve tebliğ tarihi aralığı belirleme</li>
+                    <li>İptal işlemini güvenli bir şekilde gerçekleştirme</li>
+                    <li>İptal ve Çıkış butonlarının kullanımı</li>
+                    <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+                </ul>
+                
+                <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+                
+                <p>İptal işlemi geri alınamaz bir işlem olduğundan, her zaman dikkatli olun ve işlem öncesi etkilenecek kayıtları kontrol edin.</p>
+            </div>
+        </div>
+     </body>
+     </html>

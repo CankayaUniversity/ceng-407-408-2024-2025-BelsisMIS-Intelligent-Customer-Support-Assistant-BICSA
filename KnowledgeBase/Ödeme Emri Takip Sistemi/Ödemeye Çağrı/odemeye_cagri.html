@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödemeye Çağrı - Kayıt/Döküm Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ödemeye Çağrı - Kayıt/Döküm Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#islem-tarih">İşlem ve Tebliğ Tarihi Girişi</a></li>
+                <li><a href="#borc-filtre">Borç Kriterleri ve Filtreler</a></li>
+                <li><a href="#modul-tahakkuk">Modül ve Tahakkuk Türü Seçimi</a></li>
+                <li><a href="#cagri-durum">Çağrı Durum Seçimi</a></li>
+                <li><a href="#yetkili-bilgi">Yetkili Kişi Bilgileri</a></li>
+                <li><a href="#ptt-secenek">PTT Gideri ve Ek Seçenekler</a></li>
+                <li><a href="#tahsilat-nusha">Tahsilat Kilidi ve Nüsha Seçimleri</a></li>
+                <li><a href="#dokum-siralama">Döküm Gruplaması ve Tutar Sıralama</a></li>
+                <li><a href="#islem-buton">İşlem Butonları ve Fonksiyonları</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ödemeye Çağrı modülü, belediye tahakkuklarının ödenmesi için mükelleflere çağrı/bildirim yapılmasını sağlayan bir araçtır. Bu modül ile:</p>
+            <ul>
+                <li>Ödenmeyen tahakkuklar için yasal tebliğ (ödemeye çağrı) oluşturabilirsiniz</li>
+                <li>Tahakkuk türü, borç yılı, sicil numarası gibi kriterlere göre filtreleme yapabilirsiniz</li>
+                <li>Farklı döküm gruplamalarıyla sonuçları organize edebilirsiniz</li>
+                <li>Yasal tebliğ için gerekli yetkili kişi bilgilerini belirleyebilirsiniz</li>
+                <li>Toplu borç tahsilatı için gereken tebliğ belgelerini basabilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>İşlem yapmak istediğiniz tarih bilgisi</li>
+                    <li>Tebliğ edilecek borçların türü ve yıl aralığı</li>
+                    <li>İşlem yapılacak mükellef (GTT Sicil No) aralığı</li>
+                    <li>Tebliğ evrakında görünmesini istediğiniz yetkili kişi bilgileri</li>
+                    <li>PTT gideri bilgisi (gerekiyorsa)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (teal) renkli bir şeritte beyaz yazı ile "Ödemeye Çağrı - Kayıt / Döküm" başlığı yer alır</li>
+                            <li>Başlık şeridi tüm pencerenin genişliğince uzanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ana Form Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın altında gri tonlarında bir form tablosu bulunur</li>
+                            <li>Form hücreleri beyaz arka plana sahiptir</li>
+                            <li>Sırasıyla tarih bilgileri, borç kriterleri, modül ve tahakkuk türü seçimleri, çağrı durumu, yetkili kişi bilgileri ve diğer seçenekler yer alır</li>
+                            <li>Her alan etiketi sol tarafta, karşılık gelen veri giriş alanları sağ tarafta yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Butonlar Bölümü:</strong>
+                        <ul>
+                            <li>Formun en altında gri arka planda işlem butonları (Kayıt/Listele ve Çıkış) yer alır</li>
+                            <li>Butonlar orta bölümde yan yana dizilmiştir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak "İşlem Tarihi" alanına konumlanır</li>
+                    <li>Bazı alanlar varsayılan değerlerle doldurulmuş olarak gelir:</li>
+                        <ul>
+                            <li>İşlem Tarihi ve Tebliğ Tarihi günün tarihiyle doldurulur</li>
+                            <li>Çağrı Durum seçiminde "Kriterlere uygun tüm tahakkuklar" seçili gelir</li>
+                            <li>Tahsilat Kilidi bölümünde "Tümü" seçeneği işaretli gelir</li>
+                        </ul>
+                    <li>Form alanlarının birçoğu TAB tuşu ile gezilerek doldurulabilir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="islem-tarih" class="section">
+        <h2>İşlem ve Tebliğ Tarihi Girişi</h2>
+        <div class="info-box">
+            <h3>Tarih Bilgilerinin Girilmesi</h3>
+            <div class="step">
+                <h4>İşlem Tarihi Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çizgisinin hemen altında, formun en üst kısmında yer alır</li>
+                            <li>"İşlem Tarihi" etiketi sol tarafta, giriş kutusu sağ tarafta bulunur</li>
+                            <li>Metin kutusu açık renkli (beyaz) arka plana sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Girişi Adımları:</strong>
+                        <ol>
+                            <li>İşlem Tarihi metin kutusuna tıklayın veya TAB tuşuyla buraya gelin</li>
+                            <li>Tarih formatında (GG/AA/YYYY) işlem yapmak istediğiniz tarihi girin
+                                <ul>
+                                    <li>Örneğin: 08/05/2025</li>
+                                    <li>Gün ve ay için tek haneli sayıları başında 0 ile yazın (01, 02, vb.)</li>
+                                </ul>
+                            </li>
+                            <li>Tarih bilgisini girerken "/" karakterini kullanarak ayırıcı olarak belirtin</li>
+                            <li>Alan doldurulduktan sonra TAB tuşu ile bir sonraki alana (Tebliğ Tarihi) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tebliğ Tarihi Nasıl Girilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Tarihi alanının hemen altında yer alır</li>
+                            <li>"Tebliğ Tarihi" etiketi sol tarafta, giriş kutusu sağ tarafta bulunur</li>
+                            <li>Metin kutusu açık renkli (beyaz) arka plana sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Girişi Adımları:</strong>
+                        <ol>
+                            <li>Tebliğ Tarihi metin kutusuna tıklayın veya TAB tuşuyla buraya gelin</li>
+                            <li>Tarih formatında (GG/AA/YYYY) tebliğin yapılacağı tarihi girin
+                                <ul>
+                                    <li>Örneğin: 10/05/2025</li>
+                                    <li>Gün ve ay için tek haneli sayıları başında 0 ile yazın (01, 02, vb.)</li>
+                                </ul>
+                            </li>
+                            <li>Tarih bilgisini girerken "/" karakterini kullanarak ayırıcı olarak belirtin</li>
+                            <li>Alan doldurulduktan sonra TAB tuşu ile bir sonraki alana (Borç Yılı bölümüne) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>İşlem Tarihi ve Tebliğ Tarihi alanları boş bırakılamaz, program işlem yapmadan önce bu alanları kontrol eder</li>
+                    <li>Tarih formatı olarak GG/AA/YYYY kullanılmalıdır (örn. 08/05/2025)</li>
+                    <li>E-Ptt modülü parametrelerinde "tebliğ tarihi atanmasın" seçiliyse, tebliğ tarihi boş olarak kaydedilecektir ve bu durumda sistem sizi bilgilendirecektir</li>
+                    <li>Genellikle aynı gün tebliğ yapılacaksa, İşlem Tarihi ve Tebliğ Tarihi aynı olabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Program açıldığında her iki tarih alanı da otomatik olarak günün tarihiyle doldurulur</li>
+                    <li>Tebliğ Tarihi, İşlem Tarihinden sonraki bir tarih olabilir (örneğin, tebliğin postalanma süresi göz önüne alınarak)</li>
+                    <li>TAB tuşu ile hızlıca bir sonraki alana geçebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="borc-filtre" class="section">
+        <h2>Borç Kriterleri ve Filtreler</h2>
+        <div class="info-box">
+            <h3>Borç Yılı, GTT Sicil No ve Tahakkuk Tarihi Filtreleri</h3>
+            <div class="step">
+                <h4>Borç Yılı Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tebliğ Tarihi alanının altında bir ara başlık bulunur (Başlangıç-Bitiş)</li>
+                            <li>Ara başlığın hemen altında "Borç Yılı" etiketi sol tarafta, giriş kutuları sağ tarafta yer alır</li>
+                            <li>Yan yana iki metin kutusu bulunur: Sol kutu başlangıç yılı, sağ kutu bitiş yılı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Borç Yılı Aralığı Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç borç yılını girin
+                                <ul>
+                                    <li>Yıl bilgisini dört haneli olarak yazın (örn. 2023)</li>
+                                    <li>Eğer belirli bir yıl ile başlatmak istemiyorsanız "0" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "0" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile sağdaki kutuya geçin</li>
+                            <li>Sağdaki kutuya bitiş borç yılını girin
+                                <ul>
+                                    <li>Yıl bilgisini dört haneli olarak yazın (örn. 2025)</li>
+                                    <li>Eğer belirli bir yıl ile bitirmek istemiyorsanız "9999" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "9999" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile bir sonraki alana (GTT Sicil No) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>GTT Sicil No Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Borç Yılı alanının hemen altında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta, giriş kutuları sağ tarafta bulunur</li>
+                            <li>Yan yana iki metin kutusu bulunur: Sol kutu başlangıç sicil numarası, sağ kutu bitiş sicil numarası içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>GTT Sicil No Aralığı Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç sicil numarasını girin
+                                <ul>
+                                    <li>Sicil numarasını maksimum 8 haneli olarak yazın</li>
+                                    <li>Eğer belirli bir sicil numarası ile başlatmak istemiyorsanız "0" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "0" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile sağdaki kutuya geçin</li>
+                            <li>Sağdaki kutuya bitiş sicil numarasını girin
+                                <ul>
+                                    <li>Sicil numarasını maksimum 8 haneli olarak yazın</li>
+                                    <li>Eğer belirli bir sicil numarası ile bitirmek istemiyorsanız "999999999" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "999999999" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile bir sonraki alana (Tahakkuk Tarihi) geçin</li>
+                        </ol>
+                    </li>
+                    <li><strong>Tek Sicil İçin Filtreleme:</strong>
+                        <ul>
+                            <li>Sadece tek bir sicil numarası için işlem yapmak istiyorsanız, o sicil numarasını hem başlangıç hem de bitiş kutularına girin</li>
+                            <li>İlk sicil no kutusuna bir değer girdiğinizde, ikinci kutuya bu değer otomatik olarak kopyalanır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tahakkuk Tarihi Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No alanının hemen altında yer alır</li>
+                            <li>"Tahakkuk Tarihi" etiketi sol tarafta, giriş kutuları sağ tarafta bulunur</li>
+                            <li>Yan yana iki metin kutusu bulunur: Sol kutu başlangıç tahakkuk tarihi, sağ kutu bitiş tahakkuk tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Tarihi Aralığı Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç tahakkuk tarihini girin
+                                <ul>
+                                    <li>Tarih formatında (GG/AA/YYYY) giriş yapın</li>
+                                    <li>Eğer belirli bir tarih ile başlatmak istemiyorsanız "01/01/1900" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "01/01/1900" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile sağdaki kutuya geçin</li>
+                            <li>Sağdaki kutuya bitiş tahakkuk tarihini girin
+                                <ul>
+                                    <li>Tarih formatında (GG/AA/YYYY) giriş yapın</li>
+                                    <li>Eğer belirli bir tarih ile bitirmek istemiyorsanız "01/01/2099" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "01/01/2099" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile bir sonraki alana (Tahakkuk Toplamı) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tahakkuk Toplamı Aralığı Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Tarihi alanının hemen altında yer alır</li>
+                            <li>"Tahakkuk Toplamı" etiketi sol tarafta, giriş kutuları sağ tarafta bulunur</li>
+                            <li>Yan yana iki metin kutusu bulunur: Sol kutu minimum tahakkuk toplamı, sağ kutu maksimum tahakkuk toplamı içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Toplamı Aralığı Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa minimum tahakkuk toplamı tutarını girin
+                                <ul>
+                                    <li>Para birimi formatında giriş yapın (örn. 10,00)</li>
+                                    <li>Ondalık ayracı olarak virgül (,) kullanın</li>
+                                    <li>Eğer belirli bir tutar ile başlatmak istemiyorsanız "0,01" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "0,01" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile sağdaki kutuya geçin</li>
+                            <li>Sağdaki kutuya maksimum tahakkuk toplamı tutarını girin
+                                <ul>
+                                    <li>Para birimi formatında giriş yapın (örn. 10000,00)</li>
+                                    <li>Ondalık ayracı olarak virgül (,) kullanın</li>
+                                    <li>Eğer belirli bir tutar ile bitirmek istemiyorsanız "999.999.999" yazabilir veya boş bırakabilirsiniz (sistem otomatik olarak "999.999.999" kabul edecektir)</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile bir sonraki alana (tahakkuk toplamı seçenekleri) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Tahakkuk Toplamı Ek Seçenekleri Nasıl Belirlenir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Toplamı giriş alanlarının hemen altında yer alır</li>
+                            <li>Soldaki etiket yerine, sağ tarafta iki onay kutusu (checkbox) ve açıklamaları bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tahakkuk Toplamı Seçenekleri Belirleme Adımları:</strong>
+                        <ol>
+                            <li>İlk onay kutusunu işaretlemek için üzerine tıklayın veya boşluk tuşu ile seçin/seçimi kaldırın
+                                <ul>
+                                    <li>Bu seçenek "Tahakkuk toplamı aralığı gecikme zammını kapsasın" anlamına gelir</li>
+                                    <li>Program açıldığında bu seçenek varsayılan olarak işaretli gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile ikinci onay kutusuna geçin</li>
+                            <li>İkinci onay kutusunu işaretlemek için üzerine tıklayın veya boşluk tuşu ile seçin/seçimi kaldırın
+                                <ul>
+                                    <li>Bu seçenek "Tahakkuk toplamı aralığı tüm tahakkukların toplamına göre çalışsın" anlamına gelir</li>
+                                    <li>Program açıldığında bu seçenek varsayılan olarak işaretli gelir</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşu ile bir sonraki alana (Modül seçim listesi) geçin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tüm alanlar boş bırakılabilir, bu durumda sistem varsayılan değerleri kullanacaktır</li>
+                    <li>Başlangıç değeri bitiş değerinden büyük olmamalıdır</li>
+                    <li>Para birimi formatında ondalık ayracı olarak virgül (,) kullanılmalıdır</li>
+                    <li>Hiçbir kriter girmezseniz çok sayıda kayıt listelenebilir, bu durumda sistem sizi uyarabilir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir sicil numarası için filtreleme yapmak istiyorsanız, o numarayı ilk kutuya girdiğinizde ikinci kutuya otomatik olarak kopyalanacaktır</li>
+                    <li>TAB tuşunu kullanarak alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Tahakkuk toplamı filtresini kullanarak, belirli bir tutarın üzerindeki borçları filtreleyebilirsiniz</li>
+                    <li>Parametrelerde "tebliğ tarihi atanmasın" seçiliyse, tebliğ tarihi boş olarak kaydedilecektir</li>
+                    <li>Aynı gün içinde aynı sicillere ödemeye çağrı dökümü alınmışsa, sistem sizi uyaracaktır</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="modul-tahakkuk" class="section">
+       <h2>Modül ve Tahakkuk Türü Seçimi</h2>
+       <div class="info-box">
+           <h3>Modül ve Tahakkuk Türü Listelerinden Seçim Yapma</h3>
+           <div class="step">
+               <h4>Modül Seçimi Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tahakkuk Toplamı seçeneklerinin hemen altında yer alır</li>
+                           <li>"Modül" etiketi sol tarafta, çoklu seçim listesi sağ tarafta bulunur</li>
+                           <li>Liste kutusu dikdörtgen şeklinde ve gri arka plana sahiptir</li>
+                           <li>Liste kutusu yüksekliği yaklaşık 3 satır, genişliği 250 piksel civarındadır</li>
+                       </ul>
+                   </li>
+                   <li><strong>Modül Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Liste kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Liste içinde birden fazla modül seçimini şu şekilde yapabilirsiniz:
+                               <ul>
+                                   <li>Tek bir modül seçmek için doğrudan modül adına tıklayın</li>
+                                   <li>Birden fazla modül seçmek için, Ctrl tuşunu basılı tutarak her bir modüle tıklayın</li>
+                                   <li>Belirli bir aralıktaki tüm modülleri seçmek için, ilk modüle tıklayın, sonra Shift tuşunu basılı tutarak son modüle tıklayın</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında, varsayılan olarak tüm modüller seçili gelir</li>
+                           <li>Modül seçimi tamamlandıktan sonra TAB tuşu ile bir sonraki alana (Tahakkuk Türü) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Tahakkuk Türü Seçimi Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Modül seçim listesinin hemen altında yer alır</li>
+                           <li>"Tahakkuk Türü" etiketi sol tarafta, çoklu seçim listesi sağ tarafta bulunur</li>
+                           <li>Liste kutusu dikdörtgen şeklinde ve gri arka plana sahiptir</li>
+                           <li>Liste kutusu yüksekliği yaklaşık 3 satır, genişliği 250 piksel civarındadır</li>
+                       </ul>
+                   </li>
+                   <li><strong>Tahakkuk Türü Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Liste kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Liste içinde birden fazla tahakkuk türü seçimini şu şekilde yapabilirsiniz:
+                               <ul>
+                                   <li>Tek bir tahakkuk türü seçmek için doğrudan tahakkuk türü adına tıklayın</li>
+                                   <li>Birden fazla tahakkuk türü seçmek için, Ctrl tuşunu basılı tutarak her bir tahakkuk türüne tıklayın</li>
+                                   <li>Belirli bir aralıktaki tüm tahakkuk türlerini seçmek için, ilk tahakkuk türüne tıklayın, sonra Shift tuşunu basılı tutarak son tahakkuk türüne tıklayın</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında, varsayılan olarak tüm tahakkuk türleri seçili gelir</li>
+                           <li>Tahakkuk türü seçimi tamamlandıktan sonra TAB tuşu ile bir sonraki alana (Çağrı Durum seçenekleri) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>En az bir modül ve bir tahakkuk türü seçilmelidir</li>
+                   <li>Çok fazla modül ve tahakkuk türü seçmek, işlemin yavaşlamasına ve çok sayıda kayıt listelenmesine neden olabilir</li>
+                   <li>Seçim listeleri üzerinde Ctrl tuşu ile çoklu seçim yapılabileceği unutulmamalıdır</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Tüm modülleri ve tahakkuk türlerini seçmek için Ctrl+A tuş kombinasyonunu kullanabilirsiniz</li>
+                   <li>Sadece belirli modüller veya tahakkuk türleri ile ilgileniyorsanız, performans için sadece bunları seçin</li>
+                   <li>Sık kullandığınız modül ve tahakkuk türlerini bir not kağıdına yazarak hızlıca bulabilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="cagri-durum" class="section">
+       <h2>Çağrı Durum Seçimi</h2>
+       <div class="info-box">
+           <h3>Çağrı Durumuna Göre Filtreleme</h3>
+           <div class="step">
+               <h4>Çağrı Durum Seçimi Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tahakkuk Türü seçim listesinin hemen altında yer alır</li>
+                           <li>Bu bölümde etiket yerine, radyo düğmeleri (radio button) ve açıklamaları bulunur</li>
+                           <li>Üç adet radyo düğmesi alt alta sıralanmıştır</li>
+                       </ul>
+                   </li>
+                   <li><strong>Çağrı Durum Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Aşağıdaki üç seçenekten birini seçmek için radyo düğmesine tıklayın:
+                               <ul>
+                                   <li><strong>Birinci seçenek:</strong> "Ödemeye çağrı kaydı <u>olan</u> tahakkuklar."
+                                       <ul>
+                                           <li>Bu seçenek, daha önce ödemeye çağrı kaydı oluşturulmuş tahakkukları listelemek için kullanılır</li>
+                                       </ul>
+                                   </li>
+                                   <li><strong>İkinci seçenek:</strong> "Ödemeye çağrı kaydı <u>olmayan</u> tahakkuklar."
+                                       <ul>
+                                           <li>Bu seçenek, daha önce ödemeye çağrı kaydı oluşturulmamış tahakkukları listelemek için kullanılır</li>
+                                       </ul>
+                                   </li>
+                                   <li><strong>Üçüncü seçenek:</strong> "Kriterlere uygun tüm tahakkuklar."
+                                       <ul>
+                                           <li>Bu seçenek, çağrı kaydı olup olmadığına bakılmaksızın tüm tahakkukları listelemek için kullanılır</li>
+                                           <li>Program açıldığında varsayılan olarak bu seçenek işaretli gelir</li>
+                                       </ul>
+                                   </li>
+                               </ul>
+                           </li>
+                           <li>Seçiminizi yaptıktan sonra TAB tuşu ile bir sonraki alana (Tanzim Eden) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Bu üç seçenekten yalnızca birini seçebilirsiniz</li>
+                   <li>Bir seçenek işaretlendiğinde, diğer seçenekler otomatik olarak işaretsiz hale gelir</li>
+                   <li>Seçiminize göre filtrelenen tahakkuklar, döküm alındığında listelenecektir</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>İlk kez çağrı dökümü alacaksanız, genellikle ikinci seçenek (çağrı kaydı olmayan) kullanılır</li>
+                   <li>Daha önce çağrı dökümü alınmış tahakkukları tekrar listelemek için birinci seçenek kullanılır</li>
+                   <li>Çağrı durumundan bağımsız olarak tüm tahakkukları görmek istiyorsanız üçüncü seçenek en uygunudur</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="yetkili-bilgi" class="section">
+       <h2>Yetkili Kişi Bilgileri</h2>
+       <div class="info-box">
+           <h3>Tanzim Eden, Tebliğ Eden, Şef ve Müdür Bilgileri</h3>
+           <div class="step">
+               <h4>Tanzim Eden Bilgisi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Çağrı Durum seçeneklerinin altında, alt çizgili bir ayırıcı çizginin hemen sonrasında yer alır</li>
+                           <li>"Tanzim Eden" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahiptir ve genişliği yaklaşık 30 karakterdir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Tanzim Eden Bilgisi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Belgeyi tanzim eden (hazırlayan) kişinin adını ve unvanını girin
+                               <ul>
+                                   <li>Örneğin: "Ahmet Yılmaz - Tahakkuk Memuru"</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (Tebliğ Eden) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Tebliğ Eden Bilgisi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tanzim Eden alanının hemen altında yer alır</li>
+                           <li>"Tebliğ Eden" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahiptir ve genişliği yaklaşık 30 karakterdir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Tebliğ Eden Bilgisi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Belgeyi tebliğ eden (bildirimi gerçekleştiren) kişinin adını ve unvanını girin
+                               <ul>
+                                   <li>Örneğin: "Mehmet Kaya - Tebligat Memuru"</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (Şef) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Şef Bilgisi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tebliğ Eden alanının hemen altında yer alır</li>
+                           <li>"Şef" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahiptir ve genişliği yaklaşık 30 karakterdir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Şef Bilgisi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>İlgili birimin şefinin adını ve unvanını girin
+                               <ul>
+                                   <li>Örneğin: "Ayşe Demir - Gelir Şefi"</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (Müdür) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Müdür Bilgisi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Şef alanının hemen altında yer alır</li>
+                           <li>"Müdür" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahiptir ve genişliği yaklaşık 30 karakterdir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Müdür Bilgisi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>İlgili birimin müdürünün adını ve unvanını girin
+                               <ul>
+                                   <li>Örneğin: "Ali Yıldız - Mali Hizmetler Müdürü"</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (Başvuru süresi) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Başvuru Süresi Bilgisi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Müdür alanının hemen altında yer alır</li>
+                           <li>"Başvuru süresi" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahiptir ve genişliği yaklaşık 30 karakterdir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Başvuru Süresi Bilgisi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Yasal başvuru süresini girin
+                               <ul>
+                                   <li>Örneğin: "Tebliğ tarihinden itibaren 30 gün içinde"</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (PTT Gideri) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Yetkili kişi bilgileri tebliğ belgesinde görüneceği için doğru ve eksiksiz olmalıdır</li>
+                   <li>Unvan bilgilerini de eklemeniz tebliğin resmi niteliğini artıracaktır</li>
+                   <li>Program açıldığında bazı bilgiler sistem parametrelerinden otomatik doldurulabilir</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Sık kullanılan yetkili kişi bilgilerini not edip her seferinde aynı şekilde girebilirsiniz</li>
+                   <li>Yasal başvuru süresi mevzuatta belirtilen sürelere uygun olmalıdır</li>
+                   <li>TAB tuşu ile alanlar arasında hızlıca geçiş yapabilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="ptt-secenek" class="section">
+       <h2>PTT Gideri ve Ek Seçenekler</h2>
+       <div class="info-box">
+           <h3>PTT Gideri ve Tahakkuk Seçeneği</h3>
+           <div class="step">
+               <h4>PTT Gideri Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Başvuru süresi alanının hemen altında yer alır</li>
+                           <li>"PTT Gideri" etiketi sol tarafta, metin kutusu ve onay kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahip, onay kutusu ise hemen yanında yer alır</li>
+                       </ul>
+                   </li>
+                   <li><strong>PTT Gideri Girişi ve Seçim Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Tebliğ için ödenen PTT gideri tutarını para birimi formatında girin
+                               <ul>
+                                   <li>Örneğin: "15,50" (ondalık ayracı olarak virgül kullanın)</li>
+                               </ul>
+                           </li>
+                           <li>Program açıldığında sistem parametrelerinde tanımlı varsayılan bir değer görüntülenebilir</li>
+                           <li>PTT giderinin tahakkuk edilmesini istiyorsanız, metin kutusunun yanındaki "PTT Gideri tahakkuk et." onay kutusunu işaretleyin
+                               <ul>
+                                   <li>Onay kutusunu işaretlemek için üzerine tıklayın veya TAB tuşuyla onay kutusuna geldikten sonra boşluk tuşuna basın</li>
+                               </ul>
+                           </li>
+                           <li>Bilgiyi girdikten ve seçiminizi yaptıktan sonra TAB tuşu ile bir sonraki alana (Tahsilat Kilidi) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Eğer "PTT Gideri tahakkuk et." seçeneğini işaretlediyseniz, PTT Gideri alanı boş bırakılamaz</li>
+                   <li>PTT gideri 0 veya boş girilmiş ve "PTT Gideri tahakkuk et." işaretlenmişse, sistem uyarı verecektir</li>
+                   <li>Para birimi formatında ondalık ayracı olarak virgül (,) kullanılmalıdır</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Eğer PTT gideri mükelleften tahsil edilecekse, onay kutusunu işaretleyin</li>
+                   <li>Güncel PTT gideri tutarlarını düzenli olarak kontrol edin ve güncelleyin</li>
+                   <li>Tahakkuk edilmesini istemiyorsanız, onay kutusunu boş bırakın</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="tahsilat-nusha" class="section">
+       <h2>Tahsilat Kilidi ve Nüsha Seçimleri</h2>
+       <div class="info-box">
+           <h3>Tahsilat Kilidi Seçimi ve Nüsha Sayısı</h3>
+           <div class="step">
+               <h4>Tahsilat Kilidi Seçimi Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>PTT Gideri alanının hemen altında yer alır</li>
+                           <li>Üç adet radyo düğmesi (radio button) alt alta sıralanmıştır</li>
+                           <li>İlk radyo düğmesinin sol tarafında "Tahsilat Kilidi" etiketi bulunur</li>
+                       </ul>
+                   </li>
+                   <li><strong>Tahsilat Kilidi Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Aşağıdaki üç seçenekten birini seçmek için radyo düğmesine tıklayın:
+                               <ul>
+                                   <li><strong>Birinci seçenek:</strong> "Tahsilat Kilidi Olanlar"
+                                       <ul>
+                                           <li>Bu seçenek, tahsilat kilidi olan tahakkukları listelemek için kullanılır</li>
+                                       </ul>
+                                   </li>
+                                   <li><strong>İkinci seçenek:</strong> "Tahsilat Kilidi Olmayanlar"
+                                       <ul>
+                                           <li>Bu seçenek, tahsilat kilidi olmayan tahakkukları listelemek için kullanılır</li>
+                                       </ul>
+                                   </li>
+                                   <li><strong>Üçüncü seçenek:</strong> "Tümü"
+                                       <ul>
+                                           <li>Bu seçenek, tahsilat kilidi olup olmamasına bakılmaksızın tüm tahakkukları listelemek için kullanılır</li>
+                                           <li>Program açıldığında varsayılan olarak bu seçenek işaretli gelir</li>
+                                       </ul>
+                                   </li>
+                               </ul>
+                           </li>
+                           <li>Seçiminizi yaptıktan sonra TAB tuşu ile bir sonraki alana (Nüsha) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Nüsha Sayısı Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tahsilat Kilidi seçeneklerinin altında yer alır</li>
+                           <li>"Nüsha" etiketi sol tarafta, metin kutusu sağ tarafta bulunur</li>
+                           <li>Metin kutusu beyaz arka plana sahip ve küçüktür (2 karakterlik)</li>
+                       </ul>
+                   </li>
+                   <li><strong>Nüsha Sayısı Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Tebliğ belgesinin kaç nüsha olarak basılacağını girin
+                               <ul>
+                                   <li>Örneğin: "1" veya "2"</li>
+                                   <li>Genellikle 1 nüsha yeterlidir, ancak arşiv için ekstra nüsha gerekiyorsa 2 veya daha fazla girebilirsiniz</li>
+                               </ul>
+                           </li>
+                           <li>Bu alan boş bırakılırsa, sistem varsayılan olarak 1 nüsha kabul edecektir</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (Döküm Gruplaması) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Tahsilat Kilidi seçeneklerinden yalnızca birini seçebilirsiniz</li>
+                   <li>Nüsha sayısı 1 veya daha büyük bir sayı olmalıdır</li>
+                   <li>Çok sayıda nüsha seçmek, çıktı işleminin daha uzun sürmesine neden olabilir</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Genel kullanımda 1 nüsha yeterlidir, ihtiyaç olmadıkça fazla nüsha seçmeyin</li>
+                   <li>Tahsilat kilidi seçimini, mükellef durumuna göre filtreleme yapmak için kullanabilirsiniz</li>
+                   <li>Sıklıkla "Tümü" seçeneği en kapsamlı sonucu verecektir</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="dokum-siralama" class="section">
+       <h2>Döküm Gruplaması ve Tutar Sıralama</h2>
+       <div class="info-box">
+           <h3>Döküm Gruplaması ve Tutar Sıralama Seçimleri</h3>
+           <div class="step">
+               <h4>Döküm Gruplaması Nasıl Belirlenir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Nüsha alanının hemen altında yer alır</li>
+                           <li>"Döküm Gruplaması" etiketi sol tarafta, açılır liste kutusu (dropdown) sağ tarafta bulunur</li>
+                           <li>Açılır liste beyaz arka plana sahiptir ve genişliği etiketten daha fazladır</li>
+                       </ul>
+                   </li>
+                   <li><strong>Döküm Gruplaması Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Açılır listeye tıklayın veya TAB tuşuyla buraya odaklanın ve sonra Alt+Aşağı Ok tuşlarına basın</li>
+                           <li>Listeden dökümün nasıl gruplandırılacağını seçin:
+                               <ul>
+                                   <li>"Sicil No + Borç Yılı + Taksit + Gelir Türü" - Varsayılan seçenek, en detaylı gruplama</li>
+                                   <li>"Sicil No + Borç Yılı + Gelir Türü" - Taksit bilgisi olmadan gruplama</li>
+                                   <li>"Sicil No + Gelir Türü" - Sadece sicil ve gelir türüne göre gruplama</li>
+                                   <li>"Sicil No + Borç Yılı + Taksit" - Gelir türü olmadan gruplama</li>
+                               </ul>
+                           </li>
+                           <li>İstediğiniz gruplama seçeneğine tıklayın</li>
+                           <li>Seçiminizi yaptıktan sonra TAB tuşu ile bir sonraki alana (Tutar Sıralama) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Tutar Sıralama Nasıl Belirlenir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Döküm Gruplaması alanının hemen altında yer alır</li>
+                           <li>"Tutar Sıralama" etiketi sol tarafta, açılır liste kutusu (dropdown) sağ tarafta bulunur</li>
+                           <li>Açılır liste beyaz arka plana sahiptir</li>
+                       </ul>
+                   </li>
+                   <li><strong>Tutar Sıralama Seçimi Adımları:</strong>
+                       <ol>
+                           <li>Açılır listeye tıklayın veya TAB tuşuyla buraya odaklanın ve sonra Alt+Aşağı Ok tuşlarına basın</li>
+                           <li>Listeden sıralama seçeneğini belirleyin:
+                               <ul>
+                                   <li>Boş (seçilmemiş) - Varsayılan, tutar sıralaması yapılmaz</li>
+                                   <li>"Azalan" - Büyük tutardan küçük tutara doğru sıralama</li>
+                                   <li>"Artan" - Küçük tutardan büyük tutara doğru sıralama</li>
+                               </ul>
+                           </li>
+                           <li>İstediğiniz sıralama seçeneğine tıklayın</li>
+                           <li>Seçiminizi yaptıktan sonra TAB tuşu ile bir sonraki alana (Son ödeme çağrı süresi) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Son Ödeme Çağrı Süresi Nasıl Girilir:</h4>
+               <ol>
+                   <li><strong>Alan Konumu:</strong>
+                       <ul>
+                           <li>Tutar Sıralama alanının hemen altında yer alır</li>
+                           <li>Tek satırlık bir metin ve bir metin kutusu içerir</li>
+                           <li>"Son ödeme çağrı çekilme süresi" yazısı, metin kutusunun sol tarafında yer alır</li>
+                           <li>Metin kutusu küçüktür (2 karakterlik)</li>
+                           <li>Metin kutusunun sağında "aydan fazla ise ödeme çağrı çıkar." ifadesi vardır</li>
+                       </ul>
+                   </li>
+                   <li><strong>Son Ödeme Çağrı Süresi Girişi Adımları:</strong>
+                       <ol>
+                           <li>Metin kutusuna tıklayın veya TAB tuşuyla buraya odaklanın</li>
+                           <li>Son ödeme çağrısından itibaren geçmesi gereken ay sayısını girin
+                               <ul>
+                                   <li>Örneğin: "3" (3 aydan fazla süre geçmişse ödeme çağrısı çıkarılacak)</li>
+                               </ul>
+                           </li>
+                           <li>Bu alan boş bırakılırsa, sistem varsayılan olarak 0 kabul edecektir (yani ay sınırlaması olmadan)</li>
+                           <li>Bilgiyi girdikten sonra TAB tuşu ile bir sonraki alana (işlem butonları) geçin</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Döküm Gruplaması, çıktıların nasıl organize edileceğini belirler, işlem performansını etkileyebilir</li>
+                   <li>Çok detaylı gruplama, daha fazla sayfa ve daha uzun dökümler oluşturabilir</li>
+                   <li>Tutar Sıralama seçeneği, tahakkukların tutarlarına göre listelenmesini sağlar</li>
+                   <li>Son ödeme çağrı süresi, tekrarlanan çağrıları kontrol etmek için kullanılır</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Sicil temelli raporlama için "Sicil No + Gelir Türü" gruplaması kullanılabilir</li>
+                   <li>Büyük tutarlı tahakkukları önce görmek için "Azalan" tutar sıralaması seçin</li>
+                   <li>Son ödeme çağrı süresini ayarlayarak, belirli bir süre geçmeden tekrar çağrı çıkmasını engelleyebilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="islem-buton" class="section">
+       <h2>İşlem Butonları ve Fonksiyonları</h2>
+       <div class="info-box">
+           <h3>Kayıt/Listele ve Çıkış Butonları</h3>
+           <div class="step">
+               <h4>Kayıt/Listele Butonu Nasıl Kullanılır:</h4>
+               <ol>
+                   <li><strong>Buton Konumu:</strong>
+                       <ul>
+                           <li>Formun en alt kısmında, orta bölümde, sol tarafta yer alır</li>
+                           <li>Üzerinde bir onay (OK) simgesi ve "Kayıt/Listele" yazısı bulunur</li>
+                           <li>Gri arka plan üzerinde 3D görünümlü bir butondur</li>
+                       </ul>
+                   </li>
+                   <li><strong>Kayıt/Listele İşlemi Adımları:</strong>
+                       <ol>
+                           <li>Tüm gerekli alanları doldurun ve seçimleri yapın:
+                               <ul>
+                                   <li>İşlem Tarihi ve Tebliğ Tarihi (zorunlu)</li>
+                                   <li>Modül ve Tahakkuk Türü seçimleri</li>
+                                   <li>Diğer filtreleme ve düzenleme seçenekleri</li>
+                               </ul>
+                           </li>
+                           <li>Tüm girdileri kontrol edin</li>
+                           <li>Kayıt/Listele butonuna tıklayın</li>
+                           <li>Sistem kayıt işlemini başlatacak ve tamamlandığında bir pencere açılacaktır</li>
+                           <li>Açılan pencerede "Döküm almak istiyor musunuz?" sorusuna "Evet" cevabını verirseniz, ödemeye çağrı dökümleri listelenir</li>
+                           <li>Pencere şu bilgileri içerir:
+                               <ul>
+                                   <li>Hazırlanan Belge Sayısı: Toplam hazırlanan belge sayısı</li>
+                                   <li>UETS Adresi Dolu Olan Sicil Sayısı: UETS (Ulusal Elektronik Tebligat Sistemi) adresi olan sicillerin sayısı</li>
+                               </ul>
+                           </li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Çıkış Butonu Nasıl Kullanılır:</h4>
+               <ol>
+                   <li><strong>Buton Konumu:</strong>
+                       <ul>
+                           <li>Formun en alt kısmında, orta bölümde, Kayıt/Listele butonunun sağında yer alır</li>
+                           <li>Üzerinde bir çıkış simgesi ve "Çıkış" yazısı bulunur</li>
+                           <li>Gri arka plan üzerinde 3D görünümlü bir butondur</li>
+                       </ul>
+                   </li>
+                   <li><strong>Çıkış İşlemi Adımları:</strong>
+                       <ol>
+                           <li>İşlemlerinizi tamamladıktan sonra veya programdan çıkmak istediğinizde Çıkış butonuna tıklayın</li>
+                           <li>Herhangi bir onay penceresi açılmadan program penceresi kapanacaktır</li>
+                           <li>Eğer herhangi bir işlem yapılmamışsa, tüm veri girişleri kaydedilmeden program kapanır</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Kayıt/Listele butonuna tıklamadan önce, İşlem Tarihi ve Tebliğ Tarihi alanlarının doldurulduğundan emin olun</li>
+                   <li>Eğer PTT Gideri tahakkuk etme seçeneğini işaretlediyseniz, PTT Gideri tutarını girmeyi unutmayın</li>
+                   <li>Sistem işlem sırasında uyarı mesajları gösterebilir, bu mesajları dikkatle okuyun</li>
+                   <li>Aynı gün içinde aynı sicil numaraları için tekrar çağrı dökümü alınamaz, sistem uyarı verecektir</li>
+               </ul>
+           </div>
+       
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Kayıt/Listele butonuna tıkladıktan sonra, işlem tamamlanana kadar bekleyin</li>
+                   <li>Döküm almadan önce, filtre ayarlarınızı kontrol edin</li>
+                   <li>Herhangi bir sorunla karşılaşırsanız, açılan uyarı mesajlarındaki yönlendirmeleri takip edin</li>
+                   <li>Çıkış butonunu kullanmadan önce, işlemlerinizin tamamlandığından emin olun</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="ipuclari" class="section">
+       <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+       <div class="info-box">
+           <h3>Verimli Çalışma İçin İpuçları</h3>
+           <div class="step">
+               <h4>Hızlı Tuş Kombinasyonları:</h4>
+               <ul>
+                   <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                   <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                   <li><strong>ENTER:</strong> Bazı alanlarda TAB gibi davranır, sonraki alana geçer</li>
+                   <li><strong>Ctrl + Tıklama:</strong> Çoklu seçim listelerinde birden fazla öğe seçmek için</li>
+                   <li><strong>Shift + Tıklama:</strong> Çoklu seçim listelerinde ardışık öğeleri seçmek için</li>
+               </ul>
+           </div>
+       
+           <div class="step">
+               <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+               <ol>
+                   <li><strong>"İşlem tarihi girilmemiş" Uyarısı:</strong>
+                       <ul>
+                           <li><strong>Sorun:</strong> Kayıt/Listele butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                           <li><strong>Çözüm:</strong> İşlem Tarihi alanını GG/AA/YYYY formatında doldurduğunuzdan emin olun.</li>
+                       </ul>
+                   </li>
+                   <li><strong>"Tebliğ tarihi girilmemiş" Uyarısı:</strong>
+                       <ul>
+                           <li><strong>Sorun:</strong> Kayıt/Listele butonuna tıkladığınızda bu uyarıyı alıyorsunuz.</li>
+                           <li><strong>Çözüm:</strong> Tebliğ Tarihi alanını GG/AA/YYYY formatında doldurduğunuzdan emin olun.</li>
+                       </ul>
+                   </li>
+                   <li><strong>"PTT Gideri girmelisiniz" Uyarısı:</strong>
+                       <ul>
+                           <li><strong>Sorun:</strong> "PTT Gideri tahakkuk et" seçeneğini işaretlemiş fakat PTT Gideri tutarı girmemişsiniz.</li>
+                           <li><strong>Çözüm:</strong> PTT Gideri alanına geçerli bir tutar girin veya "PTT Gideri tahakkuk et" seçeneğinin işaretini kaldırın.</li>
+                       </ul>
+                   </li>
+                   <li><strong>"Aynı gün içinde aynı sicillerde ödemeye çağrı dökümü alınmıştır" Uyarısı:</strong>
+                       <ul>
+                           <li><strong>Sorun:</strong> Belirtilen sicil numaraları için aynı gün içinde zaten çağrı dökümü alınmış.</li>
+                           <li><strong>Çözüm:</strong> Farklı sicil numaraları seçin veya işlemi bir sonraki gün yapın.</li>
+                       </ul>
+                   </li>
+                   <li><strong>E-Ptt Modülü Parametrelerinde Tebliğ Tarihi Uyarısı:</strong>
+                       <ul>
+                           <li><strong>Sorun:</strong> "E-Ptt modülü parametrelerde tebliğ tarihi atanmasın seçildiği için tebliğ tarihi boş kaydedilecektir" uyarısı.</li>
+                           <li><strong>Çözüm:</strong> Bu bilgilendirme mesajıdır. Tamam butonuna tıklayarak devam edin.</li>
+                       </ul>
+                   </li>
+               </ol>
+           </div>
+       
+           <div class="step">
+               <h4>Verimli Çalışma Önerileri:</h4>
+               <ul>
+                   <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                   <li>Gereksiz yere çok detaylı gruplamalardan kaçının, bu işlemin yavaşlamasına neden olabilir</li>
+                   <li>Sık kullandığınız yetkili kişi bilgilerini bir not kağıdına yazın</li>
+                   <li>Çok sayıda mükellef için işlem yapıyorsanız, işlemi küçük gruplara bölerek yapın</li>
+                   <li>Döküm almadan önce sistem saati ve tarihinin doğru olduğundan emin olun</li>
+                   <li>İşlem sonucunda gösterilen belge sayılarını kontrol ederek, beklediğiniz sayıda kayıt işlendiğinden emin olun</li>
+               </ul>
+           </div>
+       
+           <div class="warning-box">
+               <h4>Son Uyarılar:</h4>
+               <ul>
+                   <li>Ödemeye çağrı işlemi yasal bir işlemdir, tüm bilgilerin doğru ve eksiksiz olduğundan emin olun</li>
+                   <li>Yoğun kullanım saatlerinde çok büyük listeleme işlemlerinden kaçının</li>
+                   <li>İşlem sırasında program penceresini kapatmayın veya başka işlemlere geçmeyin</li>
+                   <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   
+   <div class="section">
+       <h2>Özet ve Sonuç</h2>
+       <div class="info-box">
+           <p>Ödemeye Çağrı - Kayıt/Döküm modülü, belediye tahakkuklarının ödenmesi için mükelleflere yasal tebliğ oluşturmanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+           <ul>
+               <li>İşlem ve tebliğ tarihlerinin girişi</li>
+               <li>Borç yılı, sicil no, tahakkuk tarihi ve tutarı gibi filtreleme kriterleri</li>
+               <li>Modül ve tahakkuk türü seçimleri</li>
+               <li>Çağrı durum seçenekleri</li>
+               <li>Yetkili kişi bilgilerinin girişi</li>
+               <li>PTT gideri ve ek seçenekler</li>
+               <li>Tahsilat kilidi seçimleri ve nüsha sayısı belirleme</li>
+               <li>Döküm gruplaması ve tutar sıralama seçenekleri</li>
+               <li>İşlem butonlarının kullanımı</li>
+           </ul>
+           
+           <p>Bu modülü kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorunun çözülmemesi durumunda, sistem yöneticinize veya destek ekibine başvurun.</p>
+       </div>
+   </div>
+</body>
+</html>
+                           

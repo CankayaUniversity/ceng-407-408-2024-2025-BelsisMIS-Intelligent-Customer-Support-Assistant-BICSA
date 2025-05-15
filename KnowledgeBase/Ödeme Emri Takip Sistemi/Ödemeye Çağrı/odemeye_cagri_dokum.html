@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödemeye Çağrı Döküm Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ödemeye Çağrı Döküm Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#temel-bilgiler">Temel Bilgi Girişleri</a></li>
+                <li><a href="#tahakkuk-toplami">Tahakkuk Toplamı Girişi</a></li>
+                <li><a href="#yetkili-kisi-bilgileri">Yetkili Kişi Bilgileri</a></li>
+                <li><a href="#dokum-gruplama">Döküm Gruplama Seçenekleri</a></li>
+                <li><a href="#tutar-siralama">Tutar Sıralama İşlemleri</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#ipuclari">Pratik İpuçları ve Sık Karşılaşılan Sorunlar</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>Ödemeye Çağrı Döküm programı, tahsilat takip sisteminde ödeme çağrılarına ait dökümleri almak için kullanılan bir araçtır. Bu program ile:</p>
+            <ul>
+                <li>Belirli ödeme çağrı numarası aralığına göre döküm alabilirsiniz</li>
+                <li>GTT (Genel Tahsilat Takip) sicil numarası aralığına göre filtreleme yapabilirsiniz</li>
+                <li>İşlem ve tebliğ tarihlerine göre döküm alabilirsiniz</li>
+                <li>Tahakkuk toplamı değer aralıklarına göre filtreleme yapabilirsiniz</li>
+                <li>Yetkili kişi bilgilerini (Şef, Müdür) belirleyebilirsiniz</li>
+                <li>Farklı gruplama seçenekleri ile raporlama yapabilirsiniz</li>
+                <li>Tutar sıralama seçeneği ile artan veya azalan şekilde sonuçları düzenleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu programı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Hangi ödeme çağrı numaralarına ait döküm almak istediğiniz</li>
+                    <li>Hangi sicil numarası aralığını filtrelemek istediğiniz</li>
+                    <li>Hangi tarih aralığına ait işlemleri görüntülemek istediğiniz</li>
+                    <li>Hangi tahakkuk tutarı aralığını görmek istediğiniz</li>
+                    <li>Nasıl bir gruplama ve sıralama tercih ettiğiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üstünde turkuaz (açık mavi-yeşil) renkli bir şeritte "Ödemeye Çağrı - Döküm" başlığı yer alır</li>
+                            <li>Başlık beyaz renkli, kalın yazı tipiyle ortalanmış olarak görünür</li>
+                            <li>Başlık çubuğu formun genişliğini kaplar ve dikdörtgen bir görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Giriş Bölümü:</strong>
+                        <ul>
+                            <li>Başlığın hemen altından başlayarak formun orta bölümünü kaplayan ana veri giriş alanı bulunur</li>
+                            <li>Bu bölümde sırasıyla şu alanlar yer alır:
+                                <ul>
+                                    <li>Ödemeye Çağrı No (başlangıç-bitiş)</li>
+                                    <li>GTT Sicil No (başlangıç-bitiş)</li>
+                                    <li>İşlem Tarihi (başlangıç-bitiş)</li>
+                                    <li>Tebliğ Tarihi (başlangıç-bitiş)</li>
+                                    <li>Tahakkuk Toplamı (başlangıç-bitiş)</li>
+                                    <li>Şef bilgisi</li>
+                                    <li>Müdür bilgisi</li>
+                                    <li>Başvuru süresi</li>
+                                    <li>Döküm Gruplaması (açılır liste/dropdown)</li>
+                                    <li>Tutar Sıralama (açılır liste/dropdown)</li>
+                                </ul>
+                            </li>
+                            <li>Her alan satır şeklinde düzenlenmiştir; sol kısımda etiket, sağ kısımda ise veri giriş kutuları yer alır</li>
+                        </ul>
+                    </li>
+                    <li><strong>İşlem Butonları Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en alt kısmında, veri giriş alanlarının altında yer alır</li>
+                            <li>Bu bölümde "Listele" ve "Çıkış" butonları yan yana dizilmiştir</li>
+                            <li>Butonlar gri tonlu, üç boyutlu görünüme sahiptir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Program açıldığında:</p>
+                <ul>
+                    <li>İmleç ilk olarak "Ödemeye Çağrı No" alanındaki ilk metin kutusuna konumlanır</li>
+                    <li>Başlangıç alanlarından birine değer girildiğinde, genellikle aynı değer bitiş alanına otomatik olarak kopyalanır</li>
+                    <li>Tahakkuk Toplamı için varsayılan değerler otomatik olarak doldurulur (0,01 - 999.999.999)</li>
+                    <li>Enter tuşu, Tab tuşu gibi davranır ve bir sonraki alana geçiş yapar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="temel-bilgiler" class="section">
+        <h2>Temel Bilgi Girişleri</h2>
+        <div class="info-box">
+            <h3>Ödeme Çağrı No, GTT Sicil No ve Tarih Bilgileri</h3>
+            <div class="step">
+                <h4>Ödemeye Çağrı No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başlık çubuğunun hemen altında, formun ilk satırında yer alır</li>
+                            <li>"Ödemeye Çağrı No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç değeri, sağ metin kutusu bitiş değeri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç ödeme çağrı numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuk otomatik olarak sol kutucuğa girilen değeri alır, ancak isterseniz farklı bir değer girebilirsiniz
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (GTT Sicil No) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>GTT Sicil No Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Ödemeye Çağrı No satırının hemen altında, formun ikinci satırında yer alır</li>
+                            <li>"GTT Sicil No" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç değeri, sağ metin kutusu bitiş değeri içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç GTT sicil numarasını girin
+                                <ul>
+                                    <li>Bu alan sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuk otomatik olarak sol kutucuğa girilen değeri alır, ancak isterseniz farklı bir değer girebilirsiniz
+                                <ul>
+                                    <li>Bu alan da sadece rakam kabul eder</li>
+                                    <li>Maksimum 8 haneli bir sayı girebilirsiniz</li>
+                                    <li>Başlangıç numarasından büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (İşlem Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>İşlem Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>GTT Sicil No satırının hemen altında, formun üçüncü satırında yer alır</li>
+                            <li>"İşlem Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç tarihi, sağ metin kutusu bitiş tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç işlem tarihini girin
+                                <ul>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuk otomatik olarak sol kutucuğa girilen tarihi alır, ancak isterseniz farklı bir tarih girebilirsiniz
+                                <ul>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Tebliğ Tarihi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Tebliğ Tarihi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>İşlem Tarihi satırının hemen altında, formun dördüncü satırında yer alır</li>
+                            <li>"Tebliğ Tarihi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu başlangıç tebliğ tarihi, sağ metin kutusu bitiş tebliğ tarihi içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucuğa başlangıç tebliğ tarihini girin
+                                <ul>
+                                    <li>Tarih formatı GG.AA.YYYY şeklinde olmalıdır (örn. 01.05.2023)</li>
+                                    <li>Tarih girerken nokta (.) işaretini kullanmayı unutmayın</li>
+                                    <li>Maksimum 10 karakter (GG.AA.YYYY formatında) girebilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucuk otomatik olarak sol kutucuğa girilen tarihi alır, ancak isterseniz farklı bir tarih girebilirsiniz
+                                <ul>
+                                    <li>Aynı formatta (GG.AA.YYYY) tarih girin</li>
+                                    <li>Başlangıç tarihinden sonraki veya aynı tarih olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Tahakkuk Toplamı) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tüm alanlar isteğe bağlıdır, filtreleme yapmak istediğiniz alanları doldurabilirsiniz</li>
+                    <li>Tarih girişlerinde GG.AA.YYYY formatını kullanın (örn. 15.04.2023)</li>
+                    <li>Gün ve ay için tek haneli değerlerde başa sıfır eklemeyi unutmayın (örn. 01.05.2023)</li>
+                    <li>Başlangıç değeri, bitiş değerinden daha büyük olmamalıdır</li>
+                    <li>Alanları boş bırakırsanız, sistem o alanda herhangi bir filtreleme yapmadan sonuç getirecektir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Tek bir kaydı aramak istiyorsanız, hem başlangıç hem de bitiş alanlarına aynı değeri girin</li>
+                    <li>Sol kutucuğa değer girdikten sonra diğer alana geçmeden önce enter tuşuna basarsanız, aynı değer sağ kutucuğa otomatik olarak kopyalanır</li>
+                    <li>Tarihleri manuel girmek yerine takvim kontrolleri için sistem yöneticinize danışabilirsiniz</li>
+                    <li>Geniş aralıklar belirlemek yerine, daha spesifik aralıklarla filtreleme yapmak daha hızlı sonuç almanızı sağlar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tahakkuk-toplami" class="section">
+        <h2>Tahakkuk Toplamı Girişi</h2>
+        <div class="info-box">
+            <h3>Tahakkuk Toplamı Aralığı Nasıl Belirlenir</h3>
+            <div class="step">
+                <h4>Tahakkuk Toplamı Girişi Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tebliğ Tarihi satırının hemen altında, formun beşinci satırında yer alır</li>
+                            <li>"Tahakkuk Toplamı" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında yan yana iki metin kutusu vardır</li>
+                            <li>Sol metin kutusu minimum tutar, sağ metin kutusu maksimum tutar içindir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Sol kutucukta varsayılan olarak "0,01" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir minimum değer girebilirsiniz</li>
+                                    <li>Bu alan para birimi formatında olmalıdır (örn. 10,50 veya 1.250,75)</li>
+                                    <li>Maksimum 13 haneli bir tutar girebilirsiniz</li>
+                                    <li>Ondalık ayracı olarak virgül (,) kullanılır</li>
+                                    <li>Binlik ayracı olarak nokta (.) kullanılır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak veya fare ile tıklayarak sağ kutucuğa geçin</li>
+                            <li>Sağ kutucukta varsayılan olarak "999.999.999" değeri bulunur
+                                <ul>
+                                    <li>Bu değeri olduğu gibi bırakabilir veya başka bir maksimum değer girebilirsiniz</li>
+                                    <li>Bu alan da para birimi formatında olmalıdır</li>
+                                    <li>Minimum tutardan büyük veya eşit bir değer olmalıdır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Şef) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Para birimi formatını doğru kullanın: Binlik ayracı için nokta (.), ondalık ayracı için virgül (,)</li>
+                    <li>Minimum değer, maksimum değerden büyük olmamalıdır</li>
+                    <li>Varsayılan değerler (0,01 - 999.999.999) çoğu durumda yeterlidir, özel bir filtreleme yapmıyorsanız değiştirmenize gerek yoktur</li>
+                    <li>Bu alanla filtreleme yapmak, özellikle belirli bir tutar aralığındaki ödeme çağrılarını görmek istediğinizde faydalıdır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir tutarı araştırmak istiyorsanız, hem minimum hem de maksimum değer kutucuklarına aynı tutarı girin</li>
+                    <li>Yüksek miktarlı tahakkukları görmek için minimum değeri yüksek tutabilirsiniz (örn. 10.000,00)</li>
+                    <li>Düşük miktarlı tahakkukları görmek için maksimum değeri düşük tutabilirsiniz (örn. 100,00)</li>
+                    <li>Binlik ayracı girmeden de değer girebilirsiniz, sistem otomatik olarak formatı düzenleyecektir</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yetkili-kisi-bilgileri" class="section">
+        <h2>Yetkili Kişi Bilgileri</h2>
+        <div class="info-box">
+            <h3>Şef, Müdür ve Başvuru Süresi Bilgileri</h3>
+            <div class="step">
+                <h4>Şef Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Tahakkuk Toplamı satırının hemen altında, formun altıncı satırında yer alır</li>
+                            <li>"Şef" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında tek bir metin kutusu vardır</li>
+                            <li>Bu metin kutusu, etiketin yanında ve diğer satırlardaki çift kutucuklara kıyasla daha geniştir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Kutucuğa şef bilgisini (ad-soyad veya ünvan) girin
+                                <ul>
+                                    <li>Maksimum 30 karakter girebilirsiniz</li>
+                                    <li>Bu alan genellikle sistem tarafından önceden doldurulmuş olarak gelir</li>
+                                    <li>Mevcut bilgiyi değiştirebilir veya olduğu gibi bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Müdür) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Müdür Bilgisi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Şef bilgisi satırının hemen altında, formun yedinci satırında yer alır</li>
+                            <li>"Müdür" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında tek bir metin kutusu vardır</li>
+                            <li>Bu metin kutusu, etiketin yanında ve Şef bilgisi metin kutusuyla aynı genişliktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Kutucuğa müdür bilgisini (ad-soyad veya ünvan) girin
+                                <ul>
+                                    <li>Maksimum 30 karakter girebilirsiniz</li>
+                                    <li>Bu alan genellikle sistem tarafından önceden doldurulmuş olarak gelir</li>
+                                    <li>Mevcut bilgiyi değiştirebilir veya olduğu gibi bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Başvuru süresi) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Başvuru Süresi Girişi:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Müdür bilgisi satırının hemen altında, formun sekizinci satırında yer alır</li>
+                            <li>"Başvuru süresi" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında tek bir metin kutusu vardır</li>
+                            <li>Bu metin kutusu, etiketin yanında ve önceki iki metin kutusuyla aynı genişliktedir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Veri Girişi Adımları:</strong>
+                        <ol>
+                            <li>Kutucuğa başvuru süresi bilgisini girin
+                                <ul>
+                                    <li>Maksimum 35 karakter girebilirsiniz</li>
+                                    <li>Bu alan genellikle sistem tarafından önceden doldurulmuş olarak gelir (örn. "Tebliğ tarihinden itibaren 7 gün içinde")</li>
+                                    <li>Mevcut bilgiyi değiştirebilir veya olduğu gibi bırakabilirsiniz</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Döküm Gruplaması) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Bu alanlar genellikle sistemin veritabanında kayıtlı olan değerlerle otomatik olarak doldurulur</li>
+                    <li>Bu bilgiler, döküm çıktısında yetkili kişi bilgileri olarak görüntülenecektir</li>
+                    <li>Bilgileri değiştirmeden önce kurum içi hiyerarşi ve yetkili kişileri kontrol edin</li>
+                    <li>Başvuru süresi bilgisi, yasal süreleri belirttiği için dikkatle girilmelidir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Bu alanları değiştirmek istediğinizde, mevcut bilgileri tamamen silmek yerine, üzerlerinde düzenleme yapabilirsiniz</li>
+                    <li>Yeni atanan yetkililerin bilgilerini güncellemek için bu alanları kullanabilirsiniz</li>
+                    <li>Başvuru süresi için standart ifadeler kullanmaya özen gösterin</li>
+                    <li>Yazdırılmış dökümler üzerindeki yetkili bilgileriyle sistemdeki bilgilerin tutarlı olmasına dikkat edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="dokum-gruplama" class="section">
+        <h2>Döküm Gruplama Seçenekleri</h2>
+        <div class="info-box">
+            <h3>Döküm Gruplaması Nasıl Yapılır</h3>
+            <div class="step">
+                <h4>Döküm Gruplaması Seçim Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Başvuru süresi satırının hemen altında, formun dokuzuncu satırında yer alır</li>
+                            <li>"Döküm Gruplaması" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Açılır liste, önceki metin kutularından daha geniştir ve sağ tarafa doğru uzanır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gruplama Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayarak seçenekleri görüntüleyin</li>
+                            <li>Liste şu seçenekleri içerir (belediye koduna göre farklılık gösterebilir):
+                                <ul>
+                                    <li>Sicil No + Borç Yılı + Taksit + Gelir Türü</li>
+                                    <li>Sicil No + Borç Yılı + Gelir Türü</li>
+                                    <li>Sicil No + Gelir Türü</li>
+                                    <li>Sicil No + Borç Yılı + Taksit</li>
+                                    <li>Köy Bazında (bazı belediyeler için)</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz gruplama seçeneğine tıklayarak seçin</li>
+                            <li>Varsayılan olarak ilk seçenek (Sicil No + Borç Yılı + Taksit + Gelir Türü) seçilidir</li>
+                            <li>TAB tuşuna basarak bir sonraki alana (Tutar Sıralama) geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Gruplama Seçeneklerinin Anlamları:</h4>
+                <ol>
+                    <li><strong>Sicil No + Borç Yılı + Taksit + Gelir Türü:</strong>
+                        <ul>
+                            <li>En detaylı gruplama seçeneğidir</li>
+                            <li>Sonuçlar önce sicil numarasına göre, sonra borç yılına, sonra taksit numarasına ve en son olarak gelir türüne göre gruplandırılır</li>
+                            <li>Her gelir türü için ayrı satırda gösterim sağlar</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No + Borç Yılı + Gelir Türü:</strong>
+                        <ul>
+                            <li>Taksit detayı olmadan gruplama yapar</li>
+                            <li>Sonuçlar sicil numarası, borç yılı ve gelir türüne göre gruplandırılır</li>
+                            <li>Aynı gelir türüne ait farklı taksitler tek satırda birleştirilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No + Gelir Türü:</strong>
+                        <ul>
+                            <li>Borç yılı ayrımı olmadan gruplama yapar</li>
+                            <li>Sonuçlar sadece sicil numarası ve gelir türüne göre gruplandırılır</li>
+                            <li>Aynı gelir türüne ait farklı yıllardaki borçlar tek satırda birleştirilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sicil No + Borç Yılı + Taksit:</strong>
+                        <ul>
+                            <li>Gelir türü ayrımı olmadan gruplama yapar</li>
+                            <li>Sonuçlar sicil numarası, borç yılı ve taksite göre gruplandırılır</li>
+                            <li>Aynı taksite ait farklı gelir türleri tek satırda birleştirilir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Köy Bazında (bazı belediyeler için):</strong>
+                        <ul>
+                            <li>Köy ID'sine göre gruplama yapar</li>
+                            <li>Kırsal alanlar için kullanılan özel bir gruplama seçeneğidir</li>
+                            <li>Sonuçlar önce köy bilgisine, sonra diğer kriterlere göre gruplandırılır</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Gruplama seçeneği, sonuçların nasıl düzenleneceğini ve hangi detay seviyesinde gösterileceğini belirler</li>
+                    <li>Farklı belediyeler için farklı gruplama seçenekleri sunulabilir</li>
+                    <li>Gruplama seçeneğiniz, raporun okunabilirliği ve anlaşılabilirliği açısından önemlidir</li>
+                    <li>Çok detaylı gruplama seçenekleri, çok sayıda kayıt içeren sonuçlarda sayfaların artmasına neden olabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İhtiyacınıza en uygun gruplama seçeneğini belirleyin:
+                        <ul>
+                            <li>Detaylı analiz için: "Sicil No + Borç Yılı + Taksit + Gelir Türü"</li>
+                            <li>Yıllık özet için: "Sicil No + Borç Yılı + Gelir Türü"</li>
+                            <li>Gelir türü bazlı genel bakış için: "Sicil No + Gelir Türü"</li>
+                            <li>Taksit bazlı genel bakış için: "Sicil No + Borç Yılı + Taksit"</li>
+                        </ul>
+                    </li>
+                    <li>Çok fazla veriyle çalışıyorsanız, daha az detaylı gruplama seçenekleri daha hızlı sonuç almanızı sağlayabilir</li>
+                    <li>Gruplama seçenekleri arasında farklılıkları anlamak için her biriyle test dökümler alıp karşılaştırabilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="tutar-siralama" class="section">
+        <h2>Tutar Sıralama İşlemleri</h2>
+        <div class="info-box">
+            <h3>Tutar Sıralama Seçenekleri Nasıl Kullanılır</h3>
+            <div class="step">
+                <h4>Tutar Sıralama Seçim Adımları:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Döküm Gruplaması satırının hemen altında, formun onuncu satırında yer alır</li>
+                            <li>"Tutar Sıralama" etiketi sol tarafta bulunur</li>
+                            <li>Etiketin sağında bir açılır liste (dropdown) kutusu yer alır</li>
+                            <li>Bu açılır liste, Döküm Gruplaması açılır listesinden daha dardır</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sıralama Seçimi Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayarak seçenekleri görüntüleyin</li>
+                            <li>Liste şu üç seçeneği içerir:
+                                <ul>
+                                    <li>[Boş] (varsayılan - sıralama yok)</li>
+                                    <li>Azalan</li>
+                                    <li>Artan</li>
+                                </ul>
+                            </li>
+                            <li>İstediğiniz sıralama seçeneğine tıklayarak seçin:
+                                <ul>
+                                    <li><strong>Boş seçenek (varsayılan):</strong> Tutara göre herhangi bir sıralama yapılmaz, sonuçlar diğer kriterlere göre sıralanır</li>
+                                    <li><strong>Azalan:</strong> Sonuçlar tutarı büyükten küçüğe doğru sıralanır</li>
+                                    <li><strong>Artan:</strong> Sonuçlar tutarı küçükten büyüğe doğru sıralanır</li>
+                                </ul>
+                            </li>
+                            <li>TAB tuşuna basarak işlem butonları bölümüne geçebilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Tutar sıralama seçeneği, döküm sonuçlarının tahakkuk tutarına göre nasıl sıralanacağını belirler</li>
+                    <li>Varsayılan olarak herhangi bir tutar sıralaması yapılmaz (boş seçenek)</li>
+                    <li>Tutar sıralama seçeneği, gruplama seçenekleriyle birlikte çalışır</li>
+                    <li>Çok fazla kayıt içeren sonuçlarda, sıralama işlemi gecikmeye neden olabilir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>En yüksek tutarlı tahakkukları görmek için "Azalan" seçeneğini kullanın</li>
+                    <li>En düşük tutarlı tahakkukları görmek için "Artan" seçeneğini kullanın</li>
+                    <li>Sicil numarası veya tarih odaklı sıralama istiyorsanız, bu alanı boş bırakın</li>
+                    <li>Büyük tutarlı ödemeleri önceliklendirmek için "Azalan" seçeneği faydalı olabilir</li>
+                    <li>Küçük tutarlardan başlayarak işlem yapmak istiyorsanız "Artan" seçeneğini tercih edin</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="islem-butonlari" class="section">
+        <h2>İşlem Butonları Kullanımı</h2>
+        <div class="info-box">
+            <h3>Listele ve Çıkış Butonları</h3>
+            <div class="step">
+                <h4>Listele Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Formun en alt kısmında, orta bölümde yer alır</li>
+                            <li>"Listele" yazısı ve yanında küçük bir liste simgesi bulunur</li>
+                            <li>Çıkış butonunun solunda konumlanmıştır</li>
+                            <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Listeleme İşlemi Adımları:</strong>
+                        <ol>
+                            <li>İlgili filtreleme ve görüntüleme kriterlerini girin:
+                                <ul>
+                                    <li>Ödemeye Çağrı No aralığı (isteğe bağlı)</li>
+                                    <li>GTT Sicil No aralığı (isteğe bağlı)</li>
+                                    <li>İşlem Tarihi aralığı (isteğe bağlı)</li>
+                                    <li>Tebliğ Tarihi aralığı (isteğe bağlı)</li>
+                                    <li>Tahakkuk Toplamı aralığı (varsayılan değerler mevcuttur)</li>
+                                    <li>Şef, Müdür ve Başvuru süresi bilgileri (genellikle önceden doldurulmuştur)</li>
+                                    <li>Döküm Gruplaması seçeneği</li>
+                                    <li>Tutar Sıralama seçeneği (isteğe bağlı)</li>
+                                </ul>
+                            </li>
+                            <li>Tüm seçimlerinizi kontrol edin</li>
+                            <li>Listele butonuna tıklayın</li>
+                            <li>Sistem girdiğiniz kriterlere göre ödemeye çağrı dökümünü yeni bir pencerede gösterecektir</li>
+                            <li>Açılan pencerede sonuçlar, seçtiğiniz gruplama kriterine göre düzenlenmiş tablo formatında görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Çıkış Butonu Kullanımı:</h4>
+                <ol>
+                    <li><strong>Buton Konumu:</strong>
+                        <ul>
+                            <li>Formun en alt kısmında, orta bölümde yer alır</li>
+                            <li>"Çıkış" yazısı ve yanında küçük bir kapı/çıkış simgesi bulunur</li>
+                            <li>Listele butonunun sağında konumlanmıştır</li>
+                            <li>Gri tonlu, üç boyutlu görünümlü bir butondur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programdan Çıkış Adımları:</strong>
+                        <ol>
+                            <li>İşlemlerinizi tamamlayın</li>
+                            <li>Çıkış butonuna tıklayın</li>
+                            <li>Program penceresi kapanacak ve ana menüye döneceksiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Listele butonuna tıklamadan önce, kriterleri ve gruplama seçeneklerini kontrol edin</li>
+                    <li>Çok geniş aralıklar belirlemek, sistemin yavaş çalışmasına veya çok fazla veri göstermesine neden olabilir</li>
+                    <li>Döküm sonuçlarının gösterildiği yeni pencere tam ekran olarak açılabilir</li>
+                    <li>Çok sayıda kayıt içeren sonuçlarda, döküm penceresinin altında sayfa gezinti düğmeleri görüntülenecektir</li>
+                </ul>
+            </div>
+        
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Sonuçlar çok geniş bir aralık için çok fazla kayıt içeriyorsa, filtreleme kriterlerinizi daraltın</li>
+                    <li>Döküm sonuçlarını yazdırmak için, açılan pencerede tarayıcınızın yazdırma özelliğini kullanabilirsiniz</li>
+                    <li>Döküm penceresi açıkken, ana pencereye dönmek için döküm penceresini kapatmanız yeterlidir</li>
+                    <li>Ana pencereyi kapatmak için mutlaka Çıkış butonunu kullanın, pencere köşesindeki X'e tıklamak önerilmez</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="ipuclari" class="section">
+        <h2>Pratik İpuçları ve Sık Karşılaşılan Sorunlar</h2>
+        <div class="info-box">
+            <h3>Verimli Çalışma İçin İpuçları</h3>
+            <div class="step">
+                <h4>Hızlı Tuş Kombinasyonları:</h4>
+                <ul>
+                    <li><strong>TAB:</strong> Bir sonraki alana geçmek için</li>
+                    <li><strong>SHIFT + TAB:</strong> Bir önceki alana geçmek için</li>
+                    <li><strong>ENTER:</strong> TAB gibi davranır, sonraki alana geçer</li>
+                    <li><strong>ESC:</strong> Programdan çıkmak için (Çıkış butonu ile aynı işlevi görür)</li>
+                </ul>
+            </div>
+        
+            <div class="step">
+                <h4>Sık Karşılaşılan Sorunlar ve Çözümleri:</h4>
+                <ol>
+                    <li><strong>"Sonuç Bulunamadı" Mesajı:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda sonuç görüntülenmiyor veya boş bir liste gösteriliyor.</li>
+                            <li>Çözüm: Filtreleme kriterlerinizi genişletin veya farklı kriterler deneyin. Tarih formatının doğru olduğundan emin olun (GG.AA.YYYY). Tahakkuk Toplamı aralığını kontrol edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarih Formatı Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Tarihleri girdikten sonra sistem kabul etmiyor veya hatalı sonuçlar gösteriyor.</li>
+                            <li>Çözüm: Tarihleri GG.AA.YYYY formatında girdiğinizden emin olun (örn. 01.05.2023). Nokta (.) işaretini kullanmayı unutmayın ve tek haneli gün/ay değerlerinde başa sıfır eklemeyi ihmal etmeyin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Para Birimi Formatı Hatası:</strong>
+                        <ul>
+                            <li>Sorun: Tahakkuk Toplamı alanına girdiğiniz değerler sistem tarafından doğru algılanmıyor.</li>
+                            <li>Çözüm: Para birimi formatını doğru kullanın: Binlik ayracı için nokta (.), ondalık ayracı için virgül (,) kullanın. Örneğin: 1.250,75</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yükleme Süresi Çok Uzun:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladıktan sonra sonuçların yüklenmesi çok uzun sürüyor.</li>
+                            <li>Çözüm: Daha dar bir filtreleme aralığı belirleyin. Özellikle tarih aralıklarını ve tahakkuk toplamı aralığını daraltın. Çok detaylı gruplama seçenekleri yerine daha genel gruplama seçeneklerini tercih edin.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Döküm Penceresi Açılmıyor:</strong>
+                        <ul>
+                            <li>Sorun: Listele butonuna tıkladığınızda döküm penceresi açılmıyor.</li>
+                            <li>Çözüm: Tarayıcınızın açılır pencere engelleme ayarlarını kontrol edin. Programın tarayıcınızda açılır pencerelere izin vermesini sağlayın.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        
+            <div class="step">
+                <h4>Verimli Çalışma Önerileri:</h4>
+                <ul>
+                    <li>İşlem yapmadan önce filtreleme kriterlerinizi dikkatli bir şekilde belirleyin</li>
+                    <li>Çok geniş tarih aralıkları yerine, daha dar ve spesifik tarih aralıkları kullanın</li>
+                    <li>Tahakkuk toplamı filtrelemesini etkin kullanarak, özellikle belirli tutar aralığındaki ödemeleri görebilirsiniz</li>
+                    <li>İhtiyacınıza uygun gruplama seçeneğini belirleyin ve uygun tutar sıralaması seçin</li>
+                    <li>Sonuçları daha hızlı görüntülemek için kriterleri daraltın ve daha az detaylı gruplama seçeneklerini tercih edin</li>
+                    <li>Yazdırma işleminden önce sonuçları ekranda kontrol edin ve gerekirse filtreleme kriterlerini ayarlayın</li>
+                </ul>
+            </div>
+        
+            <div class="warning-box">
+                <h4>Son Uyarılar:</h4>
+                <ul>
+                    <li>Döküm penceresinde görüntülenen sonuçları kaydetmek istiyorsanız, tarayıcınızın yazdırma veya PDF olarak kaydetme özelliğini kullanın</li>
+                    <li>Yoğun kullanım saatlerinde çok geniş filtreleme kriterleri kullanmaktan kaçının</li>
+                    <li>İşlem sırasında program penceresini kapatmayın veya başka uygulamalara geçmeyin</li>
+                    <li>Gruplama seçeneklerini ve tutar sıralama seçeneklerini değiştirerek farklı bakış açılarıyla raporlar oluşturun</li>
+                    <li>Herhangi bir sorunla karşılaşırsanız, sistem yöneticinize veya destek ekibine başvurun</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="section">
+        <h2>Özet ve Sonuç</h2>
+        <div class="info-box">
+            <p>Ödemeye Çağrı Döküm programı, belirli kriterlere göre ödeme çağrılarının dökümünü almanızı sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+            <ul>
+                <li>Ödemeye çağrı numarası ve GTT sicil numarası aralığı girişi</li>
+                <li>İşlem tarihi ve tebliğ tarihi aralığı girişi</li>
+                <li>Tahakkuk toplamı aralığı belirleme</li>
+                <li>Yetkili kişi bilgilerini (Şef, Müdür) ve başvuru süresi bilgisini düzenleme</li>
+                <li>Döküm gruplama seçeneklerini kullanma</li>
+                <li>Tutar sıralama seçeneklerini kullanma</li>
+                <li>Listele ve Çıkış butonlarının işlevleri</li>
+                <li>Pratik ipuçları ve sık karşılaşılan sorunların çözümleri</li>
+            </ul>
+            
+            <p>Bu programı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Pratik İpuçları ve Sık Karşılaşılan Sorunlar" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya destek ekibine başvurun.</p>
+        </div>
+    </div>
+ </body>
+ </html>
+
+                    
