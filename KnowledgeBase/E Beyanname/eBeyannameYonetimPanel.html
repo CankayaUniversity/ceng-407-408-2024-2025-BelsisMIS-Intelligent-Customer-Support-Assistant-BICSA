@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Beyanname Yönetim Paneli Kullanıcı Kılavuzu</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header img {
+            height: 50px;
+            width: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #1976D2;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background-color: #f0f8ff;
+            border: 1px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background-color: #e6ffe6;
+            border-left: 5px solid #33cc33;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .step {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>E-Beyanname Yönetim Paneli Kullanıcı Kılavuzu</h1>
+    </div>
+
+    <div id="icerik" class="section">
+        <h2>İçindekiler</h2>
+        <div class="info-box">
+            <ol>
+                <li><a href="#giris">Giriş ve Genel Bilgiler</a></li>
+                <li><a href="#ekran-duzeni">Ekran Düzeni ve Genel Görünüm</a></li>
+                <li><a href="#yil-donem">Yıl/Dönem Filtreleme</a></li>
+                <li><a href="#beyanname-turu">Beyanname Türü Seçimi</a></li>
+                <li><a href="#filtreleme">Filtreleme İşlemleri</a></li>
+                <li><a href="#beyanname-islemleri">Beyannameler ile İlgili İşlemler</a></li>
+                <li><a href="#detay-goruntuleleme">Beyanname Detaylarını Görüntüleme</a></li>
+                <li><a href="#tablo-bilgileri">Tablodaki Bilgileri Anlama</a></li>
+                <li><a href="#islem-butonlari">İşlem Butonları Kullanımı</a></li>
+                <li><a href="#sss">Sık Sorulan Sorular ve Çözümleri</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="giris" class="section">
+        <h2>Giriş ve Genel Bilgiler</h2>
+        <div class="info-box">
+            <p>E-Beyanname Yönetim Paneli, vergi beyannamelerinizi yönetmek, görüntülemek ve gerekli işlemleri yapmak için kullanabileceğiniz bir uygulamadır. Bu uygulama ile:</p>
+            <ul>
+                <li>Farklı türdeki beyannameleri (KDV1, KDV2, Muhtasar, Damga ve Muhtasar SGK) görüntüleyebilirsiniz</li>
+                <li>Beyannameleri yıl ve dönem bazında filtreleyebilirsiniz</li>
+                <li>Beyanname detaylarını inceleyebilirsiniz</li>
+                <li>Beyannameleri açabilir ve silebilirsiniz</li>
+                <li>Toplu beyanname bilgilerini görüntüleyebilirsiniz</li>
+            </ul>
+            
+            <div class="tip-box">
+                <h4>Önemli Not:</h4>
+                <p>Bu uygulamayı kullanmadan önce şunları bildiğinizden emin olun:</p>
+                <ul>
+                    <li>Görüntülemek istediğiniz beyanname türü (KDV1, KDV2, Muhtasar, Damga veya Muhtasar SGK)</li>
+                    <li>İlgili yıl ve dönem bilgisi</li>
+                    <li>Beyanname numarası veya ID'si (biliyorsanız)</li>
+                    <li>İşlem yapmak için gerekli yetkilere sahip olduğunuz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="ekran-duzeni" class="section">
+        <h2>Ekran Düzeni ve Genel Görünüm</h2>
+        <div class="info-box">
+            <h3>Ana Ekran Bölümleri</h3>
+            
+            <div class="step">
+                <h4>Ekran Yerleşimi:</h4>
+                <ol>
+                    <li><strong>Başlık Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en üst kısmında yer alır</li>
+                            <li>Mavi-gri tonlarında bir başlık çubuğu içerisinde "E-Beyanname Yönetim Ekranı" yazısı bulunur</li>
+                            <li>Bu başlık sabit olup değiştirilemez</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Bölümü:</strong>
+                        <ul>
+                            <li>Başlık çubuğunun hemen altında yer alır</li>
+                            <li>İki satırlık bir tablo şeklindedir</li>
+                            <li>İlk satırda beyanname bilgilerinin sütun başlıkları bulunur (Yıl, Dönem, Beyan Türü vb.)</li>
+                            <li>İkinci satırda filtreleme için kullanılacak alanlar (metin kutuları ve açılır listeler) bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Beyanname Listesi Bölümü:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün altında, ekranın orta kısmında yer alır</li>
+                            <li>Beyanname bilgilerinin listelendiği bir tablo içerir</li>
+                            <li>Her bir satır bir beyannameyi temsil eder</li>
+                            <li>Sütunlar yıl, dönem, beyan türü ve işlemler gibi bilgileri içerir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Özet Bilgiler Bölümü:</strong>
+                        <ul>
+                            <li>Ekranın en altında yer alır</li>
+                            <li>Toplam beyanname sayısı, toplam matrah ve toplam vergi gibi özet bilgileri gösterir</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning-box">
+                <h4>Önemli Hatırlatma:</h4>
+                <p>Yönetim paneli açıldığında:</p>
+                <ul>
+                    <li>İlk olarak yıl ve beyanname türü varsayılan değerler olarak gelir</li>
+                    <li>Beyannameleri görüntüleyebilmek için filtreleri ayarlayıp "Filtrele" butonuna basmanız gerekir</li>
+                    <li>Beklemekte olan bir sayfa yüklemesi varsa "Lütfen Bekleyiniz" mesajını görebilirsiniz</li>
+                    <li>Panel 2 pencere olarak çalışır: Ana liste penceresi ve beyanname detay penceresi (açıldığında)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="yil-donem" class="section">
+        <h2>Yıl/Dönem Filtreleme</h2>
+        <div class="info-box">
+            <h3>Beyannameleri Yıl ve Dönem Bazında Filtreleme</h3>
+            
+            <div class="step">
+                <h4>Yıl Bilgisi Girmek:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, sol taraftan ikinci sütunda yer alır</li>
+                            <li>"Yıl" sütun başlığının altındadır</li>
+                            <li>Metin kutusu şeklindedir ve mavi-gri arka plan rengine sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Yıl Bilgisi Nasıl Girilir:</strong>
+                        <ol>
+                            <li>Metin kutusuna tıklayın</li>
+                            <li>Görüntülemek istediğiniz beyannamenin ait olduğu yılı yazın (örn. 2023)</li>
+                            <li>Yıl değerini 4 haneli olarak girmelisiniz</li>
+                            <li>Değer girilmediğinde sistem içinde bulunduğunuz yılı varsayılan olarak kullanır</li>
+                            <li>Başka bir alana tıklayarak veya Tab tuşuna basarak yıl alanından çıkabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Dönem Bilgisi Seçmek:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, Yıl alanının hemen sağında (sol taraftan üçüncü sütunda) yer alır</li>
+                            <li>"Dönem" sütun başlığının altındadır</li>
+                            <li>Açılır liste (dropdown) şeklindedir ve mavi-gri arka plan rengine sahiptir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dönem Bilgisi Nasıl Seçilir:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın, dönem seçenekleri görüntülenecektir</li>
+                            <li>İlk seçenek "..HEPSİ.." olup, tüm dönemleri gösterir</li>
+                            <li>Diğer seçenekler ayları temsil eder (OCAK, ŞUBAT, vb.)</li>
+                            <li>Görüntülemek istediğiniz dönemi listeden seçin</li>
+                            <li>Seçim yaptığınızda açılır liste otomatik olarak kapanacaktır</li>
+                            <li>Varsayılan değer "..HEPSİ.." olarak gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Yıl alanına sadece sayısal değer girebilirsiniz</li>
+                    <li>Yıl değeri 4 haneli olmalıdır (örn. 2023)</li>
+                    <li>Dönem seçimi yapmadan "..HEPSİ.." seçeneği ile devam ederseniz, ilgili yıla ait tüm dönem beyannameleri listelenir</li>
+                    <li>Filtreleri ayarladıktan sonra "Filtrele" butonuna basmanız gerektiğini unutmayın</li>
+                    <li>Yıl ve dönem bilgilerini güncelledikten sonra filtre uygulanmazsa beyanname listesi değişmez</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>İlgili yılın tüm beyannamelerini görmek için dönem olarak "..HEPSİ.." seçeneğini kullanın</li>
+                    <li>Belirli bir aya ait beyannameleri görüntülemek için ilgili ayı seçin</li>
+                    <li>Klavyeden Tab tuşunu kullanarak Yıl ve Dönem alanları arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Değişiklikleri uygulamak için mutlaka "Filtrele" butonuna basın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="beyanname-turu" class="section">
+        <h2>Beyanname Türü Seçimi</h2>
+        <div class="info-box">
+            <h3>Beyanname Türünü Belirleme</h3>
+            
+            <div class="step">
+                <h4>Beyanname Türü Nasıl Seçilir:</h4>
+                <ol>
+                    <li><strong>Alan Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, Dönem alanının hemen sağında (sol taraftan dördüncü sütunda) yer alır</li>
+                            <li>"Beyan Türü" sütun başlığının altındadır</li>
+                            <li>Açılır liste (dropdown) şeklindedir ve mavi-gri arka plan rengine sahiptir</li>
+                            <li>Listeyi açtığınızda, kullanılabilir beyanname türleri görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Beyanname Türü Seçim Adımları:</strong>
+                        <ol>
+                            <li>Açılır listeye tıklayın</li>
+                            <li>Aşağıdaki beyanname türlerinden birini seçin:
+                                <ul>
+                                    <li>KDV-1</li>
+                                    <li>KDV-2</li>
+                                    <li>MUHTASAR</li>
+                                    <li>DAMGA</li>
+                                    <li>MUHTASAR SGK</li>
+                                </ul>
+                            </li>
+                            <li>Seçiminizi yaptığınızda liste otomatik olarak kapanacaktır</li>
+                            <li>Seçtiğiniz beyanname türü listede görüntülenecektir</li>
+                            <li>Varsayılan değer genellikle "KDV-1" olarak gelir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Beyanname Türü Filtrelemesi Nasıl Uygulanır:</h4>
+                <ol>
+                    <li><strong>Filtrele Butonu Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, en sağda yer alır</li>
+                            <li>"Görevler" sütun başlığının altındadır</li>
+                            <li>Gri renkli, üzerinde "Filtrele" yazan bir butondur</li>
+                            <li>Butonun sağında "Temizle" butonu bulunur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Adımları:</strong>
+                        <ol>
+                            <li>Beyanname türünü seçtikten sonra</li>
+                            <li>"Filtrele" butonuna tıklayın</li>
+                            <li>Sistem seçtiğiniz beyanname türüne ait kayıtları listeleyecektir</li>
+                            <li>İşlem tamamlandığında, sadece seçilen beyanname türüne ait beyannameler ekranda görüntülenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Beyanname türü seçmeden "Filtrele" butonuna basarsanız, son seçilen beyanname türüne göre filtreleme yapılır</li>
+                    <li>Bir beyanname türünden diğerine geçiş yaptığınızda, gösterilen beyanname detayları ve tablo sütunları değişecektir</li>
+                    <li>Her beyanname türünün kendine özgü alanları ve özellikleri vardır</li>
+                    <li>Beyanname türü değiştiğinde, daha önce görüntülenen detay bilgileri kapanır</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Beyanname türleri arasında hızlıca geçiş yapabilirsiniz</li>
+                    <li>Belirli bir türdeki tüm beyannameleri görmek için önce türü seçin, ardından "Filtrele" butonuna basın</li>
+                    <li>Daha önce ayarlanmış filtreleri temizlemek için "Temizle" butonunu kullanın</li>
+                    <li>Beyanname türü değiştiğinde, uygun bilgilerin yüklenmesi için sisteme zaman tanıyın</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="filtreleme" class="section">
+        <h2>Filtreleme İşlemleri</h2>
+        <div class="info-box">
+            <h3>Filtreleme ve Filtre Temizleme İşlemleri</h3>
+            
+            <div class="step">
+                <h4>Filtreleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Filtrele Butonu Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, en sağda yer alır</li>
+                            <li>"Görevler" sütun başlığının altındadır</li>
+                            <li>Gri renkli, üzerinde "Filtrele" yazan bir butondur</li>
+                            <li>Buton üzerine fare imleci getirildiğinde rengi değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtreleme Adımları:</strong>
+                        <ol>
+                            <li>İstediğiniz yılı girin (Yıl alanına)</li>
+                            <li>İsterseniz bir dönem seçin (Dönem açılır listesinden)</li>
+                            <li>Beyanname türünü seçin (Beyan Türü açılır listesinden)</li>
+                            <li>"Filtrele" butonuna tıklayın</li>
+                            <li>Sistem seçilen kriterlere uygun beyannameleri listeleyecektir</li>
+                            <li>Yükleme işlemi sırasında kısa bir süre "Lütfen Bekleyiniz" mesajı görüntülenebilir</li>
+                            <li>Filtreleme tamamlandığında, uygun beyannameler tabloda listelenecektir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Filtre Temizleme Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Temizle Butonu Konumu:</strong>
+                        <ul>
+                            <li>Filtreleme bölümünün ikinci satırında, "Filtrele" butonunun hemen sağında yer alır</li>
+                            <li>"Görevler" sütun başlığının altındadır</li>
+                            <li>Gri renkli, üzerinde "Temizle" yazan bir butondur</li>
+                            <li>Buton üzerine fare imleci getirildiğinde rengi değişir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Filtre Temizleme Adımları:</strong>
+                        <ol>
+                            <li>"Temizle" butonuna tıklayın</li>
+                            <li>Sistem tüm filtreleme alanlarını varsayılan değerlerine döndürecektir:
+                                <ul>
+                                    <li>Yıl alanı boşalır</li>
+                                    <li>Dönem seçimi "..HEPSİ.." olarak ayarlanır</li>
+                                    <li>Beyan Türü seçimi varsayılan değere döner</li>
+                                </ul>
+                            </li>
+                            <li>Filtreleri temizledikten sonra, yeni bir filtre uygulamak için "Filtrele" butonuna tekrar basmanız gerekir</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>Önemli Uyarılar:</h4>
+                <ul>
+                    <li>Filtreleme yapmadan önce doğru kriterleri seçtiğinizden emin olun</li>
+                    <li>Yıl alanını boş bırakırsanız, sistem içinde bulunduğunuz yılı varsayılan olarak kullanır</li>
+                    <li>Filtreleri değiştirdikten sonra "Filtrele" butonuna basmazsanız, liste güncellenmez</li>
+                    <li>Çok fazla beyanname içeren bir filtreleme yaparsanız, yükleme işlemi biraz zaman alabilir</li>
+                    <li>Filtreler temizlendikten sonra, önceki filtre ayarlarınıza dönmek isterseniz, yeniden manuel olarak girmeniz gerekir</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>Pratik İpuçları:</h4>
+                <ul>
+                    <li>Belirli bir yıl ve döneme ait tüm beyannameleri görmek için, yıl ve dönem seçin, beyanname türünü değiştirmeyin</li>
+                    <li>Dönem seçiminde "..HEPSİ.." seçeneğini kullanarak bir yıla ait tüm beyannameleri görüntüleyebilirsiniz</li>
+                    <li>Yeni bir filtreleme yapmadan önce "Temizle" butonunu kullanmak, hata yapma olasılığını azaltır</li>
+                    <li>Filtreler uygulandıktan sonra, ekranın alt kısmında görüntülenen özet bilgileri kontrol ederek toplam beyanname sayısını görebilirsiniz</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="beyanname-islemleri" class="section">
+        <h2>Beyannameler ile İlgili İşlemler</h2>
+        <div class="info-box">
+            <h3>Beyanname Açma ve Silme İşlemleri</h3>
+            
+            <div class="step">
+                <h4>Beyanname Açma İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Beyanname Açma Butonu Konumu:</strong>
+                        <ul>
+                            <li>Beyanname listesinde her bir satırın en sağında, "Görevler" sütununda yer alır</li>
+                            <li>Klasör simgesi şeklindedir (açık klasör ikonu)</li>
+                            <li>Fare imleci üzerine getirildiğinde "Beyannameyi Aç" açıklaması görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Beyanname Açma Adımları:</strong>
+                        <ol>
+                            <li>Öncelikle istediğiniz filtreleri kullanarak beyanname listesini görüntüleyin</li>
+                            <li>Açmak istediğiniz beyannameyi listede bulun</li>
+                            <li>İlgili satırın en sağında bulunan klasör simgesine tıklayın</li>
+                            <li>Tıkladığınızda beyanname detaylarını gösteren yeni bir pencere açılacaktır</li>
+                            <li>Yeni açılan pencerede beyannamenin tüm detayları görüntülenecektir</li>
+                            <li>Açılan beyanname penceresinde düzenleme veya inceleme işlemleri yapabilirsiniz</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="step">
+                <h4>Beyanname Silme İşlemi Nasıl Yapılır:</h4>
+                <ol>
+                    <li><strong>Beyanname Silme Butonu Konumu:</strong>
+                        <ul>
+                            <li>Beyanname listesinde her bir satırın en sağında, "Görevler" sütununda, klasör simgesinin hemen yanında yer alır</li>
+                            <li>Çarpı (X) veya iptal simgesi şeklindedir</li>
+                            <li>Fare imleci üzerine getirildiğinde "Beyannameyi Sil" açıklaması görüntülenir</li>
+                        </ul>
+                    </li>
+                    <li><strong>Beyanname Silme Adımları:</strong>
+                        <ol>
+                            <li>Öncelikle istediğiniz filtreleri kullanarak beyanname listesini görüntüleyin</li>
+                            <li>Silmek istediğiniz beyannameyi listede bulun</li>
+                            <li>İlgili satırın en sağında bulunan çarpı (X) simgesine tıklayın</li>
+                            <li>Tıkladığınızda bir onay penceresi açılacaktır: "Bu İşlem Sonunda Beyanname Silinecektir..! Devam Etmek İstiyor musunuz?"</li>
+                            <li>Silme işlemini onaylamak için "Tamam" veya "OK" butonuna tıklayın</li>
+                           <li>İşlemi iptal etmek için "İptal" veya "Cancel" butonuna tıklayın</li>
+                           <li>Onay verdiğinizde sistem beyannameyi silecektir</li>
+                           <li>Silme işlemi tamamlandığında "Beyanname Silindi" mesajı görüntülenecektir</li>
+                           <li>Mesajı kapatmak için "Tamam" butonuna tıklayın</li>
+                           <li>Liste otomatik olarak güncellenecek ve silinen beyanname artık listede görünmeyecektir</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+           
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Beyanname silme işlemi geri alınamaz - silinen beyanname kalıcı olarak sistemden silinir</li>
+                   <li>Silmeden önce doğru beyannameyi seçtiğinizden emin olun</li>
+                   <li>Beyanname açma işlemi yeni bir pencere açacaktır, tarayıcınızın pop-up engelleyicisini devre dışı bıraktığınızdan emin olun</li>
+                   <li>Beyanname açıldığında, ana liste ekranı hala açık kalacaktır - iki pencere arasında geçiş yapabilirsiniz</li>
+                   <li>Bazı durumlarda beyanname açma veya silme işlemi birkaç saniye sürebilir, işlem tamamlanana kadar bekleyin</li>
+               </ul>
+           </div>
+           
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Birden fazla beyannameyi incelemek için, her biri için ayrı ayrı "Beyannameyi Aç" simgesine tıklayabilirsiniz</li>
+                   <li>Tarayıcınızın sekmeler arasında kolayca gezinmek için kısayol tuşlarını kullanabilirsiniz (örn. Ctrl+Tab)</li>
+                   <li>Silme işleminden önce beyannameyi açıp içeriğini kontrol etmek, yanlış beyanname silme riskini azaltır</li>
+                   <li>Filtreleme yaparak sadece belirli bir dönem veya türdeki beyannameleri görüntüleyebilir ve işlemlerinizi daha kolay yapabilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="detay-goruntuleleme" class="section">
+       <h2>Beyanname Detaylarını Görüntüleme</h2>
+       <div class="info-box">
+           <h3>Beyanname Detaylarını Açma ve Kapatma</h3>
+           
+           <div class="step">
+               <h4>Beyanname Detaylarını Görüntüleme Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Detay Gösterge İkonu Konumu:</strong>
+                       <ul>
+                           <li>Beyanname listesinde her bir satırın en solunda yer alır</li>
+                           <li>Artı (+) işareti şeklinde bir ikondur</li>
+                           <li>Artı işaretinin yanında yıl, dönem ve beyanname türü bilgileri bulunur</li>
+                       </ul>
+                   </li>
+                   <li><strong>Detayları Görüntüleme Adımları:</strong>
+                       <ol>
+                           <li>Beyannamenin listedeki satırında, en soldaki artı (+) işaretine tıklayın</li>
+                           <li>Tıkladığınızda, beyannameye ait detay bilgileri, tıkladığınız satırın hemen altında açılacaktır</li>
+                           <li>Artı (+) işareti eksi (-) işaretine dönüşür</li>
+                           <li>Beyannamenin satırı kalın yazı stiliyle vurgulanır</li>
+                           <li>Detay bilgileri, beyanname türüne göre değişiklik gösterir ve ilgili finansal değerleri içerir</li>
+                           <li>Detay görünümü, ana liste içinde yer alır ve yeni bir pencere açılmaz</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+           
+           <div class="step">
+               <h4>Beyanname Detaylarını Kapatma Nasıl Yapılır:</h4>
+               <ol>
+                   <li><strong>Detay Kapatma İkonu Konumu:</strong>
+                       <ul>
+                           <li>Detayları açık olan bir beyannamenin satırının en solunda yer alır</li>
+                           <li>Eksi (-) işareti şeklinde bir ikondur (önceki artı işareti değişmiştir)</li>
+                       </ul>
+                   </li>
+                   <li><strong>Detayları Kapatma Adımları:</strong>
+                       <ol>
+                           <li>Detayları açık olan beyannamenin satırında, en soldaki eksi (-) işaretine tıklayın</li>
+                           <li>Tıkladığınızda, beyannameye ait detay bilgileri kapanacaktır</li>
+                           <li>Eksi (-) işareti artı (+) işaretine dönüşür</li>
+                           <li>Beyannamenin satırı normal yazı stiline döner (kalın değil)</li>
+                           <li>Detay bilgileri artık görünmez olur ve liste daha kompakt hale gelir</li>
+                       </ol>
+                   </li>
+               </ol>
+           </div>
+           
+           <div class="step">
+               <h4>Detay Görünümünde Neler Gösterilir:</h4>
+               <p>Beyanname türüne göre detay görünümünde farklı bilgiler yer alır:</p>
+               
+               <strong>KDV-1 Beyannamesi için:</strong>
+               <ul>
+                   <li>Toplam Matrah</li>
+                   <li>Hesaplanan KDV</li>
+                   <li>İlave KDV</li>
+                   <li>Toplam KDV</li>
+                   <li>İndirim KDV</li>
+                   <li>İade Edilmesi Gereken KDV</li>
+                   <li>Sonraki Döneme Devreden KDV</li>
+               </ul>
+               
+               <strong>KDV-2 Beyannamesi için:</strong>
+               <ul>
+                   <li>Toplam Matrah</li>
+                   <li>Tevkif Edilen Vergi</li>
+                   <li>İlave Edilen Vergi</li>
+                   <li>Ödenecek Vergi</li>
+               </ul>
+               
+               <strong>Muhtasar ve Muhtasar SGK Beyannameleri için:</strong>
+               <ul>
+                   <li>Toplam Matrah</li>
+                   <li>Toplam Vergi</li>
+                   <li>Asgari Ücretli Çalışan Sayısı</li>
+                   <li>Diğer Çalışan Sayısı</li>
+                   <li>Toplam Çalışan Sayısı</li>
+                   <li>Tevkifata İlişkin Damga Vergisi</li>
+                   <li>Çeşitli mahsup bilgileri</li>
+                   <li>Ödenecek ve İade Edilecek tutarlar</li>
+               </ul>
+               
+               <strong>Damga Vergisi Beyannamesi için:</strong>
+               <ul>
+                   <li>Türü</li>
+                   <li>Matrah</li>
+                   <li>Vergi</li>
+               </ul>
+           </div>
+           
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Aynı anda birden fazla beyannamenin detaylarını görebilirsiniz</li>
+                   <li>Beyanname detayları sadece özet bilgileri içerir, tam beyanname bilgilerini görmek için "Beyannameyi Aç" butonunu kullanmanız gerekir</li>
+                   <li>Detay görünümü ekranın boyutuna göre farklı düzenlenebilir, ekran boyutu küçükse kaydırma çubuklarını kullanmanız gerekebilir</li>
+                   <li>Beyanname filtreleri değiştirildiğinde, açık olan detay görünümleri otomatik olarak kapanır</li>
+                   <li>Sayfa yenilediğinizde, açık olan detay görünümleri kapanacaktır</li>
+               </ul>
+           </div>
+           
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Beyanname satırının herhangi bir yerine (en soldaki ikon hariç) tıklayarak da detayları açıp kapatabilirsiniz</li>
+                   <li>Fare imlecini beyanname satırı üzerine getirdiğinizde, satır rengi değişir - bu, hangi satıra tıklayacağınızı belirlemenize yardımcı olur</li>
+                   <li>Beyanname türleri arasında karşılaştırma yapmak için, farklı türdeki beyannamelerin detaylarını aynı anda açabilirsiniz</li>
+                   <li>Ekranın alt kısmındaki özet bilgilerde toplam matrah ve vergi tutarlarını kontrol edebilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="tablo-bilgileri" class="section">
+       <h2>Tablodaki Bilgileri Anlama</h2>
+       <div class="info-box">
+           <h3>Beyanname Türlerine Göre Görüntülenen Detay Bilgileri</h3>
+           
+           <div class="step">
+               <h4>KDV-1 Beyannamesi Detay Bilgileri:</h4>
+               <ul>
+                   <li><strong>Toplam Matrah:</strong> KDV hesaplanacak işlemlerin toplam tutarını gösterir</li>
+                   <li><strong>Hesaplanan KDV:</strong> Matrah üzerinden hesaplanan KDV tutarıdır</li>
+                   <li><strong>İlave KDV:</strong> Kanuna göre ilave edilmesi gereken KDV tutarıdır</li>
+                   <li><strong>Toplam KDV:</strong> Hesaplanan KDV ve İlave KDV'nin toplamıdır</li>
+                   <li><strong>İndirim KDV:</strong> İndirilecek KDV tutarını gösterir</li>
+                   <li><strong>İade Edilmesi Gereken KDV:</strong> Mükellefe iade edilecek KDV tutarını gösterir</li>
+                   <li><strong>Sonraki Döneme Devreden KDV:</strong> Bir sonraki döneme aktarılan KDV tutarını gösterir</li>
+               </ul>
+           </div>
+           
+           <div class="step">
+               <h4>KDV-2 Beyannamesi Detay Bilgileri:</h4>
+               <ul>
+                   <li><strong>Toplam Matrah:</strong> KDV tevkifatına tabi işlemlerin toplam tutarını gösterir</li>
+                   <li><strong>Tevkif Edilen Vergi:</strong> Alım sırasında tevkif edilen (kesilen) vergi tutarını gösterir</li>
+                   <li><strong>İlave Edilen Vergi:</strong> Kanuna göre ilave edilen vergi tutarını gösterir</li>
+                   <li><strong>Ödenecek Vergi:</strong> Ödenecek toplam vergi tutarını gösterir</li>
+               </ul>
+           </div>
+           
+           <div class="step">
+               <h4>Muhtasar ve Muhtasar SGK Beyannameleri Detay Bilgileri:</h4>
+               <ul>
+                   <li><strong>Toplam Matrah:</strong> Gelir vergisi kesintisi yapılan ödemelerin toplam tutarını gösterir</li>
+                   <li><strong>Toplam Vergi:</strong> Kesilen toplam vergi tutarını gösterir</li>
+                   <li><strong>Asgari Ücretli Çalışan Sayısı:</strong> Asgari ücretle çalışanların sayısını gösterir</li>
+                   <li><strong>Diğer Çalışan Sayısı:</strong> Asgari ücret dışında ücret alan çalışanların sayısını gösterir</li>
+                   <li><strong>Toplam Çalışan Sayısı:</strong> Tüm çalışanların toplam sayısını gösterir</li>
+                   <li><strong>Tevkifata İlişkin Damga Vergisi:</strong> Bordrolara ait damga vergisi tutarını gösterir</li>
+                   <li><strong>Çeşitli Mahsup Bilgileri:</strong> Mahsup edilen vergi tutarlarını gösterir (KVK maddeleri ve AGİ ile ilgili)</li>
+                   <li><strong>Ödenecek:</strong> Ödenecek vergi tutarını gösterir</li>
+                   <li><strong>İade Edilecek:</strong> İade edilecek vergi tutarını gösterir</li>
+               </ul>
+           </div>
+           
+           <div class="step">
+               <h4>Damga Vergisi Beyannamesi Detay Bilgileri:</h4>
+               <ul>
+                   <li><strong>Türü:</strong> Damga vergisine tabi evrakın türünü gösterir</li>
+                   <li><strong>Matrah:</strong> Damga vergisi hesaplanacak evrakın değerini gösterir</li>
+                   <li><strong>Vergi:</strong> Hesaplanan damga vergisi tutarını gösterir</li>
+               </ul>
+               <p>Not: Damga vergisi beyannamesi için, her bir türdeki evrak için ayrı bir detay satırı görüntülenir.</p>
+           </div>
+           
+           <div class="warning-box">
+               <h4>Önemli Uyarılar:</h4>
+               <ul>
+                   <li>Tüm tutarlar Türk Lirası (TL) cinsinden gösterilir</li>
+                   <li>Tutar alanlarında nokta (.) binlik ayırıcı, virgül (,) ise ondalık ayırıcı olarak kullanılır</li>
+                   <li>Boş veya sıfır değerli alanlar "0,00" veya boş olarak görüntülenebilir</li>
+                   <li>Beyanname detaylarında gösterilen bilgiler, beyannamenin doldurulma şekline göre değişiklik gösterebilir</li>
+                   <li>Beyanname detayında gösterilen bilgiler yalnızca özet niteliğindedir, tam detaylar için beyannameyi açmanız gerekir</li>
+               </ul>
+           </div>
+           
+           <div class="tip-box">
+               <h4>Pratik İpuçları:</h4>
+               <ul>
+                   <li>Beyanname türleri arasında geçiş yaparak, farklı türdeki beyannamelerde hangi bilgilerin gösterildiğini öğrenebilirsiniz</li>
+                   <li>Aynı dönemdeki farklı beyanname türlerini karşılaştırmak için, filtreleme yaparak yan yana görebilirsiniz</li>
+                   <li>Ekranın alt kısmındaki toplam bilgilerini kontrol ederek, listelenen tüm beyannamelerin toplamını görebilirsiniz</li>
+                   <li>Rakamları daha iyi görebilmek için tarayıcınızın yakınlaştırma özelliğini kullanabilirsiniz</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <div id="islem-butonlari" class="section">
+    <h2>İşlem Butonları Kullanımı</h2>
+    <div class="info-box">
+        <h3>Beyanname Satırındaki İşlem Butonları</h3>
+        
+        <div class="step">
+            <h4>Beyannameyi Açma Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Her beyanname satırının en sağında, "Görevler" sütununda yer alır</li>
+                        <li>Açık klasör şeklinde bir ikon (open.ico) olarak görüntülenir</li>
+                        <li>Fare imleci üzerine getirildiğinde "Beyannameyi Aç" açıklaması görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>İşlem yapmak istediğiniz beyannameyi listede bulun</li>
+                        <li>Satırın en sağındaki klasör ikonuna tıklayın</li>
+                        <li>Tıklama sonrasında beyanname yeni bir pencerede açılacaktır</li>
+                        <li>Açılan pencerede beyannamenin tüm detaylarını görüntüleyebilir ve düzenleyebilirsiniz</li>
+                        <li>Beyanname türüne göre açılan pencere farklı olacaktır (KDV1, KDV2, Muhtasar vb.)</li>
+                        <li>Ana liste penceresi hala açık kalacaktır, iki pencere arasında geçiş yapabilirsiniz</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Beyannameyi Silme Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Her beyanname satırının en sağında, "Görevler" sütununda, "Beyannameyi Aç" butonunun hemen yanında yer alır</li>
+                        <li>Çarpı işareti (X) veya iptal şeklinde (cancel.png) bir ikon olarak görüntülenir</li>
+                        <li>Fare imleci üzerine getirildiğinde "Beyannameyi Sil" açıklaması görünür</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Silmek istediğiniz beyannameyi listede bulun</li>
+                        <li>Satırın en sağındaki çarpı (X) ikonuna tıklayın</li>
+                        <li>Tıklama sonrasında onay penceresi açılacaktır</li>
+                        <li>Onay penceresinde "Bu İşlem Sonunda Beyanname Silinecektir..! Devam Etmek İstiyor musunuz?" mesajı görüntülenir</li>
+                        <li>Silmek için "Tamam" veya "OK" butonuna tıklayın</li>
+                        <li>İptal etmek için "İptal" veya "Cancel" butonuna tıklayın</li>
+                        <li>Silme işlemi onaylandığında, beyanname sistemden silinecek ve "Beyanname Silindi" mesajı görüntülenecektir</li>
+                        <li>Beyanname listesi otomatik olarak güncellenecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Detay Gösterme/Gizleme Butonu:</h4>
+            <ol>
+                <li><strong>Buton Konumu:</strong>
+                    <ul>
+                        <li>Her beyanname satırının en solunda yer alır</li>
+                        <li>Artı (+) işareti şeklinde bir ikon olarak görüntülenir (kapalı detaylar için)</li>
+                        <li>Eksi (-) işareti şeklinde bir ikon olarak görüntülenir (açık detaylar için)</li>
+                    </ul>
+                </li>
+                <li><strong>Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Detayları görüntülemek istediğiniz beyannameyi listede bulun</li>
+                        <li>Satırın en solundaki artı (+) işaretine tıklayın</li>
+                        <li>Tıklama sonrasında beyanname satırının altında detaylar görüntülenecektir</li>
+                        <li>Detaylar açılınca, artı (+) işareti eksi (-) işaretine dönüşecektir</li>
+                        <li>Detayları gizlemek için, aynı satırın en solundaki eksi (-) işaretine tıklayın</li>
+                        <li>Tıklama sonrasında detaylar kapanacak ve eksi (-) işareti tekrar artı (+) işaretine dönüşecektir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Filtreleme ve Temizleme Butonları:</h4>
+            <ol>
+                <li><strong>Butonların Konumu:</strong>
+                    <ul>
+                        <li>Filtreleme bölümünün ikinci satırında, en sağda "Görevler" sütun başlığının altında yer alır</li>
+                        <li>"Filtrele" ve "Temizle" butonları yan yana bulunur</li>
+                        <li>Gri renkli, 3 boyutlu görünümlü butonlardır</li>
+                        <li>Fare imleci üzerine getirildiğinde renkleri değişir</li>
+                    </ul>
+                </li>
+                <li><strong>Filtrele Butonu Kullanım Adımları:</strong>
+                    <ol>
+                        <li>Filtreleme bölümünde istediğiniz kriterleri ayarlayın (Yıl, Dönem, Beyan Türü)</li>
+                        <li>"Filtrele" butonuna tıklayın</li>
+                        <li>Tıklama sonrasında beyanname listesi belirlenen kriterlere göre filtrelenecektir</li>
+                        <li>Filtreleme işlemi tamamlandığında, kriterlere uyan beyannameler tabloda gösterilecektir</li>
+                    </ol>
+                </li>
+                <li><strong>Temizle Butonu Kullanım Adımları:</strong>
+                    <ol>
+                        <li>"Temizle" butonuna tıklayın</li>
+                        <li>Tıklama sonrasında tüm filtreleme alanları temizlenecektir</li>
+                        <li>Yıl alanı boşalacaktır</li>
+                        <li>Dönem seçimi "..HEPSİ.." olarak ayarlanacaktır</li>
+                        <li>Beyan Türü varsayılan değere dönecektir</li>
+                        <li>Filtreleri temizledikten sonra, yeni filtre uygulamak için "Filtrele" butonuna tekrar basmanız gerekir</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Önemli Uyarılar:</h4>
+            <ul>
+                <li>Beyanname silme işlemi geri alınamaz, silmeden önce emin olun</li>
+                <li>Beyanname açma işlemi yeni bir pencere açar, tarayıcınızın pop-up engelleme ayarlarını kontrol edin</li>
+                <li>Filtreleme yapıldıktan sonra, açık olan beyanname detayları otomatik olarak kapanacaktır</li>
+                <li>Filtreleri değiştirdikten sonra "Filtrele" butonuna basmazsanız, liste güncellenmez</li>
+                <li>Silme işlemi sırasında sistem yanıt verene kadar bekleyin, işlemi tekrarlamayın</li>
+            </ul>
+        </div>
+        
+        <div class="tip-box">
+            <h4>Pratik İpuçları:</h4>
+            <ul>
+                <li>Filtreleme yaparken önce beyanname türünü değiştirin, sonra yıl ve dönem seçimini yapın</li>
+                <li>Birden fazla beyannameyi incelemek için, her biri için ayrı ayrı "Beyannameyi Aç" simgesine tıklayabilirsiniz</li>
+                <li>Beyanname detaylarını görmek için satırın herhangi bir yerine de tıklayabilirsiniz (en soldaki ikon hariç)</li>
+                <li>Tarayıcı pencerelerini yan yana düzenleyerek beyanname detaylarını ve listeyi aynı anda görüntüleyebilirsiniz</li>
+                <li>Filtre temizleme sonrası hızlı arama için klavye kısayollarını kullanabilirsiniz (Tab tuşu ile alanlar arası geçiş yapabilirsiniz)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="sss" class="section">
+    <h2>Sık Sorulan Sorular ve Çözümleri</h2>
+    <div class="info-box">
+        <h3>Yaygın Sorunlar ve Çözümleri</h3>
+        
+        <div class="step">
+            <h4>Beyanname Açılmıyor</h4>
+            <p><strong>Sorun:</strong> "Beyannameyi Aç" butonuna tıkladığınızda yeni pencere açılmıyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Tarayıcınızın pop-up engelleyicisini kontrol edin. E-Beyanname Yönetim Paneli için pop-up izni verilmiş olmalıdır.</li>
+                <li>Tarayıcınızın sağ üst köşesindeki engellenen pop-up bildirimini kontrol edin ve izin verin.</li>
+                <li>Tarayıcı ayarlarından siteniz için pop-up izinlerini düzenleyin.</li>
+                <li>Farklı bir tarayıcı deneyin.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Beyanname Silinemiyor</h4>
+            <p><strong>Sorun:</strong> "Beyannameyi Sil" butonuna tıkladığınızda hata alıyorsunuz veya işlem tamamlanmıyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Silme işlemi için gerekli yetkilere sahip olduğunuzdan emin olun.</li>
+                <li>Tarayıcınızı yenileyin ve tekrar deneyin.</li>
+                <li>Tarayıcı önbelleğini temizleyin ve tekrar deneyin.</li>
+                <li>Sistemde aşırı yoğunluk olabilir, birkaç dakika bekleyip tekrar deneyin.</li>
+                <li>Sorun devam ederse, sistem yöneticinize başvurun.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Filtreleme Çalışmıyor</h4>
+            <p><strong>Sorun:</strong> "Filtrele" butonuna tıkladıktan sonra liste değişmiyor veya beklenen sonuçları göstermiyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Yıl alanına doğru bir değer girdiğinizden emin olun (4 haneli yıl).</li>
+                <li>Dönem seçimini kontrol edin.</li>
+                <li>Beyanname türünü doğru seçtiğinizden emin olun.</li>
+                <li>"Temizle" butonuna tıklayarak tüm filtreleri sıfırlayın ve tekrar ayarlayın.</li>
+                <li>Tarayıcınızı yenileyin ve tekrar deneyin.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Detaylar Görüntülenmiyor</h4>
+            <p><strong>Sorun:</strong> Artı (+) işaretine tıkladığınızda beyanname detayları görüntülenmiyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Tarayıcınızı yenileyin ve tekrar deneyin.</li>
+                <li>Farklı bir beyannameyi deneyin, bazı beyannamelerde detay olmayabilir.</li>
+                <li>Filtreleri değiştirip tekrar uygulayın.</li>
+                <li>JavaScript'in tarayıcınızda etkin olduğundan emin olun.</li>
+                <li>Farklı bir tarayıcı deneyin.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Sayfa Çok Yavaş Yükleniyor</h4>
+            <p><strong>Sorun:</strong> E-Beyanname Yönetim Paneli çok yavaş yükleniyor veya filtreleme işlemi uzun sürüyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Filtreleme kriterlerini daraltarak daha az sayıda beyanname listelemeyi deneyin.</li>
+                <li>İnternet bağlantınızı kontrol edin.</li>
+                <li>Tarayıcınızın önbelleğini ve geçmişini temizleyin.</li>
+                <li>Diğer açık uygulamaları ve tarayıcı sekmelerini kapatın.</li>
+                <li>Yoğun olmayan saatlerde tekrar deneyin, sistem yoğunluğu işlemleri yavaşlatabilir.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h4>Türkçe Karakterler Düzgün Görünmüyor</h4>
+            <p><strong>Sorun:</strong> Beyanname listesinde veya detaylarda Türkçe karakterler bozuk görünüyor.</p>
+            <p><strong>Çözüm:</strong></p>
+            <ol>
+                <li>Tarayıcınızın karakter kodlamasını kontrol edin, "UTF-8" veya "Windows-1254" olarak ayarlayın.</li>
+                <li>Tarayıcınızı güncelleyin.</li>
+                <li>Farklı bir tarayıcı deneyin.</li>
+                <li>Tarayıcı önbelleğini temizleyin ve tekrar deneyin.</li>
+            </ol>
+        </div>
+        
+        <div class="warning-box">
+            <h4>Genel Öneriler:</h4>
+            <ul>
+                <li>E-Beyanname Yönetim Paneli'ni düzenli olarak güncel tarayıcılarla kullanın</li>
+                <li>Sorun yaşadığınızda önce tarayıcınızı yenilemeyi deneyin</li>
+                <li>Tekrarlayan sorunlar için sistem yöneticinize veya IT desteğine başvurun</li>
+                <li>Kritik beyanname işlemleri sırasında internet bağlantınızın kesintisiz olduğundan emin olun</li>
+                <li>İşlemlerinizi yoğun saatler dışında yapmaya çalışın</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Özet ve Sonuç</h2>
+    <div class="info-box">
+        <p>E-Beyanname Yönetim Paneli, vergi beyannamelerini kolayca yönetmenizi sağlayan kullanışlı bir araçtır. Bu kılavuz ile aşağıdaki konularda bilgi sahibi oldunuz:</p>
+        <ul>
+            <li>Yıl ve dönem bazında filtreleme yapma</li>
+            <li>Beyanname türü seçimi (KDV1, KDV2, Muhtasar, Damga, Muhtasar SGK)</li>
+            <li>Beyanname listesini görüntüleme ve filtreleme</li>
+            <li>Beyanname detaylarını açma ve kapatma</li>
+            <li>Beyannameyi açma ve silme işlemleri</li>
+            <li>Tabloda gösterilen beyanname bilgilerini anlama</li>
+            <li>İşlem butonlarının doğru kullanımı</li>
+            <li>Sık karşılaşılan sorunlar ve çözümleri</li>
+        </ul>
+        
+        <p>Bu uygulamayı kullanırken herhangi bir sorunla karşılaşırsanız, öncelikle bu kılavuzun "Sık Sorulan Sorular ve Çözümleri" bölümüne başvurun. Sorun çözülmezse, sistem yöneticinize veya IT destek ekibine başvurun.</p>
+        
+        <p>E-Beyanname Yönetim Paneli'ni kullanarak beyannamelerinizi verimli bir şekilde yönetebilir, gerekli bilgilere hızlıca ulaşabilir ve beyannameler üzerinde işlem yapabilirsiniz.</p>
+    </div>
+</div>
+</body>
+</html>
+                            
