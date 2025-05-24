@@ -11,6 +11,11 @@ The chatbot prioritizes usability, security, and flexibility. This initiative no
 - [Software Requirements Specifications (SRS)](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/wiki/Software-Requirements-Specifications-(SRS))
 - [Software Design Description (SDD)](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/wiki/Software-Desing-Document-(SDD))
 - [Project Web Page](https://emrecanselvili.wixsite.com/bicsa1)
+- [Project Poster](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/blob/main/documents/Project_Poster.pdf)
+- [Project Demo Video](https://youtu.be/breF1FXCHDo?si=iHiDlkI9kbMYn_RE)
+- [Project Report](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/blob/main/documents/project_report_408.pdf)
+- [Test Plan & Test Results](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/blob/main/documents/Test%20Plan%20Document%20%26%20Test%20Results.pdf)
+- [User Manual](https://github.com/CankayaUniversity/ceng-407-408-2024-2025-BelsisMIS-Intelligent-Customer-Support-Assistant-BICSA/blob/main/documents/user_manual.pdf)
 
 ## Team Members
 | Name                   | Student Number |
