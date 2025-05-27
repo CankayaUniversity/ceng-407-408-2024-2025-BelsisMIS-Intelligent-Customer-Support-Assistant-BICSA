@@ -30,6 +30,9 @@ The chatbot prioritizes usability, security, and flexibility. This initiative no
 ## Advisor
 - Prof. Dr. Hayri Sever
 
+![image](https://github.com/user-attachments/assets/63d5c274-6dc1-4703-8de0-380e63050071)
+
+
 
 # BelsisMIS Level-0 Support Chatbot User Manual - How To Use Our Product
 
